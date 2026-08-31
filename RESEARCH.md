@@ -1,0 +1,4 @@
+
+# Start the project
+
+Her hafta ABD, Avrupa ve Çin’den 5 maddelik haftalık teknoloji haber özeti hazırla. Konular arasında yapay zekâ ve teknoloji, tıp, bilim ve uzay ile dengeli biçimde kapsa. En önemli gelişmelere, yeni bir şey öğreten haberlere ve pratik/teknik açıdan işe yarayan gelişmelere öncelik ver. Bilgileri güncel ve güvenilir kaynaklardan doğrula; mümkün olduğunda aynı konuyu tekrarlama. Benim onayıma sun haberleri ve hangi haberleri seçeceğimi sor. Kaynak linkleri de konunun altında göster. Buradan oluşturduğun sonuçları Sources.md dosyasına yaz ama eski içeriğini önce sil, sonra yeni sonuçları yaz.

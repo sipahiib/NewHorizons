@@ -1,0 +1,15 @@
+This week, five developments are moving science towards everyday life, from medical wearables and distant worlds to machines probing fundamental physics.
+
+Here is what happened, why it matters, and how it could affect us.
+
+First, the United States Food and Drug Administration has authorised Abbott’s Libre Duo 10 Day system for people aged two and older. It is the first wearable designed to continuously measure glucose and ketones with one sensor. Readings reach a compatible phone every minute. Rising ketones can warn of diabetic ketoacidosis, which may develop quickly. Traditional ketone tests capture only one moment. Continuous trends could give patients and caregivers more time to respond. The device does not replace clinical judgement, but it combines two measurements into one early-warning system.
+
+NASA’s Pandora satellite has begun science observations. It will study at least twenty exoplanets and their host stars in visible and near-infrared light. Starlight passing through a planet’s atmosphere may reveal water, clouds or haze, but starspots can imitate those signals. Pandora will separate changing stellar light from the planet’s atmosphere. This should make James Webb observations and future claims about potentially habitable worlds more reliable.
+
+At Switzerland’s Paul Scherrer Institute, researchers have produced, captured and transported positrons from a prototype source for CERN’s proposed Future Circular Collider. Electrons hit a tungsten target and create positrons that scatter in many directions. A compact superconducting magnet, designed for fields up to fifteen tesla, gathers them into a beam. Producing enough positrons is a major engineering challenge. The ninety-one-kilometre collider is not approved for construction, but this test shows that a critical injector concept can work.
+
+At CERN, ATLAS and CMS have tightened the search for pairs of Higgs bosons. Roughly one pair is expected for every fifteen hundred single Higgs bosons. The teams analysed newer collision data, while ATLAS used transformer-based machine learning to separate possible signals from background events. There is not yet enough evidence for an observation, but the Higgs self-coupling is more tightly constrained. That interaction tests the Standard Model and the stability of the universe’s vacuum. More data could finally bring this process into view.
+
+Finally, China’s Ministry of Industry and Information Technology has outlined plans connecting artificial intelligence, smart manufacturing and 6G. Nearly two hundred core AI standards have been developed, while the next five-year period will expand 6G trials. The goal is not simply faster phones. Low-latency networks could connect robots, sensors, quality control and predictive maintenance throughout a factory. 6G remains experimental, but today’s work could shape how future production lines adapt, diagnose faults and manage energy.
+
+That was our latest news. Stay with science, and stay tuned.
