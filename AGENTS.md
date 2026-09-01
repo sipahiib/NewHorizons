@@ -64,3 +64,5 @@ Mention at most one important financial figure or financial point per topic. Do 
 Verify resolution, frame rate, target duration, continuous audio, scene timing, overlays, the motion-footage opening, and final CTA. After every successful render, delete obsolete outputs, temporary audio, extracted frames, contact sheets, caches, and disposable render intermediates. Preserve approved source assets, scripts, manifests, branding, and the verified `newhorizons.mp4`.
 
 After verification and cleanup, ask whether the user wants the result pushed to GitHub. Never push without explicit approval; confirm the remote or branch if unclear.
+
+When committing or pushing to GitHub, exclude the entire `build/video/editorial-en/` directory and all files beneath it.
