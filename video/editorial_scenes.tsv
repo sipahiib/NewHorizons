@@ -1,27 +1,38 @@
 # kind|relative_path|duration_seconds|seek_seconds|layout
-clip|assets/approved-motion/01-libre/01-libre3-apply-source.mp4|10|18|static
-clip|assets/approved-motion/01-libre/02-libre2-apply-source.mp4|10|38|static
-clip|assets/approved-motion/01-libre/03-view-glucose-source.mp4|10|42|static
-clip|assets/approved-motion/01-libre/04-alarms-source.mp4|10|93|static
-clip|assets/approved-motion/01-libre/05-app-setup-source.mp4|10|112|static
-clip|assets/approved-motion/02-pandora/01-pandora-overview-source.mp4|10|0|static
-clip|assets/approved-motion/02-pandora/02-gas-giant-spectrum-source.mp4|10|0|static
-clip|assets/approved-motion/02-pandora/04-transit-curve-source.mp4|10|0|static
-clip|assets/approved-motion/02-pandora/nasa-pandora-full.mp4|10|28|static
-clip|assets/approved-motion/02-pandora/nasa-pandora-full.mp4|10|56|static
-clip|assets/approved-motion/03-fcc/cern-fcc-full.mp4|10|5|static
-clip|assets/approved-motion/03-fcc/cern-fcc-full.mp4|10|25|static
-clip|assets/approved-motion/03-fcc/cern-fcc-full.mp4|10|45|static
-clip|assets/approved-motion/03-fcc/cern-fcc-full.mp4|10|70|static
-clip|assets/approved-motion/03-fcc/cern-fcc-full.mp4|10|100|static
-clip|assets/approved-motion/04-double-higgs/04-lhc-collision-full.mp4|10|8|static
-clip|assets/approved-motion/04-double-higgs/01-atlas-higgs-full.mp4|10|34|static
-clip|assets/approved-motion/04-double-higgs/02-atlas-event-full.mp4|10|20|static
-clip|assets/approved-motion/04-double-higgs/03-cms-event-full.mp4|10|8|static
-clip|assets/approved-motion/04-double-higgs/05-cms-assembly-full.mp4|10|210|static
-clip|assets/approved-motion/05-china/01-6g-source.mp4|10|0|static
-clip|assets/approved-motion/05-china/02-agibot-source.mp4|10|0|static
-cliploop|assets/approved-motion/05-china/04-circuit-board-source.mp4|10|0|static
-clip|assets/approved-motion/05-china/05-server-racks-source.mp4|10|7|static
-clip|assets/approved-motion/05-china/06-smart-factory-full.mp4|10|72|static
+# Main story: five 24-second motion clips (120 seconds).
+clip|assets/motion/2026-09-02/01-roman/01-launch.mp4|24|10|cover
+clip|assets/motion/2026-09-02/01-roman/02-beauty-pass.mp4|24|5|cover
+clip|assets/motion/2026-09-02/01-roman/03-l2-journey.mp4|24|2|cover
+cliploop|assets/motion/2026-09-02/01-roman/04-coronagraph.mov|24|0|cover
+clip|assets/motion/2026-09-02/01-roman/05-journey-to-space.mp4|24|12|cover
+
+# Supporting story 1: five 9-second motion clips (45 seconds).
+clip|assets/motion/2026-09-02/02-alpha-gal/01-cdc.mp4|9|18|cover
+clip|assets/motion/2026-09-02/02-alpha-gal/02-scientific-american.mp4|9|8|contain_blur
+clip|assets/motion/2026-09-02/02-alpha-gal/03-mayo.mp4|9|15|cover
+clip|assets/motion/2026-09-02/02-alpha-gal/04-tick-macro.mp4|9|8|cover
+clip|assets/motion/2026-09-02/02-alpha-gal/05-lab-research.mp4|9|1|cover
+
+# Supporting story 2: five 9-second motion clips (45 seconds).
+clip|assets/motion/2026-09-02/03-astra/01-openai-defense.mp4|9|8|cover
+clip|assets/motion/2026-09-02/03-astra/02-cyber-lock.mp4|9|1|cover
+cliploop|assets/motion/2026-09-02/03-astra/03-binary-lock.mp4|9|0|cover
+clip|assets/motion/2026-09-02/03-astra/04-code-screen.mp4|9|1|cover
+clip|assets/motion/2026-09-02/03-astra/05-cyber-threat.mp4|9|5|cover
+
+# Supporting story 3: five 9-second motion clips (45 seconds).
+clip|assets/motion/2026-09-02/04-cluster/01-control-room.mp4|9|248|contain_blur
+clip|assets/motion/2026-09-02/04-cluster/02-samba-reentry.mp4|9|3|cover
+clip|assets/motion/2026-09-02/04-cluster/03-reentry-explained.mp4|9|96|cover
+clip|assets/motion/2026-09-02/04-cluster/04-salsa-animation.mp4|9|16|cover
+clip|assets/motion/2026-09-02/04-cluster/05-draco-animation.mp4|9|38|contain_blur
+
+# Supporting story 4: five 8-second motion clips (40 seconds).
+clip|assets/motion/2026-09-02/05-pallas/01-cctv-launch.mp4|8|4|contain_blur
+clip|assets/motion/2026-09-02/05-pallas/01-cctv-launch.mp4|8|54|contain_blur
+clip|assets/motion/2026-09-02/05-pallas/02-cctv-capability.mp4|8|21|contain_blur
+clip|assets/motion/2026-09-02/05-pallas/03-seven-engine-test.mp4|8|1|contain_blur
+clip|assets/motion/2026-09-02/05-pallas/04-second-stage-test.mp4|8|5|cover
+
+# Closing CTA: approved channel cover, ten seconds.
 still|assets/branding/new-horizons-cover.png|10|0|contain_static

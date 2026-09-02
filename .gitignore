@@ -1,0 +1,11 @@
+# Generated and source media must remain local.
+*.mp3
+*.mp4
+*.m4a
+*.mov
+*.wav
+*.webm
+.DS_Store
+
+# English editorial render intermediates must never be committed.
+build/video/editorial-en/

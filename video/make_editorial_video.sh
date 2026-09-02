@@ -22,7 +22,7 @@ awk -v a="$audio_duration" -v v="$manifest_duration" 'BEGIN {d=a-v; if (d<0) d=-
 render_still() {
   local input="$1" duration="$2" output="$3"
   [[ "$input" == "$ROOT/assets/branding/new-horizons-cover.png" ]] || {
-    echo "Only the approved opening cover may be rendered as a still." >&2
+    echo "Only the approved closing cover may be rendered as a still." >&2
     exit 1
   }
   ffmpeg -nostdin -y -v error -loop 1 -framerate "$FPS" -i "$input" \
@@ -31,12 +31,18 @@ render_still() {
 }
 
 render_clip() {
-  local input="$1" duration="$2" seek="$3" loop="$4" output="$5"
+  local input="$1" duration="$2" seek="$3" loop="$4" layout="$5" output="$6"
   local -a args=(-nostdin -y -v error)
+  local filter
   [[ "$loop" == "yes" ]] && args+=(-stream_loop -1)
   args+=(-ss "$seek" -i "$input")
+  if [[ "$layout" == "contain_blur" ]]; then
+    filter="split=2[fgsrc][bgsrc];[bgsrc]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,gblur=sigma=32,eq=brightness=-0.18:saturation=0.75[bg];[fgsrc]scale=1920:1080:force_original_aspect_ratio=decrease[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2,eq=contrast=1.02:saturation=1.03,format=yuv420p,setrange=limited,fps=$FPS,trim=duration=$duration,setpts=PTS-STARTPTS,setsar=1"
+  else
+    filter="scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,eq=contrast=1.025:saturation=1.035,format=yuv420p,setrange=limited,fps=$FPS,trim=duration=$duration,setpts=PTS-STARTPTS,setsar=1"
+  fi
   ffmpeg "${args[@]}" \
-    -vf "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,eq=contrast=1.025:saturation=1.035,format=yuv420p,setrange=limited,minterpolate=fps=$FPS:mi_mode=blend,trim=duration=$duration,setpts=PTS-STARTPTS,setsar=1" \
+    -vf "$filter" \
     -t "$duration" -an -c:v libx264 -preset veryfast -crf 16 -pix_fmt yuv420p -r "$FPS" "$output"
 }
 
@@ -52,12 +58,12 @@ while IFS='|' read -r kind relative duration seek layout; do
   output="$BUILD/segments/scene$(printf '%02d' "$scene").mp4"
   case "$kind" in
     still) render_still "$input" "$duration" "$output" ;;
-    clip|outro) render_clip "$input" "$duration" "$seek" no "$output" ;;
-    cliploop) render_clip "$input" "$duration" "$seek" yes "$output" ;;
+    clip|outro) render_clip "$input" "$duration" "$seek" no "$layout" "$output" ;;
+    cliploop) render_clip "$input" "$duration" "$seek" yes "$layout" "$output" ;;
     *) echo "Unknown scene type: $kind" >&2; exit 1 ;;
   esac
   printf "file '%s'\n" "$output" >> "$concat_file"
-  printf 'Rendered scene %02d/%02d\n' "$scene" 14
+  printf 'Rendered scene %02d/%02d\n' "$scene" 26
 done < "$MANIFEST"
 
 ffmpeg -nostdin -y -v error -f concat -safe 0 -i "$concat_file" -c copy "$BUILD/visuals.mp4"

@@ -17,7 +17,7 @@ const sections = source
   .map((section) => section.trim().replace(/\n+/g, ' '))
   .filter(Boolean);
 
-const names = ['intro', 'libre', 'pandora', 'china', 'outro'];
+const names = ['roman', 'alpha-gal', 'astra', 'cluster', 'pallas', 'outro'];
 if (sections.length !== names.length) {
   throw new Error(`Expected ${names.length} narration sections, found ${sections.length}`);
 }

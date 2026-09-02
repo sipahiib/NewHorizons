@@ -35,21 +35,22 @@ generate() {
   printf '%s raw=%s target=%s tempo=%s\n' "$stem" "$duration" "$target" "$tempo"
 }
 
-generate intro 6
-generate libre 60
-generate pandora 54
-generate china 56
-generate outro 12
+generate roman 120
+generate alpha-gal 45
+generate astra 45
+generate cluster 45
+generate pallas 40
+generate outro 10
 
 ffmpeg -nostdin -y -v error \
-  -i "$CLEAN/intro.wav" -i "$CLEAN/libre.wav" -i "$CLEAN/pandora.wav" \
-  -i "$CLEAN/china.wav" -i "$CLEAN/outro.wav" \
-  -filter_complex '[0:a][1:a][2:a][3:a][4:a]concat=n=5:v=0:a=1[outa]' \
+  -i "$CLEAN/roman.wav" -i "$CLEAN/alpha-gal.wav" -i "$CLEAN/astra.wav" \
+  -i "$CLEAN/cluster.wav" -i "$CLEAN/pallas.wav" -i "$CLEAN/outro.wav" \
+  -filter_complex '[0:a][1:a][2:a][3:a][4:a][5:a]concat=n=6:v=0:a=1[outa]' \
   -map '[outa]' -ac 1 -ar 48000 -c:a pcm_s16le "$NARRATION_OUTPUT"
 
 duration="$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$NARRATION_OUTPUT")"
-awk -v d="$duration" 'BEGIN {x=d-188; if (x<0) x=-x; if (x>0.002) exit 1}' || {
-  echo "Narration duration is not exactly 188 seconds: $duration" >&2
+awk -v d="$duration" 'BEGIN {x=d-305; if (x<0) x=-x; if (x>0.002) exit 1}' || {
+  echo "Narration duration is not exactly 305 seconds: $duration" >&2
   exit 1
 }
 printf 'Narration ready: %s seconds\n' "$duration"
