@@ -55,6 +55,8 @@ Instagram Reels seslendirmelerinde ücretsiz Microsoft Edge TTS `en-GB-RyanNeura
 
 Produce all future videos exclusively in English. Do not generate Turkish narration, Turkish on-screen text, Turkish thumbnails, Turkish CTA labels, or a separate Turkish video. This English-only rule also applies to Instagram Reels.
 
+Begin every video narration with the exact phrase “First of our news is”, immediately followed by the title of the first topic to be covered.
+
 Use the approved British male narrator `en-GB-RyanNeural` without clipped words or unexplained silence. The hook, narration, headings, exceptional one-sentence takeaways, thumbnail copy, and CTA labels must use natural English. Do not use the previous Turkish introduction or closing. End exactly: “That was our latest news. Stay with science, and stay tuned.” During the final 10 seconds, use the approved cinematic-glass CTA with English labels: a softly entering glass panel, a brief Like-icon response, a light accent on the Subscribe button, and a restrained animated notification bell. Do not display the channel name or `@newhorizons_21` on the main video’s closing screen.
 
 Mention at most one important financial figure or financial point per topic. Do not dwell on prices, fees, valuations, revenue, or profit.
