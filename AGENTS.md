@@ -1,8 +1,5 @@
 # Repository Guidelines
-
-
 ## Project Layout
-
 Keep researched stories and source links in `video/SOURCES.md`. Store narration and scene manifests under `video/`, reusable channel branding under `assets/branding/`, and motion clips under `assets/motion/`. Rendering scripts belong in `video/`; the only finished delivery should be `build/video/newhorizons.mp4`.
 
 Use `NewHorizons` as the only project and workflow-skill name. The skill must be named `newhorizons-start`; do not retain the legacy project name in code, documentation, folder names, configuration, or generated metadata.
@@ -34,17 +31,14 @@ Neden önemli?
 Köşeye küçük şekilde “This Week” eklenebilir.
 
 ## Approval Before Production
-
 Before producing a new video, read `video/SOURCES.md` and show the user the proposed topics, sources, and motion-video candidates. Do not render until the user approves them. Research exactly five high-quality, current, relevant, and engaging animated clips or short videos per topic. Prefer footage from cited source pages and authoritative publishers; do not use the legacy `png/` folder.
 
 Before starting each new production cycle, remove every `.mp3` and `.mp4` left from the previous cycle so old narration, source footage, main renders, or Reels cannot be mixed into the new work. Resolve the exact previous-cycle paths first and preserve non-media project files, scripts, manifests, branding, and the newly approved inputs.
 
 ## Video Format & Visual Direction
-
 Render at 1920×1080, 60 fps, H.264/AAC; never render in 4K. Target five minutes. Give the main first story two minutes and each of the four supporting stories about 45 seconds. Do not use still images in news content. Every topic must use exactly five animated clips or short videos. For the two-minute main story, keep each clip on screen for 20–24 seconds. For each supporting story, keep each clip on screen for 8–9 seconds. Never place the channel cover at the beginning; open immediately with a motion-footage hook. The static channel cover may appear only behind the closing CTA. Avoid a slide-deck appearance. Show only headings and exceptional one-sentence takeaways; animate those phrases in and out with restrained professional effects.
 
 ## Instagram Reels
-
 Do not create five Reels from the five main-video news stories. For each new main-video cycle, research exactly three independent Reels topics, one from each recurring category:
 
 1. Sports Biomechanics and Physics
@@ -65,7 +59,6 @@ Instagram Reels seslendirmelerinde ücretsiz Microsoft Edge TTS `en-GB-RyanNeura
 
 
 ## Narration & Closing
-
 Produce all future videos exclusively in English. Do not generate Turkish narration, Turkish on-screen text, Turkish thumbnails, Turkish CTA labels, or a separate Turkish video. This English-only rule also applies to Instagram Reels.
 
 Do not begin with the fixed phrase “First of our news is.” Before every new video, present several concise, audience-grabbing English hook options tailored to the main story and wait for the user's choice. Do not lock or render the narration before that approval. The selected first sentence should create curiosity and pair naturally with the opening motion footage.
@@ -75,7 +68,6 @@ Use the approved British male narrator `en-GB-RyanNeural` without clipped words 
 Mention at most one important financial figure or financial point per topic. Do not dwell on prices, fees, valuations, revenue, or profit.
 
 ## Verification, Cleanup & Delivery
-
 Verify resolution, frame rate, target duration, continuous audio, scene timing, overlays, the motion-footage opening, and final CTA. After every successful render, delete obsolete outputs, temporary audio, extracted frames, contact sheets, caches, and disposable render intermediates. Preserve approved source assets, scripts, manifests, branding, and the verified `newhorizons.mp4`.
 
 After verification and cleanup, ask whether the user wants the result pushed to GitHub. Never push without explicit approval; confirm the remote or branch if unclear.
