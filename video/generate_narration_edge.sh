@@ -17,11 +17,7 @@ NARRATION_SOURCE="$NARRATION_SOURCE" NARRATION_PARTS_DIR="$PARTS_DIR" \
   node "$ROOT/video/src/extract_narration_parts.mjs"
 
 generate() {
-  local stem="$1"
-  local target="$2"
-  local raw="$RAW/$stem.mp3"
-  local clean="$CLEAN/$stem.wav"
-
+  local stem="$1" target="$2" raw="$RAW/$1.mp3" clean="$CLEAN/$1.wav"
   "$EDGE_PY" -m edge_tts --voice "$VOICE" --rate="$VOICE_RATE" --file "$TEXT/$stem.txt" --write-media "$raw"
   local duration tempo
   duration="$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$raw")"
@@ -29,28 +25,30 @@ generate() {
     echo "Narration section $stem is too far from target: raw=$duration target=$target" >&2
     exit 1
   }
-  ffmpeg -nostdin -y -v error -i "$raw" \
-    -af "atempo=$tempo,aresample=48000,apad=pad_dur=$target,atrim=duration=$target" \
-    -ac 1 -ar 48000 -c:a pcm_s16le "$clean"
+  ffmpeg -nostdin -y -v error -i "$raw" -af "atempo=$tempo,aresample=48000,apad=pad_dur=$target,atrim=duration=$target" -ac 1 -ar 48000 -c:a pcm_s16le "$clean"
   printf '%s raw=%s target=%s tempo=%s\n' "$stem" "$duration" "$target" "$tempo"
 }
 
-generate roman 120
-generate alpha-gal 45
-generate astra 45
-generate cluster 45
-generate pallas 40
+generate cold-open 5
+generate hook 7
+generate frame 8
+generate cwnet 100
+generate tissue 45
+generate amsr3 45
+generate liver 45
+generate brain 45
 generate outro 10
 
 ffmpeg -nostdin -y -v error \
-  -i "$CLEAN/roman.wav" -i "$CLEAN/alpha-gal.wav" -i "$CLEAN/astra.wav" \
-  -i "$CLEAN/cluster.wav" -i "$CLEAN/pallas.wav" -i "$CLEAN/outro.wav" \
-  -filter_complex '[0:a][1:a][2:a][3:a][4:a][5:a]concat=n=6:v=0:a=1[outa]' \
+  -i "$CLEAN/cold-open.wav" -i "$CLEAN/hook.wav" -i "$CLEAN/frame.wav" \
+  -i "$CLEAN/cwnet.wav" -i "$CLEAN/tissue.wav" -i "$CLEAN/amsr3.wav" \
+  -i "$CLEAN/liver.wav" -i "$CLEAN/brain.wav" -i "$CLEAN/outro.wav" \
+  -filter_complex '[0:a][1:a][2:a][3:a][4:a][5:a][6:a][7:a][8:a]concat=n=9:v=0:a=1[outa]' \
   -map '[outa]' -ac 1 -ar 48000 -c:a pcm_s16le "$NARRATION_OUTPUT"
 
 duration="$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$NARRATION_OUTPUT")"
-awk -v d="$duration" 'BEGIN {x=d-305; if (x<0) x=-x; if (x>0.002) exit 1}' || {
-  echo "Narration duration is not exactly 305 seconds: $duration" >&2
+awk -v d="$duration" 'BEGIN {x=d-310; if (x<0) x=-x; if (x>0.002) exit 1}' || {
+  echo "Narration duration is not exactly 310 seconds: $duration" >&2
   exit 1
 }
 printf 'Narration ready: %s seconds\n' "$duration"

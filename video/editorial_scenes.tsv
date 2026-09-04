@@ -1,38 +1,38 @@
 # kind|relative_path|duration_seconds|seek_seconds|layout
 # Main story: five 24-second motion clips (120 seconds).
-clip|assets/motion/2026-09-02/01-roman/01-launch.mp4|24|10|cover
-clip|assets/motion/2026-09-02/01-roman/02-beauty-pass.mp4|24|5|cover
-clip|assets/motion/2026-09-02/01-roman/03-l2-journey.mp4|24|2|cover
-cliploop|assets/motion/2026-09-02/01-roman/04-coronagraph.mov|24|0|cover
-clip|assets/motion/2026-09-02/01-roman/05-journey-to-space.mp4|24|12|cover
+cliploop|assets/motion/2026-09-04/01-cwnet/01-las-vegas.mp4|24|0|cover
+cliploop|assets/motion/2026-09-04/01-cwnet/02-urban.mp4|24|0|cover
+cliploop|assets/motion/2026-09-04/01-cwnet/03-control-screen.mp4|24|0|cover
+cliploop|assets/motion/2026-09-04/01-cwnet/04-navigation.mp4|24|0|cover
+cliploop|assets/motion/2026-09-04/01-cwnet/05-traffic.mp4|24|0|cover
 
 # Supporting story 1: five 9-second motion clips (45 seconds).
-clip|assets/motion/2026-09-02/02-alpha-gal/01-cdc.mp4|9|18|cover
-clip|assets/motion/2026-09-02/02-alpha-gal/02-scientific-american.mp4|9|8|contain_blur
-clip|assets/motion/2026-09-02/02-alpha-gal/03-mayo.mp4|9|15|cover
-clip|assets/motion/2026-09-02/02-alpha-gal/04-tick-macro.mp4|9|8|cover
-clip|assets/motion/2026-09-02/02-alpha-gal/05-lab-research.mp4|9|1|cover
+cliploop|assets/motion/2026-09-04/02-tissue/01-petri.mp4|9|0|cover
+cliploop|assets/motion/2026-09-04/02-tissue/02-cell-culture.mp4|9|0|cover
+cliploop|assets/motion/2026-09-04/02-tissue/03-liquid-drops.mp4|9|0|cover
+cliploop|assets/motion/2026-09-04/02-tissue/04-scientists.mp4|9|0|cover
+cliploop|assets/motion/2026-09-04/02-tissue/05-animated-cells.mp4|9|0|cover
 
 # Supporting story 2: five 9-second motion clips (45 seconds).
-clip|assets/motion/2026-09-02/03-astra/01-openai-defense.mp4|9|8|cover
-clip|assets/motion/2026-09-02/03-astra/02-cyber-lock.mp4|9|1|cover
-cliploop|assets/motion/2026-09-02/03-astra/03-binary-lock.mp4|9|0|cover
-clip|assets/motion/2026-09-02/03-astra/04-code-screen.mp4|9|1|cover
-clip|assets/motion/2026-09-02/03-astra/05-cyber-threat.mp4|9|5|cover
+cliploop|assets/motion/2026-09-04/03-amsr3/01-orbit.mp4|9|0|cover
+cliploop|assets/motion/2026-09-04/03-amsr3/02-detailed.mp4|9|0|cover
+cliploop|assets/motion/2026-09-04/03-amsr3/03-sunrise.mp4|9|0|cover
+cliploop|assets/motion/2026-09-04/03-amsr3/04-panels.mp4|9|0|cover
+cliploop|assets/motion/2026-09-04/03-amsr3/05-earth.mp4|9|0|cover
 
 # Supporting story 3: five 9-second motion clips (45 seconds).
-clip|assets/motion/2026-09-02/04-cluster/01-control-room.mp4|9|248|contain_blur
-clip|assets/motion/2026-09-02/04-cluster/02-samba-reentry.mp4|9|3|cover
-clip|assets/motion/2026-09-02/04-cluster/03-reentry-explained.mp4|9|96|cover
-clip|assets/motion/2026-09-02/04-cluster/04-salsa-animation.mp4|9|16|cover
-clip|assets/motion/2026-09-02/04-cluster/05-draco-animation.mp4|9|38|contain_blur
+cliploop|assets/motion/2026-09-04/04-liver/01-cells.mp4|9|0|cover
+cliploop|assets/motion/2026-09-04/04-liver/02-blood-mixer.mp4|9|0|cover
+cliploop|assets/motion/2026-09-04/04-liver/03-blood-cells.mp4|9|0|cover
+cliploop|assets/motion/2026-09-04/04-liver/04-microscope.mp4|9|0|cover
+cliploop|assets/motion/2026-09-04/04-liver/05-medical-scan.mp4|9|0|cover
 
-# Supporting story 4: five 8-second motion clips (40 seconds).
-clip|assets/motion/2026-09-02/05-pallas/01-cctv-launch.mp4|8|4|contain_blur
-clip|assets/motion/2026-09-02/05-pallas/01-cctv-launch.mp4|8|54|contain_blur
-clip|assets/motion/2026-09-02/05-pallas/02-cctv-capability.mp4|8|21|contain_blur
-clip|assets/motion/2026-09-02/05-pallas/03-seven-engine-test.mp4|8|1|contain_blur
-clip|assets/motion/2026-09-02/05-pallas/04-second-stage-test.mp4|8|5|cover
+# Supporting story 4: five 9-second motion clips (45 seconds).
+cliploop|assets/motion/2026-09-04/05-brain/01-brain-animation.mp4|9|0|cover
+cliploop|assets/motion/2026-09-04/05-brain/02-mri-tablet.mp4|9|0|cover
+cliploop|assets/motion/2026-09-04/05-brain/03-mri-machine.mp4|9|0|cover
+cliploop|assets/motion/2026-09-04/05-brain/04-scan-images.mp4|9|0|cover
+cliploop|assets/motion/2026-09-04/05-brain/05-concept.mp4|9|0|cover
 
-# Closing CTA: approved channel cover, ten seconds.
-still|assets/branding/new-horizons-cover.png|10|0|contain_static
+# Closing CTA: motion background, ten seconds; no channel name or handle.
+outro|assets/motion/2026-09-04/05-brain/01-brain-animation.mp4|10|0|cover

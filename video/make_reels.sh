@@ -11,7 +11,7 @@ node "$ROOT/video/src/generate_reel_overlays.mjs"
 
 render_vertical_clip() {
   local input="$1" seek="$2" duration="$3" output="$4"
-  ffmpeg -nostdin -y -v error -ss "$seek" -i "$input" \
+  ffmpeg -nostdin -y -v error -stream_loop -1 -ss "$seek" -i "$input" \
     -vf "split=2[fgsrc][bgsrc];[bgsrc]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,gblur=sigma=35,eq=brightness=-0.20:saturation=0.72[bg];[fgsrc]scale=1080:1920:force_original_aspect_ratio=decrease[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2,format=yuv420p,setparams=range=limited:color_primaries=bt709:color_trc=bt709:colorspace=bt709,fps=$FPS,trim=duration=$duration,setpts=PTS-STARTPTS,setsar=1" \
     -t "$duration" -an -c:v libx264 -preset veryfast -crf 17 -pix_fmt yuv420p -r "$FPS" \
     -color_range tv -color_primaries bt709 -color_trc bt709 -colorspace bt709 "$output"
@@ -70,42 +70,30 @@ render_reel() {
 
 case "${1:-all}" in
   1|all)
-    render_reel 1 "01-roman-space-telescope" "$OUT/audio/01-roman-space-telescope.wav" \
-      "assets/motion/2026-09-02/01-roman/01-launch.mp4|12" \
-      "assets/motion/2026-09-02/01-roman/02-beauty-pass.mp4|7" \
-      "assets/motion/2026-09-02/01-roman/03-l2-journey.mp4|3" \
-      "assets/motion/2026-09-02/01-roman/04-coronagraph.mov|2" \
-      "assets/motion/2026-09-02/01-roman/05-journey-to-space.mp4|16"
+    render_reel 1 "01-sports-biomechanics" "$OUT/audio/01-sports-biomechanics.wav" \
+      "assets/motion/2026-09-04/reels/01-sports/01-running.mp4|0" \
+      "assets/motion/2026-09-04/reels/01-sports/02-start.mp4|0" \
+      "assets/motion/2026-09-04/reels/01-sports/03-basketball.mp4|0" \
+      "assets/motion/2026-09-04/reels/01-sports/04-football.mp4|0" \
+      "assets/motion/2026-09-04/reels/01-sports/05-skateboard.mp4|0"
     [[ "${1:-all}" == 1 ]] && exit 0
     ;;
 esac
 
 case "${1:-all}" in
   remaining|all)
-    render_reel 2 "02-alpha-gal-antibodies" "$OUT/audio/02-alpha-gal-antibodies.wav" \
-      "assets/motion/2026-09-02/02-alpha-gal/01-cdc.mp4|24" \
-      "assets/motion/2026-09-02/02-alpha-gal/02-scientific-american.mp4|10" \
-      "assets/motion/2026-09-02/02-alpha-gal/03-mayo.mp4|18" \
-      "assets/motion/2026-09-02/02-alpha-gal/04-tick-macro.mp4|12" \
-      "assets/motion/2026-09-02/02-alpha-gal/05-lab-research.mp4|1"
-    render_reel 3 "03-astra-cybersecurity" "$OUT/audio/03-astra-cybersecurity.wav" \
-      "assets/motion/2026-09-02/03-astra/01-openai-defense.mp4|10" \
-      "assets/motion/2026-09-02/03-astra/02-cyber-lock.mp4|2" \
-      "assets/motion/2026-09-02/03-astra/03-binary-lock.mp4|0" \
-      "assets/motion/2026-09-02/03-astra/04-code-screen.mp4|1" \
-      "assets/motion/2026-09-02/03-astra/05-cyber-threat.mp4|6"
-    render_reel 4 "04-cluster-samba" "$OUT/audio/04-cluster-samba.wav" \
-      "assets/motion/2026-09-02/04-cluster/01-control-room.mp4|250" \
-      "assets/motion/2026-09-02/04-cluster/02-samba-reentry.mp4|4" \
-      "assets/motion/2026-09-02/04-cluster/03-reentry-explained.mp4|98" \
-      "assets/motion/2026-09-02/04-cluster/04-salsa-animation.mp4|18" \
-      "assets/motion/2026-09-02/04-cluster/05-draco-animation.mp4|40"
-    render_reel 5 "05-pallas-one" "$OUT/audio/05-pallas-one.wav" \
-      "assets/motion/2026-09-02/05-pallas/01-cctv-launch.mp4|5" \
-      "assets/motion/2026-09-02/05-pallas/01-cctv-launch.mp4|55" \
-      "assets/motion/2026-09-02/05-pallas/02-cctv-capability.mp4|22" \
-      "assets/motion/2026-09-02/05-pallas/03-seven-engine-test.mp4|1" \
-      "assets/motion/2026-09-02/05-pallas/04-second-stage-test.mp4|6"
+    render_reel 2 "02-hands-on-science" "$OUT/audio/02-hands-on-science.wav" \
+      "assets/motion/2026-09-04/reels/02-young-science/01-home.mp4|0" \
+      "assets/motion/2026-09-04/reels/02-young-science/02-children.mp4|0" \
+      "assets/motion/2026-09-04/reels/02-young-science/03-girl.mp4|0" \
+      "assets/motion/2026-09-04/reels/02-young-science/04-funnel.mp4|0" \
+      "assets/motion/2026-09-04/reels/02-young-science/05-baking-soda.mp4|0"
+    render_reel 3 "03-ai-archaeology" "$OUT/audio/03-ai-archaeology.wav" \
+      "assets/motion/2026-09-04/reels/03-ai-archaeology/01-site.mp4|0" \
+      "assets/motion/2026-09-04/reels/03-ai-archaeology/02-temple.mp4|0" \
+      "assets/motion/2026-09-04/reels/03-ai-archaeology/03-amphitheatre.mp4|0" \
+      "assets/motion/2026-09-04/reels/03-ai-archaeology/04-remote-sensing.mp4|0" \
+      "assets/motion/2026-09-04/reels/03-ai-archaeology/05-desert.mp4|0"
     ;;
   1) ;;
   *) echo "Usage: $0 [1|remaining|all]" >&2; exit 2 ;;

@@ -10,11 +10,9 @@ fs.mkdirSync(out, { recursive: true });
 
 const esc = (s) => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const titles = [
-  'ROMAN OPENS A WIDER UNIVERSE',
-  'A NEW CLUE FOR ALPHA-GAL',
-  'ASTRA CROSSES A CYBER THRESHOLD',
-  'SAMBA’S FIERY REENTRY',
-  'PALLAS-1 REACHES ORBIT',
+  'THE HIDDEN PHYSICS OF SPORT',
+  'MAKE AIR PRESSURE VISIBLE',
+  'CAN AI READ THE PAST?',
 ];
 
 for (const [i, title] of titles.entries()) {

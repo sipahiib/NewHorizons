@@ -1,113 +1,150 @@
-# Haftalık Bilim ve Teknoloji Haber Adayları
+# NewHorizons — Editorial Sources
 
-Araştırma aralığı: **27 Ağustos–2 Eylül 2026**
+## Cycle: 28 August–4 September 2026
 
-Durum: **Kullanıcı beş haberi, sıralamayı, hareketli kaynakları ve üçüncü hook seçeneğini onayladı; üretim devam ediyor.**
+**Status:** User approved the proposed order, Hook 1, and all three Reels. Production completed on 4 September 2026.
 
-Önerilen yapı: **1 ana haber + 4 destek haber.** Ana video İngilizce, yaklaşık 5 dakika, 1920×1080 ve 60 fps olacaktır.
+**Outputs:** `build/video/newhorizons.mp4` and three approved files under `build/reels/`.
 
-## 1. Ana Haber — NASA’s Roman Space Telescope Begins Its Journey
+## Proposed Main Story — Explainable AI for Self-Driving Cars (United States)
 
-- **Bölge / alan:** ABD — uzay ve astronomi
-- **Tarih:** 30 Ağustos–1 Eylül 2026
-- **Özet:** NASA’nın Nancy Grace Roman Uzay Teleskobu, 30 Ağustos’ta Falcon Heavy ile fırlatıldı. Teleskop L2 noktasına ilerlerken güneş kalkanı ve yüksek kazançlı anteni açıldı; koronagraf sistemi 1 Eylül’de çalıştırıldı.
-- **Neden önemli:** Roman, Hubble’ın en az 100 katı görüş alanıyla karanlık enerji, galaksi evrimi ve ötegezegenler üzerinde geniş ölçekli araştırmalar yapacak.
-- **Ana kaynaklar:** [NASA görev sayfası](https://science.nasa.gov/mission/roman-space-telescope/) · [NASA Roman güncellemeleri](https://science.nasa.gov/blogs/roman/2026/09/) · [Fırlatma haberi](https://science.nasa.gov/blogs/roman/2026/08/30/nasas-roman-space-telescope-launches/)
+**Target duration:** 2:00
+**Editorial angle:** MIT and Motional's CW-Net converts a vehicle planner's hidden reasoning into human-readable concepts. Track and simulation tests indicate that the explanations helped people predict vehicle behaviour without changing driving performance. Frame this as a safety and transparency advance, not proof that autonomous driving is solved.
 
-### Hareketli görüntü adayları — tam 5
+**Primary sources:**
 
-1. [NASA fırlatma yayını kaydı — Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Launch_of_the_Roman_Space_Telescope_(NASA_livestream).webm) — Falcon Heavy kalkışı ve yükseliş görüntüsü.
-2. [NASA SVS — Roman 2026 Beauty Passes](https://svs.gsfc.nasa.gov/20416) — teleskobun sinematik, indirilebilir 1080p uzay animasyonları.
-3. [NASA SVS — Roman Launch and Orbit at L2](https://svs.gsfc.nasa.gov/5673) — Dünya’dan L2 yörüngesine yolculuk görselleştirmesi.
-4. [NASA SVS — Coronagraph Animation](https://svs.gsfc.nasa.gov/20243) — yıldız ışığının engellenip ötegezegenin görünür hâle gelmesi.
-5. [NASA SVS — Roman’s Journey to Space](https://svs.gsfc.nasa.gov/15058/) — temiz oda, taşıma ve fırlatma sahasına hazırlık görüntüleri.
+- [MIT News — System helps humans predict when self-driving cars will make mistakes](https://news.mit.edu/2026/system-helps-humans-predict-when-self-driving-cars-will-make-mistakes-0902)
+- [Nature paper — Explainable deep learning improves human mental models of self-driving cars](https://www.nature.com/articles/s41586-026-10950-5)
 
-## 2. Rare Antibodies Could Point Toward an Alpha-Gal Treatment
+**Opening hook options (choose one):**
 
-- **Bölge / alan:** ABD — tıp ve immünoloji
-- **Tarih:** 1 Eylül 2026
-- **Özet:** NIH araştırmacıları, kene ısırığıyla ilişkilendirilen alfa-gal sendromunda alerjik IgE bağlanmasını laboratuvar ortamında engelleyebilen nadir monoklonal antikorlar belirledi.
-- **Neden önemli:** Alfa-gal sendromu için bugün özel bir tedavi veya koruyucu yöntem bulunmuyor. Bulgular umut verici olsa da henüz insanlarda kanıtlanmış bir tedavi değil; sonraki aşama daha geniş laboratuvar ve klinik çalışmaları gerektiriyor.
-- **Ana kaynak:** [NIH — Rare antibodies with potential to combat alpha-gal syndrome](https://www.nih.gov/news-events/news-releases/nih-researchers-identify-rare-antibodies-potential-combat-alpha-gal-syndrome)
+1. “What if a self-driving car could reveal the hidden reason behind every sudden decision?”
+2. “The hardest part of trusting an autonomous car is knowing what it will do next.”
+3. “MIT researchers have opened the black box inside a self-driving car — in real time.”
 
-### Hareketli görüntü adayları — tam 5
+**Exactly five motion candidates:**
 
-1. [CDC — When a Tick Bite Causes a Red Meat Allergy](https://www.cdc.gov/alpha-gal-syndrome/communication-resources/video-tick-bite.html) — resmî hasta öyküsü ve hastalığın etkileri.
-2. [Scientific American — Alpha-gal syndrome, explained](https://www.youtube.com/watch?v=ZZXHAlkrPmI) — kene–alfa-gal bağlantısını anlatan güncel bilim videosu.
-3. [Mayo Clinic — A tick to blame for the alpha-gal meat allergy](https://www.youtube.com/watch?v=AJ9CXsGInkQ) — klinik açıklama ve destekleyici görüntüler.
-4. [Pixabay — Tick macro footage](https://pixabay.com/videos/tick-common-ram-ixodes-ricinus-41573/) — 1920×1080, lisansı açık yakın plan kene videosu.
-5. [Pexels — Scientist conducting laboratory research](https://www.pexels.com/video/a-man-doing-research-8534540/) — modern laboratuvar ve mikroskop çalışması, ücretsiz kullanım.
+1. [Autonomous vehicle on a Las Vegas street](https://www.pexels.com/video/autonomous-vehicle-on-las-vegas-street-31761705/)
+2. [Autonomous vehicle in an urban setting](https://www.pexels.com/video/autonomous-vehicle-in-urban-setting-streets-36629601/)
+3. [Self-driving electric car and control screen](https://www.pexels.com/video/self-driving-electric-car-in-action-32024440/)
+4. [GPS navigation in city traffic](https://www.pexels.com/video/driving-with-gps-navigation-in-city-traffic-37505403/)
+5. [Aerial urban traffic and crosswalks](https://www.pexels.com/video/aerial-view-of-busy-urban-street-traffic-30609023/)
 
-## 3. OpenAI Says Astra Reached a Critical Cybersecurity Threshold
+## Support Story 1 — Self-Organising Cultivated Tissue (Europe)
 
-- **Bölge / alan:** ABD — yapay zekâ ve siber güvenlik
-- **Tarih:** 1 Eylül 2026
-- **Özet:** OpenAI, Astra’nın Hazırlık Çerçevesi kapsamındaki “Critical” siber güvenlik eşiğine ulaşan ilk modeli olduğunu açıkladı. Şirkete göre model, belirli araç ve erişimlerle daha önce bilinmeyen açıkları bulup çalışan istismar zincirleri geliştirebiliyor.
-- **Neden önemli:** Gelişme savunma amaçlı güvenlik çalışmalarını hızlandırabilir; aynı yetenekler kötüye kullanım riski taşıdığı için erişim, izleme ve yetkilendirme önlemleri kritik hâle geliyor. İlk erişim sınırlı test grupları üzerinden sağlanacak.
-- **Ana kaynaklar:** [OpenAI — Path to Astra](https://openai.com/index/path-to-astra/) · [OpenAI — Daybreak](https://openai.com/daybreak/)
+**Target duration:** 0:45
+**Editorial angle:** EMBL Barcelona researchers grew 0.6-millimetre bovine tissue aggregates containing muscle, nerve, and vessel-like cells. Emphasise that this is an early research platform, not a market-ready steak; scale and cost remain major barriers.
 
-### Hareketli görüntü adayları — tam 5
+**Primary sources:**
 
-1. [OpenAI — Cisco Builds AI Defense with Codex](https://www.youtube.com/watch?v=oRsn3pyeXuw) — resmî OpenAI kanalından savunma amaçlı siber güvenlik çalışması; Astra sayfasında doğrudan indirilebilir video bulunamadığı için hareketli resmî alternatif olarak kullanılıyor.
-2. [Pixabay — Cybersecurity and flowing binary data](https://pixabay.com/videos/cybersecurity-data-protection-340193/) — 4K/59 fps dijital kilit animasyonu, 1080p’ye ölçeklenecek.
-3. [Pixabay — Digital lock and binary code](https://pixabay.com/videos/cybersecurity-digital-lock-318322/) — 4K güvenlik döngüsü, lisansı açık.
-4. [Pexels — Close-up code display](https://www.pexels.com/video/close-up-of-computer-screen-code-display-29458457/) — kod inceleme ve açık arama bölümü için gerçek ekran çekimi.
-5. [Pexels — Cybersecurity threat in action](https://www.pexels.com/video/cybersecurity-threat-hacker-in-action-32829629/) — tehdit tarafını temsil eden karanlık ortam çekimi; kısa ve ölçülü kullanılacak.
+- [EMBL — Bovine stem cells offer new approach to future cultivated steak research](https://www.embl.org/news/science-technology/bovine-stem-cells-offer-new-approach-to-future-cultivated-steak-research/)
+- [Nature Communications paper](https://doi.org/10.1038/s41467-026-76569-2)
 
-## 4. ESA Records Cluster Satellite Samba’s Fiery Reentry
+**Exactly five motion candidates:**
 
-- **Bölge / alan:** Avrupa — uzay güvenliği ve mühendislik
-- **Tarih:** 31 Ağustos–1 Eylül 2026
-- **Özet:** ESA’nın Cluster filosundaki Samba uydusu, Güney Pasifik üzerinde hedeflenmiş bir yeniden girişle atmosfere girdi. ROSIE araştırma uçağı olayı kaydetti; nihai zaman tahmini saniyesi saniyesine doğru çıktı. Tango’nun yeniden girişi de bir gün sonra planlandı.
-- **Neden önemli:** Gerçek parçalanma verileri, gelecekte tamamen yanarak yok olacak “design-for-demise” uyduların geliştirilmesine ve atmosferik etkilerin daha iyi anlaşılmasına yardım edecek.
-- **Ana kaynaklar:** [ESA — Samba’s fiery farewell recorded](https://www.esa.int/Space_Safety/Space_Debris/Samba_s_fiery_farewell_recorded) · [ESA — Observing Samba and Tango](https://www.esa.int/Space_Safety/Space_Debris/Observing_Samba_and_Tango_s_reentries)
+1. [Petri dish specimen close-up](https://www.pexels.com/video/close-up-shot-of-petri-dish-with-specimen-4123377/)
+2. [Cell-culture handling](https://www.pexels.com/video/a-person-holding-a-petri-dish-7705427/)
+3. [Liquid drops in a Petri dish](https://www.pexels.com/video/drops-of-liquid-in-a-petri-dish-8392554/)
+4. [Scientists working with samples](https://www.pexels.com/video/a-man-dropping-samples-on-the-petri-dish-4120947/)
+5. [Animated cells in motion](https://www.pexels.com/video/animated-cells-in-motion-abstract-video-34913408/)
 
-### Hareketli görüntü adayları — tam 5
+## Support Story 2 — A Satellite Upgrade for Rain Forecasts (Japan)
 
-1. [ESA TV — Samba final reentry, ESOC control room](https://www.esa.int/esatv/Videos/2026/08/ROSIE_Cluster_s_Samba_and_Tango_Re-entry_Observation_Campaign/Cluster-Samba_final_reentry_-_ESOC_control_room_reactions_following_loss_of_signal) — 1080p görev kontrolü ve sinyal kaybı anı.
-2. [ESA — Samba reentry recorded](https://www.esa.int/ESA_Multimedia/Images/2026/09/Samba_s_reentry_recorded) — ROSIE uçağının gerçek yeniden giriş kaydı.
-3. [ESA TV — Cluster reentry explained](https://www.esa.int/esatv/Videos/2024/09/Cluster_reentry_explained_world_s_first_targeted_reentry) — hedeflenmiş yeniden giriş sürecini açıklayan resmî video.
-4. [ESA TV — Cluster’s Salsa reentry animation](https://www.esa.int/esatv/Videos/2024/08/Cluster_s_Salsa_satellite_primed_to_reenter_and_break_up) — aynı uydu ailesinin parçalanma ve yörünge animasyonu.
-5. [ESA TV — Draco atmospheric reentry animation](https://www.esa.int/esatv/Videos/2025/12/Draco_mission_animations/Draco_atmospheric_reentry_from_the_inside) — atmosferik parçalanmanın içten görünümünü anlatan 4K animasyon.
+**Target duration:** 0:45
+**Editorial angle:** JAXA and the Japan Meteorological Agency report that AMSR3 microwave observations aboard GOSAT-GW improve atmospheric water-vapour analysis and precipitation forecasts. Operational use is scheduled to begin on 8 September 2026.
 
-## 5. China’s Reusable PALLAS-1 Rocket Completes Its Maiden Flight
+**Primary source:**
 
-- **Bölge / alan:** Çin — ticari uzay ve roket mühendisliği
-- **Tarih:** 1–2 Eylül 2026
-- **Özet:** Galactic Energy’nin iki aşamalı sıvı yakıtlı PALLAS-1 Y1 roketi, Dongfeng ticari uzay bölgesinden yaptığı ilk uçuşta hedef yörüngeye ulaştı. İlk kademe, yedi adet CQ-50 sıvı oksijen/kerosen motoru kullanıyor.
-- **Neden önemli:** Uçuş, Çin’in özel sektör orta sınıf fırlatma kapasitesini büyütüyor. Tasarımın sonraki hedefi ilk kademeyi dikey indirip yeniden kullanmak; bu ilk görevde iniş denemesi yapılmadı.
-- **Ana kaynaklar:** [Xinhua — PALLAS-1 completes maiden flight](https://english.news.cn/20260901/72e9fd20c7a44aa982a46523f4ef125e/c.html) · [Galactic Energy — maiden-flight announcement](https://www.galactic-energy.cn/index.php/Show/cid/11/aid/275) · [CGTN — technical details](https://news.cgtn.com/news/2026-09-01/PALLAS-1-Y1-rocket-succeeds-in-maiden-flight-1Q4WZ3wbli8/p.html)
+- [JAXA/JMA — Start of AMSR3 data use in numerical weather prediction](https://www.jaxa.jp/press/2026/09/20260902-1_j.html)
 
-### Hareketli görüntü adayları — tam 5
+**Exactly five motion candidates:**
 
-1. [CCTV — PALLAS-1 launch report, 1 September](https://tv.cctv.com/2026/09/01/VIDEP85w9EW2p7XsaYJ9dZC0260901.shtml) — kalkış ve yükseliş görüntüleri.
-2. [CCTV — PALLAS-1 capability report, 2 September](https://tv.cctv.com/2026/09/02/VIDEPuVgN1MWHwYo9JA5UtCO260902.shtml) — roketin 5–7 ton LEO kapasitesini gösteren güncel haber videosu.
-3. [CCTV — PALLAS-1 launch report, alternate segment](https://tv.cctv.com/2026/09/01/VIDEP85w9EW2p7XsaYJ9dZC0260901.shtml) — aynı resmî kaydın ilk sahneyle çakışmayan ikinci kalkış bölümü; CGTN haber sayfasında indirilebilir hareketli kaynak bulunamadığı için kullanılıyor.
-4. [Galactic Energy — seven-engine combined swing test](https://www.galactic-energy.cn/index.php/En/Show/cid/24/aid/266) — yedi CQ-50 motorunun birlikte çalışmasını gösteren şirket videosu.
-5. [CGTN — PALLAS-1 second-stage hot-fire test](https://news.cgtn.com/news/2025-09-28/China-successfully-test-fires-second-stage-of-PALLAS-1-rocket-1H2GlpyGYKY/p.html) — 40 saniyelik resmî motor testi görüntüsü.
+1. [Satellite orbiting Earth](https://www.pexels.com/video/satellite-orbiting-the-earth-854275/)
+2. [Detailed satellite above Earth](https://www.pexels.com/video/satellite-orbiting-planet-earth-in-space-31084229/)
+3. [Satellite at orbital sunrise](https://www.pexels.com/video/orbiting-satellite-over-earth-at-sunrise-34333825/)
+4. [Satellite deploying solar panels](https://www.pexels.com/video/satellite-in-space-15164036/)
+5. [Earth, atmosphere, and weather from orbit](https://www.pexels.com/video/view-from-satellite-on-earth-10409075/)
 
-## Sonraki Üretim İçin Bağımsız Instagram Reels Kategorileri
+## Support Story 3 — Immune Cells That “Eat” Liver Scars (China)
 
-Durum: **Henüz araştırılmadı; kullanıcı araştırmanın şimdilik yapılmamasını istedi.** Ana videonun yukarıdaki beş konusu korunacak ve bunlardan ayrıca Reels üretilmeyecek.
+**Target duration:** 0:45
+**Editorial angle:** A CAS-led study identified ReM2 macrophages that directly engulf collagen- and fibronectin-rich extracellular matrix during liver-fibrosis regression. Present FCGR4 and ITGA4 as potential research targets, not an available treatment.
 
-Bir sonraki üretim döngüsünde aşağıdaki üç kategorinin her biri için bir güncel ve görsel açıdan güçlü konu araştırılacak:
+**Primary sources:**
 
-1. **Sporun Biyomekaniği ve Fiziği**
-2. **Genç Kaşifler İçin Evde Uygulamalı Bilim**
-3. **AI’ın Arkeoloji Alanındaki Gelişmeleri**
+- [Chinese Academy of Sciences — Study reveals how macrophages eat liver scar tissue](https://english.cas.cn/newsroom/research-news/202609/t20260901_1189590.shtml)
 
-Bulunan üç konu; doğrulanmış bilgi kaynakları, neden ilgi çekici oldukları ve yüksek kaliteli hareketli görüntü adaylarıyla birlikte bu başlığın altına eklenecek. Önce kullanıcıya sunulacak; açık onay alınmadan medya indirilmeyecek, anlatım yazılmayacak ve render başlatılmayacak. Onaydan sonra her kategoriden yalnızca bir video olmak üzere toplam üç Instagram Reels üretilecek.
+**Exactly five motion candidates:**
 
-## Onay Sonrası Uygulanacak Kurallar
+1. [Animated cells in motion](https://www.pexels.com/video/animated-cells-in-motion-abstract-video-34913408/)
+2. [Microscope and blood mixer](https://www.pexels.com/video/a-rotating-blood-mixer-in-a-lab-8381577/)
+3. [Animated blood cells in a vessel](https://www.pexels.com/video/dynamic-animation-of-red-blood-cells-35220823/)
+4. [Laboratory scientist and microscope](https://www.pexels.com/video/young-laboratory-medicine-science-4120946/)
+5. [Medical scan on a monitor](https://www.pexels.com/video/medical-equipment-855481/)
 
-- Haber sırası yukarıdaki gibi korunacak. Bu video için kullanıcı tarafından onaylanan ilk cümle şudur: **“NASA has just launched a new eye into space, and it could rewrite what we know about the universe.”** Bundan sonraki her yeni videoda ana habere özel birkaç İngilizce hook seçeneği önce kullanıcıya sunulacak ve anlatım kullanıcı seçimi olmadan kilitlenmeyecek.
-- Her konu için yalnızca yukarıdaki **beş hareketli kaynak** kullanılacak; sabit resim ve eski `png/` klasörü kullanılmayacak.
-- Ana haber 2 dakika sürecek ve beş hareketli klibin her biri 20–24 saniye gösterilecek. Dört destek haberinin her biri yaklaşık 45 saniye sürecek ve her haberdeki beş klibin her biri 8–9 saniye gösterilecek. Lisans ve doğrudan indirme bağlantıları indirmeden önce ayrıca doğrulanacak.
-- Ana video İngilizce, 1920×1080, 60 fps H.264/AAC ve yaklaşık 5 dakika olacak; başlangıçta kapak resmi bulunmayacak.
-- Kapanışta kapak görseli üzerinde profesyonel animasyonlu beğen/abone ol çağrısı gösterilecek; kanal adı yazılmayacak.
-- Ana videonun beş haberinden Reels hazırlanmayacak. Bunun yerine yukarıdaki üç bağımsız kategoriden kullanıcı tarafından onaylanan birer konu için toplam üç adet 30–35 saniyelik, 1080×1920 ve 60 fps Instagram Reels videosu hazırlanacak.
-- Kullanılmayan geçici dosyalar üretim sonunda temizlenecek. GitHub’a gönderim için ayrıca izin istenecek; `build/video/editorial-en/` gönderilmeyecek.
+## Support Story 4 — A Wave-Based Theory of Conscious Thought (United States)
 
-## Onay Noktası
+**Target duration:** 0:45
+**Editorial angle:** MIT neuroscientists propose in a review that travelling brain waves may provide flexible analogue computation that coordinates cognition and unified awareness. Clearly label this as a theory, not a settled mechanism of consciousness.
 
-Beşli, sıralama, kaynaklar ve giriş cümlesi kullanıcı tarafından onaylanmıştır. Ana video ve Reels üretimi bu kayıt temel alınarak sürdürülecektir.
+**Primary sources:**
+
+- [MIT News — Cognition and consciousness arise from analog computations, says new theory](https://news.mit.edu/index.php/2026/cognition-consciousness-arise-from-analog-computations-says-new-theory-0901)
+
+**Exactly five motion candidates:**
+
+1. [Dynamic brain-function animation](https://www.pexels.com/video/a-brain-with-a-pink-glow-in-the-dark-background-18388881/)
+2. [Brain MRI reviewed on a tablet](https://www.pexels.com/video/a-brain-magnetic-resonance-imaging-result-6010766/)
+3. [MRI scanner in operation](https://www.pexels.com/video/a-mri-machine-in-a-medical-facility-7088941/)
+4. [Brain CT and MRI images](https://www.pexels.com/video/presenting-x-ray-images-5724101/)
+5. [Conceptual brain animation](https://www.pexels.com/video/a-tool-squeezing-a-brain-9162016/)
+
+## Reel Candidates — Approval Required
+
+### Reel 1 — Sports Biomechanics and Physics
+
+**Concept:** “Why slow motion exposes the hidden physics of elite movement.” Use the current ETH Sports Research Forum as the timely peg; explain force, impulse, balance, and trajectory with one clear sporting example.
+**Source:** [ETH Zurich — Sports Research Forum, 31 August–4 September 2026](https://hest.ethz.ch/en/news/events.html)
+
+**Exactly five motion candidates:**
+
+1. [Runner crossing the start line in slow motion](https://www.pexels.com/video/knee-level-shot-of-a-runner-passing-the-starting-line-8533917/)
+2. [Athlete at the starting blocks](https://www.pexels.com/video/tilt-shot-of-a-person-kneeling-at-a-starting-line-8533474/)
+3. [Basketball trajectory in slow motion](https://www.pexels.com/video/basketball-falling-through-a-hoop-in-slow-motion-12787247/)
+4. [Football balance and coordination](https://www.pexels.com/video/a-man-playing-with-a-football-10349006/)
+5. [Skateboard jump in slow motion](https://www.pexels.com/video/man-jumping-on-skateboard-13184995/)
+
+### Reel 2 — Hands-on Science at Home for Young Explorers
+
+**Concept:** “A safe two-minute experiment that makes invisible forces visible.” Final experiment and safety wording will be chosen from ESA’s current classroom projects before scripting.
+**Source:** [ESA — Back to School 2026–2027: five STEM projects](https://www.esa.int/Education/Teachers_Corner/Back_to_School_2026-2027_5_school_projects_to_engage_your_students_in_STEM)
+
+**Exactly five motion candidates:**
+
+1. [At-home parent-and-child science experiment](https://www.pexels.com/video/a-boy-doing-experiment-7605719/)
+2. [Children doing a science experiment](https://www.pexels.com/video/children-doing-science-experiment-8471232/)
+3. [Young girl mixing liquids](https://www.pexels.com/video/a-young-girl-doing-an-experiment-8926576/)
+4. [Boy using a funnel and safety gear](https://www.pexels.com/video/boy-experiment-at-lab-7605358/)
+5. [Baking-soda classroom experiment](https://www.pexels.com/video/laboratory-experiment-7605356/)
+
+### Reel 3 — Advances in AI for Archaeology
+
+**Concept:** “Can AI interpret the past without rewriting it?” Introduce Lund University’s TRACE project, which studies how generative AI shapes archaeological questions, evidence, uncertainty, and scholarly responsibility.
+**Source:** [Lund University — Transparent Reasoning in AI-mediated Cultural Enquiry](https://portal.research.lu.se/en/projects/transparent-reasoning-in-ai-mediated-cultural-enquiry/)
+
+**Exactly five motion candidates:**
+
+1. [Drone view of an archaeological site](https://www.pexels.com/video/aerial-view-of-ancient-archaeological-site-34246778/)
+2. [Ancient temple ruins from above](https://www.pexels.com/video/aerial-shot-of-ruins-7048573/)
+3. [Ancient ruins and amphitheatre](https://www.pexels.com/video/aerial-view-of-ancient-ruins-and-amphitheater-30616218/)
+4. [Remote-sensing view of an archaeological landscape](https://www.pexels.com/video/aerial-view-of-ancient-archaeological-site-30485433/)
+5. [Ancient desert ruins from above](https://www.pexels.com/video/stunning-aerial-view-of-ancient-ruins-in-desert-30131338/)
+
+## Production Constraints After Approval
+
+- Main programme: English, 1920×1080, 60 fps, H.264/AAC; approximately five minutes.
+- Narration: Microsoft Edge TTS `en-GB-RyanNeural`, rate `-2%`.
+- Motion only; exactly five clips per topic; licensing and downloadable resolution rechecked before acquisition.
+- Final ten seconds: approved cinematic glass CTA. Exact final line: “That was our latest news. Stay with science, and stay tuned.”
+- Reels: three independent 30–35 second videos, 1080×1920 at 60 fps, using the same narrator.
+- No download, narration, editing, render, commit, push, or publication before explicit approval.

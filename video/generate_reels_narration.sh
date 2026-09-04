@@ -11,11 +11,9 @@ RATE="-2%"
 mkdir -p "$OUT"
 
 stems=(
-  01-roman-space-telescope
-  02-alpha-gal-antibodies
-  03-astra-cybersecurity
-  04-cluster-samba
-  05-pallas-one
+  01-sports-biomechanics
+  02-hands-on-science
+  03-ai-archaeology
 )
 
 invalid=0
