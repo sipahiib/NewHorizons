@@ -13,10 +13,12 @@ Sources.md altına yazılan yeni haberlerle ilgili şunları yap:
 İlk 15 saniyeyi güçlendir: Videoya kanal introsuyla değil, haftanın en çarpıcı gelişmesiyle başla. Örneğin: “Bu hafta bilim dünyasında yapay zekâdan Mars’a kadar üç gelişme öne çıktı. Ama bir tanesi günlük hayatımızı beklenenden çok daha erken değiştirebilir.”
 
 * video formatı:
-0:00–0:15 — Hook
-Haftanın en dikkat çekici 2–3 gelişmesini çok kısa göster.
-0:15–0:30 — Çerçeve
-“Bu hafta seçtiğim 5 bilimsel gelişme ve neden önemli oldukları…”
+0:00-0:05
+Şöyle bir çarpıcı cümleyle başla: Bu hafta bilim insanları X konusunda şaşırtıcı bir sonuç açıkladı, keşfetti, vs.
+0:05–0:12 — Hook
+Haftanın en dikkat çekici gelişmesini profesyonel bir görselle göster.
+0:12–0:20 — Çerçeve
+Buna benzer cümle oluştur: “Ayrıca 4 önemli gelişme daha var. En ilginciyle başlayalım...”
 
 * Haberlerde şu soruların cevaplarını işle:
 Ne oldu?
