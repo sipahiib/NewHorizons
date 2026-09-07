@@ -35,6 +35,19 @@ Before starting each new production cycle, remove every `.mp3` and `.mp4` left f
 ## Video Format & Visual Direction
 Render at 1920×1080, 60 fps, H.264/AAC; never render in 4K. Target five minutes. Give the main first story minimum 1.5 minutes and each of the four supporting stories about 45 seconds. Do not use still images in news content. Every topic must use exactly five animated clips or short videos. For the 1.5-2 minute main story, keep each clip on screen for 20–24 seconds. For each supporting story, keep each clip on screen for 8–9 seconds. Never place the channel cover at the beginning; open immediately with a motion-footage hook. The static channel cover may appear only behind the closing CTA. Avoid a slide-deck appearance. Show only headings and exceptional one-sentence takeaways; animate those phrases in and out with restrained professional effects.
 
+## Cover Images — Persistent Visual Preferences
+
+Create a separate high-quality, topic-relevant cover image for every main video and every Shorts/Reels video. For a multi-story main video, lead with the main story rather than a crowded collage.
+
+- Main-video covers: 1920×1080, 16:9 landscape. Shorts/Reels covers: 1080×1920, 9:16 portrait.
+- Make the main visual the focal point. Keep slogan text noticeably smaller than the original sports cover; avoid oversized typography that dominates the image.
+- Use concise, natural English slogans with clear mobile readability, comfortable margins and no overlap obscuring the main subject.
+- Do not put “Illustrative visual” on cover images. Do not substitute a similar illustrative-disclaimer caption on the cover.
+- Keep visuals closely connected to the approved topic, polished and scientifically credible; do not imply unproven results or identify generated people as actual study participants.
+- Save finished covers under `assets/covers/`. Preserve prior versions unless replacement is explicitly requested.
+
+These are cover-image preferences, not permission to remove provenance disclosures from footage inside the videos. Covers are separate assets; do not insert a static cover at the start of the news video or change existing video content solely to create a cover.
+
 ## Instagram Reels
 For each new main-video cycle, research exactly three independent Reels topics, one from each recurring category:
 
