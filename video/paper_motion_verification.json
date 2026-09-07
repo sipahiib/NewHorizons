@@ -1,0 +1,22 @@
+{
+  "project": "NewHorizons",
+  "verified_date": "2026-09-07",
+  "source_type": "Original procedural SVG animation rasterized with sharp and encoded using ffmpeg",
+  "script": "video/render_paper_motion.mjs",
+  "directory": "assets/motion/2026-09-07/reels/paper-illustrative",
+  "count": 5,
+  "all_files": {"width": 1920, "height": 1080, "frame_rate": "60/1", "frames": 420, "duration_seconds": 7, "video_codec": "h264", "audio_streams": 0},
+  "label": "Illustrative animation · Not to scale",
+  "label_every_frame": "Unconditional SVG overlay in renderer; sampled decoded frames confirmed",
+  "motion_test": "Mean absolute RGB difference between decoded frames at 1 and 5 seconds, resized to 240x135; 0 would be identical",
+  "clips": [
+    {"file": "01-rotor-drop.mp4", "difference": 5.2269753086419755, "observed": "Rotation around vertical axis with descent and moving air traces"},
+    {"file": "02-cut-lines.mp4", "observed": "Corrected after coordinator review: animated central cut and short side slits; lower side panels remain attached for inward folding. Replacement source preview reviewed; decoded probe confirms 7 seconds, 420 frames, 1920x1080 at 60 fps."},
+    {"file": "03-opposite-folds.mp4", "difference": 7.131460905349794, "observed": "Two adjacent upper paper blades fold in opposite directions out of the original plane"},
+    {"file": "04-equal-height.mp4", "difference": 9.14712962962963, "observed": "Two rotors begin at equal body height and rotate while descending; explicitly schematic comparison, not measured performance"},
+    {"file": "05-repeat-and-time.mp4", "difference": 3.1902057613168724, "observed": "Repeated drop cycles and turning stopwatch hand without numeric measurement values"}
+  ],
+  "review": "Source preview plus decoded multi-timepoint contact sheets visually inspected; sampled motion review, not continuous realtime playback",
+  "limitations": ["Paper motion and descent are illustrative, not a physics simulation", "No real experimental times or comparative performance data are claimed", "Final Reels must contain the entire landscape frame and use a dark blurred duplicate background; these source clips are not the final vertical deliverable"],
+  "temporary_qa_images_removed": true
+}

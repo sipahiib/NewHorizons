@@ -1,0 +1,739 @@
+{
+  "purpose": "Disposable render intermediates, extracted QA frames and temporary narration only",
+  "files": [
+    {
+      "file": "build/video/editorial-en/concat.txt",
+      "bytes": 2759
+    },
+    {
+      "file": "build/video/editorial-en/disclosures/centuria.webp",
+      "bytes": 5988
+    },
+    {
+      "file": "build/video/editorial-en/disclosures/generic.webp",
+      "bytes": 3906
+    },
+    {
+      "file": "build/video/editorial-en/disclosures/museum.webp",
+      "bytes": 6406
+    },
+    {
+      "file": "build/video/editorial-en/disclosures/samsung.webp",
+      "bytes": 5632
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene01.mp4",
+      "bytes": 759948
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene02.mp4",
+      "bytes": 811928
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene03.mp4",
+      "bytes": 418043
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene04.mp4",
+      "bytes": 573665
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene05.mp4",
+      "bytes": 354274
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene06.mp4",
+      "bytes": 518857
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene07.mp4",
+      "bytes": 494643
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene08.mp4",
+      "bytes": 589502
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene09.mp4",
+      "bytes": 527777
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene10.mp4",
+      "bytes": 626213
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene11.mp4",
+      "bytes": 3202397
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene12.mp4",
+      "bytes": 7259604
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene13.mp4",
+      "bytes": 7352413
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene14.mp4",
+      "bytes": 9556393
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene15.mp4",
+      "bytes": 3791792
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene16.mp4",
+      "bytes": 5368392
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene17.mp4",
+      "bytes": 6480777
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene18.mp4",
+      "bytes": 3470708
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene19.mp4",
+      "bytes": 6404392
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene20.mp4",
+      "bytes": 7925102
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene21.mp4",
+      "bytes": 8895864
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene22.mp4",
+      "bytes": 3378107
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene23.mp4",
+      "bytes": 2728430
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene24.mp4",
+      "bytes": 6772316
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene25.mp4",
+      "bytes": 8720713
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene26.mp4",
+      "bytes": 8728310
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene27.mp4",
+      "bytes": 8512596
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene28.mp4",
+      "bytes": 7399574
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene29.mp4",
+      "bytes": 5787226
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene30.mp4",
+      "bytes": 5175984
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene31.mp4",
+      "bytes": 7940731
+    },
+    {
+      "file": "build/video/editorial-en/title-overlays/cta-bell.webp",
+      "bytes": 572
+    },
+    {
+      "file": "build/video/editorial-en/title-overlays/cta-glow.webp",
+      "bytes": 576
+    },
+    {
+      "file": "build/video/editorial-en/title-overlays/cta-thumb.webp",
+      "bytes": 500
+    },
+    {
+      "file": "build/video/editorial-en/title-overlays/manifest.tsv",
+      "bytes": 1009
+    },
+    {
+      "file": "build/video/editorial-en/title-overlays/title01.webp",
+      "bytes": 16154
+    },
+    {
+      "file": "build/video/editorial-en/title-overlays/title02.webp",
+      "bytes": 9106
+    },
+    {
+      "file": "build/video/editorial-en/title-overlays/title03.webp",
+      "bytes": 12644
+    },
+    {
+      "file": "build/video/editorial-en/title-overlays/title04.webp",
+      "bytes": 10142
+    },
+    {
+      "file": "build/video/editorial-en/title-overlays/title05.webp",
+      "bytes": 14038
+    },
+    {
+      "file": "build/video/editorial-en/title-overlays/title06.webp",
+      "bytes": 9706
+    },
+    {
+      "file": "build/video/editorial-en/title-overlays/title07.webp",
+      "bytes": 14744
+    },
+    {
+      "file": "build/video/editorial-en/title-overlays/title08.webp",
+      "bytes": 9402
+    },
+    {
+      "file": "build/video/editorial-en/title-overlays/title09.webp",
+      "bytes": 15076
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/concat.txt",
+      "bytes": 1746
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment01.mp4",
+      "bytes": 6023852
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment02.mp4",
+      "bytes": 2474886
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment03.mp4",
+      "bytes": 16503973
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment04.mp4",
+      "bytes": 6099003
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment05.mp4",
+      "bytes": 5037666
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment06.mp4",
+      "bytes": 3779497
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment07.mp4",
+      "bytes": 14021412
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment08.mp4",
+      "bytes": 4418920
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment09.mp4",
+      "bytes": 7652272
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment10.mp4",
+      "bytes": 5052379
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment11.mp4",
+      "bytes": 11167961
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment12.mp4",
+      "bytes": 4433647
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment13.mp4",
+      "bytes": 8219165
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment14.mp4",
+      "bytes": 5689324
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment15.mp4",
+      "bytes": 19771739
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment16.mp4",
+      "bytes": 4060923
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment17.mp4",
+      "bytes": 7103454
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment18.mp4",
+      "bytes": 6665308
+    },
+    {
+      "file": "build/video/editorial-en/titled-visuals.mp4",
+      "bytes": 138164239
+    },
+    {
+      "file": "build/video/editorial-en/visuals-normalized.mp4",
+      "bytes": 145264769
+    },
+    {
+      "file": "build/video/editorial-en/visuals.mp4",
+      "bytes": 140504232
+    },
+    {
+      "file": "build/video/narration-parts-en/current/01.mp3",
+      "bytes": 632448
+    },
+    {
+      "file": "build/video/narration-parts-en/current/01.txt",
+      "bytes": 1645
+    },
+    {
+      "file": "build/video/narration-parts-en/current/01.wav",
+      "bytes": 10560078
+    },
+    {
+      "file": "build/video/narration-parts-en/current/02.mp3",
+      "bytes": 279360
+    },
+    {
+      "file": "build/video/narration-parts-en/current/02.txt",
+      "bytes": 736
+    },
+    {
+      "file": "build/video/narration-parts-en/current/02.wav",
+      "bytes": 4320078
+    },
+    {
+      "file": "build/video/narration-parts-en/current/03.mp3",
+      "bytes": 269136
+    },
+    {
+      "file": "build/video/narration-parts-en/current/03.txt",
+      "bytes": 692
+    },
+    {
+      "file": "build/video/narration-parts-en/current/03.wav",
+      "bytes": 4320078
+    },
+    {
+      "file": "build/video/narration-parts-en/current/04.mp3",
+      "bytes": 261648
+    },
+    {
+      "file": "build/video/narration-parts-en/current/04.txt",
+      "bytes": 668
+    },
+    {
+      "file": "build/video/narration-parts-en/current/04.wav",
+      "bytes": 4320078
+    },
+    {
+      "file": "build/video/narration-parts-en/current/05.mp3",
+      "bytes": 297648
+    },
+    {
+      "file": "build/video/narration-parts-en/current/05.txt",
+      "bytes": 752
+    },
+    {
+      "file": "build/video/narration-parts-en/current/05.wav",
+      "bytes": 4320078
+    },
+    {
+      "file": "build/video/narration-parts-en/current/06.mp3",
+      "bytes": 57456
+    },
+    {
+      "file": "build/video/narration-parts-en/current/06.txt",
+      "bytes": 113
+    },
+    {
+      "file": "build/video/narration-parts-en/current/06.wav",
+      "bytes": 960078
+    },
+    {
+      "file": "build/video/current-qa/101.png",
+      "bytes": 40030
+    },
+    {
+      "file": "build/video/current-qa/112.png",
+      "bytes": 118297
+    },
+    {
+      "file": "build/video/current-qa/140.png",
+      "bytes": 182692
+    },
+    {
+      "file": "build/video/current-qa/15.png",
+      "bytes": 27438
+    },
+    {
+      "file": "build/video/current-qa/157.png",
+      "bytes": 108080
+    },
+    {
+      "file": "build/video/current-qa/187.png",
+      "bytes": 112526
+    },
+    {
+      "file": "build/video/current-qa/2.png",
+      "bytes": 25716
+    },
+    {
+      "file": "build/video/current-qa/202.png",
+      "bytes": 189460
+    },
+    {
+      "file": "build/video/current-qa/220.png",
+      "bytes": 105930
+    },
+    {
+      "file": "build/video/current-qa/232.png",
+      "bytes": 189408
+    },
+    {
+      "file": "build/video/current-qa/247.png",
+      "bytes": 181068
+    },
+    {
+      "file": "build/video/current-qa/263.png",
+      "bytes": 140090
+    },
+    {
+      "file": "build/video/current-qa/274.png",
+      "bytes": 154584
+    },
+    {
+      "file": "build/video/current-qa/288.png",
+      "bytes": 131763
+    },
+    {
+      "file": "build/video/current-qa/291.png",
+      "bytes": 94697
+    },
+    {
+      "file": "build/video/current-qa/293.png",
+      "bytes": 97766
+    },
+    {
+      "file": "build/video/current-qa/294.png",
+      "bytes": 96804
+    },
+    {
+      "file": "build/video/current-qa/298.png",
+      "bytes": 94540
+    },
+    {
+      "file": "build/video/current-qa/37.png",
+      "bytes": 23273
+    },
+    {
+      "file": "build/video/current-qa/75.png",
+      "bytes": 30008
+    },
+    {
+      "file": "build/video/current-qa/contact.jpg",
+      "bytes": 527086
+    },
+    {
+      "file": "build/video/stock-qa/M2.jpg",
+      "bytes": 263157
+    },
+    {
+      "file": "build/video/stock-qa/M3.jpg",
+      "bytes": 243408
+    },
+    {
+      "file": "build/video/stock-qa/M4-alternative.jpg",
+      "bytes": 63569
+    },
+    {
+      "file": "build/video/stock-qa/M4.jpg",
+      "bytes": 242861
+    },
+    {
+      "file": "build/video/stock-qa/M5.jpg",
+      "bytes": 249906
+    },
+    {
+      "file": "build/video/stock-qa/R1.jpg",
+      "bytes": 213406
+    },
+    {
+      "file": "build/video/stock-qa/R3.jpg",
+      "bytes": 284316
+    },
+    {
+      "file": "build/video/narration-en.wav",
+      "bytes": 28800078
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/base-concat.txt",
+      "bytes": 188
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/base.mp4",
+      "bytes": 19207596
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/clip01.mp4",
+      "bytes": 4794814
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/clip02.mp4",
+      "bytes": 4997422
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/clip03.mp4",
+      "bytes": 2449048
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/clip04.mp4",
+      "bytes": 4052708
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/clip05.mp4",
+      "bytes": 2715105
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/concat.txt",
+      "bytes": 470
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/content.mp4",
+      "bytes": 19005983
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/cover.mp4",
+      "bytes": 202471
+    },
+    {
+      "file": "build/reels/work/02-hands-on-science/base-concat.txt",
+      "bytes": 182
+    },
+    {
+      "file": "build/reels/work/02-hands-on-science/base.mp4",
+      "bytes": 2428347
+    },
+    {
+      "file": "build/reels/work/02-hands-on-science/clip01.mp4",
+      "bytes": 604422
+    },
+    {
+      "file": "build/reels/work/02-hands-on-science/clip02.mp4",
+      "bytes": 180291
+    },
+    {
+      "file": "build/reels/work/02-hands-on-science/clip03.mp4",
+      "bytes": 253750
+    },
+    {
+      "file": "build/reels/work/02-hands-on-science/clip04.mp4",
+      "bytes": 659439
+    },
+    {
+      "file": "build/reels/work/02-hands-on-science/clip05.mp4",
+      "bytes": 533132
+    },
+    {
+      "file": "build/reels/work/02-hands-on-science/concat.txt",
+      "bytes": 455
+    },
+    {
+      "file": "build/reels/work/02-hands-on-science/content.mp4",
+      "bytes": 2227924
+    },
+    {
+      "file": "build/reels/work/02-hands-on-science/cover.mp4",
+      "bytes": 201281
+    },
+    {
+      "file": "build/reels/work/03-ai-archaeology/base-concat.txt",
+      "bytes": 178
+    },
+    {
+      "file": "build/reels/work/03-ai-archaeology/base.mp4",
+      "bytes": 15446354
+    },
+    {
+      "file": "build/reels/work/03-ai-archaeology/clip01.mp4",
+      "bytes": 2760572
+    },
+    {
+      "file": "build/reels/work/03-ai-archaeology/clip02.mp4",
+      "bytes": 2544292
+    },
+    {
+      "file": "build/reels/work/03-ai-archaeology/clip03.mp4",
+      "bytes": 1904144
+    },
+    {
+      "file": "build/reels/work/03-ai-archaeology/clip04.mp4",
+      "bytes": 4323937
+    },
+    {
+      "file": "build/reels/work/03-ai-archaeology/clip05.mp4",
+      "bytes": 3721890
+    },
+    {
+      "file": "build/reels/work/03-ai-archaeology/concat.txt",
+      "bytes": 445
+    },
+    {
+      "file": "build/reels/work/03-ai-archaeology/content.mp4",
+      "bytes": 15251693
+    },
+    {
+      "file": "build/reels/work/03-ai-archaeology/cover.mp4",
+      "bytes": 195503
+    },
+    {
+      "file": "build/reels/overlays/athens.webp",
+      "bytes": 5262
+    },
+    {
+      "file": "build/reels/overlays/cta.webp",
+      "bytes": 14490
+    },
+    {
+      "file": "build/reels/overlays/sports.webp",
+      "bytes": 5588
+    },
+    {
+      "file": "build/reels/overlays/stock.webp",
+      "bytes": 4286
+    },
+    {
+      "file": "build/reels/overlays/title1.webp",
+      "bytes": 7748
+    },
+    {
+      "file": "build/reels/overlays/title2.webp",
+      "bytes": 6368
+    },
+    {
+      "file": "build/reels/overlays/title3.webp",
+      "bytes": 6922
+    },
+    {
+      "file": "build/reels/audio/01-sports-biomechanics.mp3",
+      "bytes": 160416
+    },
+    {
+      "file": "build/reels/audio/01-sports-biomechanics.wav",
+      "bytes": 2566734
+    },
+    {
+      "file": "build/reels/audio/02-hands-on-science.mp3",
+      "bytes": 162720
+    },
+    {
+      "file": "build/reels/audio/02-hands-on-science.wav",
+      "bytes": 2603598
+    },
+    {
+      "file": "build/reels/audio/03-ai-archaeology.mp3",
+      "bytes": 169920
+    },
+    {
+      "file": "build/reels/audio/03-ai-archaeology.wav",
+      "bytes": 2718798
+    },
+    {
+      "file": "build/reels/current-qa/01-sports-biomechanics-0.png",
+      "bytes": 156458
+    },
+    {
+      "file": "build/reels/current-qa/01-sports-biomechanics-1.png",
+      "bytes": 176055
+    },
+    {
+      "file": "build/reels/current-qa/01-sports-biomechanics-2.png",
+      "bytes": 86274
+    },
+    {
+      "file": "build/reels/current-qa/01-sports-biomechanics-3.png",
+      "bytes": 82618
+    },
+    {
+      "file": "build/reels/current-qa/01-sports-biomechanics-4.png",
+      "bytes": 72132
+    },
+    {
+      "file": "build/reels/current-qa/01-sports-biomechanics-5.png",
+      "bytes": 102325
+    },
+    {
+      "file": "build/reels/current-qa/02-hands-on-science-0.png",
+      "bytes": 24345
+    },
+    {
+      "file": "build/reels/current-qa/02-hands-on-science-1.png",
+      "bytes": 30972
+    },
+    {
+      "file": "build/reels/current-qa/02-hands-on-science-2.png",
+      "bytes": 30168
+    },
+    {
+      "file": "build/reels/current-qa/02-hands-on-science-3.png",
+      "bytes": 23363
+    },
+    {
+      "file": "build/reels/current-qa/02-hands-on-science-4.png",
+      "bytes": 20134
+    },
+    {
+      "file": "build/reels/current-qa/02-hands-on-science-5.png",
+      "bytes": 102271
+    },
+    {
+      "file": "build/reels/current-qa/03-ai-archaeology-0.png",
+      "bytes": 102928
+    },
+    {
+      "file": "build/reels/current-qa/03-ai-archaeology-1.png",
+      "bytes": 107024
+    },
+    {
+      "file": "build/reels/current-qa/03-ai-archaeology-2.png",
+      "bytes": 122444
+    },
+    {
+      "file": "build/reels/current-qa/03-ai-archaeology-3.png",
+      "bytes": 179888
+    },
+    {
+      "file": "build/reels/current-qa/03-ai-archaeology-4.png",
+      "bytes": 173618
+    },
+    {
+      "file": "build/reels/current-qa/03-ai-archaeology-5.png",
+      "bytes": 102340
+    },
+    {
+      "file": "build/reels/current-qa/contact.jpg",
+      "bytes": 440673
+    },
+    {
+      "file": "build/reels/current-qa/r2-final-frame.png",
+      "bytes": 102303
+    }
+  ],
+  "count": 181,
+  "bytes": 887745344,
+  "executed": true,
+  "preserved": [
+    "build/video/newhorizons.mp4",
+    "build/reels/01-sports-biomechanics.mp4",
+    "build/reels/02-hands-on-science.mp4",
+    "build/reels/03-ai-archaeology.mp4",
+    "all source assets, scripts, narration texts, manifests, branding and verification reports"
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "section": 1,
+    "duration": 105.408,
+    "target": 110,
+    "tempo": 0.9604373576309795
+  },
+  {
+    "section": 2,
+    "duration": 46.56,
+    "target": 45,
+    "tempo": 1.0404469273743018
+  },
+  {
+    "section": 3,
+    "duration": 44.856,
+    "target": 45,
+    "tempo": 1.002368715083799
+  },
+  {
+    "section": 4,
+    "duration": 43.608,
+    "target": 45,
+    "tempo": 0.9744804469273742
+  },
+  {
+    "section": 5,
+    "duration": 49.608,
+    "target": 45,
+    "tempo": 1.108558659217877
+  },
+  {
+    "section": 6,
+    "duration": 9.576,
+    "target": 10,
+    "tempo": 0.9821538461538462
+  }
+]

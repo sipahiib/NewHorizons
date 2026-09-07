@@ -1,0 +1,14 @@
+# NewHorizons main-story animation assets only; not the full-video render manifest.
+# Main hook H2: This launch from Norway could change how Europe's satellites get to space.
+# All scenes: original illustrative animation, not actual flight footage, not to scale.
+# kind|relative_path|duration_seconds|seek_seconds|layout
+clip|assets/motion/2026-09-07/main-illustrative/01-liftoff.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/02-coastal-ascent.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/03-flight-path.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/04-propulsion.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/05-stage-separation.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/06-upper-stage.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/07-fairing-release.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/08-payload-deployment.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/09-ground-contact.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/10-launch-options.mp4|11|0|cover

@@ -10,6 +10,7 @@ TITLE_LANGUAGE="${TITLE_LANGUAGE:-tr}"
 FPS=60
 
 mkdir -p "$BUILD/segments"
+EDITORIAL_BUILD="$BUILD" node "$ROOT/video/src/generate_stock_disclosures.mjs"
 [[ -s "$NARRATION" ]] || { echo "Missing narration: $NARRATION" >&2; exit 1; }
 
 audio_duration="$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$NARRATION")"
@@ -35,14 +36,29 @@ render_clip() {
   local -a args=(-nostdin -y -v error)
   local filter
   [[ "$loop" == "yes" ]] && args+=(-stream_loop -1)
+  if [[ "$loop" == "stretch" ]]; then
+    local source_duration stretch
+    source_duration="$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$input")"
+    stretch="$(awk -v d="$duration" -v s="$source_duration" -v t="$seek" 'BEGIN { if(s<=t) exit 1; printf "%.9f", (d+0.04)/(s-t) }')"
+    args+=(-itsscale "$stretch")
+  fi
   args+=(-ss "$seek" -i "$input")
   if [[ "$layout" == "contain_blur" ]]; then
     filter="split=2[fgsrc][bgsrc];[bgsrc]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,gblur=sigma=32,eq=brightness=-0.18:saturation=0.75[bg];[fgsrc]scale=1920:1080:force_original_aspect_ratio=decrease[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2,eq=contrast=1.02:saturation=1.03,format=yuv420p,setrange=limited,fps=$FPS,trim=duration=$duration,setpts=PTS-STARTPTS,setsar=1"
   else
     filter="scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,eq=contrast=1.025:saturation=1.035,format=yuv420p,setrange=limited,fps=$FPS,trim=duration=$duration,setpts=PTS-STARTPTS,setsar=1"
   fi
+  local -a filter_args=(-vf "$filter")
+  if [[ "$input" == */stock/* ]]; then
+    local label=generic
+    [[ "$input" == */M4-* ]] && label=samsung
+    [[ "$input" == */M5-* ]] && label=centuria
+    [[ "$input" == */M5-01.mp4 ]] && label=museum
+    args+=(-loop 1 -framerate "$FPS" -i "$BUILD/disclosures/$label.webp")
+    filter_args=(-filter_complex "[0:v]$filter[scene];[scene][1:v]overlay=0:0:shortest=1[outv]" -map '[outv]')
+  fi
   ffmpeg "${args[@]}" \
-    -vf "$filter" \
+    "${filter_args[@]}" \
     -t "$duration" -an -c:v libx264 -preset veryfast -crf 16 -pix_fmt yuv420p -r "$FPS" "$output"
 }
 
@@ -60,10 +76,11 @@ while IFS='|' read -r kind relative duration seek layout; do
     still) render_still "$input" "$duration" "$output" ;;
     clip|outro) render_clip "$input" "$duration" "$seek" no "$layout" "$output" ;;
     cliploop) render_clip "$input" "$duration" "$seek" yes "$layout" "$output" ;;
+    clipstretch) render_clip "$input" "$duration" "$seek" stretch "$layout" "$output" ;;
     *) echo "Unknown scene type: $kind" >&2; exit 1 ;;
   esac
   printf "file '%s'\n" "$output" >> "$concat_file"
-  printf 'Rendered scene %02d/%02d\n' "$scene" 26
+  printf 'Rendered scene %02d/%02d\n' "$scene" 31
 done < "$MANIFEST"
 
 ffmpeg -nostdin -y -v error -f concat -safe 0 -i "$concat_file" -c copy "$BUILD/visuals.mp4"

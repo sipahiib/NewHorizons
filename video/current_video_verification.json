@@ -1,0 +1,229 @@
+{
+  "file": "build/video/newhorizons.mp4",
+  "duration": 300,
+  "width": 1920,
+  "height": 1080,
+  "fps": "60/1",
+  "frames": 18000,
+  "videoCodec": "h264",
+  "audioCodec": "aac",
+  "sampleRate": "48000",
+  "blackEvents": [],
+  "maxDetectedSilence": 1.367229,
+  "measuredAudioGaps": [
+    {
+      "end": 5.043563,
+      "duration": 1.061458
+    },
+    {
+      "end": 10.277771,
+      "duration": 1.030854
+    },
+    {
+      "end": 17.14375,
+      "duration": 0.968146
+    },
+    {
+      "end": 20.181,
+      "duration": 1.057604
+    },
+    {
+      "end": 25.987125,
+      "duration": 1.029958
+    },
+    {
+      "end": 32.648,
+      "duration": 1.051542
+    },
+    {
+      "end": 37.659375,
+      "duration": 1.053125
+    },
+    {
+      "end": 40.261708,
+      "duration": 1.043708
+    },
+    {
+      "end": 45.975062,
+      "duration": 1.020875
+    },
+    {
+      "end": 52.816104,
+      "duration": 1.0295
+    },
+    {
+      "end": 57.071854,
+      "duration": 1.011917
+    },
+    {
+      "end": 63.994458,
+      "duration": 1.095292
+    },
+    {
+      "end": 66.639583,
+      "duration": 1.013729
+    },
+    {
+      "end": 73.075771,
+      "duration": 1.023417
+    },
+    {
+      "end": 80.210938,
+      "duration": 1.056542
+    },
+    {
+      "end": 86.161021,
+      "duration": 0.973625
+    },
+    {
+      "end": 90.699042,
+      "duration": 1.038208
+    },
+    {
+      "end": 95.986417,
+      "duration": 1.013125
+    },
+    {
+      "end": 103.147854,
+      "duration": 1.058167
+    },
+    {
+      "end": 110.206042,
+      "duration": 1.367229
+    },
+    {
+      "end": 114.566354,
+      "duration": 0.942104
+    },
+    {
+      "end": 125.440479,
+      "duration": 0.918125
+    },
+    {
+      "end": 132.996083,
+      "duration": 0.94
+    },
+    {
+      "end": 137.752437,
+      "duration": 0.964771
+    },
+    {
+      "end": 142.994625,
+      "duration": 0.963958
+    },
+    {
+      "end": 147.112687,
+      "duration": 0.955646
+    },
+    {
+      "end": 155.229667,
+      "duration": 1.298292
+    },
+    {
+      "end": 161.182333,
+      "duration": 0.983375
+    },
+    {
+      "end": 168.708167,
+      "duration": 0.947542
+    },
+    {
+      "end": 176.227312,
+      "duration": 0.997979
+    },
+    {
+      "end": 181.225146,
+      "duration": 0.985062
+    },
+    {
+      "end": 187.613083,
+      "duration": 1.005417
+    },
+    {
+      "end": 193.43175,
+      "duration": 0.992333
+    },
+    {
+      "end": 200.196667,
+      "duration": 1.33125
+    },
+    {
+      "end": 205.338458,
+      "duration": 1.022833
+    },
+    {
+      "end": 210.9425,
+      "duration": 1.024812
+    },
+    {
+      "end": 218.402146,
+      "duration": 1.061479
+    },
+    {
+      "end": 222.381229,
+      "duration": 1.018896
+    },
+    {
+      "end": 228.033729,
+      "duration": 1.019937
+    },
+    {
+      "end": 233.948479,
+      "duration": 1.037562
+    },
+    {
+      "end": 240.543875,
+      "duration": 1.019354
+    },
+    {
+      "end": 245.204896,
+      "duration": 1.365479
+    },
+    {
+      "end": 249.409917,
+      "duration": 0.930771
+    },
+    {
+      "end": 256.773479,
+      "duration": 0.916063
+    },
+    {
+      "end": 264.111042,
+      "duration": 0.863396
+    },
+    {
+      "end": 270.8645,
+      "duration": 0.894417
+    },
+    {
+      "end": 273.71,
+      "duration": 0.868729
+    },
+    {
+      "end": 276.602792,
+      "duration": 0.836875
+    },
+    {
+      "end": 282.47175,
+      "duration": 0.899146
+    },
+    {
+      "end": 290.233521,
+      "duration": 1.268604
+    },
+    {
+      "end": 294.055646,
+      "duration": 0.935479
+    },
+    {
+      "end": 296.61225,
+      "duration": 1.028833
+    },
+    {
+      "end": 300,
+      "duration": 1.132062
+    }
+  ],
+  "visualReview": "Twenty decoded samples reviewed: immediate motion hook, legible sparse titles, labelled stock and original animations, Mexico location distinction, and English cinematic-glass closing with no channel name or handle. Sampled review, not full real-time playback.",
+  "audioReview": "signal continuity checked; not a claim of full human listening"
+}

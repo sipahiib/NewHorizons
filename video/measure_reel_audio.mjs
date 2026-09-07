@@ -1,0 +1,11 @@
+import {spawnSync} from 'node:child_process';
+const file=process.argv[2];
+if(!file)throw new Error('Audio path required');
+const probe=spawnSync('ffprobe',['-v','error','-show_entries','format=duration','-of','csv=p=0',file],{encoding:'utf8'});
+const scan=spawnSync('ffmpeg',['-nostdin','-v','info','-i',file,'-af','silencedetect=noise=-40dB:d=0.15','-f','null','-'],{encoding:'utf8'});
+if(probe.status||scan.status)throw new Error('Audio measurement failed');
+const duration=Number(probe.stdout);
+const starts=[...scan.stderr.matchAll(/silence_start: ([\d.]+)/g)].map(m=>Number(m[1]));
+const ends=[...scan.stderr.matchAll(/silence_end: ([\d.]+)/g)].map(m=>Number(m[1]));
+const speechEnd=Math.abs(ends.at(-1)-duration)<.02?starts.at(-1):duration;
+console.log(speechEnd.toFixed(6));

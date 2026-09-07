@@ -1,38 +1,36 @@
 # kind|relative_path|duration_seconds|seek_seconds|layout
-# Main story: five 24-second motion clips (120 seconds).
-cliploop|assets/motion/2026-09-04/01-cwnet/01-las-vegas.mp4|24|0|cover
-cliploop|assets/motion/2026-09-04/01-cwnet/02-urban.mp4|24|0|cover
-cliploop|assets/motion/2026-09-04/01-cwnet/03-control-screen.mp4|24|0|cover
-cliploop|assets/motion/2026-09-04/01-cwnet/04-navigation.mp4|24|0|cover
-cliploop|assets/motion/2026-09-04/01-cwnet/05-traffic.mp4|24|0|cover
-
-# Supporting story 1: five 9-second motion clips (45 seconds).
-cliploop|assets/motion/2026-09-04/02-tissue/01-petri.mp4|9|0|cover
-cliploop|assets/motion/2026-09-04/02-tissue/02-cell-culture.mp4|9|0|cover
-cliploop|assets/motion/2026-09-04/02-tissue/03-liquid-drops.mp4|9|0|cover
-cliploop|assets/motion/2026-09-04/02-tissue/04-scientists.mp4|9|0|cover
-cliploop|assets/motion/2026-09-04/02-tissue/05-animated-cells.mp4|9|0|cover
-
-# Supporting story 2: five 9-second motion clips (45 seconds).
-cliploop|assets/motion/2026-09-04/03-amsr3/01-orbit.mp4|9|0|cover
-cliploop|assets/motion/2026-09-04/03-amsr3/02-detailed.mp4|9|0|cover
-cliploop|assets/motion/2026-09-04/03-amsr3/03-sunrise.mp4|9|0|cover
-cliploop|assets/motion/2026-09-04/03-amsr3/04-panels.mp4|9|0|cover
-cliploop|assets/motion/2026-09-04/03-amsr3/05-earth.mp4|9|0|cover
-
-# Supporting story 3: five 9-second motion clips (45 seconds).
-cliploop|assets/motion/2026-09-04/04-liver/01-cells.mp4|9|0|cover
-cliploop|assets/motion/2026-09-04/04-liver/02-blood-mixer.mp4|9|0|cover
-cliploop|assets/motion/2026-09-04/04-liver/03-blood-cells.mp4|9|0|cover
-cliploop|assets/motion/2026-09-04/04-liver/04-microscope.mp4|9|0|cover
-cliploop|assets/motion/2026-09-04/04-liver/05-medical-scan.mp4|9|0|cover
-
-# Supporting story 4: five 9-second motion clips (45 seconds).
-cliploop|assets/motion/2026-09-04/05-brain/01-brain-animation.mp4|9|0|cover
-cliploop|assets/motion/2026-09-04/05-brain/02-mri-tablet.mp4|9|0|cover
-cliploop|assets/motion/2026-09-04/05-brain/03-mri-machine.mp4|9|0|cover
-cliploop|assets/motion/2026-09-04/05-brain/04-scan-images.mp4|9|0|cover
-cliploop|assets/motion/2026-09-04/05-brain/05-concept.mp4|9|0|cover
-
-# Closing CTA: motion background, ten seconds; no channel name or handle.
-outro|assets/motion/2026-09-04/05-brain/01-brain-animation.mp4|10|0|cover
+# Approved user override: main story ten 11-second original motion clips.
+clip|assets/motion/2026-09-07/main-illustrative/01-liftoff.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/02-coastal-ascent.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/03-flight-path.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/04-propulsion.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/05-stage-separation.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/06-upper-stage.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/07-fairing-release.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/08-payload-deployment.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/09-ground-contact.mp4|11|0|cover
+clip|assets/motion/2026-09-07/main-illustrative/10-launch-options.mp4|11|0|cover
+# Four supporting stories: exactly five moving shots, nine seconds each.
+# clipstretch extends genuinely moving short footage; no still hold or repeat loop.
+clipstretch|assets/motion/2026-09-07/stock/M2-01.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M2-02.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M2-03.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M2-04.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M2-05.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M3-01.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M3-02.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M3-03.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M3-04.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M3-05.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M4-01-alt.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M4-02.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M4-03.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M4-04.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M4-05.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M5-01.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M5-02.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M5-03.mp4|9|0|contain_blur
+clipstretch|assets/motion/2026-09-07/stock/M5-04.mp4|9|0|contain_blur
+clip|assets/motion/2026-09-07/stock/M5-05.mp4|9|0|contain_blur
+# Moving closing background. No channel name or handle on main CTA.
+outro|assets/motion/2026-09-07/stock/M3-04.mp4|10|16|contain_blur

@@ -10,9 +10,9 @@ fs.mkdirSync(out, { recursive: true });
 
 const esc = (s) => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const titles = [
-  'THE HIDDEN PHYSICS OF SPORT',
-  'MAKE AIR PRESSURE VISIBLE',
-  'CAN AI READ THE PAST?',
+  'AFTER SURGERY, WHO DOES THE WORK?',
+  'ONE FOLD. A SLOWER FALL?',
+  'CAN AI LEARN ANCIENT BUILDING RULES?',
 ];
 
 for (const [i, title] of titles.entries()) {
@@ -32,3 +32,12 @@ const cta = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="1080" he
   <text x="540" y="1675" text-anchor="middle" fill="#c6dde1" font-family="Arial" font-size="31" font-weight="700">FOLLOW ON INSTAGRAM</text>
 </svg>`);
 await sharp(cta).webp({ lossless: true }).toFile(path.join(out, 'cta.webp'));
+
+for (const [name, text] of Object.entries({
+  stock: 'Illustrative stock footage',
+  sports: 'Illustrative stock — not study participants',
+  athens: 'Athens / Acropolis — illustrative stock',
+})) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920"><rect x="40" y="285" width="1000" height="55" rx="10" fill="#06131f" fill-opacity=".84"/><text x="540" y="322" text-anchor="middle" font-family="Arial" font-size="28" fill="white">${text}</text></svg>`;
+  await sharp(Buffer.from(svg)).webp({lossless:true}).toFile(path.join(out, `${name}.webp`));
+}
