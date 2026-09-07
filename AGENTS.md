@@ -1,89 +1,59 @@
 # Repository Guidelines
-## Project Layout
-Keep researched stories and source links in `video/SOURCES.md`. Store narration and scene manifests under `video/`, reusable channel branding under `assets/branding/`, and motion clips under `assets/motion/`. Rendering scripts belong in `video/`; the only finished delivery should be `build/video/newhorizons.mp4`.
 
-Use `NewHorizons` as the only project and workflow-skill name. The skill must be named `newhorizons-start`; do not retain the legacy project name in code, documentation, folder names, configuration, or generated metadata.
+## Project Scope
 
+Work only in `/Users/is9565/Downloads/NewHorizons`. Use `NewHorizons` for the project and `newhorizons-start` for its startup skill. Read `RESEARCH.md` for the research brief and `video/SOURCES.md` for the current editorial package. Explicit user instructions override this guide.
+
+Keep sources in `video/SOURCES.md`, narration/manifests/render scripts in `video/`, motion assets in `assets/motion/`, branding in `assets/branding/`, and covers in `assets/covers/`. Deliver the main video to `build/video/newhorizons.mp4` and approved Reels to `build/reels/`.
 
 ## Rules
-Sources.md altına yazılan yeni haberlerle ilgili şunları yap:
 
-* Haber seçimini daralt: 5 haberin hepsi eşit önemde olmasın. 1 ana haber (minimum 1.5 dakika) + 4 destek haber (her bir destek haberi minimum 45 saniye) yap. Ana haber, geniş kitleyi ilgilendiren ve güçlü görseli olan bir gelişme olsun. 
+- Select one visually compelling main story with broad audience relevance and four supporting stories. Verify claims with reliable primary sources; distinguish publication dates from event dates and findings from speculation.
+- Every story must answer: **What happened? Who did it/source? Why does it matter? How could it affect the viewer?** Explain practical relevance without promising unproven benefits.
+- Use the approved **5:10** schedule: main story **0:00–2:00**, four supports **45 seconds each**, closing **5:00–5:10**. The first 20 seconds belong to the main story, not an additional intro. Never shorten the main below 90 seconds or a support below 45 seconds.
+- Open immediately with relevant motion footage, never a channel intro or static cover:
+  - **0:00–0:05:** a striking, factually accurate announcement, e.g. “This week, researchers revealed…”
+  - **0:05–0:12:** a visual hook showing the main development.
+  - **0:12–0:20:** frame the programme, e.g. “Four more important developments are coming. Let's begin with the biggest.”
+- Use natural English for narration, headings, cover slogans and calls to action. Avoid the fixed introduction “First of our news is.” Limit each topic to one important financial figure or point.
 
-İlk 20 saniyeyi güçlendir: Videoya kanal introsuyla değil, haftanın en çarpıcı gelişmesiyle başla.
+## Agent Workflow & Approval
 
-* video formatı:
-0:00-0:05
-Şöyle bir çarpıcı cümleyle başla: "Bu hafta bilim insanları X konusunda şaşırtıcı bir sonuç açıkladı, keşfetti, vs."
-0:05–0:12 — Hook
-Haftanın en dikkat çekici gelişmesini profesyonel bir görselle göster.
-0:12–0:20 — Çerçeve
-Buna benzer cümle oluştur: “Ayrıca 4 önemli gelişme daha var. En ilginciyle başlayalım...”
+The main controller assigns tasks, integrates accepted outputs and owns production and delivery approval. Use these roles in stages within available agent slots:
 
-* Haberlerde şu soruların cevaplarını işle:
-Ne oldu?
-Kim yaptı / kaynak ne?
-Neden önemli?
-İzleyiciyi nasıl etkileyebilir?
-Özellikle son maddeyi ihmal etme. “Yeni teleskop verileri yayınlandı” yerine “Bu, Dünya benzeri gezegenleri bulma ihtimalimizi neden artırıyor?” gibi anlat.
+- **Researcher:** verified stories, source links, dates and claim limitations.
+- **Scriptwriter:** timed English narration, hook options and screen text.
+- **Visual Designer:** five motion candidates per topic, storyboard, usage conditions and covers.
+- **Reviewer:** independent factual, editorial and rule checks before production.
+- **Video Producer:** narration and render from the approved package.
+- **QA:** independent inspection of the actual video and recorded verification results.
 
-## Approval Before Production
-Before producing a new video, read `video/SOURCES.md` and show the user the proposed topics, sources, and motion-video candidates. Do not render until the user approves them. Research exactly five high-quality, current, relevant, and engaging animated clips or short videos per topic. Prefer footage from cited source pages and authoritative publishers; do not use the legacy `png/` folder.
+Agents work on separate assigned artifacts; the controller integrates shared-file changes. Reviewer must not approve their own authored work; QA must not approve their own render. Completion claims require evidence, not merely a “done” report.
 
-Before starting each new production cycle, remove every `.mp3` and `.mp4` left from the previous cycle so old narration, source footage, main renders, or Reels cannot be mixed into the new work. Resolve the exact previous-cycle paths first and preserve non-media project files, scripts, manifests, branding, and the newly approved inputs.
+Present topics, sources, motion candidates and several main-story English hooks together for user approval. Record the selected package and hook; prior-cycle approval does not cover new content. Obtain approval before media downloads, final narration or rendering. After editorial approval, resolve routine corrections autonomously; ask again only for a material change to the approved package. The controller authorizes rendering after Reviewer findings are resolved, then authorizes delivery after QA.
 
-## Video Format & Visual Direction
-Render at 1920×1080, 60 fps, H.264/AAC; never render in 4K. Target five minutes. Give the main first story minimum 1.5 minutes and each of the four supporting stories about 45 seconds. Do not use still images in news content. Every topic must use exactly five animated clips or short videos. For the 1.5-2 minute main story, keep each clip on screen for 20–24 seconds. For each supporting story, keep each clip on screen for 8–9 seconds. Never place the channel cover at the beginning; open immediately with a motion-footage hook. The static channel cover may appear only behind the closing CTA. Avoid a slide-deck appearance. Show only headings and exceptional one-sentence takeaways; animate those phrases in and out with restrained professional effects.
+## Visuals & Audio
 
-## Cover Images — Persistent Visual Preferences
+- Main video: **1920×1080, 60 fps, H.264/AAC**.
+- Each news topic uses exactly **five distinct moving clips**: main **5 × 24 seconds**, each support **5 × 9 seconds**. The opening's 5/7/8 narration and overlays fit within the first main clip. No news stills or legacy `png/` assets.
+- Prefer source-publisher footage. Record provenance, usage conditions, native resolution and whether footage is actual, contextual or illustrative. Do not pass stock or generated visuals off as the reported experiment.
+- Use restrained animated headings and exceptional one-sentence takeaways; preserve subject visibility and mobile readability.
+- Use Microsoft Edge TTS **`en-GB-RyanNeural` at `-2%`**. Changing the voice requires user approval. Measure actual speech duration and check timing adjustments for clipped words, unnatural pacing or unexplained silence.
+- Main closing: the final ten seconds use the cinematic-glass CTA with English labels, subtle panel entrance, Like response, Subscribe accent and animated bell. No channel name or handle. A static channel cover is allowed only behind this closing.
+- End the main narration exactly: **“That was our latest news. Stay with science, and stay tuned.”**
 
-Create a separate high-quality, topic-relevant cover image for every main video and every Shorts/Reels video. For a multi-story main video, lead with the main story rather than a crowded collage.
+## Reels & Covers
 
-- Main-video covers: 1920×1080, 16:9 landscape. Shorts/Reels covers: 1080×1920, 9:16 portrait.
-- Make the main visual the focal point. Keep slogan text noticeably smaller than the original sports cover; avoid oversized typography that dominates the image.
-- Use concise, natural English slogans with clear mobile readability, comfortable margins and no overlap obscuring the main subject.
-- Do not put “Illustrative visual” on cover images. Do not substitute a similar illustrative-disclaimer caption on the cover.
-- Keep visuals closely connected to the approved topic, polished and scientifically credible; do not imply unproven results or identify generated people as actual study participants.
-- Save finished covers under `assets/covers/`. Preserve prior versions unless replacement is explicitly requested.
+For each new main-video cycle, propose three independent Reels: **Sports Biomechanics and Physics**, **Hands-on Science at Home for Young Explorers**, and **Advances in AI for Archaeology**. Prioritize reliable, useful, engaging material and avoid repeated topics. Append candidates below the main stories in `video/SOURCES.md`, preserving those stories. Apply the same editorial approval process; produce one Reel per approved topic.
 
-These are cover-image preferences, not permission to remove provenance disclosures from footage inside the videos. Covers are separate assets; do not insert a static cover at the start of the news video or change existing video content solely to create a cover.
+Reels: **30–35 seconds, 1080×1920, 9:16, 60 fps, H.264/AAC**, with five motion clips each. Fit measured narration within 30 seconds; finish speech before the video ends and leave at most four seconds afterward. Preserve complete landscape frames over a darkened, blurred duplicate background. Closing calls include YouTube **`@newhorizons_21`** and Instagram like/follow.
 
-## Instagram Reels
-For each new main-video cycle, research exactly three independent Reels topics, one from each recurring category:
+Create a separate topic-relevant cover for every main video and Reel: **1920×1080** and **1080×1920**, respectively. Lead with the main subject, not a crowded collage or oversized text. Use small, concise English slogans with clear margins. Keep scientific claims credible and never identify generated people as study participants. Do not place “Illustrative visual” or equivalent disclaimers on covers; this does not remove necessary footage disclosures. Preserve prior cover versions unless replacement is requested. Covers are separate deliverables, not video intros.
 
-1. Sports Biomechanics and Physics
-2. Hands-on Science at Home for Young Explorers
-3. Advances in AI for Archaeology
+## Verification & Delivery
 
-En önemli gelişmelere, yeni bir şey öğreten haberlere ve pratik/teknik açıdan işe yarayan gelişmelere öncelik ver. Bilgileri güncel ve güvenilir kaynaklardan doğrula; mümkün olduğunda aynı konuyu tekrarlama. Benim onayıma sun haberleri ve hangi haberleri seçeceğimi sor. 
+Before render, verify approved inputs, per-story clip counts/durations, narration timing, source-to-visual correspondence, and ordered, nonoverlapping, in-range overlays. After render, verify full-file decoding, codecs, resolution, frame rate, actual duration, speech completeness, sound levels, readable overlays, opening and closing. Inspect the actual footage and listen to narration; metadata alone is insufficient. Resolve blocking findings before delivery.
 
-Append these three candidates below the main-video stories in `video/SOURCES.md`; never delete or replace the main-video topics. For each candidate, record the angle, why it is engaging, factual sources, and high-quality motion-video candidates. Present all three to the user and wait for explicit approval before downloading media, writing final narration, or rendering. After approval, produce exactly one English Reels video for each approved topic, for three Reels in total.
+Isolate each cycle's inputs and intermediates to prevent stale media reuse. After verified delivery, remove only identified disposable intermediates and obsolete outputs. Preserve approved source assets, scripts, manifests, branding, covers and current main/Reels deliverables.
 
-Each Reels video must be 30–35 seconds. Show YouTube (`@newhorizons_21`) and Instagram like/follow calls during the closing.
-
-Instagram Reels videolarını daima 1080×1920 piksel, 9:16 dikey ve 60 fps olarak üret. Yatay kaynak görüntüleri kırpma; görüntünün tamamını ortada göster ve kalan dikey alanı aynı görüntüden oluşturulan, koyulaştırılmış bulanık arka planla doldur.
-
-Seslendirmeyi gerçek süresi ölçülmüş olarak 30 saniyelik pencereye yerleştir ve konuşmanın video bitmeden tamamlanmasını sağla. Kapanıştan sonra kısa bir görsel nefes payı bırak.
-
-Reels kapanış payı, konuşmanın gerçek bitişinden video sonuna kadar en fazla 4 saniye olmalıdır. Daha uzun sessiz kapanış bırakma; toplam süreyi 30–35 saniye içinde sesin ölçülen bitişine göre ayarla.
-
-Instagram Reels seslendirmelerinde ücretsiz Microsoft Edge TTS `en-GB-RyanNeural` sesini `-2%` sabit hızla kullan. vidIQ veya yerel macOS Daniel sesini kullanma. Kullanıcıdan yeni bir ses onayı alınmadıkça başka bir sese geçme.
-
-
-## Narration & Closing
-Produce all future videos exclusively in English. This English-only rule also applies to Instagram Reels.
-
-Do not begin with the fixed phrase “First of our news is.” Before every new video, present several concise, audience-grabbing English hook options tailored to the main story and wait for the user's choice. Do not lock or render the narration before that approval. The selected first sentence should create curiosity and pair naturally with the opening motion footage.
-
-Use the approved British male narrator `en-GB-RyanNeural` without clipped words or unexplained silence. The hook, narration, headings, exceptional one-sentence takeaways, thumbnail copy, and CTA labels must use natural English. Do not use the previous Turkish introduction or closing. End exactly: “That was our latest news. Stay with science, and stay tuned.” During the final 10 seconds, use the approved cinematic-glass CTA with English labels: a softly entering glass panel, a brief Like-icon response, a light accent on the Subscribe button, and a restrained animated notification bell. Do not display the channel name or `@newhorizons_21` on the main video’s closing screen.
-
-Mention at most one important financial figure or financial point per topic. Do not dwell on prices, fees, valuations, revenue, or profit.
-
-## Verification, Cleanup & Delivery
-Verify resolution, frame rate, target duration, continuous audio, scene timing, overlays, the motion-footage opening, and final CTA. After every successful render, delete obsolete outputs, temporary audio, extracted frames, contact sheets, caches, and disposable render intermediates. Preserve approved source assets, scripts, manifests, branding, and the verified `newhorizons.mp4`.
-
-After verification and cleanup, ask whether the user wants the result pushed to GitHub. Never push without explicit approval; confirm the remote or branch if unclear.
-
-When committing or pushing to GitHub, exclude the entire `build/video/editorial-en/` directory and all files beneath it.
-
-Never add, commit, or push `.mp3` or `.mp4` files. Keep all generated audio, source footage, Reels, and finished video binaries local; GitHub should contain only the scripts, manifests, text, metadata, and other non-audio/non-video project files needed to reproduce them.
+Ask before GitHub push; confirm the target if unclear. Never commit or push `.mp3`, `.mp4`, or `build/video/editorial-en/`. Keep media local and version only reproducible scripts, text, manifests and metadata.
