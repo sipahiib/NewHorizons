@@ -10,7 +10,7 @@ Keep sources in `video/SOURCES.md`, narration/manifests/render scripts in `video
 
 - Select one visually compelling main story with broad audience relevance and four supporting stories. Verify claims with reliable primary sources; distinguish publication dates from event dates and findings from speculation.
 - Every story must answer: **What happened? Who did it/source? Why does it matter? How could it affect the viewer?** Explain practical relevance without promising unproven benefits.
-- Use the approved **5:10** schedule: main story **0:00–2:00**, four supports **45 seconds each**, closing **5:00–5:10**. The first 20 seconds belong to the main story, not an additional intro. Never shorten the main below 90 seconds or a support below 45 seconds.
+- Use the approved **5:10** schedule: main story **0:00–2:00**, four supports **60 seconds each**, closing **5:00–5:10**. The first 20 seconds belong to the main story, not an additional intro. Never shorten the main below 90 seconds or a support below 60 seconds.
 - Open immediately with relevant motion footage, never a channel intro or static cover:
   - **0:00–0:05:** a striking, factually accurate announcement, e.g. “This week, researchers revealed…”
   - **0:05–0:12:** a visual hook showing the main development.
@@ -35,7 +35,7 @@ Present topics, sources, motion candidates and several main-story English hooks 
 ## Visuals & Audio
 
 - Main video: **1920×1080, 60 fps, H.264/AAC**.
-- Each news topic uses exactly **five distinct moving clips**: main **5 × 24 seconds**, each support **5 × 9 seconds**. The opening's 5/7/8 narration and overlays fit within the first main clip. No news stills or legacy `png/` assets.
+- Each news topic uses exactly **five distinct moving clips**: main **5 × 24 seconds**, each support **5 × 12 seconds**. The opening's 5/7/8 narration and overlays fit within the first main clip. No news stills or legacy `png/` assets.
 - Prefer source-publisher footage. Record provenance, usage conditions, native resolution and whether footage is actual, contextual or illustrative. Do not pass stock or generated visuals off as the reported experiment.
 - Use restrained animated headings and exceptional one-sentence takeaways; preserve subject visibility and mobile readability.
 - Use Microsoft Edge TTS **`en-GB-RyanNeural` at `-2%`**. Changing the voice requires user approval. Measure actual speech duration and check timing adjustments for clipped words, unnatural pacing or unexplained silence.
@@ -46,7 +46,7 @@ Present topics, sources, motion candidates and several main-story English hooks 
 
 For each new main-video cycle, propose three independent Reels: **Sports Biomechanics and Physics**, **Hands-on Science at Home for Young Explorers**, and **Advances in AI for Archaeology**. Prioritize reliable, useful, engaging material and avoid repeated topics. Append candidates below the main stories in `video/SOURCES.md`, preserving those stories. Apply the same editorial approval process; produce one Reel per approved topic.
 
-Reels: **30–35 seconds, 1080×1920, 9:16, 60 fps, H.264/AAC**, with five motion clips each. Fit measured narration within 30 seconds; finish speech before the video ends and leave at most four seconds afterward. Preserve complete landscape frames over a darkened, blurred duplicate background. Closing calls include YouTube **`@newhorizons_21`** and Instagram like/follow.
+Reels: **45-50 seconds, 1080×1920, 9:16, 60 fps, H.264/AAC**, with seven motion clips each. Fit measured narration within 45 seconds; finish speech before the video ends and leave at most four seconds afterward. Preserve complete landscape frames over a darkened, blurred duplicate background. Closing calls include YouTube **`@newhorizons_21`** and Instagram like/follow.
 
 Create a separate topic-relevant cover for every main video and Reel: **1920×1080** and **1080×1920**, respectively. Lead with the main subject, not a crowded collage or oversized text. Use small, concise English slogans with clear margins. Keep scientific claims credible and never identify generated people as study participants. Do not place “Illustrative visual” or equivalent disclaimers on covers; this does not remove necessary footage disclosures. Preserve prior cover versions unless replacement is requested. Covers are separate deliverables, not video intros.
 
