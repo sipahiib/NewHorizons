@@ -1,0 +1,9 @@
+Samsung and A S M L are expanding their collaboration on advanced chip manufacturing.
+
+Their plan centres on High N A extreme ultraviolet lithography. It uses specialised optics and short-wavelength light to print smaller features onto silicon. Samsung intends to introduce High N A E U V into high-volume D RAM production by 2028.
+
+The companies will also work on a proposed twelve-inch photomask platform. A larger format could reduce stitching constraints and improve factory productivity as chip designs become more complex.
+
+This matters because memory and logic chips sit underneath AI systems, phones, vehicles and data centres. Manufacturing improvements can affect performance, supply and cost.
+
+But this is a partnership and a roadmap, not a newly shipped chip. Neither the larger mask platform nor the 2028 production target is guaranteed, because implementation matters.

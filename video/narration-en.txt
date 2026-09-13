@@ -1,31 +1,73 @@
-## Spectrum
+## FAST — 0:00–2:00
 
-This launch from Norway could change how Europe's satellites get to space. Isar Aerospace says its Spectrum rocket reached orbit on its second flight. We also have developments in cancer treatment, image-making AI, home cooling, and archaeology. Let's begin above the Norwegian coast.
+FAST just mapped 156,411 cosmic hydrogen sources. Built into a natural basin in southwest China, this enormous radio dish has surveyed nearly half the sky. Four more important developments are coming. Let's begin with the biggest.
 
-The German company's launch from Andøya marks a new route to orbit from continental Europe. Isar reported the result on September fifth, and the European Space Agency highlighted the milestone. These animations explain the journey; they are not recordings of the flight.
+On September eighth, the FAST survey team released its second public data set. It contains radio detections of neutral hydrogen beyond our own galaxy, gathered between 2020 and 2025.
 
-A rocket does more than climb. To stay in orbit, its payload needs enough sideways speed to keep falling around Earth. During ascent, engines provide thrust, stages separate, and the upper stage continues the job. The protective fairing comes away once it is no longer needed. Our simplified scenes show those principles, not measured flight data or the exact design of Spectrum.
+Neutral hydrogen is not a message from space. It is the simplest form of the universe's most abundant element, and a basic reservoir from which galaxies make new stars. It emits a faint radio signature with a wavelength of about twenty-one centimetres. Unlike visible light, that signal can pass through clouds of interstellar dust.
 
-Why does this matter down here? Satellites support communications, weather observation, and monitoring of our changing planet. Another functioning launch provider could give satellite operators more options for getting those instruments into space. For Europe, launching from its own region could also reduce dependence on schedules elsewhere.
+FAST's huge collecting area is sensitive enough to catch those weak emissions across the nearby universe. The new catalogue gives each detection a position and measured signal, allowing astronomers to map where galaxy-forming gas is concentrated.
 
-But one success does not establish a reliable launch service. Repeat flights, production capacity, and customer results will matter. Reported payload deployment is also different from confirming that every satellite is healthy and performing its mission. For now, this is a milestone in access to orbit, with the longer-term benefits still to be demonstrated.
+The real advance is scale. Researchers can compare gas-rich and gas-poor galaxies, study how matter is arranged across cosmic structures, and identify targets for follow-up observations. The catalogue is publicly available, so teams around the world can work with the measurements without repeating the entire survey.
 
-## Breast cancer
+Researchers can cross-match the radio catalogue with optical surveys, linking hydrogen to visible galaxies.
 
-A blood test can reveal changes that help a cancer resist treatment. The US Food and Drug Administration has granted accelerated approval to camizestrant for a defined group of adults with advanced, hormone-receptor-positive, HER2-negative breast cancer. Eligibility includes an ESR1 mutation detected during specified hormone therapy combined with a CDK inhibitor. The idea is to respond to molecular resistance before scans show progression. But the FDA says the clinical benefit of intervening this early still needs confirmation. This is not a cure or a treatment for every breast cancer patient. For eligible patients, it creates another specialist treatment decision, with important safety risks, including heart-rhythm problems.
+But this is a data release, not proof of a new cosmological theory. Its sources mostly belong to the relatively nearby, low-redshift universe, and each entry should not be described as a newly discovered galaxy. Even so, one telescope has turned years of faint radio signals into a shared map of the raw material of stars.
 
-## Microsoft image models
+Now, from cosmic gas to the code of life.
 
-Microsoft is opening another route for developers to build image tools into their applications. Its MAI Image two point six models, including a faster Flash version, are entering public preview through Foundry. The company describes features for generating and editing images, using reference pictures, and supporting different layouts. The news is developer access, not a new system for generating video. For designers and small teams, integration could make repeated visual tasks easier to automate. But Microsoft's quality and speed claims are its own, and preview software can change. Users still need to check factual accuracy, rights, and whether the output actually matches the brief.
+## GPN-Star — 2:00–3:00
 
-## Samsung cooling
+University of California, Berkeley researchers have built an AI model that learns about human DNA through evolution.
 
-Can an air conditioner adjust where it blows, rather than just how cold it gets? Samsung's Bespoke AI WindFree Pro has received an IFA innovation award. Samsung says radar sensing can help detect where people are and direct air towards them, or avoid blowing straight at them. The award is new; the product was introduced earlier. Our footage shows general cooling equipment and home environments, not the featured model. For households, the potential benefit is more comfortable airflow with less manual adjustment. However, these are manufacturer claims, not independent proof of lower bills or better sleep. Features and availability also vary by model and region.
+G P N Star compares our genome with those of other species. Sections preserved across evolution are more likely to perform important functions, so the model uses those patterns to flag genetic changes for closer attention.
 
-## CENTURIA
+Only a small fraction of human DNA directly codes for proteins. Much of the rest helps control gene activity, yet remains difficult to interpret.
 
-Archaeology has a paperwork problem as well as an excavation problem. CENTURIA makes five hundred and seven pottery records from Carnuntum, in Austria, available as a digitised research resource. The LEGION project combines machine reading with structured information to help turn modern archaeological documentation into searchable data. This is not AI translating ancient Roman handwriting: it is helping researchers work with records made about finds. Specialists still need to check the results. Why should anyone outside a museum care? Better connected records could make it easier to compare objects and investigate past production and trade. Our museum, pottery, and paperwork footage illustrates that process, not CENTURIA's actual collection.
+The team says G P N Star can prioritise variants linked to inherited traits and disease, while using less computing than much larger genomic models.
 
-## Outro
+The potential is faster, better-targeted research. But this is not a diagnostic test. A prediction does not prove that a variant causes disease, and promising results still need laboratory and clinical validation.
 
-Like this video and subscribe for more discoveries. That was our latest news. Stay with science, and stay tuned.
+It narrows the search for researchers.
+
+## Nitinol springs — 3:00–4:00
+
+A custom metal spring has been used in surgery for a baby born with a rare skull condition.
+
+Teams from U C L, Great Ormond Street Hospital and Durham University designed it for severe sagittal craniosynostosis, where part of the skull fuses too early and restricts space for the growing brain.
+
+The spring uses nitinol, an alloy that can bend and return to a planned shape. With C T scans and computer modelling, the team tailored its force and placement. After surgeons made a narrow opening, the springs gradually widened it as new bone formed.
+
+The first procedure took place in September 2025. The child was doing well when the result was announced this week.
+
+It is promising engineering, but still one early patient result, not a comparative trial. In Britain, each use requires individual regulatory approval.
+
+Longer follow-up is needed to judge how this approach works across children and complex cases.
+
+## High-NA chipmaking — 4:00–5:00
+
+Samsung and A S M L are expanding their collaboration on advanced chip manufacturing.
+
+Their plan centres on High N A extreme ultraviolet lithography. It uses specialised optics and short-wavelength light to print smaller features onto silicon. Samsung intends to introduce High N A E U V into high-volume D RAM production by 2028.
+
+The companies will also work on a proposed twelve-inch photomask platform. A larger format could reduce stitching constraints and improve factory productivity as chip designs become more complex.
+
+This matters because memory and logic chips sit underneath AI systems, phones, vehicles and data centres. Manufacturing improvements can affect performance, supply and cost.
+
+But this is a partnership and a roadmap, not a newly shipped chip. Neither the larger mask platform nor the 2028 production target is guaranteed, because implementation matters.
+
+## Sentinel-6 — 5:00–6:00
+
+Two satellites are flying over the same stretches of ocean just thirty seconds apart.
+
+Sentinel Six Michael Freilich and Sentinel Six B are a joint mission of NASA, NOAA and European partners. They measure sea-surface height, waves and marine wind speed.
+
+Warmer water expands, so ocean height can help researchers estimate where heat is stored below the surface. That matters for hurricanes because unusually warm, deep water can support rapid intensification.
+
+The twin arrangement lets scientists compare measurements almost immediately and check the consistency of the long climate record.
+
+For coastal communities, better observations could strengthen forecasting and emergency planning. But satellites do not predict hurricanes alone. Their measurements must be combined with atmospheric observations and models, and NASA has not claimed Sentinel Six B has already improved a particular forecast. Integration supports better warnings.
+
+## Closing — 6:00–6:10
+
+That was our latest news. Stay with science, and stay tuned.

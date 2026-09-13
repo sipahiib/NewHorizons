@@ -1,36 +1,33 @@
 # kind|relative_path|duration_seconds|seek_seconds|layout
-# Approved user override: main story ten 11-second original motion clips.
-clip|assets/motion/2026-09-07/main-illustrative/01-liftoff.mp4|11|0|cover
-clip|assets/motion/2026-09-07/main-illustrative/02-coastal-ascent.mp4|11|0|cover
-clip|assets/motion/2026-09-07/main-illustrative/03-flight-path.mp4|11|0|cover
-clip|assets/motion/2026-09-07/main-illustrative/04-propulsion.mp4|11|0|cover
-clip|assets/motion/2026-09-07/main-illustrative/05-stage-separation.mp4|11|0|cover
-clip|assets/motion/2026-09-07/main-illustrative/06-upper-stage.mp4|11|0|cover
-clip|assets/motion/2026-09-07/main-illustrative/07-fairing-release.mp4|11|0|cover
-clip|assets/motion/2026-09-07/main-illustrative/08-payload-deployment.mp4|11|0|cover
-clip|assets/motion/2026-09-07/main-illustrative/09-ground-contact.mp4|11|0|cover
-clip|assets/motion/2026-09-07/main-illustrative/10-launch-options.mp4|11|0|cover
-# Four supporting stories: exactly five moving shots, nine seconds each.
-# clipstretch extends genuinely moving short footage; no still hold or repeat loop.
-clipstretch|assets/motion/2026-09-07/stock/M2-01.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M2-02.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M2-03.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M2-04.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M2-05.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M3-01.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M3-02.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M3-03.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M3-04.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M3-05.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M4-01-alt.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M4-02.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M4-03.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M4-04.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M4-05.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M5-01.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M5-02.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M5-03.mp4|9|0|contain_blur
-clipstretch|assets/motion/2026-09-07/stock/M5-04.mp4|9|0|contain_blur
-clip|assets/motion/2026-09-07/stock/M5-05.mp4|9|0|contain_blur
-# Moving closing background. No channel name or handle on main CTA.
-outro|assets/motion/2026-09-07/stock/M3-04.mp4|10|16|contain_blur
+# M1 — four visually distinct excerpts from actual FAST footage plus one contextual radio telescope.
+clip|assets/motion/2026-09-10/main/M1-FAST.webm|24|0|cover
+clip|assets/motion/2026-09-10/main/M1-FAST.webm|24|24|cover
+clip|assets/motion/2026-09-10/main/M1-FAST.webm|24|48|cover
+clip|assets/motion/2026-09-10/main/M1-FAST.webm|24|72|cover
+clip|assets/motion/2026-09-10/main/M1-05.mp4|24|5|contain_blur
+# M2 — real contextual laboratory recordings, not the GPN-Star team or experiments.
+clip|assets/motion/2026-09-10/main/M2-01.mp4|12|0|contain_blur
+clip|assets/motion/2026-09-10/main/M2-02.mp4|12|2|contain_blur
+clip|assets/motion/2026-09-10/main/M2-03R.mp4|12|0|contain_blur
+clip|assets/motion/2026-09-10/main/M2-04.mp4|12|4|contain_blur
+clip|assets/motion/2026-09-10/main/M2-05.mp4|12|8|contain_blur
+# M3 — real contextual medical recordings, not the reported patient, team or custom spring.
+clip|assets/motion/2026-09-10/main/M3-01R.mp4|12|1|contain_blur
+clip|assets/motion/2026-09-10/main/M3-02.mp4|12|1|contain_blur
+clip|assets/motion/2026-09-10/main/M3-03.mp4|12|0|contain_blur
+clip|assets/motion/2026-09-10/main/M3-04R.mp4|12|2|contain_blur
+clip|assets/motion/2026-09-10/main/M3-05R2.mp4|12|1|contain_blur
+# M4 — real contextual electronics/manufacturing footage, not Samsung/ASML facilities or High-NA EUV.
+clip|assets/motion/2026-09-10/main/M4-01.mp4|12|0|contain_blur
+clip|assets/motion/2026-09-10/main/M4-02.mp4|12|2|contain_blur
+clip|assets/motion/2026-09-10/main/M4-03.mp4|12|1|contain_blur
+clip|assets/motion/2026-09-10/main/M4-04.mp4|12|3|contain_blur
+clip|assets/motion/2026-09-10/main/M4-05.mp4|12|4|contain_blur
+# M5 — real contextual ocean/weather footage, not Sentinel-6 observations or a named storm.
+clip|assets/motion/2026-09-10/main/M5-01R.mp4|12|1|contain_blur
+clip|assets/motion/2026-09-10/main/M5-02.mp4|12|2|contain_blur
+clip|assets/motion/2026-09-10/main/M5-03R.mp4|12|3|contain_blur
+clip|assets/motion/2026-09-10/main/M5-04.mp4|12|2|contain_blur
+clip|assets/motion/2026-09-10/main/M5-05.mp4|12|3|contain_blur
+# Closing only: a static branding image is permitted behind the cinematic-glass CTA.
+still|assets/branding/new-horizons-cover.png|10|0|contain_blur

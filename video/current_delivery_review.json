@@ -1,0 +1,30 @@
+{
+  "cycle": "2026-09-10",
+  "amendedAt": "2026-09-13",
+  "deliverables": [
+    {
+      "file": "build/video/newhorizons.mp4",
+      "visualReview": "Pass: 26 decoded samples cover the immediate FAST opening, all five stories, real/contextual footage disclosures, topic transitions and the complete closing. Closing background is dark and contains no channel name or handle; Like, Subscribe and bell CTA remains visible.",
+      "technicalReview": "Pass: 1920x1080, H.264/AAC, 60 fps, 370.000 seconds, 22,200 decoded frames, no black interval and no unexplained long audio gap."
+    },
+    {
+      "file": "build/reels/01-sports-biomechanics.mp4",
+      "visualReview": "Pass: seven distinct real contextual clips, complete foreground frames, readable title/disclosure and final CTA.",
+      "technicalReview": "Pass: 1080x1920, H.264/AAC, 60 fps, 45.000 seconds, 2,700 decoded frames; speech ends at 41.5999 seconds."
+    },
+    {
+      "file": "build/reels/02-planet-earth.mp4",
+      "visualReview": "Pass: seven distinct real contextual clips, complete foreground frames, readable title/disclosure and final CTA.",
+      "technicalReview": "Pass: 1080x1920, H.264/AAC, 60 fps, 46.400 seconds, 2,784 decoded frames; speech ends at 43.4024 seconds."
+    }
+  ],
+  "covers": [
+    "assets/covers/2026-09-10/01-sports-biomechanics.png",
+    "assets/covers/2026-09-10/02-planet-earth.png"
+  ],
+  "excluded": [
+    "Hands-on Science Reel",
+    "FAST/main-video cover"
+  ],
+  "auralReview": "Automated signal, loudness, speech-end and source-WAV-to-MP4 continuity checks passed. This environment cannot truthfully claim human aural listening; manual real-time listening remains required by AGENTS.md before publication."
+}

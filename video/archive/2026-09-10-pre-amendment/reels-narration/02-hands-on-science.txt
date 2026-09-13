@@ -1,0 +1,7 @@
+Can paper and tape make a ping-pong ball move slower?
+
+Build a paper channel, start the ball at the top, and time its journey to the exit. Then change one feature. Add a switchback, a flap, a rough section or a gentle uphill turn, and test again.
+
+Keep the starting point and ball the same, so your comparison is fair. Every collision, slope and patch of friction changes the motion.
+
+Use a stable table, clear the floor, and ask an adult for help with scissors. That is engineering: build, measure, change, repeat.

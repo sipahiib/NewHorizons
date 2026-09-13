@@ -12,8 +12,7 @@ mkdir -p "$OUT"
 
 stems=(
   01-sports-biomechanics
-  02-hands-on-science
-  03-ai-archaeology
+  02-planet-earth
 )
 
 invalid=0
@@ -26,8 +25,8 @@ for stem in "${stems[@]}"; do
   "$EDGE_PY" -m edge_tts --voice "$VOICE" --rate="$RATE" --file "$text_file" --write-media "$raw"
   ffmpeg -nostdin -y -v error -i "$raw" -af 'aresample=48000' -ac 1 -ar 48000 -c:a pcm_s16le "$wav"
   duration="$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$wav")"
-  awk -v d="$duration" 'BEGIN {if (d < 26 || d > 30) exit 1}' || {
-    echo "Reel narration $stem must be 26-30 seconds at the fixed -2% voice rate; measured $duration. Revise the text, not the speed." >&2
+  awk -v d="$duration" 'BEGIN {if (d < 35 || d > 45) exit 1}' || {
+    echo "Reel narration $stem must be 35-45 seconds at the fixed -2% voice rate; measured $duration. Revise the text, not the speed." >&2
     invalid=1
   }
   printf '%s\t%s\n' "$stem" "$duration"

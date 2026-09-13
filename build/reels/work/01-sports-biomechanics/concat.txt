@@ -1,0 +1,7 @@
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/01-sports-biomechanics/clip01.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/01-sports-biomechanics/clip02.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/01-sports-biomechanics/clip03.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/01-sports-biomechanics/clip04.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/01-sports-biomechanics/clip05.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/01-sports-biomechanics/clip06.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/01-sports-biomechanics/clip07.mp4'

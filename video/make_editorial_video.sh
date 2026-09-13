@@ -27,7 +27,7 @@ render_still() {
     exit 1
   }
   ffmpeg -nostdin -y -v error -loop 1 -framerate "$FPS" -i "$input" \
-    -vf "scale=1080:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:color=black,format=yuv420p,setrange=limited,fps=$FPS,setsar=1" \
+    -vf "scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:color=black,format=yuv420p,setrange=limited,fps=$FPS,setsar=1" \
     -t "$duration" -an -c:v libx264 -preset veryfast -crf 16 -pix_fmt yuv420p -r "$FPS" "$output"
 }
 
@@ -49,11 +49,13 @@ render_clip() {
     filter="scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,eq=contrast=1.025:saturation=1.035,format=yuv420p,setrange=limited,fps=$FPS,trim=duration=$duration,setpts=PTS-STARTPTS,setsar=1"
   fi
   local -a filter_args=(-vf "$filter")
-  if [[ "$input" == */stock/* ]]; then
+  if [[ "$input" == */2026-09-10/main/M[1-5]-*.mp4 ]]; then
     local label=generic
-    [[ "$input" == */M4-* ]] && label=samsung
-    [[ "$input" == */M5-* ]] && label=centuria
-    [[ "$input" == */M5-01.mp4 ]] && label=museum
+    [[ "$input" == */M1-* ]] && label=m1
+    [[ "$input" == */M2-* ]] && label=m2
+    [[ "$input" == */M3-* ]] && label=m3
+    [[ "$input" == */M4-* ]] && label=m4
+    [[ "$input" == */M5-* ]] && label=m5
     args+=(-loop 1 -framerate "$FPS" -i "$BUILD/disclosures/$label.webp")
     filter_args=(-filter_complex "[0:v]$filter[scene];[scene][1:v]overlay=0:0:shortest=1[outv]" -map '[outv]')
   fi
@@ -65,6 +67,7 @@ render_clip() {
 concat_file="$BUILD/concat.txt"
 : > "$concat_file"
 scene=0
+scene_total="$(awk -F'|' '!/^#/ && NF {count++} END {print count+0}' "$MANIFEST")"
 while IFS='|' read -r kind relative duration seek layout; do
   [[ -z "${kind:-}" || "$kind" == \#* ]] && continue
   input="$ROOT/$relative"
@@ -80,7 +83,7 @@ while IFS='|' read -r kind relative duration seek layout; do
     *) echo "Unknown scene type: $kind" >&2; exit 1 ;;
   esac
   printf "file '%s'\n" "$output" >> "$concat_file"
-  printf 'Rendered scene %02d/%02d\n' "$scene" 31
+  printf 'Rendered scene %02d/%02d\n' "$scene" "$scene_total"
 done < "$MANIFEST"
 
 ffmpeg -nostdin -y -v error -f concat -safe 0 -i "$concat_file" -c copy "$BUILD/visuals.mp4"

@@ -21,15 +21,17 @@ const cueSets = { tr: [
   { start: 145.00, end: 152.00, type: 'key', title: 'HEDEF: YAKLAŞIK 200 TEMEL YAPAY ZEKÂ STANDARDI' },
   { start: 178.00, end: 188.00, type: 'cta', title: 'BİLİM VE TEKNOLOJİ GÜNDEMİNİ KAÇIRMAYIN' },
 ], en: [
-  { start: 110.20, end: 116.20, type: 'chapter', title: 'A MOLECULAR EARLY WARNING', kicker: 'FDA ACCELERATED APPROVAL · DEFINED BREAST CANCER GROUP' },
-  { start: 139.00, end: 145.00, type: 'key', title: 'EARLY INTERVENTION BENEFIT STILL NEEDS CONFIRMATION' },
-  { start: 155.20, end: 161.20, type: 'chapter', title: 'IMAGE AI FOR DEVELOPERS', kicker: 'MICROSOFT FOUNDRY · PUBLIC PREVIEW' },
-  { start: 185.00, end: 191.00, type: 'key', title: 'PREVIEW ACCESS — NOT INDEPENDENT PROOF OF QUALITY' },
-  { start: 200.20, end: 206.20, type: 'chapter', title: 'AIRFLOW THAT RESPONDS', kicker: 'SAMSUNG WINDFREE PRO · IFA INNOVATION AWARD' },
-  { start: 230.00, end: 236.00, type: 'key', title: 'MANUFACTURER CLAIMS; FEATURES VARY BY MODEL' },
-  { start: 245.20, end: 251.20, type: 'chapter', title: 'ARCHAEOLOGY, SEARCHABLE', kicker: 'CENTURIA · DIGITISING MODERN POTTERY RECORDS' },
-  { start: 273.00, end: 279.00, type: 'key', title: 'MACHINE-READ RECORDS STILL NEED EXPERT CHECKS' },
-  { start: 290.00, end: 300.00, type: 'cta', title: 'LIKE, SUBSCRIBE AND STAY CURIOUS' },
+  { start: 0.20, end: 5.20, type: 'chapter', title: '156,411 COSMIC HYDROGEN SOURCES', kicker: 'FAST · FASHI DATA RELEASE 2' },
+  { start: 68.00, end: 74.00, type: 'key', title: 'NEUTRAL HYDROGEN IS RAW MATERIAL FOR STARS' },
+  { start: 120.20, end: 126.20, type: 'chapter', title: 'AI LEARNS FROM EVOLUTION', kicker: 'GPN-STAR · UC BERKELEY' },
+  { start: 168.00, end: 175.00, type: 'key', title: 'A PREDICTION IS NOT A DIAGNOSIS' },
+  { start: 180.20, end: 186.20, type: 'chapter', title: 'CUSTOM NITINOL SPRINGS', kicker: 'CT-GUIDED FORCE AND PLACEMENT' },
+  { start: 228.00, end: 235.00, type: 'key', title: 'AN EARLY RESULT — NOT A COMPARATIVE TRIAL' },
+  { start: 240.20, end: 246.20, type: 'chapter', title: 'NEXT-GENERATION CHIPMAKING', kicker: 'HIGH-NA EUV · SAMSUNG AND ASML' },
+  { start: 288.00, end: 295.00, type: 'key', title: 'A ROADMAP — NOT A SHIPPED CHIP' },
+  { start: 300.20, end: 306.20, type: 'chapter', title: 'TWIN OCEAN-MEASURING SATELLITES', kicker: 'SENTINEL-6 · 30 SECONDS APART' },
+  { start: 348.00, end: 355.00, type: 'key', title: 'SATELLITE DATA WORKS WITH ATMOSPHERIC MODELS' },
+  { start: 360.00, end: 370.00, type: 'cta', title: 'LIKE, SUBSCRIBE AND STAY CURIOUS' },
 ] };
 const cues = cueSets[lang];
 const ctaLabels = lang === 'en'

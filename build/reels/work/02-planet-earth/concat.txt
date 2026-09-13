@@ -1,0 +1,7 @@
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth/clip01.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth/clip02.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth/clip03.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth/clip04.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth/clip05.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth/clip06.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth/clip07.mp4'

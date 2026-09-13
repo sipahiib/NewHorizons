@@ -1,0 +1,11 @@
+University of California, Berkeley researchers have built an AI model that learns about human DNA through evolution.
+
+G P N Star compares our genome with those of other species. Sections preserved across evolution are more likely to perform important functions, so the model uses those patterns to flag genetic changes for closer attention.
+
+Only a small fraction of human DNA directly codes for proteins. Much of the rest helps control gene activity, yet remains difficult to interpret.
+
+The team says G P N Star can prioritise variants linked to inherited traits and disease, while using less computing than much larger genomic models.
+
+The potential is faster, better-targeted research. But this is not a diagnostic test. A prediction does not prove that a variant causes disease, and promising results still need laboratory and clinical validation.
+
+It narrows the search for researchers.

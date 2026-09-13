@@ -1,229 +1,280 @@
 {
   "file": "build/video/newhorizons.mp4",
-  "duration": 300,
+  "duration": 370,
   "width": 1920,
   "height": 1080,
   "fps": "60/1",
-  "frames": 18000,
+  "frames": 22200,
   "videoCodec": "h264",
   "audioCodec": "aac",
   "sampleRate": "48000",
   "blackEvents": [],
-  "maxDetectedSilence": 1.367229,
+  "maxDetectedSilence": 5.491125,
   "measuredAudioGaps": [
     {
-      "end": 5.043563,
-      "duration": 1.061458
+      "end": 6.498458,
+      "duration": 1.027396
     },
     {
-      "end": 10.277771,
-      "duration": 1.030854
+      "end": 13.507396,
+      "duration": 1.020854
     },
     {
-      "end": 17.14375,
-      "duration": 0.968146
+      "end": 16.457062,
+      "duration": 1.027396
     },
     {
-      "end": 20.181,
-      "duration": 1.057604
+      "end": 18.769479,
+      "duration": 1.042188
     },
     {
-      "end": 25.987125,
-      "duration": 1.029958
+      "end": 23.959229,
+      "duration": 1.009396
     },
     {
-      "end": 32.648,
-      "duration": 1.051542
+      "end": 32.165479,
+      "duration": 0.997604
     },
     {
-      "end": 37.659375,
-      "duration": 1.053125
+      "end": 35.8405,
+      "duration": 1.004312
     },
     {
-      "end": 40.261708,
-      "duration": 1.043708
+      "end": 43.264125,
+      "duration": 0.995354
     },
     {
-      "end": 45.975062,
-      "duration": 1.020875
+      "end": 48.603854,
+      "duration": 1.006708
     },
     {
-      "end": 52.816104,
-      "duration": 1.0295
+      "end": 53.799271,
+      "duration": 1.008958
     },
     {
-      "end": 57.071854,
-      "duration": 1.011917
+      "end": 60.359792,
+      "duration": 1.003583
     },
     {
-      "end": 63.994458,
-      "duration": 1.095292
+      "end": 68.656083,
+      "duration": 1.011292
     },
     {
-      "end": 66.639583,
-      "duration": 1.013729
+      "end": 71.059042,
+      "duration": 0.998
     },
     {
-      "end": 73.075771,
-      "duration": 1.023417
+      "end": 81.063292,
+      "duration": 0.998271
     },
     {
-      "end": 80.210938,
-      "duration": 1.056542
+      "end": 88.370104,
+      "duration": 0.996708
     },
     {
-      "end": 86.161021,
-      "duration": 0.973625
+      "end": 95.325896,
+      "duration": 1.002563
     },
     {
-      "end": 90.699042,
-      "duration": 1.038208
+      "end": 100.104271,
+      "duration": 0.943
     },
     {
-      "end": 95.986417,
-      "duration": 1.013125
+      "end": 108.838625,
+      "duration": 0.962812
     },
     {
-      "end": 103.147854,
-      "duration": 1.058167
+      "end": 116.089833,
+      "duration": 1.0035
     },
     {
-      "end": 110.206042,
-      "duration": 1.367229
+      "end": 120.240875,
+      "duration": 1.633437
     },
     {
-      "end": 114.566354,
-      "duration": 0.942104
+      "end": 127.814875,
+      "duration": 0.953042
     },
     {
-      "end": 125.440479,
-      "duration": 0.918125
+      "end": 132.389521,
+      "duration": 1.002979
     },
     {
-      "end": 132.996083,
-      "duration": 0.94
+      "end": 141.860375,
+      "duration": 1.015375
     },
     {
-      "end": 137.752437,
-      "duration": 0.964771
+      "end": 146.772417,
+      "duration": 1.000625
     },
     {
-      "end": 142.994625,
-      "duration": 0.963958
+      "end": 152.052542,
+      "duration": 1.005125
     },
     {
-      "end": 147.112687,
-      "duration": 0.955646
+      "end": 161.445458,
+      "duration": 1.011875
     },
     {
-      "end": 155.229667,
-      "duration": 1.298292
+      "end": 165.36125,
+      "duration": 1.005187
     },
     {
-      "end": 161.182333,
-      "duration": 0.983375
+      "end": 168.250271,
+      "duration": 1.011854
     },
     {
-      "end": 168.708167,
-      "duration": 0.947542
+      "end": 176.053125,
+      "duration": 1.031
     },
     {
-      "end": 176.227312,
-      "duration": 0.997979
+      "end": 180.227312,
+      "duration": 2.242521
     },
     {
-      "end": 181.225146,
-      "duration": 0.985062
+      "end": 185.960333,
+      "duration": 1.011708
     },
     {
-      "end": 187.613083,
-      "duration": 1.005417
+      "end": 198.280812,
+      "duration": 1.035104
     },
     {
-      "end": 193.43175,
-      "duration": 0.992333
+      "end": 203.396146,
+      "duration": 0.986958
     },
     {
-      "end": 200.196667,
-      "duration": 1.33125
+      "end": 208.761104,
+      "duration": 0.995417
     },
     {
-      "end": 205.338458,
-      "duration": 1.022833
+      "end": 214.751937,
+      "duration": 1.001354
     },
     {
-      "end": 210.9425,
-      "duration": 1.024812
+      "end": 219.019792,
+      "duration": 1.013458
     },
     {
-      "end": 218.402146,
-      "duration": 1.061479
+      "end": 222.982125,
+      "duration": 1.007729
     },
     {
-      "end": 222.381229,
-      "duration": 1.018896
+      "end": 229.081708,
+      "duration": 1.03625
     },
     {
-      "end": 228.033729,
-      "duration": 1.019937
+      "end": 233.714854,
+      "duration": 1.002396
     },
     {
-      "end": 233.948479,
-      "duration": 1.037562
+      "end": 240.237625,
+      "duration": 1.576292
     },
     {
-      "end": 240.543875,
-      "duration": 1.019354
+      "end": 245.967625,
+      "duration": 1.010396
     },
     {
-      "end": 245.204896,
-      "duration": 1.365479
+      "end": 250.537875,
+      "duration": 0.949667
     },
     {
-      "end": 249.409917,
-      "duration": 0.930771
+      "end": 256.220562,
+      "duration": 1.010729
     },
     {
-      "end": 256.773479,
-      "duration": 0.916063
+      "end": 263.541833,
+      "duration": 0.996792
     },
     {
-      "end": 264.111042,
-      "duration": 0.863396
+      "end": 268.660854,
+      "duration": 1.047917
     },
     {
-      "end": 270.8645,
-      "duration": 0.894417
+      "end": 275.9285,
+      "duration": 1.003479
     },
     {
-      "end": 273.71,
-      "duration": 0.868729
+      "end": 283.039896,
+      "duration": 1.0075
     },
     {
-      "end": 276.602792,
-      "duration": 0.836875
+      "end": 288.210583,
+      "duration": 1.014146
     },
     {
-      "end": 282.47175,
-      "duration": 0.899146
+      "end": 292.526813,
+      "duration": 0.982208
     },
     {
-      "end": 290.233521,
-      "duration": 1.268604
+      "end": 300.235146,
+      "duration": 1.366937
     },
     {
-      "end": 294.055646,
-      "duration": 0.935479
+      "end": 305.733958,
+      "duration": 1.016875
     },
     {
-      "end": 296.61225,
-      "duration": 1.028833
+      "end": 313.172562,
+      "duration": 1.02075
     },
     {
-      "end": 300,
-      "duration": 1.132062
+      "end": 317.609312,
+      "duration": 1.01125
+    },
+    {
+      "end": 324.383125,
+      "duration": 0.98125
+    },
+    {
+      "end": 330.532167,
+      "duration": 1.001917
+    },
+    {
+      "end": 337.940042,
+      "duration": 0.994167
+    },
+    {
+      "end": 343.940979,
+      "duration": 1.0025
+    },
+    {
+      "end": 347.335042,
+      "duration": 0.994937
+    },
+    {
+      "end": 356.906187,
+      "duration": 1.004729
+    },
+    {
+      "end": 364.423875,
+      "duration": 5.491125
+    },
+    {
+      "end": 366.918375,
+      "duration": 1.004687
+    },
+    {
+      "end": 370,
+      "duration": 0.858292
     }
   ],
-  "visualReview": "Twenty decoded samples reviewed: immediate motion hook, legible sparse titles, labelled stock and original animations, Mexico location distinction, and English cinematic-glass closing with no channel name or handle. Sampled review, not full real-time playback.",
-  "audioReview": "signal continuity checked; not a claim of full human listening"
+  "explainedBoundaryGaps": [
+    {
+      "end": 120.240875,
+      "duration": 1.633437
+    },
+    {
+      "end": 180.227312,
+      "duration": 2.242521
+    },
+    {
+      "end": 364.423875,
+      "duration": 5.491125
+    }
+  ],
+  "unexpectedGaps": [],
+  "visualReview": "Independent QA pass: full decode plus 26 sampled frames confirm immediate real FAST motion, five correctly ordered stories, readable contextual disclosures, and an ads/handle-free cinematic CTA with no channel name.",
+  "audioReview": "Objective QA pass for loudness, signal continuity, section timing and exact TTS input. Human aural listening is unavailable in this environment and remains required before publication."
 }

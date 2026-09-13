@@ -5,11 +5,11 @@ import {promisify} from 'node:util';
 import {createRequire} from 'node:module';
 const run=promisify(execFile),require=createRequire(import.meta.url);
 const sharp=require('../.tools-node/node_modules/sharp');
-const root=path.resolve(import.meta.dirname,'..'),out=path.join(root,'build/video/stock-qa');
-const {assets}=JSON.parse(await fs.readFile(path.join(root,'video/stock_assets.json'),'utf8'));
+const root=path.resolve(import.meta.dirname,'..'),out=path.join(root,'build/video/current-media-qa');
+const {assets}=JSON.parse(await fs.readFile(path.join(root,'video/current_media_verification.json'),'utf8'));
 await fs.mkdir(out,{recursive:true});
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
-for(const topic of ['M2','M3','M4','M5','R1','R3']) {
+for(const topic of ['M1','M2','M3','M4','M5','R1','R2']) {
   const group=assets.filter(a=>a.id.startsWith(topic)&&a.file),tiles=[];
   for(let i=0;i<group.length;i++) {
     const a=group[i];
