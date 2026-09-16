@@ -1,73 +1,83 @@
-## FAST — 0:00–2:00
+## Neuroprosthesis — 0:00–2:00
 
-FAST just mapped 156,411 cosmic hydrogen sources. Built into a natural basin in southwest China, this enormous radio dish has surveyed nearly half the sky. Four more important developments are coming. Let's begin with the biggest.
+A brain implant just decoded speech and body language at the same time. The result points toward assistive communication that could express more than words alone.
 
-On September eighth, the FAST survey team released its second public data set. It contains radio detections of neutral hydrogen beyond our own galaxy, gathered between 2020 and 2025.
+Four more important developments are coming, from a space telescope to robotics, ultrathin electronics and eye scans. Let's begin with the biggest.
 
-Neutral hydrogen is not a message from space. It is the simplest form of the universe's most abundant element, and a basic reservoir from which galaxies make new stars. It emits a faint radio signature with a wavelength of about twenty-one centimetres. Unlike visible light, that signal can pass through clouds of interstellar dust.
+At the University of California, San Francisco, researchers worked with three people who had paralysis. Each already had electrodes placed on the brain's surface.
 
-FAST's huge collecting area is sensitive enough to catch those weak emissions across the nearby universe. The new catalogue gives each detection a position and measured signal, allowing astronomers to map where galaxy-forming gas is concentrated.
+Those electrodes record patterns from the motor cortex. They do not read every private thought. The system was trained for specific attempted phrases and familiar gestures, including a wave and a thumbs-up.
 
-The real advance is scale. Researchers can compare gas-rich and gas-poor galaxies, study how matter is arranged across cosmic structures, and identify targets for follow-up observations. The catalogue is publicly available, so teams around the world can work with the measurements without repeating the entire survey.
+The participants attempted speech and upper-body gestures. Personalised machine-learning systems decoded those signals together, instead of treating a spoken message and a physical gesture as separate events.
 
-Researchers can cross-match the radio catalogue with optical surveys, linking hydrogen to visible galaxies.
+Two participants used the system to control full-body avatars. That matters because a nod, a shrug or a change in posture can add meaning that a sentence misses.
 
-But this is a data release, not proof of a new cosmological theory. Its sources mostly belong to the relatively nearby, low-redshift universe, and each entry should not be described as a newly discovered galaxy. Even so, one telescope has turned years of faint radio signals into a shared map of the raw material of stars.
+The researchers also found that simultaneous expression was not simply speech data plus gesture data. Decoders performed better when trained on examples in which both actions were attempted together.
 
-Now, from cosmic gas to the code of life.
+For someone who cannot speak or move normally, a future interface like this might make digital conversation feel more expressive, and give communication partners more context.
 
-## GPN-Star — 2:00–3:00
+Current eye-tracking communication can be slow and tiring, so richer expression could be meaningful.
 
-University of California, Berkeley researchers have built an AI model that learns about human DNA through evolution.
+But this was a wired proof of concept involving only three people. It required brain surgery, and it did not restore biological speech or movement.
 
-G P N Star compares our genome with those of other species. Sections preserved across evolution are more likely to perform important functions, so the model uses those patterns to flag genetic changes for closer attention.
+The next challenges include larger studies, broader vocabularies, wireless hardware and long-term testing. For now, the achievement is precise but early: one interface decoded attempted words and gestures together.
 
-Only a small fraction of human DNA directly codes for proteins. Much of the rest helps control gene activity, yet remains difficult to interpret.
+## Roman — 2:00–3:00
 
-The team says G P N Star can prioritise variants linked to inherited traits and disease, while using less computing than much larger genomic models.
+NASA has switched on the Nancy Grace Roman Space Telescope's main camera and successfully communicated with it during commissioning.
 
-The potential is faster, better-targeted research. But this is not a diagnostic test. A prediction does not prove that a variant causes disease, and promising results still need laboratory and clinical validation.
+The Wide Field Instrument has three hundred megapixels. Between September eleventh and thirteenth, engineers recorded deliberately out-of-focus starlight as an initial baseline.
 
-It narrows the search for researchers.
+Its field of view is at least one hundred times larger than Hubble's infrared camera.
 
-## Nitinol springs — 3:00–4:00
+That blur was expected, not a failure. NASA also said communication with the coronagraph, plus thermal and mechanical checks, proceeded as planned.
 
-A custom metal spring has been used in surgery for a baby born with a rare skull condition.
+Roman is designed to survey large areas of sky efficiently, helping scientists study cosmic expansion, the distribution of matter and worlds around other stars.
 
-Teams from U C L, Great Ormond Street Hospital and Durham University designed it for severe sagittal craniosynostosis, where part of the skull fuses too early and restricts space for the growing brain.
+But this was an instrument checkout, not a discovery. Commissioning continues, and first science images are expected in 2027. Roman has not yet mapped dark energy or directly imaged an exoplanet.
 
-The spring uses nitinol, an alloy that can bend and return to a planned shape. With C T scans and computer modelling, the team tailored its force and placement. After surgeons made a narrow opening, the springs gradually widened it as new bone formed.
+## CoRe-VLN — 3:00–4:00
 
-The first procedure took place in September 2025. The child was doing well when the result was announced this week.
+A robot can reach the wrong place and still believe its journey is finished. A team is teaching navigation software to check again.
 
-It is promising engineering, but still one early patient result, not a comparative trial. In Britain, each use requires individual regulatory approval.
+KAIST and ETRI's CoRe-VLN system rescans its surroundings when it thinks it has arrived. If the destination does not match, it replans the route.
 
-Longer follow-up is needed to judge how this approach works across children and complex cases.
+It addresses a failure mode where a robot stops at a visually similar but incorrect place.
 
-## High-NA chipmaking — 4:00–5:00
+KAIST reports a ninety-point-seven percent average across two benchmark tasks. The system ranked first among one hundred and twelve teams, with a tie decided by earlier submission.
 
-Samsung and A S M L are expanding their collaboration on advanced chip manufacturing.
+Destination verification could eventually make delivery, hospital and factory robots less brittle when layouts, viewpoints or instructions create uncertainty.
 
-Their plan centres on High N A extreme ultraviolet lithography. It uses specialised optics and short-wavelength light to print smaller features onto silicon. Samsung intends to introduce High N A E U V into high-volume D RAM production by 2028.
+But this is a competition benchmark, not a production deployment or proof of universal safety. Real buildings bring people, moving obstacles and rare situations that benchmarks cannot fully represent.
 
-The companies will also work on a proposed twelve-inch photomask platform. A larger format could reduce stitching constraints and improve factory productivity as chip designs become more complex.
+## Atomically thin transistors — 4:00–5:00
 
-This matters because memory and logic chips sit underneath AI systems, phones, vehicles and data centres. Manufacturing improvements can affect performance, supply and cost.
+Ultrathin electronics require different contacts for different transistor types. A KAIST-led team reports one material that can work with both.
 
-But this is a partnership and a roadmap, not a newly shipped chip. Neither the larger mask platform nor the 2028 production target is guaranteed, because implementation matters.
+Contacts are a major challenge because ordinary metal deposition can damage extremely thin semiconductor layers or create resistance that wastes energy.
 
-## Sentinel-6 — 5:00–6:00
+The researchers used a tin-diselenide van der Waals injector with p-type tungsten diselenide and n-type molybdenum disulfide devices.
 
-Two satellites are flying over the same stretches of ocean just thirty seconds apart.
+They also demonstrated a CMOS inverter. KAIST says the p-type device reached a maximum drive current more than one thousand times its nickel comparison.
 
-Sentinel Six Michael Freilich and Sentinel Six B are a joint mission of NASA, NOAA and European partners. They measure sea-surface height, waves and marine wind speed.
+A shared contact approach could eventually simplify circuits built from atomically thin materials, helping engineers explore smaller, lower-power electronics.
 
-Warmer water expands, so ocean height can help researchers estimate where heat is stored below the surface. That matters for hurricanes because unusually warm, deep water can support rapid intensification.
+These are laboratory devices, not a new commercial processor. Large-area growth, manufacturing yield, integration and durability still need work, and the reported performance does not apply to every chip.
 
-The twin arrangement lets scientists compare measurements almost immediately and check the consistency of the long climate record.
+## Retinal AF signal — 5:00–6:00
 
-For coastal communities, better observations could strengthen forecasting and emergency planning. But satellites do not predict hurricanes alone. Their measurements must be combined with atmospheric observations and models, and NASA has not claimed Sentinel Six B has already improved a particular forecast. Integration supports better warnings.
+Could an eye scan reveal a clue about an irregular heartbeat? UCL and Moorfields researchers analysed retinal images and health records from more than ninety thousand people.
+
+They found thinner retinal nerve layers among people with atrial fibrillation, a rhythm disorder that can be intermittent and difficult to catch during a brief examination.
+
+Because the condition can come and go, a short heart recording may miss it, making additional clues useful.
+
+Among participants diagnosed later, the retinal signal appeared an average of four years before their hospital diagnosis. That is a group average, not a personal countdown.
+
+In future, retinal imaging might help identify people who should receive cardiac assessment when atrial fibrillation has gone unnoticed.
+
+But an eye scan does not diagnose atrial fibrillation or replace an ECG. This retrospective association does not prove cause and effect, and researchers have not established a clinical threshold.
 
 ## Closing — 6:00–6:10
 
-That was our latest news. Stay with science, and stay tuned.
+If this helped, like and subscribe. That was our latest news. Stay with science, and stay tuned.

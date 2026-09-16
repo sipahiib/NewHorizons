@@ -1,30 +1,33 @@
 {
-  "cycle": "2026-09-10",
-  "amendedAt": "2026-09-13",
+  "cycle": "2026-09-16",
+  "status": "delivered-pass",
+  "humanAuralApproval": {
+    "approvedBy": "user",
+    "approvedOn": "2026-09-16",
+    "scope": "Complete main video and both Reels; no clipped or mispronounced words, unnatural pacing, missing sentence, or incorrect final sentence reported."
+  },
   "deliverables": [
     {
       "file": "build/video/newhorizons.mp4",
-      "visualReview": "Pass: 26 decoded samples cover the immediate FAST opening, all five stories, real/contextual footage disclosures, topic transitions and the complete closing. Closing background is dark and contains no channel name or handle; Like, Subscribe and bell CTA remains visible.",
-      "technicalReview": "Pass: 1920x1080, H.264/AAC, 60 fps, 370.000 seconds, 22,200 decoded frames, no black interval and no unexplained long audio gap."
+      "sha256": "3dc7f6ec55e060244b5f237d67d288c9283b0c9407fa6f99c16a46c3766e2286",
+      "technicalReview": "PASS: H.264/AAC, 1920x1080, 60 fps, 370.000 seconds, 22,200 fully decoded frames, no black event or unexpected audio gap; -16.2 LUFS and -1.4 dBTP.",
+      "visualReview": "PASS: 29 moving scenes, correct boundaries, persistent actuality disclosures, readable ordered overlays, real-motion CTA, no cover/thumbnail/CGI/avatar.",
+      "auralReview": "PASS: user confirmed the complete listening review on 2026-09-16."
     },
     {
-      "file": "build/reels/01-sports-biomechanics.mp4",
-      "visualReview": "Pass: seven distinct real contextual clips, complete foreground frames, readable title/disclosure and final CTA.",
-      "technicalReview": "Pass: 1080x1920, H.264/AAC, 60 fps, 45.000 seconds, 2,700 decoded frames; speech ends at 41.5999 seconds."
+      "file": "build/reels/01-future-of-ai.mp4",
+      "sha256": "8135f38849ccb85c736e82267cae03ae75f46fdc52453335d5f31a1770121933",
+      "technicalReview": "PASS: H.264/AAC, 1080x1920, 60 fps, 45.016667 seconds, 2,701 frames, speech end 42.119167, closing gap 2.8975, -16.3 LUFS and -1.5 dBTP.",
+      "visualReview": "PASS: seven distinct clips, full-frame foreground over blurred duplicate, readable title/disclosure/CTA and correct handle; no cover.",
+      "auralReview": "PASS: user confirmed the complete listening review on 2026-09-16."
     },
     {
-      "file": "build/reels/02-planet-earth.mp4",
-      "visualReview": "Pass: seven distinct real contextual clips, complete foreground frames, readable title/disclosure and final CTA.",
-      "technicalReview": "Pass: 1080x1920, H.264/AAC, 60 fps, 46.400 seconds, 2,784 decoded frames; speech ends at 43.4024 seconds."
+      "file": "build/reels/02-planet-earth-sea-ice.mp4",
+      "sha256": "1cb50c2c5b0b8e048f03ceaeaf549aa6a707f7cf31b64642be1dd6b6273f3b9b",
+      "technicalReview": "PASS: H.264/AAC, 1080x1920, 60 fps, 45.337 seconds, 2,720 frames, speech end 42.418354, closing gap 2.918646, -16.3 LUFS and -1.5 dBTP.",
+      "visualReview": "PASS: seven sea-ice/floe/polar-ice clips, full-frame foreground over blurred duplicate, readable title/disclosure/CTA and correct handle; no cover.",
+      "auralReview": "PASS: user confirmed the complete listening review on 2026-09-16."
     }
   ],
-  "covers": [
-    "assets/covers/2026-09-10/01-sports-biomechanics.png",
-    "assets/covers/2026-09-10/02-planet-earth.png"
-  ],
-  "excluded": [
-    "Hands-on Science Reel",
-    "FAST/main-video cover"
-  ],
-  "auralReview": "Automated signal, loudness, speech-end and source-WAV-to-MP4 continuity checks passed. This environment cannot truthfully claim human aural listening; manual real-time listening remains required by AGENTS.md before publication."
+  "deliveryGate": "PASS: technical, visual and human aural review requirements are complete."
 }

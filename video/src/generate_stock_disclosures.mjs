@@ -7,11 +7,11 @@ const out = path.resolve(process.env.EDITORIAL_BUILD || 'build/video/editorial-e
 fs.mkdirSync(out, { recursive: true });
 const labels = {
   generic: 'Contextual real footage',
-  m1: 'Contextual radio telescope — not FAST',
-  m2: 'Contextual laboratory footage — not the GPN-Star study',
-  m3: 'Contextual medical footage — not the reported patient or team',
-  m4: 'Contextual electronics footage — not Samsung, ASML or High-NA EUV',
-  m5: 'Contextual weather footage — not Sentinel-6 observations',
+  m1: 'Contextual real footage — not the UCSF study',
+  m2: 'NASA archival footage — not the commissioning event',
+  m3: 'Contextual robot footage — not CoRe-VLN',
+  m4: 'Contextual electronics footage — not the reported devices',
+  m5: 'Contextual clinical footage — not study participants',
 };
 for (const [id, text] of Object.entries(labels)) {
   const width = text.length * 13 + 36;

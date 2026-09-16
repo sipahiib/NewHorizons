@@ -1,13 +1,13 @@
 [
   {
-    "file": "build/reels/01-sports-biomechanics.mp4",
+    "file": "build/reels/01-future-of-ai.mp4",
     "width": 1080,
     "height": 1920,
     "fps": "60/1",
-    "frames": 2700,
-    "duration": 45,
-    "speechEnd": 41.599917,
-    "closingGap": 3.400083000000002,
+    "frames": 2701,
+    "duration": 45.016667,
+    "speechEnd": 42.119167,
+    "closingGap": 2.897500000000001,
     "videoCodec": "h264",
     "audioCodec": "aac",
     "voice": "en-GB-RyanNeural",
@@ -16,18 +16,18 @@
     "sourceClips": 7,
     "layout": "Full foreground frame centred over dark blurred duplicate; no landscape foreground crop",
     "blackIntervals": 0,
-    "visualReview": "Independent QA pass: actual frames at all six cut boundaries and the contact sheet show seven distinct real contextual clips, complete foreground framing, readable disclosure/title/CTA, no black interval and no extended freeze.",
-    "audioReview": "Objective QA pass for loudness, signal continuity, speech end and WAV-to-MP4 timing. Human aural listening is unavailable in this environment and remains required before publication."
+    "visualReview": "pending contact-sheet review",
+    "audioReview": "Measured signal ending; no claim of full human listening"
   },
   {
-    "file": "build/reels/02-planet-earth.mp4",
+    "file": "build/reels/02-planet-earth-sea-ice.mp4",
     "width": 1080,
     "height": 1920,
     "fps": "60/1",
-    "frames": 2784,
-    "duration": 46.4,
-    "speechEnd": 43.402396,
-    "closingGap": 2.9976039999999955,
+    "frames": 2720,
+    "duration": 45.337,
+    "speechEnd": 42.418354,
+    "closingGap": 2.9186460000000025,
     "videoCodec": "h264",
     "audioCodec": "aac",
     "voice": "en-GB-RyanNeural",
@@ -36,7 +36,7 @@
     "sourceClips": 7,
     "layout": "Full foreground frame centred over dark blurred duplicate; no landscape foreground crop",
     "blackIntervals": 0,
-    "visualReview": "Independent QA pass: actual frames at all six cut boundaries and the contact sheet show seven distinct real contextual clips, complete foreground framing, readable disclosure/title/CTA, no black interval and no extended freeze.",
-    "audioReview": "Objective QA pass for loudness, signal continuity, speech end and WAV-to-MP4 timing. Human aural listening is unavailable in this environment and remains required before publication."
+    "visualReview": "pending contact-sheet review",
+    "audioReview": "Measured signal ending; no claim of full human listening"
   }
 ]

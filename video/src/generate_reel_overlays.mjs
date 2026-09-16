@@ -10,8 +10,8 @@ fs.mkdirSync(out, { recursive: true });
 
 const esc = (s) => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const titles = [
-  'FATIGUE — OR SPEED?',
-  'EARTH’S EAST–WEST LIGHT BALANCE',
+  'CAN AI SUPPORT AGENCY?',
+  'SEA ICE DOESN’T JUST FOLLOW WIND',
 ];
 
 for (const [i, title] of titles.entries()) {
@@ -33,8 +33,8 @@ const cta = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="1080" he
 await sharp(cta).webp({ lossless: true }).toFile(path.join(out, 'cta.webp'));
 
 for (const [name, text] of Object.entries({
-  sports: 'Contextual real footage — not study participants',
-  earth: 'Contextual real footage — not satellite measurements',
+  ai: 'Contextual real footage — not institute participants',
+  earth: 'Contextual real footage — not study measurements',
 })) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920"><rect x="40" y="285" width="1000" height="55" rx="10" fill="#06131f" fill-opacity=".84"/><text x="540" y="322" text-anchor="middle" font-family="Arial" font-size="28" fill="white">${text}</text></svg>`;
   await sharp(Buffer.from(svg)).webp({lossless:true}).toFile(path.join(out, `${name}.webp`));

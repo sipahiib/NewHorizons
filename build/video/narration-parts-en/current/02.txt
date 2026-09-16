@@ -1,11 +1,11 @@
-University of California, Berkeley researchers have built an AI model that learns about human DNA through evolution.
+NASA has switched on the Nancy Grace Roman Space Telescope's main camera and successfully communicated with it during commissioning.
 
-G P N Star compares our genome with those of other species. Sections preserved across evolution are more likely to perform important functions, so the model uses those patterns to flag genetic changes for closer attention.
+The Wide Field Instrument has three hundred megapixels. Between September eleventh and thirteenth, engineers recorded deliberately out-of-focus starlight as an initial baseline.
 
-Only a small fraction of human DNA directly codes for proteins. Much of the rest helps control gene activity, yet remains difficult to interpret.
+Its field of view is at least one hundred times larger than Hubble's infrared camera.
 
-The team says G P N Star can prioritise variants linked to inherited traits and disease, while using less computing than much larger genomic models.
+That blur was expected, not a failure. NASA also said communication with the coronagraph, plus thermal and mechanical checks, proceeded as planned.
 
-The potential is faster, better-targeted research. But this is not a diagnostic test. A prediction does not prove that a variant causes disease, and promising results still need laboratory and clinical validation.
+Roman is designed to survey large areas of sky efficiently, helping scientists study cosmic expansion, the distribution of matter and worlds around other stars.
 
-It narrows the search for researchers.
+But this was an instrument checkout, not a discovery. Commissioning continues, and first science images are expected in 2027. Roman has not yet mapped dark energy or directly imaged an exoplanet.

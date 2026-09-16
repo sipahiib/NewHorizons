@@ -1,9 +1,11 @@
-Samsung and A S M L are expanding their collaboration on advanced chip manufacturing.
+Ultrathin electronics require different contacts for different transistor types. A KAIST-led team reports one material that can work with both.
 
-Their plan centres on High N A extreme ultraviolet lithography. It uses specialised optics and short-wavelength light to print smaller features onto silicon. Samsung intends to introduce High N A E U V into high-volume D RAM production by 2028.
+Contacts are a major challenge because ordinary metal deposition can damage extremely thin semiconductor layers or create resistance that wastes energy.
 
-The companies will also work on a proposed twelve-inch photomask platform. A larger format could reduce stitching constraints and improve factory productivity as chip designs become more complex.
+The researchers used a tin-diselenide van der Waals injector with p-type tungsten diselenide and n-type molybdenum disulfide devices.
 
-This matters because memory and logic chips sit underneath AI systems, phones, vehicles and data centres. Manufacturing improvements can affect performance, supply and cost.
+They also demonstrated a CMOS inverter. KAIST says the p-type device reached a maximum drive current more than one thousand times its nickel comparison.
 
-But this is a partnership and a roadmap, not a newly shipped chip. Neither the larger mask platform nor the 2028 production target is guaranteed, because implementation matters.
+A shared contact approach could eventually simplify circuits built from atomically thin materials, helping engineers explore smaller, lower-power electronics.
+
+These are laboratory devices, not a new commercial processor. Large-area growth, manufacturing yield, integration and durability still need work, and the reported performance does not apply to every chip.

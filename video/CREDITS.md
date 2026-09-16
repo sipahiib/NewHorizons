@@ -1,5 +1,15 @@
 # NewHorizons — footage credits and publication notes
 
+## Current cycle — 16 September 2026
+
+The complete per-file source URL, licence class, actuality label and required credit for all 42 current assets are recorded in `video/current_media_manifest.json`. Pexels footage is used under the [Pexels licence](https://www.pexels.com/license/). Roman hardware footage is credited to NASA Goddard and the named NASA videographers in the manifest under [NASA media guidance](https://www.nasa.gov/nasa-brand-center/images-and-media/).
+
+M1, M3, M4, M5 and both Reels use clearly labelled contextual recordings; they do not depict the named researchers, participants or experiments. M2 uses real archival Roman hardware/integration footage, not the in-space commissioning event. No Nature avatar video, VLN simulation, CGI, cover or thumbnail is used. The main closing uses moving NASA cleanroom footage.
+
+Factual sources and the post-approval media audit are in `video/SOURCES.md`. This file records credits; it does not authorise publication.
+
+## Historical cycles
+
 Main video uses original illustrative launch animation, not Isar/NSF footage. Generic stock does not depict the featured patients, software, Samsung model or CENTURIA collection. The museum is in Mexico; Athens Acropolis footage is not the Agora. No endorsement is implied. Include these credits/source links in the publication description; this file does not authorise publication.
 
 Stock licence: https://www.pexels.com/license/

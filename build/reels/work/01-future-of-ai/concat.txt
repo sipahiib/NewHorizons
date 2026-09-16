@@ -1,0 +1,7 @@
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/01-future-of-ai/clip01.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/01-future-of-ai/clip02.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/01-future-of-ai/clip03.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/01-future-of-ai/clip04.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/01-future-of-ai/clip05.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/01-future-of-ai/clip06.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/01-future-of-ai/clip07.mp4'

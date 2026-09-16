@@ -1,0 +1,7 @@
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth-sea-ice/clip01.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth-sea-ice/clip02.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth-sea-ice/clip03.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth-sea-ice/clip04.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth-sea-ice/clip05.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth-sea-ice/clip06.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth-sea-ice/clip07.mp4'

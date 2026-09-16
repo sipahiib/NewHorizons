@@ -21,14 +21,8 @@ awk -v a="$audio_duration" -v v="$manifest_duration" 'BEGIN {d=a-v; if (d<0) d=-
 }
 
 render_still() {
-  local input="$1" duration="$2" output="$3"
-  [[ "$input" == "$ROOT/assets/branding/new-horizons-cover.png" ]] || {
-    echo "Only the approved closing cover may be rendered as a still." >&2
-    exit 1
-  }
-  ffmpeg -nostdin -y -v error -loop 1 -framerate "$FPS" -i "$input" \
-    -vf "scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:color=black,format=yuv420p,setrange=limited,fps=$FPS,setsar=1" \
-    -t "$duration" -an -c:v libx264 -preset veryfast -crf 16 -pix_fmt yuv420p -r "$FPS" "$output"
+  echo "Still scenes are forbidden for this cycle: $1" >&2
+  exit 1
 }
 
 render_clip() {
@@ -49,7 +43,7 @@ render_clip() {
     filter="scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,eq=contrast=1.025:saturation=1.035,format=yuv420p,setrange=limited,fps=$FPS,trim=duration=$duration,setpts=PTS-STARTPTS,setsar=1"
   fi
   local -a filter_args=(-vf "$filter")
-  if [[ "$input" == */2026-09-10/main/M[1-5]-*.mp4 ]]; then
+  if [[ "$input" == */2026-09-16/main/M[1-5]-* ]]; then
     local label=generic
     [[ "$input" == */M1-* ]] && label=m1
     [[ "$input" == */M2-* ]] && label=m2

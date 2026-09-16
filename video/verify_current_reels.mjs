@@ -7,7 +7,7 @@ const root=path.resolve(import.meta.dirname,'..'),qa=path.join(root,'build/reels
 fs.mkdirSync(qa,{recursive:true});
 const run=(bin,args)=>{const r=spawnSync(bin,args,{encoding:'utf8',maxBuffer:8*1024*1024});if(r.status)throw new Error(r.stderr);return r;};
 const reports=[],tiles=[];
-for(const [row,stem] of ['01-sports-biomechanics','02-planet-earth'].entries()){
+for(const [row,stem] of ['01-future-of-ai','02-planet-earth-sea-ice'].entries()){
  const file=path.join(root,'build/reels',stem+'.mp4');
  const meta=JSON.parse(run('ffprobe',['-v','error','-count_frames','-show_streams','-show_format','-of','json',file]).stdout);
  const v=meta.streams.find(s=>s.codec_type==='video'),a=meta.streams.find(s=>s.codec_type==='audio'),duration=Number(meta.format.duration);

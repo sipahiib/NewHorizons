@@ -1,15 +1,21 @@
-FAST just mapped 156,411 cosmic hydrogen sources. Built into a natural basin in southwest China, this enormous radio dish has surveyed nearly half the sky. Four more important developments are coming. Let's begin with the biggest.
+A brain implant just decoded speech and body language at the same time. The result points toward assistive communication that could express more than words alone.
 
-On September eighth, the FAST survey team released its second public data set. It contains radio detections of neutral hydrogen beyond our own galaxy, gathered between 2020 and 2025.
+Four more important developments are coming, from a space telescope to robotics, ultrathin electronics and eye scans. Let's begin with the biggest.
 
-Neutral hydrogen is not a message from space. It is the simplest form of the universe's most abundant element, and a basic reservoir from which galaxies make new stars. It emits a faint radio signature with a wavelength of about twenty-one centimetres. Unlike visible light, that signal can pass through clouds of interstellar dust.
+At the University of California, San Francisco, researchers worked with three people who had paralysis. Each already had electrodes placed on the brain's surface.
 
-FAST's huge collecting area is sensitive enough to catch those weak emissions across the nearby universe. The new catalogue gives each detection a position and measured signal, allowing astronomers to map where galaxy-forming gas is concentrated.
+Those electrodes record patterns from the motor cortex. They do not read every private thought. The system was trained for specific attempted phrases and familiar gestures, including a wave and a thumbs-up.
 
-The real advance is scale. Researchers can compare gas-rich and gas-poor galaxies, study how matter is arranged across cosmic structures, and identify targets for follow-up observations. The catalogue is publicly available, so teams around the world can work with the measurements without repeating the entire survey.
+The participants attempted speech and upper-body gestures. Personalised machine-learning systems decoded those signals together, instead of treating a spoken message and a physical gesture as separate events.
 
-Researchers can cross-match the radio catalogue with optical surveys, linking hydrogen to visible galaxies.
+Two participants used the system to control full-body avatars. That matters because a nod, a shrug or a change in posture can add meaning that a sentence misses.
 
-But this is a data release, not proof of a new cosmological theory. Its sources mostly belong to the relatively nearby, low-redshift universe, and each entry should not be described as a newly discovered galaxy. Even so, one telescope has turned years of faint radio signals into a shared map of the raw material of stars.
+The researchers also found that simultaneous expression was not simply speech data plus gesture data. Decoders performed better when trained on examples in which both actions were attempted together.
 
-Now, from cosmic gas to the code of life.
+For someone who cannot speak or move normally, a future interface like this might make digital conversation feel more expressive, and give communication partners more context.
+
+Current eye-tracking communication can be slow and tiring, so richer expression could be meaningful.
+
+But this was a wired proof of concept involving only three people. It required brain surgery, and it did not restore biological speech or movement.
+
+The next challenges include larger studies, broader vocabularies, wireless hardware and long-term testing. For now, the achievement is precise but early: one interface decoded attempted words and gestures together.

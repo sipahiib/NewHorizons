@@ -1,33 +1,36 @@
 # kind|relative_path|duration_seconds|seek_seconds|layout
-# M1 — four visually distinct excerpts from actual FAST footage plus one contextual radio telescope.
-clip|assets/motion/2026-09-10/main/M1-FAST.webm|24|0|cover
-clip|assets/motion/2026-09-10/main/M1-FAST.webm|24|24|cover
-clip|assets/motion/2026-09-10/main/M1-FAST.webm|24|48|cover
-clip|assets/motion/2026-09-10/main/M1-FAST.webm|24|72|cover
-clip|assets/motion/2026-09-10/main/M1-05.mp4|24|5|contain_blur
-# M2 — real contextual laboratory recordings, not the GPN-Star team or experiments.
-clip|assets/motion/2026-09-10/main/M2-01.mp4|12|0|contain_blur
-clip|assets/motion/2026-09-10/main/M2-02.mp4|12|2|contain_blur
-clip|assets/motion/2026-09-10/main/M2-03R.mp4|12|0|contain_blur
-clip|assets/motion/2026-09-10/main/M2-04.mp4|12|4|contain_blur
-clip|assets/motion/2026-09-10/main/M2-05.mp4|12|8|contain_blur
-# M3 — real contextual medical recordings, not the reported patient, team or custom spring.
-clip|assets/motion/2026-09-10/main/M3-01R.mp4|12|1|contain_blur
-clip|assets/motion/2026-09-10/main/M3-02.mp4|12|1|contain_blur
-clip|assets/motion/2026-09-10/main/M3-03.mp4|12|0|contain_blur
-clip|assets/motion/2026-09-10/main/M3-04R.mp4|12|2|contain_blur
-clip|assets/motion/2026-09-10/main/M3-05R2.mp4|12|1|contain_blur
-# M4 — real contextual electronics/manufacturing footage, not Samsung/ASML facilities or High-NA EUV.
-clip|assets/motion/2026-09-10/main/M4-01.mp4|12|0|contain_blur
-clip|assets/motion/2026-09-10/main/M4-02.mp4|12|2|contain_blur
-clip|assets/motion/2026-09-10/main/M4-03.mp4|12|1|contain_blur
-clip|assets/motion/2026-09-10/main/M4-04.mp4|12|3|contain_blur
-clip|assets/motion/2026-09-10/main/M4-05.mp4|12|4|contain_blur
-# M5 — real contextual ocean/weather footage, not Sentinel-6 observations or a named storm.
-clip|assets/motion/2026-09-10/main/M5-01R.mp4|12|1|contain_blur
-clip|assets/motion/2026-09-10/main/M5-02.mp4|12|2|contain_blur
-clip|assets/motion/2026-09-10/main/M5-03R.mp4|12|3|contain_blur
-clip|assets/motion/2026-09-10/main/M5-04.mp4|12|2|contain_blur
-clip|assets/motion/2026-09-10/main/M5-05.mp4|12|3|contain_blur
-# Closing only: a static branding image is permitted behind the cinematic-glass CTA.
-still|assets/branding/new-horizons-cover.png|10|0|contain_blur
+# M1 — real contextual recordings; not UCSF, the participants or the reported experiment.
+clip|assets/motion/2026-09-16/main/M1-06.mp4|15|3|cover
+clip|assets/motion/2026-09-16/main/M1-02.mp4|15|2|cover
+clip|assets/motion/2026-09-16/main/M1-03R.mp4|15|4|cover
+clip|assets/motion/2026-09-16/main/M1-04R2.mp4|15|2|contain_blur
+clip|assets/motion/2026-09-16/main/M1-05.mp4|15|2|cover
+clip|assets/motion/2026-09-16/main/M1-01R.mp4|15|0|cover
+clip|assets/motion/2026-09-16/main/M1-07.mp4|15|0|cover
+clip|assets/motion/2026-09-16/main/M1-08.mp4|15|0|cover
+# M2 — actual NASA Roman hardware and integration recordings.
+clip|assets/motion/2026-09-16/main/M2-01R.webm|12|5|cover
+clip|assets/motion/2026-09-16/main/M2-02.webm|12|8|contain_blur
+clip|assets/motion/2026-09-16/main/M2-03.webm|12|12|contain_blur
+clip|assets/motion/2026-09-16/main/M2-04.webm|12|20|cover
+clip|assets/motion/2026-09-16/main/M2-05.webm|12|24|cover
+# M3 — contextual real robots; not CoRe-VLN or its benchmark.
+clip|assets/motion/2026-09-16/main/M3-01.mp4|12|1|cover
+clip|assets/motion/2026-09-16/main/M3-02R.mp4|12|0|cover
+clip|assets/motion/2026-09-16/main/M3-03R2.mp4|12|2|contain_blur
+clip|assets/motion/2026-09-16/main/M3-04.mp4|12|0|cover
+clip|assets/motion/2026-09-16/main/M3-05R.mp4|12|2|contain_blur
+# M4 — contextual electronics/manufacturing; not the KAIST devices or fabrication process.
+clip|assets/motion/2026-09-16/main/M4-01.mp4|12|0|cover
+clip|assets/motion/2026-09-16/main/M4-02.mp4|12|1|cover
+clip|assets/motion/2026-09-16/main/M4-03.mp4|12|0|cover
+clip|assets/motion/2026-09-16/main/M4-04.mp4|12|2|cover
+clip|assets/motion/2026-09-16/main/M4-05.mp4|12|3|cover
+# M5 — contextual real eye/clinical/cardiac recordings; not participants or OCT study footage.
+clip|assets/motion/2026-09-16/main/M5-01.mp4|12|1|cover
+clip|assets/motion/2026-09-16/main/M5-02.mp4|12|4|cover
+clip|assets/motion/2026-09-16/main/M5-03.mp4|12|2|cover
+clip|assets/motion/2026-09-16/main/M5-04.mp4|12|2|cover
+clip|assets/motion/2026-09-16/main/M5-05.mp4|12|1|cover
+# Closing — real Roman cleanroom footage behind the cinematic-glass CTA; no cover/thumbnail.
+outro|assets/motion/2026-09-16/main/M2-01R.webm|10|80|cover

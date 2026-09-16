@@ -1,10 +1,10 @@
 # NewHorizons — Coordination Record
 
-## Current governing main-video schedule — updated 10 September 2026
+## Current governing main-video schedule — updated 16 September 2026
 
 The required main-programme duration is **6:10 (370 seconds)**:
 
-- Main story: **0:00–2:00** — 120 seconds, normally five 24-second visual segments.
+- Main story: **0:00–2:00** — 120 seconds, exactly eight 15-second visual segments.
 - Support 1: **2:00–3:00** — 60 seconds, normally five 12-second visual segments.
 - Support 2: **3:00–4:00** — 60 seconds, normally five 12-second visual segments.
 - Support 3: **4:00–5:00** — 60 seconds, normally five 12-second visual segments.
@@ -31,7 +31,7 @@ Research agents do not edit shared production files, download media, finalise na
 
 ## Approval and production gates
 
-Current-cycle approval, 10 September 2026, amended 13 September 2026: the user approved the complete five-story package in `video/SOURCES.md`, main hook M1-H1 and the currently defined two Reels with their recommended hooks. The amended Reel set is R1 Sports Biomechanics and Physics plus R2 The Planet Earth. Hands-on Science has been removed and must not be produced. This authorises in-repository media acquisition, final narration and rendering for that exact package. Material substitutions still require approval; publication, purchase, external permission requests, commits and GitHub pushes remain unauthorised.
+Current-cycle approval, 16 September 2026: the user approved the package in `video/SOURCES.md` with M2 changed from FLEX/Sentinel-3C to NASA Roman primary-instrument activation. The approved set is M1 UCSF neuroprosthesis, M2 Roman, M3 CoRe-VLN, M4 atomically thin transistor injector, M5 retinal AF signal, R1 Future of AI education and R2 Planet Earth sea-ice collisions. Approved hooks are M1-H1, R1-H1 and R2-H1. This authorises in-repository media acquisition, final narration and rendering for that exact package. Material topic substitutions still require approval; routine failed-media replacement within the documented real-footage policy does not. Publication, purchase, external permission requests, commits and GitHub pushes remain unauthorised.
 
 Delivery note requested by the user: when the main video and Reels are complete, provide a separate example set of current, topic-specific Instagram and YouTube hashtags for each finished video. Verify contemporary platform guidance at delivery time; avoid irrelevant bulk tags and do not publish anything externally.
 
@@ -40,10 +40,10 @@ Cover policy amended by the user: do not create or deliver cover images or thumb
 The previous Hands-on Science visual substitution is historical and no longer belongs to the current production set.
 
 1. Verify news and real recorded-video candidates for every main-programme story. Generated, procedural and illustrative animation is not permitted in the main programme. Distinguish proposed excerpts from visually confirmed footage. If suitable real video is unavailable after availability and rights checks, document the search outcome and propose relevant sourced still images as the fallback.
-2. Present topics, sources and candidates to the user. All five main topics, main H1, both current Reel topics and each Reel's H1 are explicitly approved. Actual motion excerpts and their rights remain to be verified and approved.
+2. Present topics, sources and candidates to the user. All five main topics, main H1, both current Reel topics and each Reel's H1 are explicitly approved. Actual motion excerpts and their rights remain to be verified before production.
 3. Resolve rights, availability and material substitutions before production. Do not infer blanket approval from the request to continue research.
 4. After approval, enumerate previous-cycle audio/video paths before required cleanup; preserve non-media files and newly approved inputs.
-5. Update scene mappings, narration and title timing together. Required main timeline: 120-second main story, four 60-second supports and a 10-second CTA = 370 seconds. Use boundaries 0/120/180/240/300/360/370 seconds and normally five 24-second main-story segments plus five 12-second segments per support.
+5. Update scene mappings, narration and title timing together. Required main timeline: 120-second main story, four 60-second supports and a 10-second CTA = 370 seconds. Use boundaries 0/120/180/240/300/360/370 seconds, eight 15-second M1 segments and five 12-second segments per support.
 6. Render and verify under AGENTS.md: English Ryan narration, 1080p/60 main video, vertical 1080×1920/60 Reels, measured speech and closing, then cleanup. Ask before any GitHub push; never commit audio/video binaries.
 
 ## Historical read-only technical preflight — 7 September 2026

@@ -11,8 +11,8 @@ RATE="-2%"
 mkdir -p "$OUT"
 
 stems=(
-  01-sports-biomechanics
-  02-planet-earth
+  01-future-of-ai
+  02-planet-earth-sea-ice
 )
 
 invalid=0

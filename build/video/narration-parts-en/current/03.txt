@@ -1,11 +1,11 @@
-A custom metal spring has been used in surgery for a baby born with a rare skull condition.
+A robot can reach the wrong place and still believe its journey is finished. A team is teaching navigation software to check again.
 
-Teams from U C L, Great Ormond Street Hospital and Durham University designed it for severe sagittal craniosynostosis, where part of the skull fuses too early and restricts space for the growing brain.
+KAIST and ETRI's CoRe-VLN system rescans its surroundings when it thinks it has arrived. If the destination does not match, it replans the route.
 
-The spring uses nitinol, an alloy that can bend and return to a planned shape. With C T scans and computer modelling, the team tailored its force and placement. After surgeons made a narrow opening, the springs gradually widened it as new bone formed.
+It addresses a failure mode where a robot stops at a visually similar but incorrect place.
 
-The first procedure took place in September 2025. The child was doing well when the result was announced this week.
+KAIST reports a ninety-point-seven percent average across two benchmark tasks. The system ranked first among one hundred and twelve teams, with a tie decided by earlier submission.
 
-It is promising engineering, but still one early patient result, not a comparative trial. In Britain, each use requires individual regulatory approval.
+Destination verification could eventually make delivery, hospital and factory robots less brittle when layouts, viewpoints or instructions create uncertainty.
 
-Longer follow-up is needed to judge how this approach works across children and complex cases.
+But this is a competition benchmark, not a production deployment or proof of universal safety. Real buildings bring people, moving obstacles and rare situations that benchmarks cannot fully represent.

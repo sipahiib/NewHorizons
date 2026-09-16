@@ -14,7 +14,7 @@ const scenes = manifest.split('\n').filter((line) => line && !line.startsWith('#
   return {kind,relative,duration:Number(duration),seek:Number(seek),layout};
 });
 const selected = scenes.filter((scene) => scene.kind !== 'still');
-if (selected.length !== 25) throw new Error(`Expected 25 story scenes, found ${selected.length}`);
+if (selected.length !== 29) throw new Error(`Expected 29 moving scenes including closing, found ${selected.length}`);
 const visualReview = process.env.VISUAL_REVIEW === 'pass'
   ? 'pass — midpoint contact sheet and source timeline visually inspected; real footage and contextual correspondence confirmed'
   : 'pending';
@@ -30,13 +30,18 @@ for (const [index,scene] of selected.entries()) {
   if (!video || scene.seek+scene.duration>sourceDuration+0.02) throw new Error(`Scene exceeds source: ${scene.relative}`);
   const sampleAt=scene.seek+scene.duration/2;
   const {stdout:frame}=await run('ffmpeg',['-nostdin','-v','error','-ss',String(sampleAt),'-i',input,'-frames:v','1','-vf','scale=320:180:force_original_aspect_ratio=decrease,pad=320:180:(ow-iw)/2:(oh-ih)/2:black','-f','image2pipe','-vcodec','png','pipe:1'],{encoding:'buffer',maxBuffer:8*1024*1024});
-  const column=index%5,row=Math.floor(index/5);
+  const column=index%8,row=Math.floor(index/8);
   tiles.push({input:frame,left:column*320,top:row*210});
-  const id=`M${Math.floor(index/5)+1}-${String(index%5+1).padStart(2,'0')}`;
+  let id;
+  if (index < 8) id = `M1-${String(index + 1).padStart(2,'0')}`;
+  else if (index < 28) {
+    const supportIndex = index - 8;
+    id = `M${Math.floor(supportIndex / 5) + 2}-${String((supportIndex % 5) + 1).padStart(2,'0')}`;
+  } else id = 'CTA';
   const label=Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="320" height="30"><rect width="320" height="30" fill="#0b2233"/><text x="8" y="21" fill="white" font-family="Arial" font-size="15">${id} · ${sampleAt.toFixed(1)}s · ${video.width}×${video.height}</text></svg>`);
   tiles.push({input:label,left:column*320,top:row*210+180});
   checks.push({id,source:scene.relative,seek:scene.seek,duration:scene.duration,sourceDuration,width:video.width,height:video.height,sampleAt,visualReview});
 }
-await sharp({create:{width:1600,height:1050,channels:3,background:'#07111d'}}).composite(tiles).jpeg({quality:92}).toFile(path.join(out,'contact.jpg'));
+await sharp({create:{width:2560,height:840,channels:3,background:'#07111d'}}).composite(tiles).jpeg({quality:92}).toFile(path.join(out,'contact.jpg'));
 await fs.writeFile(path.join(root,'video/current_main_preflight.json'),JSON.stringify({generatedAt:new Date().toISOString(),scheduleSeconds:370,storyScenes:checks,visualReview},null,2)+'\n');
 console.log(`Prepared ${checks.length} selected-story samples`);
