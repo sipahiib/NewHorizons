@@ -45,7 +45,7 @@ Present topics, sources, motion candidates and several main-story English hooks 
 
 ## Reels
 
-For each new main-video cycle, propose two independent Reels: **Sports Biomechanics and Physics** and **The Planet Earth**. Prioritize reliable, useful, engaging material and avoid repeated topics. Append candidates below the main stories in `video/SOURCES.md`, preserving those stories. Apply the same editorial approval process; produce one Reel per approved topic.
+For each new main-video cycle, propose two independent Reels: **Future of AI** and **The Planet Earth**. Prioritize reliable, useful, engaging material and avoid repeated topics. Append candidates below the main stories in `video/SOURCES.md`, preserving those stories. Apply the same editorial approval process; produce one Reel per approved topic.
 
 Reels: **45-50 seconds, 1080×1920, 9:16, 60 fps, H.264/AAC**, with seven motion clips each. Fit measured narration within 45 seconds; finish speech before the video ends and leave at most four seconds afterward. Preserve complete landscape frames over a darkened, blurred duplicate background. Closing calls include YouTube **`@newhorizons_21`** and Instagram like/follow.
 
