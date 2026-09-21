@@ -31,6 +31,21 @@ The main controller assigns tasks, integrates accepted outputs and owns producti
 
 Agents work on separate assigned artifacts; the controller integrates shared-file changes. Reviewer must not approve their own authored work; QA must not approve their own render. Completion claims require evidence, not merely a “done” report.
 
+### Lean agent protocol
+
+Use agents only when the task needs independent judgement, substantial parallel research, or an independence boundary required by this workflow. The controller handles short inspections, small edits, manifest maintenance, routine commands and integration directly.
+
+- Use no more than four sub-agent sessions in a normal production cycle. Do not create nested sub-agents.
+- Start sub-agents with a bounded task packet rather than the full conversation history. The packet should normally be no more than 1,500 words and identify the exact files the agent may read or write.
+- Combine Researcher and Visual Designer work when one pass can verify both the story and its real-footage candidates. The controller may perform the Scriptwriter or Video Producer function directly. Reviewer and QA must remain independent from the work they approve.
+- Give each agent one concrete deliverable and normally no more than one correction round. Stop the agent after its handoff; roles documented in the workflow are not continuously running processes.
+- Do not ask later agents to repeat accepted research. Reviewer reopens only unsupported, contradictory or materially incomplete claims. QA evaluates the rendered outputs rather than redoing editorial research.
+- Prefer structured, file-based handoffs. Target maximum handoff sizes are 1,200 words for research and visual candidates, 600 words for review, and 500 words for QA.
+- Before user approval, do not start media download, final narration, TTS or rendering agents. After approval, avoid delegating tasks that the controller can complete with a short local command or edit.
+- Record per cycle the number of sub-agent sessions, follow-up rounds, task-packet word counts and handoff word counts. Targets are: no full-history forks, no nested agents, at most four sessions, at most one follow-up per agent and no more than 3,000 total handoff words.
+
+Keep the active cycle in a compact directory under `video/cycles/YYYY-MM-DD/` using `BRIEF.md`, `RESEARCH_PACKET.md`, `APPROVAL.md`, `REVIEW.md` and `QA.md` as needed. Agents should read the governing repository instructions and only the active-cycle files relevant to their assignment. Store completed-cycle narrative history under `video/archive/`; do not make every agent reread it.
+
 Present topics, sources, motion candidates and several main-story English hooks together for user approval. Record the selected package and hook; prior-cycle approval does not cover new content. Obtain approval before media downloads, final narration or rendering. After editorial approval, resolve routine corrections autonomously; ask again only for a material change to the approved package. The controller authorizes rendering after Reviewer findings are resolved, then authorizes delivery after QA.
 
 ## Visuals & Audio
