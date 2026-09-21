@@ -12,9 +12,10 @@ Keep sources in `video/SOURCES.md`, narration/manifests/render scripts in `video
 - Every story must answer: **What happened? Who did it/source? Why does it matter? How could it affect the viewer?** Explain practical relevance without promising unproven benefits.
 - Use the approved **6:10** schedule: main story **0:00–2:00**, four supports **60 seconds each**, closing **6:00–6:10**. The first 20 seconds belong to the main story, not an additional intro. Never shorten the main below 90 seconds or a support below 60 seconds.
 - Open immediately with relevant motion footage, never a channel intro or static cover:
-  - **0:00–0:05:** a striking, factually accurate announcement, e.g. “This week, researchers revealed…”
-  - **0:05–0:12:** a visual hook showing the main development.
-  - **0:12–0:20:** frame the programme, e.g. “Four more important developments are coming. Let's begin with the biggest.”
+- **0:00–0:05:**: Ana haberin en şaşırtıcı sonucunu söyle.
+- **0:05–0:12:**: Sonucu destekleyen güçlü görsel/video.
+- **0:12–0:20:**: “And four other breakthroughs happened this week…” diyerek diğer haberleri çok kısa teaser olarak göster.
+- **0:20 - :**: doğrudan ana hikâyeye gir.
 - Use natural English for narration, headings and calls to action. Avoid the fixed introduction “First of our news is.” Limit each topic to one important financial figure or point.
 
 ## Agent Workflow & Approval

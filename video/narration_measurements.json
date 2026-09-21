@@ -1,54 +1,54 @@
 [
   {
     "section": 1,
-    "duration": 119.664,
+    "duration": 119.352,
     "target": 120,
-    "headroom": 0.3359999999999985,
+    "headroom": 0.6479999999999961,
     "voice": "en-GB-RyanNeural",
     "rate": "-2%",
     "timeStretch": false
   },
   {
     "section": 2,
-    "duration": 59.256,
+    "duration": 59.544,
     "target": 60,
-    "headroom": 0.7439999999999998,
+    "headroom": 0.45600000000000307,
     "voice": "en-GB-RyanNeural",
     "rate": "-2%",
     "timeStretch": false
   },
   {
     "section": 3,
-    "duration": 59.352,
+    "duration": 57.648,
     "target": 60,
-    "headroom": 0.6480000000000032,
+    "headroom": 2.3519999999999968,
     "voice": "en-GB-RyanNeural",
     "rate": "-2%",
     "timeStretch": false
   },
   {
     "section": 4,
-    "duration": 59.688,
+    "duration": 56.832,
     "target": 60,
-    "headroom": 0.3119999999999976,
+    "headroom": 3.1679999999999993,
     "voice": "en-GB-RyanNeural",
     "rate": "-2%",
     "timeStretch": false
   },
   {
     "section": 5,
-    "duration": 59.304,
+    "duration": 56.76,
     "target": 60,
-    "headroom": 0.695999999999998,
+    "headroom": 3.240000000000002,
     "voice": "en-GB-RyanNeural",
     "rate": "-2%",
     "timeStretch": false
   },
   {
     "section": 6,
-    "duration": 8.688,
+    "duration": 9.864,
     "target": 10,
-    "headroom": 1.3119999999999994,
+    "headroom": 0.13599999999999923,
     "voice": "en-GB-RyanNeural",
     "rate": "-2%",
     "timeStretch": false

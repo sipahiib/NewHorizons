@@ -7,11 +7,11 @@ const out = path.resolve(process.env.EDITORIAL_BUILD || 'build/video/editorial-e
 fs.mkdirSync(out, { recursive: true });
 const labels = {
   generic: 'Contextual real footage',
-  m1: 'Contextual real footage — not the UCSF study',
-  m2: 'NASA archival footage — not the commissioning event',
-  m3: 'Contextual robot footage — not CoRe-VLN',
-  m4: 'Contextual electronics footage — not the reported devices',
-  m5: 'Contextual clinical footage — not study participants',
+  m1: 'Contextual glacier footage — not the 2026 measurements',
+  m2: 'Study figures — xvr 2D/3D registration research',
+  m3: 'Contextual licensed footage — not the NTU device',
+  m4: 'TRPM2 review figures — mouse/cell research, not human treatment',
+  m5: 'CC BY study figures — Ryugu M-S-H analysis',
 };
 for (const [id, text] of Object.entries(labels)) {
   const width = text.length * 13 + 36;

@@ -9,272 +9,260 @@
   "audioCodec": "aac",
   "sampleRate": "48000",
   "blackEvents": [],
-  "maxDetectedSilence": 3.123958,
+  "maxDetectedSilence": 4.471917,
   "measuredAudioGaps": [
     {
-      "end": 4.882458,
-      "duration": 1.034417
+      "end": 5.803292,
+      "duration": 1.026062
     },
     {
-      "end": 10.129104,
-      "duration": 1.027187
+      "end": 12.015937,
+      "duration": 1.006896
     },
     {
-      "end": 17.671896,
-      "duration": 1.033417
+      "end": 17.505958,
+      "duration": 0.982354
     },
     {
-      "end": 19.953229,
-      "duration": 1.004958
+      "end": 19.784375,
+      "duration": 1.002042
     },
     {
-      "end": 26.952854,
-      "duration": 0.986854
+      "end": 28.372187,
+      "duration": 1.036167
     },
     {
-      "end": 30.932125,
-      "duration": 0.992417
+      "end": 35.61325,
+      "duration": 1.002958
     },
     {
-      "end": 34.768354,
-      "duration": 1.008563
+      "end": 45.294542,
+      "duration": 0.989521
     },
     {
-      "end": 37.651187,
-      "duration": 1.009667
+      "end": 53.904125,
+      "duration": 1.000875
     },
     {
-      "end": 44.359083,
-      "duration": 1.004437
+      "end": 57.36075,
+      "duration": 1.028479
     },
     {
-      "end": 48.297271,
-      "duration": 1.00075
+      "end": 65.738167,
+      "duration": 1.021875
     },
     {
-      "end": 56.8235,
-      "duration": 0.997875
+      "end": 72.331208,
+      "duration": 1.024125
     },
     {
-      "end": 61.304917,
-      "duration": 0.970917
+      "end": 76.459667,
+      "duration": 0.988708
     },
     {
-      "end": 67.220542,
-      "duration": 1.003875
+      "end": 80.586937,
+      "duration": 0.994896
     },
     {
-      "end": 73.667167,
-      "duration": 0.962958
-    },
-    {
-      "end": 79.406646,
-      "duration": 1.003167
-    },
-    {
-      "end": 89.769271,
-      "duration": 1.007917
-    },
-    {
-      "end": 96.050979,
-      "duration": 1.022604
-    },
-    {
-      "end": 100.546854,
-      "duration": 0.997521
-    },
-    {
-      "end": 106.06275,
-      "duration": 1.007854
-    },
-    {
-      "end": 112.961583,
-      "duration": 1.005896
-    },
-    {
-      "end": 120.233771,
-      "duration": 1.462917
-    },
-    {
-      "end": 127.816417,
-      "duration": 1.044542
-    },
-    {
-      "end": 131.816937,
-      "duration": 1.015021
-    },
-    {
-      "end": 139.19525,
-      "duration": 1.044687
-    },
-    {
-      "end": 144.549896,
-      "duration": 0.998646
-    },
-    {
-      "end": 147.879542,
-      "duration": 0.997833
-    },
-    {
-      "end": 155.140458,
-      "duration": 0.9955
-    },
-    {
-      "end": 165.359062,
-      "duration": 0.988687
-    },
-    {
-      "end": 169.099708,
-      "duration": 0.934375
-    },
-    {
-      "end": 174.705771,
-      "duration": 0.999188
-    },
-    {
-      "end": 180.235042,
-      "duration": 1.862708
-    },
-    {
-      "end": 184.940062,
+      "end": 88.177521,
       "duration": 1.015479
     },
     {
-      "end": 188.708396,
-      "duration": 1.028604
+      "end": 90.962208,
+      "duration": 0.972479
     },
     {
-      "end": 195.255542,
-      "duration": 1.006062
+      "end": 96.272062,
+      "duration": 1.013271
     },
     {
-      "end": 199.260125,
-      "duration": 1.004458
+      "end": 104.979937,
+      "duration": 0.991667
     },
     {
-      "end": 204.990813,
-      "duration": 1.010312
+      "end": 111.190021,
+      "duration": 1.003812
     },
     {
-      "end": 210.385667,
-      "duration": 0.970875
+      "end": 120.22775,
+      "duration": 1.75325
     },
     {
-      "end": 216.596563,
-      "duration": 1.014271
+      "end": 127.025854,
+      "duration": 0.964771
     },
     {
-      "end": 226.231479,
-      "duration": 0.946646
+      "end": 135.311125,
+      "duration": 1.0075
     },
     {
-      "end": 232.214042,
-      "duration": 0.956167
+      "end": 144.239833,
+      "duration": 1.047479
     },
     {
-      "end": 240.232,
-      "duration": 1.766375
+      "end": 151.178479,
+      "duration": 1.020396
     },
     {
-      "end": 245.378208,
-      "duration": 0.991771
+      "end": 161.590104,
+      "duration": 0.997687
     },
     {
-      "end": 249.73025,
-      "duration": 1.003437
+      "end": 166.087292,
+      "duration": 1.011667
     },
     {
-      "end": 258.439,
-      "duration": 0.962187
+      "end": 171.243375,
+      "duration": 1.021292
     },
     {
-      "end": 266.731458,
-      "duration": 0.986667
+      "end": 175.217333,
+      "duration": 0.996208
     },
     {
-      "end": 269.854125,
-      "duration": 0.974562
+      "end": 180.235333,
+      "duration": 1.567438
     },
     {
-      "end": 276.433729,
-      "duration": 1.015646
+      "end": 188.029854,
+      "duration": 0.999833
     },
     {
-      "end": 286.077187,
-      "duration": 0.999229
+      "end": 197.258583,
+      "duration": 1.00475
     },
     {
-      "end": 290.588917,
-      "duration": 0.997833
+      "end": 203.668437,
+      "duration": 0.991875
     },
     {
-      "end": 300.250458,
-      "duration": 1.422146
+      "end": 211.23425,
+      "duration": 0.978417
     },
     {
-      "end": 303.987,
-      "duration": 0.993417
+      "end": 216.295167,
+      "duration": 1.047167
     },
     {
-      "end": 311.011792,
-      "duration": 1.029729
+      "end": 221.323625,
+      "duration": 1.000063
     },
     {
-      "end": 320.565729,
+      "end": 228.018333,
       "duration": 1.023167
     },
     {
-      "end": 327.120792,
-      "duration": 1.052271
+      "end": 232.029292,
+      "duration": 1.027354
     },
     {
-      "end": 334.790917,
-      "duration": 1.010458
+      "end": 240.230687,
+      "duration": 3.442292
     },
     {
-      "end": 338.533,
-      "duration": 1.021792
+      "end": 244.309313,
+      "duration": 1.019396
     },
     {
-      "end": 346.81925,
-      "duration": 1.020292
+      "end": 255.286604,
+      "duration": 0.959208
     },
     {
-      "end": 351.99075,
-      "duration": 0.997854
+      "end": 261.08375,
+      "duration": 1.014604
     },
     {
-      "end": 361.5485,
-      "duration": 3.123958
+      "end": 269.008646,
+      "duration": 1.02225
     },
     {
-      "end": 364.4205,
-      "duration": 0.919396
+      "end": 277.389479,
+      "duration": 1.000479
     },
     {
-      "end": 366.915708,
-      "duration": 1.019646
+      "end": 280.416917,
+      "duration": 1.006979
+    },
+    {
+      "end": 286.0135,
+      "duration": 0.98625
+    },
+    {
+      "end": 290.253833,
+      "duration": 0.996146
+    },
+    {
+      "end": 300.235042,
+      "duration": 4.266042
+    },
+    {
+      "end": 305.237375,
+      "duration": 0.967458
+    },
+    {
+      "end": 317.691917,
+      "duration": 1.002458
+    },
+    {
+      "end": 323.5715,
+      "duration": 1.005875
+    },
+    {
+      "end": 330.949875,
+      "duration": 0.998333
+    },
+    {
+      "end": 337.331896,
+      "duration": 0.924312
+    },
+    {
+      "end": 340.417333,
+      "duration": 0.959021
+    },
+    {
+      "end": 344.723375,
+      "duration": 1.025792
+    },
+    {
+      "end": 349.776271,
+      "duration": 0.99225
+    },
+    {
+      "end": 360.371271,
+      "duration": 4.471917
+    },
+    {
+      "end": 364.417396,
+      "duration": 0.910271
+    },
+    {
+      "end": 366.913292,
+      "duration": 1.020354
     },
     {
       "end": 370,
-      "duration": 0.860229
+      "duration": 0.863375
     }
   ],
   "explainedBoundaryGaps": [
     {
-      "end": 180.235042,
-      "duration": 1.862708
+      "end": 120.22775,
+      "duration": 1.75325
     },
     {
-      "end": 240.232,
-      "duration": 1.766375
+      "end": 240.230687,
+      "duration": 3.442292
     },
     {
-      "end": 361.5485,
-      "duration": 3.123958
+      "end": 300.235042,
+      "duration": 4.266042
+    },
+    {
+      "end": 360.371271,
+      "duration": 4.471917
     }
   ],
   "unexpectedGaps": [],
-  "visualReview": "pending contact sheet review",
+  "visualReview": "pass — actual-output contact sheet inspected; story correspondence, source labels, titles and CTA confirmed",
   "audioReview": "signal continuity checked; not a claim of full human listening"
 }

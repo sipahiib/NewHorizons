@@ -1,6 +1,6 @@
 # NewHorizons — Coordination Record
 
-## Current governing main-video schedule — updated 16 September 2026
+## Current governing main-video schedule — updated 18 September 2026
 
 The required main-programme duration is **6:10 (370 seconds)**:
 
@@ -31,17 +31,17 @@ Research agents do not edit shared production files, download media, finalise na
 
 ## Approval and production gates
 
-Current-cycle approval, 16 September 2026: the user approved the package in `video/SOURCES.md` with M2 changed from FLEX/Sentinel-3C to NASA Roman primary-instrument activation. The approved set is M1 UCSF neuroprosthesis, M2 Roman, M3 CoRe-VLN, M4 atomically thin transistor injector, M5 retinal AF signal, R1 Future of AI education and R2 Planet Earth sea-ice collisions. Approved hooks are M1-H1, R1-H1 and R2-H1. This authorises in-repository media acquisition, final narration and rendering for that exact package. Material topic substitutions still require approval; routine failed-media replacement within the documented real-footage policy does not. Publication, purchase, external permission requests, commits and GitHub pushes remain unauthorised.
+Current-cycle approval, 18 September 2026: the user approved the package in `video/SOURCES.md`: M1 polar ice-sheet loss, M2 xvr surgical-navigation AI, M3 the NTU artificial leaf, M4 the TRPM2 pain pathway and M5 Ryugu M-S-H. The approved Reels are R1 ChatGPT for Word and R2 squid/ocean acidification; approved hooks are M1-H1, R1-H1 and R2-H1. This authorises in-repository media acquisition, final narration and rendering for that exact package. Material topic substitutions still require approval; routine failed-media replacement within the documented real-footage policy does not. Publication, purchase, external permission requests, commits and GitHub pushes remain unauthorised.
 
-Delivery note requested by the user: when the main video and Reels are complete, provide a separate example set of current, topic-specific Instagram and YouTube hashtags for each finished video. Verify contemporary platform guidance at delivery time; avoid irrelevant bulk tags and do not publish anything externally.
+Delivery metadata requested by the user: when the main video and Reels are complete, provide for every finished video (a) current, topic-specific Instagram and YouTube hashtag examples and (b) a separate copy-ready **YouTube Tags** upload-field list. Keep tags distinct from hashtags, prioritise exact topic phrases and common alternate spellings, avoid irrelevant bulk keywords, and do not publish anything externally. The current-cycle tag lists are saved in `video/YOUTUBE_TAGS.md`; verify contemporary platform guidance at delivery time.
 
 Cover policy amended by the user: do not create or deliver cover images or thumbnails for the main video or Reels. Existing historical cover assets are retained only as archive material and are not current deliverables or production inputs.
 
 The previous Hands-on Science visual substitution is historical and no longer belongs to the current production set.
 
 1. Verify news and real recorded-video candidates for every main-programme story. Generated, procedural and illustrative animation is not permitted in the main programme. Distinguish proposed excerpts from visually confirmed footage. If suitable real video is unavailable after availability and rights checks, document the search outcome and propose relevant sourced still images as the fallback.
-2. Present topics, sources and candidates to the user. All five main topics, main H1, both current Reel topics and each Reel's H1 are explicitly approved. Actual motion excerpts and their rights remain to be verified before production.
-3. Resolve rights, availability and material substitutions before production. Do not infer blanket approval from the request to continue research.
+2. Present topics, sources and candidates to the user. All five main topics, main H1, both current Reel topics and each Reel's H1 are explicitly approved. The selected contextual motion files have since passed the recorded technical and visual preflight.
+3. Resolve rights, availability and material substitutions before production. The current files use Pexels contextual real footage under recorded source terms; persistent disclosures prevent it being presented as direct documentation.
 4. After approval, enumerate previous-cycle audio/video paths before required cleanup; preserve non-media files and newly approved inputs.
 5. Update scene mappings, narration and title timing together. Required main timeline: 120-second main story, four 60-second supports and a 10-second CTA = 370 seconds. Use boundaries 0/120/180/240/300/360/370 seconds, eight 15-second M1 segments and five 12-second segments per support.
 6. Render and verify under AGENTS.md: English Ryan narration, 1080p/60 main video, vertical 1080×1920/60 Reels, measured speech and closing, then cleanup. Ask before any GitHub push; never commit audio/video binaries.

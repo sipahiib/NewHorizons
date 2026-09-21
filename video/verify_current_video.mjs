@@ -22,7 +22,9 @@ const blackEvents = black.split('\n').filter(l => /black_start:/.test(l));
 const storyBoundaries = [120, 180, 240, 300];
 const explainedBoundaryGap = (gap) => {
   const start = gap.end - gap.duration;
-  if (storyBoundaries.some(boundary => start <= boundary && gap.end >= boundary) && gap.duration <= 2.5) return true;
+  // Short end-of-section headroom plus the next stem's natural opening pause can
+  // combine into a longer detected interval exactly across a story boundary.
+  if (storyBoundaries.some(boundary => start <= boundary && gap.end >= boundary) && gap.duration <= 4.5) return true;
   if (start <= 360 && gap.end >= 360 && gap.duration <= 6) return true;
   return false;
 };

@@ -1,11 +1,7 @@
-Could an eye scan reveal a clue about an irregular heartbeat? UCL and Moorfields researchers analysed retinal images and health records from more than ninety thousand people.
+Asteroid Ryugu samples revealed an under-recognised part of their chemistry. A Japanese collaboration used synchrotron X-rays and solubility experiments to identify poorly crystalline, magnesium-rich hydrous silicate resembling magnesium silicate hydrate, or M-S-H.
 
-They found thinner retinal nerve layers among people with atrial fibrillation, a rhythm disorder that can be intermittent and difficult to catch during a brief examination.
+The material appears in Hayabusa2’s Ryugu samples and in carbonaceous meteorites. It may explain how these primitive materials were altered by water while preserving early Solar System chemical differences.
 
-Because the condition can come and go, a short heart recording may miss it, making additional clues useful.
+This is not evidence of oceans on Ryugu, but a record of water interacting with rock in its parent body.
 
-Among participants diagnosed later, the retinal signal appeared an average of four years before their hospital diagnosis. That is a group average, not a personal countdown.
-
-In future, retinal imaging might help identify people who should receive cardiac assessment when atrial fibrillation has gone unnoticed.
-
-But an eye scan does not diagnose atrial fibrillation or replace an ECG. This retrospective association does not prove cause and effect, and researchers have not established a clinical threshold.
+The phrase “invisible matter” needs care. It does not mean dark matter, and this is not evidence of life. It describes a mineral component earlier methods had not adequately recognised. Returned samples let laboratories revisit ancient material with new techniques and uncover previously hidden chemistry.

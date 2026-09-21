@@ -1,0 +1,47 @@
+{
+  "cycle": "2026-09-18-corrected-2026-09-21",
+  "status": "replacement inputs for corrected main render",
+  "mainChanges": {
+    "M1-07": "assets/motion/2026-09-18/main/M1-08-glacier.mp4 at 20 seconds; relevant current-cycle glacier excerpt",
+    "M2": [
+      "assets/motion/2026-09-18-repair/m2/fig1.jpg",
+      "assets/motion/2026-09-18-repair/m2/fig2.jpg",
+      "assets/motion/2026-09-18-repair/m2/fig3.jpg",
+      "assets/motion/2026-09-18-repair/m2/fig4.jpg",
+      "assets/motion/2026-09-18-repair/m2/fig5.jpg"
+    ],
+    "M3": [
+      "assets/motion/2026-09-18-repair/m3/pexels/01-chemical.mp4",
+      "assets/motion/2026-09-18-repair/m3/pexels/02-reaction.mp4",
+      "assets/motion/2026-09-18-repair/m3/pexels/03-funnel.mp4",
+      "assets/motion/2026-09-18-repair/m3/pexels/04-beaker.mp4",
+      "assets/motion/2026-09-18-repair/m3/pexels/05-solar.mp4"
+    ],
+    "M4": [
+      "assets/motion/2026-09-18-repair/m4/review-fig1.jpg",
+      "assets/motion/2026-09-18-repair/m4/review-fig1.jpg",
+      "assets/motion/2026-09-18-repair/m4/review-fig2.jpg",
+      "assets/motion/2026-09-18-repair/m4/review-fig2.jpg",
+      "assets/motion/2026-09-18-repair/m4/review-fig1.jpg"
+    ],
+    "M5": [
+      "assets/motion/2026-09-18-repair/m5/article-fig1.png",
+      "assets/motion/2026-09-18-repair/m5/article-fig2.png",
+      "assets/motion/2026-09-18-repair/m5/article-fig3.png",
+      "assets/motion/2026-09-18-repair/m5/article-fig4.png",
+      "assets/motion/2026-09-18-repair/m5/article-fig1.png"
+    ]
+  },
+  "sources": {
+    "M2": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11957231/",
+    "M3": "Pexels asset pages listed in video/CREDITS.md",
+    "M4Context": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12785559/",
+    "M5Study": "https://www.nature.com/articles/s43247-026-03958-2"
+  },
+  "conditions": {
+    "M2": "CC BY 4.0 author-manuscript figures; static unanimated fallback",
+    "M3": "Pexels-licensed contextual real footage; persistent label states it is not the NTU device",
+    "M4": "CC BY 4.0 TRPM2 review figures; static unanimated fallback",
+    "M5": "CC BY 4.0 figures from the exact 2026 article; static unanimated fallback"
+  }
+}

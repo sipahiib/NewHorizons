@@ -1,0 +1,7 @@
+A familiar temperature sensor may also be involved in chronic pain. Researchers at the University of Warwick studied TRPM2, an ion channel known for detecting mild warmth, and found that it can convert inflammatory and immune signals into pain-related electrical activity.
+
+When the researchers removed TRPM2 from sensory nerves, pain behaviours were reduced in mouse models. In the reported arthritis experiment, blocking the channel with an injection into the joint reversed pain behaviour for two days, without suppressing the underlying inflammation.
+
+That distinction could matter. Instead of broadly reducing inflammation throughout the body, a future therapy might target how sensory nerves translate inflammatory signals into pain.
+
+But the result comes from mice and cells. It does not demonstrate a safe dose, an effective human treatment or a cure for arthritis. Human biology, side effects and lasting benefit would all require extensive testing. For now, TRPM2 is a possible drug target and a clue to pain signalling—not a medicine patients can receive.

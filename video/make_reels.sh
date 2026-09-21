@@ -61,18 +61,18 @@ render_reel() {
 
 render_r1() {
   render_reel 1 "01-future-of-ai" "$OUT/audio/01-future-of-ai.wav" ai \
-    "assets/motion/2026-09-16/reels/R1-01.mp4" "assets/motion/2026-09-16/reels/R1-02.mp4" \
-    "assets/motion/2026-09-16/reels/R1-03.mp4" "assets/motion/2026-09-16/reels/R1-04.mp4" \
-    "assets/motion/2026-09-16/reels/R1-05.mp4" "assets/motion/2026-09-16/reels/R1-06.mp4" \
-    "assets/motion/2026-09-16/reels/R1-07R.mp4"
+    "assets/motion/2026-09-18/reels/R1-01.mp4" "assets/motion/2026-09-18/reels/R1-02.mp4" \
+    "assets/motion/2026-09-18/reels/R1-03.mp4" "assets/motion/2026-09-18/reels/R1-04.mp4" \
+    "assets/motion/2026-09-18/reels/R1-05.mp4" "assets/motion/2026-09-18/reels/R1-06.mp4" \
+    "assets/motion/2026-09-18/reels/R1-07.mp4"
 }
 
 render_r2() {
-  render_reel 2 "02-planet-earth-sea-ice" "$OUT/audio/02-planet-earth-sea-ice.wav" earth \
-    "assets/motion/2026-09-16/reels/R2-01.mp4" "assets/motion/2026-09-16/reels/R2-02.mp4" \
-    "assets/motion/2026-09-16/reels/R2-03.mp4" "assets/motion/2026-09-16/reels/R2-04.mp4" \
-    "assets/motion/2026-09-16/reels/R2-05.mp4" "assets/motion/2026-09-16/reels/R2-06.mp4" \
-    "assets/motion/2026-09-16/reels/R2-07.mp4"
+  render_reel 2 "02-planet-earth-ocean-acidification" "$OUT/audio/02-planet-earth-ocean-acidification.wav" earth \
+    "assets/motion/2026-09-18/reels/R2-01.mp4" "assets/motion/2026-09-18/reels/R2-02-squid.mp4" \
+    "assets/motion/2026-09-18/reels/R2-03.mp4" "assets/motion/2026-09-18/reels/R2-04.mp4" \
+    "assets/motion/2026-09-18/reels/R2-05.mp4" "assets/motion/2026-09-18/reels/R2-06.mp4" \
+    "assets/motion/2026-09-18/reels/R2-07.mp4"
 }
 
 case "${1:-ready}" in

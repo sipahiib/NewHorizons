@@ -1,1 +1,9 @@
-What if classroom AI helped students think—without taking over the thinking? Indiana University researchers will help lead a renewed five-year, twenty-million-dollar NSF institute with university and nonprofit partners. The goal is to study AI that supports choices made by learners and teachers, instead of simply producing answers for them. That could mean tools that keep educators in control. But this is a research programme, not proof that finished products already improve learning. AI cannot replace a teacher, and funding does not guarantee results. For more useful science, like and follow on Instagram, and subscribe on YouTube at @newhorizons_21.
+ChatGPT just moved into Word—and it can rewrite the sentence you select.
+
+OpenAI says its Microsoft add-in places ChatGPT beside your document. It can turn notes into a draft, summarise the page, revise selected text, and adjust headings or formatting.
+
+It is available across ChatGPT plans, including Free, but installation, sign-in and token limits apply. Workplace administrators may restrict access.
+
+And remember: this is a product announcement, not proof that every answer or edit is accurate. Review generated text before you accept it.
+
+Follow New Horizons for more on the future of AI.

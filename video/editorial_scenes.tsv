@@ -1,36 +1,36 @@
 # kind|relative_path|duration_seconds|seek_seconds|layout
-# M1 — real contextual recordings; not UCSF, the participants or the reported experiment.
-clip|assets/motion/2026-09-16/main/M1-06.mp4|15|3|cover
-clip|assets/motion/2026-09-16/main/M1-02.mp4|15|2|cover
-clip|assets/motion/2026-09-16/main/M1-03R.mp4|15|4|cover
-clip|assets/motion/2026-09-16/main/M1-04R2.mp4|15|2|contain_blur
-clip|assets/motion/2026-09-16/main/M1-05.mp4|15|2|cover
-clip|assets/motion/2026-09-16/main/M1-01R.mp4|15|0|cover
-clip|assets/motion/2026-09-16/main/M1-07.mp4|15|0|cover
-clip|assets/motion/2026-09-16/main/M1-08.mp4|15|0|cover
-# M2 — actual NASA Roman hardware and integration recordings.
-clip|assets/motion/2026-09-16/main/M2-01R.webm|12|5|cover
-clip|assets/motion/2026-09-16/main/M2-02.webm|12|8|contain_blur
-clip|assets/motion/2026-09-16/main/M2-03.webm|12|12|contain_blur
-clip|assets/motion/2026-09-16/main/M2-04.webm|12|20|cover
-clip|assets/motion/2026-09-16/main/M2-05.webm|12|24|cover
-# M3 — contextual real robots; not CoRe-VLN or its benchmark.
-clip|assets/motion/2026-09-16/main/M3-01.mp4|12|1|cover
-clip|assets/motion/2026-09-16/main/M3-02R.mp4|12|0|cover
-clip|assets/motion/2026-09-16/main/M3-03R2.mp4|12|2|contain_blur
-clip|assets/motion/2026-09-16/main/M3-04.mp4|12|0|cover
-clip|assets/motion/2026-09-16/main/M3-05R.mp4|12|2|contain_blur
-# M4 — contextual electronics/manufacturing; not the KAIST devices or fabrication process.
-clip|assets/motion/2026-09-16/main/M4-01.mp4|12|0|cover
-clip|assets/motion/2026-09-16/main/M4-02.mp4|12|1|cover
-clip|assets/motion/2026-09-16/main/M4-03.mp4|12|0|cover
-clip|assets/motion/2026-09-16/main/M4-04.mp4|12|2|cover
-clip|assets/motion/2026-09-16/main/M4-05.mp4|12|3|cover
-# M5 — contextual real eye/clinical/cardiac recordings; not participants or OCT study footage.
-clip|assets/motion/2026-09-16/main/M5-01.mp4|12|1|cover
-clip|assets/motion/2026-09-16/main/M5-02.mp4|12|4|cover
-clip|assets/motion/2026-09-16/main/M5-03.mp4|12|2|cover
-clip|assets/motion/2026-09-16/main/M5-04.mp4|12|2|cover
-clip|assets/motion/2026-09-16/main/M5-05.mp4|12|1|cover
-# Closing — real Roman cleanroom footage behind the cinematic-glass CTA; no cover/thumbnail.
-outro|assets/motion/2026-09-16/main/M2-01R.webm|10|80|cover
+# M1 — contextual real glacier/ice-sheet recordings; not the IMBIE measurements.
+clip|assets/motion/2026-09-18/main/M1-01-glacier.mp4|15|2|cover
+clip|assets/motion/2026-09-18/main/M1-02.mp4|15|4|cover
+clip|assets/motion/2026-09-18/main/M1-03.mp4|15|1|cover
+clip|assets/motion/2026-09-18/main/M1-04-glacier.mp4|15|0|contain_blur
+clip|assets/motion/2026-09-18/main/M1-05-glacier.mp4|15|3|cover
+clip|assets/motion/2026-09-18/main/M1-06-glacier.mp4|15|5|cover
+clip|assets/motion/2026-09-18/main/M1-08-glacier.mp4|15|20|cover
+clip|assets/motion/2026-09-18/main/M1-08-glacier.mp4|15|5|cover
+# M2 — direct xvr study figures; documented still fallback after direct-video search failed.
+still|assets/motion/2026-09-18-repair/m2/fig1.jpg|12|0|contain
+still|assets/motion/2026-09-18-repair/m2/fig2.jpg|12|0|contain
+still|assets/motion/2026-09-18-repair/m2/fig3.jpg|12|0|contain
+still|assets/motion/2026-09-18-repair/m2/fig4.jpg|12|0|contain
+still|assets/motion/2026-09-18-repair/m2/fig5.jpg|12|0|contain
+# M3 — licensed contextual real laboratory/solar footage; not the NTU device.
+clip|assets/motion/2026-09-18-repair/m3/pexels/01-chemical.mp4|12|2|cover
+clip|assets/motion/2026-09-18-repair/m3/pexels/02-reaction.mp4|12|2|contain_blur
+clip|assets/motion/2026-09-18-repair/m3/pexels/03-funnel.mp4|12|3|cover
+clip|assets/motion/2026-09-18-repair/m3/pexels/04-beaker.mp4|12|4|cover
+clip|assets/motion/2026-09-18-repair/m3/pexels/05-solar.mp4|12|2|cover
+# M4 — CC BY TRPM2 review figures; documented still fallback.
+still|assets/motion/2026-09-18-repair/m4/review-fig1.jpg|12|0|contain
+still|assets/motion/2026-09-18-repair/m4/review-fig1.jpg|12|0|contain
+still|assets/motion/2026-09-18-repair/m4/review-fig2.jpg|12|0|contain
+still|assets/motion/2026-09-18-repair/m4/review-fig2.jpg|12|0|contain
+still|assets/motion/2026-09-18-repair/m4/review-fig1.jpg|12|0|contain
+# M5 — exact CC BY 4.0 figures from the 2026 Ryugu paper; documented still fallback.
+still|assets/motion/2026-09-18-repair/m5/article-fig1.png|12|0|contain
+still|assets/motion/2026-09-18-repair/m5/article-fig2.png|12|0|contain
+still|assets/motion/2026-09-18-repair/m5/article-fig3.png|12|0|contain
+still|assets/motion/2026-09-18-repair/m5/article-fig4.png|12|0|contain
+still|assets/motion/2026-09-18-repair/m5/article-fig1.png|12|0|contain
+# Closing — real moving glacier footage behind the CTA; no cover/thumbnail.
+outro|assets/motion/2026-09-18/main/M1-02.mp4|10|22|cover

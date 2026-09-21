@@ -1,11 +1,7 @@
-A robot can reach the wrong place and still believe its journey is finished. A team is teaching navigation software to check again.
+In Singapore, Nanyang Technological University researchers built an artificial leaf that tackles two problems at once. Powered by sunlight, the photoelectrochemical device produces hydrogen from seawater while breaking down hydrazine, a toxic industrial contaminant.
 
-KAIST and ETRI's CoRe-VLN system rescans its surroundings when it thinks it has arrived. If the destination does not match, it replans the route.
+In simulated and real seawater, it maintained stable photocurrent for more than seventy-two hours. NTU reports hydrazine falling from zero point five molar to zero point five parts per billion within thirty hours.
 
-It addresses a failure mode where a robot stops at a visually similar but incorrect place.
+A future system might combine wastewater treatment with solar-fuel production.
 
-KAIST reports a ninety-point-seven percent average across two benchmark tasks. The system ranked first among one hundred and twelve teams, with a tie decided by earlier submission.
-
-Destination verification could eventually make delivery, hospital and factory robots less brittle when layouts, viewpoints or instructions create uncertainty.
-
-But this is a competition benchmark, not a production deployment or proof of universal safety. Real buildings bring people, moving obstacles and rare situations that benchmarks cannot fully represent.
+However, this is a laboratory result, not a commercial hydrogen plant. The tests do not establish long-term durability, safe industrial scale-up or competitive costs. Hydrazine is hazardous and requires careful handling. The chemical pathway is promising; engineering a practical system is the larger challenge.

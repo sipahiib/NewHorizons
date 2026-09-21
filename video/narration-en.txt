@@ -1,83 +1,57 @@
-## Neuroprosthesis — 0:00–2:00
+## M1 — Polar Ice Sheets
+Most polar ice loss wasn’t surface melt—it was glaciers speeding into the ocean.
 
-A brain implant just decoded speech and body language at the same time. The result points toward assistive communication that could express more than words alone.
+Satellite records show the ice sheets losing mass as frozen rivers carry ice towards the sea.
 
-Four more important developments are coming, from a space telescope to robotics, ultrathin electronics and eye scans. Let's begin with the biggest.
+Four more important developments are coming, from surgical AI to asteroid chemistry. Let’s begin with the biggest.
 
-At the University of California, San Francisco, researchers worked with three people who had paralysis. Each already had electrodes placed on the brain's surface.
+A new international assessment reconstructed how the Greenland and Antarctic ice sheets changed between 1979 and 2023. The Ice Sheet Mass Balance Inter-comparison Exercise combined forty-two estimates from twenty-seven satellite missions.
 
-Those electrodes record patterns from the motor cortex. They do not read every private thought. The system was trained for specific attempted phrases and familiar gestures, including a wave and a thumbs-up.
+Together, the two ice sheets lost an estimated eleven thousand three hundred and nine gigatonnes, with an uncertainty of five hundred and sixty-five gigatonnes. Researchers calculated that this added thirty-one point four millimetres to global mean sea level, plus or minus one point six millimetres.
 
-The participants attempted speech and upper-body gestures. Personalised machine-learning systems decoded those signals together, instead of treating a spoken message and a physical gesture as separate events.
+The striking result is where most loss came from. Eighty-four percent was attributed to an imbalance in ice dynamics, mainly glaciers flowing faster and discharging more ice into the ocean. Surface changes, including snowfall and melting, accounted for the remaining sixteen percent. So the headline cannot be described simply as surface melting.
 
-Two participants used the system to control full-body avatars. That matters because a nod, a shrug or a change in posture can add meaning that a sentence misses.
+Greenland and Antarctica did not lose ice at a constant rate. A slowdown from 2020 to 2023 reflects short-term variability, not a reversal of the long-term trend.
 
-The researchers also found that simultaneous expression was not simply speech data plus gesture data. Decoders performed better when trained on examples in which both actions were attempted together.
+Why does this matter beyond the poles? Higher global mean sea level raises the baseline for coastal flooding and erosion. Local effects also depend on tides, storms and land movement, but a longer record helps refine projections used for coastal planning.
 
-For someone who cannot speak or move normally, a future interface like this might make digital conversation feel more expressive, and give communication partners more context.
+This assessment concerns the Greenland and Antarctic ice sheets, not sea ice or every glacier. By combining decades of observations and reporting uncertainty, it provides a clearer view of how Earth’s largest ice sheets are changing.
 
-Current eye-tracking communication can be slow and tiring, so richer expression could be meaningful.
+## M2 — Surgical Navigation AI
+In medicine, MIT-led researchers developed a patient-specific artificial-intelligence system called x-v-r. It matches two-dimensional X-rays taken during a procedure with a patient’s three-dimensional CT or MRI scan prepared beforehand.
 
-But this was a wired proof of concept involving only three people. It required brain surgery, and it did not restore biological speech or movement.
+The team reports that the system can adapt to one patient in about five minutes, then register new X-ray images in seconds with sub-millimetre precision. It was evaluated using real data from five hospitals, including adult and paediatric cases.
 
-The next challenges include larger studies, broader vocabularies, wireless hardware and long-term testing. For now, the achievement is precise but early: one interface decoded attempted words and gestures together.
+That alignment could eventually give clinicians more reliable spatial guidance during minimally invasive procedures, connecting a limited X-ray view with richer information in the earlier scan.
 
-## Roman — 2:00–3:00
+But this remains a research system, not an autonomous surgeon. The study does not show improved patient outcomes or establish clinical approval. Moving anatomy and broader conditions still need testing. The promise is future guidance—not treatment available today.
 
-NASA has switched on the Nancy Grace Roman Space Telescope's main camera and successfully communicated with it during commissioning.
+## M3 — Artificial Leaf
+In Singapore, Nanyang Technological University researchers built an artificial leaf that tackles two problems at once. Powered by sunlight, the photoelectrochemical device produces hydrogen from seawater while breaking down hydrazine, a toxic industrial contaminant.
 
-The Wide Field Instrument has three hundred megapixels. Between September eleventh and thirteenth, engineers recorded deliberately out-of-focus starlight as an initial baseline.
+In simulated and real seawater, it maintained stable photocurrent for more than seventy-two hours. NTU reports hydrazine falling from zero point five molar to zero point five parts per billion within thirty hours.
 
-Its field of view is at least one hundred times larger than Hubble's infrared camera.
+A future system might combine wastewater treatment with solar-fuel production.
 
-That blur was expected, not a failure. NASA also said communication with the coronagraph, plus thermal and mechanical checks, proceeded as planned.
+However, this is a laboratory result, not a commercial hydrogen plant. The tests do not establish long-term durability, safe industrial scale-up or competitive costs. Hydrazine is hazardous and requires careful handling. The chemical pathway is promising; engineering a practical system is the larger challenge.
 
-Roman is designed to survey large areas of sky efficiently, helping scientists study cosmic expansion, the distribution of matter and worlds around other stars.
+## M4 — TRPM2 and Pain
+A temperature sensor may also be involved in chronic pain. Warwick researchers studied TRPM2, an ion channel that detects mild warmth, and found it can convert inflammatory and immune signals into pain-related electrical activity.
 
-But this was an instrument checkout, not a discovery. Commissioning continues, and first science images are expected in 2027. Roman has not yet mapped dark energy or directly imaged an exoplanet.
+Removing TRPM2 from sensory nerves reduced pain behaviours in mouse models. In the arthritis experiment, blocking it with a joint injection reversed pain behaviour for two days without suppressing inflammation.
 
-## CoRe-VLN — 3:00–4:00
+Instead of broadly reducing inflammation, a future therapy might target how sensory nerves translate inflammatory signals into pain.
 
-A robot can reach the wrong place and still believe its journey is finished. A team is teaching navigation software to check again.
+But the result comes from mice and cells. It does not demonstrate a safe dose, effective human treatment or arthritis cure. Side effects and lasting benefit require extensive testing. TRPM2 is a possible target and a clue to pain signalling—not a medicine patients can receive.
 
-KAIST and ETRI's CoRe-VLN system rescans its surroundings when it thinks it has arrived. If the destination does not match, it replans the route.
+## M5 — Ryugu Chemistry
+Asteroid Ryugu samples revealed an under-recognised part of their chemistry. A Japanese collaboration used synchrotron X-rays and solubility experiments to identify poorly crystalline, magnesium-rich hydrous silicate resembling magnesium silicate hydrate, or M-S-H.
 
-It addresses a failure mode where a robot stops at a visually similar but incorrect place.
+The material appears in Hayabusa2’s Ryugu samples and in carbonaceous meteorites. It may explain how these primitive materials were altered by water while preserving early Solar System chemical differences.
 
-KAIST reports a ninety-point-seven percent average across two benchmark tasks. The system ranked first among one hundred and twelve teams, with a tie decided by earlier submission.
+This is not evidence of oceans on Ryugu, but a record of water interacting with rock in its parent body.
 
-Destination verification could eventually make delivery, hospital and factory robots less brittle when layouts, viewpoints or instructions create uncertainty.
+The phrase “invisible matter” needs care. It does not mean dark matter, and this is not evidence of life. It describes a mineral component earlier methods had not adequately recognised. Returned samples let laboratories revisit ancient material with new techniques and uncover previously hidden chemistry.
 
-But this is a competition benchmark, not a production deployment or proof of universal safety. Real buildings bring people, moving obstacles and rare situations that benchmarks cannot fully represent.
-
-## Atomically thin transistors — 4:00–5:00
-
-Ultrathin electronics require different contacts for different transistor types. A KAIST-led team reports one material that can work with both.
-
-Contacts are a major challenge because ordinary metal deposition can damage extremely thin semiconductor layers or create resistance that wastes energy.
-
-The researchers used a tin-diselenide van der Waals injector with p-type tungsten diselenide and n-type molybdenum disulfide devices.
-
-They also demonstrated a CMOS inverter. KAIST says the p-type device reached a maximum drive current more than one thousand times its nickel comparison.
-
-A shared contact approach could eventually simplify circuits built from atomically thin materials, helping engineers explore smaller, lower-power electronics.
-
-These are laboratory devices, not a new commercial processor. Large-area growth, manufacturing yield, integration and durability still need work, and the reported performance does not apply to every chip.
-
-## Retinal AF signal — 5:00–6:00
-
-Could an eye scan reveal a clue about an irregular heartbeat? UCL and Moorfields researchers analysed retinal images and health records from more than ninety thousand people.
-
-They found thinner retinal nerve layers among people with atrial fibrillation, a rhythm disorder that can be intermittent and difficult to catch during a brief examination.
-
-Because the condition can come and go, a short heart recording may miss it, making additional clues useful.
-
-Among participants diagnosed later, the retinal signal appeared an average of four years before their hospital diagnosis. That is a group average, not a personal countdown.
-
-In future, retinal imaging might help identify people who should receive cardiac assessment when atrial fibrillation has gone unnoticed.
-
-But an eye scan does not diagnose atrial fibrillation or replace an ECG. This retrospective association does not prove cause and effect, and researchers have not established a clinical threshold.
-
-## Closing — 6:00–6:10
-
-If this helped, like and subscribe. That was our latest news. Stay with science, and stay tuned.
+## Closing
+For more science updates, like this video and subscribe. That was our latest news. Stay with science, and stay tuned.

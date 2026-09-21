@@ -12,7 +12,7 @@ mkdir -p "$OUT"
 
 stems=(
   01-future-of-ai
-  02-planet-earth-sea-ice
+  02-planet-earth-ocean-acidification
 )
 
 invalid=0

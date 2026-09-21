@@ -9,6 +9,12 @@ OUTPUT="${OUTPUT_FILE:-$ROOT/build/video/newhorizons.mp4}"
 TITLE_LANGUAGE="${TITLE_LANGUAGE:-tr}"
 FPS=60
 
+# Concat manifests resolve entries relative to their own directory. Normalize
+# caller-supplied paths so a relative build path is not prefixed twice.
+[[ "$BUILD" = /* ]] || BUILD="$ROOT/$BUILD"
+[[ "$NARRATION" = /* ]] || NARRATION="$ROOT/$NARRATION"
+[[ "$OUTPUT" = /* ]] || OUTPUT="$ROOT/$OUTPUT"
+
 mkdir -p "$BUILD/segments"
 EDITORIAL_BUILD="$BUILD" node "$ROOT/video/src/generate_stock_disclosures.mjs"
 [[ -s "$NARRATION" ]] || { echo "Missing narration: $NARRATION" >&2; exit 1; }
@@ -21,8 +27,17 @@ awk -v a="$audio_duration" -v v="$manifest_duration" 'BEGIN {d=a-v; if (d<0) d=-
 }
 
 render_still() {
-  echo "Still scenes are forbidden for this cycle: $1" >&2
-  exit 1
+  local input="$1" duration="$2" output="$3" label
+  case "$input" in
+    */2026-09-18-repair/m2/*) label=m2 ;;
+    */2026-09-18-repair/m4/*) label=m4 ;;
+    */2026-09-18-repair/m5/*) label=m5 ;;
+    *) echo "Undocumented still fallback: $input" >&2; exit 1 ;;
+  esac
+  ffmpeg -nostdin -y -v error -loop 1 -framerate "$FPS" -i "$input" \
+    -loop 1 -framerate "$FPS" -i "$BUILD/disclosures/$label.webp" \
+    -filter_complex "[0:v]scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:color=0x091521,format=yuv420p,setrange=limited,fps=$FPS,trim=duration=$duration,setpts=PTS-STARTPTS[scene];[scene][1:v]overlay=0:0:shortest=1[outv]" \
+    -map '[outv]' -t "$duration" -an -c:v libx264 -preset veryfast -crf 16 -pix_fmt yuv420p -r "$FPS" "$output"
 }
 
 render_clip() {
@@ -43,13 +58,14 @@ render_clip() {
     filter="scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,eq=contrast=1.025:saturation=1.035,format=yuv420p,setrange=limited,fps=$FPS,trim=duration=$duration,setpts=PTS-STARTPTS,setsar=1"
   fi
   local -a filter_args=(-vf "$filter")
-  if [[ "$input" == */2026-09-16/main/M[1-5]-* ]]; then
+  if [[ "$input" == */2026-09-18/main/M[1-5]-* || "$input" == */2026-09-18-repair/m3/* ]]; then
     local label=generic
     [[ "$input" == */M1-* ]] && label=m1
     [[ "$input" == */M2-* ]] && label=m2
     [[ "$input" == */M3-* ]] && label=m3
     [[ "$input" == */M4-* ]] && label=m4
     [[ "$input" == */M5-* ]] && label=m5
+    [[ "$input" == */2026-09-18-repair/m3/* ]] && label=m3
     args+=(-loop 1 -framerate "$FPS" -i "$BUILD/disclosures/$label.webp")
     filter_args=(-filter_complex "[0:v]$filter[scene];[scene][1:v]overlay=0:0:shortest=1[outv]" -map '[outv]')
   fi

@@ -1,0 +1,7 @@
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth-ocean-acidification/clip01.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth-ocean-acidification/clip02.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth-ocean-acidification/clip03.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth-ocean-acidification/clip04.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth-ocean-acidification/clip05.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth-ocean-acidification/clip06.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/work/02-planet-earth-ocean-acidification/clip07.mp4'

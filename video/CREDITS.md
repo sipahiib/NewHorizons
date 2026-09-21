@@ -1,12 +1,22 @@
 # NewHorizons — footage credits and publication notes
 
-## Current cycle — 16 September 2026
+## Current cycle — 18 September 2026, corrected 21 September
 
-The complete per-file source URL, licence class, actuality label and required credit for all 42 current assets are recorded in `video/current_media_manifest.json`. Pexels footage is used under the [Pexels licence](https://www.pexels.com/license/). Roman hardware footage is credited to NASA Goddard and the named NASA videographers in the manifest under [NASA media guidance](https://www.nasa.gov/nasa-brand-center/images-and-media/).
+The main programme uses real recorded footage or documented, static source-figure fallbacks. Every contextual segment carries an on-screen limitation label. No generated story imagery, cover or thumbnail is used. Factual sources and the corrective audit are in `video/SOURCES.md`.
 
-M1, M3, M4, M5 and both Reels use clearly labelled contextual recordings; they do not depict the named researchers, participants or experiments. M2 uses real archival Roman hardware/integration footage, not the in-space commissioning event. No Nature avatar video, VLN simulation, CGI, cover or thumbnail is used. The main closing uses moving NASA cleanroom footage.
+- M1: current-cycle Pexels glacier footage under the [Pexels licence](https://www.pexels.com/license/); contextual, not the 2026 measurements. Per-file asset pages remain in `video/current_media_manifest.json`.
+- M2: figures 1–5 from Vivek Gopalakrishnan, Neel Dey, David-Dimitris Chlorogiannis, Andrew Abumoussa, Anna M. Larson, Darren B. Orbach, Sarah Frisken and Polina Golland, “Rapid patient-specific neural networks for intraoperative X-ray to volume registration,” author manuscript at [PubMed Central](https://pmc.ncbi.nlm.nih.gov/articles/PMC11957231/), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Static fallback after direct-video search.
+- M3-01: [Close-up video of a chemical](https://www.pexels.com/video/close-up-video-of-a-chemical-10187916/), Pexels licence.
+- M3-02: [Chemical reaction after liquid is poured into a container](https://www.pexels.com/video/close-up-shot-of-a-chemical-reaction-after-a-person-pours-a-liquid-to-a-small-container-7231674/), Pexels licence.
+- M3-03: [Extreme close-up of a dropping funnel](https://www.pexels.com/video/extreme-close-up-of-a-dropping-funnel-10187910/), Pexels licence.
+- M3-04: [Chemical reaction in a beaker](https://www.pexels.com/video/close-up-of-chemical-reaction-in-beaker-10188153/), Pexels licence.
+- M3-05: [Solar-panel farm on water](https://www.pexels.com/video/aerial-view-of-solar-panel-farm-on-water-32475814/), Pexels licence. All M3 clips are contextual and do not show the NTU device.
+- M4: figures from Xuming Zhang and Mitali Malhotra, “Neuroimmune Regulation by TRPM2 Channels,” at [PubMed Central](https://pmc.ncbi.nlm.nih.gov/articles/PMC12785559/), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Static contextual mechanism figures; not the Warwick mouse experiment or a human treatment.
+- M5: figures 1–4 from Reon Okumura, Haruki Oya, Kosuke Inoue et al., “Pervasive poorly crystalline Mg-rich hydrous silicate material in C-type asteroid matrices,” [Communications Earth & Environment](https://www.nature.com/articles/s43247-026-03958-2), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Static figures from the exact reported study.
 
-Factual sources and the post-approval media audit are in `video/SOURCES.md`. This file records credits; it does not authorise publication.
+Modification notice for all M2, M4 and M5 CC BY figures: the source figures were extracted from their articles, scaled proportionally and padded to a 1920×1080 frame, then overlaid with NewHorizons topic, source and limitation graphics. They were not panned, zoomed or altered to simulate motion; no scientific labels or plotted data were edited.
+
+The two already-approved Reels are unchanged; their per-file sources and licence records remain in `video/current_media_manifest.json`. This file records attribution and usage conditions; it does not itself grant rights.
 
 ## Historical cycles
 

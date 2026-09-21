@@ -1,144 +1,172 @@
 # NewHorizons — Editorial Sources
 
-## Cycle: 14–16 September 2026
+## Cycle: 16–18 September 2026
 
-Status: **EDITORIALLY APPROVED BY USER — 16 SEPTEMBER 2026.** The user approved M1, M3–M5, both Reels and the recommended hooks, replacing the originally proposed M2 with the NASA Roman instrument story. Post-approval media audit, narration and rendering are authorised inside the repository; publication, purchases, external permission requests, commits and GitHub pushes remain unauthorised.
+Status: **EDITORIALLY APPROVED BY USER — 18 SEPTEMBER 2026.** The user approved the five-story package, both Reels and the recommended M1-H1, R1-H1 and R2-H1 hooks. Post-approval media audit, narration and rendering are authorised inside the repository; publication, purchases, permission requests, commits and GitHub pushes remain unauthorised.
 
-Window: announcements published 14–16 September 2026. Underlying study/event dates are distinguished below. China is excluded per `RESEARCH.md`; no topic repeats the preceding FAST/GPN-Star/nitinol/Samsung–ASML/Sentinel-6 cycle.
+Window: announcements published 16–18 September 2026; underlying paper/event dates are distinguished below. China is excluded. The prior cycle is not repeated.
 
-Schedule: **6:10 / 370 seconds** — M1 0:00–2:00; M2–M5 60 seconds each; closing 6:00–6:10. M1 uses 8×15-second visual segments; every support uses 5×12 seconds.
+Schedule after approval: **6:10 / 370 seconds** — M1 0:00–2:00; M2–M5 60 seconds each; closing 6:00–6:10. M1 uses exactly 8×15-second segments; each support uses exactly 5×12 seconds.
 
-Visual policy: story visuals must be real recorded video. Direct recordings come first, then clearly labelled contextual real footage. A sourced still is allowed only after a documented failure to find suitable rights-cleared video. No generated/procedural/illustrative animation. All candidates require post-approval motion, rights, resolution and duration checks.
+Visual policy: real recorded motion only. Prefer direct recordings, then permanently labelled contextual real footage. Sourced stills are a documented last resort. No CGI, generated/procedural imagery, illustrative animation, animated charts or still-to-motion treatment. All candidates require post-approval motion, licence, resolution, duration and content audits.
 
-## M1 — A Brain Implant Decodes Speech and Body Language Together
+## M1 — Faster-Flowing Glaciers Drove Most Polar Ice-Sheet Loss
 
-**United States — medicine, neurotechnology, AI.** NIH release and *Nature Neuroscience* paper: 14 September 2026. Implants were placed in September 2022, April 2024 and March 2025; the new event is publication.
+**Europe/international — Earth observation and climate.** ESA announcement and *Scientific Data* paper: 16 September 2026. ESA/NASA-supported IMBIE combined 42 independent estimates from 27 satellite missions.
 
-UCSF researchers used implanted ECoG arrays and personalised machine-learning decoders to translate attempted speech and upper-body gestures. Three people with paralysis participated; two controlled a full-body avatar. Combining speech and gesture could eventually make assistive communication more expressive.
+Between 1979 and 2023, Greenland and Antarctica together lost an estimated **11,309 ± 565 gigatonnes** of ice, contributing **31.4 ± 1.6 millimetres** to global mean sea-level rise. The analysis attributes 84% of combined mass loss to ice-dynamical imbalance—mainly faster glacier discharge into the ocean—and 16% to surface-mass-balance changes.
 
-Limits: three-person wired proof of concept, not a treatment or market-ready device. It requires surgery and did not restore biological movement or speech. Larger studies, broader vocabularies, wireless hardware and long-term testing remain necessary.
+Why/viewer relevance: higher global mean sea level raises the baseline for coastal flooding and erosion; the long record also improves projections used for coastal planning.
 
-Sources: [NIH](https://www.nih.gov/news-events/news-releases/neuroprosthesis-paralysis-enables-simultaneous-speech-body-language), [Nature Neuroscience](https://www.nature.com/articles/s41593-026-02446-2).
+Limits: this is a reconstructed historical estimate with uncertainty, not a local forecast. It concerns the Greenland and Antarctic ice sheets, not sea ice or every glacier. The 2020–23 slowdown is short-term variability, not a reversal. Do not call the 84% figure “surface melting.”
+
+Sources: [ESA](https://www.esa.int/Applications/Observing_the_Earth/FutureEO/Faster-flowing_glaciers_fuel_decades_of_polar_ice_loss), [Scientific Data](https://www.nature.com/articles/s41597-026-08088-0).
 
 English hooks:
 
-- **M1-H1 (recommended):** “A brain implant just decoded speech and body language at the same time.”
-- M1-H2: “For the first time, one brain interface has translated attempted words and gestures together.”
-- M1-H3: “Communication is more than words—and this brain implant can now capture part of that difference.”
+- **M1-H1 (recommended):** “Most polar ice loss wasn’t surface melt—it was glaciers speeding into the ocean.”
+- M1-H2: “Earth’s polar ice sheets lost more than eleven trillion tonnes of ice between 1979 and 2023.”
+- M1-H3: “Twenty-seven satellite missions reconstructed nearly half a century of disappearing polar ice.”
 
-Eight 15-second motion candidates:
+Eight 15-second real-motion candidates:
 
-| ID | Real recording | Use/rights |
+| ID | Candidate | Usage condition |
 | --- | --- | --- |
-| M1-01–05 | Five supplementary MP4 videos on the Nature paper | Direct study footage: distinct speech, gesture, simultaneous-expression and participant/avatar excerpts. Reuse permission must be confirmed. |
-| M1-06 | [Scientists in a laboratory](https://www.pexels.com/video/scientists-at-the-laboratory-8533515/) | Pexels; contextual, not UCSF/the experiment. |
-| M1-07 | [Researcher at microscope and computer](https://www.pexels.com/video/a-man-on-a-microscope-studying-a-sample-and-recording-it-in-a-computer-3209177/) | Pexels; contextual analysis. |
-| M1-08 | [Practitioner reviewing scans](https://www.pexels.com/video/medical-practitioner-looking-at-the-scans-8413546/) | Pexels; contextual, not a participant/procedure. |
+| M1-01 | Real Greenland outlet-glacier aerial | ESA/NASA archive or licensed stock; contextual. |
+| M1-02 | Real Jakobshavn photographic time-lapse or field footage | True recorded/sensor motion only; reject illustrative animation. |
+| M1-03 | Real calving-front/ocean-discharge footage | Never imply one event represents the full estimate. |
+| M1-04 | Real Greenland surface meltwater | Context for the surface-balance component. |
+| M1-05 | Real Antarctic outlet-glacier aerial | Agency archive or licensed stock. |
+| M1-06 | Real Pine Island or Thwaites field/aerial footage | Name a glacier only when metadata confirms it. |
+| M1-07 | [ESA: Assessing Antarctic ice loss](https://www.esa.int/ESA_Multimedia/Videos/2018/06/Assessing_Antarctic_ice_loss) | Real IMBIE documentary/interview; ESA Standard Licence; archival. |
+| M1-08 | [ESA: Glaciers and climate change](https://www.esa.int/ESA_Multimedia/Videos/2021/09/Glaciers_and_climate_change2) or real coastal-exposure footage | Real field documentary; contextual. |
 
-Open on direct study footage. The 0:00–0:20 hook and programme framing remain inside M1; no ident, cover or static opening.
+Persistent disclosure: “ESA/NASA archival polar footage — not the 2026 measurements.” Open on moving polar footage; no ident or static cover.
 
-## M2 — NASA Activates Roman’s 300-Megapixel Primary Instrument
+## M2 — Patient-Specific AI Aligns X-Rays With 3D Scans
 
-**United States — space and astronomical technology.** NASA announcement: 15 September 2026. Wide Field Instrument operations occurred 11–13 September during observatory commissioning.
+**United States — AI and medicine.** MIT announcement and *Nature* paper: 16 September 2026.
 
-NASA successfully powered and communicated with the Nancy Grace Roman Space Telescope’s 300-megapixel Wide Field Instrument. The team recorded deliberately out-of-focus starlight as an initial commissioning baseline and reported that coronagraph communication, thermal and mechanical checks proceeded as expected.
+MIT-led researchers developed xvr, a patient-specific system that matches intra-operative 2D X-rays with pre-operative CT or MRI scans. MIT reports adaptation in about five minutes, registration in seconds with sub-millimetre precision, and evaluation on real data from five hospitals across adult and paediatric cases.
 
-Why/viewer relevance: the milestone moves Roman closer to wide-field surveys intended to study cosmic expansion, matter distribution and exoplanets. Its large field of view should let it survey broad areas of sky efficiently.
+Why/viewer relevance: more reliable spatial guidance could eventually help clinicians navigate minimally invasive procedures and broaden access to specialised interventions.
 
-Limits: this is instrument checkout, not a scientific discovery. The test starlight was out of focus by design; commissioning continues and first science images are expected in 2027. Do not claim Roman has already mapped dark energy or directly imaged an exoplanet.
+Limits: research-stage assistance, not an autonomous surgeon or approved clinical product. The study does not prove improved patient outcomes; moving anatomy and broader reliability tests remain future work.
 
-Sources: [NASA Roman commissioning update](https://science.nasa.gov/blogs/roman/2026/09/15/nasa-activates-romans-primary-instrument-checks-out-coronagraph/), [NASA Goddard WFI installation b-roll](https://svs.gsfc.nasa.gov/14759/).
+Sources: [MIT](https://news.mit.edu/2026/new-ai-technique-could-make-minimally-invasive-surgeries-safer-more-precise-0916), [Nature](https://www.nature.com/articles/s41586-026-11045-x).
 
-Five 12-second candidates: three visually distinct excerpts from NASA’s real WFI installation/cleanroom b-roll, one real Roman observatory integration/test excerpt, and one real launch or post-launch operations excerpt. Prefer NASA-produced, public-domain footage after checking every asset’s credit line for third-party restrictions. Use only recorded hardware, cleanroom, launch and mission-control footage; exclude CGI spacecraft sequences and illustrative animations. The out-of-focus commissioning image may appear only as a sourced still fallback and must be described accurately.
+Five 12-second candidates: one direct real researcher/clinical demonstration if cleared; [surgeons viewing a monitor](https://www.pexels.com/video/doctors-looking-at-a-monitor-for-guide-in-a-surgical-procedure-3197629/), [operating-room equipment](https://www.pexels.com/video/medical-equipment-in-the-operating-room-4976486/), [practitioner using medical equipment](https://www.pexels.com/video/a-medical-practitioner-doing-a-medical-procedure-using-a-modern-equipment-3197735/) and [hospital equipment close-up](https://www.pexels.com/video/close-up-footage-of-medical-equipment-used-in-hospitals-3197670/). Stock is contextual and may not be presented as xvr use or evidence of better outcomes.
 
-## M3 — A Robot Checks Whether It Reached the Right Destination
+## M3 — An “Artificial Leaf” Makes Hydrogen While Removing Hydrazine
 
-**South Korea — AI and robotics.** KAIST public release: 16 September; it references an 11 September internal announcement and 9 September VLNVerse event.
+**Singapore — clean technology and materials.** NTU story: 16 September; release: 17 September. The underlying *Nature Communications* paper appeared in May 2026; the current event is NTU’s public release.
 
-KAIST/ETRI’s CoRe-VLN rescans its surroundings at a supposed destination, verifies whether it is correct and replans if needed. KAIST reports a 90.7% average across two benchmark tasks and first among 112 teams, with a tie resolved by earlier submission. Verification could make future delivery, hospital and factory robots less brittle.
+NTU researchers built a sunlight-powered photoelectrochemical device that produces hydrogen from seawater while degrading hydrazine, a toxic industrial contaminant. In simulated and real seawater samples, it maintained stable photocurrent for more than 72 hours. NTU reports hydrazine falling from 0.5 M to 0.5 parts per billion within 30 hours.
 
-Limits: competition benchmark, not production deployment or universal safety proof.
+Why/viewer relevance: future systems might combine waste treatment and solar-fuel production.
 
-Source: [KAIST](https://www.kaist.ac.kr/newsen/html/news/?GotoPage=1&list_e_date=&list_s_date=&mng_no=67150&mode=V&skey=keyword&sval=AI).
+Limits: a laboratory device, not a commercial or seawater-scale plant. The test does not establish long-term durability, economics or safe scale-up. Hydrazine is hazardous.
 
-Five 12-second candidates: three distinct excerpts from a rights-cleared KAIST/ETRI CoRe-VLN or VLNVerse demonstration, plus two licensed real mobile/service-robot corridor or warehouse recordings. Exact external files are selected only after approval and licence audit. If five genuine recordings cannot be verified, use the reserve story; do not fill with animation or stills by default.
+Sources: [NTU research story](https://www.ntu.edu.sg/research/research-hub/news/detail/artificial-leaf--generates-clean-hydrogen-from-contaminated-seawater), [NTU release](https://www.ntu.edu.sg/news/detail/artificial-leaf--generates-clean-hydrogen-from-contaminated-seawater), [Nature Communications](https://www.nature.com/articles/s41467-026-73326-3).
 
-## M4 — One Contact Material Works With Two Atomically Thin Transistor Types
+Five 12-second candidates: first seek two permission-cleared direct recordings of the NTU device under illumination and operating; then [real liquid experiment](https://www.pexels.com/video/two-scientists-doing-an-experiment-5752737/), [researcher observing an experiment](https://www.pexels.com/video/a-man-in-deep-focus-of-his-observation-in-an-experiment-being-undertaken-3214096/) and one rights-cleared real solar/water laboratory clip. NTU’s published stills will not be animated. Context footage cannot be used as proof of yield or contaminant removal.
 
-**South Korea — semiconductor technology.** KAIST announcement: 16 September; *Advanced Materials* paper online: 12 August.
+## M4 — A Warmth Sensor Also Acts as a Chronic-Pain Switch in Mice
 
-A KAIST-led team used a tin-diselenide van der Waals injector for p-type WSe₂ and n-type MoS₂ devices and demonstrated a CMOS inverter. KAIST reports p-type maximum drive current over 1,000 times its nickel comparison and an n-type on/off ratio above 10⁹. A shared contact could eventually simplify smaller, lower-power circuits.
+**United Kingdom — medicine.** Warwick announcement and *PNAS* paper: 17 September 2026.
 
-Limits: laboratory devices, not a commercial processor. Large-area growth, integration, yield and durability remain unresolved; reported figures do not apply to all chips.
+Warwick researchers found that the TRPM2 ion channel, known for sensing mild warmth, can also convert inflammatory and immune signals into pain-related electrical activity. Removing TRPM2 from sensory nerves reduced pain behaviours in mouse models; blocking it by joint injection reversed arthritis-pain behaviour for two days in the reported experiment without suppressing underlying inflammation.
 
-Sources: [KAIST](https://www.kaist.ac.kr/newsen/html/news/?mng_no=67130&mode=V), [paper](https://doi.org/10.1002/adma.74597).
+Why/viewer relevance: TRPM2 may offer a route toward treatments that target sensory-nerve signalling rather than broadly suppressing inflammation.
 
-Five 12-second Pexels contextual recordings: [cleanroom](https://www.pexels.com/video/modern-cleanroom-technology-manufacturing-facility-32386615/), [chip](https://www.pexels.com/video/close-up-shot-of-electronic-chip-6755158/), [inspection](https://www.pexels.com/video/a-electrician-is-working-while-checking-in-magnifying-glass-7314028/), [technician](https://www.pexels.com/video/a-technician-repairing-a-circuit-board-7423951/) and [circuit board](https://www.pexels.com/video/close-up-video-of-a-circuit-board-7609195/). Label all “not the reported devices, team or fabrication process”; replace with direct real KAIST footage if authorised.
+Limits: mouse and cell work; no safe or effective human treatment, dosage or cure has been demonstrated.
 
-## M5 — Eye Scans Showed an AF Signal Years Before Hospital Diagnosis
+Sources: [Warwick](https://warwick.ac.uk/news/pressreleases/bodys-warmth-sensor-secretly-a-pain-switch/), [PNAS](https://www.pnas.org/doi/10.1073/pnas.2532289123).
 
-**United Kingdom — medicine and digital health.** UCL announcement and *PLOS Digital Health* paper: 15 September. This was a retrospective analysis, not a prospective screening trial.
+Five 12-second contextual recordings: [laboratory](https://www.pexels.com/video/scientists-at-the-laboratory-8533515/), [microscope](https://www.pexels.com/video/a-man-using-a-microscope-8530032/), [liquid experiment](https://www.pexels.com/video/two-scientists-doing-an-experiment-5752737/), [researcher at microscope](https://www.pexels.com/video/a-woman-looking-through-the-microscope-5752729/) and one licensed real hand/knee discomfort interaction. Disclosure: “Contextual real footage — not the Warwick mouse study.” No human injection or cure imagery.
 
-UCL/Moorfields researchers analysed retinal images and health records from more than 90,000 people. They reported thinner retinal nerve layers among people with atrial fibrillation; among later-diagnosed participants, the signal appeared an average of four years before hospital diagnosis. Retinal imaging might eventually prompt additional cardiac assessment when intermittent AF is missed.
+## M5 — “Invisible” Hydrous Material Helps Explain Ryugu’s Chemistry
 
-Limits: an eye scan does not diagnose AF or replace ECG. Association is not causation, thresholds are not established, and four years is an average—not an individual prediction.
+**Japan — space and planetary materials.** University of Tokyo release: 17 September 2026; paper: 7 September. The current event is the institutional announcement.
 
-Source: [UCL](https://www.ucl.ac.uk/news/2026/sep/atrial-fibrillation-detected-eye-scans-four-years-diagnosis) and its linked paper.
+A Japanese collaboration used synchrotron X-rays and solubility experiments to identify widespread poorly crystalline, magnesium-rich hydrous silicate resembling magnesium silicate hydrate (M-S-H) in Ryugu samples and carbonaceous meteorites. Its behaviour may explain how these materials were strongly altered by water while retaining local chemical differences from the early Solar System.
 
-Five 12-second candidates: seek two direct/reusable Moorfields or UCL OCT recordings, then use [scan review](https://www.pexels.com/video/medical-practitioner-looking-at-the-scans-8413546/), [clinical discussion](https://www.pexels.com/video/healthcare-workers-talking-on-hospital-corridor-6130553/) and one licensed real OCT examination. Do not call generic scans OCT or identify actors as participants. If two direct clips cannot be cleared, use five clearly labelled contextual real optometry/OCT/ECG recordings.
+Why/viewer relevance: returned asteroid samples preserve evidence about water-driven chemistry in primitive Solar System bodies.
 
-## Reel R1 — Can Classroom AI Support Agency?
+Limits: “invisible matter” means a previously under-recognised mineral component—not dark matter. This is chemical evidence, not evidence of life. The paper predates the three-day window; the release is new.
 
-**Category: Future of AI.** Indiana University announcement: 15 September. IU researchers will help lead the renewed five-year, $20 million NSF AI Institute for Engaged Learning with NC State, UNC, Vanderbilt and Digital Promise.
+Sources: [University of Tokyo](https://www.s.u-tokyo.ac.jp/en/press/11233/), [Communications Earth & Environment](https://www.nature.com/articles/s43247-026-03958-2).
 
-The programme will study AI designed to support learner and teacher choices instead of merely supplying answers. Limit: this is a research programme, not evidence that completed tools improve learning; AI does not replace teachers or guarantee outcomes.
+Five 12-second candidates: [real Hayabusa2 touchdown-camera footage](https://www.isas.jaxa.jp/en/gallery/feature/ryugu/0057.html), [real sampler-projectile test](https://www.hayabusa2.jaxa.jp/en/topics/20190214e_Experiment/), real capsule recovery from [JAXA’s recovery page](https://www.hayabusa2.jaxa.jp/en/topics/20201204_ts4/), real sample handling from [JAXA curation](https://curation.isas.jaxa.jp/en/sample-curation/ryugu/) and real synchrotron/lab analysis footage from the institutions. Reject CGI. Label: “JAXA archival footage — not the 2026 M-S-H analysis.”
 
-Source: [Indiana University](https://www.cpr.indiana.edu/news/2026/jul-dec/2026-09-15-iusoe-faculty-lead-20-million-nsf-grant-to-advance-ai-powered-learning.html).
+## Reel R1 — ChatGPT Comes to Microsoft Word
 
-Hooks:
+**Future of AI.** OpenAI release: 17 September 2026.
 
-- **R1-H1 (recommended):** “What if classroom AI helped students think—without taking over the thinking?”
-- R1-H2: “A new five-year AI institute is testing how technology can support learner choice, not replace teachers.”
-- R1-H3: “The future of education AI may be less about answers—and more about agency.”
+OpenAI says ChatGPT is now available in Word through its Microsoft add-in. Its sidebar can draft from notes, summarise a document, revise selected text and adjust headings or formatting. It is available across ChatGPT plans, including Free, subject to plan token limits and shared allowances where applicable.
 
-Seven Pexels real/contextual clips: [1](https://www.pexels.com/video/kids-using-computers-5892377/), [2](https://www.pexels.com/video/students-working-on-a-laptop-in-a-classroom-5200028/), [3](https://www.pexels.com/video/children-using-a-computer-5892373/), [4](https://www.pexels.com/video/teacher-and-students-together-looking-at-laptop-5200029/), [5](https://www.pexels.com/video/children-using-laptops-7730006/), [6](https://www.pexels.com/video/kids-using-laptop-in-the-classroom-7730014/) and [7](https://www.pexels.com/video/teacher-with-laptop-sitting-in-front-of-classroom-5904588/). These show actors, not institute participants/results. Frame audit passed; no participant identity or result is inferred.
+Why/viewer relevance: drafting, revising and summarising can happen inside an everyday document workflow.
 
-## Reel R2 — Arctic Sea Ice Does Not Simply Follow the Wind
+Limits: a product announcement, not peer-reviewed evidence of accuracy or productivity. Installation and sign-in are required; generated edits need review. “Free” does not mean unlimited, and administrator restrictions may apply.
 
-**Category: The Planet Earth.** UC Riverside announcement: 16 September; *Physical Review Letters* paper: 10 September.
-
-A collision-based model reproduced three observed properties of Fram Strait sea-ice transport—spreading rate, speed distribution and timescale dependence—using local wind/ice conditions. It may improve physical representations in larger models.
-
-Limits: no exact future-track prediction or global operational forecast; this is a model compared with Fram Strait observations.
-
-Sources: [UC Riverside](https://news.ucr.edu/articles/2026/09/16/engineers-solve-puzzle-arctic-sea-ice-movement), [paper](https://doi.org/10.1103/g8y2-8ytt).
+Sources: [OpenAI release notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes), [ChatGPT for Word](https://chatgpt.com/apps/word/).
 
 Hooks:
 
-- **R2-H1 (recommended):** “Arctic sea ice doesn’t just follow the wind—the pieces keep crashing into each other.”
-- R2-H2: “A simple collision rule may explain why Arctic ice spreads more slowly than wind alone predicts.”
-- R2-H3: “Think of Arctic sea ice like grains in an hourglass—except they float, drift and collide.”
+- **R1-H1 (recommended):** “ChatGPT just moved into Word—and it can rewrite the sentence you select.”
+- R1-H2: “Your next Word draft may never need to leave the page.”
+- R1-H3: “Draft, summarise and reformat: ChatGPT is now inside Microsoft Word.”
 
-Seven final Pexels real/contextual clips: [1](https://www.pexels.com/video/aerial-footage-of-frozen-ice-in-the-sea-6953063/), [2](https://www.pexels.com/video/drone-shot-of-the-frozen-water-8016859/), [3](https://www.pexels.com/video/drone-footage-of-sea-ice-8016856/), [4](https://www.pexels.com/video/aerial-footage-of-a-frozen-sea-8678956/), [5](https://www.pexels.com/video/aerial-view-of-melting-arctic-ice-cap-29189058/), [6](https://www.pexels.com/video/aerial-view-of-ice-floe-patterns-36278970/) and [7](https://www.pexels.com/video/aerial-view-of-ice-floes-on-calm-water-35884069/). These are sea-ice, floe or clearly contextual polar-ice recordings—not the study measurements. No iceberg is presented as a sea-ice floe.
+Seven real-motion candidates: fresh recordings of the actual add-in with dummy content—opening the sidebar; notes-to-draft; summarising; revising selected text; changing headings/formatting; human review; install/sign-in or final document with CTA. Conceal account details and verify product/brand terms. If access is unavailable, never fabricate the UI; use labelled licensed office footage or documented still fallback.
 
-## Post-approval media audit — final production package
+## Reel R2 — Ocean Acidification Shrunk Squid Brains in a Controlled Study
 
-Audit completed 16 September 2026. The isolated manifest is `video/current_media_manifest.json`; technical and visual results are in `video/current_media_verification.json` and `video/current_main_preflight.json`. All 42 selected files decode and passed contact-sheet inspection.
+**The Planet Earth.** Academia Sinica announcement: 17 September 2026. The linked *Communications Biology* paper was published on 8 January 2026, with its version of record dated 12 February; the current event is the institution's new structural-imaging announcement.
 
-- **M1:** the five Nature supplementary videos were rejected as story visuals because their central presentation uses animated avatars. The final eight clips are Pexels-licensed real contextual laboratory, clinical, conversation/gesture and research recordings. The video opens with a real person speaking and gesturing. Permanent disclosure: “Contextual real footage — not the UCSF study.” No participant, implant, avatar or reported experiment is shown.
-- **M2:** five real NASA Roman hardware/integration recordings from [NASA SVS 14759](https://svs.gsfc.nasa.gov/14759/) and [NASA SVS 14948](https://svs.gsfc.nasa.gov/14948). NASA credit lines are recorded in the manifest. These prelaunch archival recordings are labelled “NASA archival footage — not the commissioning event.” No CGI is used.
-- **M3:** the available VLNVerse material is a simulation and was rejected. The final five Pexels-licensed clips are real physical delivery/service robots, permanently labelled as contextual and not CoRe-VLN.
-- **M4:** five Pexels-licensed real cleanroom, manufacturing, inspection and electronics recordings; none is represented as the KAIST team, device or fabrication process.
-- **M5:** no reusable direct UCL/Moorfields study recording was located. Five Pexels-licensed real eye-examination, clinical-review, scan-room and ECG recordings are used contextually. Generic scans are never called OCT.
-- **Reels:** R1 uses seven contextual classroom recordings. R2’s earlier iceberg-heavy list was replaced by the seven sea-ice/floe/polar-ice recordings listed above. Both carry permanent contextual-footage disclosures.
-- **Closing:** a real moving NASA Roman cleanroom recording sits behind the cinematic-glass CTA. No historical cover, thumbnail or static cover background is a production input.
+Researchers kept bigfin reef squid in present-day or simulated 2100 acidification conditions for 90 days. Academia Sinica's 17 September announcement reports no clear body-size difference but an average 49% lower total brain volume in the acidified group, with optic lobes 52% smaller and the optic tract 62% smaller. The linked January paper supports the preserved basic visual responses, hunting impairment and neural-metabolic changes, but does not itself report those later MRI volume percentages.
 
-## Reserves and Approval Gate
+Why/viewer relevance: squid are predators and prey, so neural and hunting changes could affect food webs if similar effects occur in nature.
 
-Reserve: [FLEX and Sentinel-3C reach orbit](https://www.esa.int/Applications/Observing_the_Earth/FLEX_and_Sentinel-3C_launched), removed from M2 at the user’s request on 16 September 2026. Second reserve: [KAIST/KIOM wearable microneedle electroceutical](https://www.kaist.ac.kr/site/newsen/html/news/?GotoPage=1&list_e_date=&list_s_date=&mng_no=66970&mode=V&skey=keyword&sval=ai), an early prototype not yet validated in patients.
+Limits: controlled captive exposure involving one species and scenario. The MRI percentages are attributed to the later institutional announcement, not to the January paper. This does not prove wild squid brains have already shrunk, all marine animals respond similarly or population collapse will occur.
 
-Approved package: M1 neuroprosthesis; M2 Roman primary-instrument activation; M3 CoRe-VLN; M4 thin-transistor injector; M5 retinal AF signal; R1 education AI; R2 sea-ice collisions. Approved hooks: **M1-H1, R1-H1 and R2-H1**.
+Sources: [Academia Sinica](https://www.sinica.edu.tw/en/news_content/55/3959), [Communications Biology](https://www.nature.com/articles/s42003-025-09506-6).
 
-Approval covers these topics, factual framing, hooks and the real/contextual-video approach. It does not waive rights/motion audit. Failed candidates must be replaced with real recordings or, only after documented video failure, a sourced still. No cover or thumbnail will be created.
+Hooks:
 
-Approval recorded. Proceed through media audit, independent editorial review, narration, rendering and independent QA before delivery.
+- **R2-H1 (recommended):** “A more acidic ocean shrank squid brains by nearly half in a controlled study.”
+- R2-H2: “The squid could still see—but their brains processed the world differently.”
+- R2-H3: “What happens to a squid’s brain as seawater absorbs more carbon dioxide?”
+
+Seven candidates: first seek two direct, permission-cleared Academia Sinica squid recordings; then [real bigfin reef squid](https://www.pexels.com/video/mesmerizing-underwater-squid-at-coral-reef-31753812/), [coral habitat](https://www.pexels.com/video/close-up-shot-of-corals-underwater-5133347/), [underwater reef](https://www.pexels.com/video/underwater-coral-reef-with-fish-swimming-34293580/), [laboratory microscopy](https://www.pexels.com/video/a-woman-looking-through-the-microscope-5752729/) and [underwater seascape](https://www.pexels.com/video/close-up-underwater-seascape-6471973/). Label context as not the experiment. Never substitute octopus/cuttlefish or use CGI brain shrinkage.
+
+## Reserves
+
+- [UCL brain-MRI AI](https://www.ucl.ac.uk/news/2026/sep/ai-tool-may-help-avoid-mri-dye-injections-brain-tumour-patients): not accurate enough to replace contrast MRI; paediatric representation was limited.
+- [KAIST bio-based hot-melt adhesive](https://www.kaist.ac.kr/newsen/html/news/?GotoPage=1&list_e_date=&list_s_date=&mng_no=67190&mode=V&skey=keyword&sval=NT): promising lab adhesion/fermentation results; industrial economics and field durability unproven.
+- [Imperial/SeaSTORE bottom-trawling campaign](https://www.imperial.ac.uk/news/articles/2026/scientists-aim-to-answer-critical-questions-around-carbon-impact-of-bottom-trawling/): strong real field visuals, but data collection is underway and no carbon-release result exists yet.
+
+## Approval Gate
+
+Proposed package: M1 polar ice-sheet loss; M2 xvr surgical-navigation AI; M3 artificial leaf; M4 TRPM2 pain pathway; M5 Ryugu M-S-H. Reels: R1 ChatGPT for Word; R2 squid and ocean acidification. Recommended hooks: **M1-H1, R1-H1 and R2-H1**.
+
+Approval must cover the five topics, both Reels, factual framing, selected hooks and the real direct/contextual-video approach. After approval, every media file undergoes rights/motion/resolution/duration audit. Failed candidates are replaced with real recordings or, only after documented failure, sourced stills. No cover or thumbnail will be created.
+
+Approval recorded on 18 September 2026. Proceed through the media audit, final timed narration, independent pre-render review, rendering and independent QA before delivery.
+
+## Post-approval media audit — 18 September 2026
+
+This audit produced the first render but was superseded by the 21 September corrective audit below after cross-cycle hash comparison exposed copied older assets and weak subject correspondence.
+
+The earlier Pexels-only main-video selection is not a valid delivery package and must not be reused. Its manifest remains only as evidence of the failure that prompted the corrective audit.
+
+## Corrective visual audit — 21 September 2026
+
+Hash comparison found that 17 main-video files had been copied from the 10 and 16 September cycles into the 18 September folder. Although labelled contextual, several were too weakly related to the approved subjects. They are excluded from the corrected render.
+
+- M1-07 is replaced by a separate excerpt from a current-cycle glacier recording; no sea-ice clip is used.
+- M2: no direct institutional video was found on MIT News, the xvr project site, Nature or its supplements. Five CC BY 4.0 figures from the authors' open manuscript are used as static, unanimated fallbacks: https://pmc.ncbi.nlm.nih.gov/articles/PMC11957231/ .
+- M3: direct supplementary recordings were found but excluded because their CC BY-NC-ND licence does not safely permit an edited or monetised publication. Five newly downloaded Pexels recordings show real chemical reactions, laboratory glassware and floating solar panels. They are contextual—not the NTU device—and use the Pexels licence: https://www.pexels.com/license/ .
+- M4: searches of Warwick, PNAS and the authors' available materials found no direct, publication-cleared video. The corrected sequence uses static CC BY 4.0 TRPM2 mechanism figures from an open review: https://pmc.ncbi.nlm.nih.gov/articles/PMC12785559/ . Repeated figures fill the five timed segments without animation; they do not depict a human treatment or the reported mouse experiment directly.
+- M5: no direct, publication-cleared video of the 2026 analysis was found. The corrected sequence uses the exact CC BY 4.0 figures from the 2026 *Communications Earth & Environment* paper: https://www.nature.com/articles/s43247-026-03958-2 . The figures remain static and unanimated; no generic rover, electronics or rights-uncertain institutional images are selected.
+
+The still fallbacks are displayed without pan, zoom or simulated motion and carry persistent source/limitation labels. Reels are unchanged.

@@ -1,33 +1,32 @@
 {
-  "cycle": "2026-09-16",
-  "status": "delivered-pass",
+  "cycle": "2026-09-18",
+  "status": "technical-and-visual-pass-aural-pending",
   "humanAuralApproval": {
-    "approvedBy": "user",
-    "approvedOn": "2026-09-16",
-    "scope": "Complete main video and both Reels; no clipped or mispronounced words, unnatural pacing, missing sentence, or incorrect final sentence reported."
+    "status": "pending user listening",
+    "scope": "Complete main video and both Reels: pronunciation, clipped or missing words, natural pacing, exact final sentence and subjective mix."
   },
   "deliverables": [
     {
       "file": "build/video/newhorizons.mp4",
-      "sha256": "3dc7f6ec55e060244b5f237d67d288c9283b0c9407fa6f99c16a46c3766e2286",
-      "technicalReview": "PASS: H.264/AAC, 1920x1080, 60 fps, 370.000 seconds, 22,200 fully decoded frames, no black event or unexpected audio gap; -16.2 LUFS and -1.4 dBTP.",
-      "visualReview": "PASS: 29 moving scenes, correct boundaries, persistent actuality disclosures, readable ordered overlays, real-motion CTA, no cover/thumbnail/CGI/avatar.",
-      "auralReview": "PASS: user confirmed the complete listening review on 2026-09-16."
+      "sha256": "6287f04336b5e46edff2ac0abdc7e9624ff40d38f17a471dc9fc594aea7c7feb",
+      "technicalReview": "PASS: H.264/AAC, 1920x1080, 60 fps, 370.000 seconds, 22,200 fully decoded frames, no black event or unexpected audio gap; -16.31 LUFS and -1.39 dBTP.",
+      "visualReview": "PASS: actual-output contact review confirms relevant M1/M3 real footage and documented static M2/M4/M5 source-figure fallbacks, correct story boundaries, persistent contextual disclosures, readable ordered overlays and cinematic CTA; no stale generic clinical/rover/electronics imagery, cover or thumbnail.",
+      "auralReview": "PENDING: user must listen to the complete file."
     },
     {
       "file": "build/reels/01-future-of-ai.mp4",
-      "sha256": "8135f38849ccb85c736e82267cae03ae75f46fdc52453335d5f31a1770121933",
-      "technicalReview": "PASS: H.264/AAC, 1080x1920, 60 fps, 45.016667 seconds, 2,701 frames, speech end 42.119167, closing gap 2.8975, -16.3 LUFS and -1.5 dBTP.",
-      "visualReview": "PASS: seven distinct clips, full-frame foreground over blurred duplicate, readable title/disclosure/CTA and correct handle; no cover.",
-      "auralReview": "PASS: user confirmed the complete listening review on 2026-09-16."
+      "sha256": "a8207c83f5f587d3be864dd1147fd65a5b5ffba17ff01df7fa0b4981f7d8f84d",
+      "technicalReview": "PASS: H.264/AAC, 1080x1920, 60 fps, 45.000 seconds, 2,700 frames, speech end about 41.79 seconds and closing gap about 3.21 seconds; no black or frozen interval.",
+      "visualReview": "PASS: seven real clips, full landscape foreground over dark blurred duplicate, readable disclosure/CTA and correct handle; no cover.",
+      "auralReview": "PENDING: user must listen to the complete file."
     },
     {
-      "file": "build/reels/02-planet-earth-sea-ice.mp4",
-      "sha256": "1cb50c2c5b0b8e048f03ceaeaf549aa6a707f7cf31b64642be1dd6b6273f3b9b",
-      "technicalReview": "PASS: H.264/AAC, 1080x1920, 60 fps, 45.337 seconds, 2,720 frames, speech end 42.418354, closing gap 2.918646, -16.3 LUFS and -1.5 dBTP.",
-      "visualReview": "PASS: seven sea-ice/floe/polar-ice clips, full-frame foreground over blurred duplicate, readable title/disclosure/CTA and correct handle; no cover.",
-      "auralReview": "PASS: user confirmed the complete listening review on 2026-09-16."
+      "file": "build/reels/02-planet-earth-ocean-acidification.mp4",
+      "sha256": "7bd695a540755a215420a540500221ff3f035728fc15c4320ee225da2892efe7",
+      "technicalReview": "PASS: H.264/AAC, 1080x1920, 60 fps, 45.616667 seconds, 2,737 frames, speech end about 42.72 seconds and closing gap about 2.90 seconds; no black or frozen interval.",
+      "visualReview": "PASS: seven real clips with real squid in the first two sequences, full landscape foreground over dark blurred duplicate, readable disclosure/CTA and correct handle; no cover.",
+      "auralReview": "PENDING: user must listen to the complete file."
     }
   ],
-  "deliveryGate": "PASS: technical, visual and human aural review requirements are complete."
+  "deliveryGate": "PENDING only user aural approval; independent technical and visual QA passed."
 }

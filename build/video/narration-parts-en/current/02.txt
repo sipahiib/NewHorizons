@@ -1,11 +1,7 @@
-NASA has switched on the Nancy Grace Roman Space Telescope's main camera and successfully communicated with it during commissioning.
+In medicine, MIT-led researchers developed a patient-specific artificial-intelligence system called x-v-r. It matches two-dimensional X-rays taken during a procedure with a patient’s three-dimensional CT or MRI scan prepared beforehand.
 
-The Wide Field Instrument has three hundred megapixels. Between September eleventh and thirteenth, engineers recorded deliberately out-of-focus starlight as an initial baseline.
+The team reports that the system can adapt to one patient in about five minutes, then register new X-ray images in seconds with sub-millimetre precision. It was evaluated using real data from five hospitals, including adult and paediatric cases.
 
-Its field of view is at least one hundred times larger than Hubble's infrared camera.
+That alignment could eventually give clinicians more reliable spatial guidance during minimally invasive procedures, connecting a limited X-ray view with richer information in the earlier scan.
 
-That blur was expected, not a failure. NASA also said communication with the coronagraph, plus thermal and mechanical checks, proceeded as planned.
-
-Roman is designed to survey large areas of sky efficiently, helping scientists study cosmic expansion, the distribution of matter and worlds around other stars.
-
-But this was an instrument checkout, not a discovery. Commissioning continues, and first science images are expected in 2027. Roman has not yet mapped dark energy or directly imaged an exoplanet.
+But this remains a research system, not an autonomous surgeon. The study does not show improved patient outcomes or establish clinical approval. Moving anatomy and broader conditions still need testing. The promise is future guidance—not treatment available today.

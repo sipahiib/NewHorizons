@@ -1,11 +1,7 @@
-Ultrathin electronics require different contacts for different transistor types. A KAIST-led team reports one material that can work with both.
+A temperature sensor may also be involved in chronic pain. Warwick researchers studied TRPM2, an ion channel that detects mild warmth, and found it can convert inflammatory and immune signals into pain-related electrical activity.
 
-Contacts are a major challenge because ordinary metal deposition can damage extremely thin semiconductor layers or create resistance that wastes energy.
+Removing TRPM2 from sensory nerves reduced pain behaviours in mouse models. In the arthritis experiment, blocking it with a joint injection reversed pain behaviour for two days without suppressing inflammation.
 
-The researchers used a tin-diselenide van der Waals injector with p-type tungsten diselenide and n-type molybdenum disulfide devices.
+Instead of broadly reducing inflammation, a future therapy might target how sensory nerves translate inflammatory signals into pain.
 
-They also demonstrated a CMOS inverter. KAIST says the p-type device reached a maximum drive current more than one thousand times its nickel comparison.
-
-A shared contact approach could eventually simplify circuits built from atomically thin materials, helping engineers explore smaller, lower-power electronics.
-
-These are laboratory devices, not a new commercial processor. Large-area growth, manufacturing yield, integration and durability still need work, and the reported performance does not apply to every chip.
+But the result comes from mice and cells. It does not demonstrate a safe dose, effective human treatment or arthritis cure. Side effects and lasting benefit require extensive testing. TRPM2 is a possible target and a clue to pain signalling—not a medicine patients can receive.

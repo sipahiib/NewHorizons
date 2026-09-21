@@ -1,21 +1,17 @@
-A brain implant just decoded speech and body language at the same time. The result points toward assistive communication that could express more than words alone.
+Most polar ice loss wasn’t surface melt—it was glaciers speeding into the ocean.
 
-Four more important developments are coming, from a space telescope to robotics, ultrathin electronics and eye scans. Let's begin with the biggest.
+Satellite records show the ice sheets losing mass as frozen rivers carry ice towards the sea.
 
-At the University of California, San Francisco, researchers worked with three people who had paralysis. Each already had electrodes placed on the brain's surface.
+Four more important developments are coming, from surgical AI to asteroid chemistry. Let’s begin with the biggest.
 
-Those electrodes record patterns from the motor cortex. They do not read every private thought. The system was trained for specific attempted phrases and familiar gestures, including a wave and a thumbs-up.
+A new international assessment reconstructed how the Greenland and Antarctic ice sheets changed between 1979 and 2023. The Ice Sheet Mass Balance Inter-comparison Exercise combined forty-two estimates from twenty-seven satellite missions.
 
-The participants attempted speech and upper-body gestures. Personalised machine-learning systems decoded those signals together, instead of treating a spoken message and a physical gesture as separate events.
+Together, the two ice sheets lost an estimated eleven thousand three hundred and nine gigatonnes, with an uncertainty of five hundred and sixty-five gigatonnes. Researchers calculated that this added thirty-one point four millimetres to global mean sea level, plus or minus one point six millimetres.
 
-Two participants used the system to control full-body avatars. That matters because a nod, a shrug or a change in posture can add meaning that a sentence misses.
+The striking result is where most loss came from. Eighty-four percent was attributed to an imbalance in ice dynamics, mainly glaciers flowing faster and discharging more ice into the ocean. Surface changes, including snowfall and melting, accounted for the remaining sixteen percent. So the headline cannot be described simply as surface melting.
 
-The researchers also found that simultaneous expression was not simply speech data plus gesture data. Decoders performed better when trained on examples in which both actions were attempted together.
+Greenland and Antarctica did not lose ice at a constant rate. A slowdown from 2020 to 2023 reflects short-term variability, not a reversal of the long-term trend.
 
-For someone who cannot speak or move normally, a future interface like this might make digital conversation feel more expressive, and give communication partners more context.
+Why does this matter beyond the poles? Higher global mean sea level raises the baseline for coastal flooding and erosion. Local effects also depend on tides, storms and land movement, but a longer record helps refine projections used for coastal planning.
 
-Current eye-tracking communication can be slow and tiring, so richer expression could be meaningful.
-
-But this was a wired proof of concept involving only three people. It required brain surgery, and it did not restore biological speech or movement.
-
-The next challenges include larger studies, broader vocabularies, wireless hardware and long-term testing. For now, the achievement is precise but early: one interface decoded attempted words and gestures together.
+This assessment concerns the Greenland and Antarctic ice sheets, not sea ice or every glacier. By combining decades of observations and reporting uncertainty, it provides a clearer view of how Earth’s largest ice sheets are changing.

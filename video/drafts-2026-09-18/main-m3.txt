@@ -1,0 +1,7 @@
+In Singapore, researchers at Nanyang Technological University have built an artificial leaf that tackles two problems at once. Powered by sunlight, the photoelectrochemical device produces hydrogen from seawater while breaking down hydrazine, a toxic industrial contaminant.
+
+In simulated and real seawater samples, the device maintained stable photocurrent for more than seventy-two hours. NTU also reports that, in one test, hydrazine concentration fell from zero point five molar to zero point five parts per billion within thirty hours.
+
+The idea is attractive because a future system might combine wastewater treatment with solar-fuel production, instead of treating them as entirely separate processes.
+
+However, this is a laboratory-scale result, not a commercial hydrogen plant or a solution ready for deployment at sea. The tests do not yet establish long-term durability, safe industrial scale-up or competitive costs. Hydrazine itself is hazardous and requires careful handling. The work demonstrates a promising chemical pathway; engineering it into a practical system is the next, much larger challenge.

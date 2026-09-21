@@ -1,0 +1,7 @@
+In medicine, MIT-led researchers have developed a patient-specific artificial-intelligence system called x-v-r. It matches two-dimensional X-rays taken during a procedure with a patient’s three-dimensional CT or MRI scan prepared beforehand.
+
+The team reports that the system can adapt to an individual patient in about five minutes, then register new X-ray images in seconds with sub-millimetre precision. It was evaluated using real data from five hospitals, including adult and paediatric cases.
+
+That alignment could eventually give clinicians more reliable spatial guidance while they navigate minimally invasive procedures. In practical terms, it may help connect a limited X-ray view with richer anatomical information already available in the earlier scan.
+
+But this remains a research system. It is not an autonomous surgeon, and the study does not show improved patient outcomes or establish approval for clinical use. Moving anatomy and performance across broader conditions still need further testing. For patients, the promise is better guidance in the future—not a treatment available today.

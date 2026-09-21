@@ -1,0 +1,7 @@
+Samples from asteroid Ryugu have revealed a previously under-recognised part of their chemistry. A Japanese research collaboration used synchrotron X-rays and solubility experiments to identify widespread, poorly crystalline, magnesium-rich hydrous silicate resembling magnesium silicate hydrate, or M-S-H.
+
+The material appears in Ryugu samples returned by Hayabusa2 and in carbonaceous meteorites. It may help explain how these primitive materials were strongly altered by water while preserving local chemical differences from the early Solar System.
+
+That gives researchers another way to read the history locked inside returned asteroid material: not as evidence of oceans on Ryugu, but as a record of water interacting with rock in its parent body.
+
+The phrase “invisible matter” needs care here. It does not mean dark matter, and the finding is not evidence of life. It describes a mineral component that earlier methods had not adequately recognised. Returned samples remain valuable because laboratories can revisit them with new techniques and uncover chemistry that was previously difficult to see.
