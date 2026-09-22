@@ -1,15 +1,21 @@
-// Uses Pexels' public Free download route. No browser cookies, impersonation,
-// authentication bypass, challenge solving or guessed CDN file names.
+// Legacy 7 September 2026 downloader. Uses Pexels' public Free download route.
+// No browser cookies, authentication bypass, challenge solving or guessed CDN names.
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
 const run=promisify(execFile);
 const root=path.resolve(import.meta.dirname,'..');
-const source=await fs.readFile(path.join(root,'video/SOURCES.md'),'utf8');
-const rows=[...source.matchAll(/^\| ([MR]\d-\d\d) \| \[([^\]]+)\]\((https:\/\/www\.pexels\.com\/video\/[^)]+)\)/gm)]
-  .map(m=>({id:m[1],credit:m[2],page:m[3],assetId:m[3].match(/-(\d+)\/$/)[1]}));
-if(rows.length!==30) throw new Error(`Expected 30 source-approved stock candidates, found ${rows.length}`);
+const legacyFlag='--legacy-2026-09-07';
+if(!process.argv.includes(legacyFlag)) throw new Error(`Historical script; pass ${legacyFlag} explicitly`);
+const sourceArg=process.argv.slice(2).find(arg=>arg!==legacyFlag)||'video/stock_assets.json';
+const sourcePath=path.resolve(root,sourceArg);
+if(!sourcePath.startsWith(root+path.sep)) throw new Error('Legacy inventory must be inside the repository');
+const inventory=JSON.parse(await fs.readFile(sourcePath,'utf8'));
+const rows=(inventory.assets||[]).map(({id,credit,page,assetId})=>({id,credit,page,assetId:String(assetId)}));
+if(rows.length!==30||rows.some(row=>!row.id||!row.page||!row.assetId)) {
+  throw new Error(`Expected 30 complete legacy stock records, found ${rows.length}`);
+}
 const dir=path.join(root,'assets/motion/2026-09-07/stock');
 await fs.mkdir(dir,{recursive:true});
 const report=[];

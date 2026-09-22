@@ -5,8 +5,14 @@ import {promisify} from 'node:util';
 
 const run = promisify(execFile);
 const root = path.resolve(import.meta.dirname, '..');
-const manifestPath = path.join(root, 'video/current_media_manifest.json');
+const manifestArg = process.argv[2];
+if (!manifestArg) throw new Error('Pass an explicit approved media manifest path');
+const manifestPath = path.resolve(root, manifestArg);
+if (!manifestPath.startsWith(root + path.sep)) throw new Error('Manifest must be inside the repository');
 const manifest = JSON.parse(await fs.readFile(manifestPath, 'utf8'));
+if (manifest.status !== 'approved-for-download') {
+  throw new Error(`Manifest is not active for download: ${manifest.status || 'missing status'}`);
+}
 const base = path.join(root, 'assets/motion', manifest.cycle);
 const report = [];
 

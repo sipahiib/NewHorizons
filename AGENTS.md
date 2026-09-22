@@ -1,76 +1,36 @@
-# Repository Guidelines
+# NewHorizons Repository Guide
 
-## Project Scope
+## Scope and authority
 
-Work only in `/Users/is9565/Downloads/NewHorizons`. Use `NewHorizons` for the project and `newhorizons-start` for its startup skill. Read `RESEARCH.md` for the research brief and `video/SOURCES.md` for the current editorial package. Explicit user instructions override this guide.
+Work only in `/Users/is9565/Downloads/NewHorizons`. Explicit user instructions override repository guidance. Use `newhorizons-start` only when the user sends the exact command `/start`; that command always opens a new dated editorial cycle and does not silently resume an older pending cycle.
 
-Keep sources in `video/SOURCES.md`, narration/manifests/render scripts in `video/`, motion assets in `assets/motion/`, and branding in `assets/branding/`. Deliver the main video to `build/video/newhorizons.mp4` and approved Reels to `build/reels/`.
+Never publish, purchase, request external permission or push unless the user separately authorises that action. Ask before every GitHub push and confirm an unclear target. Keep media local: never commit or push `.mp3`, `.mp4`, `.m4a`, `.mov`, `.wav`, `.webm` or `build/video/editorial-en/`. Version only reproducible scripts, text, manifests and metadata.
 
-## Rules
+## Read only what the task needs
 
-- Select one visually compelling main story with broad audience relevance and four supporting stories. Verify claims with reliable primary sources; distinguish publication dates from event dates and findings from speculation.
-- Every story must answer: **What happened? Who did it/source? Why does it matter? How could it affect the viewer?** Explain practical relevance without promising unproven benefits.
-- Use the approved **6:10** schedule: main story **0:00–2:00**, four supports **60 seconds each**, closing **6:00–6:10**. The first 20 seconds belong to the main story, not an additional intro. Never shorten the main below 90 seconds or a support below 60 seconds.
-- Open immediately with relevant motion footage, never a channel intro or static cover:
-- **0:00–0:05:**: Ana haberin en şaşırtıcı sonucunu söyle.
-- **0:05–0:12:**: Sonucu destekleyen güçlü görsel/video.
-- **0:12–0:20:**: “And four other breakthroughs happened this week…” diyerek diğer haberleri çok kısa teaser olarak göster.
-- **0:20 - :**: doğrudan ana hikâyeye gir.
-- Use natural English for narration, headings and calls to action. Avoid the fixed introduction “First of our news is.” Limit each topic to one important financial figure or point.
+Do not load all project Markdown by default. Use this routing table:
 
-## Agent Workflow & Approval
+| Task | Required context |
+| --- | --- |
+| Start a new cycle or research stories | `RESEARCH.md`, `video/EDITORIAL_POLICY.md`; read an older `BRIEF.md` only to prevent repetition |
+| Write narration or select media | active `RESEARCH_PACKET.md`, `APPROVAL.md`, `video/PRODUCTION_SPEC.md` |
+| Review before render | active `RESEARCH_PACKET.md`, `APPROVAL.md`, relevant manifests and `video/PRODUCTION_SPEC.md`; write `REVIEW.md` |
+| Render | active `APPROVAL.md`, resolved `REVIEW.md`, `video/PRODUCTION_SPEC.md` |
+| Verify output | active `APPROVAL.md`, resolved `REVIEW.md`, `video/QA_CHECKLIST.md`, actual outputs and verification manifests; write `QA.md` |
+| Small code or metadata edit | this file and the directly affected files only |
 
-The main controller assigns tasks, integrates accepted outputs and owns production and delivery approval. Use these roles in stages within available agent slots:
+`video/SOURCES.md` and `video/WORKFLOW.md` are short pointers, not complete task packets. The active cycle is declared in both. Historical material under `video/archive/` is read only when investigating history.
 
-- **Researcher:** verified stories, source links, dates and claim limitations.
-- **Scriptwriter:** timed English narration, hook options and screen text.
-- **Visual Designer:** five motion candidates per topic, storyboard and usage conditions.
-- **Reviewer:** independent factual, editorial and rule checks before production.
-- **Video Producer:** narration and render from the approved package.
-- **QA:** independent inspection of the actual video and recorded verification results.
+## Workflow boundaries
 
-Agents work on separate assigned artifacts; the controller integrates shared-file changes. Reviewer must not approve their own authored work; QA must not approve their own render. Completion claims require evidence, not merely a “done” report.
+Store every editorial cycle under `video/cycles/YYYY-MM-DD/`. Preserve prior cycles; never replace history by clearing a shared file. A topic change after approval requires new user approval. Routine corrections that preserve the approved editorial package do not.
 
-### Lean agent protocol
+Use sub-agents only for substantial parallel research or required independence. Do not create nested agents. A normal cycle uses at most four sub-agent sessions, no full-history forks and at most one correction round per agent. Reviewer must be independent of the work reviewed; output QA must be independent of the render. The controller performs small edits, integration and routine commands.
 
-Use agents only when the task needs independent judgement, substantial parallel research, or an independence boundary required by this workflow. The controller handles short inspections, small edits, manifest maintenance, routine commands and integration directly.
+Later agents consume accepted handoffs instead of repeating research. Reviewer reopens only unsupported, contradictory or materially incomplete claims; QA evaluates the rendered outputs rather than redoing editorial research.
 
-- Use no more than four sub-agent sessions in a normal production cycle. Do not create nested sub-agents.
-- Start sub-agents with a bounded task packet rather than the full conversation history. The packet should normally be no more than 1,500 words and identify the exact files the agent may read or write.
-- Combine Researcher and Visual Designer work when one pass can verify both the story and its real-footage candidates. The controller may perform the Scriptwriter or Video Producer function directly. Reviewer and QA must remain independent from the work they approve.
-- Give each agent one concrete deliverable and normally no more than one correction round. Stop the agent after its handoff; roles documented in the workflow are not continuously running processes.
-- Do not ask later agents to repeat accepted research. Reviewer reopens only unsupported, contradictory or materially incomplete claims. QA evaluates the rendered outputs rather than redoing editorial research.
-- Prefer structured, file-based handoffs. Target maximum handoff sizes are 1,200 words for research and visual candidates, 600 words for review, and 500 words for QA.
-- Before user approval, do not start media download, final narration, TTS or rendering agents. After approval, avoid delegating tasks that the controller can complete with a short local command or edit.
-- Record per cycle the number of sub-agent sessions, follow-up rounds, task-packet word counts and handoff word counts. Targets are: no full-history forks, no nested agents, at most four sessions, at most one follow-up per agent and no more than 3,000 total handoff words.
+Each agent receives one bounded deliverable, exact readable/writable files and acceptance criteria. Target limits: 1,500 words per task packet; 1,200 words for research handoff; 600 for review; 500 for QA; 3,000 total handoff words per cycle.
 
-Keep the active cycle in a compact directory under `video/cycles/YYYY-MM-DD/` using `BRIEF.md`, `RESEARCH_PACKET.md`, `APPROVAL.md`, `REVIEW.md` and `QA.md` as needed. Agents should read the governing repository instructions and only the active-cycle files relevant to their assignment. Store completed-cycle narrative history under `video/archive/`; do not make every agent reread it.
+At cycle completion, record sub-agent sessions, full-history forks, nested agents, follow-up rounds and handoff word counts in the cycle `BRIEF.md`.
 
-Present topics, sources, motion candidates and several main-story English hooks together for user approval. Record the selected package and hook; prior-cycle approval does not cover new content. Obtain approval before media downloads, final narration or rendering. After editorial approval, resolve routine corrections autonomously; ask again only for a material change to the approved package. The controller authorizes rendering after Reviewer findings are resolved, then authorizes delivery after QA.
-
-## Visuals & Audio
-
-- Main video: **1920×1080, 60 fps, H.264/AAC**.
-- For the main programme, use real recorded video footage for every story; do not use generated, procedural or illustrative animation as story visuals. Prefer footage of the reported event, product, research or institution, then clearly labelled contextual real footage. If no suitable real video can be found after checking availability and usage rights, relevant sourced still images are an allowed fallback. Record the fallback and its reason in `video/SOURCES.md`, and never present a contextual still as direct documentation of the reported event.
-- The main story uses exactly **8 × 15-second** visual segments; each support uses exactly **5 × 12-second** segments. The opening's 5/7/8 narration and overlays fit within the first two main segments. A sourced still-image segment is permitted only under the real-video fallback rule above; do not use legacy `png/` assets or turn a still into purported news footage with pan/zoom.
-- Prefer source-publisher footage. Record provenance, usage conditions, native resolution and whether footage is actual, contextual or illustrative. Do not pass stock or generated visuals off as the reported experiment.
-- Use restrained animated headings and exceptional one-sentence takeaways; preserve subject visibility and mobile readability.
-- Use Microsoft Edge TTS **`en-GB-RyanNeural` at `-2%`**. Changing the voice requires user approval. Measure actual speech duration and check timing adjustments for clipped words, unnatural pacing or unexplained silence.
-- Main closing: the final ten seconds use the cinematic-glass CTA with English labels, subtle panel entrance, Like response, Subscribe accent and animated bell. No channel name or handle.
-- End the main narration exactly: **“That was our latest news. Stay with science, and stay tuned.”**
-
-## Reels
-
-For each new main-video cycle, propose two independent Reels: **Future of AI** and **The Planet Earth**. Prioritize reliable, useful, engaging material and avoid repeated topics. Append candidates below the main stories in `video/SOURCES.md`, preserving those stories. Apply the same editorial approval process; produce one Reel per approved topic.
-
-Reels: **45-50 seconds, 1080×1920, 9:16, 60 fps, H.264/AAC**, with seven motion clips each. Fit measured narration within 45 seconds; finish speech before the video ends and leave at most four seconds afterward. Preserve complete landscape frames over a darkened, blurred duplicate background. Closing calls include YouTube **`@newhorizons_21`** and Instagram like/follow.
-
-Do not create or deliver cover images or thumbnails for the main video or Reels. Existing historical cover files may be preserved, but they must not be treated as current deliverables or reused as video intros, closing backgrounds or production inputs.
-
-## Verification & Delivery
-
-Before render, verify approved inputs, per-story clip counts/durations, narration timing, source-to-visual correspondence, and ordered, nonoverlapping, in-range overlays. After render, verify full-file decoding, codecs, resolution, frame rate, actual duration, speech completeness, sound levels, readable overlays, opening and closing. Inspect the actual footage and listen to narration; metadata alone is insufficient. Resolve blocking findings before delivery.
-
-Isolate each cycle's inputs and intermediates to prevent stale media reuse. After verified delivery, remove only identified disposable intermediates and obsolete outputs. Preserve approved source assets, scripts, manifests, branding and current main/Reels deliverables.
-
-Ask before GitHub push; confirm the target if unclear. Never commit or push `.mp3`, `.mp4`, or `build/video/editorial-en/`. Keep media local and version only reproducible scripts, text, manifests and metadata.
+Keep narration, manifests and render scripts in `video/`, motion assets in `assets/motion/`, branding in `assets/branding/`, the main output at `build/video/newhorizons.mp4`, and approved Reels in `build/reels/`. Files below `video/` also follow `video/AGENTS.md`.

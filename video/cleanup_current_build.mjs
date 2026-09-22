@@ -7,6 +7,13 @@ const targets=[
  'build/reels/work','build/reels/overlays','build/reels/audio','build/reels/current-qa',
 ];
 const reports=['video/current_video_verification.json','video/current_reels_verification.json'];
+const deliveryReview=JSON.parse(fs.readFileSync(path.join(root,'video/current_delivery_review.json'),'utf8'));
+if(deliveryReview.deliveryGate!=='PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK'){
+ throw new Error(`Cleanup blocked by delivery gate: ${deliveryReview.deliveryGate||'missing'}`);
+}
+if(deliveryReview.humanContinuousPlaybackApproval?.status!=='passed'||deliveryReview.humanAuralApproval?.status!=='passed'){
+ throw new Error('Cleanup blocked until both human audiovisual approval fields are passed');
+}
 for(const file of reports){
  const data=JSON.parse(fs.readFileSync(path.join(root,file),'utf8'));
  for(const r of Array.isArray(data)?data:[data]){
@@ -16,7 +23,7 @@ for(const file of reports){
 }
 const walk=p=>{const s=fs.lstatSync(p);if(s.isSymbolicLink())throw new Error(`Unexpected symlink: ${p}`);return s.isDirectory()?fs.readdirSync(p).flatMap(n=>walk(path.join(p,n))):[{file:path.relative(root,p),bytes:s.size}];};
 const inventory=targets.filter(t=>fs.existsSync(path.join(root,t))).flatMap(t=>walk(path.join(root,t)));
-const manifest={purpose:'Disposable render intermediates, extracted QA frames and temporary narration only',files:inventory,count:inventory.length,bytes:inventory.reduce((n,f)=>n+f.bytes,0),executed:false,preserved:['build/video/newhorizons.mp4','build/reels/01-sports-biomechanics.mp4','build/reels/02-hands-on-science.mp4','build/reels/03-ai-archaeology.mp4','all source assets, scripts, narration texts, manifests, branding and verification reports']};
+const manifest={purpose:'Disposable render intermediates, extracted QA frames and temporary narration only',files:inventory,count:inventory.length,bytes:inventory.reduce((n,f)=>n+f.bytes,0),executed:false,preserved:['build/video/newhorizons.mp4','build/reels/01-future-of-ai.mp4','build/reels/02-planet-earth-ocean-acidification.mp4','all source assets, scripts, narration texts, manifests, branding and verification reports']};
 console.log(JSON.stringify({count:manifest.count,bytes:manifest.bytes,targets},null,2));
 if(process.argv.includes('--execute')){
  const prior=JSON.parse(fs.readFileSync(path.join(root,'video/cleanup_manifest.json'),'utf8'));

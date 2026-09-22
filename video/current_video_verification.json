@@ -263,6 +263,6 @@
     }
   ],
   "unexpectedGaps": [],
-  "visualReview": "pass — actual-output contact sheet inspected; story correspondence, source labels, titles and CTA confirmed",
+  "visualReview": "sampled pass — actual-output contact sheet inspected; sampled story correspondence, source labels, titles and CTA confirmed; continuous playback pending",
   "audioReview": "signal continuity checked; not a claim of full human listening"
 }

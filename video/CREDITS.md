@@ -2,7 +2,7 @@
 
 ## Current cycle — 18 September 2026, corrected 21 September
 
-The main programme uses real recorded footage or documented, static source-figure fallbacks. Every contextual segment carries an on-screen limitation label. No generated story imagery, cover or thumbnail is used. Factual sources and the corrective audit are in `video/SOURCES.md`.
+The main programme uses real recorded footage or documented, static source-figure fallbacks. Every contextual segment carries an on-screen limitation label. No generated story imagery, cover or thumbnail is used. Factual sources are in `video/cycles/2026-09-18/RESEARCH_PACKET.md`; the corrective audit is in `video/cycles/2026-09-18/MEDIA_AUDIT.md`.
 
 - M1: current-cycle Pexels glacier footage under the [Pexels licence](https://www.pexels.com/license/); contextual, not the 2026 measurements. Per-file asset pages remain in `video/current_media_manifest.json`.
 - M2: figures 1–5 from Vivek Gopalakrishnan, Neel Dey, David-Dimitris Chlorogiannis, Andrew Abumoussa, Anna M. Larson, Darren B. Orbach, Sarah Frisken and Polina Golland, “Rapid patient-specific neural networks for intraoperative X-ray to volume registration,” author manuscript at [PubMed Central](https://pmc.ncbi.nlm.nih.gov/articles/PMC11957231/), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Static fallback after direct-video search.
@@ -57,4 +57,4 @@ Stock licence: https://www.pexels.com/license/
 
 R2 final illustrative animation is original NewHorizons material. The downloaded NASAJPL Edu tutorial is retained as an audited source, not selected for the final five motion clips. If excerpts are later used, credit NASAJPL Edu and Courtesy NASA/JPL-Caltech, link https://www.youtube.com/watch?v=HrKRWsrZuYc, identify editing, and preserve the applicable Creative Commons Attribution conditions. See reels-paper-media.md.
 
-Factual source links and claim limitations: SOURCES.md. Financial references are omitted from this cycle.
+Current-cycle factual source links and claim limitations: `cycles/2026-09-18/RESEARCH_PACKET.md`. Financial references are omitted from this cycle.

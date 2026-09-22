@@ -16,7 +16,7 @@
     "sourceClips": 7,
     "layout": "Full foreground frame centred over dark blurred duplicate; no landscape foreground crop",
     "blackIntervals": 0,
-    "visualReview": "pass — contact sheet and sampled output frames inspected",
+    "visualReview": "sampled pass — contact sheet and sampled output frames inspected; continuous playback pending",
     "audioReview": "Measured signal ending; no claim of full human listening"
   },
   {
@@ -36,7 +36,7 @@
     "sourceClips": 7,
     "layout": "Full foreground frame centred over dark blurred duplicate; no landscape foreground crop",
     "blackIntervals": 0,
-    "visualReview": "pass — contact sheet and sampled output frames inspected",
+    "visualReview": "sampled pass — contact sheet and sampled output frames inspected; continuous playback pending",
     "audioReview": "Measured signal ending; no claim of full human listening"
   }
 ]

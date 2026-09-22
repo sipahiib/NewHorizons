@@ -2,6 +2,11 @@ import path from 'node:path';
 import fs from 'node:fs/promises';
 import {createRequire} from 'node:module';
 
+const legacyFlag = '--legacy-2026-09-10';
+if (!process.argv.includes(legacyFlag)) {
+  throw new Error(`Historical cover generator; current policy forbids covers. Pass ${legacyFlag} only to reproduce the archived cycle.`);
+}
+
 const require = createRequire(import.meta.url);
 const sharp = require('../.tools-node/node_modules/sharp');
 const root = path.resolve(import.meta.dirname, '..');

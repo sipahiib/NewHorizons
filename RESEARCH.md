@@ -1,4 +1,7 @@
+# Research Brief
 
-# Start the project
+For each new cycle, prepare a five-story technology and science news package from the latest three days, covering the United States, Europe and the Far East excluding China. Balance artificial intelligence, technology, medicine, planet Earth and space. Prioritise important, educational and practically useful developments, and avoid repeated topics unless there is a material new development.
 
-Son 3 günün ABD, Avrupa ve Uzakdoğu'dan (Çin hariç) 5 maddelik teknoloji haber özeti hazırla. Konular arasında yapay zekâ, teknoloji, tıp, Dünya gezegeni ve uzay ile dengeli biçimde kapsa. En önemli gelişmelere, yeni bir şey öğreten haberlere ve pratik/teknik açıdan işe yarayan gelişmelere öncelik ver. Bilgileri güncel ve güvenilir kaynaklardan doğrula; çok önemli bir ek gelişme yoksa, aynı konuyu tekrarlama. Benim onayıma sun haberleri ve hangi haberleri seçeceğimi sor. Kaynak linkleri de konunun altında göster. Buradan oluşturduğun sonuçları Sources.md dosyasına yaz ama eski içeriğini önce sil, sonra yeni sonuçları yaz.
+Verify claims with current reliable sources and present the candidates and source links for user selection. Follow `video/EDITORIAL_POLICY.md` for the proposal and approval format.
+
+On `/start`, create a new `video/cycles/YYYY-MM-DD/` directory even when an older cycle still has pending delivery work. Write research to its `RESEARCH_PACKET.md`; do not erase, overwrite or silently resume an earlier cycle. Update `video/SOURCES.md` and `video/WORKFLOW.md` to point to the new active editorial cycle while preserving the older cycle's recorded status.

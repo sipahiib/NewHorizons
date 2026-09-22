@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+[[ "${1:-}" == "--legacy-2026-09-04" ]] || {
+  echo "Historical downloader; pass --legacy-2026-09-04 only to reproduce the archived cycle." >&2
+  exit 2
+}
+
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 YTDLP="/tmp/newhorizons-downloader/bin/yt-dlp"
 

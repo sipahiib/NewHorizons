@@ -1,4 +1,7 @@
 // Original procedural animation. No external footage, photographs or stock images.
+const LEGACY_FLAG='--legacy-2026-09-07';
+if(!process.argv.includes(LEGACY_FLAG)) throw new Error(`Historical illustrative renderer; pass ${LEGACY_FLAG} only to reproduce the archived cycle`);
+const cliArgs=process.argv.slice(2).filter(arg=>arg!==LEGACY_FLAG);
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {spawn} from 'node:child_process';
@@ -78,7 +81,7 @@ function svg(index,t) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 960 540"><defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#030c1a"/><stop offset="1" stop-color="#15364a"/></linearGradient><linearGradient id="metal"><stop stop-color="#618493"/><stop offset=".36" stop-color="#f3f8f8"/><stop offset=".63" stop-color="#cedfe2"/><stop offset="1" stop-color="#416476"/></linearGradient><linearGradient id="gold"><stop stop-color="#9b6b2a"/><stop offset=".5" stop-color="#ecd696"/><stop offset="1" stop-color="#a27231"/></linearGradient><linearGradient id="flame" x2="0" y2="1"><stop stop-color="#efffff"/><stop offset=".25" stop-color="#8deaff"/><stop offset=".65" stop-color="#fbb669"/><stop offset="1" stop-color="#eb6842" stop-opacity="0"/></linearGradient><radialGradient id="earth" cx=".35" cy=".05" r=".85"><stop stop-color="#3886a4"/><stop offset=".25" stop-color="#1b5578"/><stop offset=".7" stop-color="#0b263e"/><stop offset="1" stop-color="#030b18"/></radialGradient><clipPath id="globeClip"><circle cx="480" cy="665" r="340"/></clipPath></defs><rect width="960" height="540" fill="url(#sky)"/>${stars(t)}${body}<g opacity="${titleOpacity}">${line(48,57,80,57,'#69dbe8',3)}${text(94,63,scenes[index][1],18,'#e3f5fa','letter-spacing="2"')}</g><rect x="638" y="484" width="278" height="32" rx="5" fill="#03101e" opacity=".88"/>${text(900,505,'Illustrative animation · Not to scale',13,'#c6e2eb','text-anchor="end"')}</svg>`;
 }
 await fs.mkdir(OUT,{recursive:true});
-if(process.argv.includes('--preview')) {
+if(cliArgs.includes('--preview')) {
   const tiles=[];
   for(let i=0;i<10;i++) {
     const b=await sharp(Buffer.from(svg(i,5.5))).resize(480,270).png().toBuffer();
@@ -89,7 +92,7 @@ if(process.argv.includes('--preview')) {
   await sharp({create:{width:960,height:1350,channels:3,background:'#071525'}}).composite(tiles).jpeg({quality:90}).toFile(preview);
   console.log(preview);
 } else {
-  const ids=process.argv.slice(2).map(Number);
+  const ids=cliArgs.map(Number);
   if(!ids.length || ids.some(i=>!Number.isInteger(i)||i<1||i>10)) throw new Error('Pass scene numbers 1–10 or --preview');
   for(const num of ids) {
     const index=num-1, target=path.join(OUT,scenes[index][0]+'.mp4');
