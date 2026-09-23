@@ -8,9 +8,9 @@ mkdir -p "$OUT/work"
 node "$ROOT/video/src/generate_reel_overlays.mjs"
 
 render_vertical_clip() {
-  local input="$1" duration="$2" disclosure="$3" output="$4"
+  local input="$1" seek="$2" duration="$3" disclosure="$4" output="$5"
   local filter="split=2[fgsrc][bgsrc];[bgsrc]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,gblur=sigma=35,eq=brightness=-0.20:saturation=0.72[bg];[fgsrc]scale=1080:1920:force_original_aspect_ratio=decrease[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2,format=yuv420p,setparams=range=limited:color_primaries=bt709:color_trc=bt709:colorspace=bt709,fps=$FPS,trim=duration=$duration,setpts=PTS-STARTPTS,setsar=1"
-  ffmpeg -nostdin -y -v error -i "$input" -loop 1 -framerate "$FPS" -i "$disclosure" \
+  ffmpeg -nostdin -y -v error -ss "$seek" -i "$input" -loop 1 -framerate "$FPS" -i "$disclosure" \
     -filter_complex "[0:v]$filter[scene];[scene][1:v]overlay=0:0:shortest=1[v]" -map '[v]' \
     -t "$duration" -an -c:v libx264 -preset veryfast -crf 17 -pix_fmt yuv420p -r "$FPS" \
     -color_range tv -color_primaries bt709 -color_trc bt709 -colorspace bt709 "$output"
@@ -39,13 +39,15 @@ render_reel() {
   mkdir -p "$work"
   concat_file="$work/concat.txt"
   : > "$concat_file"
-  local index=0 input source_duration segment
-  for input in "${clips[@]}"; do
+  local index=0 spec input seek source_duration segment
+  for spec in "${clips[@]}"; do
     index=$((index+1))
+    input="${spec%%|*}"
+    seek="${spec#*|}"
     source_duration="$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$ROOT/$input")"
-    awk -v s="$source_duration" -v d="$clip_duration" 'BEGIN {if(s+0.01<d)exit 1}' || { echo "Source too short: $input ($source_duration < $clip_duration)" >&2; exit 1; }
+    awk -v s="$source_duration" -v k="$seek" -v d="$clip_duration" 'BEGIN {if(s-k+0.01<d)exit 1}' || { echo "Source too short after seek: $input ($source_duration - $seek < $clip_duration)" >&2; exit 1; }
     segment="$work/clip$(printf '%02d' "$index").mp4"
-    render_vertical_clip "$ROOT/$input" "$clip_duration" "$OUT/overlays/$disclosure_name.webp" "$segment"
+    render_vertical_clip "$ROOT/$input" "$seek" "$clip_duration" "$OUT/overlays/$disclosure_name.webp" "$segment"
     printf "file '%s'\n" "$segment" >> "$concat_file"
   done
 
@@ -61,18 +63,18 @@ render_reel() {
 
 render_r1() {
   render_reel 1 "01-future-of-ai" "$OUT/audio/01-future-of-ai.wav" ai \
-    "assets/motion/2026-09-18/reels/R1-01.mp4" "assets/motion/2026-09-18/reels/R1-02.mp4" \
-    "assets/motion/2026-09-18/reels/R1-03.mp4" "assets/motion/2026-09-18/reels/R1-04.mp4" \
-    "assets/motion/2026-09-18/reels/R1-05.mp4" "assets/motion/2026-09-18/reels/R1-06.mp4" \
-    "assets/motion/2026-09-18/reels/R1-07.mp4"
+    "assets/motion/2026-09-23/reels/r1/01-workflow.mp4|2" "assets/motion/2026-09-23/reels/r1/02-workflow.mp4|3" \
+    "assets/motion/2026-09-23/reels/r1/03-typing.mp4|1" "assets/motion/2026-09-23/reels/r1/04-keyboard.mp4|2" \
+    "assets/motion/2026-09-23/reels/r1/05-laptop.mp4|0" "assets/motion/2026-09-23/reels/r1/06-collaboration.mp4|6" \
+    "assets/motion/2026-09-23/reels/r1/07-laptop.mp4|2"
 }
 
 render_r2() {
-  render_reel 2 "02-planet-earth-ocean-acidification" "$OUT/audio/02-planet-earth-ocean-acidification.wav" earth \
-    "assets/motion/2026-09-18/reels/R2-01.mp4" "assets/motion/2026-09-18/reels/R2-02-squid.mp4" \
-    "assets/motion/2026-09-18/reels/R2-03.mp4" "assets/motion/2026-09-18/reels/R2-04.mp4" \
-    "assets/motion/2026-09-18/reels/R2-05.mp4" "assets/motion/2026-09-18/reels/R2-06.mp4" \
-    "assets/motion/2026-09-18/reels/R2-07.mp4"
+  render_reel 2 "02-planet-earth" "$OUT/audio/02-planet-earth.wav" earth \
+    "assets/motion/2026-09-23/reels/r2/02-bubbling.mp4|2" "assets/motion/2026-09-23/reels/r2/03-yellowstone.mp4|1" \
+    "assets/motion/2026-09-23/reels/r2/04-microscope.mp4|1" "assets/motion/2026-09-23/reels/r2/02-bubbling.mp4|13" \
+    "assets/motion/2026-09-23/reels/r2/03-yellowstone.mp4|10" "assets/motion/2026-09-23/reels/r2/04-microscope.mp4|10" \
+    "assets/motion/2026-09-23/reels/r2/02-bubbling.mp4|26"
 }
 
 case "${1:-ready}" in

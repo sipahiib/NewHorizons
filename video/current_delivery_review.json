@@ -1,36 +1,38 @@
 {
-  "cycle": "2026-09-18",
-  "status": "technical-and-sampled-frame-pass-full-playback-pending",
+  "cycle": "2026-09-23",
+  "status": "passed",
   "humanContinuousPlaybackApproval": {
-    "status": "pending independent full visual playback",
+    "status": "passed",
+    "approvedAt": "2026-09-23",
     "scope": "Complete main video and both Reels: continuous visual relevance, disclosures, overlays, transitions, opening and closing."
   },
   "humanAuralApproval": {
-    "status": "pending user listening",
+    "status": "passed",
+    "approvedAt": "2026-09-23",
     "scope": "Complete main video and both Reels: pronunciation, clipped or missing words, natural pacing, exact final sentence and subjective mix."
   },
   "deliverables": [
     {
       "file": "build/video/newhorizons.mp4",
-      "sha256": "6287f04336b5e46edff2ac0abdc7e9624ff40d38f17a471dc9fc594aea7c7feb",
-      "technicalReview": "PASS: H.264/AAC, 1920x1080, 60 fps, 370.000 seconds, 22,200 fully decoded frames, no black event or unexpected audio gap; -16.31 LUFS and -1.39 dBTP.",
-      "visualReview": "SAMPLED PASS: actual-output contact review confirms relevant M1/M3 real footage and documented static M2/M4/M5 source-figure fallbacks, correct sampled story boundaries, persistent contextual disclosures, readable ordered overlays and cinematic CTA; full continuous playback remains pending.",
-      "auralReview": "PENDING: user must listen to the complete file."
+      "sha256": "352f9ed821f042bed79fedc9e9e576cff41fe9f7238d54e3613c889efa8109f6",
+      "technicalReview": "PASS: H.264 High/AAC-LC, 1920x1080, 60 fps, 370.000000 seconds, 22,200/22,200 frames decoded, no black event, -16.27 LUFS and -1.45 dBTP.",
+      "visualReview": "PASS: corrected current-cycle titles, story boundaries, disclosures and closing CTA verified; user approved full continuous playback.",
+      "auralReview": "PASS: user approved full playback including pronunciation, pacing, continuity and exact closing sentence."
     },
     {
       "file": "build/reels/01-future-of-ai.mp4",
-      "sha256": "a8207c83f5f587d3be864dd1147fd65a5b5ffba17ff01df7fa0b4981f7d8f84d",
-      "technicalReview": "PASS: H.264/AAC, 1080x1920, 60 fps, 45.000 seconds, 2,700 frames, speech end about 41.79 seconds and closing gap about 3.21 seconds; no black or frozen interval.",
-      "visualReview": "SAMPLED PASS: seven real clips, full landscape foreground over dark blurred duplicate, readable disclosure/CTA and correct handle; full continuous playback remains pending.",
-      "auralReview": "PENDING: user must listen to the complete file."
+      "sha256": "de33e8e540db8472c038950a0dd903daa4cb64b3c10a418b4926c99350cd4a6f",
+      "technicalReview": "PASS: H.264 High/AAC-LC, 1080x1920, 60 fps, 46.016667 seconds, 2,761/2,761 frames decoded, no black event, -16.37 LUFS and -1.44 dBTP.",
+      "visualReview": "PASS: seven motion segments, disclosure, mobile layout and CTA verified; user approved full continuous playback.",
+      "auralReview": "PASS: user approved full playback; final speech-to-end gap is approximately 2.895 seconds."
     },
     {
-      "file": "build/reels/02-planet-earth-ocean-acidification.mp4",
-      "sha256": "7bd695a540755a215420a540500221ff3f035728fc15c4320ee225da2892efe7",
-      "technicalReview": "PASS: H.264/AAC, 1080x1920, 60 fps, 45.616667 seconds, 2,737 frames, speech end about 42.72 seconds and closing gap about 2.90 seconds; no black or frozen interval.",
-      "visualReview": "SAMPLED PASS: seven real clips with real squid in the first two sequences, full landscape foreground over dark blurred duplicate, readable disclosure/CTA and correct handle; full continuous playback remains pending.",
-      "auralReview": "PENDING: user must listen to the complete file."
+      "file": "build/reels/02-planet-earth.mp4",
+      "sha256": "6546e4fd9cf43f19a3bab94af77a748d6613c904981ef8f190cb615bae2e38e8",
+      "technicalReview": "PASS: H.264 High/AAC-LC, 1080x1920, 60 fps, 45.367000 seconds, 2,722/2,722 frames decoded, no black event, -16.34 LUFS and -1.44 dBTP.",
+      "visualReview": "PASS: seven motion segments, disclosure, mobile layout and CTA verified; user approved full continuous playback.",
+      "auralReview": "PASS: user approved full playback; final speech-to-end gap is approximately 2.928 seconds."
     }
   ],
-  "deliveryGate": "PENDING_FULL_HUMAN_AUDIOVISUAL_PLAYBACK"
+  "deliveryGate": "PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK"
 }

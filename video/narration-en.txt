@@ -1,57 +1,65 @@
-## M1 — Polar Ice Sheets
-Most polar ice loss wasn’t surface melt—it was glaciers speeding into the ocean.
+## M1 — Mars Water Systems
+Perseverance found a hidden water history written inside volcanic rock.
 
-Satellite records show the ice sheets losing mass as frozen rivers carry ice towards the sea.
+At the edge of Mars’s Jezero Crater, the rover examined the Margin Unit. Scientists expected layered lake-shore sediment. Instead, they found igneous rock altered repeatedly by water.
 
-Four more important developments are coming, from surgical AI to asteroid chemistry. Let’s begin with the biggest.
+And four other breakthroughs happened this week: a cybersecurity AI project, factory automation plans, a dissolving medical battery, and a surprising Arctic trend.
 
-A new international assessment reconstructed how the Greenland and Antarctic ice sheets changed between 1979 and 2023. The Ice Sheet Mass Balance Inter-comparison Exercise combined forty-two estimates from twenty-seven satellite missions.
+The story begins with olivine-rich rock formed from magma deep underground. At higher elevations, its large crystals show almost no water alteration. Lower down, the olivine is fractured and transformed.
 
-Together, the two ice sheets lost an estimated eleven thousand three hundred and nine gigatonnes, with an uncertainty of five hundred and sixty-five gigatonnes. Researchers calculated that this added thirty-one point four millimetres to global mean sea level, plus or minus one point six millimetres.
+SuperCam examined many bedrock targets. Its laser creates plasma, revealing rock chemistry from several metres away.
 
-The striking result is where most loss came from. Eighty-four percent was attributed to an imbalance in ice dynamics, mainly glaciers flowing faster and discharging more ice into the ocean. Surface changes, including snowfall and melting, accounted for the remaining sixteen percent. So the headline cannot be described simply as surface melting.
+That chemistry records at least three water episodes. First, carbon-dioxide-rich groundwater reacted with olivine and left carbonate inside fractures. A later interaction may have involved the lake that once filled Jezero Crater, leaving more silica below the ancient water line.
 
-Greenland and Antarctica did not lose ice at a constant rate. A slowdown from 2020 to 2023 reflects short-term variability, not a reversal of the long-term trend.
+Finally, heated groundwater circulated through volcanic rock and produced mineral veins containing calcium sulfate and fluorite.
 
-Why does this matter beyond the poles? Higher global mean sea level raises the baseline for coastal flooding and erosion. Local effects also depend on tides, storms and land movement, but a longer record helps refine projections used for coastal planning.
+Carbonate and silica matter because, on Earth, they can preserve traces of ancient environments. Reactions between water and olivine can also release hydrogen, an energy source for some microbes.
 
-This assessment concerns the Greenland and Antarctic ice sheets, not sea ice or every glacier. By combining decades of observations and reporting uncertainty, it provides a clearer view of how Earth’s largest ice sheets are changing.
+But this is not evidence that life existed on Mars. The minerals document water interacting with rock, and scientists cannot yet date the three episodes. What the rover has revealed is a more complicated sequence of groundwater, lake water and hydrothermal activity than orbital observations alone suggested.
 
-## M2 — Surgical Navigation AI
-In medicine, MIT-led researchers developed a patient-specific artificial-intelligence system called x-v-r. It matches two-dimensional X-rays taken during a procedure with a patient’s three-dimensional CT or MRI scan prepared beforehand.
+One place on Mars did not have a single water story. It became a crossroads for several.
 
-The team reports that the system can adapt to one patient in about five minutes, then register new X-ray images in seconds with sub-millimetre precision. It was evaluated using real data from five hospitals, including adult and paediatric cases.
+## M2 — Cybersecurity AI
+South Korea is moving artificial intelligence toward a highly specialised target: cybersecurity.
 
-That alignment could eventually give clinicians more reliable spatial guidance during minimally invasive procedures, connecting a limited X-ray view with richer information in the earlier scan.
+The Ministry of Science and ICT announced the selected project for developing a cybersecurity-focused foundation model. The idea reflects a wider shift away from general chatbots toward systems trained and evaluated for a particular operational domain.
 
-But this remains a research system, not an autonomous surgeon. The study does not show improved patient outcomes or establish clinical approval. Moving anatomy and broader conditions still need testing. The promise is future guidance—not treatment available today.
+Security work demands more than fluent answers. A useful system must recognise malicious behaviour, work with sensitive technical data, distinguish genuine threats from false alarms, and remain resistant to manipulation by attackers.
 
-## M3 — Artificial Leaf
-In Singapore, Nanyang Technological University researchers built an artificial leaf that tackles two problems at once. Powered by sunlight, the photoelectrochemical device produces hydrogen from seawater while breaking down hydrazine, a toxic industrial contaminant.
+For viewers, the practical point is that specialisation may make AI more useful—but also easier to over-trust. This announcement is a development selection, not a finished product or proof that attacks will be stopped. Capability, false-positive rates, data protection and performance against new threats still need independent testing.
 
-In simulated and real seawater, it maintained stable photocurrent for more than seventy-two hours. NTU reports hydrazine falling from zero point five molar to zero point five parts per billion within thirty hours.
+## M3 — Factory AI
+Korean manufacturers are starting AI plans with factory-floor problems.
 
-A future system might combine wastewater treatment with solar-fuel production.
+At a government-backed hackathon, around one hundred participants from manufacturing, artificial-intelligence companies and related organisations developed possible projects for regional industrial sites.
 
-However, this is a laboratory result, not a commercial hydrogen plant. The tests do not establish long-term durability, safe industrial scale-up or competitive costs. Hydrazine is hazardous and requires careful handling. The chemical pathway is promising; engineering a practical system is the larger challenge.
+Proposals included predictive maintenance, computer-vision inspection, capturing workers’ know-how as training data, and process simulations. Teams also examined which process to target, what data and investment would be needed, and whether a project could move into a supported demonstration.
 
-## M4 — TRPM2 and Pain
-A temperature sensor may also be involved in chronic pain. Warwick researchers studied TRPM2, an ion channel that detects mild warmth, and found it can convert inflammatory and immune signals into pain-related electrical activity.
+That offers a practical lesson: successful factory AI begins with a measurable bottleneck, reliable data and a deployment plan—not with adding AI everywhere.
 
-Removing TRPM2 from sensory nerves reduced pain behaviours in mouse models. In the arthritis experiment, blocking it with a joint injection reversed pain behaviour for two days without suppressing inflammation.
+These were proposals and examples, not independently measured productivity gains. Follow-up demonstrations must still show whether the systems work safely and economically in real factories.
 
-Instead of broadly reducing inflammation, a future therapy might target how sensory nerves translate inflammatory signals into pain.
+## M4 — Bioresorbable Battery
+A battery inspired by edible rice paper could make temporary medical electronics safer.
 
-But the result comes from mice and cells. It does not demonstrate a safe dose, effective human treatment or arthritis cure. Side effects and lasting benefit require extensive testing. TRPM2 is a possible target and a clue to pain signalling—not a medicine patients can receive.
+Researchers built a cellulose-supported battery from magnesium, molybdenum trioxide, biodegradable electrolyte and beeswax. In pigs, it powered an identification tag that transmitted a signal outside the body. A second device electrically stimulated the stomach and increased levels of the hunger-related hormone ghrelin.
 
-## M5 — Ryugu Chemistry
-Asteroid Ryugu samples revealed an under-recognised part of their chemistry. A Japanese collaboration used synchrotron X-rays and solubility experiments to identify poorly crystalline, magnesium-rich hydrous silicate resembling magnesium silicate hydrate, or M-S-H.
+In simulated gastric fluid, the battery degraded over months. The goal is to avoid batteries that can leak corrosive or toxic materials.
 
-The material appears in Hayabusa2’s Ryugu samples and in carbonaceous meteorites. It may explain how these primitive materials were altered by water while preserving early Solar System chemical differences.
+One day, this approach might power ingestible sensors or temporary implants without requiring removal.
 
-This is not evidence of oceans on Ryugu, but a record of water interacting with rock in its parent body.
+But the experiments were performed in pigs, not people. They do not establish clinical benefit, long-term human safety or regulatory approval. The battery is a promising preclinical power source—not a treatment ready for patients.
 
-The phrase “invisible matter” needs care. It does not mean dark matter, and this is not evidence of life. It describes a mineral component earlier methods had not adequately recognised. Returned samples let laboratories revisit ancient material with new techniques and uncover previously hidden chemistry.
+## M5 — Arctic Melt Season
+The Arctic sea-ice melt season is about forty days longer than it was in nineteen seventy-nine. Yet its average length appears to have stopped increasing around twenty ten.
+
+A NASA-led study analysed satellite observations through twenty twenty-three. Earlier extension came mostly from later autumn freeze-up, as darker open ocean absorbed more solar energy.
+
+Since twenty ten, changing cloud patterns have reduced incoming sunlight in parts of the Arctic. Year-to-year weather now has greater influence over ice that is generally younger, thinner and more vulnerable.
+
+This does not mean Arctic warming has stopped. Melt-season length is only one measure; remaining ice is much thinner, and the region continues to warm far faster than the global average.
+
+Researchers warn the pause may be temporary. Continued thinning north of Greenland and the Canadian Arctic could trigger rapid change. The real lesson is that a flat trend can hide a fragile system.
 
 ## Closing
 For more science updates, like this video and subscribe. That was our latest news. Stay with science, and stay tuned.

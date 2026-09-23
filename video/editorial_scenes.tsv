@@ -1,36 +1,36 @@
 # kind|relative_path|duration_seconds|seek_seconds|layout
-# M1 — contextual real glacier/ice-sheet recordings; not the IMBIE measurements.
-clip|assets/motion/2026-09-18/main/M1-01-glacier.mp4|15|2|cover
-clip|assets/motion/2026-09-18/main/M1-02.mp4|15|4|cover
-clip|assets/motion/2026-09-18/main/M1-03.mp4|15|1|cover
-clip|assets/motion/2026-09-18/main/M1-04-glacier.mp4|15|0|contain_blur
-clip|assets/motion/2026-09-18/main/M1-05-glacier.mp4|15|3|cover
-clip|assets/motion/2026-09-18/main/M1-06-glacier.mp4|15|5|cover
-clip|assets/motion/2026-09-18/main/M1-08-glacier.mp4|15|20|cover
-clip|assets/motion/2026-09-18/main/M1-08-glacier.mp4|15|5|cover
-# M2 — direct xvr study figures; documented still fallback after direct-video search failed.
-still|assets/motion/2026-09-18-repair/m2/fig1.jpg|12|0|contain
-still|assets/motion/2026-09-18-repair/m2/fig2.jpg|12|0|contain
-still|assets/motion/2026-09-18-repair/m2/fig3.jpg|12|0|contain
-still|assets/motion/2026-09-18-repair/m2/fig4.jpg|12|0|contain
-still|assets/motion/2026-09-18-repair/m2/fig5.jpg|12|0|contain
-# M3 — licensed contextual real laboratory/solar footage; not the NTU device.
-clip|assets/motion/2026-09-18-repair/m3/pexels/01-chemical.mp4|12|2|cover
-clip|assets/motion/2026-09-18-repair/m3/pexels/02-reaction.mp4|12|2|contain_blur
-clip|assets/motion/2026-09-18-repair/m3/pexels/03-funnel.mp4|12|3|cover
-clip|assets/motion/2026-09-18-repair/m3/pexels/04-beaker.mp4|12|4|cover
-clip|assets/motion/2026-09-18-repair/m3/pexels/05-solar.mp4|12|2|cover
-# M4 — CC BY TRPM2 review figures; documented still fallback.
-still|assets/motion/2026-09-18-repair/m4/review-fig1.jpg|12|0|contain
-still|assets/motion/2026-09-18-repair/m4/review-fig1.jpg|12|0|contain
-still|assets/motion/2026-09-18-repair/m4/review-fig2.jpg|12|0|contain
-still|assets/motion/2026-09-18-repair/m4/review-fig2.jpg|12|0|contain
-still|assets/motion/2026-09-18-repair/m4/review-fig1.jpg|12|0|contain
-# M5 — exact CC BY 4.0 figures from the 2026 Ryugu paper; documented still fallback.
-still|assets/motion/2026-09-18-repair/m5/article-fig1.png|12|0|contain
-still|assets/motion/2026-09-18-repair/m5/article-fig2.png|12|0|contain
-still|assets/motion/2026-09-18-repair/m5/article-fig3.png|12|0|contain
-still|assets/motion/2026-09-18-repair/m5/article-fig4.png|12|0|contain
-still|assets/motion/2026-09-18-repair/m5/article-fig1.png|12|0|contain
-# Closing — real moving glacier footage behind the CTA; no cover/thumbnail.
-outro|assets/motion/2026-09-18/main/M1-02.mp4|10|22|cover
+# M1 — direct NASA/JPL Margin Unit sample footage. Reused at distinct timecodes because no second cleared direct-motion source was found.
+clip|assets/motion/2026-09-23/main/m1/lefroy-bay.mp4|15|0|cover
+clip|assets/motion/2026-09-23/main/m1/lefroy-bay.mp4|15|7|cover
+clip|assets/motion/2026-09-23/main/m1/lefroy-bay.mp4|15|14|cover
+clip|assets/motion/2026-09-23/main/m1/lefroy-bay.mp4|15|21|cover
+clip|assets/motion/2026-09-23/main/m1/lefroy-bay.mp4|15|28|cover
+clip|assets/motion/2026-09-23/main/m1/lefroy-bay.mp4|15|35|cover
+cliploop|assets/motion/2026-09-23/main/m1/lefroy-bay.mp4|15|42|cover
+cliploop|assets/motion/2026-09-23/main/m1/lefroy-bay.mp4|15|50|cover
+# M2 — contextual cybersecurity footage; not the announced Korean model or measured performance.
+clip|assets/motion/2026-09-23/main/m2/01-code-screen.mp4|12|2|contain_blur
+clip|assets/motion/2026-09-23/main/m2/02-analyst.mp4|12|1|cover
+clip|assets/motion/2026-09-23/main/m2/03-terminal.mp4|12|3|cover
+clip|assets/motion/2026-09-23/main/m2/04-team.mp4|12|4|cover
+clip|assets/motion/2026-09-23/main/m2/05-operations.mp4|12|6|cover
+# M3 — contextual factory footage; not the Korean hackathon or a deployed project.
+clip|assets/motion/2026-09-23/main/m3/r1-factory-workers.mp4|12|2|cover
+clip|assets/motion/2026-09-23/main/m3/r2-machine-worker.mp4|12|3|cover
+clip|assets/motion/2026-09-23/main/m3/r3-industrial-workers.mp4|12|5|cover
+clip|assets/motion/2026-09-23/main/m3/r1-factory-workers.mp4|12|22|cover
+clip|assets/motion/2026-09-23/main/m3/r1-factory-workers.mp4|12|42|cover
+# M4 — contextual laboratory footage; not the reported battery or pig experiment.
+clip|assets/motion/2026-09-23/main/m4/01-lab.mp4|12|1|cover
+clip|assets/motion/2026-09-23/main/m4/r1-microscope.mp4|12|0|cover
+clip|assets/motion/2026-09-23/main/m4/r2-laboratory.mp4|12|0|cover
+cliploop|assets/motion/2026-09-23/main/m4/r1-microscope.mp4|12|10|cover
+cliploop|assets/motion/2026-09-23/main/m4/05-researchers.mp4|12|1|cover
+# M5 — contextual real sea-ice footage; not the study measurements or NASA maps.
+clip|assets/motion/2026-09-23/main/m5/r1-sea-ice.mp4|12|4|cover
+clip|assets/motion/2026-09-23/main/m5/r2-sea-ice.mp4|12|3|cover
+clip|assets/motion/2026-09-23/main/m5/r3-sea-ice.mp4|12|6|cover
+clip|assets/motion/2026-09-23/main/m5/r4-frozen-sea.mp4|12|0|cover
+clip|assets/motion/2026-09-23/main/m5/r5-arctic-ocean.mp4|12|8|cover
+# Closing — approved direct NASA/JPL footage behind the CTA.
+outro|assets/motion/2026-09-23/main/m1/lefroy-bay.mp4|10|25|cover

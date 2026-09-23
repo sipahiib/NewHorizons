@@ -4,14 +4,14 @@ import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
 const sharp = require('../../.tools-node/node_modules/sharp');
-const root = path.resolve('.');
+const root = path.resolve(import.meta.dirname, '../..');
 const out = path.join(root, 'build/reels/overlays');
 fs.mkdirSync(out, { recursive: true });
 
 const esc = (s) => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const titles = [
-  'CHATGPT COMES TO WORD',
-  'ACIDIFYING OCEANS, CHANGING BRAINS?',
+  'THE 40% NUMBER IN CLAUDE OPUS 5.5',
+  'COMPLEX LIFE BREAKS A HEAT RECORD',
 ];
 
 for (const [i, title] of titles.entries()) {
@@ -33,8 +33,8 @@ const cta = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="1080" he
 await sharp(cta).webp({ lossless: true }).toFile(path.join(out, 'cta.webp'));
 
 for (const [name, text] of Object.entries({
-  ai: 'Contextual real footage — not an OpenAI product demo',
-  earth: 'Contextual real footage — not the squid experiment',
+  ai: 'Contextual workflow footage — not a Claude product demo',
+  earth: 'Contextual geothermal/lab footage — not the reported amoeba',
 })) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920"><rect x="40" y="285" width="1000" height="55" rx="10" fill="#06131f" fill-opacity=".84"/><text x="540" y="322" text-anchor="middle" font-family="Arial" font-size="28" fill="white">${text}</text></svg>`;
   await sharp(Buffer.from(svg)).webp({lossless:true}).toFile(path.join(out, `${name}.webp`));

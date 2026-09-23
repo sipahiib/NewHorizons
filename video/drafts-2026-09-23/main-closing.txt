@@ -1,0 +1,1 @@
+See `../narration-en.txt`, section `Closing`.

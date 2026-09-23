@@ -1,7 +1,9 @@
-A temperature sensor may also be involved in chronic pain. Warwick researchers studied TRPM2, an ion channel that detects mild warmth, and found it can convert inflammatory and immune signals into pain-related electrical activity.
+A battery inspired by edible rice paper could make temporary medical electronics safer.
 
-Removing TRPM2 from sensory nerves reduced pain behaviours in mouse models. In the arthritis experiment, blocking it with a joint injection reversed pain behaviour for two days without suppressing inflammation.
+Researchers built a cellulose-supported battery from magnesium, molybdenum trioxide, biodegradable electrolyte and beeswax. In pigs, it powered an identification tag that transmitted a signal outside the body. A second device electrically stimulated the stomach and increased levels of the hunger-related hormone ghrelin.
 
-Instead of broadly reducing inflammation, a future therapy might target how sensory nerves translate inflammatory signals into pain.
+In simulated gastric fluid, the battery degraded over months. The goal is to avoid batteries that can leak corrosive or toxic materials.
 
-But the result comes from mice and cells. It does not demonstrate a safe dose, effective human treatment or arthritis cure. Side effects and lasting benefit require extensive testing. TRPM2 is a possible target and a clue to pain signalling—not a medicine patients can receive.
+One day, this approach might power ingestible sensors or temporary implants without requiring removal.
+
+But the experiments were performed in pigs, not people. They do not establish clinical benefit, long-term human safety or regulatory approval. The battery is a promising preclinical power source—not a treatment ready for patients.

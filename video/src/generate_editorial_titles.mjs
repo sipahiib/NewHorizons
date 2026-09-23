@@ -4,7 +4,7 @@ import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
 const sharp = require('../../.tools-node/node_modules/sharp');
-const root = path.resolve('.');
+const root = path.resolve(import.meta.dirname, '../..');
 const lang = process.env.VIDEO_LANG === 'en' ? 'en' : 'tr';
 const editorialBuild = process.env.EDITORIAL_BUILD
   ? path.resolve(process.env.EDITORIAL_BUILD)
@@ -21,17 +21,17 @@ const cueSets = { tr: [
   { start: 145.00, end: 152.00, type: 'key', title: 'HEDEF: YAKLAŞIK 200 TEMEL YAPAY ZEKÂ STANDARDI' },
   { start: 178.00, end: 188.00, type: 'cta', title: 'BİLİM VE TEKNOLOJİ GÜNDEMİNİ KAÇIRMAYIN' },
 ], en: [
-  { start: 0.20, end: 5.20, type: 'chapter', title: 'MOST ICE LOSS WASN’T SURFACE MELT', kicker: 'IMBIE · 27 SATELLITE MISSIONS' },
-  { start: 31.00, end: 37.00, type: 'key', title: '11,309 ± 565 Gt LOST · 1979–2023' },
-  { start: 91.00, end: 98.00, type: 'key', title: 'HISTORICAL ESTIMATE — NOT A LOCAL FORECAST' },
-  { start: 120.20, end: 126.20, type: 'chapter', title: 'AI FOR SURGICAL NAVIGATION', kicker: 'MIT · PATIENT-SPECIFIC xvr' },
-  { start: 168.00, end: 175.00, type: 'key', title: 'RESEARCH SYSTEM — NOT AN AUTONOMOUS SURGEON' },
-  { start: 180.20, end: 186.20, type: 'chapter', title: 'AN ARTIFICIAL LEAF FOR HYDROGEN', kicker: 'NTU SINGAPORE · CLEAN TECHNOLOGY' },
-  { start: 228.00, end: 235.00, type: 'key', title: 'LAB RESULT — NOT COMMERCIAL PRODUCTION' },
-  { start: 240.20, end: 246.20, type: 'chapter', title: 'A NEW CHRONIC-PAIN TARGET?', kicker: 'WARWICK · TRPM2' },
-  { start: 288.00, end: 295.00, type: 'key', title: 'MOUSE STUDY — HUMAN BENEFIT UNPROVEN' },
-  { start: 300.20, end: 306.20, type: 'chapter', title: 'ANCIENT CHEMISTRY IN RYUGU', kicker: 'JAPAN · RETURNED ASTEROID SAMPLES' },
-  { start: 348.00, end: 355.00, type: 'key', title: 'CHEMICAL EVIDENCE — NOT EVIDENCE OF LIFE' },
+  { start: 0.20, end: 5.20, type: 'chapter', title: 'THREE WATER SYSTEMS IN VOLCANIC ROCK', kicker: 'PERSEVERANCE · JEZERO CRATER' },
+  { start: 31.00, end: 37.00, type: 'key', title: 'IGNEOUS ROCK · ALTERED IN AT LEAST THREE WATER EPISODES' },
+  { start: 91.00, end: 98.00, type: 'key', title: 'MINERAL EVIDENCE — NOT EVIDENCE OF LIFE' },
+  { start: 120.20, end: 126.20, type: 'chapter', title: 'CYBERSECURITY-SPECIALISED AI', kicker: 'SOUTH KOREA · DEVELOPMENT PROJECT' },
+  { start: 168.00, end: 175.00, type: 'key', title: 'ANNOUNCEMENT — NOT DEMONSTRATED PERFORMANCE' },
+  { start: 180.20, end: 186.20, type: 'chapter', title: 'FACTORY AI STARTS WITH THE BOTTLENECK', kicker: 'KOREA · SHOP-FLOOR PROJECTS' },
+  { start: 228.00, end: 235.00, type: 'key', title: 'PROPOSALS — NOT MEASURED PRODUCTIVITY GAINS' },
+  { start: 240.20, end: 246.20, type: 'chapter', title: 'A BATTERY DESIGNED TO DISSOLVE', kicker: 'PRECLINICAL PIG STUDY' },
+  { start: 288.00, end: 295.00, type: 'key', title: 'PIG STUDY — NOT A HUMAN TREATMENT' },
+  { start: 300.20, end: 306.20, type: 'chapter', title: 'ARCTIC MELT-SEASON PAUSE', kicker: '40 DAYS LONGER THAN 1979' },
+  { start: 348.00, end: 355.00, type: 'key', title: 'A FLAT TREND DOES NOT MEAN WARMING STOPPED' },
   { start: 360.00, end: 370.00, type: 'cta', title: 'LIKE, SUBSCRIBE AND STAY CURIOUS' },
 ] };
 const cues = cueSets[lang];

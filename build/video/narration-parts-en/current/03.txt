@@ -1,7 +1,9 @@
-In Singapore, Nanyang Technological University researchers built an artificial leaf that tackles two problems at once. Powered by sunlight, the photoelectrochemical device produces hydrogen from seawater while breaking down hydrazine, a toxic industrial contaminant.
+Korean manufacturers are starting AI plans with factory-floor problems.
 
-In simulated and real seawater, it maintained stable photocurrent for more than seventy-two hours. NTU reports hydrazine falling from zero point five molar to zero point five parts per billion within thirty hours.
+At a government-backed hackathon, around one hundred participants from manufacturing, artificial-intelligence companies and related organisations developed possible projects for regional industrial sites.
 
-A future system might combine wastewater treatment with solar-fuel production.
+Proposals included predictive maintenance, computer-vision inspection, capturing workers’ know-how as training data, and process simulations. Teams also examined which process to target, what data and investment would be needed, and whether a project could move into a supported demonstration.
 
-However, this is a laboratory result, not a commercial hydrogen plant. The tests do not establish long-term durability, safe industrial scale-up or competitive costs. Hydrazine is hazardous and requires careful handling. The chemical pathway is promising; engineering a practical system is the larger challenge.
+That offers a practical lesson: successful factory AI begins with a measurable bottleneck, reliable data and a deployment plan—not with adding AI everywhere.
+
+These were proposals and examples, not independently measured productivity gains. Follow-up demonstrations must still show whether the systems work safely and economically in real factories.

@@ -1,17 +1,19 @@
-Most polar ice loss wasn’t surface melt—it was glaciers speeding into the ocean.
+Perseverance found a hidden water history written inside volcanic rock.
 
-Satellite records show the ice sheets losing mass as frozen rivers carry ice towards the sea.
+At the edge of Mars’s Jezero Crater, the rover examined the Margin Unit. Scientists expected layered lake-shore sediment. Instead, they found igneous rock altered repeatedly by water.
 
-Four more important developments are coming, from surgical AI to asteroid chemistry. Let’s begin with the biggest.
+And four other breakthroughs happened this week: a cybersecurity AI project, factory automation plans, a dissolving medical battery, and a surprising Arctic trend.
 
-A new international assessment reconstructed how the Greenland and Antarctic ice sheets changed between 1979 and 2023. The Ice Sheet Mass Balance Inter-comparison Exercise combined forty-two estimates from twenty-seven satellite missions.
+The story begins with olivine-rich rock formed from magma deep underground. At higher elevations, its large crystals show almost no water alteration. Lower down, the olivine is fractured and transformed.
 
-Together, the two ice sheets lost an estimated eleven thousand three hundred and nine gigatonnes, with an uncertainty of five hundred and sixty-five gigatonnes. Researchers calculated that this added thirty-one point four millimetres to global mean sea level, plus or minus one point six millimetres.
+SuperCam examined many bedrock targets. Its laser creates plasma, revealing rock chemistry from several metres away.
 
-The striking result is where most loss came from. Eighty-four percent was attributed to an imbalance in ice dynamics, mainly glaciers flowing faster and discharging more ice into the ocean. Surface changes, including snowfall and melting, accounted for the remaining sixteen percent. So the headline cannot be described simply as surface melting.
+That chemistry records at least three water episodes. First, carbon-dioxide-rich groundwater reacted with olivine and left carbonate inside fractures. A later interaction may have involved the lake that once filled Jezero Crater, leaving more silica below the ancient water line.
 
-Greenland and Antarctica did not lose ice at a constant rate. A slowdown from 2020 to 2023 reflects short-term variability, not a reversal of the long-term trend.
+Finally, heated groundwater circulated through volcanic rock and produced mineral veins containing calcium sulfate and fluorite.
 
-Why does this matter beyond the poles? Higher global mean sea level raises the baseline for coastal flooding and erosion. Local effects also depend on tides, storms and land movement, but a longer record helps refine projections used for coastal planning.
+Carbonate and silica matter because, on Earth, they can preserve traces of ancient environments. Reactions between water and olivine can also release hydrogen, an energy source for some microbes.
 
-This assessment concerns the Greenland and Antarctic ice sheets, not sea ice or every glacier. By combining decades of observations and reporting uncertainty, it provides a clearer view of how Earth’s largest ice sheets are changing.
+But this is not evidence that life existed on Mars. The minerals document water interacting with rock, and scientists cannot yet date the three episodes. What the rover has revealed is a more complicated sequence of groundwater, lake water and hydrothermal activity than orbital observations alone suggested.
+
+One place on Mars did not have a single water story. It became a crossroads for several.

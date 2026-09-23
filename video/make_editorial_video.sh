@@ -58,14 +58,13 @@ render_clip() {
     filter="scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,eq=contrast=1.025:saturation=1.035,format=yuv420p,setrange=limited,fps=$FPS,trim=duration=$duration,setpts=PTS-STARTPTS,setsar=1"
   fi
   local -a filter_args=(-vf "$filter")
-  if [[ "$input" == */2026-09-18/main/M[1-5]-* || "$input" == */2026-09-18-repair/m3/* ]]; then
+  if [[ "$input" == */2026-09-23/main/m[1-5]/* ]]; then
     local label=generic
-    [[ "$input" == */M1-* ]] && label=m1
-    [[ "$input" == */M2-* ]] && label=m2
-    [[ "$input" == */M3-* ]] && label=m3
-    [[ "$input" == */M4-* ]] && label=m4
-    [[ "$input" == */M5-* ]] && label=m5
-    [[ "$input" == */2026-09-18-repair/m3/* ]] && label=m3
+    [[ "$input" == */main/m1/* ]] && label=m1
+    [[ "$input" == */main/m2/* ]] && label=m2
+    [[ "$input" == */main/m3/* ]] && label=m3
+    [[ "$input" == */main/m4/* ]] && label=m4
+    [[ "$input" == */main/m5/* ]] && label=m5
     args+=(-loop 1 -framerate "$FPS" -i "$BUILD/disclosures/$label.webp")
     filter_args=(-filter_complex "[0:v]$filter[scene];[scene][1:v]overlay=0:0:shortest=1[outv]" -map '[outv]')
   fi

@@ -1,7 +1,7 @@
-In medicine, MIT-led researchers developed a patient-specific artificial-intelligence system called x-v-r. It matches two-dimensional X-rays taken during a procedure with a patient’s three-dimensional CT or MRI scan prepared beforehand.
+South Korea is moving artificial intelligence toward a highly specialised target: cybersecurity.
 
-The team reports that the system can adapt to one patient in about five minutes, then register new X-ray images in seconds with sub-millimetre precision. It was evaluated using real data from five hospitals, including adult and paediatric cases.
+The Ministry of Science and ICT announced the selected project for developing a cybersecurity-focused foundation model. The idea reflects a wider shift away from general chatbots toward systems trained and evaluated for a particular operational domain.
 
-That alignment could eventually give clinicians more reliable spatial guidance during minimally invasive procedures, connecting a limited X-ray view with richer information in the earlier scan.
+Security work demands more than fluent answers. A useful system must recognise malicious behaviour, work with sensitive technical data, distinguish genuine threats from false alarms, and remain resistant to manipulation by attackers.
 
-But this remains a research system, not an autonomous surgeon. The study does not show improved patient outcomes or establish clinical approval. Moving anatomy and broader conditions still need testing. The promise is future guidance—not treatment available today.
+For viewers, the practical point is that specialisation may make AI more useful—but also easier to over-trust. This announcement is a development selection, not a finished product or proof that attacks will be stopped. Capability, false-positive rates, data protection and performance against new threats still need independent testing.
