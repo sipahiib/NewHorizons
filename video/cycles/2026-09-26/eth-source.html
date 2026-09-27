@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="revisit-after" content="7 days">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@600&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@600&display=swap" rel="stylesheet">
+
+  
+<!-- social media meta tags & favicons -->
+<!-- set all default values for meta tags -->
+<title>Bedretto | A window into Earth’s interior</title>
+
+<link rel="canonical" href="https://bedrettolab.ethz.ch/en/" />
+
+
+<meta property="og:site_name" content="Bedretto Lab">
+<meta property="og:title" content="A window into Earth’s interior">
+
+
+<meta property="og:url" content="https://bedrettolab.ethz.ch/en/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en">
+
+<!-- Hreflang for multilingual SEO -->
+<link rel="alternate" hreflang="en" href="https://bedrettolab.ethz.ch/en/" />
+<link rel="alternate" hreflang="it" href="https://bedrettolab.ethz.ch/it/" />
+<link rel="alternate" hreflang="x-default" href="https://bedrettolab.ethz.ch/en/" />
+
+<!-- Favicons & Manifest -->
+<link rel="icon" type="image/png" href="/export/system/modules/ch.ethz.sed.bootstrap5.bedretto/resources/img/favicons/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/export/system/modules/ch.ethz.sed.bootstrap5.bedretto/resources/img/favicons/favicon.svg" />
+<link rel="shortcut icon" href="/export/system/modules/ch.ethz.sed.bootstrap5.bedretto/resources/img/favicons/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/export/system/modules/ch.ethz.sed.bootstrap5.bedretto/resources/img/favicons/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Bedretto Lab" />
+<link rel="manifest" href="/export/system/modules/ch.ethz.sed.bootstrap5.bedretto/resources/img/favicons/site.webmanifest" />
+        <!-- include css files here -->
+
+<link rel="stylesheet" href="/export/system/modules/ch.ethz.sed.bootstrap5.bedretto/resources/css/bedretto-bs5.css" type="text/css" >
+<link rel="stylesheet" href="/export/system/modules/ch.ethz.sed.bootstrap5.bedretto/resources/css/bootstrap-icons-bedretto.css" type="text/css" ><link rel="stylesheet" href="/export/system/modules/ch.ethz.sed.bootstrap5.bedretto/resources/css/main.css?v=v1.0.29#v1.0.29"/>
+
+
+<!--=== This enables page editor ===-->
+</head>
+    <body>
+        <div class="page-wrap wrapper">
+            <fmt:setLocale value="en"/>
+
+<header class="bedretto-header">
+    <div class="container-with-hero">
+        <div class="container bedretto-container h-100 d-flex d-lg-block align-items-center justify-content-between">
+            <!-- mobile menu button -->
+            <div
+                class="mobile-menu-toggle d-flex justify-content-center align-items-center d-lg-none"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbar-responsive-collapse"
+                role="button"
+                >
+                <!-- todo: which menubar button do we want? Bootstrap icon is too thin? -->
+                <!-- <span class="bi bi-list"></span> -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                    <path fill="currentColor" d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/>
+                </svg>
+            </div>
+            <div class="bedretto-logo">
+                <a href="/en/" title="Bedrettolab Home Link"   aria-label="Bedrettolab Home Link" tabindex="-1">
+                    <img
+                        alt="Logo BedrettoLab" 
+                        src="/export/system/modules/ch.ethz.sed.bootstrap5.bedretto/resources/img/logos/bedrettolab_logo.svg" />
+                </a>
+            </div>
+            <div class="eth-logo">
+                <a href="https://ethz.ch" target="blank" title="https://ethz.ch" aria-label="https://ethz.ch" tabindex="-1">
+                    <img 
+                        alt="Logo ETH Zürich" 
+                        src="/export/system/modules/ch.ethz.sed.bootstrap5.bedretto/resources/img/logos/ethz-logo.svg" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bedretto-container">
+        <nav class="navbar navbar-expand-lg collapse d-lg-flex" id="navbar-responsive-collapse">
+	<ul class="nav navbar-nav">
+
+		<!-- mobile home button -->
+		<li class="dropdown-button w-100 d-inline-block d-lg-none">
+			<a href="/" class="dropdown-toggle d-inline-block">Home</a>
+		</li>
+
+		<li class="dropdown-button relative ">
+					<a href="#" 
+								class="dropdown-toggle d-none d-lg-inline-block"
+								data-bs-toggle="dropdown"
+   								aria-expanded="false">
+								BedrettoLab</a>
+							<a href="#dropdown-0"
+                                class="dropdown-toggle d-inline-block d-lg-none"
+								data-bs-toggle="collapse"
+								aria-expanded="false"
+								aria-controls="dropdown-0">
+                                 BedrettoLab</a>
+
+							<ul class="dropdown-menu collapse" id="dropdown-0">
+								<div class="">
+									<li class="dropdown-submenu ">
+
+											<a href="/en/bedrettolab/About/"><span>About</span></a>
+											</li>
+
+									<li class="dropdown-submenu ">
+
+											<a href="/en/bedrettolab/history/"><span>History</span></a>
+											</li>
+
+									<li class="dropdown-submenu ">
+
+											<a href="/en/bedrettolab/operations-safety/"><span>Operations & safety</span></a>
+											</li>
+
+									<li class="dropdown-submenu ">
+
+											<a href="/en/bedrettolab/faq/"><span>FAQ</span></a>
+											</li>
+
+									<li class="dropdown-submenu ">
+
+											<a href="/en/bedrettolab/team/"><span>Team</span></a>
+											</li>
+
+									<li class="dropdown-submenu ">
+
+											<a href="/en/bedrettolab/partners/"><span>Partners</span></a>
+											</li>
+
+									</div>
+
+							</ul>	
+						</li>
+		<li class="dropdown-button relative ">
+					<a href="#" 
+								class="dropdown-toggle d-none d-lg-inline-block"
+								data-bs-toggle="dropdown"
+   								aria-expanded="false">
+								Research</a>
+							<a href="#dropdown-1"
+                                class="dropdown-toggle d-inline-block d-lg-none"
+								data-bs-toggle="collapse"
+								aria-expanded="false"
+								aria-controls="dropdown-1">
+                                 Research</a>
+
+							<ul class="dropdown-menu collapse" id="dropdown-1">
+								<div class="">
+									<li class="dropdown-submenu ">
+
+											<a href="/en/research/projects/ongoing-projects/"><span>Projects</span></a>
+											<ul>
+													<li class="dropdown-submenu  navTreeLevel-1">
+															<a href="/en/research/projects/ongoing-projects/">
+																<span>Ongoing Projects</span>
+															</a>
+														</li>
+													<li class="dropdown-submenu  navTreeLevel-1">
+															<a href="/en/research/projects/past-projects/">
+																<span>Past projects</span>
+															</a>
+														</li>
+													</ul>
+											</li>
+
+									<li class="dropdown-submenu ">
+
+											<a href="/en/research/research-fields/"><span>Research fields</span></a>
+											</li>
+
+									<li class="dropdown-submenu ">
+
+											<a href="/en/research/earthquake-monitoring/monitoring-network/"><span>Monitoring</span></a>
+											<ul>
+													<li class="dropdown-submenu  navTreeLevel-1">
+															<a href="/en/research/earthquake-monitoring/monitoring-network/">
+																<span>Monitoring network</span>
+															</a>
+														</li>
+													<li class="dropdown-submenu  navTreeLevel-1">
+															<a href="/en/research/earthquake-monitoring/list-of-earthquakes/">
+																<span>List of earthquakes</span>
+															</a>
+														</li>
+													</ul>
+											</li>
+
+									<li class="dropdown-submenu ">
+
+											<a href="/en/research/publications/"><span>Publications</span></a>
+											</li>
+
+									<li class="dropdown-submenu ">
+
+											<a href="/en/research/Data-access/"><span>Data access</span></a>
+											</li>
+
+									<li class="dropdown-submenu ">
+
+											<a href="/en/research/Collaboration/"><span>Collaboration</span></a>
+											</li>
+
+									</div>
+
+							</ul>	
+						</li>
+		<li class="dropdown-button relative ">
+					<a href="#" 
+								class="dropdown-toggle d-none d-lg-inline-block"
+								data-bs-toggle="dropdown"
+   								aria-expanded="false">
+								Outreach</a>
+							<a href="#dropdown-2"
+                                class="dropdown-toggle d-inline-block d-lg-none"
+								data-bs-toggle="collapse"
+								aria-expanded="false"
+								aria-controls="dropdown-2">
+                                 Outreach</a>
+
+							<ul class="dropdown-menu collapse" id="dropdown-2">
+								<div class="">
+									<li class="dropdown-submenu ">
+
+											<a href="/en/outreach/news/2026/"><span>News</span></a>
+											<ul>
+													<li class="dropdown-submenu  navTreeLevel-1">
+															<a href="/en/outreach/news/2026/">
+																<span>News 2026</span>
+															</a>
+														</li>
+													<li class="dropdown-submenu  navTreeLevel-1">
+															<a href="/en/outreach/news/2025/">
+																<span>News 2025</span>
+															</a>
+														</li>
+													<li class="dropdown-submenu  navTreeLevel-1">
+															<a href="/en/outreach/news/archive/">
+																<span>News Archive</span>
+															</a>
+														</li>
+													</ul>
+											</li>
+
+									<li class="dropdown-submenu ">
+
+											<a href="/en/outreach/visit/contact/"><span>Contact & Visit</span></a>
+											<ul>
+													<li class="dropdown-submenu  navTreeLevel-1">
+															<a href="/en/outreach/visit/contact/">
+																<span>Get in contact</span>
+															</a>
+														</li>
+													<li class="dropdown-submenu  navTreeLevel-1">
+															<a href="/en/outreach/visit/visitor-info/">
+																<span>Visitor Info</span>
+															</a>
+														</li>
+													<li class="dropdown-submenu  navTreeLevel-1">
+															<a href="/en/outreach/visit/public-visit-info-DE/">
+																<span>Besucher Info auf Deutsch</span>
+															</a>
+														</li>
+													</ul>
+											</li>
+
+									<li class="dropdown-submenu ">
+
+											<a href="/en/outreach/in-the-media/"><span>In the media</span></a>
+											</li>
+
+									<li class="dropdown-submenu ">
+
+											<a href="/en/outreach/newsletter-and-activity-reports/"><span>Activity & Science report</span></a>
+											</li>
+
+									<li class="dropdown-submenu ">
+
+											<a href="/en/outreach/gazzettino/"><span>Gazzettino</span></a>
+											</li>
+
+									</div>
+
+							</ul>	
+						</li>
+		</ul>
+	<div class="d-flex justify-content-start align-items-center meta-nav meta-nav-mobile">
+		<div>
+			<!-- Language Menu as Dropdown -->
+<!-- <div class="lang-dropdown relative">
+  <div 
+    class="dropdown-button"
+    id="languageDropdown"
+    data-bs-toggle="dropdown"
+    aria-expanded="false">
+    <span>en</span>
+    <i class="bi bi-chevron-down"></i>
+  </div>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+    <li> 
+                    <a href="#" class="active dropdown-item">en</a>
+                </li><li>
+                    <a class="dropdown-item"
+                        href="/it/index.html">it</a>
+                </li></ul>
+</div> -->
+<!-- Language Menu as Toggle -->
+<div class="lang-toggle relative">
+  <ul class="">
+    <li> 
+                    <a href="#" class="active dropdown-item">en</a>
+                </li><li>
+                    <a class="dropdown-item"
+                        href="/it/index.html">it</a>
+                </li></ul>
+</div>
+</div>
+		<a class="search-button ms-3 ps-2" href="/en/search" title="Search">
+			<i class="bi bi-search" role="img" aria-label="Search"></i>
+		</a>
+		
+	</div>  
+</nav>
+</div>
+
+</header><div id="home-intro" class="d-none d-lg-block">
+        <div class="bedretto-container">
+            <h1 class="title">A window into Earth’s interior</h1>
+        </div>
+    </div>
+<main class="bedretto-content home">
+    <div class="container">
+    <div class="bedretto-centered-container bedretto-transparent-container">
+        <h1 class="d-lg-none">A window into Earth’s interior</h1></div>
+</div>
+<div  id="page-complete" ><div class="container">
+    <div class="row">   
+<div class="bedretto-centered-container bedretto-transparent-container" ><div class="row th-default">
+
+<div class="col-12" ><div class="bs5-text   th-default ">
+		<div id="bs5text_00002.xml" class="anchor-name">		
+			<div id="txt-block-ae3b5460-0b0d-11f1-85e7-bc2411af3c39" class="">
+					<div  class="text-box"><p>Deep under the Swiss Alps, the BedrettoLab opens a rare window into the Earth. Its extraordinary overburden of up to 1.5 km of rock and high-tech sensor network capture the underground like no other place. This unique setup powers cutting-edge research on energy topics, earthquakes, and fundamental research.</p></div>
+					</div>	
+			
+			
+		</div>
+	</div>
+	
+</div></div>
+
+</div></div>
+    </div>
+<div class="container">
+    <div class="row">   
+<div class="bedretto-transparent-container" ><div class="row th-default">
+
+<div class="col-12 col-sm-6" ><div lang="en" class="bs5-iwt iwt-compact   compactV th-default">
+
+			<div id="it_00010.xml" class="anchor-name"></div>
+			
+			<p class="dates">
+						<span>2026-09-24</span>
+							</p>
+				<div class="headline">
+					<h2 >FEAR 3 experiment successfully concluded</h2>
+						</div>
+			<div class="img-box compact-v  ">	
+							<span >
+								<img 
+									src="/export/sites/bedretto/.galleries/img_news_2026/FEAR3_finito_web.jpg_2063069299.jpg" 
+									class=" w-100 " 
+									alt="Picture for&nbsp;FEAR 3 experiment successfully concluded" 
+									title="" />
+							</span>
+						</div>
+					<div class="teaser-box">
+							<p>The FEAR 3 experiment was successfully concluded in the early hours of 23 September, following approximately 40 hours of controlled water injection and continuous 24/7 monitoring between 21 and 23 September. The tunnel is expected to return to normal operations by Monday, 28 September.&nbsp;</p></div>
+					<div class="d-flex justify-content-end read-all">
+				<a  class="back-to btn btn-dark stretched-link" href="/en/detail/A-window-into-Earths-interior-FEAR-3-experiment-successfully-concluded/">
+					<span aria-label="Arrow for link">Read more</span> 
+					<span><i class="bi bi-arrow-right"></i></span>
+				</a>
+			</div>
+		</div>
+	</div><div class="col-12 col-sm-6" ><div lang="en" class="bs5-iwt iwt-compact   compactV th-default">
+
+			<div id="it_00011.xml" class="anchor-name"></div>
+			
+			<p class="dates">
+						<span>2026-09-16</span>
+							</p>
+				<div class="headline">
+					<h2 >Upcoming FEAR-3 experiment at the BedrettoLab</h2>
+						</div>
+			<div class="img-box compact-v  ">	
+							<span >
+								<img 
+									src="/export/sites/bedretto/.galleries/img_Bedretto_Lab/BedrettoLab_Fear-3_experiment.jpg_2063069299.jpg" 
+									class=" w-100 " 
+									alt="Picture of the FEAR-3 experiment in the Bedretto tunnel" 
+									title="" />
+							</span>
+						</div>
+					<div class="teaser-box">
+							<p>The BedrettoLab is preparing the next phase of the <strong>Fault Activation and Earthquake Rupture (FEAR)</strong> project. Building on the results of the <a href="/en/detail/A-window-into-Earths-interior-First-FEAR-2-experiment-successfully-concluded/">FEAR-2 experiment conducted in April 2026</a>, researchers will carry out a new field experiment starting on September 21.</p></div>
+					<div class="d-flex justify-content-end read-all">
+				<a  class="back-to btn btn-dark stretched-link" href="/en/detail/A-window-into-Earths-interior-Upcoming-FEAR-3-experiment-at-the-BedrettoLab/">
+					<span aria-label="Arrow for link">Read more</span> 
+					<span><i class="bi bi-arrow-right"></i></span>
+				</a>
+			</div>
+		</div>
+	</div></div>
+
+</div></div>
+    </div>
+<div class="container">
+    <div class="row">   
+<div class="bedretto-transparent-container" ><div class="row th-default">
+
+<div class="col-12" ><div class="bs5-text   th-default ">
+		<div id="bs5text_00038.xml" class="anchor-name">		
+			<div id="txt-block-5fdc8dda-286a-11f1-a349-bc2411af3c39" class="">
+					<div  class="text-box"><p><a href="/en/outreach/news/">Find more news articles here.</a></p></div>
+					</div>	
+			
+			
+		</div>
+	</div>
+	
+</div></div>
+
+</div></div>
+    </div>
+<div class="container">
+    <div class="row">   
+<div class="bedretto-transparent-container" ><div class="row th-default">
+
+<div class="col-12" ><div class="bs5-video ">
+
+        <video controls="controls" class="w-100" alt="Virtual tour" poster=>
+            <source src="https://static.seismo.ethz.ch/bedrettolab/visits/Bedretto_sub_EN.mp4" type="video/mp4" />
+        </video>
+
+        <div class="img-caption"><p><strong>Virtual tour: </strong>Click on play and get a deep insight into the BedrettoLab.</p></div>
+        </div>
+  </div></div>
+
+</div></div>
+    </div>
+<div class="container">
+    <div class="row">   
+<div class="bedretto-centered-container" ><div class="row th-default">
+
+<div class="col-12" ><div class="bs5-text   th-default ">
+		<div id="bs5text_00115.xml" class="anchor-name">		
+			<div class="headline">
+					<h2 >Public Tours at the BedrettoLab</h2>
+					</div>
+		
+				
+			<div id="txt-block-54b73638-1c6a-11f1-82e1-bc2411af3c39" class="">
+					<div  class="text-box"><p data-start="177" data-end="352">In cooperation with the Museum Sasso San Gottardo, ETH Zurich offers public tours of the BedrettoLab.</p>
+<p>To book a tour, submit your request via the following link: <a href="https://www.sasso-sangottardo.ch/gruppen-bedrettolab">https://www.sasso-sangottardo.ch/gruppen-bedrettolab&nbsp;</a>&nbsp;</p></div>
+					</div>	
+			
+			
+		</div>
+	</div>
+	
+</div></div>
+
+</div></div>
+    </div>
+</div></main><footer class="bedretto-footer">
+    <div class="container bedretto-container">
+        <ul class="d-block d-md-grid mb-5">
+            <li>
+                <a href="/en/disclaimer/">Disclaimer</a>
+            </li>       
+            <li>
+                <a href="/en/data-protection/">Data protection</a></li>
+            <li>
+                <a href="/en/imprint/">Imprint</a>
+            </li>
+            <li>
+                <a href="/en/outreach/visit/contact/">Contact</a>
+            </li>
+        </ul>
+        <p class="copyright mb-0">
+            <span>© 2026</span>
+            <a href="https://seismo.ethz.ch" target="_blank" class="ps-1"> 
+                Swiss Seismological Service</a>,
+            <a href="https://ethz.ethz.ch" target="_blank" class="ps-1"> 
+                ETH Zurich</a>
+        </p>
+    </div>
+</footer>
+<a 
+    id="topcontrol"  
+    href="javascript:goToTop()" 
+    role="button" 
+    aria-label="Scroll to page top" 
+    title="Scroll Back to Top" 
+    class="top-control d-flex justify-content-center align-items-center">
+    <i class="bi bi-arrow-up"></i>
+</a></div>
+        <!-- laods all js scripts -->
+		<!-- include js files here - this is included at the bottom of body -->
+<script type="text/javascript" src="/system/modules/ch.ethz.sed.bootstrap5.base/bootstrap-5.3.3/dist/js/bootstrap.bundle.js" ></script>
+
+<script src="/export/system/modules/ch.ethz.sed.bootstrap5.bedretto/resources/js/main.js?v=#"></script>
+<script src="/export/system/modules/ch.ethz.sed.bootstrap5.bedretto/resources/js/matomo-tracking.js" defer></script>
+<script type="text/javascript" src="/system/modules/ch.ethz.sed.bootstrap5.bedretto/resources/js/scroll-to-top.js" defer ></script> 
+</body>
+</html>

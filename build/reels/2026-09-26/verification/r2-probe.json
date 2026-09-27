@@ -1,0 +1,46 @@
+{
+    "programs": [
+
+    ],
+    "stream_groups": [
+
+    ],
+    "streams": [
+        {
+            "index": 0,
+            "codec_name": "h264",
+            "profile": "High",
+            "codec_type": "video",
+            "width": 1080,
+            "height": 1920,
+            "pix_fmt": "yuv420p",
+            "r_frame_rate": "60/1",
+            "avg_frame_rate": "60/1",
+            "duration": "47.000000",
+            "bit_rate": "5291680",
+            "nb_frames": "2820",
+            "nb_read_frames": "2820"
+        },
+        {
+            "index": 1,
+            "codec_name": "aac",
+            "profile": "LC",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1,
+            "channel_layout": "mono",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "duration": "47.000000",
+            "bit_rate": "147439",
+            "nb_frames": "2202",
+            "nb_read_frames": "2201"
+        }
+    ],
+    "format": {
+        "filename": "build/reels/2026-09-26/02-planet-earth.mp4",
+        "duration": "47.000000",
+        "size": "32031693",
+        "bit_rate": "5452203"
+    }
+}

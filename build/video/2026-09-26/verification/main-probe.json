@@ -1,0 +1,46 @@
+{
+    "programs": [
+
+    ],
+    "stream_groups": [
+
+    ],
+    "streams": [
+        {
+            "index": 0,
+            "codec_name": "h264",
+            "profile": "High",
+            "codec_type": "video",
+            "width": 1920,
+            "height": 1080,
+            "pix_fmt": "yuv420p",
+            "r_frame_rate": "60/1",
+            "avg_frame_rate": "60/1",
+            "duration": "370.000000",
+            "bit_rate": "2262223",
+            "nb_frames": "22200",
+            "nb_read_frames": "22200"
+        },
+        {
+            "index": 1,
+            "codec_name": "aac",
+            "profile": "LC",
+            "codec_type": "audio",
+            "sample_rate": "48000",
+            "channels": 1,
+            "channel_layout": "mono",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "duration": "370.000000",
+            "bit_rate": "146055",
+            "nb_frames": "17345",
+            "nb_read_frames": "17344"
+        }
+    ],
+    "format": {
+        "filename": "build/video/2026-09-26/newhorizons.mp4",
+        "duration": "370.000000",
+        "size": "111975253",
+        "bit_rate": "2421086"
+    }
+}

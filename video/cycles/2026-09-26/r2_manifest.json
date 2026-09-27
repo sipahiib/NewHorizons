@@ -1,0 +1,70 @@
+{
+  "cycle": "2026-09-26",
+  "status": "prepared-for-review",
+  "output": "build/reels/2026-09-26/02-planet-earth.mp4",
+  "audio": "build/video/2026-09-26/audio/r2.mp3",
+  "overlay": "build/reels/2026-09-26/work/r2-overlay.png",
+  "recapOverlay": "build/reels/2026-09-26/work/r2-recap.png",
+  "duration": 47,
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "sourcePage": "https://svs.gsfc.nasa.gov/5675",
+  "download": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005675/nisar_volcano_annotated.mp4",
+  "rights": "NASA-created observed-data visualisation; NASA media guidelines; credit NASA Scientific Visualization Studio. No third-party restriction identified on item page.",
+  "sourceDuration": 16.7,
+  "sourceResolution": [
+    3840,
+    2160
+  ],
+  "sourceFps": 30,
+  "hashes": {
+    "assets/motion/2026-09-26/reels/r2/early.png": "9aba87d67501fa043c95b7b34274af432821f35ce434ce08ccab96208473d13b",
+    "assets/motion/2026-09-26/reels/r2/middle.png": "3275a1edba1a38b20bc1b81e43d0d43cf11f88392cb7a9e5b0d4211eb0550867",
+    "assets/motion/2026-09-26/reels/r2/late.png": "1f96374f8f4d4534a5c7451e853f1affc745ef95f9bb6d3ddf4b1e38fa7b7275",
+    "assets/motion/2026-09-26/reels/r2/nisar-observations.mp4": "922f5285baac7416f4561d3a7436ed14b02d3139ccd7decfe8ced234ad288e67"
+  },
+  "scenes": [
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-09-26/reels/r2/early.png",
+      "duration": 6
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-09-26/reels/r2/nisar-observations.mp4",
+      "seek": 5,
+      "duration": 4
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-09-26/reels/r2/middle.png",
+      "duration": 6
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-09-26/reels/r2/nisar-observations.mp4",
+      "seek": 9,
+      "duration": 4
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-09-26/reels/r2/nisar-observations.mp4",
+      "seek": 12,
+      "duration": 4
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-09-26/reels/r2/late.png",
+      "duration": 6
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-09-26/reels/r2/nisar-observations.mp4",
+      "seek": 0,
+      "duration": 17,
+      "tailFreeze": 0.3,
+      "recap": true
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "cycle": "2026-09-26",
+  "voice": "en-GB-RyanNeural",
+  "rate": "-2%",
+  "status": "approved-and-measured; render remains review-gated",
+  "sections": [
+    {
+      "id": "m1",
+      "target": 120,
+      "insertSilence": {"at": 10.5, "seconds": 1.0},
+      "text": "A 222-metre crater changed the Moon kilometres beyond its rim. The impact happened in 2024; the new research reveals its wider reach. And four other breakthroughs happened this week: wearable AI, electronic materials, cartilage biology, and fault experiments. From Earth, the Moon can look almost frozen in time. But a spacecraft watching the same ground for years can catch changes that a single photograph would miss. Researchers describe the McGetchin crater, named after lunar scientist Tom McGetchin. It formed in the spring of 2024 and measures about 222 metres across. The surprise lies outside its visible edge. Measurements from the Lunar Reconnaissance Orbiter's Diviner instrument found a cooler region extending more than three kilometres from the impact. Diviner measures surface temperatures. Comparing observations before and after the collision helps researchers work out how the surrounding soil changed. Their interpretation is that material thrown out by the impact churned and loosened the fine lunar ground, known as regolith. That altered how it stores and releases heat. The temperature measurements are evidence of this disturbance; they are not a film of the collision itself. Impacts this large are statistically unusual, but a once-per-century estimate is not a timetable. Smaller impacts happen much more often. Why does this matter? The surface that future explorers will investigate is continually being reworked. Understanding that process helps scientists interpret lunar history and the distribution of material in the soil. A fresh crater also gives scientists a dated reference point for comparing how lunar terrain evolves over time. The practical lesson is also about observation: keep watching a familiar place, and an apparently quiet landscape can reveal a much bigger story."
+    },
+    {
+      "id": "m2",
+      "target": 60,
+      "text": "Meta wants its personal AI agent to work through the glasses you wear. At Connect, the company announced plans to bring Muse to its AI glasses, alongside more connections to everyday services. The idea is to turn something you are looking at into a task. A product on a shelf or a list in front of you could become information the agent uses, without a long spoken description. Meta also describes voice conversations that continue while work happens in the background. That could make an assistant easier to reach. But a staged demonstration does not establish everyday accuracy or reliability. These are company announcements, with features arriving on different schedules. They should not be read as worldwide availability today. The useful question is what the agent can complete correctly, and how much access you choose to give it. Clear controls and visible task histories will matter as these systems develop."
+    },
+    {
+      "id": "m3",
+      "target": 60,
+      "text": "A familiar electronics material is showing an intriguing electrical trick. University of Nebraska researchers report antiferroelectric behaviour in carefully prepared hafnia films. In this state, neighbouring electrical dipoles point in opposite directions. An applied field can change that arrangement. The experiments used extremely thin, high-quality films. Controlling electrical states at that scale could help researchers explore new memory and energy-storage devices. Hafnia already has a place in electronics, making the material particularly interesting. But that does not mean ordinary chips have suddenly gained this behaviour, or that a better battery is ready to buy. The result depends on how the material is prepared and tested. Practical manufacturing, performance and durability still need work. This is a materials research result, with possible applications ahead."
+    },
+    {
+      "id": "m4",
+      "target": 60,
+      "text": "Could part of our vulnerability to joint disease be written into our evolutionary history? Researchers led by Kyoto University and the Weizmann Institute investigated DNA switches that regulate the human skeleton. They combined genome comparisons with experiments in cultured cells, then examined joint tissue. Their findings point to reduced activity in pathways involved in cartilage-maintaining molecules called glycosaminoglycans. These molecules help cartilage hold water and withstand pressure. The work offers a possible link between changes that shaped the human skeleton and its susceptibility to disease. But it does not identify a single cause of osteoarthritis, and it does not test a treatment. Human and ape cells were compared under experimental conditions; that is different from showing a benefit in patients. The value is a more detailed biological map that future research can investigate."
+    },
+    {
+      "id": "m5",
+      "target": 60,
+      "text": "Deep in the Swiss Alps, researchers have completed another controlled experiment on how faults move. During FEAR Three at the Bedretto laboratory, water was injected into boreholes while instruments monitored the surrounding rock. The operations ran from September twenty-first to twenty-third. The team reports a local-magnitude zero point six event before injection was stopped, with monitoring continuing afterwards. The purpose is to collect detailed measurements close to an activated fault. Those observations can help researchers test ideas about how movement begins and develops. The laboratory reports that shaking outside the tunnel remained very low. Still, this is an early account of an experiment whose data now need analysis. It is not a demonstration that scientists can predict or prevent damaging earthquakes. Its value is the opportunity to study fault behaviour in a closely monitored setting."
+    },
+    {
+      "id": "closing",
+      "target": 10,
+      "text": "Like and subscribe for more discoveries. That was our latest news. Stay with science, and stay tuned."
+    },
+    {
+      "id": "r1",
+      "target": 45,
+      "text": "A convincing face does not make an AI answer correct. Google says Gemini three point eight Live with Live Avatar is now generally available for enterprise use. Its demonstrations combine spoken conversation with visual input and actions running in the background. That could change how people interact with a service on a screen. But the face is generated, and the examples are Google's demonstrations. Custom avatars still require approved access, while Extended Thinking remains in private preview. Judge the task result, not the expression. Subscribe on YouTube at New Horizons underscore twenty-one, and like and follow on Instagram."
+    },
+    {
+      "id": "r2",
+      "target": 45,
+      "text": "Radar watched this volcano's lava spread for months. NASA's NISAR release combines seventeen observations of Krasheninnikov, in Russia's Kamchatka Peninsula, from December twenty twenty-five to August twenty twenty-six. The sequence follows material filling a crater and spreading outward. You are seeing processed radar measurements, not live video or a simulated eruption. Returning to the same place repeatedly helps scientists track changes at a remote volcano. It does not mean the satellite can predict the next eruption. Regular radar coverage adds another tool for monitoring natural hazards. Subscribe on YouTube at New Horizons underscore twenty-one, and like and follow on Instagram."
+    }
+  ]
+}

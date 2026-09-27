@@ -1,0 +1,2 @@
+Decoded audio comparison against build/video/2026-09-26/audio/r2.mp3 (FFmpeg apsnr)
+Compared first 44.640 seconds: 172.033 dB

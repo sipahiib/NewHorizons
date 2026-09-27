@@ -1,0 +1,7 @@
+Decoded audio comparison against approved section MP3 sources (FFmpeg apsnr)
+m1 @ 0.000s, 118.264s: 172.141 dB
+m2 @ 120.000s, 57.456s: 172.172 dB
+m3 @ 180.000s, 57.864s: 172.147 dB
+m4 @ 240.000s, 56.616s: 172.122 dB
+m5 @ 300.000s, 57.000s: 172.156 dB
+closing @ 360.000s, 8.856s: 171.945 dB

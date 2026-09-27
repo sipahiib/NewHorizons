@@ -1,0 +1,208 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'build/video/2026-09-26/newhorizons.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf63.1.101
+  Duration: 00:06:10.00, start: 0.000000, bitrate: 2421 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/unknown/unknown, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 2262 kb/s, 60 fps, 60 tbr, 15360 tbn (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc63.1.101 libx264
+  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, mono, fltp, 146 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> wrapped_avframe (native))
+  Stream #0:1 -> #0:1 (aac (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf63.1.101
+  Stream #0:0(und): Video: wrapped_avframe, yuv420p(tv, bt709/unknown/unknown, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 60 fps, 60 tbn (default)
+    Metadata:
+      encoder         : Lavc63.1.101 wrapped_avframe
+      handler_name    : VideoHandler
+  Stream #0:1(und): Audio: pcm_s16le, 48000 Hz, mono, s16, 768 kb/s (default)
+    Metadata:
+      encoder         : Lavc63.1.101 pcm_s16le
+      handler_name    : SoundHandler
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 0
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 0.228875 | silence_duration: 0.228875
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 4.419604
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 5.445125 | silence_duration: 1.025521
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 9.989854
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 11.997354 | silence_duration: 2.0075
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 14.134708
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 14.405958 | silence_duration: 0.27125
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 15.408
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 15.619125 | silence_duration: 0.211125
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 16.908938
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 17.160125 | silence_duration: 0.251188
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 18.343354
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 18.528667 | silence_duration: 0.185312
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 19.775125
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 20.773062 | silence_duration: 0.997937
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 21.362083
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 21.540583 | silence_duration: 0.1785
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 23.674
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 24.681083 | silence_duration: 1.007083
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 29.966521
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 30.951104 | silence_duration: 0.984583
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 33.076375
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 33.227917 | silence_duration: 0.151542
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 35.575521
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 36.558813 | silence_duration: 0.983292
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 41.551146
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 42.535583 | silence_duration: 0.984437
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 44.805604
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 45.785979 | silence_duration: 0.980375
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 52.406875
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 53.385854 | silence_duration: 0.978979
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 55.338333
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 56.315729 | silence_duration: 0.977396
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 62.005792
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 63.024812 | silence_duration: 1.019021
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 68.129188
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 68.332396 | silence_duration: 0.203208
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 69.447063
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 70.427708 | silence_duration: 0.980646
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 72.742458
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 73.734896 | silence_duration: 0.992437
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 78.457625
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 79.446896 | silence_duration: 0.989271
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 81.837917
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 82.04 | silence_duration: 0.202083
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 84.626896
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 85.615813 | silence_duration: 0.988917
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 87.704771
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 88.692729 | silence_duration: 0.987958
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 89.686813
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 90.668354 | silence_duration: 0.981542
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 94.984729
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 95.942167 | silence_duration: 0.957437
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 101.719604
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 102.708083 | silence_duration: 0.988479
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 108.635854
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 109.637625 | silence_duration: 1.001771
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 112.088854
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 112.310104 | silence_duration: 0.22125
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 113.928542
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 114.124313 | silence_duration: 0.195771
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 117.470771
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 120.223396 | silence_duration: 2.752625
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 123.890167
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 124.808437 | silence_duration: 0.918271
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 125.395667
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 125.660062 | silence_duration: 0.264396
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 131.551396
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 132.564458 | silence_duration: 1.013062
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 135.550833
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 136.526792 | silence_duration: 0.975958
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 142.607125
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 143.588771 | silence_duration: 0.981646
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 148.272229
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 149.268625 | silence_duration: 0.996396
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 151.330312
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 152.313938 | silence_duration: 0.983625
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 156.568458
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 157.495688 | silence_duration: 0.927229
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 158.938187
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 159.140521 | silence_duration: 0.202333
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 161.42
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 162.431229 | silence_duration: 1.011229
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 165.327875
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 166.324 | silence_duration: 0.996125
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 171.46225
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 172.442563 | silence_duration: 0.980312
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 176.593667
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 180.226875 | silence_duration: 3.633208
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 184.068437
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 185.066979 | silence_duration: 0.998542
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 191.11675
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 192.116958 | silence_duration: 1.000208
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 192.795771
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 192.948021 | silence_duration: 0.15225
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 196.120083
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 197.110292 | silence_duration: 0.990208
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 199.323292
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 200.316792 | silence_duration: 0.9935
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 202.365292
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 202.567646 | silence_duration: 0.202354
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 203.737458
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 204.722979 | silence_duration: 0.985521
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 210.459708
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 211.464375 | silence_duration: 1.004667
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 213.859792
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 214.054729 | silence_duration: 0.194937
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 216.285604
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 217.285125 | silence_duration: 0.999521
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 222.838812
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 223.857042 | silence_duration: 1.018229
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 226.927
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 227.921437 | silence_duration: 0.994437
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 229.333479
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 229.584896 | silence_duration: 0.251417
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 232.069937
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 233.049187 | silence_duration: 0.97925
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 235.102417
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 235.31325 | silence_duration: 0.210833
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 237.001812
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 240.234958 | silence_duration: 3.233146
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 244.630417
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 245.566604 | silence_duration: 0.936187
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 252.562458
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 253.564792 | silence_duration: 1.002333
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 257.104771
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 257.300958 | silence_duration: 0.196187
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 258.696333
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 259.687167 | silence_duration: 0.990833
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 266.159792
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 267.122687 | silence_duration: 0.962896
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 270.623792
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 271.606458 | silence_duration: 0.982667
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 277.154708
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 278.127417 | silence_duration: 0.972708
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 283.170062
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 284.166229 | silence_duration: 0.996167
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 290.335771
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 291.331125 | silence_duration: 0.995354
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 295.770333
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 300.252 | silence_duration: 4.481667
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 305.244646
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 306.199333 | silence_duration: 0.954688
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 313.059792
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 314.041771 | silence_duration: 0.981979
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 317.409271
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 318.384583 | silence_duration: 0.975312
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 323.062521
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 323.263542 | silence_duration: 0.201021
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 325.170062
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 326.082333 | silence_duration: 0.912271
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 329.814792
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 330.806667 | silence_duration: 0.991875
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 335.623833
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 336.642208 | silence_duration: 1.018375
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 340.246354
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 341.229583 | silence_duration: 0.983229
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 341.711062
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 341.951646 | silence_duration: 0.240583
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 345.469792
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 346.429167 | silence_duration: 0.959375
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 350.739146
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 351.737417 | silence_duration: 0.998271
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 356.13125
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 360.231437 | silence_duration: 4.100187
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 362.379062
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 363.287708 | silence_duration: 0.908646
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 364.790062
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 365.775458 | silence_duration: 0.985396
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 366.844333
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 367.010958 | silence_duration: 0.166625
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_start: 368.019958
+[Parsed_silencedetect_0 @ 0x7a6d02dc80] silence_end: 370 | silence_duration: 1.980042
+[out#0/null @ 0x7a6d02c300] video:9192KiB audio:34688KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=22200 fps=5049 q=-0.0 Lsize=N/A time=00:06:10.00 bitrate=N/A speed=84.1x elapsed=0:00:04.39    

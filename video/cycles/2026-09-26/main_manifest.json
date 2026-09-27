@@ -1,0 +1,258 @@
+{
+  "cycle": "2026-09-26",
+  "status": "prepared-for-review",
+  "candidateOutput": "build/video/2026-09-26/newhorizons.mp4",
+  "finalOutput": "build/video/newhorizons.mp4",
+  "duration": 370,
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "titleDisplaySeconds": 4,
+  "sections": [
+    {
+      "id": "m1",
+      "duration": 120,
+      "audio": "build/video/2026-09-26/audio/m1.mp3",
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-26/main/m1/crater-close.jpg",
+          "duration": 5
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-26/main/m1/lro-launch.mp4",
+          "seek": 145,
+          "duration": 7,
+          "label": "historical"
+        },
+        {
+          "kind": "motion",
+          "file": "build/video/2026-09-26/work/opening-teaser.mp4",
+          "duration": 8,
+          "teaser": true
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-26/main/m1/thermal-pre.png",
+          "duration": 25
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-26/main/m1/lro-assembly.webm",
+          "seek": 20,
+          "duration": 25,
+          "label": "historical"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-26/main/m1/thermal-post.png",
+          "duration": 25
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-26/main/m1/lro-launch.mp4",
+          "seek": 205,
+          "duration": 25,
+          "label": "historical"
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "duration": 60,
+      "audio": "build/video/2026-09-26/audio/m2.mp3",
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-26/main/m2/meta-muse-glasses.jpg",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-26/main/m2/meta-muse-glasses.mp4",
+          "seek": 0,
+          "duration": 12
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-26/main/m2/meta-glasses-screen.jpg",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-26/main/m2/meta-muse-glasses.mp4",
+          "seek": 18,
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-26/main/m2/meta-muse-glasses.mp4",
+          "seek": 36,
+          "duration": 12
+        }
+      ]
+    },
+    {
+      "id": "m3",
+      "duration": 60,
+      "audio": "build/video/2026-09-26/audio/m3.mp3",
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-26/main/m3/hafnia-atom-map.png",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-26/main/m3/hafnia-scan.mp4",
+          "duration": 12,
+          "loop": true
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-26/main/m3/hafnia-field-diagram.png",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-26/main/m3/microscope.mp4",
+          "seek": 2,
+          "duration": 12,
+          "context": true
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-26/main/m3/electrical-testing.mp4",
+          "seek": 8,
+          "duration": 12,
+          "context": true
+        }
+      ]
+    },
+    {
+      "id": "m4",
+      "duration": 60,
+      "audio": "build/video/2026-09-26/audio/m4.mp3",
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-26/main/m4/nature-fig1.png",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-26/main/m4/lab-scientists.mp4",
+          "seek": 1,
+          "duration": 12,
+          "context": true
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-26/main/m4/nature-fig4.png",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-26/main/m4/lab-working.mp4",
+          "seek": 1,
+          "duration": 12,
+          "context": true
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-26/main/m4/lab-microscope.mp4",
+          "seek": 5,
+          "duration": 12,
+          "context": true
+        }
+      ]
+    },
+    {
+      "id": "m5",
+      "duration": 60,
+      "audio": "build/video/2026-09-26/audio/m5.mp3",
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-26/main/m5/bedretto-entrance.jpg",
+          "duration": 15,
+          "label": "site"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-26/main/m5/tunnel-machinery.mp4",
+          "seek": 1,
+          "duration": 10,
+          "context": true
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-26/main/m5/bedretto-interior.jpg",
+          "duration": 15,
+          "label": "site"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-26/main/m5/tunnel-workers.mp4",
+          "duration": 10,
+          "loop": true,
+          "context": true
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-26/main/m5/tunnel-walkway.mp4",
+          "seek": 4,
+          "duration": 10,
+          "loop": true,
+          "context": true
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "duration": 10,
+      "audio": "build/video/2026-09-26/audio/closing.mp3",
+      "closing": true
+    }
+  ],
+  "hashes": {
+    "assets/motion/2026-09-26/main/m1/crater-close.jpg": "5df1d73f491ee5eae08d37bae9e59a0219ddf8c42ecfc5eb4621e06bb8fbbbd4",
+    "assets/motion/2026-09-26/main/m1/lro-launch.mp4": "1d15e2fa5adec94404c6b20f29d1c30422774febf59013a1f04183ac7b20e13b",
+    "build/video/2026-09-26/work/opening-teaser.mp4": "a044246761d19b4bd45b3e27fdab60b33f29604d0f372b72ff95fdb45f3991bf",
+    "assets/motion/2026-09-26/main/m1/thermal-pre.png": "13135e43fcd2da4803beed6cd5a9dafe0e9773639382c3223b4572663dbf04bc",
+    "assets/motion/2026-09-26/main/m1/lro-assembly.webm": "02cce75816295d5ea3664f3e7783e3da16aefa9d92e1a1f813aca6cc0e0f45bf",
+    "assets/motion/2026-09-26/main/m1/thermal-post.png": "ba5b3d9e080ae800752a7efdb78bdf28724f57ca8a04e9c230ae1530e4459afe",
+    "assets/motion/2026-09-26/main/m2/meta-muse-glasses.jpg": "61cccc3ee1954fc4ae9a558e1c4132677051559a0d509baa7c491e9d90eafd0b",
+    "assets/motion/2026-09-26/main/m2/meta-muse-glasses.mp4": "07da6db8aac76970a438584ae1b901613a0e9e41b5049e7b75af271493753cca",
+    "assets/motion/2026-09-26/main/m2/meta-glasses-screen.jpg": "cf155aea1e50b9e56183375e482c9375dd6c211130b3f3eaac06d66ada8f95ad",
+    "assets/motion/2026-09-26/main/m3/hafnia-atom-map.png": "2166c4300c4f00fd4a81448e0186eaa2ad3c18a756d7e30bb9baf89f3cbd86b6",
+    "assets/motion/2026-09-26/main/m3/hafnia-scan.mp4": "a508152b47dd6d8f7908d871ebaf1aec8d34c356fc19731592c0b8d34c7beb1b",
+    "assets/motion/2026-09-26/main/m3/hafnia-field-diagram.png": "35ecd247cdb5f0094f1077ad1f5df1647122d651c7477161b18c59d03b080525",
+    "assets/motion/2026-09-26/main/m3/microscope.mp4": "1ef70ccdb92dba68a05c80a8b579faa5faf7feadca1892e8022a61fd5517cdc8",
+    "assets/motion/2026-09-26/main/m3/electrical-testing.mp4": "80a33dac05299fbe269b1a95644abb402303d3363d011411ca51b7ca3422f3e9",
+    "assets/motion/2026-09-26/main/m4/nature-fig1.png": "f5d329ac3aa0dd42693e5798a95c9a337de40bf90bcc9a3196aaa393b504a748",
+    "assets/motion/2026-09-26/main/m4/lab-scientists.mp4": "72ef09355836e64d3617e976a216b962692fccb2bf73c6d080ee84cf70aadc0e",
+    "assets/motion/2026-09-26/main/m4/nature-fig4.png": "42591bf84b3995ad733b5a3ab6134915c98639399d953215fb004fa51dac5e72",
+    "assets/motion/2026-09-26/main/m4/lab-working.mp4": "e71cbe0e122bfdf5d1b1ea90d7f1b9d189ef5abb799c4b6b80ff40fd5ef3199b",
+    "assets/motion/2026-09-26/main/m4/lab-microscope.mp4": "e78d07c173656cab9828cdfbbeb74d6f497d8f5d3392d7bdbc7c42196c76f7c1",
+    "assets/motion/2026-09-26/main/m5/bedretto-entrance.jpg": "816c4b3d5865fcd68fd47bcd722da1d03ff9b8b93ed8d825ee929d26137c704a",
+    "assets/motion/2026-09-26/main/m5/tunnel-machinery.mp4": "504302dddf624c556e3a6a8515e40f2cd3d47cde076eeb8acb522f8ba722a447",
+    "assets/motion/2026-09-26/main/m5/bedretto-interior.jpg": "170cf5650ee4d4ebf2ef27cd4d7368d56c5599ffd2b96a0a10ebd4fec457408d",
+    "assets/motion/2026-09-26/main/m5/tunnel-workers.mp4": "db999014021292daf0f1befde151e8ee6c324cd30f4577b9790d760c06548337",
+    "assets/motion/2026-09-26/main/m5/tunnel-walkway.mp4": "09e23f5ced1f0df6b791aba3a2949f02a18e8b11c545c9503638cbd43bb87471"
+  },
+  "overlays": {
+    "m1": "build/video/2026-09-26/work/m1-overlay.png",
+    "m2": "build/video/2026-09-26/work/m2-overlay.png",
+    "m3": "build/video/2026-09-26/work/m3-overlay.png",
+    "m4": "build/video/2026-09-26/work/m4-overlay.png",
+    "m5": "build/video/2026-09-26/work/m5-overlay.png"
+  },
+  "contextOverlay": "build/video/2026-09-26/work/context-overlay.png",
+  "historicalOverlay": "build/video/2026-09-26/work/historical-overlay.png",
+  "siteContextOverlay": "build/video/2026-09-26/work/site-context-overlay.png",
+  "teaserOverlay": "build/video/2026-09-26/work/teaser-overlay.png",
+  "closing": "build/video/2026-09-26/work/closing.png",
+  "closingBell": "build/video/2026-09-26/work/closing-bell.png"
+}

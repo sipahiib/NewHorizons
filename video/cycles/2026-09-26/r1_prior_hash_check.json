@@ -1,0 +1,7 @@
+{
+  "cycle": "2026-09-26",
+  "scope": "recorded hashes under video/ excluding the active R1 manifest",
+  "checked_assets": 6,
+  "matches_in_prior_recorded_manifests": 0,
+  "result": "PASS_NEW_REEL_ASSETS"
+}
