@@ -1,0 +1,74 @@
+{
+  "cycle": "2026-09-30",
+  "status": "prepared-for-review",
+  "output": "build/reels/2026-09-30/02-the-planet-earth.mp4",
+  "audio": "build/video/2026-09-30/audio/r2.mp3",
+  "overlay": "build/reels/2026-09-30/work/r2-overlay.png",
+  "contextOverlay": "build/reels/2026-09-30/work/r2-context.png",
+  "ctaOverlay": "build/reels/2026-09-30/work/r2-cta.png",
+  "ctaStartInFinalScene": 6,
+  "duration": 45,
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-09-30/reels/r2/source-card-1.png",
+      "duration": 6,
+      "label": "context",
+      "loop": true
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-09-30/reels/r2/greek-coast.mp4",
+      "duration": 6,
+      "label": "context",
+      "loop": true
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-09-30/reels/r2/source-card-2.png",
+      "duration": 6,
+      "label": "context",
+      "loop": true
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-09-30/reels/r2/dry-reservoir.mp4",
+      "duration": 6,
+      "label": "context",
+      "loop": true
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-09-30/reels/r2/source-card-3.png",
+      "duration": 6,
+      "label": "context",
+      "loop": true
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-09-30/reels/r2/vineyard-irrigation.mp4",
+      "duration": 6,
+      "label": "context",
+      "loop": true
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-09-30/reels/r2/water-tap.mp4",
+      "duration": 9,
+      "label": "context",
+      "loop": true
+    }
+  ],
+  "hashes": {
+    "assets/motion/2026-09-30/reels/r2/source-card-1.png": "55459554cbeb88ca41093b8c7e2934b2ee2dc206bbf1a854ecf38efdc332ef25",
+    "assets/motion/2026-09-30/reels/r2/greek-coast.mp4": "7d38e4b4ffe9e2a266befc26c3989246f1bcadea2eb87a4c53a6b4359358f560",
+    "assets/motion/2026-09-30/reels/r2/source-card-2.png": "6094febd04e8a2fcea1e794df8a2e851a87185913b7523ea3640cefc9d0dc965",
+    "assets/motion/2026-09-30/reels/r2/dry-reservoir.mp4": "a045e37bf765ca7c3c0df26495751bb03d1a6a89370a8654de6cc31fb718b5d1",
+    "assets/motion/2026-09-30/reels/r2/source-card-3.png": "2f60ce488738230137757c81081f01945f83752b09df3faeba1ee3da3b21b21e",
+    "assets/motion/2026-09-30/reels/r2/vineyard-irrigation.mp4": "fbd024d29aedddd87275cacc6fd60115c837559c9cf42c499ee0f660fba876f5",
+    "assets/motion/2026-09-30/reels/r2/water-tap.mp4": "ec088aa9583b17e710cf26e61317a2e3611a56e47811ac7a1a90c4684aa546a0"
+  }
+}

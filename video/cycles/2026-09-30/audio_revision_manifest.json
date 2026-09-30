@@ -1,0 +1,9 @@
+{
+  "previousCandidate": "build/video/2026-09-30/newhorizons-before-audio-correction.mp4",
+  "previousSha256": "00a4079d51b3ec1f6644ca721967fb62d7992d45097dc12e0f04ad7a7d92f94c",
+  "candidate": "build/video/2026-09-30/newhorizons.mp4",
+  "updatedSha256": "a702ffa414da79e1b59e5cef4c22f33a4d4fe80f7356137ff891b56a2d82be01",
+  "videoStreamUnchanged": true,
+  "newM5Seconds": 58.632,
+  "reason": "reduce quiet gap before closing CTA"
+}

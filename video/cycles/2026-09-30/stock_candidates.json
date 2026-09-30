@@ -1,0 +1,186 @@
+[
+  {
+    "story": "m1",
+    "id": 28846365,
+    "slug": "satellite-dish-aerial",
+    "seconds": 14,
+    "creator": "Alejandro De Roa",
+    "meaning": "contextual satellite communications dish, not ESA ground station"
+  },
+  {
+    "story": "m1",
+    "id": 33870954,
+    "slug": "satellite-dish-sunset",
+    "seconds": 14,
+    "creator": "changen chan",
+    "meaning": "contextual satellite communications dish, not ESA ground station"
+  },
+  {
+    "story": "m1",
+    "id": 28846366,
+    "slug": "satellite-dish-sunrise",
+    "seconds": 14,
+    "creator": "Alejandro De Roa",
+    "meaning": "contextual satellite communications dish, not ESA ground station"
+  },
+  {
+    "story": "m2",
+    "id": 7989671,
+    "slug": "developers",
+    "seconds": 14,
+    "creator": "Mikhail Nilov",
+    "meaning": "contextual coding team, not OpenAI"
+  },
+  {
+    "story": "m2",
+    "id": 5474318,
+    "slug": "code-screen",
+    "seconds": 14,
+    "creator": "cottonbro studio",
+    "meaning": "contextual coding screen, not GPT-6.1 output"
+  },
+  {
+    "story": "m2",
+    "id": 8632604,
+    "slug": "coding-team",
+    "seconds": 14,
+    "creator": "Kampus Production",
+    "meaning": "contextual software team, not OpenAI"
+  },
+  {
+    "story": "m3",
+    "id": 37216416,
+    "slug": "hydro-aerial",
+    "seconds": 14,
+    "creator": "William Bellhouse",
+    "meaning": "contextual hydro dam, not Yamagata plant"
+  },
+  {
+    "story": "m3",
+    "id": 36034930,
+    "slug": "dam-flow",
+    "seconds": 14,
+    "creator": "Aman Sandhu",
+    "meaning": "contextual hydro dam, not Yamagata plant"
+  },
+  {
+    "story": "m3",
+    "id": 27771115,
+    "slug": "dam-release",
+    "seconds": 14,
+    "creator": "ARGA",
+    "meaning": "contextual hydro dam, not Yamagata plant"
+  },
+  {
+    "story": "m4",
+    "id": 5894353,
+    "slug": "vaccine-vial",
+    "seconds": 14,
+    "creator": "Artem Podrez",
+    "meaning": "contextual vaccine handling, not MIT formulation"
+  },
+  {
+    "story": "m4",
+    "id": 8879934,
+    "slug": "lab-console",
+    "seconds": 14,
+    "creator": "cottonbro studio",
+    "meaning": "contextual vaccine lab, not MIT experiment"
+  },
+  {
+    "story": "m4",
+    "id": 4121354,
+    "slug": "vaccine-lab",
+    "seconds": 14,
+    "creator": "Edward Jenner",
+    "meaning": "contextual vaccine research, not MIT experiment"
+  },
+  {
+    "story": "m5",
+    "id": 27612675,
+    "slug": "wind-farm",
+    "seconds": 14,
+    "creator": "David Pickup",
+    "meaning": "contextual wind farm, not MIT test"
+  },
+  {
+    "story": "m5",
+    "id": 36952717,
+    "slug": "wind-turbine",
+    "seconds": 14,
+    "creator": "Ike Unger",
+    "meaning": "contextual wind turbine, not MIT test"
+  },
+  {
+    "story": "m5",
+    "id": 4404137,
+    "slug": "wind-farmland",
+    "seconds": 14,
+    "creator": "K",
+    "meaning": "contextual wind farm, not MIT test"
+  },
+  {
+    "story": "r1",
+    "id": 6948563,
+    "slug": "talking-laptop",
+    "seconds": 8,
+    "creator": "George Milton",
+    "meaning": "contextual remote speaker, not Anthropic participant"
+  },
+  {
+    "story": "r1",
+    "id": 7557415,
+    "slug": "video-call-notes",
+    "seconds": 8,
+    "creator": "SHVETS production",
+    "meaning": "contextual remote conversation, not Anthropic interview"
+  },
+  {
+    "story": "r1",
+    "id": 8993403,
+    "slug": "video-call",
+    "seconds": 8,
+    "creator": "Hanna Pad",
+    "meaning": "contextual video conversation, not Anthropic interview"
+  },
+  {
+    "story": "r2",
+    "id": 33780609,
+    "slug": "greek-coast",
+    "seconds": 8,
+    "creator": "Efrem Efre",
+    "meaning": "contextual Greek Mediterranean coast (Corfu/Glyfada), not Rome meeting"
+  },
+  {
+    "story": "r2",
+    "id": 37533724,
+    "slug": "dry-reservoir",
+    "seconds": 8,
+    "creator": "Philipp Kappler",
+    "meaning": "contextual dry reservoir, location to verify"
+  },
+  {
+    "story": "r2",
+    "id": 8467128,
+    "slug": "vineyard-irrigation",
+    "seconds": 8,
+    "creator": "Marian Croitoru",
+    "meaning": "contextual European irrigation, not initiative project"
+  },
+  {
+    "story": "r2",
+    "id": 5267252,
+    "slug": "water-tap",
+    "seconds": 8,
+    "creator": "Manuel Vasquez",
+    "meaning": "contextual household water, not initiative project"
+  },
+  {
+    "story": "r1",
+    "id": 4841401,
+    "slug": "man-video-interview",
+    "seconds": 10,
+    "creator": "Tima Miroshnichenko",
+    "meaning": "contextual person speaking on a video call, not Anthropic participant"
+  }
+]

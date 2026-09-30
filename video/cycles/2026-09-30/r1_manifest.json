@@ -1,0 +1,74 @@
+{
+  "cycle": "2026-09-30",
+  "status": "prepared-for-review",
+  "output": "build/reels/2026-09-30/01-future-of-ai.mp4",
+  "audio": "build/video/2026-09-30/audio/r1.mp3",
+  "overlay": "build/reels/2026-09-30/work/r1-overlay.png",
+  "contextOverlay": "build/reels/2026-09-30/work/r1-context.png",
+  "ctaOverlay": "build/reels/2026-09-30/work/r1-cta.png",
+  "ctaStartInFinalScene": 6,
+  "duration": 45,
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-09-30/reels/r1/source-card-1.png",
+      "duration": 6,
+      "label": "context",
+      "loop": true
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-09-30/reels/r1/talking-laptop.mp4",
+      "duration": 6,
+      "label": "context",
+      "loop": true
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-09-30/reels/r1/source-card-2.png",
+      "duration": 6,
+      "label": "context",
+      "loop": true
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-09-30/reels/r1/video-call-notes.mp4",
+      "duration": 6,
+      "label": "context",
+      "loop": true
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-09-30/reels/r1/source-card-3.png",
+      "duration": 6,
+      "label": "context",
+      "loop": true
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-09-30/reels/r1/video-call.mp4",
+      "duration": 6,
+      "label": "context",
+      "loop": true
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-09-30/reels/r1/man-video-interview.mp4",
+      "duration": 9,
+      "label": "context",
+      "loop": true
+    }
+  ],
+  "hashes": {
+    "assets/motion/2026-09-30/reels/r1/source-card-1.png": "0ef17618d954cf37448e735941be927c936d73bbe1efb4b311fa30f42f3ba7b2",
+    "assets/motion/2026-09-30/reels/r1/talking-laptop.mp4": "90225720537f88c0a62982d75f40a7c4555702ede972b708859f3ef6fbfa31b3",
+    "assets/motion/2026-09-30/reels/r1/source-card-2.png": "d5faf7d74d2b18f4814bf17c6d2cd6cac6764dd36f0ac6876bc71619e494bdc2",
+    "assets/motion/2026-09-30/reels/r1/video-call-notes.mp4": "bad629a818ac7dfee59090772fda528bfcb3241eede9bc202bbca9860f043992",
+    "assets/motion/2026-09-30/reels/r1/source-card-3.png": "735aefdcb4eabe97a3287490b22f9fb1a7e4273ad7b1427997b99044274a45ac",
+    "assets/motion/2026-09-30/reels/r1/video-call.mp4": "661a6d3b81ba41ee705afc8fa7830ead15cc6d5b75f12027dd96408658b6c0d5",
+    "assets/motion/2026-09-30/reels/r1/man-video-interview.mp4": "fedfe50508ffcf99ceaeaa434aa0f5a2c6f06a25a5cfcdbd15fadfce9b6d6f24"
+  }
+}

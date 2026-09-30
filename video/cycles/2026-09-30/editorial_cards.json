@@ -1,0 +1,50 @@
+[
+  {
+    "story": "r1",
+    "file": "assets/motion/2026-09-30/reels/r1/source-card-1.png",
+    "source": "https://www.anthropic.com/research/your-thoughts-on-ai",
+    "creator": "NewHorizons original typography",
+    "license": "original editorial graphic; factual text attributed to primary source",
+    "sha256": "0ef17618d954cf37448e735941be927c936d73bbe1efb4b311fa30f42f3ba7b2"
+  },
+  {
+    "story": "r1",
+    "file": "assets/motion/2026-09-30/reels/r1/source-card-2.png",
+    "source": "https://www.anthropic.com/research/your-thoughts-on-ai",
+    "creator": "NewHorizons original typography",
+    "license": "original editorial graphic; factual text attributed to primary source",
+    "sha256": "d5faf7d74d2b18f4814bf17c6d2cd6cac6764dd36f0ac6876bc71619e494bdc2"
+  },
+  {
+    "story": "r1",
+    "file": "assets/motion/2026-09-30/reels/r1/source-card-3.png",
+    "source": "https://www.anthropic.com/research/your-thoughts-on-ai",
+    "creator": "NewHorizons original typography",
+    "license": "original editorial graphic; factual text attributed to primary source",
+    "sha256": "735aefdcb4eabe97a3287490b22f9fb1a7e4273ad7b1427997b99044274a45ac"
+  },
+  {
+    "story": "r2",
+    "file": "assets/motion/2026-09-30/reels/r2/source-card-1.png",
+    "source": "https://www.esteri.it/en/sala_stampa/archivionotizie/comunicati/2026/09/dichiarazione-ministeriale-dellupm-sullacqua-nel-mediterraneo/",
+    "creator": "NewHorizons original typography",
+    "license": "original editorial graphic; factual text attributed to primary source",
+    "sha256": "55459554cbeb88ca41093b8c7e2934b2ee2dc206bbf1a854ecf38efdc332ef25"
+  },
+  {
+    "story": "r2",
+    "file": "assets/motion/2026-09-30/reels/r2/source-card-2.png",
+    "source": "https://www.esteri.it/en/sala_stampa/archivionotizie/comunicati/2026/09/dichiarazione-ministeriale-dellupm-sullacqua-nel-mediterraneo/",
+    "creator": "NewHorizons original typography",
+    "license": "original editorial graphic; factual text attributed to primary source",
+    "sha256": "6094febd04e8a2fcea1e794df8a2e851a87185913b7523ea3640cefc9d0dc965"
+  },
+  {
+    "story": "r2",
+    "file": "assets/motion/2026-09-30/reels/r2/source-card-3.png",
+    "source": "https://www.esteri.it/en/sala_stampa/archivionotizie/comunicati/2026/09/dichiarazione-ministeriale-dellupm-sullacqua-nel-mediterraneo/",
+    "creator": "NewHorizons original typography",
+    "license": "original editorial graphic; factual text attributed to primary source",
+    "sha256": "2f60ce488738230137757c81081f01945f83752b09df3faeba1ee3da3b21b21e"
+  }
+]

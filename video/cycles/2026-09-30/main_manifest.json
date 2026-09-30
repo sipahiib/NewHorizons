@@ -1,0 +1,266 @@
+{
+  "cycle": "2026-09-30",
+  "status": "prepared-for-review",
+  "candidateOutput": "build/video/2026-09-30/newhorizons.mp4",
+  "finalOutput": "build/video/newhorizons.mp4",
+  "duration": 370,
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "titleDisplaySeconds": 4,
+  "sections": [
+    {
+      "id": "m1",
+      "duration": 120,
+      "audio": "build/video/2026-09-30/audio/m1.mp3",
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-30/main/m1/juice-earth-jmc.jpg",
+          "duration": 5
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-30/main/m1/satellite-dish-aerial.mp4",
+          "duration": 7,
+          "loop": true,
+          "context": true
+        },
+        {
+          "kind": "motion",
+          "file": "build/video/2026-09-30/work/opening-teaser.mp4",
+          "duration": 8,
+          "teaser": true
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-30/main/m1/juice-earth-navcam.png",
+          "duration": 20
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-30/main/m1/satellite-dish-sunset.mp4",
+          "duration": 18,
+          "loop": true,
+          "context": true
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-30/main/m1/juice-moon-navcam.png",
+          "duration": 20
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-30/main/m1/satellite-dish-sunrise.mp4",
+          "duration": 18,
+          "loop": true,
+          "context": true
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-30/main/m1/juice-path.jpg",
+          "duration": 24
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "duration": 60,
+      "audio": "build/video/2026-09-30/audio/m2.mp3",
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-30/main/m2/programmer-writing-code-with-unit-tests.jpg",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-30/main/m2/developers.mp4",
+          "duration": 12,
+          "loop": true,
+          "context": true
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-30/main/m2/programmers.jpg",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-30/main/m2/code-screen.mp4",
+          "duration": 12,
+          "loop": true,
+          "context": true
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-30/main/m2/coding-team.mp4",
+          "duration": 12,
+          "loop": true,
+          "context": true
+        }
+      ]
+    },
+    {
+      "id": "m3",
+      "duration": 60,
+      "audio": "build/video/2026-09-30/audio/m3.mp3",
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-30/main/m3/hoover-dam-hydroelectric-pumps.jpg",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-30/main/m3/hydro-aerial.mp4",
+          "duration": 12,
+          "loop": true,
+          "context": true
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-30/main/m3/threegorgesdam-china2009.jpg",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-30/main/m3/dam-flow.mp4",
+          "duration": 12,
+          "loop": true,
+          "context": true
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-30/main/m3/dam-release.mp4",
+          "duration": 12,
+          "loop": true,
+          "context": true
+        }
+      ]
+    },
+    {
+      "id": "m4",
+      "duration": 60,
+      "audio": "build/video/2026-09-30/audio/m4.mp3",
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-30/main/m4/biofarma-vaccine-vials-bandung.jpg",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-30/main/m4/vaccine-vial.mp4",
+          "duration": 12,
+          "loop": true,
+          "context": true
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-30/main/m4/lab-console.jpg",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-30/main/m4/lab-console.mp4",
+          "duration": 12,
+          "loop": true,
+          "context": true
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-30/main/m4/vaccine-lab.mp4",
+          "duration": 12,
+          "loop": true,
+          "context": true
+        }
+      ]
+    },
+    {
+      "id": "m5",
+      "duration": 60,
+      "audio": "build/video/2026-09-30/audio/m5.mp3",
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-30/main/m5/pexels-15523689.jpg",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-30/main/m5/wind-farm.mp4",
+          "duration": 12,
+          "loop": true,
+          "context": true
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-09-30/main/m5/pexels-15268775.jpg",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-30/main/m5/wind-turbine.mp4",
+          "duration": 12,
+          "loop": true,
+          "context": true
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-09-30/main/m5/wind-farmland.mp4",
+          "duration": 12,
+          "loop": true,
+          "context": true
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "duration": 10,
+      "audio": "build/video/2026-09-30/audio/closing.mp3",
+      "closing": true
+    }
+  ],
+  "hashes": {
+    "assets/motion/2026-09-30/main/m1/juice-earth-jmc.jpg": "641c69851a78d94c88fb2d5f783bf1fd73078a5be509310bb08c6f9cb3bbf6b9",
+    "assets/motion/2026-09-30/main/m1/satellite-dish-aerial.mp4": "c8b6b38821052e642c31a1c693efb9a4ece190596cd889dc47693599381ecbc2",
+    "build/video/2026-09-30/work/opening-teaser.mp4": "091ec9efdfe543a006589f8a2896b94034d24f4889c361d70be16160e5ac83c1",
+    "assets/motion/2026-09-30/main/m1/juice-earth-navcam.png": "2d7120baa11d6d5548575e87d2798f8ba2f36f55bff9271b4798bde6114b4b5a",
+    "assets/motion/2026-09-30/main/m1/satellite-dish-sunset.mp4": "1c7901290e22597e70bf5a923b82cf6e223888ae866cf1bfd01237c37fa02588",
+    "assets/motion/2026-09-30/main/m1/juice-moon-navcam.png": "348c9fa85277089269f798438f628c3b906d8a5b17cb855781059fb891016955",
+    "assets/motion/2026-09-30/main/m1/satellite-dish-sunrise.mp4": "43b96573d53cff193105000f021973b8e2483e6e0c3519afb663071c1824da00",
+    "assets/motion/2026-09-30/main/m1/juice-path.jpg": "f6c337e3b7e48a730545f9b7b27d2edcd90f06e167fcb90d5a3674587c42cbb6",
+    "assets/motion/2026-09-30/main/m2/programmer-writing-code-with-unit-tests.jpg": "20abe2676fad3830e19920023f2415f1bcff330e27f38f8704684c393c50cef1",
+    "assets/motion/2026-09-30/main/m2/developers.mp4": "780c6fa3126d986354f3fff975808c798aad88e8d38be8f7714ae7c41d2b1cb7",
+    "assets/motion/2026-09-30/main/m2/programmers.jpg": "92dc236af90ebf472f4abbbf88529a72d26163c36fbb4ab11f97baaab00574ad",
+    "assets/motion/2026-09-30/main/m2/code-screen.mp4": "6bb39da438857661b6c1e80b9c6055b54171e0d7a314e995aa771529217261ab",
+    "assets/motion/2026-09-30/main/m2/coding-team.mp4": "bfc5af49ac6b7a1c8ce8dded0ff74c944e88713cccc0c8acaadb2fa0298134f3",
+    "assets/motion/2026-09-30/main/m3/hoover-dam-hydroelectric-pumps.jpg": "9ba1bd54dfb9e037e613a20d6ee07370cd48db8c17a027d851656512a72ac5a2",
+    "assets/motion/2026-09-30/main/m3/hydro-aerial.mp4": "72344c2179f41bb7aa169bdf186d65ecb9e6f1bd8df911439ce48e225f8460ac",
+    "assets/motion/2026-09-30/main/m3/threegorgesdam-china2009.jpg": "9057f9ac5a8e0225229dd98ef6e892bd11588db44963e7a454ade3b17e915731",
+    "assets/motion/2026-09-30/main/m3/dam-flow.mp4": "eeaa2e01a8ada3744001293b2923ac40847d360700a00fe9b4cb53ef85063df1",
+    "assets/motion/2026-09-30/main/m3/dam-release.mp4": "06a457cf5eec09c65c3adc1acdf9581abe0247659f3cfa83aa6e06b3c4ca523c",
+    "assets/motion/2026-09-30/main/m4/biofarma-vaccine-vials-bandung.jpg": "25d866ee1547faf47b6cf94b7402d7459e91bd0c58b2a450b342ca8b1b0d2968",
+    "assets/motion/2026-09-30/main/m4/vaccine-vial.mp4": "1725fccf8a6edb308ad56d1a48816e67a7d4e7312a9e5e856e099d52d4f07a19",
+    "assets/motion/2026-09-30/main/m4/lab-console.jpg": "bb0bdd6a4ed3389f148c805f9beb2ac5c2d915515cfbd07c1e7d55ae1735a46f",
+    "assets/motion/2026-09-30/main/m4/lab-console.mp4": "3801845493fcfbb7c8f8cd9b5a6bad7669516565adfbc9af95e81cd427bc0819",
+    "assets/motion/2026-09-30/main/m4/vaccine-lab.mp4": "694fcb5a04c11f55b2f055982c5e3310f1eec47fdcbe5552d160e52b35bc7d92",
+    "assets/motion/2026-09-30/main/m5/pexels-15523689.jpg": "f075766c30246b5ed7e37170a26b1a35088b9fe081064831f190d4bba4ad20e6",
+    "assets/motion/2026-09-30/main/m5/wind-farm.mp4": "0d69b16455f26fc02416dbf90496799a633e2985d5ac9e9b8afdb96f829a6c34",
+    "assets/motion/2026-09-30/main/m5/pexels-15268775.jpg": "131172ed20c71e869d43acb968049bce11311aecb7c548002f99869c14500f80",
+    "assets/motion/2026-09-30/main/m5/wind-turbine.mp4": "f8030d3b220f1b50543ef7915f7e582183b42c01864eea5edd1abd864c18cbf9",
+    "assets/motion/2026-09-30/main/m5/wind-farmland.mp4": "4562fc799a26851e3f1167e99f0ae29f5565f1b295366fe3677ece8d7b4581af"
+  },
+  "overlays": {
+    "m1": "build/video/2026-09-30/work/m1-overlay.png",
+    "m2": "build/video/2026-09-30/work/m2-overlay.png",
+    "m3": "build/video/2026-09-30/work/m3-overlay.png",
+    "m4": "build/video/2026-09-30/work/m4-overlay.png",
+    "m5": "build/video/2026-09-30/work/m5-overlay.png"
+  },
+  "contextOverlay": "build/video/2026-09-30/work/context-overlay.png",
+  "teaserOverlay": "build/video/2026-09-30/work/teaser-overlay.png",
+  "closing": "build/video/2026-09-30/work/closing.png",
+  "closingBell": "build/video/2026-09-30/work/closing-bell.png"
+}

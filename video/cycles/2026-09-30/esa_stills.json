@@ -1,0 +1,34 @@
+[
+  {
+    "name": "juice-earth-jmc",
+    "page": "https://www.esa.int/ESA_Multimedia/Images/2026/09/Juice_images_Earth_during_Earth_flyby",
+    "download": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/09/juice_images_earth_during_earth_flyby/27543775-1-eng-GB/Juice_images_Earth_during_Earth_flyby.jpg",
+    "file": "assets/motion/2026-09-30/main/m1/juice-earth-jmc.jpg",
+    "bytes": 327752,
+    "sha256": "641c69851a78d94c88fb2d5f783bf1fd73078a5be509310bb08c6f9cb3bbf6b9"
+  },
+  {
+    "name": "juice-earth-navcam",
+    "page": "https://www.esa.int/ESA_Multimedia/Images/2026/09/Juice_NavCam_image_of_Africa_during_Earth_flyby",
+    "download": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/09/juice_navcam_image_of_madagascar_during_earth_flyby/27543920-1-eng-GB/Juice_NavCam_image_of_Madagascar_during_Earth_flyby.png",
+    "file": "assets/motion/2026-09-30/main/m1/juice-earth-navcam.png",
+    "bytes": 559949,
+    "sha256": "2d7120baa11d6d5548575e87d2798f8ba2f36f55bff9271b4798bde6114b4b5a"
+  },
+  {
+    "name": "juice-moon-navcam",
+    "page": "https://www.esa.int/ESA_Multimedia/Images/2026/09/Juice_NavCam_image_of_the_Moon_during_Earth_flyby",
+    "download": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/09/juice_navcam_image_of_the_moon_during_earth_flyby/27543967-1-eng-GB/Juice_NavCam_image_of_the_Moon_during_Earth_flyby.png",
+    "file": "assets/motion/2026-09-30/main/m1/juice-moon-navcam.png",
+    "bytes": 474224,
+    "sha256": "348c9fa85277089269f798438f628c3b906d8a5b17cb855781059fb891016955"
+  },
+  {
+    "name": "juice-path",
+    "page": "https://www.esa.int/ESA_Multimedia/Images/2026/09/Juice_flies_by_Earth_the_complete_path",
+    "download": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/09/juice_flies_by_earth_the_complete_path/27532497-1-eng-GB/Juice_flies_by_Earth_the_complete_path.jpg",
+    "file": "assets/motion/2026-09-30/main/m1/juice-path.jpg",
+    "bytes": 4611293,
+    "sha256": "f6c337e3b7e48a730545f9b7b27d2edcd90f06e167fcb90d5a3674587c42cbb6"
+  }
+]

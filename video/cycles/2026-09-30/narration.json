@@ -1,0 +1,52 @@
+{
+  "cycle": "2026-09-30",
+  "voice": "en-GB-RyanNeural",
+  "rate": "-2%",
+  "status": "approved-topics; draft for timing and independent review",
+  "sections": [
+    {
+      "id": "m1",
+      "target": 120,
+      "insertSilence": {
+        "at": 10.5,
+        "seconds": 1
+      },
+      "text": "Earth bent Juice’s path toward Jupiter and saved fuel. Why did a Jupiter probe come back to Earth? And four other breakthroughs happened this week: a new AI model, a Japanese hydropower upgrade, heat-tolerant vaccine research, and a fresh way to test wind turbines. On September twenty-eighth, the European Space Agency's Juice spacecraft swept past Earth above the Indian Ocean. It was not returning home. Earth was one carefully timed stop in a long route to Jupiter. ESA says the flyby bent Juice's path by twenty degrees and increased its speed by three point five kilometres per second. The team had spent weeks tracking it closely, because a tiny error in approach could change the outcome. In the month before the encounter, controllers used just one small correction out of six opportunities they had reserved. The result matters for a spacecraft with a limited tank of propellant. Using a planet's gravity to reshape the route can leave more fuel for manoeuvres when Juice reaches the Jupiter system. During the pass, its monitoring and navigation cameras photographed Earth and the Moon. These are real spacecraft images, though the monitoring cameras were built to check the craft's own hardware, not to take polished science portraits. The flyby also gave instrument teams a chance to calibrate equipment against a world they already know. The team expects images and spectra from the science instruments after their checks are complete. Those science observations are still being evaluated; this pass did not tell us whether Jupiter's moons harbour life. Juice will swing by Earth again in twenty twenty-nine before its planned arrival at Jupiter in twenty thirty-one. There, it is designed to examine the giant planet and its ocean-bearing moons. This week's achievement is navigation: a precise encounter here that makes more ambitious observations possible far away."
+    },
+    {
+      "id": "m2",
+      "target": 60,
+      "text": "OpenAI has added a new model to its GPT six family. Released on September twenty-ninth, GPT six point one Sol is presented as approaching Astra's capability at a lower API cost. It is also rolling out in Work and Codex. For developers, the practical question is whether a less expensive model can handle their actual coding, computer-use, and professional tasks well enough. Documentation lists features and pricing, but supplier performance claims need independent testing. Teams still need to test their own workloads for errors, speed, and total cost. OpenAI's safety addendum also classifies this family at elevated cyber and biological or chemical capability levels, with safeguards attached. That is part of the release story, not a claim that every user gains those abilities. A model launch is a choice to evaluate, rather than proof that one system is best for everyone."
+    },
+    {
+      "id": "m3",
+      "target": 60,
+      "text": "In Japan, fourteen existing hydropower plants are slated for a control-system upgrade. Toshiba and TEPCO Renewable Power say they signed a contract with Yamagata Prefecture on September twenty-ninth. Toshiba will provide remote monitoring and control equipment at the plants and a dam. TEPCO Renewable Power will provide the software service that connects with it. This is a useful look at energy technology beyond new generators: operators also need to see what plants are doing and control them reliably. A shared system may make that work easier. Remote equipment sends plant information to operators, while the service helps them monitor and act across multiple facilities. But this announcement is a contract, not a completed installation or a measured improvement. The companies have not reported energy savings or reliability gains from these fourteen sites. The next evidence to watch is how the system performs after deployment."
+    },
+    {
+      "id": "m4",
+      "target": 60,
+      "text": "Could an RNA vaccine travel without such demanding cold storage? MIT researchers report a promising formulation that helps protect the lipid particles carrying messenger RNA. Their algorithm helped select ingredients using relatively few experiments. In laboratory storage tests, solid-state formulations kept activity after more than two months at thirty-seven degrees Celsius. The researchers also tested immune responses in animals, including rodents and non-human primates. That matters because keeping vaccines cold can complicate distribution, especially where refrigeration is limited. But this is preclinical research. It does not show human protection, approval of a new product, or that today's mRNA vaccines can all be stored warm. The next steps include manufacturing and clinical validation. For now, the finding is a possible route toward more robust vaccine formulations."
+    },
+    {
+      "id": "m5",
+      "target": 60,
+      "text": "Wind farms might get more useful information from a smaller experiment. Researchers led by MIT used a pressurized wind tunnel to make model turbines behave more like full-scale machines in the atmosphere. That let them test how the rotor's alignment, blade angle, and tip speed affect power. They also checked a simpler computer model that engineers could use to explore turbine designs and control strategies. For viewers, the value is straightforward: better tests can help operators decide how to get more from existing equipment. The team estimates possible economic gains, but those are projections rather than field results, so the real-world improvement remains to be proven. A wind tunnel cannot reproduce every changing condition across a working farm, where neighbouring turbines affect one another and gusts shift across the site. It can, however, make a difficult engineering question easier to test. Now it needs field testing."
+    },
+    {
+      "id": "closing",
+      "target": 10,
+      "text": "Like and subscribe for more discoveries. That was our latest news. Stay with science, and stay tuned."
+    },
+    {
+      "id": "r1",
+      "target": 45,
+      "text": "Would you let your AI interview go public? Anthropic has launched a study in which an AI interviewer asks Claude users what they want from AI. Afterward, participants can choose whether their full answers are published. Public responses could help others study the technology's effects. But they may also reveal personal details that identify a speaker, even without a name. The study has no findings yet, and Claude users are not a representative public sample. A public copy may persist after removal. Read the privacy choices before sharing. Subscribe on YouTube at New Horizons underscore twenty-one, and like and follow on Instagram."
+    },
+    {
+      "id": "r2",
+      "target": 45,
+      "text": "Can the Mediterranean plan for less water? Ministers meeting in Rome launched a regional initiative on September twenty-eighth. It aims to turn water goals into projects that can attract funding, alongside a declaration on cooperation through twenty thirty. For families, farms, and ecosystems, water resilience is a practical concern. But an initiative is not a reservoir filled or water saved. The plans still need finance, implementation, and measured results. This is a new framework for action, not evidence that scarcity is solved. Subscribe on YouTube at New Horizons underscore twenty-one, and like and follow on Instagram."
+    }
+  ]
+}

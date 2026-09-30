@@ -1,0 +1,774 @@
+[
+  {
+    "story": "m1",
+    "id": 2954000,
+    "slug": "radio-dish",
+    "seconds": 14,
+    "creator": "Matthias Groeneveld",
+    "meaning": "contextual radio telescope, not ESA ground station",
+    "page": "https://www.pexels.com/video/2954000/",
+    "download": "https://videos.pexels.com/video-files/2954000/2954000-hd_1920_1080_30fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m1/radio-dish.mp4",
+    "sha256": "b87ffb3ed0d3e638f79735e4f2028298aefa3f9d7b4fd778fc4291b4d8808a6d",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "14.000000",
+        "size": "9538154"
+      }
+    }
+  },
+  {
+    "story": "m1",
+    "id": 8381445,
+    "slug": "research-lab",
+    "seconds": 14,
+    "creator": "Pavel Danilyuk",
+    "meaning": "contextual laboratory, not ESA mission control",
+    "page": "https://www.pexels.com/video/8381445/",
+    "download": "https://videos.pexels.com/video-files/8381445/8381445-uhd_3840_2160_25fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m1/research-lab.mp4",
+    "sha256": "98e9b83370ed42db44e17489f987abbedd5c850da135076ecef2347bb22dbd60",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "14.000000",
+        "size": "4461867"
+      }
+    }
+  },
+  {
+    "story": "m2",
+    "id": 7989671,
+    "slug": "developers",
+    "seconds": 14,
+    "creator": "Mikhail Nilov",
+    "meaning": "contextual coding team, not OpenAI",
+    "page": "https://www.pexels.com/video/7989671/",
+    "download": "https://videos.pexels.com/video-files/7989671/7989671-hd_1920_1080_25fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m2/developers.mp4",
+    "sha256": "780c6fa3126d986354f3fff975808c798aad88e8d38be8f7714ae7c41d2b1cb7",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "12.720000",
+        "size": "5073125"
+      }
+    }
+  },
+  {
+    "story": "m2",
+    "id": 8632604,
+    "slug": "coding-team",
+    "seconds": 14,
+    "creator": "Kampus Production",
+    "meaning": "contextual software team, not OpenAI",
+    "page": "https://www.pexels.com/video/8632604/",
+    "download": "https://videos.pexels.com/video-files/8632604/8632604-uhd_3840_2160_25fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m2/coding-team.mp4",
+    "sha256": "bfc5af49ac6b7a1c8ce8dded0ff74c944e88713cccc0c8acaadb2fa0298134f3",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "8.320000",
+        "size": "2706231"
+      }
+    }
+  },
+  {
+    "story": "m3",
+    "id": 37216416,
+    "slug": "hydro-aerial",
+    "seconds": 14,
+    "creator": "William Bellhouse",
+    "meaning": "contextual hydro dam, not Yamagata plant",
+    "page": "https://www.pexels.com/video/37216416/",
+    "download": "https://videos.pexels.com/video-files/37216416/15765945_3840_2160_60fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m3/hydro-aerial.mp4",
+    "sha256": "72344c2179f41bb7aa169bdf186d65ecb9e6f1bd8df911439ce48e225f8460ac",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "60000/1001"
+        }
+      ],
+      "format": {
+        "duration": "14.014000",
+        "size": "27521787"
+      }
+    }
+  },
+  {
+    "story": "m3",
+    "id": 36034930,
+    "slug": "dam-flow",
+    "seconds": 14,
+    "creator": "Aman Sandhu",
+    "meaning": "contextual hydro dam, not Yamagata plant",
+    "page": "https://www.pexels.com/video/36034930/",
+    "download": "https://videos.pexels.com/video-files/36034930/15281940_3840_2160_30fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m3/dam-flow.mp4",
+    "sha256": "eeaa2e01a8ada3744001293b2923ac40847d360700a00fe9b4cb53ef85063df1",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        }
+      ],
+      "format": {
+        "duration": "14.014000",
+        "size": "15629173"
+      }
+    }
+  },
+  {
+    "story": "m3",
+    "id": 27771115,
+    "slug": "dam-release",
+    "seconds": 14,
+    "creator": "ARGA",
+    "meaning": "contextual hydro dam, not Yamagata plant",
+    "page": "https://www.pexels.com/video/27771115/",
+    "download": "https://videos.pexels.com/video-files/27771115/12220433_1920_1080_240fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m3/dam-release.mp4",
+    "sha256": "06a457cf5eec09c65c3adc1acdf9581abe0247659f3cfa83aa6e06b3c4ca523c",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "240/1"
+        }
+      ],
+      "format": {
+        "duration": "7.558008",
+        "size": "16137492"
+      }
+    }
+  },
+  {
+    "story": "m1",
+    "id": 18308549,
+    "slug": "antenna-forest",
+    "seconds": 14,
+    "creator": "Matthias Groeneveld",
+    "meaning": "contextual radio telescope, not ESA ground station",
+    "page": "https://www.pexels.com/video/18308549/",
+    "download": "https://videos.pexels.com/video-files/18308549/18308549-uhd_4096_2160_30fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m1/antenna-forest.mp4",
+    "sha256": "c54050ff644a65e829c40443e731bffa93826557a248b4f7ad3628f5a585d141",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1012,
+          "r_frame_rate": "30000/1001"
+        }
+      ],
+      "format": {
+        "duration": "14.014000",
+        "size": "19166452"
+      }
+    }
+  },
+  {
+    "story": "m2",
+    "id": 5474318,
+    "slug": "code-screen",
+    "seconds": 14,
+    "creator": "cottonbro studio",
+    "meaning": "contextual coding screen, not GPT-6.1 output",
+    "page": "https://www.pexels.com/video/5474318/",
+    "download": "https://videos.pexels.com/video-files/5474318/5474318-uhd_4096_2160_25fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m2/code-screen.mp4",
+    "sha256": "6bb39da438857661b6c1e80b9c6055b54171e0d7a314e995aa771529217261ab",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1012,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "14.000000",
+        "size": "2136765"
+      }
+    }
+  },
+  {
+    "story": "m4",
+    "id": 5894353,
+    "slug": "vaccine-vial",
+    "seconds": 14,
+    "creator": "Artem Podrez",
+    "meaning": "contextual vaccine handling, not MIT formulation",
+    "page": "https://www.pexels.com/video/5894353/",
+    "download": "https://videos.pexels.com/video-files/5894353/5894353-uhd_3840_2160_25fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m4/vaccine-vial.mp4",
+    "sha256": "1725fccf8a6edb308ad56d1a48816e67a7d4e7312a9e5e856e099d52d4f07a19",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "7.080000",
+        "size": "1546481"
+      }
+    }
+  },
+  {
+    "story": "m4",
+    "id": 8879934,
+    "slug": "lab-console",
+    "seconds": 14,
+    "creator": "cottonbro studio",
+    "meaning": "contextual vaccine lab, not MIT experiment",
+    "page": "https://www.pexels.com/video/8879934/",
+    "download": "https://videos.pexels.com/video-files/8879934/8879934-uhd_4096_2160_25fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m4/lab-console.mp4",
+    "sha256": "3801845493fcfbb7c8f8cd9b5a6bad7669516565adfbc9af95e81cd427bc0819",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1012,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "14.000000",
+        "size": "4355685"
+      }
+    }
+  },
+  {
+    "story": "m4",
+    "id": 4121354,
+    "slug": "vaccine-lab",
+    "seconds": 14,
+    "creator": "Edward Jenner",
+    "meaning": "contextual vaccine research, not MIT experiment",
+    "page": "https://www.pexels.com/video/4121354/",
+    "download": "https://videos.pexels.com/video-files/4121354/4121354-uhd_3840_2160_25fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m4/vaccine-lab.mp4",
+    "sha256": "694fcb5a04c11f55b2f055982c5e3310f1eec47fdcbe5552d160e52b35bc7d92",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "14.000000",
+        "size": "3561998"
+      }
+    }
+  },
+  {
+    "story": "m5",
+    "id": 27612675,
+    "slug": "wind-farm",
+    "seconds": 14,
+    "creator": "David Pickup",
+    "meaning": "contextual wind farm, not MIT test",
+    "page": "https://www.pexels.com/video/27612675/",
+    "download": "https://videos.pexels.com/video-files/27612675/12185792_3840_2160_30fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m5/wind-farm.mp4",
+    "sha256": "0d69b16455f26fc02416dbf90496799a633e2985d5ac9e9b8afdb96f829a6c34",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        }
+      ],
+      "format": {
+        "duration": "14.014000",
+        "size": "16656819"
+      }
+    }
+  },
+  {
+    "story": "m5",
+    "id": 36952717,
+    "slug": "wind-turbine",
+    "seconds": 14,
+    "creator": "Ike Unger",
+    "meaning": "contextual wind turbine, not MIT test",
+    "page": "https://www.pexels.com/video/36952717/",
+    "download": "https://videos.pexels.com/video-files/36952717/15655539_3840_2160_30fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m5/wind-turbine.mp4",
+    "sha256": "f8030d3b220f1b50543ef7915f7e582183b42c01864eea5edd1abd864c18cbf9",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        }
+      ],
+      "format": {
+        "duration": "14.014000",
+        "size": "3928444"
+      }
+    }
+  },
+  {
+    "story": "m5",
+    "id": 4404137,
+    "slug": "wind-farmland",
+    "seconds": 14,
+    "creator": "K",
+    "meaning": "contextual wind farm, not MIT test",
+    "page": "https://www.pexels.com/video/4404137/",
+    "download": "https://videos.pexels.com/video-files/4404137/4404137-uhd_3840_2160_24fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m5/wind-farmland.mp4",
+    "sha256": "4562fc799a26851e3f1167e99f0ae29f5565f1b295366fe3677ece8d7b4581af",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "14.000000",
+        "size": "6055481"
+      }
+    }
+  },
+  {
+    "story": "r1",
+    "id": 6948563,
+    "slug": "talking-laptop",
+    "seconds": 8,
+    "creator": "George Milton",
+    "meaning": "contextual remote speaker, not Anthropic participant",
+    "page": "https://www.pexels.com/video/6948563/",
+    "download": "https://videos.pexels.com/video-files/6948563/6948563-uhd_2160_3840_24fps.mp4",
+    "file": "assets/motion/2026-09-30/reels/r1/talking-laptop.mp4",
+    "sha256": "90225720537f88c0a62982d75f40a7c4555702ede972b708859f3ef6fbfa31b3",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 608,
+          "height": 1080,
+          "r_frame_rate": "24000/1001"
+        }
+      ],
+      "format": {
+        "duration": "8.008000",
+        "size": "1424386"
+      }
+    }
+  },
+  {
+    "story": "r1",
+    "id": 7557415,
+    "slug": "video-call-notes",
+    "seconds": 8,
+    "creator": "SHVETS production",
+    "meaning": "contextual remote conversation, not Anthropic interview",
+    "page": "https://www.pexels.com/video/7557415/",
+    "download": "https://videos.pexels.com/video-files/7557415/7557415-uhd_3840_2160_25fps.mp4",
+    "file": "assets/motion/2026-09-30/reels/r1/video-call-notes.mp4",
+    "sha256": "bad629a818ac7dfee59090772fda528bfcb3241eede9bc202bbca9860f043992",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "8.000000",
+        "size": "4363192"
+      }
+    }
+  },
+  {
+    "story": "r1",
+    "id": 8993403,
+    "slug": "video-call",
+    "seconds": 8,
+    "creator": "Hanna Pad",
+    "meaning": "contextual video conversation, not Anthropic interview",
+    "page": "https://www.pexels.com/video/8993403/",
+    "download": "https://videos.pexels.com/video-files/8993403/8993403-uhd_3840_2160_30fps.mp4",
+    "file": "assets/motion/2026-09-30/reels/r1/video-call.mp4",
+    "sha256": "661a6d3b81ba41ee705afc8fa7830ead15cc6d5b75f12027dd96408658b6c0d5",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "8.000000",
+        "size": "2335839"
+      }
+    }
+  },
+  {
+    "story": "r1",
+    "id": 6503020,
+    "slug": "headset-laptop",
+    "seconds": 8,
+    "creator": "Thirdman",
+    "meaning": "contextual computer conversation, not Anthropic interview",
+    "page": "https://www.pexels.com/video/6503020/",
+    "download": "https://videos.pexels.com/video-files/6503020/6503020-hd_1080_1920_25fps.mp4",
+    "file": "assets/motion/2026-09-30/reels/r1/headset-laptop.mp4",
+    "sha256": "edd3f71d20fd27e13a9dbd7d6abf3a655534936a2b1f7e59c527569b164869ac",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 608,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "8.000000",
+        "size": "774825"
+      }
+    }
+  },
+  {
+    "story": "r2",
+    "id": 33780609,
+    "slug": "greek-coast",
+    "seconds": 8,
+    "creator": "Efrem Efre",
+    "meaning": "contextual Greek Mediterranean coast (Corfu/Glyfada), not Rome meeting",
+    "page": "https://www.pexels.com/video/33780609/",
+    "download": "https://videos.pexels.com/video-files/33780609/14339079_3840_2160_25fps.mp4",
+    "file": "assets/motion/2026-09-30/reels/r2/greek-coast.mp4",
+    "sha256": "7d38e4b4ffe9e2a266befc26c3989246f1bcadea2eb87a4c53a6b4359358f560",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "8.000000",
+        "size": "8835847"
+      }
+    }
+  },
+  {
+    "story": "r2",
+    "id": 37533724,
+    "slug": "dry-reservoir",
+    "seconds": 8,
+    "creator": "Philipp Kappler",
+    "meaning": "contextual dry reservoir, location to verify",
+    "page": "https://www.pexels.com/video/37533724/",
+    "download": "https://videos.pexels.com/video-files/37533724/15903363_3840_2160_30fps.mp4",
+    "file": "assets/motion/2026-09-30/reels/r2/dry-reservoir.mp4",
+    "sha256": "a045e37bf765ca7c3c0df26495751bb03d1a6a89370a8654de6cc31fb718b5d1",
+    "probe": {
+      "programs": [],
+      "stream_groups": [
+        {
+          "streams": [
+            {
+              "width": 1920,
+              "height": 1080,
+              "r_frame_rate": "30000/1001"
+            },
+            {
+              "r_frame_rate": "0/0"
+            }
+          ]
+        }
+      ],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        },
+        {
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "8.008000",
+        "size": "4780011"
+      }
+    }
+  },
+  {
+    "story": "r2",
+    "id": 8467128,
+    "slug": "vineyard-irrigation",
+    "seconds": 8,
+    "creator": "Marian Croitoru",
+    "meaning": "contextual European irrigation, not initiative project",
+    "page": "https://www.pexels.com/video/8467128/",
+    "download": "https://videos.pexels.com/video-files/8467128/8467128-uhd_3840_2160_25fps.mp4",
+    "file": "assets/motion/2026-09-30/reels/r2/vineyard-irrigation.mp4",
+    "sha256": "fbd024d29aedddd87275cacc6fd60115c837559c9cf42c499ee0f660fba876f5",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "8.000000",
+        "size": "6469830"
+      }
+    }
+  },
+  {
+    "story": "r2",
+    "id": 5267252,
+    "slug": "water-tap",
+    "seconds": 8,
+    "creator": "Manuel Vasquez",
+    "meaning": "contextual household water, not initiative project",
+    "page": "https://www.pexels.com/video/5267252/",
+    "download": "https://videos.pexels.com/video-files/5267252/5267252-hd_720_1280_30fps.mp4",
+    "file": "assets/motion/2026-09-30/reels/r2/water-tap.mp4",
+    "sha256": "ec088aa9583b17e710cf26e61317a2e3611a56e47811ac7a1a90c4684aa546a0",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 608,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        }
+      ],
+      "format": {
+        "duration": "8.008000",
+        "size": "1032207"
+      }
+    }
+  },
+  {
+    "story": "m1",
+    "id": 28846365,
+    "slug": "satellite-dish-aerial",
+    "seconds": 14,
+    "creator": "Alejandro De Roa",
+    "meaning": "contextual satellite communications dish, not ESA ground station",
+    "page": "https://www.pexels.com/video/28846365/",
+    "download": "https://videos.pexels.com/video-files/28846365/12493697_1080_1920_30fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m1/satellite-dish-aerial.mp4",
+    "sha256": "c8b6b38821052e642c31a1c693efb9a4ece190596cd889dc47693599381ecbc2",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 608,
+          "height": 1080,
+          "r_frame_rate": "1000000/33333"
+        }
+      ],
+      "format": {
+        "duration": "8.599914",
+        "size": "1340155"
+      }
+    }
+  },
+  {
+    "story": "m1",
+    "id": 33870954,
+    "slug": "satellite-dish-sunset",
+    "seconds": 14,
+    "creator": "changen chan",
+    "meaning": "contextual satellite communications dish, not ESA ground station",
+    "page": "https://www.pexels.com/video/33870954/",
+    "download": "https://videos.pexels.com/video-files/33870954/14374235_3840_2160_60fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m1/satellite-dish-sunset.mp4",
+    "sha256": "1c7901290e22597e70bf5a923b82cf6e223888ae866cf1bfd01237c37fa02588",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "60/1"
+        }
+      ],
+      "format": {
+        "duration": "9.483333",
+        "size": "6956235"
+      }
+    }
+  },
+  {
+    "story": "m1",
+    "id": 28846361,
+    "slug": "satellite-dish-structure",
+    "seconds": 14,
+    "creator": "Alejandro De Roa",
+    "meaning": "contextual satellite communications dish, not ESA ground station",
+    "page": "https://www.pexels.com/video/28846361/",
+    "download": "https://videos.pexels.com/video-files/28846361/12493708_1080_1920_30fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m1/satellite-dish-structure.mp4",
+    "sha256": "7ac46e3138fd1e9f5f1d324e4908a4b49c065b4c08d414a77416917d4dc21f33",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 608,
+          "height": 1080,
+          "r_frame_rate": "1000000/33333"
+        }
+      ],
+      "format": {
+        "duration": "13.666530",
+        "size": "3946922"
+      }
+    }
+  },
+  {
+    "story": "r1",
+    "id": 4841401,
+    "slug": "man-video-interview",
+    "seconds": 10,
+    "creator": "Tima Miroshnichenko",
+    "meaning": "contextual person speaking on a video call, not Anthropic participant",
+    "page": "https://www.pexels.com/video/4841401/",
+    "download": "https://videos.pexels.com/video-files/4841401/4841401-hd_1920_1080_25fps.mp4",
+    "file": "assets/motion/2026-09-30/reels/r1/man-video-interview.mp4",
+    "sha256": "fedfe50508ffcf99ceaeaa434aa0f5a2c6f06a25a5cfcdbd15fadfce9b6d6f24",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "10.000000",
+        "size": "2979560"
+      }
+    }
+  },
+  {
+    "story": "m1",
+    "id": 28846366,
+    "slug": "satellite-dish-sunrise",
+    "seconds": 14,
+    "creator": "Alejandro De Roa",
+    "meaning": "contextual satellite communications dish, not ESA ground station",
+    "page": "https://www.pexels.com/video/28846366/",
+    "download": "https://videos.pexels.com/video-files/28846366/12493705_1080_1920_30fps.mp4",
+    "file": "assets/motion/2026-09-30/main/m1/satellite-dish-sunrise.mp4",
+    "sha256": "43b96573d53cff193105000f021973b8e2483e6e0c3519afb663071c1824da00",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 608,
+          "height": 1080,
+          "r_frame_rate": "1000000/33333"
+        }
+      ],
+      "format": {
+        "duration": "6.366603",
+        "size": "862316"
+      }
+    }
+  }
+]

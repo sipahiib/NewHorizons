@@ -1,0 +1,92 @@
+[
+  {
+    "story": "m4",
+    "file": "assets/motion/2026-09-30/main/m4/lab-console.jpg",
+    "sourceVideo": "assets/motion/2026-09-30/main/m4/lab-console.mp4",
+    "sourcePage": "https://www.pexels.com/video/8879934/",
+    "creator": "cottonbro studio",
+    "license": "Pexels Licence",
+    "sha256": "bb0bdd6a4ed3389f148c805f9beb2ac5c2d915515cfbd07c1e7d55ae1735a46f",
+    "derivative": "frame extract at 1s; still image, not claimed as independent photograph"
+  },
+  {
+    "story": "m5",
+    "file": "assets/motion/2026-09-30/main/m5/wind-farm.jpg",
+    "sourceVideo": "assets/motion/2026-09-30/main/m5/wind-farm.mp4",
+    "sourcePage": "https://www.pexels.com/video/27612675/",
+    "creator": "David Pickup",
+    "license": "Pexels Licence",
+    "sha256": "a867a1c284e960aa654a4c7325437c162b429fa34b57208748753b785b8fa086",
+    "derivative": "frame extract at 1s; still image, not claimed as independent photograph"
+  },
+  {
+    "story": "m5",
+    "file": "assets/motion/2026-09-30/main/m5/wind-turbine.jpg",
+    "sourceVideo": "assets/motion/2026-09-30/main/m5/wind-turbine.mp4",
+    "sourcePage": "https://www.pexels.com/video/36952717/",
+    "creator": "Ike Unger",
+    "license": "Pexels Licence",
+    "sha256": "ccd227e295c43746b0b560410070d197d41f959bd73e06d63bef3142b70e8826",
+    "derivative": "frame extract at 1s; still image, not claimed as independent photograph"
+  },
+  {
+    "story": "r1",
+    "file": "assets/motion/2026-09-30/reels/r1/talking-laptop.jpg",
+    "sourceVideo": "assets/motion/2026-09-30/reels/r1/talking-laptop.mp4",
+    "sourcePage": "https://www.pexels.com/video/6948563/",
+    "creator": "George Milton",
+    "license": "Pexels Licence",
+    "sha256": "d8abde1e2b0cad199e860671cace3dc9fb4124e790d396264a4bc8acd017a30a",
+    "derivative": "frame extract at 1s; still image, not claimed as independent photograph"
+  },
+  {
+    "story": "r1",
+    "file": "assets/motion/2026-09-30/reels/r1/video-call-notes.jpg",
+    "sourceVideo": "assets/motion/2026-09-30/reels/r1/video-call-notes.mp4",
+    "sourcePage": "https://www.pexels.com/video/7557415/",
+    "creator": "SHVETS production",
+    "license": "Pexels Licence",
+    "sha256": "01de7d02d1ff2dfc3a57c1f63987d023c74da369fad6be52b342f9c9d91d44dd",
+    "derivative": "frame extract at 1s; still image, not claimed as independent photograph"
+  },
+  {
+    "story": "r1",
+    "file": "assets/motion/2026-09-30/reels/r1/video-call.jpg",
+    "sourceVideo": "assets/motion/2026-09-30/reels/r1/video-call.mp4",
+    "sourcePage": "https://www.pexels.com/video/8993403/",
+    "creator": "Hanna Pad",
+    "license": "Pexels Licence",
+    "sha256": "fd16ca2a789586cc65b4082f57b915b439bc33594d12d80436039579495fca9a",
+    "derivative": "frame extract at 1s; still image, not claimed as independent photograph"
+  },
+  {
+    "story": "r2",
+    "file": "assets/motion/2026-09-30/reels/r2/greek-coast.jpg",
+    "sourceVideo": "assets/motion/2026-09-30/reels/r2/greek-coast.mp4",
+    "sourcePage": "https://www.pexels.com/video/33780609/",
+    "creator": "Pexels creator to verify",
+    "license": "Pexels Licence",
+    "sha256": "87a3b06ff97d5cefe5cea6466ee715d448c0519a886834d4e4cc36531d3fc8fe",
+    "derivative": "frame extract at 1s; still image, not claimed as independent photograph"
+  },
+  {
+    "story": "r2",
+    "file": "assets/motion/2026-09-30/reels/r2/dry-reservoir.jpg",
+    "sourceVideo": "assets/motion/2026-09-30/reels/r2/dry-reservoir.mp4",
+    "sourcePage": "https://www.pexels.com/video/37533724/",
+    "creator": "Philipp Kappler",
+    "license": "Pexels Licence",
+    "sha256": "4c1501f5781425611a5daaf089d15d283e381ae217c582245173055840494fb7",
+    "derivative": "frame extract at 1s; still image, not claimed as independent photograph"
+  },
+  {
+    "story": "r2",
+    "file": "assets/motion/2026-09-30/reels/r2/vineyard-irrigation.jpg",
+    "sourceVideo": "assets/motion/2026-09-30/reels/r2/vineyard-irrigation.mp4",
+    "sourcePage": "https://www.pexels.com/video/8467128/",
+    "creator": "Marian Croitoru",
+    "license": "Pexels Licence",
+    "sha256": "a963ad94198b69681c0ddbf53d7dfbaf12865f32fe8a38e706e7c5cb91efdde3",
+    "derivative": "frame extract at 1s; still image, not claimed as independent photograph"
+  }
+]

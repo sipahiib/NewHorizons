@@ -33,6 +33,12 @@ Keep each cycle's inputs and intermediates isolated. Never treat a file as curre
 
 Use restrained headings and occasional one-sentence takeaways. Preserve subject visibility and mobile readability.
 
+For main-programme story overlays:
+
+- Omit the “NEW HORIZONS • M1” through “NEW HORIZONS • M5” line above story titles. Show only the story title in the upper title card.
+- Remove the lower source-and-note information card entirely. Keep full source credits in the active cycle's `CREDITS.md`; show any essential context disclosure separately on screen.
+- Make remaining information-card backgrounds 30 percentage points more transparent than the current design (for example, 92% opacity becomes 62%, and 93% becomes 63%). Keep the text readable. This does not change the main closing CTA.
+
 ## Narration and closing
 
 Use Microsoft Edge TTS `en-GB-RyanNeural` at `-2%`; changing the voice requires user approval. Measure actual speech and check for clipped words, unnatural pacing and unexplained silence.
@@ -49,6 +55,8 @@ The main closing uses cinematic glass, English labels, subtle panel entrance, Li
 - Fit measured narration within 45 seconds; finish speech before the end and leave no more than four seconds afterward.
 - Preserve the complete landscape frame over a darkened, blurred duplicate background.
 - Include YouTube `@newhorizons_21` and Instagram like/follow calls.
+- Do not show series labels such as “THE FUTURE OF AI” or “THE PLANET EARTH” in the top title card. Do not use a lower information card; show the required YouTube and Instagram calls as unboxed text in the final seconds.
+- Set the top title card background to **64% opacity** (30 percentage points more transparent than the former 94% background) and keep the title readable.
 
 Do not create or deliver cover images or thumbnails for the main video or Reels.
 

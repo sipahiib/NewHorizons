@@ -16,4 +16,4 @@ Fresh evidence: `/tmp/newhorizons-corrected-qa.7IInpS/main-exact-contact-01.jpg`
 
 ## Full-playback approval
 
-Independent technical and dense sampled-visual QA passed as recorded above. The user subsequently confirmed full audiovisual playback approval for all three listed deliverables on 23 September 2026. This closes the remaining checks for complete narration pronunciation, clipped/missing words, subjective pacing, the exact spoken final sentence and uninterrupted audiovisual continuity. The delivery gate is recorded in `../../current_delivery_review.json` as `PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK`.
+Independent technical and dense sampled-visual QA passed as recorded above. The user subsequently confirmed full audiovisual playback approval for all three listed deliverables on 23 September 2026. This closes the remaining checks for complete narration pronunciation, clipped/missing words, subjective pacing, the exact spoken final sentence and uninterrupted audiovisual continuity. The delivery gate is recorded in `delivery_review.json` as `PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK`.
