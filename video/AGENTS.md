@@ -9,7 +9,7 @@ This file applies to work below `video/`. Read the specialised policy named by t
 
 Do not put current-cycle approval or audit history into permanent policy files. Do not copy permanent technical specifications into cycle files; link to `PRODUCTION_SPEC.md` instead.
 
-Use real recorded story footage under the hierarchy in `PRODUCTION_SPEC.md`. Any fallback must be recorded in the active cycle's `MEDIA_AUDIT.md`. Keep source attribution in `CREDITS.md` and factual research in the cycle's `RESEARCH_PACKET.md`.
+Use real recorded story footage under the hierarchy in `PRODUCTION_SPEC.md`. Any fallback must be recorded in the active cycle's `MEDIA_AUDIT.md`. Keep source attribution in the active cycle's `CREDITS.md` and factual research in its `RESEARCH_PACKET.md`; the shared `video/CREDITS.md` only points to the active credits.
 
 Before media download, final narration, TTS or rendering, confirm that `APPROVAL.md` records user approval. A material topic, hook or factual-framing substitution returns to approval. Resolve blocking `REVIEW.md` findings before render and blocking `QA.md` findings before delivery.
 

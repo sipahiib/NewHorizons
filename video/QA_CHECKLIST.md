@@ -7,7 +7,7 @@ Confirm and record in the active `REVIEW.md`:
 - `APPROVAL.md` covers every selected topic, Reel and hook;
 - claims, dates and limitations match `RESEARCH_PACKET.md`;
 - every asset appears in `MEDIA_AUDIT.md` with provenance, rights condition, resolution and direct/contextual/fallback status;
-- main and Reel clip counts and durations match `PRODUCTION_SPEC.md`;
+- the main video's chosen still/clip counts are recorded in its media manifest, and main/Reel durations and Reel segment counts meet `PRODUCTION_SPEC.md`;
 - narration fits measured time without stretching, clipping or unexplained silence;
 - overlays are ordered, nonoverlapping, in range and readable;
 - source-to-visual correspondence and persistent limitation labels are accurate;
