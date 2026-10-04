@@ -1,0 +1,114 @@
+[
+  {
+    "scene": 0,
+    "source": "assets/motion/2026-10-04/reels/r1/pexels-6997946.mp4",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 2.3769639000937133,
+    "interpretation": "Full source resized into central region; no aspect crop. Compression/resampling differences remain."
+  },
+  {
+    "scene": 1,
+    "source": "assets/motion/2026-10-04/reels/r1/pexels-5998403-still.png",
+    "native_size": [
+      608,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      327,
+      600,
+      426,
+      760
+    ],
+    "mean_absolute_rgb_difference": 2.632454081212421,
+    "interpretation": "Full source resized into central region; no aspect crop. Compression/resampling differences remain."
+  },
+  {
+    "scene": 2,
+    "source": "assets/motion/2026-10-04/reels/r1/pexels-36656061.mp4",
+    "native_size": [
+      608,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      327,
+      600,
+      426,
+      760
+    ],
+    "mean_absolute_rgb_difference": 2.5699437855201386,
+    "interpretation": "Full source resized into central region; no aspect crop. Compression/resampling differences remain."
+  },
+  {
+    "scene": 3,
+    "source": "assets/motion/2026-10-04/reels/r1/pexels-5453568-still.png",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 2.7952043352483393,
+    "interpretation": "Full source resized into central region; no aspect crop. Compression/resampling differences remain."
+  },
+  {
+    "scene": 4,
+    "source": "assets/motion/2026-10-04/reels/r1/pexels-5998403.mp4",
+    "native_size": [
+      608,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      327,
+      600,
+      426,
+      760
+    ],
+    "mean_absolute_rgb_difference": 2.514924635532493,
+    "interpretation": "Full source resized into central region; no aspect crop. Compression/resampling differences remain."
+  },
+  {
+    "scene": 5,
+    "source": "assets/motion/2026-10-04/reels/r1/pexels-6997946-still.png",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 2.50710131198305,
+    "interpretation": "Full source resized into central region; no aspect crop. Compression/resampling differences remain."
+  },
+  {
+    "scene": 6,
+    "source": "assets/motion/2026-10-04/reels/r1/pexels-5453568.mp4",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 2.782534734954977,
+    "interpretation": "Full source resized into central region; no aspect crop. Compression/resampling differences remain."
+  }
+]

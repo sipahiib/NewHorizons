@@ -1,0 +1,51 @@
+{
+  "voice": "en-GB-RyanNeural",
+  "rate": "-2%",
+  "sections": [
+    {
+      "id": "m1_hook",
+      "target": 5,
+      "text": "Your map can show a location you never visited."
+    },
+    {
+      "id": "m1_footage",
+      "target": 7,
+      "text": "In Norway, engineers attacked navigation signals to test receivers under deliberately hostile conditions."
+    },
+    {
+      "id": "m1_teaser",
+      "target": 4,
+      "text": "And one ECG lead may reveal heart function."
+    },
+    {
+      "id": "m1_body",
+      "target": 144,
+      "text": "The exercise is called Jammertest. Each September, Norwegian authorities create controlled interference around the Arctic island of Andoya, where companies and researchers can discover how their navigation equipment fails. ESA's October second report describes the latest campaign, which took place in September. The footage marked archive shows the earlier, twenty twenty-five tests. The new photographs show this year's work.\n\nThere are different ways to mislead a receiver. Jamming overwhelms the genuine satellite signals, so a device may lose its position altogether. Spoofing supplies false signals, making a convincing location appear somewhere else. Meaconing captures genuine signals and broadcasts them again with a misleading delay or location. \n\nAnd the stakes extend beyond the blue dot on a phone. Satellite signals also provide precise time for infrastructure. Aviation, power networks and emergency services depend on reliable positioning or timing. A controlled test lets engineers compare different receivers and antennas against the same difficult conditions, instead of waiting for a failure during an actual journey.\n\nOne part of the campaign tested Galileo's future Signal Authentication Service. On September sixteenth, receivers established their position using an encrypted test signal. That milestone was already announced in September; it did not happen on October second. Signal authentication is intended to help receivers recognise legitimate signals and reject many spoofing attempts. It does not make every receiver immune to interference, and the new service is not yet protection built into every phone.\n\nESA also tracked signals from the Celeste demonstration satellites under contested conditions. Those results remain preliminary. The data still need analysis before firmer conclusions. Updated monitoring-station prototypes for EGNOS underwent further tests too. \n\nThe practical lesson is that navigation needs more than a plausible position on a screen. It needs trustworthy signals, resilient receivers and evidence from demanding tests. Jammertest brings those pieces together in a controlled field environment. The report describes progress, not a guarantee that satellite deception has been solved."
+    },
+    {
+      "id": "m2",
+      "target": 140,
+      "text": "Researchers found clues about heart function in a single ECG lead. An ECG records the heart's electrical activity. In a clinic, electrodes attached to the arms, legs and chest provide several views of that activity. These recordings help healthcare professionals investigate the rate and rhythm of the heartbeat and other heart problems. A wearable recording offers fewer views, but can be taken more often between appointments.\n\nHeart rhythm and pumping function are related questions, yet they are not identical. The left ventricle is the chamber that sends blood out to the body. Clinicians can use ultrasound imaging to examine how well it pumps. An electrical recording does not directly film that movement. The research question is whether patterns in the electrical signal can help flag changes that deserve a closer look.\n\nA study published on October second by researchers at Leiden University Medical Center tested that idea after heart attacks. It analysed historical clinical data from twenty eighteen through twenty twenty-three, including ECG recordings made at home with a smartwatch. After quality filtering, the single-lead analysis retained recordings from four hundred and sixty patients.\n\nThe strongest single-lead model used pretraining and reached an AUC of zero point eight eight three, compared with zero point eight nine seven for the full twelve-lead model. AUC describes how well a model separates groups across decision thresholds. It is not the percentage of patients correctly diagnosed. The researchers also examined waveform features that influenced the predictions.\n\nThere are important limits. The data came from one centre, and the model still needs independent prospective validation. Recording quality was a substantial issue. This was not a demonstration that an ordinary watch can replace clinical testing or improve patient outcomes.\n\nThe useful possibility is a clinical complement: accessible recordings that might help identify who needs review between visits. A promising signal is the beginning of that evidence chain. Reliable decisions still depend on validation, careful interpretation and the wider clinical picture."
+    },
+    {
+      "id": "closing",
+      "target": 10,
+      "text": "Like and subscribe for more science. That was our latest news. Stay with science, and stay tuned."
+    },
+    {
+      "id": "r1",
+      "target": 45,
+      "text": "Can AI help the next doctor understand a long hospital stay? A Stony Brook study compared discharge summaries for sixty stays lasting seven to twenty-one days. Clinician reviewers preferred the AI summaries in ninety-five percent of encounters. They found fewer omissions, but estimated harm measures did not improve significantly. The review was retrospective, from one hospital, and reviewers knew which summaries were AI generated. Patient outcomes were not tested. These results support further study of clearer handoffs, with clinicians checking the content. The study was published on October second. Follow for more science."
+    },
+    {
+      "id": "r2",
+      "target": 45,
+      "text": "A wildfire can build its own thunderstorm. Scientists in the INSPYRE campaign used aircraft and ground instruments to study fire-generated clouds over western North America. These clouds can drive dangerous winds and lift smoke high into the atmosphere. NASA's October second report describes summer fieldwork, including an August encounter over Idaho. The flights collected smoke particles, gases, and measurements of radiation. The next step is combining the measurements with satellite observations and models. Better warnings for firefighters are a goal, not a proven result. Follow for more Earth science.",
+      "insertSilence": {
+        "at": 23.85,
+        "seconds": 0.6,
+        "reason": "Natural sentence pause; corrected actual final speech gap to at most4seconds"
+      }
+    }
+  ]
+}

@@ -1,0 +1,904 @@
+{
+  "output": "build/video/2026-10-04/newhorizons.mp4",
+  "sha256": "94a668f49e8f80392835b0c97b85e1c411a8826b6f8b5585c8a67e5b7d9db578",
+  "streams": [
+    {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "mime_codec_string": "avc1.64002a",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1088,
+      "has_b_frames": 2,
+      "sample_aspect_ratio": "1:1",
+      "display_aspect_ratio": "16:9",
+      "pix_fmt": "yuv420p",
+      "level": 42,
+      "color_range": "tv",
+      "color_space": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 4,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "60/1",
+      "avg_frame_rate": "60/1",
+      "time_base": "1/15360",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 4761600,
+      "duration": "310.000000",
+      "bit_rate": "4362558",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "18600",
+      "nb_read_frames": "18600",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "encoder": "Lavc63.1.101 libx264"
+      },
+      "side_data_list": [
+        {
+          "side_data_type": "ICC Profile"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "codec_name": "aac",
+      "codec_long_name": "AAC (Advanced Audio Coding)",
+      "profile": "LC",
+      "codec_type": "audio",
+      "codec_tag_string": "mp4a",
+      "codec_tag": "0x6134706d",
+      "mime_codec_string": "mp4a.40.2",
+      "sample_fmt": "fltp",
+      "sample_rate": "48000",
+      "channels": 1,
+      "channel_layout": "mono",
+      "bits_per_sample": 0,
+      "initial_padding": 1024,
+      "id": "0x2",
+      "r_frame_rate": "0/0",
+      "avg_frame_rate": "0/0",
+      "time_base": "1/48000",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 14880000,
+      "duration": "310.000000",
+      "bit_rate": "166519",
+      "nb_frames": "14533",
+      "nb_read_frames": "14532",
+      "extradata_size": 5,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "SoundHandler"
+      }
+    }
+  ],
+  "format": {
+    "filename": "/Users/is9565/Downloads/NewHorizons/build/video/2026-10-04/newhorizons.mp4",
+    "nb_streams": 2,
+    "nb_programs": 0,
+    "nb_stream_groups": 0,
+    "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+    "format_long_name": "QuickTime / MOV",
+    "start_time": "0.000000",
+    "duration": "310.000000",
+    "size": "176001257",
+    "bit_rate": "4541967",
+    "probe_score": 100,
+    "tags": {
+      "major_brand": "isom",
+      "minor_version": "512",
+      "compatible_brands": "isomiso2avc1mp41",
+      "encoder": "Lavf63.1.101"
+    }
+  },
+  "full_file_decode": "passed",
+  "loudness_summary": "Summary:\n\n  Integrated loudness:\n    I:         -16.3 LUFS\n    Threshold: -26.5 LUFS\n\n  Loudness range:\n    LRA:         2.9 LU\n    Threshold: -37.1 LUFS\n    LRA low:   -18.6 LUFS\n    LRA high:  -15.7 LUFS\n\n  True peak:\n    Peak:       -1.4 dBFS\n[Parsed_silencedetect_1 @ 0x7ad8c1ccc0] silence_end: 310 | silence_duration: 2.224458\n[out#0/null @ 0x7ad8c1c3c0] video:0KiB audio:29062KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nsize=N/A time=00:05:10.00 bitrate=N/A speed= 479x elapsed=0:00:00.64    \n",
+  "silences_below_minus40dB_minimum_0_4s": [
+    {
+      "start": 2.533229,
+      "end": 5.237938,
+      "duration": 2.704708
+    },
+    {
+      "start": 10.928417,
+      "end": 12.253896,
+      "duration": 1.325479
+    },
+    {
+      "start": 14.985417,
+      "end": 16.256021,
+      "duration": 1.270604
+    },
+    {
+      "start": 18.142,
+      "end": 19.160812,
+      "duration": 1.018812
+    },
+    {
+      "start": 29.234792,
+      "end": 30.241,
+      "duration": 1.006208
+    },
+    {
+      "start": 35.026688,
+      "end": 36.019729,
+      "duration": 0.993042
+    },
+    {
+      "start": 39.958708,
+      "end": 40.999917,
+      "duration": 1.041208
+    },
+    {
+      "start": 43.215333,
+      "end": 44.197646,
+      "duration": 0.982312
+    },
+    {
+      "start": 46.323354,
+      "end": 47.285354,
+      "duration": 0.962
+    },
+    {
+      "start": 52.606167,
+      "end": 53.59875,
+      "duration": 0.992583
+    },
+    {
+      "start": 58.203104,
+      "end": 59.213833,
+      "duration": 1.010729
+    },
+    {
+      "start": 64.361875,
+      "end": 65.377437,
+      "duration": 1.015562
+    },
+    {
+      "start": 67.905271,
+      "end": 68.918396,
+      "duration": 1.013125
+    },
+    {
+      "start": 72.57725,
+      "end": 73.567229,
+      "duration": 0.989979
+    },
+    {
+      "start": 79.128104,
+      "end": 80.130125,
+      "duration": 1.002021
+    },
+    {
+      "start": 88.606958,
+      "end": 89.570667,
+      "duration": 0.963708
+    },
+    {
+      "start": 94.004792,
+      "end": 95.021167,
+      "duration": 1.016375
+    },
+    {
+      "start": 99.841521,
+      "end": 100.862396,
+      "duration": 1.020875
+    },
+    {
+      "start": 105.460979,
+      "end": 106.453312,
+      "duration": 0.992333
+    },
+    {
+      "start": 112.711604,
+      "end": 113.739625,
+      "duration": 1.028021
+    },
+    {
+      "start": 119.809417,
+      "end": 120.825042,
+      "duration": 1.015625
+    },
+    {
+      "start": 125.714812,
+      "end": 126.703792,
+      "duration": 0.988979
+    },
+    {
+      "start": 128.358,
+      "end": 129.3145,
+      "duration": 0.9565
+    },
+    {
+      "start": 132.367292,
+      "end": 133.352604,
+      "duration": 0.985312
+    },
+    {
+      "start": 137.465875,
+      "end": 138.447979,
+      "duration": 0.982104
+    },
+    {
+      "start": 142.621938,
+      "end": 143.641146,
+      "duration": 1.019208
+    },
+    {
+      "start": 148.416333,
+      "end": 149.395833,
+      "duration": 0.9795
+    },
+    {
+      "start": 153.137375,
+      "end": 154.147958,
+      "duration": 1.010583
+    },
+    {
+      "start": 158.785292,
+      "end": 160.226021,
+      "duration": 1.440729
+    },
+    {
+      "start": 164.092729,
+      "end": 165.078563,
+      "duration": 0.985833
+    },
+    {
+      "start": 167.920542,
+      "end": 168.864667,
+      "duration": 0.944125
+    },
+    {
+      "start": 174.315562,
+      "end": 175.261771,
+      "duration": 0.946208
+    },
+    {
+      "start": 180.955312,
+      "end": 181.962083,
+      "duration": 1.006771
+    },
+    {
+      "start": 186.774604,
+      "end": 187.789604,
+      "duration": 1.015
+    },
+    {
+      "start": 191.951292,
+      "end": 192.968812,
+      "duration": 1.017521
+    },
+    {
+      "start": 196.065583,
+      "end": 196.989812,
+      "duration": 0.924229
+    },
+    {
+      "start": 200.543042,
+      "end": 201.536875,
+      "duration": 0.993833
+    },
+    {
+      "start": 204.565979,
+      "end": 205.56325,
+      "duration": 0.997271
+    },
+    {
+      "start": 211.10975,
+      "end": 212.095062,
+      "duration": 0.985312
+    },
+    {
+      "start": 218.808896,
+      "end": 219.817833,
+      "duration": 1.008938
+    },
+    {
+      "start": 227.794333,
+      "end": 228.794646,
+      "duration": 1.000312
+    },
+    {
+      "start": 234.358167,
+      "end": 235.358062,
+      "duration": 0.999896
+    },
+    {
+      "start": 244.484125,
+      "end": 245.503312,
+      "duration": 1.019187
+    },
+    {
+      "start": 249.764771,
+      "end": 250.730083,
+      "duration": 0.965313
+    },
+    {
+      "start": 253.687208,
+      "end": 254.690958,
+      "duration": 1.00375
+    },
+    {
+      "start": 258.751104,
+      "end": 259.764979,
+      "duration": 1.013875
+    },
+    {
+      "start": 261.091083,
+      "end": 262.107937,
+      "duration": 1.016854
+    },
+    {
+      "start": 266.898687,
+      "end": 267.912792,
+      "duration": 1.014104
+    },
+    {
+      "start": 270.167438,
+      "end": 271.144104,
+      "duration": 0.976667
+    },
+    {
+      "start": 276.908354,
+      "end": 277.907708,
+      "duration": 0.999354
+    },
+    {
+      "start": 284.759437,
+      "end": 285.740146,
+      "duration": 0.980708
+    },
+    {
+      "start": 288.362646,
+      "end": 289.394583,
+      "duration": 1.031937
+    },
+    {
+      "start": 295.129437,
+      "end": 300.227354,
+      "duration": 5.097917
+    },
+    {
+      "start": 302.133479,
+      "end": 303.056312,
+      "duration": 0.922833
+    },
+    {
+      "start": 304.532708,
+      "end": 305.552208,
+      "duration": 1.0195
+    },
+    {
+      "start": 307.775542,
+      "end": 310.0,
+      "duration": 2.224458
+    }
+  ],
+  "pcm_metrics": {
+    "mono_sample_rate": 16000,
+    "samples": 4960000,
+    "peak_dbfs": -1.3552973190952566,
+    "full_scale_samples": 0,
+    "last_above_minus40dB_rms_window_end": 307.73,
+    "final_below_threshold_gap": 2.269999999999982
+  },
+  "approved_audio_envelope_correlation": {
+    "offset_seconds": 300,
+    "reference": "build/video/2026-10-04/audio/closing.mp3",
+    "correlation_at_scheduled_start": 0.998186749113067,
+    "limitation": "Waveform identity/alignment evidence, not narration comprehension or listening."
+  },
+  "frame_samples": [
+    {
+      "time": 0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-00-start-0.000.jpg",
+      "scene": 0
+    },
+    {
+      "time": 2.5,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-00-middle-2.500.jpg",
+      "scene": 0
+    },
+    {
+      "time": 4.983333333333333,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-00-end-4.983.jpg",
+      "scene": 0
+    },
+    {
+      "time": 5,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-01-start-5.000.jpg",
+      "scene": 1
+    },
+    {
+      "time": 8.5,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-01-middle-8.500.jpg",
+      "scene": 1
+    },
+    {
+      "time": 11.983333333333333,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-01-end-11.983.jpg",
+      "scene": 1
+    },
+    {
+      "time": 12,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-02-start-12.000.jpg",
+      "scene": 2
+    },
+    {
+      "time": 14.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-02-middle-14.000.jpg",
+      "scene": 2
+    },
+    {
+      "time": 15.983333333333333,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-02-end-15.983.jpg",
+      "scene": 2
+    },
+    {
+      "time": 16,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-03-start-16.000.jpg",
+      "scene": 3
+    },
+    {
+      "time": 23.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-03-middle-23.000.jpg",
+      "scene": 3
+    },
+    {
+      "time": 29.983333333333334,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-03-end-29.983.jpg",
+      "scene": 3
+    },
+    {
+      "time": 30,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-04-start-30.000.jpg",
+      "scene": 4
+    },
+    {
+      "time": 35.5,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-04-middle-35.500.jpg",
+      "scene": 4
+    },
+    {
+      "time": 40.983333333333334,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-04-end-40.983.jpg",
+      "scene": 4
+    },
+    {
+      "time": 41,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-05-start-41.000.jpg",
+      "scene": 5
+    },
+    {
+      "time": 48.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-05-middle-48.000.jpg",
+      "scene": 5
+    },
+    {
+      "time": 54.983333333333334,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-05-end-54.983.jpg",
+      "scene": 5
+    },
+    {
+      "time": 55,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-06-start-55.000.jpg",
+      "scene": 6
+    },
+    {
+      "time": 62.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-06-middle-62.000.jpg",
+      "scene": 6
+    },
+    {
+      "time": 68.98333333333333,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-06-end-68.983.jpg",
+      "scene": 6
+    },
+    {
+      "time": 69,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-07-start-69.000.jpg",
+      "scene": 7
+    },
+    {
+      "time": 76.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-07-middle-76.000.jpg",
+      "scene": 7
+    },
+    {
+      "time": 82.98333333333333,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-07-end-82.983.jpg",
+      "scene": 7
+    },
+    {
+      "time": 83,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-08-start-83.000.jpg",
+      "scene": 8
+    },
+    {
+      "time": 90.5,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-08-middle-90.500.jpg",
+      "scene": 8
+    },
+    {
+      "time": 97.98333333333333,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-08-end-97.983.jpg",
+      "scene": 8
+    },
+    {
+      "time": 98,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-09-start-98.000.jpg",
+      "scene": 9
+    },
+    {
+      "time": 105.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-09-middle-105.000.jpg",
+      "scene": 9
+    },
+    {
+      "time": 111.98333333333333,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-09-end-111.983.jpg",
+      "scene": 9
+    },
+    {
+      "time": 112,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-10-start-112.000.jpg",
+      "scene": 10
+    },
+    {
+      "time": 116.5,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-10-middle-116.500.jpg",
+      "scene": 10
+    },
+    {
+      "time": 120.98333333333333,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-10-end-120.983.jpg",
+      "scene": 10
+    },
+    {
+      "time": 121,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-11-start-121.000.jpg",
+      "scene": 11
+    },
+    {
+      "time": 128.5,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-11-middle-128.500.jpg",
+      "scene": 11
+    },
+    {
+      "time": 135.98333333333332,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-11-end-135.983.jpg",
+      "scene": 11
+    },
+    {
+      "time": 136,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-12-start-136.000.jpg",
+      "scene": 12
+    },
+    {
+      "time": 143.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-12-middle-143.000.jpg",
+      "scene": 12
+    },
+    {
+      "time": 149.98333333333332,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-12-end-149.983.jpg",
+      "scene": 12
+    },
+    {
+      "time": 150,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-13-start-150.000.jpg",
+      "scene": 13
+    },
+    {
+      "time": 155.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-13-middle-155.000.jpg",
+      "scene": 13
+    },
+    {
+      "time": 159.98333333333332,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-13-end-159.983.jpg",
+      "scene": 13
+    },
+    {
+      "time": 160,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-14-start-160.000.jpg",
+      "scene": 14
+    },
+    {
+      "time": 166.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-14-middle-166.000.jpg",
+      "scene": 14
+    },
+    {
+      "time": 171.98333333333332,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-14-end-171.983.jpg",
+      "scene": 14
+    },
+    {
+      "time": 172,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-15-start-172.000.jpg",
+      "scene": 15
+    },
+    {
+      "time": 177.5,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-15-middle-177.500.jpg",
+      "scene": 15
+    },
+    {
+      "time": 182.98333333333332,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-15-end-182.983.jpg",
+      "scene": 15
+    },
+    {
+      "time": 183,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-16-start-183.000.jpg",
+      "scene": 16
+    },
+    {
+      "time": 190.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-16-middle-190.000.jpg",
+      "scene": 16
+    },
+    {
+      "time": 196.98333333333332,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-16-end-196.983.jpg",
+      "scene": 16
+    },
+    {
+      "time": 197,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-17-start-197.000.jpg",
+      "scene": 17
+    },
+    {
+      "time": 205.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-17-middle-205.000.jpg",
+      "scene": 17
+    },
+    {
+      "time": 212.98333333333332,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-17-end-212.983.jpg",
+      "scene": 17
+    },
+    {
+      "time": 213,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-18-start-213.000.jpg",
+      "scene": 18
+    },
+    {
+      "time": 220.5,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-18-middle-220.500.jpg",
+      "scene": 18
+    },
+    {
+      "time": 227.98333333333332,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-18-end-227.983.jpg",
+      "scene": 18
+    },
+    {
+      "time": 228,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-19-start-228.000.jpg",
+      "scene": 19
+    },
+    {
+      "time": 235.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-19-middle-235.000.jpg",
+      "scene": 19
+    },
+    {
+      "time": 241.98333333333332,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-19-end-241.983.jpg",
+      "scene": 19
+    },
+    {
+      "time": 242,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-20-start-242.000.jpg",
+      "scene": 20
+    },
+    {
+      "time": 250.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-20-middle-250.000.jpg",
+      "scene": 20
+    },
+    {
+      "time": 257.98333333333335,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-20-end-257.983.jpg",
+      "scene": 20
+    },
+    {
+      "time": 258,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-21-start-258.000.jpg",
+      "scene": 21
+    },
+    {
+      "time": 265.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-21-middle-265.000.jpg",
+      "scene": 21
+    },
+    {
+      "time": 271.98333333333335,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-21-end-271.983.jpg",
+      "scene": 21
+    },
+    {
+      "time": 272,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-22-start-272.000.jpg",
+      "scene": 22
+    },
+    {
+      "time": 279.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-22-middle-279.000.jpg",
+      "scene": 22
+    },
+    {
+      "time": 285.98333333333335,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-22-end-285.983.jpg",
+      "scene": 22
+    },
+    {
+      "time": 286,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-23-start-286.000.jpg",
+      "scene": 23
+    },
+    {
+      "time": 293.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-23-middle-293.000.jpg",
+      "scene": 23
+    },
+    {
+      "time": 299.98333333333335,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-23-end-299.983.jpg",
+      "scene": 23
+    },
+    {
+      "time": 300,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-24-start-300.000.jpg",
+      "scene": 24
+    },
+    {
+      "time": 305.0,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-24-middle-305.000.jpg",
+      "scene": 24
+    },
+    {
+      "time": 309.98333333333335,
+      "file": "build/video/2026-10-04/verification/qa-main/scene-24-end-309.983.jpg",
+      "scene": 24
+    },
+    {
+      "time": 0,
+      "file": "build/video/2026-10-04/verification/qa-main/boundary-00-0.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 4.983333,
+      "file": "build/video/2026-10-04/verification/qa-main/boundary-01-4.983.jpg",
+      "scene": null
+    },
+    {
+      "time": 5,
+      "file": "build/video/2026-10-04/verification/qa-main/boundary-02-5.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 11.983333,
+      "file": "build/video/2026-10-04/verification/qa-main/boundary-03-11.983.jpg",
+      "scene": null
+    },
+    {
+      "time": 12,
+      "file": "build/video/2026-10-04/verification/qa-main/boundary-04-12.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 15.983333,
+      "file": "build/video/2026-10-04/verification/qa-main/boundary-05-15.983.jpg",
+      "scene": null
+    },
+    {
+      "time": 16,
+      "file": "build/video/2026-10-04/verification/qa-main/boundary-06-16.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 159.983333,
+      "file": "build/video/2026-10-04/verification/qa-main/boundary-07-159.983.jpg",
+      "scene": null
+    },
+    {
+      "time": 160,
+      "file": "build/video/2026-10-04/verification/qa-main/boundary-08-160.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 299.983333,
+      "file": "build/video/2026-10-04/verification/qa-main/boundary-09-299.983.jpg",
+      "scene": null
+    },
+    {
+      "time": 300,
+      "file": "build/video/2026-10-04/verification/qa-main/boundary-10-300.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 300.5,
+      "file": "build/video/2026-10-04/verification/qa-main/boundary-11-300.500.jpg",
+      "scene": null
+    },
+    {
+      "time": 302,
+      "file": "build/video/2026-10-04/verification/qa-main/boundary-12-302.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 305,
+      "file": "build/video/2026-10-04/verification/qa-main/boundary-13-305.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 308,
+      "file": "build/video/2026-10-04/verification/qa-main/boundary-14-308.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 309.983333,
+      "file": "build/video/2026-10-04/verification/qa-main/boundary-15-309.983.jpg",
+      "scene": null
+    }
+  ],
+  "evidence_folder": "build/video/2026-10-04/verification/qa-main"
+}

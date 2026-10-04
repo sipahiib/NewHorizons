@@ -1,0 +1,83 @@
+{
+  "scope": "All pre-existing video JSON manifests/registries, excluding the active cycle; source-ID and SHA-256 comparison. Current Reel stills are derived from current new footage, not older media.",
+  "checks": [
+    {
+      "file": "assets/motion/2026-10-04/reels/r1/pexels-36656061.mp4",
+      "sourceId": "36656061",
+      "priorSourceMatch": false,
+      "priorHashMatch": false
+    },
+    {
+      "file": "assets/motion/2026-10-04/reels/r1/pexels-5453568-still.png",
+      "sourceId": "5453568",
+      "priorSourceMatch": false,
+      "priorHashMatch": false
+    },
+    {
+      "file": "assets/motion/2026-10-04/reels/r1/pexels-5453568.mp4",
+      "sourceId": "5453568",
+      "priorSourceMatch": false,
+      "priorHashMatch": false
+    },
+    {
+      "file": "assets/motion/2026-10-04/reels/r1/pexels-5998403-still.png",
+      "sourceId": "5998403",
+      "priorSourceMatch": false,
+      "priorHashMatch": false
+    },
+    {
+      "file": "assets/motion/2026-10-04/reels/r1/pexels-5998403.mp4",
+      "sourceId": "5998403",
+      "priorSourceMatch": false,
+      "priorHashMatch": false
+    },
+    {
+      "file": "assets/motion/2026-10-04/reels/r1/pexels-6997946-still.png",
+      "sourceId": "6997946",
+      "priorSourceMatch": false,
+      "priorHashMatch": false
+    },
+    {
+      "file": "assets/motion/2026-10-04/reels/r1/pexels-6997946.mp4",
+      "sourceId": "6997946",
+      "priorSourceMatch": false,
+      "priorHashMatch": false
+    },
+    {
+      "file": "assets/motion/2026-10-04/reels/r2/afrc2026-0144-226orig-er2-inst.jpg",
+      "sourceId": "afrc2026-0144-226orig-er2-inst.jpg",
+      "priorSourceMatch": false,
+      "priorHashMatch": false
+    },
+    {
+      "file": "assets/motion/2026-10-04/reels/r2/inspyre-light-walk.mp4",
+      "sourceId": "inspyre-light-walk.mp4",
+      "priorSourceMatch": false,
+      "priorHashMatch": false
+    },
+    {
+      "file": "assets/motion/2026-10-04/reels/r2/inspyre-news-image-7-28-26-4.jpeg",
+      "sourceId": "inspyre-news-image-7-28-26-4.jpeg",
+      "priorSourceMatch": false,
+      "priorHashMatch": false
+    },
+    {
+      "file": "assets/motion/2026-10-04/reels/r2/inspyre-preview-loiacono-0172.jpg",
+      "sourceId": "inspyre-preview-loiacono-0172.jpg",
+      "priorSourceMatch": false,
+      "priorHashMatch": false
+    },
+    {
+      "file": "assets/motion/2026-10-04/reels/r2/inspyre-preview-loiacono-9318.jpg",
+      "sourceId": "inspyre-preview-loiacono-9318.jpg",
+      "priorSourceMatch": false,
+      "priorHashMatch": false
+    },
+    {
+      "file": "assets/motion/2026-10-04/reels/r2/inspyre-pyrocb-diagram.png",
+      "sourceId": "inspyre-pyrocb-diagram.png",
+      "priorSourceMatch": false,
+      "priorHashMatch": false
+    }
+  ]
+}

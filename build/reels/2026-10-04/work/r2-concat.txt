@@ -1,0 +1,7 @@
+file '/Users/is9565/Downloads/NewHorizons/build/reels/2026-10-04/work/r2-00.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/2026-10-04/work/r2-01.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/2026-10-04/work/r2-02.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/2026-10-04/work/r2-03.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/2026-10-04/work/r2-04.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/2026-10-04/work/r2-05.mp4'
+file '/Users/is9565/Downloads/NewHorizons/build/reels/2026-10-04/work/r2-06.mp4'

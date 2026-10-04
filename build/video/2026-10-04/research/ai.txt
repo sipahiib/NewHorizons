@@ -1,0 +1,1007 @@
+npj | digital medicine
+Article
+Published in partnership with Seoul National University Bundang Hospital
+Article in Press
+https://doi.org/10.1038/s41746-026-03320-y
+Clinician-centered evaluation of large
+language model-generated discharge
+summaries for longer hospitalizations
+Check for updates
+Tyler Osborne1, Tauhid Mahmud2, Xia Zheng3,4, Sai Jampala1, Sadia Abbasi5, Stephanie Hong5,
+Kimberly Kranz5, Susan Lee5, Patricia Ng5, Kerim Odekon5, Lindsey Schachter5, Robert Sexton5,
+Tracey Spinnato5, Mathew Tharakan2,5, Zhi Wu5, Fusheng Wang
+1,2
+& Rachel Wong2,5
+Although large language models (LLMs) have shown promise for discharge summary generation, their
+performance in longer hospitalizations remains less well studied. Prior evaluations of LLM-generated
+discharge summaries have largely involved shorter stays and have rarely examined receiving-clinician
+priorities or incidental ﬁnding reporting. We compared LLM-generated and human-authored
+discharge summaries for 60 Internal Medicine hospitalizations lasting 7 to 21 days, with paired
+assessment by hospitalists and primary care physicians (PCPs). Clinician reviewers preferred LLM-
+generated summaries for 95% of encounters and rated them higher for quality, readability, factuality
+and completeness. PCPs rated LLM-generated summaries as better for understanding and
+communicating hospital care to patients and providing follow-up care. LLM-generated summaries
+had fewer clinician-reviewer annotations of either factual inaccuracies or clinically relevant omissions,
+primarily due to fewer omissions, with no signiﬁcant differences in estimated harm potential or
+likelihood compared with human-authored summaries. PCPs annotated more omissions and
+assigned higher likelihood of harm than hospitalists. Among 31 LLM-identiﬁed radiology incidental
+ﬁndings, 93.5% were rated factually correct and 87.1% appropriate for reporting. In this retrospective
+clinician evaluation, LLM-generated summaries for longer, complex hospitalizations were rated more
+favorably and had fewer annotated omissions than human-authored summaries, with no signiﬁcant
+differences in estimated harm potential or likelihood.
+Hospital discharge summariesare a critical component of safe transitions of
+care because they communicate the hospitalization course, treatment
+decisions, medication changes, unresolved issues, and follow-up needs to
+outpatient clinicians responsible for ongoing care. High-quality discharge
+summaries are important for patient safety and continuity of care, as
+incomplete or unclear documentation can contribute to medication errors,
+missed follow-up, and fragmented care after discharge1–4. However, writing
+effective discharge summaries is burdensome, particularly for longer hos-
+pitalizations, where clinicians must synthesize extensive and often complex
+clinical information in a concise transition-of-care document5,6.
+Evidence on the use of large language models (LLMs) for discharge
+summary documentation is growing rapidly, with multiple retrospective
+studies demonstrating that LLM-generated summaries achieve comparable
+or better overall quality to physician-written summaries. In a prior study
+using data from 2–5-day hospitalizations, LLM-generated summaries sig-
+niﬁcantly outperformed human-written summaries in quality and read-
+ability/conciseness, with comparable performance in factuality and
+completeness7. Williams et al. found that LLM-generated summaries for
+3–6-day hospitalizations outperformed physicians on conciseness and
+coherence, with no signiﬁcant difference in overall quality8. Mehri et al.
+found no difference in total quality scores between LLM-generated and
+human-authored discharge summaries9 and Challener et al. found that
+LLM-generated summaries outperformed clinicians across nine quality
+domains, with the greatest advantage in comprehensiveness10. A recent
+1Department of Computer Science, Stony Brook University, Stony Brook, NY, USA. 2Stony Brook University Department of Biomedical Informatics, Stony Brook,
+NY, USA. 3School of Communication and Journalism, Stony Brook University, Stony Brook, NY, USA. 4The Alan Alda Center for Communicating Science, Stony
+Brook, NY, USA. 5Department of Internal Medicine, Stony Brook Medicine, Stony Brook, NY, USA.
+e-mail: fusheng.wang@stonybrook.edu;
+rachel.wong@stonybrookmedicine.edu
+npj Digital Medicine
+Article in Press
+1234567890():,;
+1234567890():,;
+
+prospective study by Grolleau et al. (2026), which incorporated an agentic
+LLM workﬂow into hospital course summarization at a medical center,
+provides even stronger support for the real-world use of LLM-generated
+discharge summaries. They found that physicians incorporated LLM-
+generated content into 57% of their ﬁnal discharge notes, and that among
+feedback collected on 100 summaries, 88% were rated as having no harm
+potential. Importantly, physician burnout scores decreased despite insig-
+niﬁcant time savings, suggesting that LLMs may reduce provider burden
+through cognitive ofﬂoading11.
+However, important gaps remain in the current literature on LLM-
+generated discharge summaries. First, prior studies did not stratify by
+hospital length of stay9,11, or largely focused on shorter hospitalizations
+between 2 and 8 days7,10,12,13, likely because of the substantial effort required
+for manual chart review and the technical challenges posed by LLM context
+windowlimitations.Longerhospitalizationsrepresentaparticularchallenge
+because they often generate large volumes of fragmented, repetitive, and
+clinically complex documentation, making discharge summarization sub-
+stantially more burdensome for clinicians than shorter admissions11.
+However, these richer longitudinal records may also provide LLMs with
+more contextual information to generate higher-quality summaries. Clin-
+icians may therefore derive the greatest beneﬁt from systems capable of
+maintaining summary quality despite increasing documentation burden.
+Addressing this challenge also requires technical approaches that enable
+processing of electronic health records (EHRs) extending beyond current
+model context window limitations.
+Second, although prior studies have shown that LLM-generated dis-
+charge summaries can achieve quality and readability comparable to or
+better than human-authored summaries7,10, there is limited work on how
+these summaries are perceived by different stakeholders in the transition of
+care. Only one study stratiﬁed evaluations by reviewer type, and they found
+that primary care physicians (PCPs) and nursing home physicians rated
+LLM-generated summaries as signiﬁcantly more concise, whereas hospi-
+talists did not demonstrate the same preference12. More broadly, prior lit-
+erature demonstrates important differences between hospitalist and PCP
+priorities for discharge summaries that are highly relevant to LLM design.
+PCPs consistently identify diagnoses, medication changes, pending tests,
+and follow-up plans as critical for outpatient care, yet these elements are
+frequently incomplete or missing from discharge summaries in routine
+practice2,14. Chatterton et al. found that PCPs prefer concise summaries
+focused on next steps, including clearly ﬂagged incidental ﬁndings, explicit
+rationale for medication changes, and speciﬁc follow-up instructions, while
+excessive length was a source of frustration15. Although inpatient and out-
+patient clinicians generally agree on the core components of discharge
+summaries, studies suggest that hospitalists tend to prioritize detailed
+descriptions of the hospitalization whereas PCPs place higher priority on
+actionable follow-up information such as discharge medications16. Toge-
+ther, these ﬁndings suggest that LLM-generated discharge summaries may
+beneﬁt from prompting strategies speciﬁcally designed around PCP
+workﬂow needs, such as formatting around action items and explicit
+highlighting of medication results, pending results and incidental ﬁndings.
+Third, prior work has not evaluated LLM-based extraction of inci-
+dental ﬁndings from radiology reports in the context of discharge summary
+generation, which is important given the risk of missed follow-up and
+patient harm. Incidental ﬁndings are common and frequently lack appro-
+priate follow-up,yet determiningwhich ﬁndings are clinicallyactionablefor
+outpatient care requires nuanced clinical judgment17,18. Although prior
+studies have shown that LLMs can identify incidental ﬁndings from radi-
+ology reports with reasonable accuracy19–21, it remains unclear how well
+these systems perform when integrated into discharge summaries, where
+excessive reporting may also contribute to information overload for out-
+patient clinicians.
+To address these gaps, we conducted a clinician-centered evaluation of
+LLM-generated
+discharge
+summaries
+for
+longer
+hospitalizations
+(7–21 days) and compared them with human-authored summaries for
+overall performance and clinician-annotated errors. We developed a
+scalable summarization pipeline capable of processing EHR documentsthat
+exceed current LLM context-window limits and incorporated a workﬂow
+for identifying and reporting radiology incidental ﬁndings. To assess
+stakeholder-speciﬁc perspectives, we designed prompts around PCP
+informational priorities and engaged both hospitalists and PCPs in role-
+speciﬁc and workﬂow-aligned evaluations. By combining technical inno-
+vation with stakeholder-centered evaluation, this study provides new evi-
+dence on the clinical utility, safety, and workﬂow implications of LLM-
+generated discharge summaries for supporting transitions of care.
+Results
+Of the 400 Internal Medicine inpatient encounters extracted, 385 met
+inclusion criteria; 42% (162/385) were female and ages ranged from 19 to
+101 years (mean 72, SD ± 16). A random sample of 60 encounters was
+selected, stratiﬁed to match the length of stay distribution of all the
+encounters. 370 of the original 654 note types were retained as LLM inputs,
+yielding an average reduction of 55% in EHR text volume per encounter
+(calculated overall and averaged across encounters, not by note type). The
+most common note types retained after this ﬁltering were progress notes.
+Length of stay ranged from 7 to 21 days along the distribution shown in
+Supplementary Table 5. Length-of-stay values over 14 were intentionally
+oversampled to better represent longer stays in the evaluation.
+Performance and error characteristics of LLM-generated and
+human-authored summaries
+For most encounters (57/60, 95%), the physician reviewers preferred the
+LLM-generated summary to the human-authored summary. For the
+remaining 5% (3/60 encounters), the human-authored summary was pre-
+ferred, and the “no preference” option was never selected. The mean scores
+on the physician reviewer surveys were higher for LLM-generated than
+human-authored discharge summaries across all metrics: quality (mean
+[SD] 4.71 [0.47] vs 3.16 [1.08]; p = 4.28e-6), readability (4.66 [0.56] vs 3.39
+[1.04], p = 1.93e-4), factuality (4.62 [0.62] vs 3.73 [0.85], p = 1.09e-5), and
+completeness (4.69 [0.53] vs 3.42 [1.11], p = 2.92e-5). PCP reviewers rated
+LLM-generated summaries as easier to understand than human-authored
+summaries (4.75 [0.44] vs 3.20 [1.12], p = 0.009), easier to communicate to
+patients and caregivers (4.75 [0.47] vs 3.27 [1.12], p = 0.011), and easier to
+use for providing follow-up care (4.68 [0.57] vs 3.20 [1.19], p = 0.013) than
+the human-authored summaries. The mean Likert scores, or the average
+score for each question, for physician reviewer survey questions are shown
+in Table 1.
+Physician reviewer ratings were more aligned for LLM-generated
+summaries than for human-authored summaries. The mean absolute
+deviation in Likert scores for the LLM-generated summaries was less than
+half that of the human-authored summaries (0.49 vs 1.07, p = 0.001).
+Similarly, the exact match percentage, or proportion of paired survey
+responseswherebothreviewersassignedthesameLikertscore,fortheLLM-
+generated summaries was more than double that of the human-authored
+summaries (57% vs 27%), and only 4% of the paired LLM-generated
+summary ratings had a difference of more than 1 point, versus 27% for the
+human-authored summaries.
+Across 60 encounters containing 138 error annotations (47 inaccura-
+cies and 91 omissions), there were fewer annotated errors per LLM-
+generated summary than per human-authored summary (mean count [SD]
+0.42 [0.98] vs 0.73 [1.34], p = 0.011). Mean potential and likelihood of harm
+score distributions between LLM-generated and human-authored sum-
+maries were similar (1.46 [1.84] vs 1.73 [1.89], p = 0.380 for harm potential;
+2.30 [2.51] vs 2.11 [2.52], p = 0.648 for harm likelihood). Within error
+categories, there was a lower rate of omissions with LLM-generated vs.
+human-authored summaries, but no difference in the rate of inaccuracies
+(0.26 [0.72] vs. 0.5 [1.0], p = 0.004 for omissions; 0.16 [0.54] vs 0.23 [0.72],
+p = 0.45 for inaccuracies). Figure 1 shows the annotated error counts and
+distributions of harm scores for both human-authored and LLM-generated
+discharge summaries.
+https://doi.org/10.1038/s41746-026-03320-y
+Article
+npj Digital Medicine
+Article in Press
+
+For both human-authored and LLM-generated summaries, length of
+staywasnotsigniﬁcantlycorrelated withmeanLikertscore (averaged across
+the four questions answered by both hospitalists and PCPs) for either
+summary type (Spearman rho = 0.027, p = 0.837 for human-authored
+summaries;0.138,p = 0.292forLLM-generatedsummaries).Figure2shows
+the relationship between mean survey ratings and length of stay for both
+human-authored and LLM-generated discharge summaries.
+Clinician perspectives on summary quality and usability
+Themesidentiﬁedfromthedebrieﬁngsessions areshowninSupplementary
+Table 4. During the debrieﬁng sessions, physician reviewers shared their
+insights comparing AI (LLM)-generated and human-authored summaries.
+Qualitative data concurred with the quantitative results. Speciﬁcally, PCP
+and hospitalists mentioned the following as main reasons underlying a
+preference for LLM-generated summaries: reduction of cognitive burden,
+higher consistency of summary qualities, and clearer presentation of critical
+information such as treatment rationale and unresolved follow-up issues.
+Most physicians found LLM-generated summaries lightened their cognitive
+burden in reading discharge summaries. One PCP noted that “AI sum-
+maries were just, obviously, I felt more understandable, more succinct,
+betterorganized.Ittoldthestory.Itwaseasiertoreadratherthanjustkindof
+piecing through it and trying to understand.” Whereas for human-authored
+discharges,physicianssometimes“spendlikeanhourortwo…scouringthe
+chart, trying to ﬁgure out what happened … and can’t even ﬁgure out what
+happened”.
+Physician reviewers noted consistency in the quality of LLM-generated
+summaries.OnePCPmentionedthatforhuman-authoredsummaries,they
+are “physician-dependent” such that “some were better than others…some
+were quite detailed while others were just maybe three paragraphs. For
+LLM-generated summaries, they were “more uniform…more under-
+standable, more succinct, better organized.” Another hospitalist concurred
+with the PCP by noting that “[the main difference] is the inconsistency
+between physicians… [for human-authored summaries] there can be
+redundancy… there are so many things that are omitted that are impor-
+tant…Whereas the AI summaries are concise and there was no
+redundancy”.
+Another reason for physician reviewers’ high ratings for LLM-
+generated summaries concerned the clarity of critical health information.
+Physician reviewers mentioned that treatment rationale was key informa-
+tion that they looked for in the discharge summaries. One PCP mentioned
+an instance where the LLM-generated summary included treatment ratio-
+nale, whereas the corresponding human-generated summary lacked this
+information. Physicians also mentioned unresolved follow-up issues as key
+dischargesummaryinformation.OnehospitalistnotedthatLLM-generated
+summaries did a better job presenting information regarding unresolved
+follow-up issues: “what I loved [about LLM-generated summaries], is that
+anything that was still pending was acknowledged and had a comment on
+who is appropriate to follow up with [for] these results…that is something
+that was essentially not found in any of the human-written summaries”.
+Fig. 1 | Heat map of physician reviewer-annotated
+error counts and harm ratings by summary type.
+Each cell counts error annotations with the corre-
+sponding potential-severity and harm-likelihood
+ratings on the 0–7 scales.
+Table 1 | Mean survey results of physician reviewer ratings for human-authored vs. LLM-generated discharge summaries,
+based on a 1-5 Likert rating scale
+Question (n)
+Evaluators
+Human-authored summary
+mean Likert score
+LLM-generated summary
+mean Likert score
+Mean score difference
+between LLM-generated & human-
+authored summaries
+P-value
+Overall quality (n = 120)
+Hospitalists, PCPs
+3.16
+4.71
+1.55
+4.28E-6
+Concise/readable
+(n = 120)
+Hospitalists, PCPs
+3.39
+4.66
+1.27
+1.93E-4
+Factuality
+(n = 120)
+Hospitalists, PCPs
+3.73
+4.62
+0.89
+1.09E-5
+Completeness
+(n = 120)
+Hospitalists, PCPs
+3.42
+4.69
+1.27
+2.92E-5
+Easy to understand
+(n = 60)
+PCPs
+3.20
+4.75
+1.55
+0.009
+Easy to verbalize
+(n = 60)
+PCPs
+3.27
+4.75
+1.48
+0.011
+Easy to follow up
+(n = 60)
+PCPs
+3.20
+4.68
+1.48
+0.013
+https://doi.org/10.1038/s41746-026-03320-y
+Article
+npj Digital Medicine
+Article in Press
+
+Provider-speciﬁc differences in discharge summary evaluation
+The difference in scores between LLM-generated and human-authored
+summaries by provider type and survey question is shown in Fig. 3. The
+mean score differences were higher for PCPs than hospitalists for read-
+ability/conciseness and completeness (mean [SD] 1.48 [1.28] vs 1.05 [1.14],
+p = 0.047 for readability/conciseness; 1.47 [1.38] vs 1.07 [0.97], p = 0.044 for
+completeness; Supplementary Table 6). Between providers, mean harm
+scoredistributionsweresimilarforharmpotential(mean[SD]1.65[1.83]vs
+1.58 [2.02], p = 0.675), but PCPs assigned a higher likelihood of harm than
+hospitalists (2.66 [2.51] vs 0.83 [1.98], p = 5.33e-4). PCPs and hospitalists
+annotated similar counts of inaccuracies per summary (mean [SD] 0.40
+[0.827] vs 0.38 [1.03], p = 0.664), but PCPs annotated more omissions than
+hospitalists (1.3 [1.84] vs 0.22 [0.585], p = 1.16e-5). Overall, hospitalists and
+PCPs annotated similar numbers of inaccuracies (49% vs. 51%), but PCPs
+annotated more omissions (86% vs. 14%).
+Provider perspectives on post-discharge risk and clinical
+workﬂows
+To better understand the differences in ratings between PCPs and hospi-
+talists, we probed physician reviewers’ own interpretations during the
+debrieﬁng sessions. PCP reviewers clearly attributed higher harm likelihood
+scores to their long-term experience and view of patients. They explained
+that the reason why PCPs rated harm likelihood much higher was that they
+had experienced and had to deal with many medical complications after
+discharge. One PCP shared that “… because we’ve experienced, you know,
+somebody sent home on 2 anticoagulants…blood thinners…excessive
+psychiatric medications, too much diuretic. We see what happens. And
+often we’re the ones that have to deal with the complications.” There were
+also differences noted in risk tolerance between inpatient and outpatient
+care settings. One hospitalist noted that “(PCPs) throw the dice every day…
+So they probably have seen a lot more stuff than I’ve seen… So, like, they’ve
+seen a lot more of, like, bad stuff in non-controlled settings.”
+Differences in provider workﬂows also emerged as an important
+theme. For PCPs, they described their workﬂow in reviewing discharge
+summaries for transition of care and the need to request records and review
+details within individual EHR notes when discharge summaries were
+insufﬁcient. One PCP shared that “I read the discharge summary, the
+medication reconciliation in there, and then I more often than not don’t
+trustitandgobackandIlookatvitalsigns,labs,microandimagingfromthe
+hospitalization, go over it myself.” From the hospitalist's perspective, the
+focus was on reviewing and synthesizing historically important information
+fromtheEHR.Asahospitalistnoted,“IknowItookoverapatientoncewho
+had been in the hospital for over 3 months without a good hospital course.
+And it took me 2 h to go through that chart, just to generate a discharge
+summary.”
+Evaluation of incidental ﬁnding identiﬁcation
+There were 31 LLM-identiﬁed incidental ﬁndings from radiology reports in
+the LLM workﬂow. Physician reviewers rated 93.5% of the ﬁndings as
+Fig. 3 | Difference in LLM-generated vs. human-
+authored survey scores by provider type and sur-
+vey question (n = 120). Outliers are shown as
+individual points but excluded from mean, IQR and
+range calculations.
+Fig. 2 | Scatterplot comparing mean survey ratings
+to length of stay for both human-authored and
+LLM-generated discharge summaries (n = 60).
+Individual values of n above each data point indicate
+the number of encounters available to calculate the
+average.
+https://doi.org/10.1038/s41746-026-03320-y
+Article
+npj Digital Medicine
+Article in Press
+
+factually correct and 87.1% appropriate to be reported as an incidental
+ﬁnding on the discharge summary (Supplementary Table 7).
+Some notable differences in perspectives on incidental ﬁnding
+reporting emerged during debrieﬁng sessions among PCPs and hospitalists.
+Several hospitalist reviewers expressed their favor for a broader inclusion of
+incidental ﬁndings. One noted that “As a hospitalist, I am covering my own
+bases, right? So I’m calling out everything (that could be an incidental
+ﬁnding), and then I let (the PCP) decide which ones he wants to follow
+or not.”
+Discussion
+LLM-Generated Summaries Improve Quality and Reduce Cognitive Bur-
+den. In this study of patients with hospitalizations between 7 and 21 days,
+our results suggest that LLM-generated discharge summaries outperformed
+human-authored summaries in producing more understandable and
+actionable handoffs without introducing substantial errors. Across evalua-
+tions by both hospitalists and PCPs, LLM-generated summaries received
+higher ratings for overall quality, readability/conciseness, factuality, and
+completeness, and physicians indicated a preference for the LLM-generated
+summary in 95% (57/60) of encounters. Importantly, PCPs, the intended
+recipients of discharge summaries for transition-of-care management, rated
+LLM-generated summaries higher for ease of understanding and verbaliz-
+ing the major aspects of the hospital course to patients, and for supporting
+follow-up care. Feedback from the debrieﬁng sessions suggests that these
+differences were meaningful because LLM-generated summaries reduced
+the cognitive burden of reconstructing chronological events, improved the
+consistency in quality across discharge summaries, highlighted rationale for
+treatment changes, and improved identiﬁcation of unresolved issues
+requiring follow-up. These ﬁndings build on prior studies demonstrating
+that LLM-generated discharge summaries achieve quality comparable to or
+better than physician-authored summaries by showing that these beneﬁts
+extend to longer, more clinically complex hospitalizations. Furthermore,
+our qualitative ﬁndings complement the prospective work of Grolleau et al.
+by suggesting that reductions in cognitive burden may represent an
+important mechanism through which LLM-generated summaries improve
+clinician experience, even when time savings are modest11.
+Safety and Error Characteristics of LLM-Generated Summaries.
+Analysisof physician-annotatederrors demonstrated that human-authored
+summaries contained more annotated errors than LLM-generated sum-
+maries, with omissions representing the most common type in both groups.
+Annotated errors in human-authored summaries more often involved
+omission of clinically important details related to hospital management and
+transition-of-care
+planning,
+including
+treatments,
+medication
+dis-
+continuation plans, relevant consultations and follow-up recommenda-
+tions. In contrast, physician-annotated errors in LLM-generated summaries
+were generally narrower in scope and more commonly involved isolated
+omissions of medication details, follow-up timing, or contextual informa-
+tion such as relevant comorbidities prior to hospitalization. Importantly,
+there was no difference in the potential severity or likelihood of harm
+between annotated errors in LLM-generated compared to human-authored
+summaries. These reviewer annotations suggest that while LLM-generated
+summaries are not error-free and require physician oversight, reviewers did
+notidentifymoreclinicallymeaningfulomissionsorinaccuraciesthanthose
+that commonly occur in human-authored discharge summaries.
+LLM Performance for Long and Clinically Complex Hospitalizations.
+The stability of ﬁndings across 7- to 21-day hospitalizations has important
+implications, with LLM-generated summaries maintaining consistently
+superior performance despite increasing information volume. Longer
+encounters often produce larger quantities of notes, repetitive information,
+and complex clinical trajectories that are difﬁcult for both discharging and
+receiving physicians to synthesize. Debrieﬁng sessions suggest that these
+differences may translate into meaningful time savings and reduced cog-
+nitive burden in reconstructing the hospital course from fragmented doc-
+umentation. Participants noted that with longer hospitalizations, time
+constraintsoften force clinicians toskim lengthy records, increasing the risk
+that important issues such as the rationale for management decisions or
+unresolved follow-up issues may be omitted. In addition, the methods used
+in this study demonstrate that LLMs can generate coherent discharge
+summaries even for EHRs exceeding the model’s context window, an
+important technical consideration given the large volume of documentation
+associated with longer hospitalizations. Whereas previous studies largely
+evaluated hospitalizations of approximately 2–8 days, our ﬁndings suggest
+that LLM-generated summaries maintain high performance despite the
+substantially greater documentation burden associated with prolonged
+hospitalizations, addressing an important gap in the current literature. As
+LLM context windows continue to expand, future models may be able to
+process entire hospital encounters in a single pass, reducing the need for
+multi-step summarization pipelines. However, larger context windows
+alonemaynoteliminatetheneedformethodsthatprioritize,synthesize,and
+organize clinically relevant information from lengthy hospitalizations,
+suggestingthattheprinciplesunderlyingourapproach mayremainrelevant
+asLLMcapabilitiesevolve.Additionally,EHRdocumentationartifacts,such
+asdotphrasesandcarried-forwardtext,mayinﬂuencesummaryqualityand
+warrant further study in LLM-based summarization workﬂows.
+DifferencesBetweenPCPandHospitalistPerspectives.Theadvantages
+of LLM-generated summaries appeared to be more pronounced among
+PCPs than hospitalists. Across both overall and paired evaluations, PCPs
+demonstrated larger differences in ratings favoring LLM-generated over
+human-authored summaries, particularly for overall quality and concise-
+ness/readability, withless variability betweenPCPand hospitalistratingsfor
+the LLM-generated summaries. PCPs also annotated more errors, speciﬁ-
+cally omissions, in both human-authored and LLM-generated summaries
+than hospitalists, with higher scores for likelihood of harm. Debrieﬁng
+sessions suggested several reasons for this difference. PCPs often perceive
+greaterdownstream harm potential from omissions or inaccuracies because
+they are responsible for longitudinal follow-up and management of post-
+discharge complications. As one PCP noted, “we see what happens, and
+often we’re the ones that have to deal with the complications,” contributing
+to a higher perceived likelihood of medication or follow-up errors from
+incomplete discharge documentation. Additionally, workﬂow differences
+likely contributed to the discrepancy in omission annotation, as PCPs relied
+on discharge summaries to reconstruct the hospitalization and often
+reviewedinpatientnoteswhenkeydetailsweremissing,whereashospitalists
+could draw on their contextual knowledge of the inpatient course, making
+omissions less apparent. These ﬁndings also highlight that judgments
+regarding omissions are inﬂuenced by reviewer role and workﬂow, under-
+scoring that discharge summary completeness is not a single objective
+construct but depends on the informational needs of the intended user.
+PCPs may perceive greater value from LLM-generated summaries because
+their workﬂow requires directly acting on discharge documentation to
+provide ongoing care, whereas hospitalists are primarily focused on creating
+a summary for handoff. The prompt engineering in this study was designed
+with PCPs as the target audience, suggesting that incorporating PCP
+informational priorities and workﬂow needs into development may
+improve the quality and usability of discharge summaries for receiving
+providers during the transition of care. More broadly, our ﬁndings suggest
+that a one-size-ﬁts-all discharge summary may not optimally serve all sta-
+keholder needs, and that LLM systems have the potential to tailor sum-
+maries to wider audiences, including hospitalists, PCPs, and patients.
+Incidental Finding Identiﬁcation and Reporting. Our results suggest
+that LLMs performed well as a tool for identifying and summarizing inci-
+dental ﬁndings. Most incidental ﬁndings identiﬁed in LLM-generated
+summaries were judged to be both appropriate and correctly reported, and
+notably, reviewers did not annotate omission errors related to incidental
+ﬁndings from radiology studies. Debrieﬁng sessions highlighted differences
+between hospitalist and PCP perspectives on incidental ﬁndings, with
+hospitalists favoring broader reporting to ensure abnormalities were
+documented and questioning whether LLMs might underreport incidental
+ﬁndings, while PCPs preferred selective reporting of actionable ﬁndings to
+avoidinformationoverload.Importantly,thepromptforincidentalﬁndings
+https://doi.org/10.1038/s41746-026-03320-y
+Article
+npj Digital Medicine
+Article in Press
+
+wasdesignedforspeciﬁcity,where the LLM wasdirected to identifyﬁndings
+that were speciﬁcally ﬂagged by radiologists for follow-up. However, both
+groups agreed that LLM-generated incidental ﬁnding summaries were
+beneﬁcial for reducing the likelihood that clinically important ﬁndings
+requiring follow-up would be missed. Although prior studies have
+demonstrated that LLMs can accurately identify incidental ﬁndings from
+radiology reports, our study extends this work by evaluating incidental
+ﬁnding extraction within the context of discharge summary generation,
+where balancing completeness with information overload is critical for the
+transition of care.
+Implications for Clinical Adoption and Oversight. Although both
+quantitative evaluation and qualitative debrieﬁng indicated the tremendous
+potential of LLM-generated summaries, physicians cautioned against blind
+reliance on LLMs. When probed with ﬁnal thoughts on adopting LLM-
+generated summaries in clinical workﬂows, physicians emphasized that
+LLMsummariesshould onlyfunctionwithinaclinician-supervisedcontext.
+Physiciansinallthreedebrieﬁngsessionsstronglyagreed that,asreﬂected in
+one hospitalist’s quote, “no matter what information is pre-populated or
+anything, it’s still the responsibility of the physician to make sure it’s cor-
+rect.” Physicians speciﬁcally highlighted the importance of deliberate ver-
+iﬁcation workﬂows for high-risk content such as medication changes,
+follow-up recommendations, and incidental ﬁndings. Moreover, some had
+cautionary comments on potential threats to the widespread adoption of
+LLM-generated summaries in clinical workﬂows. One hospitalist cautioned
+that “I guarantee you no one’s going back and fact-checking or reading
+everything to make sure that it’s ﬁne… Because usually when something’s
+handed to you, you’re just going to take it as is and you give up your agency
+to kind of do some of the things that doctors do… I’m afraid that, you know,
+they’re not going to do any QA [quality assurance] to make sure that
+everything is correct.” Together, these ﬁndings suggest that the greatest
+value of LLM-generated discharge summaries lies not simply in automating
+documentation, but in improving the quality, consistency, and usability of
+transition-of-care communication while supporting clinician oversight.
+This study has several limitations. First, it was conducted at a single
+academic medical center using one EHR environment and local doc-
+umentation practices, and the input pipeline included only clinically rele-
+vant notesselected by a single physician informaticist, which may introduce
+selection bias and limit generalizability to other health systems, specialties,
+or workﬂows. Second, because reviewers were not blinded to the source of
+the summaries, expectation bias cannot be excluded; however, the historical
+and LLM-generated summaries differed substantially in format, making
+blinding impractical without modifying the original clinical documents and
+reducing the real-world nature of the comparison. Third, since reviewers
+evaluated summaries using a restricted view of clinical notes rather than the
+full production EHR, ﬁndings may not fully reﬂect routine clinical use and
+should be conﬁrmed in future prospective EHR-integrated evaluations.
+Fourth, the study evaluated physicians' perceptions of discharge summary
+quality and safety rather than downstream patient-centered outcomes such
+as timely completion of discharge summaries, readmissions, medication
+errors, or adverse events after discharge. Although clinician assessment is
+highly relevant for transition-of-care workﬂows, future prospective studies
+are needed to determine whether these perceived advantages translate into
+measurable improvements in patient outcomes and operational efﬁciency.
+Fifth, because each encounter was reviewed by two reviewers of different
+specialties, the design does not permit estimation of formal measurement
+reliability. Future studies could have repeated ratings by multiple reviewers
+within the same rater population or other designs that allow measurement-
+reliability calculation. Sixth, because omissions and inaccuracies were
+annotated by one hospitalist and one PCP per encounter without within-
+specialty adjudication or a consensus reference standard, these ﬁndings
+should be interpreted as clinician judgments rather than objective measures
+of error. Additionally, we did not characterize systematic versus idiosyn-
+cratic error patterns, as our annotation framework was not designed for this
+purpose. Future studies should add adjudication or a reference standard for
+errors and evaluate whether LLM-generated summaries exhibit recurring
+blind spots that warrant targeted veriﬁcation. Furthermore, the evaluated
+pipeline was frozen before the formal clinician review, and reviewer-
+identiﬁed errors were not used to reﬁne prompts, regenerate outputs, or
+retrain the model. Because the aim of this study was to evaluate clinician
+perceptions of a ﬁxed system’s output rather than to optimize the system
+itself, this avoided adapting the pipeline to the evaluation cases; however, it
+also means the study does not assess whether iterative, error-driven
+reﬁnement could reduce recurring errors. In operational deployment,
+continuous monitoring and error-driven improvement would be essential,
+and we identify prompt reﬁnement, model updating, and prospective re-
+evaluation on an independent cohort as important next steps. We did not
+evaluate information contained in documents created after the ﬁnal pro-
+gress note, and the impact of this cutoff on omitted content warrants future
+study. Lastly, while qualitative debrieﬁng sessions provided important
+contextual insights into workﬂow, trust, and clinician perceptions, we did
+not use formal qualitative research methodologies such as structured the-
+matic coding or saturation analysis, and these ﬁndings should therefore be
+interpreted as exploratory.
+Conclusion. In conclusion, LLM-generated discharge summaries for
+longer hospitalizations were rated higher than human-authored summaries
+across multiple performance metrics by both hospitalists and PCPs. The
+perceived beneﬁts and quality advantages were particularly pronounced
+among PCPs, suggesting that designing discharge summaries around the
+informational priorities and workﬂow needs of receiving providers may
+meaningfully improve transition-of-care communication for those who
+provide post-hospitalization care. These ﬁndings support the potential for
+thoughtfullyimplementedLLM-assistedsummarizationtoreducecognitive
+burden and better support transitions of care, while maintaining the need
+for clinician oversight and veriﬁcation.
+Methods
+Study cohort
+Weextractedclinicalnotes,imagingreports,anddischargesummariesfrom
+400historicalinpatientencountersontheInternalMedicineserviceatStony
+BrookUniversityHospitalbetweenJanuary1,2023and December31,2024,
+with lengths of stay ranging from 7 to 21 days. Based on the availability of
+resources and time needed for clinician review, we analyzed 60 encounters;
+the initial sample size of 400 encounters was chosen as a sufﬁcient buffer of
+extra data to allow for the creation of a held-out development datasetas well
+as the exclusion of peculiar encounters unrepresentative of the typical dis-
+tribution. Encounters without discharge summaries or with fewer than 25
+clinical notes were excluded after manual analysis revealed encounters with
+fewer than ~25 clinical notesto be largely idiosyncratic. For each encounter,
+we extracted all clinical notes from the EHR, which included 654 unique
+note types with textual information across multiple categories, including
+emergency department notes, consult notes, admission and history and
+physical notes, progress notes, care management notes, addenda, and event
+notes. Note types were reviewed by a physician informaticist and ﬁltered for
+inclusion as LLM inputs based on clinical relevance for discharge summary
+generation. All data storage and computation were performed via a secure
+shell on an in-network computing cluster. Inputs to GPT-5.2 were sub-
+mitted through an API to a private HIPAA-compliant Microsoft Azure
+OpenAI Service instance. GPT-5.2 was selected for its frontier performance
+(at the time of data collection) and preferred over Anthropic models, the
+other frontier-performing model provider, due to limitations in our insti-
+tution’s business associate agreement, which restricted private health
+information from being used with Anthropic models. Self-deployment of
+high-performing open-weight models was considered, but available com-
+putational resources would have limited us to smaller models with sub-
+stantially lower expected performance than frontier models.
+The study was approved by the Stony Brook University Ofﬁce of
+Research Compliance (Institutional Review Board) under protocol
+IRB2024-00457.Thestudywasapprovedunderexemptioncategory45CFR
+46.104(d)(4)(iii). The requirement for informed consent was waived by the
+Stony Brook University Institutional Review Board in accordance with 45
+https://doi.org/10.1038/s41746-026-03320-y
+Article
+npj Digital Medicine
+Article in Press
+
+CFR 46.116(f), as this study involved retrospective secondary analysis of
+existing clinical data and posed minimal risk to participants. The research
+was conducted in accordance with applicable federal regulations, institu-
+tional guidelines, and the ethical principles of the Declaration of Helsinki.
+Encounter processing
+Notes for each encounter extracted from the Oracle Cerner EHR were
+provided in rich text format (RTF) and converted to plain text for LLM
+processing using the Python striprtf library (Python 3.12). Plain-text notes
+and encounter-level metadata were stored in a SQLite database using sqlite3
+(Python 3.12). Notes were ordered chronologically, and those published
+after the ﬁnal progress note for the encounter were excluded to prevent
+leakage of information unavailable at the time of discharge. Notes con-
+taining fewer than 40 characters were also removed, as these were primarily
+attestation entries. For each encounter, the historical human-authored
+discharge summaries were extracted for comparison with the LLM-
+generated summaries.
+LLM discharge summary generation
+AﬂowdiagramofthetechnicalstepsinLLMdischargesummarygeneration
+is shown in Supplementary Figure 1. Because GPT-5.2 has a context limit
+andlongerencounterscouldnotbeprocessedinasinglepass,wedividedthe
+clinical documents into 50,000-token segments and inputs were assembled
+in a SQLite database. The LLM was prompted to create a chronological,
+bulleteddraftofkeycomponentsofthedischargesummary(Supplementary
+Fig. 2) using iterative reﬁnement with a sliding window over the note seg-
+ments. The model generated an initial summary from the ﬁrst segment of
+the record and then updated the summary as successive segments were
+processed, ensuring that each call remained within the window limit. We
+used a window size of 50,000 tokens to balance token costs, latency and
+output quality. In parallel, a separate prompt was developed for identiﬁ-
+cation and extraction of incidental ﬁndings from radiology reports (Sup-
+plementary Fig. 3). The LLM was then prompted to consolidate the
+chronological, bulleted draft and incidental ﬁndings into a ﬁnal narrative
+summary. Pipeline development utilized LangChain and LangGraph in
+Python 3.12.
+Discharge summary evaluation
+Evaluation of both human-authored and LLM-generated discharge sum-
+maries was conducted with reviews by 12 attending physicians (6 hospi-
+talists and 6 PCPs with representation from inpatient, outpatient, and
+informatics leadership) using quantitative evaluation followed by focus
+group debrieﬁng sessions. A stratiﬁed random sample of 60 encounters was
+selected to match the length-of-stay distribution of the full dataset. Each
+physician was assigned to review 10 encounters, with every encounter
+independently evaluated by one hospitalist and one PCP. This design was
+chosen to balance the need for independent assessments from two clinically
+relevant perspectives with the substantial time and cognitive effort required
+to review an encounter. Requiring multiple evaluations across several
+encounters would have increased reviewers’ workload and substantially
+reduced the feasibility of recruiting experienced (and busy) clinicians to
+complete the evaluations. We therefore prioritized broad coverage of
+encounters by reviewers with different specialties over a limited number of
+repeated within-specialty ratings. Reviewers were not blinded because the
+historical and LLM-generated summaries differed substantially in format,
+and preserving the original documents provided a more clinically realistic
+comparison than an artiﬁcially reformatted control. To align reviews with
+real-world clinical workﬂows, hospitalists were instructed to review all
+inpatient clinical notes prior to evaluation of the human-authored and
+LLM-generated discharge summaries, and PCPs were instructed to ﬁrst
+review the discharge summaries and then corroborate ﬁndings with the
+inpatient clinical notes (Supplementary Fig. 6). Reviewer training was
+conducted via virtual meetings prior to evaluation and covered use of the
+secure review application, deﬁnitions and examples for each Likert domain,
+identiﬁcation of inaccuracies and omissions, application of the adapted
+AHRQ potential- and likelihood-of-harm scales, incidental-ﬁnding ques-
+tions, role-speciﬁc review sequence, and procedures for corroborating
+annotations using source notes. Reviewers were allowed to review either
+summary in their own choice of order and compare the summaries
+throughout the review for a more ecologically realistic setting based on prior
+reviewer experiences.
+Reviewswereconductedviaacustomwebapplicationdeployedbehind
+the University Hospital ﬁrewall; Supplementary Fig. 5 shows example
+screenshots demonstrating the main features of the web application. Eva-
+luators were provided access to review the information through tabs pre-
+sented left-to-right with(1) all clinical notes that were used as inputs, (2) the
+human-authored summaries and evaluation survey, (3) the LLM-generated
+summary and evaluation survey, (4) LLM-identiﬁed incidental ﬁndings, (5)
+evaluation of overall preferences. Theuser interface also included a keyword
+search functionality for locating relevant information within the EHR
+documentation and features for completing survey questions, annotating
+and scoring errors within the human-authored and LLM-generated dis-
+charge summaries. Reviewers assessed summaries using the same pre-
+processed clinical notes and imaging reports provided to the LLM to enable
+standardized evaluation and source veriﬁcation within a single evaluation
+platform.
+The evaluation for all reviewers included four questions with a 5-point
+Likert scale to assess overall quality, conciseness/readability, factuality and
+completeness7 as well as preference for the human-authored versus LLM-
+generated summary. PCPs were assigned three additional survey questions
+on ease of understanding, verbalizing to patients and caregivers, and fol-
+lowing up on relevant aspects of the hospitalization (Supplementary
+Table 1). To evaluate discharge summary errors, reviewers were instructed
+to annotate errors by type (inaccuracies and omissions) for both human-
+authored and LLM-generated discharge summaries (Supplementary
+Table 2). For each error annotation, reviewers provided a brief description
+and rated the likelihood and potential for patient harm using an adapted
+Agency for Healthcare Research and Quality harm scale (Table 2)8,12. For
+Table 2 | Scores and deﬁnitions of potential and likelihood of harm included in the instructions for physician reviewer error
+annotation
+Harm scores
+Harm potential deﬁnition
+Harm likelihood deﬁnition
+0 (None)
+No potential for harm
+Impossible (0 in 10 M)
+1 (Minimal)
+Potential for emotional distress or inconvenience (mild and transient anxiety or pain or physical discomfort)
+Nearly Impossible (≤1 in 10 M)
+2 (Minor)
+Potential for requiring additional treatment
+Extremely Rare (1 in 1 M)
+3 (Moderate)
+Potential for temporary harm (bodily or psychological injury, but likely not permanent)
+Very Rare (1 in 100 K)
+4 (Signiﬁcant)
+Potential for permanent harm (lifelong bodily or psychological injury or increased susceptibility to disease)
+Rare (1 in 10 K)
+5 (Serious)
+Potential for lifelong bodily or psychological injury or disﬁgurement
+Possible (1 in 1000)
+6 (Severe)
+Potential for severe permanent harm
+Likely (1 in 100)
+7 (Catastrophic)
+Potential for death
+Near Certain (>1 in 10)
+https://doi.org/10.1038/s41746-026-03320-y
+Article
+npj Digital Medicine
+Article in Press
+
+encounters where the LLM detected clinically relevant incidental ﬁndings,
+reviewers were presented with the ﬁnding and asked to rate whether it was
+reported accurately and whether they thought reporting was appropriate
+(Supplementary Table 3). We did not evaluate incidental ﬁndings on
+human-authored discharge summaries as there was variability in doc-
+umentation of them across historical summaries.
+Three virtual, post-review, semi-structured debrieﬁng sessions were
+held with physician evaluators to discuss ﬁndings from the surveys and error
+annotations and to obtain qualitative feedback on their perspectives. Sessions
+were recorded and transcribed verbatim; we held three sessions to allow for
+maximum participation so that each physician could attend a debrief session.
+We analyzed the resulting transcripts with a hybrid approach that combined
+human coding with LLM assistance. This involved the use of GPT 5.5, with
+reasoning effort set to high, to analyze the meeting transcripts and cluster
+related answers to our questions as well as pair converging/diverging opi-
+nions of PCPs and hospitalists on shared topics across the three sessions. The
+LLM then outputted an interactive website with the analysis superimposed
+over the transcripts and links between utterances and synthesis. We then
+analyzed each LLM-posited insight against our prior, manual analysis of the
+debrief session transcripts, in which we performed similar tasks as given to
+the LLM, to identify additional items for discussion, discarding those that did
+not veriﬁably enhance the manual analysis.
+Statistics and reproducibility
+For each survey question, the difference between the LLM-generated and
+human-authored summary ratings was calculated for every reviewer-
+encounter evaluation. Mean rating differences were analyzed using two-
+sided intercept-only linear models with two-way cluster-robust standard
+errors clustered by reviewer and encounter. P values were calculated using t
+distributions with degrees of freedom equal to the smaller number of clusters
+minus one: 11 degrees of freedom for questions answered by all reviewers
+and 5 degrees of freedom for PCP-only questions. Differences in LLM-
+versus-human rating changes between hospitalists and PCPs were compared
+using two-sided paired Wilcoxon signed-rank tests at the encounter level.
+Error annotation counts were compared between summary types and
+between provider types, both overall and by error type, using two-sided
+paired Wilcoxon signed-rank tests. Two-sided Mann–Whitney U tests were
+used to compare the harm potential and harm likelihood score distributions
+for annotated errors in human-authored versus LLM-generated summaries
+and by provider type. Error annotations differed in number and content
+between summary types and could not be matched one-to-one; therefore,
+paired testing was not applicable to the harm-score distributions. Associa-
+tions between length of stay and the mean Likert scores, or the average of the
+scores for the 4 physician reviewer questions, were assessed using two-sided
+Spearman rank correlation tests, separately for human-authored and LLM-
+generated summaries. Nonparametric tests were used for provider com-
+parisons, annotation counts, harm scores, and length-of-stay associations
+because these variables were not assumed to be normally distributed. For all
+tests, p < 0.05 was considered statistically signiﬁcant.
+We used the 2025-12-11 snapshot of GPT 5.2 via Microsoft Azure
+Foundry. Outputs were generated via a single sample in March 2026. Tra-
+ditional model hyperparameters, including temperature, top-p and seed,
+could not be set,and their internalvalueswerenotobservable becauseweset
+the reasoning effort hyperparameter to medium. Traditional hyperpara-
+metersforGPT5.2canonlybe set/observed if reasoningeffort issetto none,
+which often degrades output quality. The maximum number of output
+tokens was set to the default setting, meaning that the model selected the
+maximum number of output tokens dynamically.
+The full prompts used to generate model outputs in this study are
+available in Supplementary Information Figs. S2, S3 and S4.
+Data availability
+The datasets generated and/or analyzed during the current study are not
+publiclyavailableduetocontainingprivatehealthinformation(PHI)butare
+available from the corresponding author on reasonable request.
+Code availability
+The code and raw, de-identiﬁed results used to generate the statistical
+analyses are publicly available at https://github.com/StonyBrookDB/
+Clinician-Centered-LLM-Discharge-Summaries.
+Received: 3 June 2026; Accepted: 16 September 2026;
+References
+1.
+Hesselink, G. et al. Are patients discharged with care? A qualitative
+study of perceptions and experiences of patients, family members
+and care providers. BMJ Qual. Saf. 21, i39–i49 https://doi.org/10.
+1136/bmjqs-2012-001165 (2012).
+2.
+Kripalani, S. et al. Deﬁcits in communication and information transfer
+between hospital-based and primary care physicians: implications for
+patient safety and continuity of care. JAMA 297, 831 https://doi.org/
+10.1001/jama.297.8.831 (2007).
+3.
+Li, J. Y. Z., Yong, T. Y., Hakendorf, P., Ben-Tovim, D. & Thompson, C.
+H. Timeliness in discharge summary dissemination is associated with
+patients’ clinical outcomes. J. Eval. Clin. Pract. 19, 76–79 https://doi.
+org/10.1111/j.1365-2753.2011.01772.x (2013).
+4.
+Forster, A. J., Murff, H. J., Peterson, J. F., Gandhi, T. K. & Bates, D. W.
+The incidence and severity of adverse events affecting patients after
+discharge from the hospital. Ann. Intern. Med. 138, 161–167 https://
+doi.org/10.7326/0003-4819-138-3-200302040-00007 (2003).
+5.
+Shanafelt, T. D. et al. Changes in burnout and satisfaction with work-
+life integration in physicians and the general US working population
+between 2011 and 2020. Mayo Clin. Proc. 97, 491–506 https://doi.
+org/10.1016/j.mayocp.2021.11.021 (2022).
+6.
+Muhiyaddin, R. et al. Electronic health records and physician burnout:
+ascopingreview.in StudiesinHealthTechnologyandInformatics(eds
+Mantas, J., Hasman, A., Househ, Ms., Gallos, P., Zoulias, E. & Liaskos
+J.) (IOS Press, 2022) https://doi.org/10.3233/SHTI210962
+7.
+Osborne, T. et al. Towards inpatient discharge summary automation
+via large language models: a multidimensional evaluation with a
+HIPAA-compliant instance of GPT-4o and clinical expert assessment.
+AMIA Annu. Symp. Proc. AMIA Symp. 2024, 959–968 (2024).
+8.
+Williams, C. Y. K. et al. Physician- and large language
+model–generated hospital discharge summaries. JAMA Intern. Med.
+185, 818 https://doi.org/10.1001/jamainternmed.2025.0821 (2025).
+9.
+Mehri, T. et al. Assessing the quality of AI-generated and physician-
+written discharge summaries: evaluation of an EHR-integrated tool in
+a Dutch academic hospital. eBioMedicine 127, 106247 https://doi.
+org/10.1016/j.ebiom.2026.106247 (2026).
+10. Challener, D., Ayanian, S., Ryu, A., O’Horo, J. & Heaton, H. Quality
+assessment of artiﬁcial intelligence-generated versus human-written
+hospital summaries evaluating detail, usefulness, and continuity of
+care. J. Hosp. Med. 21, 375–379 https://doi.org/10.1002/jhm.70163
+(2026).
+11. Grolleau, F. et al. Physician-reported safety outcomes of AI-
+generated hospital course summaries. JAMA Netw. Open 9,
+e2616556 https://doi.org/10.1001/jamanetworkopen.2026.16556
+(2026).
+12. Williams C. Y. K. et al. Evaluating large language models for drafting
+emergency department discharge summaries. https://doi.org/10.
+1101/2024.04.03.24305088 (2024).
+13. Small, W. R. et al. Evaluating hospital course summarization by an
+electronic health record–based large language model. JAMA Netw.
+Open 8, e2526339 https://doi.org/10.1001/jamanetworkopen.2025.
+26339 (2025).
+14. Robelia, P. M., Kashiwagi, D. T., Jenkins, S. M., Newman, J. S. &
+Sorita, A. Information transfer and the hospital discharge summary:
+national primary care provider perspectives of challenges and
+opportunities. J. Am. Board Fam. Med. 30, 758–765 https://doi.org/
+10.3122/jabfm.2017.06.170194 (2017).
+https://doi.org/10.1038/s41746-026-03320-y
+Article
+npj Digital Medicine
+Article in Press
+
+15. Chatterton, B., Chen, J., Schwarz, E. B. & Karlin, J. Primary care
+physicians’ perspectives on high-quality discharge summaries. J.
+Gen. Intern. Med. 39, 1438–1443 https://doi.org/10.1007/s11606-
+023-08541-5 (2024).
+16. Silver, A. M. et al. Optimizing discharge summaries: a survey of
+inpatient clinician perspectives and the path to standardization. J.
+Gen. Intern. Med. 41, 323–329 https://doi.org/10.1007/s11606-025-
+09740-y (2026).
+17. Davenport, M. S. Incidental ﬁndings and low-value care. Am. J.
+Roentgenol. 221, 117–123 https://doi.org/10.2214/AJR.22.28926
+(2023).
+18. Hansra, S. S., Loehfelm, T. W., Wilson, M. & Corwin, M. T. Factors
+affecting adherence to recommendations for additional imaging of
+incidental ﬁndings in radiology reports. J. Am. Coll. Radiol. 18,
+233–239 https://doi.org/10.1016/j.jacr.2020.02.021 (2021).
+19. Park, N. et al. Automated identiﬁcation of incidentalomas requiring
+follow-up: A multi-anatomy evaluation of LLM-based and supervised
+approaches. J. Biomed. Inf. 179, 105048 https://doi.org/10.1016/j.jbi.
+2026.105048 (2026).
+20. Bhayana, R. et al. Use of GPT-4 with single-shot learning to identify
+incidental ﬁndings in radiology reports. Am. J. Roentgenol. 222,
+e2330651 https://doi.org/10.2214/AJR.23.30651 (2024).
+21. Moore, C. L. et al. Using natural language processing to identify
+emergency department patients with incidental lung nodules
+requiring follow-up. Acad. Emerg. Med. 32, 274–283 https://doi.org/
+10.1111/acem.15080 (2025).
+Acknowledgements
+First, we would like to acknowledge Fang Wang, a Clinical Research Data
+Analyst/Architect with the Research Computing & Informatics (RCI) team at
+Stony Brook University, for her efforts in extracting and the raw EHR dataset
+used in this study. Second, we would like to acknowledge Erich Bremer,
+MSc, the Director of Applied Informatics, and Joe Balsamo, a Supervising
+Programmer Analyst, from the Stony Brook Medicine Department of
+Biomedical Informatics, for their efforts in setting up the servers and access
+necessary for us to develop the HIPAA-compliant full-stack web application
+to collect review data from the clinicians.
+Author contributions
+T.O. and S.J. performed all data analysis and pipeline design for this study,
+as well as software engineering to build the web interface. T.M. provided
+clinical expertise with prompt engineering and review of outputs. X.Z.
+assisted with the qualitative aspects of study design, data collection, and
+manuscript writing. S.A., S.H., K.K., S.L., P.N., K.O., L.S., R.S., T.S., M.T.,
+Z.W. and R.W. provided hospitalist and primary care expertise, reviewed
+discharge summaries and contributed clinical and workﬂow insights during
+debrieﬁng sessions. R.W. conceived of the study and made most
+methodological decisions with the assistance of T.O. and F.W. T.O., R.W.
+and X.Z. wrote the manuscript, with edits and review by all
+coauthors.Declaration
+Competing interests
+The authors declare no competing interests.
+Additional information
+Supplementary information The online version contains
+supplementary material available at
+https://doi.org/10.1038/s41746-026-03320-y.
+Correspondence and requests for materials should be addressed to
+Fusheng Wang or Rachel Wong.
+Reprints and permissions information is available at
+http://www.nature.com/reprints
+Publisher’s note Springer Nature remains neutral with regard to
+jurisdictional claims in published maps and institutional afﬁliations.
+Open Access This article is licensed under a Creative Commons
+Attribution-NonCommercial-NoDerivatives 4.0 International License,
+which permits any non-commercial use, sharing, distribution and
+reproduction in any medium or format, as long as you give appropriate
+credit to the original author(s) and the source, provide a link to the Creative
+Commons licence, and indicate if you modiﬁed the licensed material. You
+do not have permission under this licence to share adapted material
+derived from this article or parts of it. The images or other third party
+material in this article are included in the article's Creative Commons
+licence, unless indicated otherwise in a credit line to the material. If material
+isnot includedin thearticle's CreativeCommons licenceandyour intended
+use is not permitted by statutory regulation or exceeds the permitted use,
+you will need to obtain permission directly from the copyright holder. To
+view a copy of this licence, visit http://creativecommons.org/licenses/by-
+nc-nd/4.0/.
+© The Author(s) 2026
+This Article in Press is shared early to give you faster access to new research.
+It iscitable and carries a permanent DOI. The ﬁnal edited version will replace it
+automatically.
+https://doi.org/10.1038/s41746-026-03320-y
+Article
+npj Digital Medicine
+Article in Press

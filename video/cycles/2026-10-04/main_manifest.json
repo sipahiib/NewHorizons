@@ -1,0 +1,271 @@
+{
+  "cycle": "2026-10-04",
+  "status": "prepared-for-review",
+  "candidateOutput": "build/video/2026-10-04/newhorizons.mp4",
+  "finalOutput": "build/video/newhorizons.mp4",
+  "duration": 310,
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "sections": [
+    {
+      "id": "m1",
+      "duration": 160,
+      "audio": "build/video/2026-10-04/audio/m1.wav",
+      "counts": {
+        "stills": 5,
+        "motion": 8,
+        "secondStoryTeaser": 1
+      },
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-04/main/m1/esa-1.jpg",
+          "duration": 5,
+          "label": "current",
+          "overlay": "build/video/2026-10-04/work/current.png",
+          "title": "build/video/2026-10-04/work/m1-title.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-04/main/m1/jammertest-2025-source.mp4",
+          "duration": 7,
+          "seek": 52,
+          "label": "archive",
+          "overlay": "build/video/2026-10-04/work/archive.png",
+          "loop": false,
+          "crop": "1920:800:0:0"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-04/main/m2/pexels-8026528.mp4",
+          "duration": 4,
+          "seek": 2,
+          "label": "context",
+          "overlay": "build/video/2026-10-04/work/context.png",
+          "loop": false,
+          "title": "build/video/2026-10-04/work/teaser.png"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-04/main/m1/esa-0.jpg",
+          "duration": 14,
+          "label": "current",
+          "overlay": "build/video/2026-10-04/work/current.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-04/main/m1/jammertest-2025-source.mp4",
+          "duration": 11,
+          "seek": 59,
+          "label": "archive",
+          "overlay": "build/video/2026-10-04/work/archive.png",
+          "loop": false,
+          "crop": "1920:800:0:0"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-04/main/m1/jammertest-2025-source.mp4",
+          "duration": 14,
+          "seek": 80,
+          "label": "archive",
+          "overlay": "build/video/2026-10-04/work/archive.png",
+          "loop": false,
+          "crop": "1920:800:0:0"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-04/main/m1/esa-3.jpg",
+          "duration": 14,
+          "label": "current",
+          "overlay": "build/video/2026-10-04/work/current.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-04/main/m1/jammertest-2025-source.mp4",
+          "duration": 14,
+          "seek": 104,
+          "label": "archive",
+          "overlay": "build/video/2026-10-04/work/archive.png",
+          "loop": false,
+          "crop": "1920:800:0:0"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-04/main/m1/jammertest-2025-source.mp4",
+          "duration": 15,
+          "seek": 118,
+          "label": "archive",
+          "overlay": "build/video/2026-10-04/work/archive.png",
+          "loop": false,
+          "crop": "1920:800:0:0"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-04/main/m1/esa-2.png",
+          "duration": 14,
+          "label": "current",
+          "overlay": "build/video/2026-10-04/work/current.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-04/main/m1/jammertest-2025-source.mp4",
+          "duration": 9,
+          "seek": 140,
+          "label": "archive",
+          "overlay": "build/video/2026-10-04/work/archive.png",
+          "loop": false,
+          "crop": "1920:800:0:0"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-04/main/m1/jammertest-2025-source.mp4",
+          "duration": 15,
+          "seek": 166,
+          "label": "archive",
+          "overlay": "build/video/2026-10-04/work/archive.png",
+          "loop": false,
+          "crop": "1920:800:0:0"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-04/main/m1/esa-4.jpg",
+          "duration": 14,
+          "label": "current",
+          "overlay": "build/video/2026-10-04/work/current.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-04/main/m1/jammertest-2025-source.mp4",
+          "duration": 10,
+          "seek": 190,
+          "label": "archive",
+          "overlay": "build/video/2026-10-04/work/archive.png",
+          "loop": false,
+          "crop": "1920:800:0:0"
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "duration": 140,
+      "audio": "build/video/2026-10-04/audio/m2.mp3",
+      "counts": {
+        "stills": 4,
+        "motion": 6
+      },
+      "scenes": [
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-04/main/m2/pexels-8460066.mp4",
+          "duration": 12,
+          "seek": 0,
+          "label": "context",
+          "overlay": "build/video/2026-10-04/work/context.png",
+          "loop": false,
+          "title": "build/video/2026-10-04/work/m2-title.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-04/main/m2/pexels-8311312.mp4",
+          "duration": 11,
+          "seek": 0,
+          "label": "context",
+          "overlay": "build/video/2026-10-04/work/context.png",
+          "loop": false
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-04/main/m2/pexels-8026528.mp4",
+          "duration": 14,
+          "seek": 0,
+          "label": "context",
+          "overlay": "build/video/2026-10-04/work/context.png",
+          "loop": false
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-04/main/m2/pexels-7088462.mp4",
+          "duration": 16,
+          "seek": 0,
+          "label": "context",
+          "overlay": "build/video/2026-10-04/work/context.png",
+          "loop": false
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-04/main/m2/fig5-monitoring.png",
+          "duration": 15,
+          "label": "figure",
+          "overlay": "build/video/2026-10-04/work/figure.png"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-04/main/m2/fig6-processing.png",
+          "duration": 14,
+          "label": "figure",
+          "overlay": "build/video/2026-10-04/work/figure.png"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-04/main/m2/fig1-roc.png",
+          "duration": 16,
+          "label": "figure",
+          "overlay": "build/video/2026-10-04/work/figure.png"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-04/main/m2/fig2-aggregation.png",
+          "duration": 14,
+          "label": "figure",
+          "overlay": "build/video/2026-10-04/work/figure.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-04/main/m2/pexels-8413638.mp4",
+          "duration": 14,
+          "seek": 0,
+          "label": "context",
+          "overlay": "build/video/2026-10-04/work/context.png",
+          "loop": false
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-04/main/m2/pexels-7195664.mp4",
+          "duration": 14,
+          "seek": 0,
+          "label": "context",
+          "overlay": "build/video/2026-10-04/work/context.png",
+          "loop": false
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "duration": 10,
+      "audio": "build/video/2026-10-04/audio/closing.mp3",
+      "closing": true
+    }
+  ],
+  "closing": "build/video/2026-10-04/work/closing.png",
+  "closingBell": "build/video/2026-10-04/work/closing-bell.png",
+  "titleDisplaySeconds": 4,
+  "hashes": {
+    "assets/motion/2026-10-04/main/m1/esa-1.jpg": "1f3ee5bbd6c863ffb38d1d6247d7ab68976b00885f7d85ad9f0228536e3877ee",
+    "assets/motion/2026-10-04/main/m1/jammertest-2025-source.mp4": "f302862016cf2add6789c13415cb4332ac5dce8e173955481a76f3ac98970bbb",
+    "assets/motion/2026-10-04/main/m2/pexels-8026528.mp4": "e20ba7f7f68d2205fa595109bb673c640c6d4e286b2a31c9bf87d99d01ab6f07",
+    "assets/motion/2026-10-04/main/m1/esa-0.jpg": "038c472854e2c5ee219da2f554e27fcc3a9bd067598017acdd211e220d08e0c9",
+    "assets/motion/2026-10-04/main/m1/esa-3.jpg": "36c5f8c66ea42cbbfbe44924af2f9b1fbc83f068a5eb757c14dd887b7bfbbda0",
+    "assets/motion/2026-10-04/main/m1/esa-2.png": "628eaa9474c846b035da35216373fab491e7e98e1f590bb4590dcdcb9bb4f976",
+    "assets/motion/2026-10-04/main/m1/esa-4.jpg": "c8d79c7977aa2092d9c53860481ceb0e05043c2c7b7c2932a5bb02960a1dcf0c",
+    "assets/motion/2026-10-04/main/m2/pexels-8460066.mp4": "75d375e8560ae97fdea61e98f30f6a3c05a2949022f53fea73f4bae1c1177db9",
+    "assets/motion/2026-10-04/main/m2/pexels-8311312.mp4": "130c32753e784668f0b4b4430f747de1fe167d9cfd9918b774aab388c44c2653",
+    "assets/motion/2026-10-04/main/m2/pexels-7088462.mp4": "2c2fc7b2f379d84faa0339cbf852a7f2bbc8ac9129776d51bc6be30b54c2f194",
+    "assets/motion/2026-10-04/main/m2/fig5-monitoring.png": "caaf9334142d147b19b5d3009bf1b080d059600731224985f8348178831b7d8e",
+    "assets/motion/2026-10-04/main/m2/fig6-processing.png": "5678eb3d872303fa90068d887117883c194755ad38659b1bd43a6a7245356eda",
+    "assets/motion/2026-10-04/main/m2/fig1-roc.png": "d81934bf982619d706ba52e1dad472183301cfdfa176d9573482901e81a5d716",
+    "assets/motion/2026-10-04/main/m2/fig2-aggregation.png": "768b7c06fb78395b9f3fd72c36621526068aaa908457fb19ecdc1837c631dcf3",
+    "assets/motion/2026-10-04/main/m2/pexels-8413638.mp4": "ba17b09ed15d8b9c05553b1b93e7d22060a4cbfc3688dd12ea688d534a402e92",
+    "assets/motion/2026-10-04/main/m2/pexels-7195664.mp4": "18a8500e9567e14341bb3e600bea95584ad302bd86a8f989927ce7412483f9a4"
+  }
+}

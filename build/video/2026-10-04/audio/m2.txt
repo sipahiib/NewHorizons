@@ -1,0 +1,11 @@
+Researchers found clues about heart function in a single ECG lead. An ECG records the heart's electrical activity. In a clinic, electrodes attached to the arms, legs and chest provide several views of that activity. These recordings help healthcare professionals investigate the rate and rhythm of the heartbeat and other heart problems. A wearable recording offers fewer views, but can be taken more often between appointments.
+
+Heart rhythm and pumping function are related questions, yet they are not identical. The left ventricle is the chamber that sends blood out to the body. Clinicians can use ultrasound imaging to examine how well it pumps. An electrical recording does not directly film that movement. The research question is whether patterns in the electrical signal can help flag changes that deserve a closer look.
+
+A study published on October second by researchers at Leiden University Medical Center tested that idea after heart attacks. It analysed historical clinical data from twenty eighteen through twenty twenty-three, including ECG recordings made at home with a smartwatch. After quality filtering, the single-lead analysis retained recordings from four hundred and sixty patients.
+
+The strongest single-lead model used pretraining and reached an AUC of zero point eight eight three, compared with zero point eight nine seven for the full twelve-lead model. AUC describes how well a model separates groups across decision thresholds. It is not the percentage of patients correctly diagnosed. The researchers also examined waveform features that influenced the predictions.
+
+There are important limits. The data came from one centre, and the model still needs independent prospective validation. Recording quality was a substantial issue. This was not a demonstration that an ordinary watch can replace clinical testing or improve patient outcomes.
+
+The useful possibility is a clinical complement: accessible recordings that might help identify who needs review between visits. A promising signal is the beginning of that evidence chain. Reliable decisions still depend on validation, careful interpretation and the wider clinical picture.

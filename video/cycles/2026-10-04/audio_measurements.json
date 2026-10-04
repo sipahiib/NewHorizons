@@ -1,0 +1,79 @@
+[
+  {
+    "id": "m1_hook",
+    "seconds": 3.408,
+    "target": 5,
+    "headroom": 1.592,
+    "voice": "en-GB-RyanNeural",
+    "rate": "-2%",
+    "timeStretch": false
+  },
+  {
+    "id": "m1_footage",
+    "seconds": 6.816,
+    "target": 7,
+    "headroom": 0.184,
+    "voice": "en-GB-RyanNeural",
+    "rate": "-2%",
+    "timeStretch": false
+  },
+  {
+    "id": "m1_teaser",
+    "seconds": 3.888,
+    "target": 4,
+    "headroom": 0.112,
+    "voice": "en-GB-RyanNeural",
+    "rate": "-2%",
+    "timeStretch": false
+  },
+  {
+    "id": "m1_body",
+    "seconds": 143.664,
+    "target": 144,
+    "headroom": 0.336,
+    "voice": "en-GB-RyanNeural",
+    "rate": "-2%",
+    "timeStretch": false
+  },
+  {
+    "id": "m2",
+    "seconds": 136.008,
+    "target": 140,
+    "headroom": 3.992,
+    "voice": "en-GB-RyanNeural",
+    "rate": "-2%",
+    "timeStretch": false
+  },
+  {
+    "id": "closing",
+    "seconds": 8.64,
+    "target": 10,
+    "headroom": 1.36,
+    "voice": "en-GB-RyanNeural",
+    "rate": "-2%",
+    "timeStretch": false
+  },
+  {
+    "id": "r1",
+    "seconds": 42.48,
+    "target": 45,
+    "headroom": 2.52,
+    "voice": "en-GB-RyanNeural",
+    "rate": "-2%",
+    "timeStretch": false
+  },
+  {
+    "id": "r2",
+    "seconds": 42.12,
+    "target": 45,
+    "headroom": 2.88,
+    "voice": "en-GB-RyanNeural",
+    "rate": "-2%",
+    "timeStretch": false,
+    "insertSilence": {
+      "at": 23.85,
+      "seconds": 0.6,
+      "reason": "Natural sentence pause; corrected actual final speech gap to at most4seconds"
+    }
+  }
+]

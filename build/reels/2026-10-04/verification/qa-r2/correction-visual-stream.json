@@ -1,0 +1,110 @@
+{
+  "packet_sha256_before_and_after": "869d1ca87d801899323bf0a356c8a9a0972f804b3be5cf74e6f80e9d9d797b8d",
+  "sampled_frame_equality": [
+    {
+      "frame": "scene-00-end-5.983.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-00-middle-3.000.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-00-start-0.000.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-01-end-11.983.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-01-middle-9.000.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-01-start-6.000.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-02-end-17.983.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-02-middle-15.000.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-02-start-12.000.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-03-end-23.983.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-03-middle-21.000.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-03-start-18.000.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-04-end-29.983.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-04-middle-27.000.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-04-start-24.000.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-05-end-35.983.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-05-middle-33.000.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-05-start-30.000.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-06-end-44.983.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-06-middle-40.500.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "scene-06-start-36.000.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "boundary-00-41.983.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "boundary-01-42.000.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "boundary-02-42.500.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "boundary-03-43.500.jpg",
+      "unchanged": true
+    },
+    {
+      "frame": "boundary-04-44.983.jpg",
+      "unchanged": true
+    }
+  ],
+  "all_sampled_frames_unchanged": true
+}

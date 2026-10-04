@@ -1,0 +1,114 @@
+[
+  {
+    "scene": 0,
+    "source": "assets/motion/2026-10-04/reels/r2/inspyre-pyrocb-diagram.png",
+    "native_size": [
+      1355,
+      1339
+    ],
+    "expected_full_frame_rectangle": [
+      156,
+      600,
+      768,
+      760
+    ],
+    "mean_absolute_rgb_difference": 6.1668882492690065,
+    "interpretation": "Full source resized into central region; no aspect crop. Compression/resampling differences remain."
+  },
+  {
+    "scene": 1,
+    "source": "assets/motion/2026-10-04/reels/r2/inspyre-preview-loiacono-9318.jpg",
+    "native_size": [
+      6000,
+      4000
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      620,
+      1080,
+      720
+    ],
+    "mean_absolute_rgb_difference": 3.4565659293552815,
+    "interpretation": "Full source resized into central region; no aspect crop. Compression/resampling differences remain."
+  },
+  {
+    "scene": 2,
+    "source": "assets/motion/2026-10-04/reels/r2/inspyre-news-image-7-28-26-4.jpeg",
+    "native_size": [
+      767,
+      431
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 4.116176710263619,
+    "interpretation": "Full source resized into central region; no aspect crop. Compression/resampling differences remain."
+  },
+  {
+    "scene": 3,
+    "source": "assets/motion/2026-10-04/reels/r2/inspyre-light-walk.mp4",
+    "native_size": [
+      720,
+      480
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      620,
+      1080,
+      720
+    ],
+    "mean_absolute_rgb_difference": 1.7760425240054871,
+    "interpretation": "Full source resized into central region; no aspect crop. Compression/resampling differences remain."
+  },
+  {
+    "scene": 4,
+    "source": "assets/motion/2026-10-04/reels/r2/afrc2026-0144-226orig-er2-inst.jpg",
+    "native_size": [
+      4128,
+      2752
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      620,
+      1080,
+      720
+    ],
+    "mean_absolute_rgb_difference": 3.1853489368998624,
+    "interpretation": "Full source resized into central region; no aspect crop. Compression/resampling differences remain."
+  },
+  {
+    "scene": 5,
+    "source": "assets/motion/2026-10-04/reels/r2/inspyre-preview-loiacono-0172.jpg",
+    "native_size": [
+      6000,
+      4000
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      620,
+      1080,
+      720
+    ],
+    "mean_absolute_rgb_difference": 3.02011488340192,
+    "interpretation": "Full source resized into central region; no aspect crop. Compression/resampling differences remain."
+  },
+  {
+    "scene": 6,
+    "source": "assets/motion/2026-10-04/reels/r2/inspyre-light-walk.mp4",
+    "native_size": [
+      720,
+      480
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      620,
+      1080,
+      720
+    ],
+    "mean_absolute_rgb_difference": 1.7894817386831274,
+    "interpretation": "Full source resized into central region; no aspect crop. Compression/resampling differences remain."
+  }
+]

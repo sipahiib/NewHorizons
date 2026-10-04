@@ -1,0 +1,36 @@
+{
+  "cycle": "2026-09-30",
+  "status": "awaiting-full-human-audiovisual-playback",
+  "humanContinuousPlaybackApproval": {
+    "status": "pending",
+    "scope": "Complete main video and both Reels, continuously viewed"
+  },
+  "humanAuralApproval": {
+    "status": "pending",
+    "scope": "Complete main video and both Reels, full narration listened to"
+  },
+  "deliverables": [
+    {
+      "file": "build/video/2026-09-30/newhorizons.mp4",
+      "sha256": "a702ffa414da79e1b59e5cef4c22f33a4d4fe80f7356137ff891b56a2d82be01",
+      "technicalReview": "PASS: full decode and exact technical profile; see cycle QA.md",
+      "visualReview": "sampled only; full continuous playback pending",
+      "auralReview": "signal and silence measured only; full narration listening pending"
+    },
+    {
+      "file": "build/reels/2026-09-30/01-future-of-ai.mp4",
+      "sha256": "3c621b6513164593badf8107a062d560b0f1ea2c001ec4aecbd9324ba6575445",
+      "technicalReview": "PASS: revised Reel fully decodes at 45s, 1080x1920, 60 fps, H.264/AAC; see cycle QA.md",
+      "visualReview": "requested overlay changes sampled and verified; full continuous playback pending",
+      "auralReview": "signal and silence measured only; full narration listening pending"
+    },
+    {
+      "file": "build/reels/2026-09-30/02-the-planet-earth.mp4",
+      "sha256": "86c688f6d69f29b2cb7f0a01d8b04978388abac021f900861e26bdc44059e58a",
+      "technicalReview": "PASS: revised Reel fully decodes at 45s, 1080x1920, 60 fps, H.264/AAC; see cycle QA.md",
+      "visualReview": "requested overlay changes sampled and verified; full continuous playback pending",
+      "auralReview": "signal and silence measured only; full narration listening pending"
+    }
+  ],
+  "deliveryGate": "BLOCKED_AWAITING_FULL_HUMAN_AUDIOVISUAL_PLAYBACK"
+}

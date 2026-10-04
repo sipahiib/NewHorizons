@@ -1,0 +1,90 @@
+{
+  "cycle": "2026-10-04",
+  "status": "prepared-for-review",
+  "output": "build/reels/2026-10-04/02-wildfire-storms.mp4",
+  "audio": "build/video/2026-10-04/audio/r2.mp3",
+  "overlay": "build/reels/2026-10-04/work/r2-title.png",
+  "ctaOverlay": "build/reels/2026-10-04/work/r2-cta.png",
+  "ctaStartInFinalScene": 6,
+  "duration": 45,
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "counts": {
+    "stills": 5,
+    "motion": 2
+  },
+  "scenes": [
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-04/reels/r2/inspyre-pyrocb-diagram.png",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "SCIENTIFIC DIAGRAM • NOT A PHOTOGRAPH",
+      "overlay": "build/reels/2026-10-04/work/r2-detail-0.png"
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-04/reels/r2/inspyre-preview-loiacono-9318.jpg",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "INSPYRE • SUMMER 2026 CAMPAIGN",
+      "overlay": "build/reels/2026-10-04/work/r2-detail-1.png"
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-04/reels/r2/inspyre-news-image-7-28-26-4.jpeg",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "INSPYRE • SUMMER 2026 CAMPAIGN",
+      "overlay": "build/reels/2026-10-04/work/r2-detail-2.png"
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-04/reels/r2/inspyre-light-walk.mp4",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "INSPYRE • SUMMER 2026 CAMPAIGN",
+      "overlay": "build/reels/2026-10-04/work/r2-detail-3.png"
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-04/reels/r2/afrc2026-0144-226orig-er2-inst.jpg",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "INSPYRE • SUMMER 2026 CAMPAIGN",
+      "overlay": "build/reels/2026-10-04/work/r2-detail-4.png"
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-04/reels/r2/inspyre-preview-loiacono-0172.jpg",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "INSPYRE • SUMMER 2026 CAMPAIGN",
+      "overlay": "build/reels/2026-10-04/work/r2-detail-5.png"
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-04/reels/r2/inspyre-light-walk.mp4",
+      "duration": 9,
+      "seek": 7,
+      "loop": false,
+      "label": "INSPYRE • SUMMER 2026 CAMPAIGN",
+      "overlay": "build/reels/2026-10-04/work/r2-detail-6.png"
+    }
+  ],
+  "hashes": {
+    "assets/motion/2026-10-04/reels/r2/inspyre-pyrocb-diagram.png": "45dfd917d0844d9962e14dea84e0df87967976e962d7a274cdb3220bf91c3ef9",
+    "assets/motion/2026-10-04/reels/r2/inspyre-preview-loiacono-9318.jpg": "a10b500ef8476fc8122530c8f90d84d1743dd393cbaf90a591f490810f7eaa46",
+    "assets/motion/2026-10-04/reels/r2/inspyre-news-image-7-28-26-4.jpeg": "295b3958974ef853eb27743b06bea2a17b8ef557d37c99bdb6358b468a77165d",
+    "assets/motion/2026-10-04/reels/r2/inspyre-light-walk.mp4": "ab88b62a973f5c5a41cf7da62e527699262c4d8cab999f8f55e5b698c3fa62d0",
+    "assets/motion/2026-10-04/reels/r2/afrc2026-0144-226orig-er2-inst.jpg": "88efc63bfc57b26dc1ae3d5dacfa9589579208102d2d5b5975bfd96303ff05bc",
+    "assets/motion/2026-10-04/reels/r2/inspyre-preview-loiacono-0172.jpg": "a8046a6c7b61688a4d87985768e692de59ecc49964b2443ab22dac42af83ec9f"
+  }
+}

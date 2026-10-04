@@ -1,0 +1,91 @@
+{
+  "cycle": "2026-10-04",
+  "status": "prepared-for-review",
+  "output": "build/reels/2026-10-04/01-ai-hospital-handoffs.mp4",
+  "audio": "build/video/2026-10-04/audio/r1.mp3",
+  "overlay": "build/reels/2026-10-04/work/r1-title.png",
+  "ctaOverlay": "build/reels/2026-10-04/work/r1-cta.png",
+  "ctaStartInFinalScene": 6,
+  "duration": 45,
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "counts": {
+    "stills": 3,
+    "motion": 4
+  },
+  "scenes": [
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-04/reels/r1/pexels-6997946.mp4",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "CONTEXT • NOT STUDY PARTICIPANTS",
+      "overlay": "build/reels/2026-10-04/work/r1-detail-0.png"
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-04/reels/r1/pexels-5998403-still.png",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "CONTEXT • NOT STUDY PARTICIPANTS",
+      "overlay": "build/reels/2026-10-04/work/r1-detail-1.png"
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-04/reels/r1/pexels-36656061.mp4",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "CONTEXT • NOT STUDY PARTICIPANTS",
+      "overlay": "build/reels/2026-10-04/work/r1-detail-2.png"
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-04/reels/r1/pexels-5453568-still.png",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "CONTEXT • NOT STUDY PARTICIPANTS",
+      "overlay": "build/reels/2026-10-04/work/r1-detail-3.png"
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-04/reels/r1/pexels-5998403.mp4",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "CONTEXT • NOT STUDY PARTICIPANTS",
+      "overlay": "build/reels/2026-10-04/work/r1-detail-4.png"
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-04/reels/r1/pexels-6997946-still.png",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "CONTEXT • NOT STUDY PARTICIPANTS",
+      "overlay": "build/reels/2026-10-04/work/r1-detail-5.png"
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-04/reels/r1/pexels-5453568.mp4",
+      "duration": 9,
+      "seek": 0,
+      "loop": false,
+      "label": "CONTEXT • NOT STUDY PARTICIPANTS",
+      "overlay": "build/reels/2026-10-04/work/r1-detail-6.png"
+    }
+  ],
+  "hashes": {
+    "assets/motion/2026-10-04/reels/r1/pexels-6997946.mp4": "e6417fe0f5bc3d0063dc8a94291b26647061dbcf1a8f199354f2b508f408af22",
+    "assets/motion/2026-10-04/reels/r1/pexels-5998403-still.png": "401be39beca74626df36d0ea6b0e1352af1aba081fcd305fb83825ddb30e762b",
+    "assets/motion/2026-10-04/reels/r1/pexels-36656061.mp4": "52bd93ee699fc7fe56c715efd522c4f11560b7edf70863511e1455b395e5ea2c",
+    "assets/motion/2026-10-04/reels/r1/pexels-5453568-still.png": "c22ae004514e34a5f255adf4b8d8aff22a5f91bc418bedad062a3a07a7d02af5",
+    "assets/motion/2026-10-04/reels/r1/pexels-5998403.mp4": "0aeb9a2a7b2131ecfdce05b019c31cadd7ca059ef01be7e0afbc339bf92cd473",
+    "assets/motion/2026-10-04/reels/r1/pexels-6997946-still.png": "2ab79a90affe823ee41ded916abd518578e543892a15683ce4dd0f3eb20c19f4",
+    "assets/motion/2026-10-04/reels/r1/pexels-5453568.mp4": "ca28f642cf9f4e275048574ef385ef41ee8f02cf8b95c26f1fe502a17d634495"
+  }
+}

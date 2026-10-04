@@ -1,0 +1,644 @@
+npj | cardiovascular health
+Article
+Article in Press
+https://doi.org/10.1038/s44325-026-00153-2
+Leveraging the wearable 1-lead ECG
+signal. From cardiac rhythm to cardiac
+function assessment
+Check for updates
+Viktor van der Valk1
+, Douwe Atsma2, Roderick Scherptong1 & Marius Staring1
+Traditional 12-lead ECGs offer comprehensive insights into the electrical activity of the heart, but
+require clinical settings and expert interpretation, which limits their accessibility. Smartwatch 1-lead
+ECGs can be recorded at home, allowing more frequent and rapid monitoring, opening opportunities
+for early adverse event detection and enhanced patient autonomy. This study investigates whether
+1-lead ECGs can provide clinically meaningful information beyond heart rhythm assessment. Using
+explainable deep learning models, we predict left ventricular function (LVF) from both 1-lead and 12-
+lead ECGs in a post-myocardial infarction population, and compare their respective performances.
+Our ﬁndings demonstrate that LVF can be accurately predicted from 1-lead ECGs alone (AUC = 0.883),
+nearly matching the predictive performance of 12-lead ECGs (AUC = 0.897). Explainability analyses
+further reveal that the models leverage physiologically plausible ECG features, supporting the validity
+of this approach. These results suggest that 1-lead ECGs, when combined with explainable AI, have
+the potential to support broader clinical applications and empower patients, particularly in resource-
+limited or remote settings where access to traditional cardiac diagnostics remains constrained.
+Cardiovascular disease remains the leading global cause of death, under-
+scoring the need for accessible and accurate diagnostic tools. The 12-lead
+electrocardiogram (ECG) is the clinical gold standard for assessing cardiac
+electricalactivityand diagnosinga wide range of heart conditions. However,
+its application is largely conﬁned to clinical settings due to the need for
+specialized equipment and trained personnel.
+The 1-lead ECG offers a portable and cost-effective alternative. Devices
+such as smartwatches and chest patches enable patients to record ECGs
+independently, facilitating continuous and remote monitoring. However,
+the reduced spatial resolution of 1-lead ECGs limits their diagnostic scope,
+particularly for detecting structural abnormalities. These devices have pri-
+marily been optimized for rhythm analysis, especially atrial ﬁbrillation (AF)
+detection, with several FDA- and EMA-approved systems (e.g., Apple
+Watch and KardiaMobile) achieving high accuracy in real-world
+applications1–3.
+Deep learning has signiﬁcantly advanced the interpretability and
+accuracy of ECG-based diagnostics4,5.Explainable AI methods have enabled
+more transparent and trustworthy models for AF and other arrhythmias6–8,
+supporting broader adoption in clinical practice.
+Beyond arrhythmias, recent work has extended 1-lead ECG applica-
+tions to detecting heart failure9, chronic kidney disease10, and age-related
+cardiac changes11. Moreover, predictive modeling using individual leads,
+such as Lead I or II, has shown potential for detecting myocardial infarction,
+left ventricular dysfunction, and myocardial injury, although typically with
+reduced accuracy compared to full 12-lead recordings12–15.
+Despitetheseadvances,fewstudieshavedirectlycomparedwrist-based
+1-lead ECGs with full 12-lead ECGs acquired from the same patients. Most
+prior work has either focused on speciﬁc conditions (e.g., arrhythmias) or
+used leads derived from 12-lead datasets, limiting their applicability to real-
+world wearable recordings. Moreover, while arrhythmia detection has
+dominated the use of 1-lead ECGs, their potential to identify structural
+cardiac changes, such as ventricular dysfunction, remains underexplored,
+although such abnormalities often leave subtle but detectable signatures in
+the electrical signal. Attia et al. (2022) demonstrated that left ventricular
+dysfunction (LVD) could be predicted from a 1-lead smartwatch ECG with
+reasonable
+accuracy
+(AUC = 0.885)
+in
+a
+general
+cardiac
+patient
+population16. However, to our knowledge, left ventricular function (LVF)
+assessment from 1-lead smartwatch ECGs has not yet been evaluated with
+explainableAI,norinthepost-myocardialinfarctionsetting,apopulationin
+which early detection of ventricular dysfunction is particularly relevant. The
+post-myocardial infarction population is homogeneous, since scar tissue is
+the main cause of abnormalities. The conﬁned heterogeneity of this popu-
+lation is driven primarily by the location and severity of myocardial scar.
+This is an important aspect that can be leveraged in explainable AI models.
+1Department of Radiology, Leiden, University Medical Center, Leiden, The Netherlands. 2Department of Cardiology, Leiden, University Medical Center, Leiden, The
+Netherlands.
+e-mail: v.o.van_der_valk@lumc.nl
+npj Cardiovascular Health
+Article in Press
+1234567890():,;
+1234567890():,;
+
+This study conducts a head-to-head comparison of wrist-based 1-lead
+ECGs, recorded at home as part of the follow-up protocol, and standard 12-
+lead ECGs, matched by patient and acquisition time, in individuals reco-
+vering from myocardial infarction. Focusing on cardiac morphology, we
+apply deep learning and explainable AI to evaluate whether wearable 1-lead
+ECGs can move beyond rhythm analysis and provide clinically meaningful
+insight into structural cardiac abnormalities.
+Results
+LVF prediction
+In total, 7.118 1-lead ECG signals and 7.593 12-lead ECG signals were
+labeled with LVF. Respectively, 14% and 11% of these were labeled with
+severe/moderate impaired LVF.
+Several data quality issues were identiﬁed in the 1-lead recordings,
+including devices worn on the wrong wrist, leading to signal inversion,
+device sharing among multiple individuals, and acquisition during non-
+resting states. These factors introduce substantial noise and may impair
+model performance. To mitigate this, we applied a correlation-based sieve
+that utilized preceding and subsequent signals from the same patient to
+exclude low-quality recordings that showed low correlation with the other
+signals. After sieving, 5480 1-lead signals (1638 excluded) comprising
+108,364 heartbeats from 460 patients (77.6% male, age 61.4 ± 11.4 years)
+were retained. For the 12-lead recordings, no comparable quality concerns
+wereobserved;7197signals(396excluded)and19,933heartbeatsfrom1856
+patients (73.4% male, age 62.7 ± 11.9 years) were included. The test sets
+consisted of 900 1-lead signals and 559 12-lead signals from 144 patients.
+Table 1 and Fig. 1 summarize the performance of the four models for
+LVF prediction on the test set. As anticipated, the full 12-lead model
+achieved the highest predictive performance across all metrics. The 1-lead
+models demonstrated reasonable discriminative ability, with only a modest
+reduction in performance compared to the 12-lead model. Pretraining the
+1-leadmodelusingleadIofthe12-leadECGimprovedAUCandAPbutdid
+not improve HBC and AUROC(ovr). The lead I model exhibited the lowest
+AUC yet ranked second HBC after the full 12-lead model. Supplementary
+Table 1 (see Supplementary Information) presents the performance of the
+model divided by sex. Across all models, AUROC is consistently higher in
+the male subset, though the remaining metrics do not allow a deﬁnitive
+conclusion regarding sex-related performance differences.
+Operating points
+In Fig. 1, sensitivity at 0.9 and 0.95 are indicated with grey dotted lines. At
+sensitivity 0.90, speciﬁcities were: 0.64 [0.58–0.69] (12-lead), 0.43
+[0.39–0.55] (lead I), 0.71 [0.70–0.72] (pretrained 1-lead), and 0.65
+[0.64–0.66] (1-lead). All models showed high intra-recording stability, as
+reﬂected by elevated HBC scores: most QRS complexes within a single
+recording were consistently assigned to the same binary class. This
+Table 1 | Comparison of all models for both reconstruction (MSE) and prediction of LVF (AUROC, AP, and HBC)
+Model
+MSE↓
+AUROC ↑
+AUROC(ovr) ↑
+AP ↑
+HBC ↑
+12-lead
+0.027
+0.897
+0.773
+0.600
+0.991
+[0.010–0.087]
+[0.887–0.906]
+[0.768–0.778]
+[0.573–0.626]
+[0.857–1.000]
+12-lead
+0.007
+0.805
+0.700
+0.357
+0.980
+(Lead I)
+[0.002–0.036]
+[0.792–0.816]
+[0.693–0.706]
+[0.332–0.382]
+[0.667–1.000]
+1-lead
+0.004
+0.883
+0.718
+0.511
+0.959
+(pretrained)
+[0.001-0.011]
+[0.881–0.886]
+[0.715–0.720]
+[0.501–521]
+[0.632–1.000]
+1-lead
+0.004
+0.863
+0.719
+0.459
+0.961
+[0.002-0.012]
+[0.859–0.866]
+[0.717–0.721]
+[0.449–0.469]
+[0.647–1.000]
+The AUROC, AP, and HBC scores are shown for the prediction of the moderate/severe impaired (positive) vs. normal/mild impaired groups; the AUROC (ovr) score shows the averaged one-versus-all
+AUROC for all four strata. The AUROCs, AP, and HBC metrics show the bootstrapped mean (and 95% conﬁdence interval) on the test set.
+Fig. 1 | ROC and PR analysis, including 95% conﬁdence intervals, comparing the four models. Gray vertical lines indicate recall/sensitivity of 0.9 and 0.95. (left) The ROC
+curves. (right) The PR curves. AP average precision.
+https://doi.org/10.1038/s44325-026-00153-2
+Article
+npj Cardiovascular Health
+Article in Press
+
+robustness underscores the reliability of signal-level predictions. Figure 2
+illustrates the AUC when the predictions at the heartbeat level were
+aggregated by averaging within each signal.
+Interpretability
+Figures 3, 4 show attribute manipulation of a heartbeat of the same patient
+with the pre-trained 1-lead and the full 12-lead model, respectively. The
+attribute manipulation can be interpreted as the rationale behind the
+model’s prediction. The 12-lead model shows a much more diverse set of
+features in multiple leads. Quantitative assessment of these features after
+myocardial infarction is currently not part of the clinical routine.
+Discussion
+This study provides a comparison of LVF prediction using matched 1-lead
+and 12-lead ECG datasets. As expected, the 12-lead model achieved the
+highest overall performance; however, the performance gap with the 1-lead
+models was modest, indicating that a substantial portion of LVF-relevant
+information present in the full 12-lead ECG is also captured in a single lead.
+Model performance was comparable to, and in some instances slightly
+exceeded, previously reported results in broader cardiac populations7,16
+(AUCs 0.83 and 0.89, respectively). Since early detection of ventricular
+dysfunction is particularly relevant in our post-myocardial infarction
+population, the ﬁndings of our study bear signiﬁcant importance.
+At a sensitivity of 0.90, speciﬁcity scores were 0.64 [0.58–0.69] (full 12-
+lead),0.43[0.39–0.55](leadI),0.71[0.70–0.72](pretrained1-lead),and0.65
+[0.64–0.66] (1-lead). These operating points are usable in clinical pathways.
+The scores show the percentage of healthy patients that should not be
+reviewed foratest that correctlypredictsleftventriculardysfunctionwith an
+accuracyof0.9.Theycouldbeused,forexample,totriggermanualreviewor
+ﬂag patients as likely unchanged/low risk, especially in settings where 12-
+lead acquisition is not feasible. Notably, averaging heartbeat-level predic-
+tions within a recording preferentially improved the 1-lead models, con-
+sistent with (i) the larger number of heartbeats available in the longer 1-lead
+signal (30 s vs. 10 s) and (ii) noise cancellation through aggregation. Toge-
+ther with the observed high heartbeat consistency, this also supports the
+beneﬁt of temporal aggregation over multiple recordings.
+A distinctive aspect of this work is the use of attribute manipulation to
+provideatransparentviewofmodelreasoning.The12-leadmodelleveraged
+a broader, multi-lead feature set (e.g., R-peak amplitude, notched R-peaks,
+T-wave morphology, see Fig. 4), whereas the 1-lead models used features
+that resembled the 12-lead feature set for lead I, which restricts interpret-
+ability and model performance, see Fig. 3. This raises important hypotheses:
+(i)whether1-leadLVFpredictionismosteffectiveinsubtypeswithglobalor
+lateral abnormalities visible on lead I; (ii) whether multi-lead conﬁgurations
+are essential for anterior or inferior infarctions; and (iii) how explainability
+can guide lead selection for wearable or resource-limited settings. The
+observedperformancedropfortheleadImodelcomparedtothefull12-lead
+model reinforces the value of complementary spatial information, yet the
+improvement of the 1-lead model after heartbeat aggregation suggests that
+temporal averaging may partially compensate for reduced spatial coverage.
+Future work should validate these hypotheses and explore whether
+explainability-driven insights can inform adaptive acquisition protocols or
+subtype-speciﬁc prediction models.
+While wrist-based 1-lead ECGs have primarily been optimized for
+rhythm analysis, such as atrial ﬁbrillation detection, thisstudy demonstrates
+their potential for structural and functional cardiac assessment. Although
+1-lead ECGs are not intended to replace 12-lead ECGs, the combination of
+reasonable discriminative performance, transparent mechanism, and
+aggregation-driven stability supports 1-lead ECGs as a practical tool for
+screening and potentially longitudinal monitoring. It could be used as a
+scalable clinical complement for (automated) early warning and home
+follow-up where high-quality 12-lead acquisition is not possible.
+We addressed 1-lead data quality challenges (device orientation errors,
+device sharing, non-rest acquisition) using an autocorrelation-based ﬁlter
+informed by adjacent recordings from the same patient. However, differ-
+entiating true pathological inversions from orientation-related inversions
+remains non-trivial, sinceseveral conditions transiently invert peaks or alter
+large ECG segments. We explored heartbeat autocorrelation, landmark-
+based checks, and learned classiﬁers with mixed success. Future research
+directions to address these issues and extend currently methodology
+include: (i) acquisition protocol reﬁnement to reduce incorrect device
+orientation and activity artifacts, (ii) robust automated quality control that
+combines signal-to-signal and even beat-to-beat consistency and anomaly
+detection, (iii) temporal modeling (e.g., multi visit aggregation) to convert
+stable beat-level consistency into patient-level trajectories, (iv) model per-
+formance analysis in clinical subtypes (global/lateral repolarization
+abnormalities vs. regional abnormalities), (v) clinical validation with cali-
+brated, use case speciﬁc thresholds (e.g., ﬁxed 0.90 speciﬁcity), including
+health system impact metrics, and (vi) reformulating LVF prediction as a
+regression rather than a classiﬁcation task. Although LVF is represented by
+four discrete classes in the current study, while clinically practical and more
+widely available, it is derived from an underlying continuous measurement.
+Training models on a regression objective would preserve this continuity
+and improve the sensitivity of longitudinal change detection: subtle shifts
+near class boundaries would no longer be obscured by label discretization,
+and large changes conﬁned within a single class would no longer go
+undetected.
+The VAE models trained in this study are likely not directly general-
+izable to broader cardiac populations, as the explainability framework
+deliberately leverages the conﬁned and well-characterized heterogeneity
+inherenttothepost-myocardialinfarctionpopulation.Thisisanintentional
+design choice: by restricting the training distribution, the latent space of the
+VAEcanbeshapedtoencodeclinicallymeaningfulvariation,allowingmore
+interpretable disentanglement of pathophysiological features. Extending
+this approach to more heterogeneous cardiac populations, encompassing,
+for example, patients with heart failure or LVD due to nonischemic etiol-
+ogies, would require substantially larger and more diverse training sets, and
+may introduce confoundingsourcesof variability thatcomplicate themodel
+explainability. Although the absence of external validation represents a
+limitation of this study, the primary aim of this exploratory work was to
+compare the clinical utility of morphological monitoring using the 12-lead
+versus the 1-lead ECG.
+The 12-lead ECG remains the gold standard for LVF prediction, yet
+1-lead models achieve clinically meaningful performance, particularlywhen
+predictions are aggregated. Explainability highlights a conﬁned single-lead
+featuresetinthe1-leadmodelsversusmulti-feature,multi-leadreasoningin
+the 12-lead model.
+This study demonstrates that LVF can be assessed from wearable
+1-lead
+ECGs
+with
+clinically
+meaningful
+accuracy
+(AUC = 0.883),
+Fig. 2 | AUROC values for intra-signal aggregation of predictions. 1-lead models
+beneﬁt signiﬁcantly more from post-processing than 12-lead models.
+https://doi.org/10.1038/s44325-026-00153-2
+Article
+npj Cardiovascular Health
+Article in Press
+
+approaching the performance of standard 12-lead ECGs (AUC = 0.897).
+Combined with explainable AI, these tools highlight the speciﬁc waveform
+features, R-peak amplitude, T-wave morphology, and Q- and S-wave depth
+that drive predictions, providing mechanistic transparency to support
+clinical decision-making. At a sensitivity of 0.90, the pretrained 1-lead
+model achieved a speciﬁcity of 0.71, suggesting utility as a screening tool to
+ﬂag patients at elevated risk of ventricular dysfunction between scheduled
+clinical visits. This is particularly relevant in post-MI follow-up, where early
+detection of deteriorating function carries signiﬁcant prognostic implica-
+tions. Several barriers must be addressed before these models can be
+deployed in routine clinical care. First, prospective validation in indepen-
+dent post-MI cohorts and broader cardiac populations is needed to conﬁrm
+generalizability beyond the single-center dataset used here. Second, robust
+automated quality control pipelinesmust be developedto handle real-world
+recording artifacts prevalent in unsupervised home monitoring. Third,
+clinical workﬂow integration requires careful threshold calibration to spe-
+ciﬁc use cases, and health system impact metrics should be evaluated.
+Finally,regulatorypathwaysforAI-based cardiacfunctionmonitoringfrom
+consumerwearablesremainnascent,andprospectivestudiesdemonstrating
+clinical outcome beneﬁt will be essential for adoption.
+Methods
+Data
+The study uses matched 1-lead and 12-lead ECG datasets from the same
+cohort, see Fig. 5. All data were obtained from patients diagnosed with acute
+coronary syndrome, between 2018 and 2023 and treated at the Leiden
+UniversityMedical Center, Netherlands. The 1-lead dataset contains 63.950
+raw 30-s, 1-lead ECG signals (300 Hz) from 708 patients (77.3% male, age
+59.5 ± 10.8 years), recorded at home using a Withings ECG Smartwatch as
+part of a clinical telemonitoring program17,18. The 12-lead dataset contains
+77.005 raw 10-s, 12-lead ECG signals (500 Hz), from 6.703 patients (76.3%
+male, age 60.5 ± 11.3 years). The study protocol, identiﬁed as nWMO-
+DIV2_2022006, received institutional review board approval (Niet-Wet
+medische wetenschappelijk onderzoek (nWMO) commissie Divisie 2),
+which waived the requirement for informed consent for the use of pseu-
+donymized ECG data, since it is considered infeasible to obtain informed
+consent in retrospect for such a large number of patients.
+Data preprocessing
+Preprocessing of both 1-lead and 12-lead ECG signals followed the proce-
+dure described in Van der Valk et al.7, see Fig. 6 for an overview. The raw
+ECG signals were segmented into individual heartbeats, each deﬁned as an
+800 ms interval centered on the R-peak, 400 ms preceding and 400 ms
+following. This interval is chosen to balance under- and over-segmentation
+and thereby either missing parts of the heartbeat or including previous or
+subsequent heartbeats. R-peak detection was performed using a method
+inspired by RPNet, a U-Net-structured CNN, previously trained on
+manually annotated peak locations as described in Vijayarangan et al.19.
+Because the 1-lead recordings were 30 s in duration compared to the
+10 s duration of the 12-lead recordings, the 1-lead data yielded a greater
+numberof segmented beats.Giventhelowintra-recordingvariabilityand to
+maximize the available training data for the 1-lead model, all valid heart-
+beats were retained for this modality. Segmented beats containing excessive
+noise or ﬂatline segments were excluded; for the 12-lead case, exclusion was
+applied if any lead exhibited such artifacts. For details on the exclusion
+procedure, see Van der Valk et al.7.
+Left ventricular function
+We selected LVF as a prediction target due to its reﬂection of structural
+changes after MI and the presence of well-characterized ECG features.
+Severalofthese,suchastheﬁrstQRSintegral,STintegral,ST-Tintegral,and
+ST-T area (integral of the absolute values), have shown discrimination in
+recovering MI patients. The predictive capacity of these features differed per
+lead and MI location20,21. T-wave morphology changes, including inversion
+and subsequent reinversion, have also been linked with favorable LVF
+recovery22.
+ECG signals were labeled with four ordinal LVF categories: normal
+function, mild impairment, moderate impairment, and severe impairment
+(LVEF ≥55%, 45%–54%, 35%–44%, and <35%, respectively). Labeling was
+performed using a large language model (LLM)-based classiﬁcation of
+echocardiogram reports obtained as part of the routine clinical workﬂow.
+This method is validated and described by Van der Loo et al.23. An echo-
+cardiogram report was used as a label if the examination was conducted
+within 7 days before or after the corresponding ECG recording. A 1 day
+instead of a 3 day margin was applied when the ECG was obtained within
+two weeks after cardiac intervention, as the LVF can still change con-
+siderablyintheﬁrstweeksaftercardiacintervention.Thereportsthemselves
+were based on visual interpretation of the echocardiograms by clinicians.
+Model overview and training
+LVF prediction from both 1-lead and 12-lead ECGs employed the same
+model and (pre-)training strategy as succesfully employed in Van der Valk
+et al.7. A partial β-variational autoencoder (VAE) (Fig. 6) was used for both
+modalities. The architecture consisted of seven recurrent convolutional
+blocks in both the encoderand decoder.Four separate modelinstances were
+trained: (i) a 12-lead model, a model trained and evaluated on the 12-lead
+ECGs, (ii) a lead I model, a model trained and evaluated on lead I of the 12-
+lead ECGs, (iii) a pretrained 1-lead model, a model pretrained on lead I of
+the 12-lead ECG and ﬁnetuned (retrained using the same training para-
+meters,nofrozenlayers) andevaluatedonthe1-lead ECGs,and(iv) a1-lead
+model, a model trained and evaluated on the 1-lead ECGs. The models
+expect an input of shape 12 × 400; therefore, for the 1-lead recordings, each
+Fig. 3 | Attribute manipulation in three heartbeats with different LVF impair-
+ment. The black line shows the origin heartbeat of the 1-lead ECG; the blue line
+(largely covered by the black line here) shows the reconstructed heartbeat by the
+model. The green to red distributions around the reconstructed signal are the result
+of attribute manipulation and can be interpreted as the reason that the model
+classiﬁed the signal with the LVF value shown in the legend (0 = severely impaired,
+1 = moderately impaired, 2 = mildly impaired, 3 = normal). The green signal shows
+the 1-lead signal that would be classiﬁed as having a normal LVF. The green signal in
+all ﬁgures shows an R-peak with a larger amplitude, more pronounced Q- and
+S-waves and a T-wave with a slightly larger area.
+https://doi.org/10.1038/s44325-026-00153-2
+Article
+npj Cardiovascular Health
+Article in Press
+
+1 × 400 heartbeat was duplicated along the lead dimension to match the
+required input shape.
+Feature visualization
+The model output and interpretability are shown by means of attribute
+manipulation as explained in Van der Valk et al.7, see Fig. 6. Each ECG
+heartbeat was encoded into znls and zls, of dimension 599 and one, respec-
+tively. Then z was decoded to reconstruct the signal. For attribute manip-
+ulation six hypothetical signals were created by replacing zls with six values:
+four means for the four LVF groups (S1–S4) and two extremes (S0: mean
+minus one standard deviation of severely impaired group; S5: mean plus one
+standard deviation of normal LVF group). These six patient-speciﬁc
+hypothetical signals were used to illustrate how ECG morphology changes
+across LVF impairment levels and which features the model leverages for
+classiﬁcation. These signals create a context for the ECG heartbeat w.r.t.
+LVF, allowing comparison against the whole database. This facilitates signal
+interpretation and potentially enables interpretation by less trained medical
+personnel.
+Experiments
+Both datasets were splitinto a trainingset (89%of signals) and aholdouttest
+set (11% of signals). The test set was constructed exclusively from the
+overlapping portion of the datasets, where both patients and acquisition
+dates (within a seven-day window) were overlapping, to enable a head-to-
+head comparison. To prevent overﬁtting, none of the patients in the 12-lead
+and the 1-lead test sets were used in any of the training sets. A ﬁvefold cross-
+Fig. 4 | Attribute manipulation in a heartbeat with severe LVF impairment. The
+patient and visualization method are the same as in the ﬁrst plot in Fig. 3, see that
+caption for detailed explanation. In this case the green signal shows among others a
+larger R-peak amplitude, a T-wave with larger area and a R-peak without a notch in
+lead aVR, V2, aVF, V5, and V6.
+https://doi.org/10.1038/s44325-026-00153-2
+Article
+npj Cardiovascular Health
+Article in Press
+
+validation was performed in both training sets, maintaining an 85:15 ratio
+between the trainingand validation sets withineach fold.Alldata splits were
+done at the patient level and stratiﬁed by label when applicable. Training
+continued until convergence, deﬁned as no improvement in validation loss
+for 15 consecutive epochs. To mitigate overﬁtting, we employed balanced
+sampling, early stopping, L2 regularization on the fully connected layer, and
+weight decay with the Adam optimizer. To prevent gradient explosion, He
+initialization was used24, and to avoid numerical overﬂow, the standard
+deviations of the posterior q(z∣X) were clipped to the interval [−10,3] prior
+to sampling. The models were implemented and trained on a 24Gb GPU.
+Hyperparameter tuning resulted in βls = 0, βnls = 0.001 and γ = 2.0 for both
+models. This is in line with the experiments shown by Van der Valk et al.7.
+Feature evaluation
+LVF predictions were evaluated using three classiﬁcation metrics: the Area
+Under the Receiver Operating Characteristic Curve (AUROC), average
+precision score (AP), and a heartbeat consistency score (HBC). The AP and
+HBC metrics were applied to a binary classiﬁcation task (positive class:
+severe/moderate impairment vs. negative class: mild impairment/normal
+function), reﬂecting clinically relevant groupings and enabling comparison
+with previous studies. The AUROC metric was used to evaluate the one-
+versus-all prediction for all four classes and to evaluate the binary classiﬁ-
+cation task mentioned before. The HBC score was deﬁned as the portion of
+heartbeats from the same signal that was classiﬁed in the same group. The
+Fig. 6 | Overview of our processing and prediction framework. Initially, the 12-
+lead ECGs are split into individual heartbeats using RPNet19. Subsequently, the
+heartbeats are sieved in two stages: the ﬁrst based on individual magnitude, iden-
+tifying low magnitude as indicative of a ﬂat signal, and the second utilizing auto-
+correlation to assess correlation with other heartbeats from the same signal. The
+remaining heartbeats (indicated with green dots) are used as input for the VAE. The
+encoded representation z is derived, comprising znls and zls. While zls directly con-
+tributes to LVF label prediction with loss Lpred_ls, znls serves as input for an adver-
+sarial multi-layer perceptron (MLP) also predicting the LVF label, introducing loss
+Lpred_ls. The decoder’s input is sampled from z to produce the reconstructed
+heartbeat, subsequently compared with the original input heartbeat, resulting in the
+reconstruction loss Lrecon.
+Fig. 5 | Clinical monitoring and data collection. Timeline indicates the 12-lead
+ECG, 1-lead ECG, and echocardiogram data collection following the clinical pro-
+tocol. 12-lead ECGs and echocardiograms are collected during hospital visits as part
+of the clinical routine. 1-lead ECGs are collected at home by patients on suggested
+intervals after discharge. A subset of the 1-lead ECGs, when acquisition overlaps
+with echocardiography, is labeled with the LVF label extracted from the echo-
+cardiography reports.
+https://doi.org/10.1038/s44325-026-00153-2
+Article
+npj Cardiovascular Health
+Article in Press
+
+AUROC and AP scores were calculated with the averaged predictions from
+all heartbeats in a signal.
+Heartbeat reconstruction performance was assessed using the mean
+squared error (MSE) between the ECG input and the output signal. For
+intermodel comparisons of prediction scores and MSE, paired t-tests were
+performed. The conﬁdence intervals (95%) for AUC, AP, and HBC scores
+were estimated by bootstrapping with n = 1000 samples of the combined
+output distribution (ﬁve models). The conﬁdence interval for MSE was
+estimated directly with the combined output error distribution.
+Data availability
+The datasets generated and/or analyzed during the current study are not
+publicly available dueto strict privacy regulation of the Leiden University
+Medical Center but are available from thecorresponding author on rea-
+sonable request.
+Code availability
+Deep learning analyses were performed using Python 3.10 and PyTorch
+2.5.1 (CUDA 11.8) for GPU-accelerated model training and inference. All
+parameters and custom code developed for this study will be made publicly
+available on GitHub.
+Received: 30 March 2026; Accepted: 19 September 2026;
+References
+1.
+Rajakariar, K. et al. Accuracy of a smartwatch based single-lead
+electrocardiogram device in detection of atrial ﬁbrillation. Heart 106,
+665–670 (2020).
+2.
+Lubitz, S. A. et al. Detection of atrial ﬁbrillation in a large population
+using wearable devices: the ﬁtbit heart study. Circulation 146,
+1415–1424 (2022).
+3.
+Turakhia, M. P. et al. Rationale and design of a large-scale, app-based
+study to identify cardiac arrhythmias using a smartwatch: the Apple
+Heart Study. Am. Heart J. 207, 66–75 (2019).
+4.
+Clifford, G. D. et al. AF classiﬁcation from a short single lead ECG
+recording: the PhysioNet/computing in cardiology challenge 2017. In
+Computing in Cardiology (CinC), pp 1–4 (2017).
+5.
+Jang, J. H., Kim, T. Y., Lim, H. S. & Yoon, D. Unsupervised feature
+learningforelectrocardiogramdatausingtheconvolutionalvariational
+autoencoder. PLoS ONE 16, 1–16 https://doi.org/10.1371/journal.
+pone.0260612 (2021).
+6.
+Alday, E. A. P. et al. Classiﬁcation of 12-lead ECGs: the PhysioNet/
+computing in cardiology challenge 2020. Physiol. Meas. 41, 124003
+(2020).
+7.
+van der Valk, V., Atsma, D., Scherptong, R. & Staring, M. Explainable
+ECG analysisby explicit information disentanglement with VAEs. IEEE
+Trans. Biomed. Eng. (2025).
+8.
+van de Leur, R. R. et al. Inherently explainable deep neural network-
+based interpretation of electrocardiograms using variational auto-
+encoders. medRxiv (2022).
+9.
+Neyazi, M. et al. Prediction of incident heart failure through deep
+learning-based analysis of 1-lead ECGs. Eur. Heart J. 44,
+ehad655–900 (2023).
+10. Holmstrom, L. et al. Deep learning-based electrocardiographic
+screening for chronic kidney disease. Commun. Med. 3, 73 (2023).
+11. Ott, G., Schaubelt, Y., Lopez Alcaraz, J. M., Haverkamp, W. &
+Strodthoff, N. Using explainable AI to investigate electrocardiogram
+changes during healthy aging-from expert features to raw signals.
+PloS ONE 19, e0302024 (2024).
+12. Jin, B.T. etal. Transferlearningenablespredictionof myocardialinjury
+from continuous single-lead electrocardiography. J. Am. Med. Inform.
+Assoc. 29, 1908–1918 (2022).
+13. Gibson, C. M. et al. Evolution of single-lead ecg for stemi detection
+using a deep learning approach. Int. J. Cardiol. 346, 47–52 (2022).
+14. Khunte, A. et al. Detection of left ventricular systolic dysfunction from
+single-lead electrocardiography adapted for portable and wearable
+devices. npj Digit. Med. 6, 124 (2023).
+15. Zhang, D., Yang, S., Yuan, X. & Zhang, P. Interpretable deep learning
+for automatic diagnosis of 12-lead electrocardiogram. Iscience 24
+(2021).
+16. Attia, Z. I. et al. Prospective evaluation of smartwatch-enabled
+detection of left ventricular dysfunction. Nat. Med. 28, 2497–2503
+(2022).
+17. Treskes, R. W. et al. The box-ehealth in the outpatient clinic follow-up
+of patients with acute myocardial infarction: cost-utility analysis. J.
+Med. Internet Res. 24, e30236 (2022).
+18. Campo, D. et al. Atrial ﬁbrillation detection with an analog smartwatch:
+prospective clinical study and algorithm validation. JMIR Formative
+Res. 6, e37280 (2022).
+19. Vijayarangan, S. et al. RPnet: a deep learning approach for robust R
+peak detection in noisy ECG. in International Conference of the IEEE
+Engineering in Medicine & Biology Society (EMBC), pp 345–348
+(2020).
+20. Chen, X. et al. Incremental changes in QRS duration as predictor for
+cardiovascular disease: a 21-year follow-up of a randomly selected
+general population. Sci. Rep. 11, 13652 (2021).
+21. Kylmälä, M. M. et al. Predicting recovery of myocardial function by
+electrocardiography after acute infarction. Ann. Noninvasive
+Electrocardiol. 18, 230–239 (2013).
+22. Yokoyama, H. et al. Deeply reinverted t wave at 14 days after the onset
+of ﬁrst anterior acute myocardial infarction predicts improved left
+ventricular functionat 6 months.Clin. Cardiol. 38, 157–163 https://doi.
+org/10.1002/clc.22366 (2015).
+23. van der Loo, W. et al. Large language models for structured
+cardiovascular data extraction: A foundation for scalable research
+and clinical applications. Eur Heart J ztaf127 (2025).
+24. He, K., Zhang, X., Ren, S. & Sun, J. Delving deep into rectiﬁers:
+Surpassing human-level performance on imagenet classiﬁcation. In
+Proceedings of the IEEE International Conference on Computer
+Vision, pp 1026–1034 (2015).
+Acknowledgements
+This project has received funding from the European Institute of Innovation
+and Technology (EIT) Health under grant agreement 230193 (ASSIST).
+Author contributions
+V.V. wrote the main paper text and prepared all ﬁgures. M.S and R.S. gave
+multiple rounds of feedback on the ﬁgures and text. All authors reviewed the
+ﬁnal paper. As supervisors, M.S. and R.S. had a major role in the study
+design and data collection executed by V.V., as head of the cardiology
+department,D.A.hadamajorroleintheinitialstudyinitiation,datacollection,
+and funding acquisition.
+Competing interests
+The authors declare no competing interests.
+Additional information
+Supplementary information The online version contains
+supplementary material available at
+https://doi.org/10.1038/s44325-026-00153-2.
+Correspondence and requests for materials should be addressed to
+Viktor van der Valk.
+Reprints and permissions information is available at
+http://www.nature.com/reprints
+Publisher’s note Springer Nature remains neutral with regard to
+jurisdictional claims in published maps and institutional afﬁliations.
+https://doi.org/10.1038/s44325-026-00153-2
+Article
+npj Cardiovascular Health
+Article in Press
+
+Open Access This article is licensed under a Creative Commons
+Attribution 4.0 International License, which permits use, sharing,
+adaptation, distribution and reproduction in any medium or format, as long
+as you give appropriate credit to the original author(s) and the source,
+provide a link to the Creative Commons licence, and indicate if changes
+were made. The images or other third party material in this article are
+included in the article's Creative Commons licence, unless indicated
+otherwise in a credit line to the material. If material is not included in the
+article's Creative Commons licence and your intended use is not permitted
+by statutory regulation or exceeds the permitted use, you will need to
+obtain permission directly from the copyright holder. To view a copy of this
+licence, visit http://creativecommons.org/licenses/by/4.0/.
+© The Author(s) 2026
+This Article in Press is shared early to give you faster access to new research.
+It iscitable and carries a permanent DOI. The ﬁnal edited version will replace it
+automatically.
+https://doi.org/10.1038/s44325-026-00153-2
+Article
+npj Cardiovascular Health
+Article in Press

@@ -1,0 +1,803 @@
+[
+  {
+    "file": "assets/motion/2026-10-04/main/m1/esa-0.jpg",
+    "story": "m1",
+    "source": "https://www.esa.int/ESA_Multimedia/Images/2026/09/ESA_team_at_Jammertest_2026",
+    "download": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/09/esa_team_at_jammertest_2026/27542153-1-eng-GB/ESA_team_at_Jammertest_2026.jpg",
+    "credit": "\u00a9ESA/jensenmedia",
+    "rights": "ESA Standard Licence; editorial/informational use with credit",
+    "status": "actual-September-2026",
+    "sha256": "038c472854e2c5ee219da2f554e27fcc3a9bd067598017acdd211e220d08e0c9",
+    "probe": {
+      "width": 3000,
+      "height": 2000
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m1/esa-1.jpg",
+    "story": "m1",
+    "source": "https://www.esa.int/ESA_Multimedia/Images/2026/09/Spoofed_smartphone",
+    "download": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/09/spoofed_smartphone/27540308-1-eng-GB/Spoofed_smartphone.jpg",
+    "credit": "\u00a9ESA/jensenmedia",
+    "rights": "ESA Standard Licence; editorial/informational use with credit",
+    "status": "actual-September-2026",
+    "sha256": "1f3ee5bbd6c863ffb38d1d6247d7ab68976b00885f7d85ad9f0228536e3877ee",
+    "probe": {
+      "width": 3840,
+      "height": 2160
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m1/esa-2.png",
+    "story": "m1",
+    "source": "https://www.esa.int/ESA_Multimedia/Images/2026/09/Galileo_Signal_Authentication_Service_test_in_Norway",
+    "download": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/09/galileo_signal_authentication_service_test_in_norway/27526219-7-eng-GB/Galileo_Signal_Authentication_Service_test_in_Norway.png",
+    "credit": "\u00a9ESA/jensenmedia",
+    "rights": "ESA Standard Licence; editorial/informational use with credit",
+    "status": "actual-September-2026",
+    "sha256": "628eaa9474c846b035da35216373fab491e7e98e1f590bb4590dcdcb9bb4f976",
+    "probe": {
+      "width": 3000,
+      "height": 2000
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m1/esa-3.jpg",
+    "story": "m1",
+    "source": "https://www.esa.int/ESA_Multimedia/Images/2026/09/Navigation_laboratory_van_in_Norway",
+    "download": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/09/navigation_laboratory_van_in_norway/27542059-1-eng-GB/Navigation_laboratory_van_in_Norway.jpg",
+    "credit": "\u00a9ESA/jensenmedia",
+    "rights": "ESA Standard Licence; editorial/informational use with credit",
+    "status": "actual-September-2026",
+    "sha256": "36c5f8c66ea42cbbfbe44924af2f9b1fbc83f068a5eb757c14dd887b7bfbbda0",
+    "probe": {
+      "width": 3000,
+      "height": 2000
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m1/esa-4.jpg",
+    "story": "m1",
+    "source": "https://www.esa.int/ESA_Multimedia/Images/2026/09/ESA_engineers_test_a_drone_Jammertest_2026",
+    "download": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/09/esa_engineers_test_a_drone_jammertest_2026/27540261-1-eng-GB/ESA_engineers_test_a_drone_Jammertest_2026.jpg",
+    "credit": "\u00a9ESA/jensenmedia",
+    "rights": "ESA Standard Licence; editorial/informational use with credit",
+    "status": "actual-September-2026",
+    "sha256": "c8d79c7977aa2092d9c53860481ceb0e05043c2c7b7c2932a5bb02960a1dcf0c",
+    "probe": {
+      "width": 3000,
+      "height": 2000
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m1/jammertest-2025.mp4",
+    "story": "m1",
+    "source": "https://www.esa.int/esatv/Videos/2026/02/Jammertest_strengthening_satellite_navigation",
+    "download": "https://dlmultimedia.esa.int/download/public/videos/2026/02/003/2602_003_AR_EN.mp4",
+    "credit": "\u00a9European Space Agency \u2014 ESA",
+    "rights": "ESA Standard Licence; editorial/informational use with on-screen credit",
+    "status": "archive-September-2025",
+    "sha256": "dcec21500e377f7e6b7caafbf23e9874a4f1bd695649e7b803f3067663351663",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 768,
+          "height": 432,
+          "r_frame_rate": "25/1"
+        },
+        {
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "219.637007"
+      }
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m2/pexels-8460066.mp4",
+    "story": "m2",
+    "source": "https://www.pexels.com/video/8460066/",
+    "download": "https://videos.pexels.com/video-files/8460066/8460066-hd_1920_1080_24fps.mp4",
+    "credit": "Los Muertos Crew / Pexels",
+    "rights": "Pexels licence; contextual healthcare footage",
+    "status": "context",
+    "sha256": "75d375e8560ae97fdea61e98f30f6a3c05a2949022f53fea73f4bae1c1177db9",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "24000/1001"
+        }
+      ],
+      "format": {
+        "duration": "14.264250"
+      }
+    },
+    "nativeProbe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "24000/1001"
+        }
+      ],
+      "format": {
+        "duration": "14.264250"
+      }
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m2/pexels-8311312.mp4",
+    "story": "m2",
+    "source": "https://www.pexels.com/video/8311312/",
+    "download": "https://videos.pexels.com/video-files/8311312/8311312-hd_1920_1080_25fps.mp4",
+    "credit": "Ammad Rasool / Pexels",
+    "rights": "Pexels licence; contextual healthcare footage",
+    "status": "context",
+    "sha256": "130c32753e784668f0b4b4430f747de1fe167d9cfd9918b774aab388c44c2653",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "12.000000"
+      }
+    },
+    "nativeProbe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        },
+        {
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "12.010000"
+      }
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m2/pexels-8026528.mp4",
+    "story": "m2",
+    "source": "https://www.pexels.com/video/8026528/",
+    "download": "https://videos.pexels.com/video-files/8026528/8026528-uhd_4096_2160_25fps.mp4",
+    "credit": "MART PRODUCTION / Pexels",
+    "rights": "Pexels licence; contextual healthcare footage",
+    "status": "context",
+    "sha256": "e20ba7f7f68d2205fa595109bb673c640c6d4e286b2a31c9bf87d99d01ab6f07",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1012,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "15.880000"
+      }
+    },
+    "nativeProbe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 4096,
+          "height": 2160,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "15.880000"
+      }
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m2/pexels-8413638.mp4",
+    "story": "m2",
+    "source": "https://www.pexels.com/video/8413638/",
+    "download": "https://videos.pexels.com/video-files/8413638/8413638-uhd_2160_3840_25fps.mp4",
+    "credit": "SHVETS production / Pexels",
+    "rights": "Pexels licence; contextual healthcare footage",
+    "status": "context",
+    "sha256": "ba17b09ed15d8b9c05553b1b93e7d22060a4cbfc3688dd12ea688d534a402e92",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 608,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "16.600000"
+      }
+    },
+    "nativeProbe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 2160,
+          "height": 3840,
+          "r_frame_rate": "25/1"
+        },
+        {
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "16.618333"
+      }
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m2/pexels-7088462.mp4",
+    "story": "m2",
+    "source": "https://www.pexels.com/video/7088462/",
+    "download": "https://videos.pexels.com/video-files/7088462/7088462-uhd_2160_3840_25fps.mp4",
+    "credit": "MART PRODUCTION / Pexels",
+    "rights": "Pexels licence; contextual healthcare footage",
+    "status": "context",
+    "sha256": "2c2fc7b2f379d84faa0339cbf852a7f2bbc8ac9129776d51bc6be30b54c2f194",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 608,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "20.720000"
+      }
+    },
+    "nativeProbe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 2160,
+          "height": 3840,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "20.720000"
+      }
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m2/pexels-7195664.mp4",
+    "story": "m2",
+    "source": "https://www.pexels.com/video/7195664/",
+    "download": "https://videos.pexels.com/video-files/7195664/7195664-uhd_4096_2160_25fps.mp4",
+    "credit": "kaboompics / Pexels",
+    "rights": "Pexels licence; contextual healthcare footage",
+    "status": "context",
+    "sha256": "18a8500e9567e14341bb3e600bea95584ad302bd86a8f989927ce7412483f9a4",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1012,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "16.680000"
+      }
+    },
+    "nativeProbe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 4096,
+          "height": 2160,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "16.680000"
+      }
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/reels/r1/pexels-6997946.mp4",
+    "story": "r1",
+    "source": "https://www.pexels.com/video/6997946/",
+    "download": "https://videos.pexels.com/video-files/6997946/6997946-hd_1920_1080_25fps.mp4",
+    "credit": "Pavel Danilyuk / Pexels",
+    "rights": "Pexels licence; contextual healthcare footage",
+    "status": "context",
+    "sha256": "e6417fe0f5bc3d0063dc8a94291b26647061dbcf1a8f199354f2b508f408af22",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "18.320000"
+      }
+    },
+    "nativeProbe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "18.320000"
+      }
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/reels/r1/pexels-5998403.mp4",
+    "story": "r1",
+    "source": "https://www.pexels.com/video/5998403/",
+    "download": "https://videos.pexels.com/video-files/5998403/5998403-hd_1080_1920_30fps.mp4",
+    "credit": "Pavel Danilyuk / Pexels",
+    "rights": "Pexels licence; contextual healthcare footage",
+    "status": "context",
+    "sha256": "0aeb9a2a7b2131ecfdce05b019c31cadd7ca059ef01be7e0afbc339bf92cd473",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 608,
+          "height": 1080,
+          "r_frame_rate": "30000/1001"
+        }
+      ],
+      "format": {
+        "duration": "11.277933"
+      }
+    },
+    "nativeProbe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1080,
+          "height": 1920,
+          "r_frame_rate": "30000/1001"
+        }
+      ],
+      "format": {
+        "duration": "11.277933"
+      }
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/reels/r1/pexels-36656061.mp4",
+    "story": "r1",
+    "source": "https://www.pexels.com/video/36656061/",
+    "download": "https://videos.pexels.com/video-files/36656061/15539803_1080_1920_30fps.mp4",
+    "credit": "GIUSEPPE DE BERGOLIS / Pexels",
+    "rights": "Pexels licence; contextual healthcare footage",
+    "status": "context",
+    "sha256": "52bd93ee699fc7fe56c715efd522c4f11560b7edf70863511e1455b395e5ea2c",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 608,
+          "height": 1080,
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "15.666667"
+      }
+    },
+    "nativeProbe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1080,
+          "height": 1920,
+          "r_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "15.666667"
+      }
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/reels/r1/pexels-5453568.mp4",
+    "story": "r1",
+    "source": "https://www.pexels.com/video/5453568/",
+    "download": "https://videos.pexels.com/video-files/5453568/5453568-uhd_3840_2160_25fps.mp4",
+    "credit": "Tima Miroshnichenko / Pexels",
+    "rights": "Pexels licence; contextual healthcare footage",
+    "status": "context",
+    "sha256": "ca28f642cf9f4e275048574ef385ef41ee8f02cf8b95c26f1fe502a17d634495",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "15.640000"
+      }
+    },
+    "nativeProbe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 3840,
+          "height": 2160,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "15.640000"
+      }
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/reels/r2/inspyre-pyrocb-diagram.png",
+    "story": "r2",
+    "source": "https://science.nasa.gov/earth/natural-disasters/wildfires/nasa-campaign-explores-clouds-spawned-by-wildfires/",
+    "download": "https://science.nasa.gov/wp-content/uploads/2026/10/inspyre-pyrocb-diagram.png",
+    "credit": "NASA/Bill Ingalls, NASA/JSC/Mark Sowa",
+    "rights": "NASA media usage guidelines; factual editorial use, credit, no endorsement",
+    "status": "illustrative-scientific-diagram",
+    "sha256": "45dfd917d0844d9962e14dea84e0df87967976e962d7a274cdb3220bf91c3ef9",
+    "probe": {
+      "width": 1355,
+      "height": 1339
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/reels/r2/inspyre-news-image-7-28-26-4.jpeg",
+    "story": "r2",
+    "source": "https://science.nasa.gov/earth/natural-disasters/wildfires/nasa-campaign-explores-clouds-spawned-by-wildfires/",
+    "download": "https://science.nasa.gov/wp-content/uploads/2026/10/inspyre-news-image-7-28-26-4.jpeg",
+    "credit": "NASA/Bill Ingalls, NASA/JSC/Mark Sowa",
+    "rights": "NASA media usage guidelines; factual editorial use, credit, no endorsement",
+    "status": "actual-campaign-2026",
+    "sha256": "295b3958974ef853eb27743b06bea2a17b8ef557d37c99bdb6358b468a77165d",
+    "probe": {
+      "width": 767,
+      "height": 431
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/reels/r2/inspyre-preview-loiacono-9318.jpg",
+    "story": "r2",
+    "source": "https://science.nasa.gov/earth/natural-disasters/wildfires/nasa-campaign-explores-clouds-spawned-by-wildfires/",
+    "download": "https://science.nasa.gov/wp-content/uploads/2026/10/inspyre-preview-loiacono-9318.jpg",
+    "credit": "NASA/Milan Loiacono",
+    "rights": "NASA media usage guidelines; factual editorial use, credit, no endorsement",
+    "status": "actual-campaign-2026",
+    "sha256": "a10b500ef8476fc8122530c8f90d84d1743dd393cbaf90a591f490810f7eaa46",
+    "probe": {
+      "width": 6000,
+      "height": 4000
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/reels/r2/afrc2026-0144-226orig-er2-inst.jpg",
+    "story": "r2",
+    "source": "https://science.nasa.gov/earth/natural-disasters/wildfires/nasa-campaign-explores-clouds-spawned-by-wildfires/",
+    "download": "https://science.nasa.gov/wp-content/uploads/2026/10/afrc2026-0144-226orig-er2-inst.jpg",
+    "credit": "NASA/Carla Escamilla",
+    "rights": "NASA media usage guidelines; factual editorial use, credit, no endorsement",
+    "status": "actual-campaign-2026",
+    "sha256": "88efc63bfc57b26dc1ae3d5dacfa9589579208102d2d5b5975bfd96303ff05bc",
+    "probe": {
+      "width": 4128,
+      "height": 2752
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/reels/r2/inspyre-preview-loiacono-0172.jpg",
+    "story": "r2",
+    "source": "https://science.nasa.gov/earth/natural-disasters/wildfires/nasa-campaign-explores-clouds-spawned-by-wildfires/",
+    "download": "https://science.nasa.gov/wp-content/uploads/2026/10/inspyre-preview-loiacono-0172.jpg",
+    "credit": "NASA/Milan Loiacono",
+    "rights": "NASA media usage guidelines; factual editorial use, credit, no endorsement",
+    "status": "actual-campaign-2026",
+    "sha256": "a8046a6c7b61688a4d87985768e692de59ecc49964b2443ab22dac42af83ec9f",
+    "probe": {
+      "width": 6000,
+      "height": 4000
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/reels/r2/inspyre-light-walk.mp4",
+    "story": "r2",
+    "source": "https://science.nasa.gov/earth/natural-disasters/wildfires/nasa-campaign-explores-clouds-spawned-by-wildfires/",
+    "download": "https://science.nasa.gov/wp-content/uploads/2026/10/inspyre-light-walk.mp4",
+    "credit": "NASA/Katie Jepson",
+    "rights": "NASA media usage guidelines; factual editorial use, credit, no endorsement",
+    "status": "actual-campaign-2026",
+    "sha256": "ab88b62a973f5c5a41cf7da62e527699262c4d8cab999f8f55e5b698c3fa62d0",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 720,
+          "height": 480,
+          "r_frame_rate": "12000/1001"
+        },
+        {
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "16.349667"
+      }
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/reels/r1/pexels-6997946-still.png",
+    "story": "r1",
+    "source": "https://www.pexels.com/video/6997946/",
+    "download": "https://videos.pexels.com/video-files/6997946/6997946-hd_1920_1080_25fps.mp4",
+    "credit": "Pavel Danilyuk / Pexels",
+    "rights": "Pexels licence; contextual healthcare footage",
+    "status": "context",
+    "sha256": "2ab79a90affe823ee41ded916abd518578e543892a15683ce4dd0f3eb20c19f4",
+    "probe": {
+      "width": 1920,
+      "height": 1080
+    },
+    "nativeProbe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "18.320000"
+      }
+    },
+    "derivation": "Unanimated source-video frame at 14s"
+  },
+  {
+    "file": "assets/motion/2026-10-04/reels/r1/pexels-5998403-still.png",
+    "story": "r1",
+    "source": "https://www.pexels.com/video/5998403/",
+    "download": "https://videos.pexels.com/video-files/5998403/5998403-hd_1080_1920_30fps.mp4",
+    "credit": "Pavel Danilyuk / Pexels",
+    "rights": "Pexels licence; contextual healthcare footage",
+    "status": "context",
+    "sha256": "401be39beca74626df36d0ea6b0e1352af1aba081fcd305fb83825ddb30e762b",
+    "probe": {
+      "width": 608,
+      "height": 1080
+    },
+    "nativeProbe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1080,
+          "height": 1920,
+          "r_frame_rate": "30000/1001"
+        }
+      ],
+      "format": {
+        "duration": "11.277933"
+      }
+    },
+    "derivation": "Unanimated source-video frame at 9s"
+  },
+  {
+    "file": "assets/motion/2026-10-04/reels/r1/pexels-5453568-still.png",
+    "story": "r1",
+    "source": "https://www.pexels.com/video/5453568/",
+    "download": "https://videos.pexels.com/video-files/5453568/5453568-uhd_3840_2160_25fps.mp4",
+    "credit": "Tima Miroshnichenko / Pexels",
+    "rights": "Pexels licence; contextual healthcare footage",
+    "status": "context",
+    "sha256": "c22ae004514e34a5f255adf4b8d8aff22a5f91bc418bedad062a3a07a7d02af5",
+    "probe": {
+      "width": 1920,
+      "height": 1080
+    },
+    "nativeProbe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 3840,
+          "height": 2160,
+          "r_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "15.640000"
+      }
+    },
+    "derivation": "Unanimated source-video frame at 12s"
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m2/fig1-roc.png",
+    "story": "m2",
+    "source": "https://www.nature.com/articles/s44325-026-00153-2",
+    "download": "https://www.nature.com/articles/s44325-026-00153-2_reference.pdf",
+    "credit": "van der Valk, Atsma, Scherptong & Staring (2026), npj Cardiovascular Health",
+    "rights": "CC BY 4.0; original figure crop and scaling, no data modifications",
+    "status": "actual-study-figure",
+    "sha256": "d81934bf982619d706ba52e1dad472183301cfdfa176d9573482901e81a5d716",
+    "probe": {
+      "width": 1479,
+      "height": 633
+    },
+    "derivation": "Figure extracted from PDF page 2; crop (54, 240, 547, 451) at 3x",
+    "nativeProbe": {
+      "width": 2050,
+      "height": 866,
+      "note": "Embedded PDF figure dimensions; local crop rendered at 3x PDF points"
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m2/fig2-aggregation.png",
+    "story": "m2",
+    "source": "https://www.nature.com/articles/s44325-026-00153-2",
+    "download": "https://www.nature.com/articles/s44325-026-00153-2_reference.pdf",
+    "credit": "van der Valk, Atsma, Scherptong & Staring (2026), npj Cardiovascular Health",
+    "rights": "CC BY 4.0; original figure crop and scaling, no data modifications",
+    "status": "actual-study-figure",
+    "sha256": "768b7c06fb78395b9f3fd72c36621526068aaa908457fb19ecdc1837c631dcf3",
+    "probe": {
+      "width": 687,
+      "height": 531
+    },
+    "derivation": "Figure extracted from PDF page 3; crop (53, 49, 282, 226) at 3x",
+    "nativeProbe": {
+      "width": 950,
+      "height": 730,
+      "note": "Embedded PDF figure dimensions; local crop rendered at 3x PDF points"
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m2/fig5-monitoring.png",
+    "story": "m2",
+    "source": "https://www.nature.com/articles/s44325-026-00153-2",
+    "download": "https://www.nature.com/articles/s44325-026-00153-2_reference.pdf",
+    "credit": "van der Valk, Atsma, Scherptong & Staring (2026), npj Cardiovascular Health",
+    "rights": "CC BY 4.0; original figure crop and scaling, no data modifications",
+    "status": "actual-study-figure",
+    "sha256": "caaf9334142d147b19b5d3009bf1b080d059600731224985f8348178831b7d8e",
+    "probe": {
+      "width": 1479,
+      "height": 528
+    },
+    "derivation": "Figure extracted from PDF page 6; crop (54, 49, 547, 225) at 3x",
+    "nativeProbe": {
+      "width": 2050,
+      "height": 726,
+      "note": "Embedded PDF figure dimensions; local crop rendered at 3x PDF points"
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m2/fig6-processing.png",
+    "story": "m2",
+    "source": "https://www.nature.com/articles/s44325-026-00153-2",
+    "download": "https://www.nature.com/articles/s44325-026-00153-2_reference.pdf",
+    "credit": "van der Valk, Atsma, Scherptong & Staring (2026), npj Cardiovascular Health",
+    "rights": "CC BY 4.0; original figure crop and scaling, no data modifications",
+    "status": "actual-study-figure",
+    "sha256": "5678eb3d872303fa90068d887117883c194755ad38659b1bd43a6a7245356eda",
+    "probe": {
+      "width": 1263,
+      "height": 714
+    },
+    "derivation": "Figure extracted from PDF page 6; crop (90, 297, 511, 535) at 3x",
+    "nativeProbe": {
+      "width": 1750,
+      "height": 984,
+      "note": "Embedded PDF figure dimensions; local crop rendered at 3x PDF points"
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m1/jammertest-2025-broll.mp4",
+    "story": "m1",
+    "source": "https://www.esa.int/esatv/Videos/2026/03/Jammertest_strengthening_satellite_navigation/B-Roll",
+    "download": "https://dlmultimedia.esa.int/download/public/videos/2026/03/025/2603_025_BR_001.mp4",
+    "credit": "\u00a9European Space Agency \u2014 ESA",
+    "rights": "ESA Standard Licence; editorial/informational use with on-screen credit",
+    "status": "archive-September-2025",
+    "sha256": "fbbc7571e5095ab7be9d5ae4948de6e404a5394385df25988486925ef35daa22",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 768,
+          "height": 432,
+          "r_frame_rate": "25/1"
+        },
+        {
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "379.646009"
+      }
+    }
+  },
+  {
+    "file": "assets/motion/2026-10-04/main/m1/jammertest-2025-source.mp4",
+    "story": "m1",
+    "source": "https://www.esa.int/esatv/Videos/2026/02/Jammertest_strengthening_satellite_navigation",
+    "download": "https://dlmultimedia.esa.int/download/public/videos/2026/02/003/orig-2602_003_AR_EN.mp4",
+    "credit": "\u00a9European Space Agency \u2014 ESA",
+    "rights": "ESA Standard Licence; editorial/informational use with on-screen credit",
+    "status": "archive-September-2025",
+    "sha256": "f302862016cf2add6789c13415cb4332ac5dce8e173955481a76f3ac98970bbb",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        },
+        {
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "219.640000"
+      }
+    }
+  }
+]
