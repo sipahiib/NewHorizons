@@ -1,4 +1,0 @@
-file '/Users/is9565/Downloads/NewHorizons/build/video/2026-09-26/work/teaser-1.mp4'
-file '/Users/is9565/Downloads/NewHorizons/build/video/2026-09-26/work/teaser-2.mp4'
-file '/Users/is9565/Downloads/NewHorizons/build/video/2026-09-26/work/teaser-3.mp4'
-file '/Users/is9565/Downloads/NewHorizons/build/video/2026-09-26/work/teaser-4.mp4'

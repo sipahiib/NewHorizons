@@ -1,0 +1,93 @@
+{
+  "method": "selected Reel derivative and originating source hash/URL compared with every prior-cycle source registry",
+  "priorCycles": [
+    "2026-10-04"
+  ],
+  "checks": [
+    {
+      "output": "r1",
+      "file": "assets/motion/2026-10-07/reels/r1/agreement.mp4",
+      "sourceFile": "assets/motion/2026-10-07/reels/r1/agreement.mp4",
+      "priorUseHits": []
+    },
+    {
+      "output": "r1",
+      "file": "assets/motion/2026-10-07/reels/r1/signing-late-still.png",
+      "sourceFile": "assets/motion/2026-10-07/reels/r1/signing.mp4",
+      "priorUseHits": []
+    },
+    {
+      "output": "r1",
+      "file": "assets/motion/2026-10-07/reels/r1/signing.mp4",
+      "sourceFile": "assets/motion/2026-10-07/reels/r1/signing.mp4",
+      "priorUseHits": []
+    },
+    {
+      "output": "r1",
+      "file": "assets/motion/2026-10-07/reels/r1/signing-still.png",
+      "sourceFile": "assets/motion/2026-10-07/reels/r1/signing.mp4",
+      "priorUseHits": []
+    },
+    {
+      "output": "r1",
+      "file": "assets/motion/2026-10-07/reels/r1/signing.mp4",
+      "sourceFile": "assets/motion/2026-10-07/reels/r1/signing.mp4",
+      "priorUseHits": []
+    },
+    {
+      "output": "r1",
+      "file": "assets/motion/2026-10-07/reels/r1/agreement-still.png",
+      "sourceFile": "assets/motion/2026-10-07/reels/r1/agreement.mp4",
+      "priorUseHits": []
+    },
+    {
+      "output": "r1",
+      "file": "assets/motion/2026-10-07/reels/r1/signing.mp4",
+      "sourceFile": "assets/motion/2026-10-07/reels/r1/signing.mp4",
+      "priorUseHits": []
+    },
+    {
+      "output": "r2",
+      "file": "assets/motion/2026-10-07/reels/r2/ocean.mp4",
+      "sourceFile": "assets/motion/2026-10-07/reels/r2/ocean.mp4",
+      "priorUseHits": []
+    },
+    {
+      "output": "r2",
+      "file": "assets/motion/2026-10-07/reels/r2/ocean-still.png",
+      "sourceFile": "assets/motion/2026-10-07/reels/r2/ocean.mp4",
+      "priorUseHits": []
+    },
+    {
+      "output": "r2",
+      "file": "assets/motion/2026-10-07/reels/r2/ocean.mp4",
+      "sourceFile": "assets/motion/2026-10-07/reels/r2/ocean.mp4",
+      "priorUseHits": []
+    },
+    {
+      "output": "r2",
+      "file": "assets/motion/2026-10-07/reels/r2/ice-still.png",
+      "sourceFile": "assets/motion/2026-10-07/reels/r2/gorner.mp4",
+      "priorUseHits": []
+    },
+    {
+      "output": "r2",
+      "file": "assets/motion/2026-10-07/reels/r2/gorner.mp4",
+      "sourceFile": "assets/motion/2026-10-07/reels/r2/gorner.mp4",
+      "priorUseHits": []
+    },
+    {
+      "output": "r2",
+      "file": "assets/motion/2026-10-07/reels/r2/melt-still.png",
+      "sourceFile": "assets/motion/2026-10-07/reels/r2/gorner.mp4",
+      "priorUseHits": []
+    },
+    {
+      "output": "r2",
+      "file": "assets/motion/2026-10-07/reels/r2/ocean.mp4",
+      "sourceFile": "assets/motion/2026-10-07/reels/r2/ocean.mp4",
+      "priorUseHits": []
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,5 +1,5 @@
 # NewHorizons — Active Credits Pointer
 
-Active cycle: **2026-10-04**. Its source and media credits are in [`cycles/2026-10-04/CREDITS.md`](cycles/2026-10-04/CREDITS.md) (candidate sources; media audit pending).
+Active cycle: **2026-10-07**. [Cycle credits](cycles/2026-10-07/CREDITS.md) record the selected media, licences and transformations.
 
-When `/start` opens a new cycle, update this pointer to that cycle's `CREDITS.md`. Earlier credit records are preserved with their cycles or under [`archive/CREDITS_LEGACY.md`](archive/CREDITS_LEGACY.md); they are not current credits.
+Earlier credits remain with their cycles or in `archive/`; they are not current credits.

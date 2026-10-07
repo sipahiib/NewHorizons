@@ -1,0 +1,2080 @@
+{
+  "cycle": "2026-10-07",
+  "purpose": "User-requested cleanup of specifically inventoried, regenerable intermediates and caches",
+  "status": "completed",
+  "files": [
+    {
+      "file": ".DS_Store",
+      "bytes": 10244,
+      "sha256": "568ad9011558095508669792dd746b83ebd7dddf3098b6fc0b8d474b3b6a7a66",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "assets/approved-motion/.DS_Store",
+      "bytes": 6148,
+      "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "assets/motion/.DS_Store",
+      "bytes": 8196,
+      "sha256": "d9209b9149a6615e90fc0744726b1c714c8ab67ecb97af7060c32d3f5aee22e0",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "assets/motion/2026-09-07/.DS_Store",
+      "bytes": 6148,
+      "sha256": "297a315db3e60b981ce107a95475487487a9b16fc124095188e539b037df4b59",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "build/.DS_Store",
+      "bytes": 10244,
+      "sha256": "c4d7d654a830fd14cd70f53ecee238f15748eb562bb11f73c5bae18c8f0be054",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "build/reels/.DS_Store",
+      "bytes": 14340,
+      "sha256": "16b2e4d8403605c524b8a2cc73fc33177f032f580e5332a1e1d5bbaa423a63f5",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "build/reels/2026-09-26/work/concat.txt",
+      "bytes": 602,
+      "sha256": "e5b06e08932fba7ab04ad8b9fdc313cff7d7410c179f28f386f72681984433ca",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-09-26/work/r1-concat.txt",
+      "bytes": 623,
+      "sha256": "4b85d27ad2ec50a87ace4cd73ba8c3301c1ee7020800db516bb792cbedd56008",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-09-26/work/r1-segment-01.mp4",
+      "bytes": 276270,
+      "sha256": "b4efd2c7cd0bbeb5ae05f9ef75dde48a2a5840659aecbe0b31475bc74d1e679d",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-09-26/work/r1-segment-02.mp4",
+      "bytes": 1869563,
+      "sha256": "00c80c0fdb92181757000b5c37e7dffd188c8d22bdd78d2c90a5df8716b21487",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-09-26/work/r1-segment-03.mp4",
+      "bytes": 231695,
+      "sha256": "d215d8c604878e4022e2e3f5cd039d306ae58b22720c01848a2f8be87f6f2839",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-09-26/work/r1-segment-04.mp4",
+      "bytes": 2124859,
+      "sha256": "d76de6931df7c143d2cb11e5f49d67dce0ef509368acb056d9b995e6fc0efee2",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-09-26/work/r1-segment-05.mp4",
+      "bytes": 192618,
+      "sha256": "679871bd0099e661384104fc39faf2063f57487f35b7222c02ed36e29d95cdba",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-09-26/work/r1-segment-06.mp4",
+      "bytes": 1661914,
+      "sha256": "95abdc82196d7f377b477f6e44ce37e3ecc2f12865aa47f1f1d548947d831b9b",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-09-26/work/r1-segment-07.mp4",
+      "bytes": 4523208,
+      "sha256": "06d87e00e92cd4405d47d9bfd65df09cf106933edcb5cb4a4ced381b573ff639",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-09-26/work/segment-01.mp4",
+      "bytes": 193346,
+      "sha256": "40917208a6be1dfa146b10fd8ed85eb6a15872a5de11499c1b2cb5aec6489cac",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-09-26/work/segment-02.mp4",
+      "bytes": 5006104,
+      "sha256": "31b9e86798757d710da2991d5734c0ae0932e11f9552021c0cf5bd87ef306c61",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-09-26/work/segment-03.mp4",
+      "bytes": 760917,
+      "sha256": "b386b096a3941d03650c1c5f8633667e88cd524372faa2f477276d49a055e017",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-09-26/work/segment-04.mp4",
+      "bytes": 5026161,
+      "sha256": "71cb5e9a8a8c7a18151f0a173b422ad1cc369ab0faf216105fdb0a18b4e5c67d",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-09-26/work/segment-05.mp4",
+      "bytes": 3825996,
+      "sha256": "d942633130f8a693d54fa475165d17eea96dff98fab8eb42c3332ee88f43fd5d",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-09-26/work/segment-06.mp4",
+      "bytes": 812888,
+      "sha256": "00ae944280ee1fb55d9d6a040aa017256e862fed8cbff27384f46dbf85ef45cd",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-09-26/work/segment-07.mp4",
+      "bytes": 15503046,
+      "sha256": "ba37d176f7775e387571a703919067d216c556564ab099293aa624f13ce829ab",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-09-30/.DS_Store",
+      "bytes": 6148,
+      "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r1-00.mp4",
+      "bytes": 1273041,
+      "sha256": "32e3505e3bc810d1325179fd9d08cb2ed953c0595291401a89aa1a753c406df4",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r1-01.mp4",
+      "bytes": 208532,
+      "sha256": "c8a1d8295dfb8126633bfd00cccc1a98e5ad60ce870782b908c0f7ff80c3753e",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r1-02.mp4",
+      "bytes": 1360660,
+      "sha256": "b1ef6eed60291a2d15b12fb96b3ee461c98ca3f8109097380f53d62c4515c76f",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r1-03.mp4",
+      "bytes": 257486,
+      "sha256": "28cc9db080c2662f6f8ccdf7608845bf8a794892ca0c7a34b2d0d57f0ba43019",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r1-04.mp4",
+      "bytes": 1622071,
+      "sha256": "00d9eb44c518b0495116ae644bd686a88e95cba1ce10b7fc571de9e5cba8d3a2",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r1-05.mp4",
+      "bytes": 218496,
+      "sha256": "f146fa26f09602ce5de0108f63b651d5cca0fe2dde800e3162ddc53554ffd08d",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r1-06.mp4",
+      "bytes": 2289052,
+      "sha256": "b0bd2f42da6a9f60bb93a34e4c7583a39a3f9ea953db9b60136b51333030f91b",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r1-audio.m4a",
+      "bytes": 798483,
+      "sha256": "ebbb7fadaf59811813fb16888fba01e25d44fa1628c8d950c856d4dc37fb74a3",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r1-concat.txt",
+      "bytes": 567,
+      "sha256": "bc9c3e207cc07998f09ffd4d7ffe0df89773317e4a686bc394315fd6bddf38ab",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r2-00.mp4",
+      "bytes": 288522,
+      "sha256": "d89112690572e0aa92aa20c8c0ef6ea2e98fd0cb48bfd57a7a9317e5be23daa5",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r2-01.mp4",
+      "bytes": 234924,
+      "sha256": "8f392aea51d889082f6ccfd7545a1ce538ee7ee1bdda279d081c5b9bbb3e4716",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r2-02.mp4",
+      "bytes": 317449,
+      "sha256": "3f9bf607316a33b393735352a44ab6043a48d9a877641383686841dabe39bfcc",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r2-03.mp4",
+      "bytes": 2387464,
+      "sha256": "5dae6c8366d5f01a7f16e3c8bf2cddcc75e0ad2c556b39569e6f271b73eb6383",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r2-04.mp4",
+      "bytes": 414021,
+      "sha256": "649401338202a26976aeeecaf1a85b2b62845d1d50947eca1765136c2419e3ec",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r2-05.mp4",
+      "bytes": 343842,
+      "sha256": "e86d68b85cde641e9a114041119b517133d93b34ed0c8b862abc5ae07b8bccf3",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r2-06.mp4",
+      "bytes": 2946593,
+      "sha256": "11dfa38fe5f6c9a4adeee4382cf99a985937b0300f41902be0742e2db78bcbb6",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r2-audio.m4a",
+      "bytes": 799526,
+      "sha256": "ef62d9846c20c161a218b2fdd185c60efec30dd0b0f0061ac9458bdc1b5e0113",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r2-before-audio-correction.mp4",
+      "bytes": 7751471,
+      "sha256": "a2633a03bc1e60438b78178edb509da9c49e584f3fa72766f31f15d062f2ecb9",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-04/work/r2-concat.txt",
+      "bytes": 567,
+      "sha256": "0e2810388ac19310e0e09fbe1f52c09cafacec943ad41cd9092cc428cad35181",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r1-00.mp4",
+      "bytes": 2306402,
+      "sha256": "768a35d0352c704c2a020a02ed98a897e27848fb99c632c4c81f326aa9cb4fe4",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r1-01.mp4",
+      "bytes": 289354,
+      "sha256": "02d3494cab41487fe05ab88441744622b022e7bfbb9ff717595a29c4332aa4ad",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r1-02.mp4",
+      "bytes": 2909506,
+      "sha256": "9ec52a01dd230bf084fd516b31b89493a1c7078ba1280dbf531bbfd4495672f8",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r1-03.mp4",
+      "bytes": 297075,
+      "sha256": "6d7c6fde3fcc3589952df91bb9bcd17e203ea9da99e62b40b76e3e009da82fa4",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r1-04.mp4",
+      "bytes": 1773481,
+      "sha256": "d1646916e1584e127d82935770625557c7c97ad4c308675e1b67ee239bc521da",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r1-05.mp4",
+      "bytes": 253998,
+      "sha256": "22c565ce3172f9d1c47ead177828620d7cbf02192264dad1be050b51b2f68046",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r1-06.mp4",
+      "bytes": 2467112,
+      "sha256": "0d4772233bb852e21e614e2ea35b743c6031b90813b871545a511a1e0a627622",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r1-audio.m4a",
+      "bytes": 866251,
+      "sha256": "ff47927db4e9202a0a56938053f0a0e1a8c83ccb4d7ec439f49cacc1d473185e",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r1-concat.txt",
+      "bytes": 567,
+      "sha256": "1e569f3f8c495bcf83126f1b5e8a08d195f5704d29a74872f1b988b2cf958390",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r2-00.mp4",
+      "bytes": 5102985,
+      "sha256": "271a27e3a7a2dd8ccc3b4f2250389f4bb8ec9b2a98a73355e79d26da5718e9bd",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r2-01.mp4",
+      "bytes": 398614,
+      "sha256": "81876c5b2816ca8eb29c54789e5140a90ef35a39a2497810ae4f9949cc22b49f",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r2-02.mp4",
+      "bytes": 5079130,
+      "sha256": "93dd1bd12720dc6707cdd2ce04616413d6a75d0c84f1910c6305f5c8721fa5f9",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r2-03.mp4",
+      "bytes": 576773,
+      "sha256": "aa051a48393bcddf1a17252440c9c7656348a61f9e118970c34df591b9464565",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r2-04.mp4",
+      "bytes": 6950470,
+      "sha256": "682547bd5a53175cb16e817080216ea4a101bb087b8c1963ff098b61b5771407",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r2-05.mp4",
+      "bytes": 460388,
+      "sha256": "1c764cab718fb5d682e1fe6090d89d43f511f1d1fbb62a576d324659987f7645",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r2-06.mp4",
+      "bytes": 7486150,
+      "sha256": "07509a3307f0766c0d3a879133ce8e7ac13b5bc504b67c78ba7efdfccfd3a336",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r2-audio.m4a",
+      "bytes": 806624,
+      "sha256": "066ad659bc91fd6f561c953bdf90d65c7956a505883e2898d4baf5203a404b11",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/2026-10-07/work/r2-concat.txt",
+      "bytes": 567,
+      "sha256": "d771e8161310ae1058a2c76652c4b01bd66437ea276cbb02edbb111aba4cc634",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/reels/work/.DS_Store",
+      "bytes": 6148,
+      "sha256": "fe9d94f0947e6e2df6d810d364fed2145dcb5d3dc99fa5014c06cc5ac1e0f93d",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "build/reels/work/01-future-of-ai/base.mp4",
+      "bytes": 19977540,
+      "sha256": "93debaad0559946c56a522927f106463cfb50e69678631b8f2cd22884b47fe02",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-future-of-ai/clip01.mp4",
+      "bytes": 4213746,
+      "sha256": "e6b186f3e246a291dbb4251c935eb685a085c399f476c9fab43038aa432ed3c3",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-future-of-ai/clip02.mp4",
+      "bytes": 930752,
+      "sha256": "5a58c71cb47b00ae4c36cfc912a66921b9cf482e524e4c14b58b3a5e5cd6220e",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-future-of-ai/clip03.mp4",
+      "bytes": 3003289,
+      "sha256": "19c81bbf472bb2b74bde57cc9c28241e88def9c2d6bd9bb5e1cc057f58ce66d4",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-future-of-ai/clip04.mp4",
+      "bytes": 2110950,
+      "sha256": "66dcfbb2d8a79239d2f268be5188ac83bed650896f2818678ae1f1b85d8289f3",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-future-of-ai/clip05.mp4",
+      "bytes": 2160539,
+      "sha256": "225a83f9bf82faea3f1f8ccdaa1c58ba8e86962ef296745f0051ad18a14dda16",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-future-of-ai/clip06.mp4",
+      "bytes": 1338971,
+      "sha256": "151038fb1f7444afe12f8147b429ae65852ae1bf9078a16000155cb987ddba99",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-future-of-ai/clip07.mp4",
+      "bytes": 6224017,
+      "sha256": "43d30f52e2f3716edb4f8620499536536e65e5569abb2a11809e91a3299efdf2",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-future-of-ai/concat.txt",
+      "bytes": 609,
+      "sha256": "a7210cb5141f4123f15d739b283c0f8802f758b3daf9ddeaab8e6853f9ae82a6",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/base.mp4",
+      "bytes": 38447709,
+      "sha256": "dc88817ff1e1cadd0f261aaa60f576e3c3e698d112182e0263fc2af0a7af2cb8",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/clip01.mp4",
+      "bytes": 4134483,
+      "sha256": "698be64131db825ae3cd31ff2030706c77c9c7d898c92f0acd38c8dda2911532",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/clip02.mp4",
+      "bytes": 2235051,
+      "sha256": "89b430f72af15e748b08e72893d4abc888391efe2773d0fb2e7b44feb5c6848b",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/clip03.mp4",
+      "bytes": 6342251,
+      "sha256": "7e87319e9e69835f0f8acd2b1f04443808d506626e29547647f39fd31d7621af",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/clip04.mp4",
+      "bytes": 4218024,
+      "sha256": "c345708a80ae27bb86c9209247cc4abf1d5d65dffbcf1c8f13bec0ff071b625a",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/clip05.mp4",
+      "bytes": 3467734,
+      "sha256": "e2b1fe22519aad7522a47cec66f48cf9e7fc9200a3fd91cb9bcf1d7291bb99a1",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/clip06.mp4",
+      "bytes": 3960983,
+      "sha256": "08ebaf6be9f610eeb3734748a58272b4ad73ece4de4cddb1cc8c7b9766465688",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/clip07.mp4",
+      "bytes": 14093907,
+      "sha256": "4022836f93bef6d350aa0a804e41c838c001064a1b1987500f8853d3c35a2807",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/01-sports-biomechanics/concat.txt",
+      "bytes": 658,
+      "sha256": "5c61026fda9ac617be8b21180fdbf8df71a5619b339721f90915651bfa622d59",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-ocean-acidification/base.mp4",
+      "bytes": 60266876,
+      "sha256": "4b880cd7b65c9b51005aee1c711759edbc98ece38ad64fdc691526b1b9145a3d",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-ocean-acidification/clip01.mp4",
+      "bytes": 5854468,
+      "sha256": "68da32c3f0f732ac001855552a6d5e2f4efa88827b1977236386e44963d7d9db",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-ocean-acidification/clip02.mp4",
+      "bytes": 7484181,
+      "sha256": "e7a5adabca2b69d21ad1cae2e3cc5a6a1c5aee8a5cad21e883c4c2562927141d",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-ocean-acidification/clip03.mp4",
+      "bytes": 14981996,
+      "sha256": "7546e70a0dc9b60c49fec2097d3395c871c1d18fa774a16a9cbb039c0c69fd16",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-ocean-acidification/clip04.mp4",
+      "bytes": 6260891,
+      "sha256": "f8e3b038743278de515badb71be19c9e2c3f198c0e7c4cb6df3ec1c381ceba6a",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-ocean-acidification/clip05.mp4",
+      "bytes": 11265043,
+      "sha256": "828b864df3b4c88a1518b2472fe8d70ba5a2369e9ef79be9b9579568b8343c6e",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-ocean-acidification/clip06.mp4",
+      "bytes": 6645101,
+      "sha256": "8790a28de1179493b908114e4d4d6e82492d94f31ca40504dc0d7f572989068c",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-ocean-acidification/clip07.mp4",
+      "bytes": 7779916,
+      "sha256": "867db9f32ff63b47fb09993c05867f13c9d0f4d293c07578600c136352cb8127",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-ocean-acidification/concat.txt",
+      "bytes": 749,
+      "sha256": "33fe2e7ef9ec8f8a808f0a179d23dae27fb92ae6d2dedcce2ddb795db9b16623",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-sea-ice/base.mp4",
+      "bytes": 39020731,
+      "sha256": "effb30f6ffb256d75ed31caa7cb0a2798b606180b6977c2d8d0ec4840bd6b067",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-sea-ice/clip01.mp4",
+      "bytes": 12847581,
+      "sha256": "21b1b0ea7a1c88986eba1ad401581d3a9197eee3ceee9738e997023683b3861a",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-sea-ice/clip02.mp4",
+      "bytes": 6496979,
+      "sha256": "1aa3577bc0b8249e08b34f4029938b9f59d83c7d03b5a74c23ba3b2229829085",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-sea-ice/clip03.mp4",
+      "bytes": 3398672,
+      "sha256": "8ba0c4191455edd0f827f668792a9ad5ba5f4bc4dd6156036d4b4118044d20d7",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-sea-ice/clip04.mp4",
+      "bytes": 3035783,
+      "sha256": "ad66642f836bbe118042f8038d470abd1577c9b20d02326b4b621aeae96b2871",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-sea-ice/clip05.mp4",
+      "bytes": 8724294,
+      "sha256": "aff3045a5efa1454cddc1eddc26e6507ffedfc9111a563ca9a735c2cacb79a5d",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-sea-ice/clip06.mp4",
+      "bytes": 2723507,
+      "sha256": "cac24297d8c55189b9a3220e6dbe14736565d74dbdcef40cc224a0e5c32a9ca7",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-sea-ice/clip07.mp4",
+      "bytes": 1798619,
+      "sha256": "ad3ac8147664848f5c2fb22ff0dcb6c04996f3918818dd5624f68b7fcd425686",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth-sea-ice/concat.txt",
+      "bytes": 665,
+      "sha256": "003183c430bb4d17bed339b256a3db73d1d5b63497c678fdbff5ed2dd0319318",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth/base.mp4",
+      "bytes": 30032036,
+      "sha256": "00e44613be8b2aca6df63bd552974b448689c875c7a85002abc850bbf1cdf164",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth/clip01.mp4",
+      "bytes": 5352218,
+      "sha256": "0dd4adeb335aadb3766238b56ea86375c6c0afdaf9e71e242c423727e5843240",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth/clip02.mp4",
+      "bytes": 5091451,
+      "sha256": "f87380f7ed50ffce062e1aa881fecf7f9cc701fd0430822932316c1cb361c14c",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth/clip03.mp4",
+      "bytes": 2157690,
+      "sha256": "b0ec80c36c30a208c25fec9dd057d634c93ef74420df45879a051934415f3a2f",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth/clip04.mp4",
+      "bytes": 5048729,
+      "sha256": "2521c827a40a259fa64839d614671ca8dc609499ef55e67563a56d5ebd8a3671",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth/clip05.mp4",
+      "bytes": 5611766,
+      "sha256": "28c541bcb33f7013cad07ffd3d87ff43287af8e3ebe1b759873229f78f0a09cc",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth/clip06.mp4",
+      "bytes": 965157,
+      "sha256": "98f5e0b72a2e17c39157ec6aae5fb85a230d265a4005177e97cb393bbe7a0b29",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth/clip07.mp4",
+      "bytes": 5809729,
+      "sha256": "78bfc78c7f39e377a3c9c86d10a8a5d453a0b39479fa815c788c6ae12a1eafce",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/reels/work/02-planet-earth/concat.txt",
+      "bytes": 609,
+      "sha256": "8f1a7cf03eb46c0e5b827d2ddea72ea610805c598088a64a9f11451cb47a9311",
+      "reason": "Legacy Reel encoded scene/base intermediate regenerated by make_reels.sh"
+    },
+    {
+      "file": "build/video/.DS_Store",
+      "bytes": 16388,
+      "sha256": "01fe32a641852b70ba753a871c705120d99c586cd300b7de2f0b97d631b0a70b",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m1-concat.txt",
+      "bytes": 609,
+      "sha256": "549734dc1190d1607c21ec0def56c08c8890876defc1adf43514c17cb0c71fd6",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m1-scene-01.mp4",
+      "bytes": 480312,
+      "sha256": "7a05462145d7c82378a6efffb3ca44689fee101a6edd041a74770abe37aa060c",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m1-scene-02.mp4",
+      "bytes": 550203,
+      "sha256": "4ac19fb0090eb25d21c8bd34ce522af8cd98920e6eea079444480337b90a6540",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m1-scene-03.mp4",
+      "bytes": 2423742,
+      "sha256": "498bf6cf312db3adecba687329672a17d89e4aee977e21f3b8c219cbd2aa5400",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m1-scene-04.mp4",
+      "bytes": 1046932,
+      "sha256": "086a7e55e8a4a92684c9a1121772bdb157dec90c2e9d257a3d27b5acab9a1b5c",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m1-scene-05.mp4",
+      "bytes": 23782856,
+      "sha256": "e1c55bb90745f1e68fc011a61b87561f0edf7ada78bb89ff8fefb48c3380b51e",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m1-scene-06.mp4",
+      "bytes": 1070626,
+      "sha256": "57a670c4c0defe03cdabe5fce397fa426fad466e514abb213b3909c9fbfa74a0",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m1-scene-07.mp4",
+      "bytes": 9154169,
+      "sha256": "4d464003f17643b2f832608518aeb4cd8ac46b3f26dd2ba961a488c16de3e25a",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m2-concat.txt",
+      "bytes": 435,
+      "sha256": "e4ba47ac3d4568d18468d62ecc7a422dad7d496cb0cf28a4c9f76637b964c65f",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m2-scene-01.mp4",
+      "bytes": 306558,
+      "sha256": "39e6cd0383b444a9f12974c92c8b7710669a9b1121d222c7ebe7e8f50fae0e23",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m2-scene-02.mp4",
+      "bytes": 3818981,
+      "sha256": "672585d9a10cb7b4e391f7178f468d7193db988ce346913e5bc0744ae08392fc",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m2-scene-03.mp4",
+      "bytes": 610522,
+      "sha256": "8a4f6ae57cdf1cbf378382722dc90f1122bedcf1888e16b1155a71ae1552f3a4",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m2-scene-04.mp4",
+      "bytes": 3134406,
+      "sha256": "3e73d7db3156b59f8a0f78c6128e8f36b41ca30f5c52f96d62137a874332d104",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m2-scene-05.mp4",
+      "bytes": 3967527,
+      "sha256": "b81a37f2865100591b9aa90e59280d1d1ede0f0e39ce1946427137e69f55b33e",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m3-concat.txt",
+      "bytes": 435,
+      "sha256": "69b7e958601c46cac55f716452993e60a0609f9ad6153569cc0e3c600d2283e6",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m3-scene-01.mp4",
+      "bytes": 503460,
+      "sha256": "f9ee5363beb86ab6b06bbb33dca655ae83dfeeec2f1016a861d0771103cdea7f",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m3-scene-02.mp4",
+      "bytes": 4147123,
+      "sha256": "3109e7adb161de0926d4e95fe32d464bd02ca833f52a7d0289716bdbab702b45",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m3-scene-03.mp4",
+      "bytes": 511041,
+      "sha256": "3f4d4ff61d54495ac8ce01dcfe389d738ebd77841df343d023db2e8fc39ca546",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m3-scene-04.mp4",
+      "bytes": 2236011,
+      "sha256": "4846ad92dc73d768322c659a120652fb70cabba00505960e8fc1ae991da6794f",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m3-scene-05.mp4",
+      "bytes": 6529702,
+      "sha256": "79c468d00282410243830b4abd103f121b5838e803d49fa153ca01f353d3b1f1",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m4-concat.txt",
+      "bytes": 435,
+      "sha256": "3eab5d520b59580513635a3d15745141054a53dbed976ad1c7f5f8700410c961",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m4-scene-01.mp4",
+      "bytes": 541799,
+      "sha256": "05bfd15d659c8551e37715abecf450ee5cb243aee16984bf228e67297a4d54b6",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m4-scene-02.mp4",
+      "bytes": 3418159,
+      "sha256": "2afd12f43e22136e90cd69f63bd85baf8c6709d23d44de845c7308cb9677ee31",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m4-scene-03.mp4",
+      "bytes": 329498,
+      "sha256": "db0166e3b4ddd58e682c302f9d34eaf90919b0d3edc7f6448467c41b9d2d4b39",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m4-scene-04.mp4",
+      "bytes": 3752379,
+      "sha256": "58c8f126849fe91174a9d6fb044c5dc790a162bab898085d918b369ae71b33b3",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m4-scene-05.mp4",
+      "bytes": 3268967,
+      "sha256": "081374df1652a313f2e74e8c6cd01c4baf61ee5dc9d71d8052c8a875e8d14501",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m5-concat.txt",
+      "bytes": 435,
+      "sha256": "81034f62791d911ca6d9817794a1181eb3102b7a4a45eb9f7c3b97d17f93d494",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m5-scene-01.mp4",
+      "bytes": 1782126,
+      "sha256": "c81dc57e986bed636bf31fdcddc7e8731829b0f04f7fd5e61ef4c54fa9420fda",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m5-scene-02.mp4",
+      "bytes": 4998975,
+      "sha256": "b7e53c3db86ddcd7bc9cc7465dec4ca3ac7bfe73acde616960d7ede1c3c4e04a",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m5-scene-03.mp4",
+      "bytes": 1497879,
+      "sha256": "dd178598c9fdbb5539399421b3bb0c7d481f9a5fab8b0689889359fcabf7dc99",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m5-scene-04.mp4",
+      "bytes": 22553286,
+      "sha256": "a5bfeef9f698f54d9f2b21c8ea3dc4a8440518f6dc8a0961869520e030c9bff9",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/m5-scene-05.mp4",
+      "bytes": 9363282,
+      "sha256": "e12ba30646173eba6409c8bb41803f8f162302e37325086f7ab59bf7684081dd",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/main-audio.m4a",
+      "bytes": 6825718,
+      "sha256": "8c5d5ef08504424c7dce99b588b7e367484fd284bb125d7b9f20323d632014fa",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/main-video-concat.txt",
+      "bytes": 521,
+      "sha256": "b704e1482184d3cbe3bae7628bb16b51bbd8116749ce5450e3a169b33e6ce7e0",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/section-closing.mp4",
+      "bytes": 610892,
+      "sha256": "5778d38ca0bb36c8abcc083ab0d133aa3c4a6646ad5f92ec3fdb307f0c79be25",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/section-m1.mp4",
+      "bytes": 38505134,
+      "sha256": "9e1def26b60bf73dca21e467d5145e69749f51d9d2f0253aa4cb4cea7c585efa",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/section-m2.mp4",
+      "bytes": 11835392,
+      "sha256": "a8c2d5ebbb71c2aa5dac599125f2866557427574891ecff1a2e1b67280923ed0",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/section-m3.mp4",
+      "bytes": 13924633,
+      "sha256": "4f01c0185f19b81c7eda5ddc2e1fc4060e324b16f3a7f303c8f134e3c111e160",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/section-m4.mp4",
+      "bytes": 11307910,
+      "sha256": "4bf2d99cf5e8431499fd2bcac32c9f51cb0782bf503afa51e12312c861171418",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/section-m5.mp4",
+      "bytes": 40192844,
+      "sha256": "e8dc3b19f5bcc528749e58ed51b3016ef48e0b482efd4770c993f65bc9d04125",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/teaser-1.mp4",
+      "bytes": 524612,
+      "sha256": "f0962c7d36fb26ca48e728cc215ed599978830fbab007c81cbbee54e6dd293dc",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/teaser-2.mp4",
+      "bytes": 842898,
+      "sha256": "4fd7bdf4d803baa3d5160e840c549dddf6e9ad8fe7a2003b037bd70083689bd0",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/teaser-3.mp4",
+      "bytes": 166534,
+      "sha256": "5cda1bbe61d9344f4e5fd7fe9a15d73647bc9abc6dc78f0c9316b0ba03c14eef",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/teaser-4.mp4",
+      "bytes": 865960,
+      "sha256": "b7fb9dcda7d701a94fccfc17cfdd75b2eff42dc8797826b05b4a7306d8008ddc",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-26/work/teaser-concat.txt",
+      "bytes": 336,
+      "sha256": "69c1a9fb86fade461b672588e322b25ae1e56dc9ec91a775870e9b2af3a2fe6e",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-09-30/.DS_Store",
+      "bytes": 6148,
+      "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "build/video/2026-10-04/work/closing-segment.mp4",
+      "bytes": 357680,
+      "sha256": "482828942dd1c068fe38805c5cee8088e2bb1ea7fdae8a14ecbffea655beb395",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m1-00.mp4",
+      "bytes": 363398,
+      "sha256": "06c3559eee37abbe982a7f44cd494a84b0df798858098090f76d448a917a0395",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m1-01.mp4",
+      "bytes": 9209366,
+      "sha256": "d2389146e98db9f434a5784b9f08acea6c86bfde6c7d7754b42006e11ac063e1",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m1-02.mp4",
+      "bytes": 2219008,
+      "sha256": "29c53eb9b3b2101b2d1e712bcab1d7d720ecb543f263d6b6c4c2854790a89d99",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m1-03.mp4",
+      "bytes": 1537415,
+      "sha256": "1855f3f1da7bd388eca8dd3f82d0cdbfae3c20ecf97ee223844f1105c3d6517c",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m1-04.mp4",
+      "bytes": 27499932,
+      "sha256": "694c788412339f843798c9ca9f0e3c079133cea29ee6aad179bec13ca78a2114",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m1-05.mp4",
+      "bytes": 18539205,
+      "sha256": "5bd96168a368c5ed3a2989ed567c1bcf2685f14731b680d22a682a5100555ac7",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m1-06.mp4",
+      "bytes": 1843377,
+      "sha256": "98b701c86305aaa40bf35841578b870dcf22f386b3656cfde0b634d57c6212f8",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m1-07.mp4",
+      "bytes": 7021717,
+      "sha256": "a28f7753cbd5543c8d1450b9f1a114490da0df7cce35565c2b7b263081e76207",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m1-08.mp4",
+      "bytes": 23206082,
+      "sha256": "d95b7602d5e5c80228dc831670cee2712d2ef578f8d4cde954bf46c1b0547307",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m1-09.mp4",
+      "bytes": 870298,
+      "sha256": "382baa326e5e7e231bdc9c402be35b412f5b983b6388578dfc6e6b59f5f2a0ce",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m1-10.mp4",
+      "bytes": 12646318,
+      "sha256": "20c518a0ac42360b9fad4bae50aa6822736b666adbea169df860b3e7d69415b8",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m1-11.mp4",
+      "bytes": 7395178,
+      "sha256": "ed892a8cb830cd911ae1092e20f067231240ce1ee9699cc9cb67d423d1822a2b",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m1-12.mp4",
+      "bytes": 1602432,
+      "sha256": "ac597e53bab021e8726d0dfd6224852c8a797778550d9006a9b391f3c74c9d78",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m1-13.mp4",
+      "bytes": 21941863,
+      "sha256": "0343a4a1cebc94f1e811b67904fb6ac756cfe5e7f491b4ad7bc20793453722cb",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m2-00.mp4",
+      "bytes": 5351767,
+      "sha256": "29e541187598fcb01cd8615062bd2795e23cdc3980d67291f2b8b794bd777642",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m2-01.mp4",
+      "bytes": 7507644,
+      "sha256": "d219606ff0bb4c5a73821f7e66150623133e9b6544843aced3dd1ddfb9508553",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m2-02.mp4",
+      "bytes": 6462508,
+      "sha256": "759a4224b8dbb6b16a4e93c5becfc1a79a38cbc946eeaac01e17a0970e54a06c",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m2-03.mp4",
+      "bytes": 2883388,
+      "sha256": "a8faeed8464cadc167c4e592f63f14b6d95952bc7ebd7fca9faf6c59dc6b402f",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m2-04.mp4",
+      "bytes": 393980,
+      "sha256": "7fdf29b3c43370c101598495902eeb00fdb504861ad9f4fbb1d4590b5da0f8b6",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m2-05.mp4",
+      "bytes": 501324,
+      "sha256": "f3174093f94bb412a5aa95739a7f0e9f0f0af51ca5c9e9a14c1903e54aae2863",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m2-06.mp4",
+      "bytes": 541640,
+      "sha256": "a59b2ee33ff842f34b1831df9804015236a8d76dc6c8583195e822af5232ab97",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m2-07.mp4",
+      "bytes": 410599,
+      "sha256": "f931659783ff115b22d230ac2c20811ef796ddf6b48611ab1191d83bd7c9205f",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m2-08.mp4",
+      "bytes": 4796824,
+      "sha256": "b6dee4efb62af72e16895daabf87a42f500fce2536334ba21a5338c1aba150ad",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/m2-09.mp4",
+      "bytes": 4201661,
+      "sha256": "b83e14fe0c356c14ef2fb04edb525e7b141bc74eb5e705698d8e557cc57487c0",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/main-audio.m4a",
+      "bytes": 6512113,
+      "sha256": "15c9107599b47c95270395c7e5095579a787bc608c98b38aaf070dc96a29b020",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-04/work/main-concat.txt",
+      "bytes": 2035,
+      "sha256": "2c9f07c2e245b2af676184528130cbde06cb5dc76f74e956eaa85b39afba5f7f",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/closing-segment.mp4",
+      "bytes": 261043,
+      "sha256": "8f47d8aeb021649d7741d0ede36f56f9c98b1a0ea116357b8ee7d205aa921c28",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m1-00.mp4",
+      "bytes": 454532,
+      "sha256": "ea71f6037386cbd0b2da5b4e7e161f82eafb7d8e76d63dfa52142f30caa0a0a0",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m1-01.mp4",
+      "bytes": 2895081,
+      "sha256": "14b2eaf81ec9b1f507f068f0bd0004f1577f821180dc6efe9e5a53acc8387fb0",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m1-02.mp4",
+      "bytes": 894015,
+      "sha256": "7fe03de9f209a6afc6a75406430c0669244e6c18973cfa4259eda27cee17ed3a",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m1-03.mp4",
+      "bytes": 704855,
+      "sha256": "32622fa21db1faef67b2e872750ec5f05bc3892dfd039650e26036f26463cedb",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m1-04.mp4",
+      "bytes": 836220,
+      "sha256": "4f378037a9c43a1aefc52ae74d5dc5717cccb2e5c14c202d0ed5b6b5f1d9821b",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m1-05.mp4",
+      "bytes": 656580,
+      "sha256": "dcd6d25ddba539058f5da71ea6b244b704dce9e5802205dbfcf779299f9ccfbc",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m1-06.mp4",
+      "bytes": 526886,
+      "sha256": "0e75683af6816ff72a7b9db90fbeaf72a0fe52e0a1fac9b305f06ac4ad1671e8",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m1-07.mp4",
+      "bytes": 3310035,
+      "sha256": "93ac76b0815e0540c9f91f82aa8e8ac917abda63138dee72cc041b85993c6799",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m1-08.mp4",
+      "bytes": 928546,
+      "sha256": "6ec09783158cc98870a436145ed9eab9980e7a2566d0e2f45d18c1c280abfe74",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m1-09.mp4",
+      "bytes": 1078060,
+      "sha256": "c999b687c1828bc84b0bfb36c8ddcaeabab5f6a4a07ff0560b3e1d888e35d659",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m1-10.mp4",
+      "bytes": 3959128,
+      "sha256": "38b63731ce1471e149b6ce65db3fe72788da6c7d661fca0ca68b4dd4e199a895",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m1-11.mp4",
+      "bytes": 19817482,
+      "sha256": "ff6876c10b6fedfa9ed7634e57162928a1936ba453eecb56e0d418667d5b4932",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m1-12.mp4",
+      "bytes": 4785533,
+      "sha256": "99f7cb9964da444c966cca3b06deb45a391daea2fdd8920616e40294d098b45e",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m1-13.mp4",
+      "bytes": 459081,
+      "sha256": "ec381024701e64e780e6775610e5ec1a8f3d3b9fcfdbca0cde8e54085e544753",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m2-00.mp4",
+      "bytes": 1085665,
+      "sha256": "27d031b3aa50d3230524b6b12b847c97dd803b4f91ed6a14128b48ddbe065e83",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m2-01.mp4",
+      "bytes": 58800668,
+      "sha256": "f64b36f094dd4b40a8f7e55440de74f5b19b138b76377f296c7bfb0b779cf660",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m2-02.mp4",
+      "bytes": 249707,
+      "sha256": "5c014a57d9a02cf013e76ff953979f193d44a340b17dd5a36adbf6123ec6fc54",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m2-03.mp4",
+      "bytes": 3999339,
+      "sha256": "9c86200825473a2b303464664a9fafd321d3513a2ed56740b9239977da91c99e",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m2-04.mp4",
+      "bytes": 303578,
+      "sha256": "4eb536c5c19f4ef4ac212c528779d1fbcdff5072525bd44fce6ba9ed4f002338",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m2-05.mp4",
+      "bytes": 3104547,
+      "sha256": "ba9c1d4cf6803d8005d426d6ea5564cd1dab53a426197252e880a8151c7a4c5c",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m2-06.mp4",
+      "bytes": 409267,
+      "sha256": "3ec4f3326a07823e44e374aa477fa9714b24f6a135b815b4fa4c5d8f96e8c987",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m2-07.mp4",
+      "bytes": 2433940,
+      "sha256": "f047c4f45f412211cbb82300a988074abe2c2cf4603590d510aed1eb229053f0",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m2-08.mp4",
+      "bytes": 2320452,
+      "sha256": "0ff84f457a90636a3cb2672b1a289da007845a071cd38ceba951e34b1a012a89",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/m2-09.mp4",
+      "bytes": 3279384,
+      "sha256": "96c143badbacb70f3c8181037605523896babb9205b84eea9ad5939dfab6fb2c",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/main-audio.m4a",
+      "bytes": 6301717,
+      "sha256": "a0d73995dad66228edcfbd1d15144f61f4cf5dafb98feb16416e5044f53b8215",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/2026-10-07/work/main-concat.txt",
+      "bytes": 2035,
+      "sha256": "afa6f0db55717880a69c4e3220062b2f32185b0df2230734971a1a12bcca054d",
+      "reason": "Regenerable encoded scene/section/audio or concat list from completed, user-approved cycle"
+    },
+    {
+      "file": "build/video/editorial-en/closing-no-name.mp4",
+      "bytes": 179236,
+      "sha256": "540fdc1fd72384ef82423387c63e17f89b477755c45fcc22c0f9a7644d6f3f46",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/concat.txt",
+      "bytes": 2581,
+      "sha256": "55282445e13f7af9ce7d4c8891d4a08f886f50af69756f6337306fefe3087a9e",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/programme-first-360.mp4",
+      "bytes": 269714601,
+      "sha256": "adbf200faf3b7aeee9e7375c4467b579d32b5c19fccf1bd3d4985efcfbfcb775",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene01.mp4",
+      "bytes": 17288233,
+      "sha256": "d9fd0addecd4aca5cf1366c16b2843f7328839fcf6232312ff51e9de04839946",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene02.mp4",
+      "bytes": 14812312,
+      "sha256": "18dc10e92c6316d2dcad65345396358d686caf490870f7788ec5d179875acac9",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene03.mp4",
+      "bytes": 19375538,
+      "sha256": "adb311071491fc09670f4acabe460d8062eaf04a3de01a1686f1b0bc920dc5db",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene04.mp4",
+      "bytes": 10859805,
+      "sha256": "2f65b5ef4562b225a0a25d2f4d0d7baf21bb4b22e1e19bdbd7f6934654f928e2",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene05.mp4",
+      "bytes": 27604702,
+      "sha256": "0761ffc4f54502da75d1222bde42470c11ebb851a6d69e6e265acdbedb736be7",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene06.mp4",
+      "bytes": 28113640,
+      "sha256": "60e3c031e20e46c278321044a1abd45a4da72f21216b01e7216bd7353b8294c8",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene07.mp4",
+      "bytes": 18512299,
+      "sha256": "6137cd1834a6b2ff84d57b3df36211981e4e5fc1c25ee382c6dbe8f5464a8661",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene08.mp4",
+      "bytes": 22873863,
+      "sha256": "fcfd6d28ce6a30b1a36c13486994c00c034c4879a5afb923970b38bb2876f583",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene09.mp4",
+      "bytes": 563546,
+      "sha256": "74a649cd3a078c0ebfeee94637b258e1358fd88bc92d7587a4f8d193042ad8b3",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene10.mp4",
+      "bytes": 665784,
+      "sha256": "646a7b95325744533a09245f831ab2eceb6abb064c65db6f9bcbf5a7a3be5754",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene11.mp4",
+      "bytes": 708363,
+      "sha256": "b6380255431e806792c9cfd24c36b1403a5c497213503968f73af4d922640a14",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene12.mp4",
+      "bytes": 662090,
+      "sha256": "69016361ec726dd55e3efb47f098c24fdfa026f184dad58730b8a86f434c1613",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene13.mp4",
+      "bytes": 747429,
+      "sha256": "3e14f5534e07d70e779f54a3026c557a04e443dbdeb83a76a1befccc20c5aec8",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene14.mp4",
+      "bytes": 10948575,
+      "sha256": "14c5b63e20ea7efbf707257a0b15649c9badada9a613f80f45f590ee3bfdbd8e",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene15.mp4",
+      "bytes": 2097841,
+      "sha256": "17b1b14bf4147fd11231078ae93506a90de0f24a5fcabfe3ed8467c66389d055",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene16.mp4",
+      "bytes": 13891421,
+      "sha256": "e98d43358c54e3d8d03e066843e69ddffb1b7606f997ccdcd1a396a70019092c",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene17.mp4",
+      "bytes": 11221213,
+      "sha256": "c03cdb6715f69f4bdda934dc0d8cc4e40677e3877683f9ece58a3552f636f77a",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene18.mp4",
+      "bytes": 55872273,
+      "sha256": "6b7ab0459bed4f18c0faf282fc5db331eedeb99c5946eca22852cfcd48a93a88",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene19.mp4",
+      "bytes": 592976,
+      "sha256": "1cd67e8c2520f166a9de7e7cf20e7d9c5ae161c0e187297a5fe02664f8fe2a4f",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene20.mp4",
+      "bytes": 592976,
+      "sha256": "1cd67e8c2520f166a9de7e7cf20e7d9c5ae161c0e187297a5fe02664f8fe2a4f",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene21.mp4",
+      "bytes": 529488,
+      "sha256": "e14f326638186cd83160787a840a1ddb8af21e07caed606e012314d11b9146ae",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene22.mp4",
+      "bytes": 529488,
+      "sha256": "e14f326638186cd83160787a840a1ddb8af21e07caed606e012314d11b9146ae",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene23.mp4",
+      "bytes": 592976,
+      "sha256": "1cd67e8c2520f166a9de7e7cf20e7d9c5ae161c0e187297a5fe02664f8fe2a4f",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene24.mp4",
+      "bytes": 515860,
+      "sha256": "99def79e352e9470a848f5a304946e275cfa82fef3c6ba36ed8c9dfbb151747d",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene25.mp4",
+      "bytes": 716821,
+      "sha256": "a948f5e6c82ebe07451ab11ad0807885b92e90e498036105eb9199aaac7d29c3",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene26.mp4",
+      "bytes": 885725,
+      "sha256": "bfddf69e5cae268747026917e31ecd68d3894196b77b770be9dddc03e2aa7b17",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene27.mp4",
+      "bytes": 222985,
+      "sha256": "560737b0dfb2aa6fb1872e382718064137c4936a092d748edad1955e3f3be5b1",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene28.mp4",
+      "bytes": 515860,
+      "sha256": "99def79e352e9470a848f5a304946e275cfa82fef3c6ba36ed8c9dfbb151747d",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/segments/scene29.mp4",
+      "bytes": 10268008,
+      "sha256": "8f07975e9b24dfb073cee2aac4009df664c99af4a811ae9cd47636eae19d0a51",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/concat.txt",
+      "bytes": 2328,
+      "sha256": "853545867fa46cbc47047d9e659a35123f97476997bbe9715cb55cadad4cf153",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment01.mp4",
+      "bytes": 464841,
+      "sha256": "e36b2487a35264dd0dc87422fde0e942dc657b47680ca4749aa4150203845477",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment02.mp4",
+      "bytes": 5760162,
+      "sha256": "aef543aa94db8429371aa6cf740dffdfe87d46bb8f1657b54fada63db47e4dde",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment03.mp4",
+      "bytes": 23479074,
+      "sha256": "cc2c80d4c9ae87694a724e3b1d5cc3ebce2da5539d9d52f05ac58ab9627093db",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment04.mp4",
+      "bytes": 6473535,
+      "sha256": "48328e437da0c7a7e51766a351fb96041ffa7c8109501ad284b23d6db2795f57",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment05.mp4",
+      "bytes": 63547340,
+      "sha256": "f36043b307d0741d13c94064060820435242e76e838696998b74692b3ca42a5f",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment06.mp4",
+      "bytes": 9041354,
+      "sha256": "154893e22830cb2ad01cf449c2424df422889f5bffb0aa5d340305cdd0c6e277",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment07.mp4",
+      "bytes": 26111486,
+      "sha256": "fb967380b8d5bd5f2ca0686aaab4746836ec4e51fc1892cc3a590a33e6271ac3",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment08.mp4",
+      "bytes": 643016,
+      "sha256": "602618158a09574b966de74830f532a276e1c6aca5bbcf5713aebedee4356323",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment09.mp4",
+      "bytes": 2402229,
+      "sha256": "723a208f2084485aaa95c90bdabcd9d615289b964eaddabadefeafb615df3652",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment10.mp4",
+      "bytes": 759997,
+      "sha256": "1b95be0c1d4f481ac5e4a0721cd3e9995696d0735c168e71b7d7dff4c13bfdbb",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment11.mp4",
+      "bytes": 708232,
+      "sha256": "d9fbbb84ec210c30a8372462d24a06fa8d1ccea28713328139bd9d8743e63fd6",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment12.mp4",
+      "bytes": 5080725,
+      "sha256": "3eef6da2dc8be05c56938a3a58cbb1ca933eae3132d271bbe3c19b1a5ece6ede",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment13.mp4",
+      "bytes": 33588407,
+      "sha256": "54690f451dc9604196fb7016847d073bfc51cf6bda9ef57d7f8e209306405e3b",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment14.mp4",
+      "bytes": 23723644,
+      "sha256": "e3fa78d1121f0d14b2a733511e71a322d51545669b5100a3018adfda87867aa3",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment15.mp4",
+      "bytes": 14325213,
+      "sha256": "3e7f5994ae8d48f29a199df6669c97414383990506b330a2cc441bb697507cae",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment16.mp4",
+      "bytes": 604180,
+      "sha256": "4dc6f49be84aed1bfd62ba206a6fe35e7e29775e1253be1b1b406dde668b52e6",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment17.mp4",
+      "bytes": 2091962,
+      "sha256": "6628afac5bcdfbc557f2651992be649a5eb5fee7707ef5acef86af2ceb0c08f4",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment18.mp4",
+      "bytes": 539912,
+      "sha256": "251789e73d584baaded03ed929d4821a69b4d79ad00fd4234d8dd42c0663c086",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment19.mp4",
+      "bytes": 518986,
+      "sha256": "848d50e518d51ff1a209f91a8643868e9ae84c1a9b1bd696e9ad17380133b28c",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment20.mp4",
+      "bytes": 695730,
+      "sha256": "280d357cba29387a59590a6218b56818a63acc558c2bbdad7d5ae311f5879471",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment21.mp4",
+      "bytes": 2193704,
+      "sha256": "0482b215d2393c13d34d282fe6a2eba2e1a3ed868feb7c6ad138db3fce04d359",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment22.mp4",
+      "bytes": 607843,
+      "sha256": "59fb06fd50366b8591d5748b3d74ef1831cbbd1499b965d415b31bff262836d7",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment23.mp4",
+      "bytes": 483936,
+      "sha256": "126ee7deb514d97c6ce7410d8dd2479a2c43e160e7350fe77dcab6e58cc02480",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/title-segments/segment24.mp4",
+      "bytes": 8924227,
+      "sha256": "de7d9abe7a221ad1361823d06cef0638e584dc3be33bcafd486cd8549d840cd4",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/titled-visuals-no-name.mp4",
+      "bytes": 269893078,
+      "sha256": "d11fce56666b45eda5ff12e7c0622b350f4e601c4a908c50178fd76590b3f3dc",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/titled-visuals.mp4",
+      "bytes": 232754217,
+      "sha256": "e7e6ddb26153eabfd3b59c5a1cd44c789b9dd75fe748e5abcf068b3db67d72fe",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/visuals-normalized.mp4",
+      "bytes": 248404819,
+      "sha256": "f05dd45099663261103524ae9070ee47a4972309b3c04dd6a0a043708d20e9f2",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial-en/visuals.mp4",
+      "bytes": 272730195,
+      "sha256": "03ea46ae874d07bccfa2ddf2027032a8a9c3b74bd985669de56ab4756f6f40b4",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/concat.txt",
+      "bytes": 2494,
+      "sha256": "c2d116958de86c036369627fbf870bb37ff772af321482b2dc13155bd926c3c5",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene01.mp4",
+      "bytes": 11666066,
+      "sha256": "8a0a8fb03768204333e1af2a95bf1ae7e1386470c19080bee3cd6fe359b754e4",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene02.mp4",
+      "bytes": 8492875,
+      "sha256": "b059eef392051ee7e9a0ae376575ce35d11285b69d491ba84bedbe3baef86956",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene03.mp4",
+      "bytes": 10705528,
+      "sha256": "4bf52c61de4c6216ba4cb6694ecdf9ed4c5f482dd413c26089267ed522ee5991",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene04.mp4",
+      "bytes": 9112027,
+      "sha256": "bd5f257a9749dd9f967d5d4eb92b64e5719ab456a815a7306ef1157de15f2962",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene05.mp4",
+      "bytes": 10420056,
+      "sha256": "0b8a97111c1d38c8fc3a1d77128033f12e31c2f6662fd0f213be76d9255d719c",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene06.mp4",
+      "bytes": 12337116,
+      "sha256": "08e10bc15aa7a2a3891ef6af965aa3ce96a33c1c1f1ce74484218cddc934da8f",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene07.mp4",
+      "bytes": 12346018,
+      "sha256": "c446a018b5f98db98a942c59922906aaf37d3ad52c7c4a126bb6af9cdcef068a",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene08.mp4",
+      "bytes": 11047712,
+      "sha256": "65e97ac2b7f9e916839bcdfc83e06695a1f3ac8d945f4a81b20c46684c09f431",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene09.mp4",
+      "bytes": 3397702,
+      "sha256": "4f1e2dc8e60e62678f7c237f103f88aeaedf58ecea9b2e23a08dec602f3fa39c",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene10.mp4",
+      "bytes": 10469064,
+      "sha256": "f9b1105c6829fa9286210a8444aff3cc29a1cdc387ffc38d9e07b9a5a2a75a42",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene11.mp4",
+      "bytes": 5999262,
+      "sha256": "f0d860886994000f6214fb7a9d2b8cf0e86cd225a24ea981d194f8933463a1af",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene12.mp4",
+      "bytes": 6695481,
+      "sha256": "eb89c5e3ad86cf622164c68b4f974f94649dd24ffe7f2f68639585b44e345e21",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene13.mp4",
+      "bytes": 8112514,
+      "sha256": "130e46981f72eb9b2926595c3f45a89cf400703bc52452c69c32a9bc74850cbe",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene14.mp4",
+      "bytes": 15714842,
+      "sha256": "ed8da685ae3a07d3c7c309b279d5c60730016e2b4ecb192055adc7482d36de8c",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene15.mp4",
+      "bytes": 11787922,
+      "sha256": "153c02c183f940116d14600bc66a4e5673ef2265ef17bd88676b199c0abeb17d",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene16.mp4",
+      "bytes": 12728239,
+      "sha256": "4297f94c4f6aae95c07e95661efa7c50d40619a5ce5608b904cc255d3944ea60",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene17.mp4",
+      "bytes": 12376496,
+      "sha256": "1e0c4b1d51aeed7e163088f673ed932de160099cf64d3e469d56dea4c8f8d851",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene18.mp4",
+      "bytes": 15816057,
+      "sha256": "66f48982a048dfa8fa2938318bbd0975d5e3388bb6ef65ea8a5fc2ca863e25cd",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene19.mp4",
+      "bytes": 9004086,
+      "sha256": "b4880c5b014a645d95dc14afb49917a6d65a8dbceeb802e8edf5b0081d947e62",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene20.mp4",
+      "bytes": 8892027,
+      "sha256": "2388b4792afa3cd72ae78aa0ffb977e639e0d4fdbbb897cce720e273031c8435",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene21.mp4",
+      "bytes": 4257457,
+      "sha256": "adf1b755222054fd91da52612657ac84415bb9c8a29bdddbbab1182bc7be22d5",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene22.mp4",
+      "bytes": 5498370,
+      "sha256": "9a0b4f4551e625d51a61bc28d3d15e02586d2c5ffa28cb2a1394b9e59e9bade2",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene23.mp4",
+      "bytes": 7565318,
+      "sha256": "d45264d3f077f7a20679911f0965e72a2f800fbc7269e82dd808b208238736d0",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene24.mp4",
+      "bytes": 22863824,
+      "sha256": "c793742f9e30ee40f7db2a68cb5d6bda4d2e8f20388f08976d9ccffc3d20a624",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene25.mp4",
+      "bytes": 27149516,
+      "sha256": "19d1134f285ff8a18b16901e926393ae434bb08d00c449e2d3a60c99ca6ca5df",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene26.mp4",
+      "bytes": 64352596,
+      "sha256": "781f4f8c0ba9277d1b0f65c0f2d8f7f55a108068f9f9afd4fabbea61abfc9818",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene27.mp4",
+      "bytes": 14879859,
+      "sha256": "bbb0e1eaa96d9d6441335f02185caddba8e4679579f20de2a69f7ddb0e42b18f",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene28.mp4",
+      "bytes": 12497119,
+      "sha256": "23eef1f35be41ec093a406547b42ac0789ec0153f7d67db36feee572c0045435",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/segments/scene29.mp4",
+      "bytes": 6166092,
+      "sha256": "3fd29987fad6b3d938e97621a2a571837e24028c668aaed066c2391a052ff056",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/concat.txt",
+      "bytes": 2256,
+      "sha256": "0595e018872b93705525375831e8cf8476d473ec5736f7ac8b128341e69221ca",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment01.mp4",
+      "bytes": 291174,
+      "sha256": "a138ad4e0ad65ecf31338b8146254cb806f753608ed86d855f37981ca5496fca",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment02.mp4",
+      "bytes": 5798126,
+      "sha256": "bb02d8bc0c0cdd1490c563c796c8b346dff38526f3d8da2cf9c74ea730d51d59",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment03.mp4",
+      "bytes": 14649065,
+      "sha256": "cb3040cc5e9b8b68cb7380b0447384acf28aba75ecc4a7b0b8454e732ad6eb53",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment04.mp4",
+      "bytes": 3771661,
+      "sha256": "0752b2f648cdca14ed97c6f1be37c344a651558baf80e7f8e4f1a5cb1f7f025c",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment05.mp4",
+      "bytes": 35445418,
+      "sha256": "31900878ab3a8eff6fd81bef296aec0d286962201bda8306c45cdd50e85f99a8",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment06.mp4",
+      "bytes": 4918449,
+      "sha256": "352dbf8a06757fc99df313970cb06c2f44115820beb1549f64afad0afcf4bed0",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment07.mp4",
+      "bytes": 16026610,
+      "sha256": "3310910b8d56ad47a609121fabe4ca77762cff4dd21d53be2d96bde4506e5d51",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment08.mp4",
+      "bytes": 2343607,
+      "sha256": "4ca5d9be9978228224921bcd13264901667180be7cd15d2a47ee65f7f2e7a2fd",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment09.mp4",
+      "bytes": 25548516,
+      "sha256": "c0f988ac6bc241b568e99cfc7b8ef47ecdb85b89d6b45d17854cbe7af0cb2177",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment10.mp4",
+      "bytes": 4943603,
+      "sha256": "116120d3cb4b1d4ef951ae5890d1a0c29fad8d5c0b0eb2db6c6d6de848595cb6",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment11.mp4",
+      "bytes": 4308355,
+      "sha256": "bf3e172c84bbdbf710c63fffe0fd634c28867c5672cb167be521d18f40afcc16",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment12.mp4",
+      "bytes": 7144444,
+      "sha256": "48ca3b638a1171d0fdd5f58268a18674935ee15727fcb723cab34a6f9bdfeaa8",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment13.mp4",
+      "bytes": 39688882,
+      "sha256": "4053012119290173f745791558e1638e44b42fefcf6af414da31d64b26a61e5d",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment14.mp4",
+      "bytes": 9083177,
+      "sha256": "6a99162b70776861b705ca58e5e4eac2d24d65883779cd6d3383984d13ea4199",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment15.mp4",
+      "bytes": 5857324,
+      "sha256": "4e7dff97a09bf464677a5914d35395884ea6a99d50d37aab64d827ba2b91f048",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment16.mp4",
+      "bytes": 5366606,
+      "sha256": "3a2502fbfc334e7b841d2414cb212e0035dffba111acff52c987fa35fd85b2be",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment17.mp4",
+      "bytes": 24267122,
+      "sha256": "97b009b6db14aebeb48798aec5d9a7decc3b8d9a7ec7bb822deeec69a9001f9b",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment18.mp4",
+      "bytes": 4812277,
+      "sha256": "d96d0ca22360d108022aa947d8a533c54d74306b0cba888c523e0bb895df2308",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment19.mp4",
+      "bytes": 4344295,
+      "sha256": "62e4899d93f2d191c6dfdd9abb5b1b2ba9cc36a4db24dee2999b24f1d59459c8",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment20.mp4",
+      "bytes": 8170330,
+      "sha256": "ddea7171380def9b02b1af46da1303e013d6e55c425cb843c361e9671b01d9f5",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment21.mp4",
+      "bytes": 101825513,
+      "sha256": "90660b1b6ed51dbdf3695fe403feddecd56000c5cc6b340b843452182b15f8f6",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment22.mp4",
+      "bytes": 6971594,
+      "sha256": "141229d53cebbf2c292aa8c462880e8460b5b6ef41caf8b8eba0a9e8aa649161",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment23.mp4",
+      "bytes": 4577032,
+      "sha256": "57bbe32ce49eb129e6062c743866cc4759df1a57cca0cb10223cc754a76727fa",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/title-segments/segment24.mp4",
+      "bytes": 5994463,
+      "sha256": "31b27ce30781a9c285d7a64eed0c514feef8ca2a591b79d13ab192e86705b7f3",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/titled-visuals.mp4",
+      "bytes": 346132955,
+      "sha256": "744711a120a24958274d65b89222264729bcd4ef6b33e050f7136c7372936caf",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/visuals-normalized.mp4",
+      "bytes": 364662543,
+      "sha256": "b49509592a114b526ce44dd1146095bbd0f3a6abecd1beb7b79dffc6aff8d87b",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/editorial/visuals.mp4",
+      "bytes": 372331652,
+      "sha256": "a8e0ab2bde41178caf3ca18178c962e04bb0d94e0312dfca8a31ad7af30f6575",
+      "reason": "Superseded legacy encoded assembly/scene intermediate; dated final outputs and source inputs retained"
+    },
+    {
+      "file": "build/video/narration-parts-en/.DS_Store",
+      "bytes": 6148,
+      "sha256": "fc47fbd7de4031707467dd6552b71cdaaa4642e383b42dcd52af4145cb50519e",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "video/.DS_Store",
+      "bytes": 6148,
+      "sha256": "c9b82ceb916a06727f8bdacde7d12fb12b907c9410e406cf5d70d6aeac02d9aa",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "video/cycles/.DS_Store",
+      "bytes": 8196,
+      "sha256": "a735d6ab4000c6c34742084a4ab3295c81aae8f5882ed90a4894b6a1df7ba9c7",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "video/cycles/2026-09-26/__pycache__/prepare_audio.cpython-314.pyc",
+      "bytes": 3760,
+      "sha256": "08207c19e954883b622878a11806502a6932fdaa04a1b8e9cf54997131104a5d",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "video/cycles/2026-09-26/__pycache__/render_main.cpython-314.pyc",
+      "bytes": 7839,
+      "sha256": "6e1f046fa35010c5ac8dfbb6c18912d061e4294905d372d6937b4b828016439c",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "video/cycles/2026-09-26/__pycache__/render_r1.cpython-314.pyc",
+      "bytes": 4342,
+      "sha256": "d1c37b6b7e18cb11a7e75c58b62c0056e8567ed7ee18f555f272a45faa13b018",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "video/cycles/2026-09-26/__pycache__/render_r2.cpython-314.pyc",
+      "bytes": 4325,
+      "sha256": "bb335dbdd5c373656188676820de1ece23c47ab8e0f50ba636dadcb08ef650f5",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "video/cycles/2026-09-30/__pycache__/render_r1.cpython-314.pyc",
+      "bytes": 4964,
+      "sha256": "3adae429ceb50c8aedcbc7eaf7e11e8b16117a1406528a2cedd9a84d70c0ff01",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "video/cycles/2026-09-30/__pycache__/render_r2.cpython-314.pyc",
+      "bytes": 4964,
+      "sha256": "067d699313c00cef4a994b3e5e5bc5dc5464306325d83df13c8d612805533bb9",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "video/cycles/2026-10-04/__pycache__/correct_r2_audio.cpython-314.pyc",
+      "bytes": 4498,
+      "sha256": "b078557a9e996c0709067f86491e1005ca37390bdedc7c496ab77d49bcf6c705",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "video/cycles/2026-10-04/__pycache__/fetch_media.cpython-314.pyc",
+      "bytes": 10334,
+      "sha256": "65f5cdce1951cdea12ed14ad7377276cd7c1042ca5190aea4caaf0cf93c2b14a",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "video/cycles/2026-10-04/__pycache__/prepare_audio.cpython-314.pyc",
+      "bytes": 5119,
+      "sha256": "456ef7706ed09cd2a476cc95d800a15b2375432e2e082c841fd5b6f4f2352277",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "video/cycles/2026-10-04/__pycache__/prepare_audit.cpython-314.pyc",
+      "bytes": 11133,
+      "sha256": "c27785401303fd694c9736cdd822691efa74804ca3d014a531a0e96145062b44",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "video/cycles/2026-10-04/__pycache__/prepare_figures.cpython-314.pyc",
+      "bytes": 7599,
+      "sha256": "9222c7a24f967ad3a868a6441834c8bc5b28a22332787300fa42a3fa0a406029",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "video/cycles/2026-10-04/__pycache__/qa_outputs.cpython-314.pyc",
+      "bytes": 15708,
+      "sha256": "c68f3ed1aff129eee352097751758f29951fcbd3aab656b4e8c3d640703bd8dd",
+      "reason": "Finder metadata or Python bytecode cache"
+    },
+    {
+      "file": "video/cycles/2026-10-04/__pycache__/render.cpython-314.pyc",
+      "bytes": 11441,
+      "sha256": "f07b910c57764dcfce35433cbc65e768a7eeb2906571174e7d2b4c6f6225e9f2",
+      "reason": "Finder metadata or Python bytecode cache"
+    }
+  ],
+  "count": 342,
+  "bytes": 4621197390,
+  "preserved": [
+    "all source assets and approved derivatives",
+    "all final/current/dated/archive videos",
+    "narration audio and texts",
+    "scripts/manifests/branding",
+    "composition/title/closing cards required by render",
+    "pre-render previews and complete QA evidence",
+    "2026-09-30 work: historical full-playback gate still pending",
+    "build/video/2026-09-26/work/opening-teaser.mp4 \u2014 selected input in the historical main manifest"
+  ],
+  "gate": "PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
+  "executed_at_utc": "2026-10-07T09:38:49.061879+00:00",
+  "deleted_count": 342,
+  "deleted_bytes": 4621197390,
+  "verification": {
+    "all_inventory_entries_absent": true,
+    "preserved_assets_and_build_files_unchanged": 1529,
+    "approved_output_hashes_unchanged": true
+  }
+}

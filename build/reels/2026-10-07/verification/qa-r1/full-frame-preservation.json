@@ -1,0 +1,114 @@
+[
+  {
+    "scene": 0,
+    "source": "assets/motion/2026-10-07/reels/r1/agreement.mp4",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 2.670767123008597,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 1,
+    "source": "assets/motion/2026-10-07/reels/r1/signing-late-still.png",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 3.2671235179073466,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 2,
+    "source": "assets/motion/2026-10-07/reels/r1/signing.mp4",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 3.4315385242227925,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 3,
+    "source": "assets/motion/2026-10-07/reels/r1/signing-still.png",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 3.3709963125942224,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 4,
+    "source": "assets/motion/2026-10-07/reels/r1/signing.mp4",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 3.833300737481155,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 5,
+    "source": "assets/motion/2026-10-07/reels/r1/agreement-still.png",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 2.682875463472273,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 6,
+    "source": "assets/motion/2026-10-07/reels/r1/signing.mp4",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 3.287236177321436,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  }
+]

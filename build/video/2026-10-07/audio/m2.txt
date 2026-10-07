@@ -1,0 +1,13 @@
+How does a drone avoid an obstacle that hasn't moved yet? MIT researchers have developed a flight planner called SANDO. The university's October seventh report describes earlier research into autonomous navigation through unfamiliar surroundings. The recorded context shown here is not evidence of a disaster deployment.
+
+A route can be clear when a robot plans it, then become dangerous as something moves into its path. Avoiding the current position of every obstacle is therefore not enough. A system must consider where an obstacle could be when the drone reaches that part of the route.
+
+SANDO builds what the researchers call a safe corridor: connected regions of three dimensional space through which the robot can travel. Its important addition is time. The planner accounts for potential obstacle movement before the drone arrives, rather than treating the environment as a frozen map.
+
+The system estimates a moving object's position and uses a bound on its maximum speed. That tells it how far the object could travel during a given interval. It reserves space around that possible movement, then plans the drone's trajectory within the remaining corridor. As new measurements arrive, it recalculates the route onboard.
+
+This is deliberately conservative reasoning. A planner cannot know every future movement. Instead, it must state the assumptions under which its safety argument holds. The paper includes bounds on obstacle velocity and estimation error. If the environment or sensing falls outside those assumptions, the guarantee cannot simply be carried over.
+
+Researchers tested the approach in simulations and controlled flights with a real drone. Those results support the method's feasibility. They do not prove that it can navigate every collapsed building, wildfire or busy street. 
+
+Inspections and search and rescue are possible future applications. The practical advance is a way to connect sensing, planning and a mathematical safety argument. A useful autonomous system needs all three, along with validation in its intended environment. SANDO offers evidence for that approach, while the difficult step from controlled tests to dependable field use remains.

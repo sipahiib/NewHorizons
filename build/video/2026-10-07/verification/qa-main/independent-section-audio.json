@@ -1,0 +1,26 @@
+[
+  {
+    "section": "m1",
+    "start": 0,
+    "duration": 160,
+    "reference": "build/video/2026-10-07/audio/m1.wav",
+    "scheduled_envelope_correlation": 0.9964913104929874,
+    "limitation": "Audio envelope comparison supports presence/alignment; does not verify pronunciation, words, pacing or full listening."
+  },
+  {
+    "section": "m2",
+    "start": 160,
+    "duration": 140,
+    "reference": "build/video/2026-10-07/audio/m2.mp3",
+    "scheduled_envelope_correlation": 0.9959728937662754,
+    "limitation": "Audio envelope comparison supports presence/alignment; does not verify pronunciation, words, pacing or full listening."
+  },
+  {
+    "section": "closing",
+    "start": 300,
+    "duration": 10,
+    "reference": "build/video/2026-10-07/audio/closing.mp3",
+    "scheduled_envelope_correlation": 0.9981871433143356,
+    "limitation": "Audio envelope comparison supports presence/alignment; does not verify pronunciation, words, pacing or full listening."
+  }
+]

@@ -1,0 +1,89 @@
+{
+  "cycle": "2026-10-07",
+  "status": "prepared-for-review",
+  "output": "build/reels/2026-10-07/02-ocean-heat.mp4",
+  "audio": "build/video/2026-10-07/audio/r2.mp3",
+  "overlay": "build/reels/2026-10-07/work/r2-title.png",
+  "ctaOverlay": "build/reels/2026-10-07/work/r2-cta.png",
+  "ctaStartInFinalScene": 6,
+  "duration": 45,
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "counts": {
+    "stills": 3,
+    "motion": 4
+  },
+  "scenes": [
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-07/reels/r2/ocean.mp4",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "OCEAN CONTEXT \u2022 NOT HEAT MEASUREMENTS",
+      "overlay": "build/reels/2026-10-07/work/r2-detail-0.png"
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-07/reels/r2/ocean-still.png",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "OCEAN CONTEXT \u2022 NOT HEAT MEASUREMENTS",
+      "overlay": "build/reels/2026-10-07/work/r2-detail-1.png"
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-07/reels/r2/ocean.mp4",
+      "duration": 6,
+      "seek": 15,
+      "loop": false,
+      "label": "OCEAN CONTEXT \u2022 NOT HEAT MEASUREMENTS",
+      "overlay": "build/reels/2026-10-07/work/r2-detail-2.png"
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-07/reels/r2/ice-still.png",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "ARCHIVE CONTEXT \u2022 GORNER GLACIER \u2022 2021",
+      "overlay": "build/reels/2026-10-07/work/r2-detail-3.png"
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-07/reels/r2/gorner.mp4",
+      "duration": 6,
+      "seek": 16,
+      "loop": false,
+      "label": "ARCHIVE CONTEXT \u2022 GORNER GLACIER \u2022 2021",
+      "overlay": "build/reels/2026-10-07/work/r2-detail-4.png"
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-07/reels/r2/melt-still.png",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "ARCHIVE CONTEXT \u2022 GORNER GLACIER \u2022 2021",
+      "overlay": "build/reels/2026-10-07/work/r2-detail-5.png"
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-07/reels/r2/ocean.mp4",
+      "duration": 9,
+      "seek": 22,
+      "loop": false,
+      "label": "OCEAN CONTEXT \u2022 NOT HEAT MEASUREMENTS",
+      "overlay": "build/reels/2026-10-07/work/r2-detail-6.png"
+    }
+  ],
+  "hashes": {
+    "assets/motion/2026-10-07/reels/r2/gorner.mp4": "97ef520b97763383930999844c99c816500bd51d08f66ddf3f7f209cd171ca83",
+    "assets/motion/2026-10-07/reels/r2/ice-still.png": "a09433c45e6908c305d30d5aaf64de7c0ca1f98fea82127cfb0ba9c47d4ea5ac",
+    "assets/motion/2026-10-07/reels/r2/melt-still.png": "46b82484db0350c12e6458192b8e03905b9b2b2005bb1621422d45ccc50d71e6",
+    "assets/motion/2026-10-07/reels/r2/ocean-still.png": "6c6ac0fe02a5d0d8698eeba27d97a59977050f792de44931d141133850b1c0be",
+    "assets/motion/2026-10-07/reels/r2/ocean.mp4": "cb56e211d8d5588d905a762370e87c96fd001dba214ec339f88274e824376ca1"
+  }
+}

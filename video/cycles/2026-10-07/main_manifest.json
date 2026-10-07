@@ -1,0 +1,255 @@
+{
+  "cycle": "2026-10-07",
+  "status": "prepared-for-review",
+  "candidateOutput": "build/video/2026-10-07/newhorizons.mp4",
+  "finalOutput": "build/video/newhorizons.mp4",
+  "duration": 310,
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "sections": [
+    {
+      "id": "m1",
+      "duration": 160,
+      "audio": "build/video/2026-10-07/audio/m1.wav",
+      "counts": {
+        "stills": 8,
+        "motion": 6
+      },
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-07/main/m1/ngc-display.png",
+          "duration": 5,
+          "label": "science",
+          "overlay": "build/video/2026-10-07/work/science.png",
+          "title": "build/video/2026-10-07/work/m1-title.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-07/main/m1/webb-broll-1.webm",
+          "duration": 7,
+          "seek": 38,
+          "loop": false,
+          "label": "webb2016",
+          "overlay": "build/video/2026-10-07/work/webb2016.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-07/main/m2/magiclab.webm",
+          "duration": 4,
+          "seek": 107,
+          "loop": false,
+          "label": "magic",
+          "overlay": "build/video/2026-10-07/work/magic.png",
+          "title": "build/video/2026-10-07/work/teaser.png"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-07/main/m1/ngc-display.png",
+          "duration": 12,
+          "label": "science",
+          "overlay": "build/video/2026-10-07/work/science.png"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-07/main/m1/gold.png",
+          "duration": 14,
+          "label": "science",
+          "overlay": "build/video/2026-10-07/work/science.png"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-07/main/m1/red.png",
+          "duration": 14,
+          "label": "science",
+          "overlay": "build/video/2026-10-07/work/science.png"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-07/main/m1/grey.png",
+          "duration": 12,
+          "label": "science",
+          "overlay": "build/video/2026-10-07/work/science.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-07/main/m1/webb-broll-2.webm",
+          "duration": 12,
+          "seek": 96,
+          "loop": false,
+          "label": "webb2016",
+          "overlay": "build/video/2026-10-07/work/webb2016.png"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-07/main/m1/gas.png",
+          "duration": 14,
+          "label": "science",
+          "overlay": "build/video/2026-10-07/work/science.png"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-07/main/m1/comparison.png",
+          "duration": 16,
+          "label": "comparison",
+          "overlay": "build/video/2026-10-07/work/comparison.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-07/main/m1/webb-broll-1.webm",
+          "duration": 14,
+          "seek": 136,
+          "loop": false,
+          "label": "webb2016",
+          "overlay": "build/video/2026-10-07/work/webb2016.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-07/main/m1/webb-cleanroom.mp4",
+          "duration": 14,
+          "seek": 145,
+          "loop": false,
+          "label": "webb2018",
+          "overlay": "build/video/2026-10-07/work/webb2018.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-07/main/m1/webb-broll-2.webm",
+          "duration": 14,
+          "seek": 134,
+          "loop": false,
+          "label": "webb2016",
+          "overlay": "build/video/2026-10-07/work/webb2016.png"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-07/main/m1/ngc-display.png",
+          "duration": 8,
+          "label": "science",
+          "overlay": "build/video/2026-10-07/work/science.png"
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "duration": 140,
+      "audio": "build/video/2026-10-07/audio/m2.mp3",
+      "counts": {
+        "stills": 4,
+        "motion": 6
+      },
+      "scenes": [
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-07/main/m2/magiclab.webm",
+          "duration": 12,
+          "seek": 52,
+          "loop": false,
+          "label": "magic",
+          "overlay": "build/video/2026-10-07/work/magic.png",
+          "title": "build/video/2026-10-07/work/m2-title.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-07/main/m2/fpv.mp4",
+          "duration": 14,
+          "seek": 2,
+          "loop": false,
+          "label": "fpv",
+          "overlay": "build/video/2026-10-07/work/fpv.png"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-07/main/m2/magic-55.png",
+          "duration": 14,
+          "label": "magic",
+          "overlay": "build/video/2026-10-07/work/magic.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-07/main/m2/magiclab.webm",
+          "duration": 14,
+          "seek": 75,
+          "loop": false,
+          "label": "magic",
+          "overlay": "build/video/2026-10-07/work/magic.png"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-07/main/m2/magic-110.png",
+          "duration": 14,
+          "label": "magic",
+          "overlay": "build/video/2026-10-07/work/magic.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-07/main/m2/magiclab.webm",
+          "duration": 14,
+          "seek": 130,
+          "loop": false,
+          "label": "magic",
+          "overlay": "build/video/2026-10-07/work/magic.png"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-07/main/m2/magic-170.png",
+          "duration": 14,
+          "label": "limits",
+          "overlay": "build/video/2026-10-07/work/limits.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-07/main/m2/magiclab.webm",
+          "duration": 14,
+          "seek": 190,
+          "loop": false,
+          "label": "limits",
+          "overlay": "build/video/2026-10-07/work/limits.png"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-07/main/m2/fpv-still.png",
+          "duration": 14,
+          "label": "fpv",
+          "overlay": "build/video/2026-10-07/work/fpv.png"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-07/main/m2/magiclab.webm",
+          "duration": 16,
+          "seek": 150,
+          "loop": false,
+          "label": "limits",
+          "overlay": "build/video/2026-10-07/work/limits.png"
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "duration": 10,
+      "audio": "build/video/2026-10-07/audio/closing.mp3",
+      "closing": true
+    }
+  ],
+  "closing": "build/video/2026-10-07/work/closing.png",
+  "closingBell": "build/video/2026-10-07/work/closing-bell.png",
+  "titleDisplaySeconds": 4,
+  "hashes": {
+    "assets/motion/2026-10-07/main/m1/comparison.png": "89052da9ce50345b18bb17f9075d58007e06f8278b5901dccd3f55b0d650030a",
+    "assets/motion/2026-10-07/main/m1/gas.png": "411f6a4749fffdf7ae39783187ac030050e5ac60ebf528023961d36f4e043b1f",
+    "assets/motion/2026-10-07/main/m1/gold.png": "2b2e81225e8b52769bbadbf07d1e53f02db2e8ae707052b49ee633d47173e6f3",
+    "assets/motion/2026-10-07/main/m1/grey.png": "93fcc267e5b530b8957d3031ed695da4fedff1238630146665f8b8f827a5ef31",
+    "assets/motion/2026-10-07/main/m1/ngc-display.png": "2bfbc73c6ef607bf979b5dc6a6a4087fd1998d4d93baa4c2ffcec1f57fa9d328",
+    "assets/motion/2026-10-07/main/m1/red.png": "050060f1d2d3902c9d7a81fe0444d053c5f00edf7d90c6b664d839cbb4fe7109",
+    "assets/motion/2026-10-07/main/m1/webb-broll-1.webm": "fb3cf7043bab897114f15fcc27b8899cc47fdf1e92b7c7bae642497e9f8552fa",
+    "assets/motion/2026-10-07/main/m1/webb-broll-2.webm": "8b933abb430059621e5f80488160effeecf257f077b7e395518b05619e23219c",
+    "assets/motion/2026-10-07/main/m1/webb-cleanroom.mp4": "1963a08054845d11ddf90887006f5900ca63a831db98535d9b8105dd5e1f663c",
+    "assets/motion/2026-10-07/main/m2/fpv-still.png": "44bcc56b13b435e8bb447e6a4db03164fbe9e34ee1c4ddc965e924caac851973",
+    "assets/motion/2026-10-07/main/m2/fpv.mp4": "e9024ad5964cb0afcb210a3a2a4434b74003fb9d70a342c3f90caed45ec926fd",
+    "assets/motion/2026-10-07/main/m2/magic-110.png": "f2a50cd820a63a824e3ceb5ab4103c8d46993d1427f20af1edc630c75d32b08b",
+    "assets/motion/2026-10-07/main/m2/magic-170.png": "443a20ebfeac73a0735b7247a69a4ea7df3a205366ae29850a55dc10e3aa8dba",
+    "assets/motion/2026-10-07/main/m2/magic-55.png": "b68cd4be6c01d8760778aa12d3fab753a6002688ccb6f28bec836cf5d369c8d7",
+    "assets/motion/2026-10-07/main/m2/magiclab.webm": "f1afbbb3d821501d2a27990487eb76178d879f79465699cc1110585268afe9b7"
+  }
+}

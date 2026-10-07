@@ -1,0 +1,11 @@
+{
+  "cycle": "2026-10-07",
+  "promoted_at_utc": "2026-10-07T09:16:26Z",
+  "source": "build/video/2026-10-07/newhorizons.mp4",
+  "destination": "build/video/newhorizons.mp4",
+  "sha256": "87baebb1f90fc1ac354c727f9d354e0cfa7d52eea8321f95c030ae220a664155",
+  "previous_sha256": "94a668f49e8f80392835b0c97b85e1c411a8826b6f8b5585c8a67e5b7d9db578",
+  "previous_output_preserved_at": "build/video/2026-10-04/newhorizons.mp4",
+  "exact_hash_verified_after_copy": true,
+  "publishing_authorised": false
+}

@@ -1,0 +1,35 @@
+{
+  "sha256": "87baebb1f90fc1ac354c727f9d354e0cfa7d52eea8321f95c030ae220a664155",
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "60/1",
+        "avg_frame_rate": "60/1",
+        "duration": "310.000000",
+        "nb_read_frames": "18600",
+        "side_data_list": [
+          {}
+        ]
+      },
+      {
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "duration": "310.000000",
+        "nb_read_frames": "14532"
+      }
+    ],
+    "format": {
+      "duration": "310.000000"
+    }
+  },
+  "decode_returncode": 0,
+  "decode_stderr": "",
+  "verification": "Independent QA agent reran probe/frame count/full decode; no complete perceptual playback or listening claimed."
+}

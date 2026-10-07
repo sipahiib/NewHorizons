@@ -1,0 +1,114 @@
+[
+  {
+    "scene": 0,
+    "source": "assets/motion/2026-10-07/reels/r2/ocean.mp4",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 5.506306278776026,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 1,
+    "source": "assets/motion/2026-10-07/reels/r2/ocean-still.png",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 5.407786334188974,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 2,
+    "source": "assets/motion/2026-10-07/reels/r2/ocean.mp4",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 5.409090677586278,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 3,
+    "source": "assets/motion/2026-10-07/reels/r2/ice-still.png",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 13.075665668418694,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 4,
+    "source": "assets/motion/2026-10-07/reels/r2/gorner.mp4",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 7.3776876298740985,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 5,
+    "source": "assets/motion/2026-10-07/reels/r2/melt-still.png",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 4.992073096198509,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 6,
+    "source": "assets/motion/2026-10-07/reels/r2/ocean.mp4",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 5.2958073585136285,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  }
+]

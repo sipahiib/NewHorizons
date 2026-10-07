@@ -1,8 +1,8 @@
 # NewHorizons — Active Source Index
 
-Active cycle: **2026-10-04**
+Active cycle: **2026-10-07**
 
-- Research, primary links, claim limits, hooks and proposed visuals: [`cycles/2026-10-04/RESEARCH_PACKET.md`](cycles/2026-10-04/RESEARCH_PACKET.md).
-- Approval record: [`cycles/2026-10-04/APPROVAL.md`](cycles/2026-10-04/APPROVAL.md) (approved; M1 hook 1).
+- [Research, sources, dates, limitations, hooks and visuals](cycles/2026-10-07/RESEARCH_PACKET.md).
+- [User decisions](cycles/2026-10-07/APPROVAL.md) — approved; Webb first, SANDO second, unchanged hooks.
 
-Do not append audit history or future cycles to this file. When a new cycle begins, create its directory and update only the active-cycle links above. Preserve earlier cycle directories.
+Earlier records remain in `cycles/`; update this pointer when a new cycle opens.

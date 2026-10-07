@@ -1,0 +1,1 @@
+Next, a drone plans around moving obstacles.

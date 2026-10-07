@@ -1,0 +1,89 @@
+{
+  "cycle": "2026-10-07",
+  "status": "prepared-for-review",
+  "output": "build/reels/2026-10-07/01-ai-business-rules.mp4",
+  "audio": "build/video/2026-10-07/audio/r1.mp3",
+  "overlay": "build/reels/2026-10-07/work/r1-title.png",
+  "ctaOverlay": "build/reels/2026-10-07/work/r1-cta.png",
+  "ctaStartInFinalScene": 6,
+  "duration": 45,
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "counts": {
+    "stills": 3,
+    "motion": 4
+  },
+  "scenes": [
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-07/reels/r1/agreement.mp4",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "CONTRACT CONTEXT \u2022 NOT THE EVALUATED AI",
+      "overlay": "build/reels/2026-10-07/work/r1-detail-0.png"
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-07/reels/r1/signing-late-still.png",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "CONTRACT CONTEXT \u2022 NOT THE EVALUATED AI",
+      "overlay": "build/reels/2026-10-07/work/r1-detail-1.png"
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-07/reels/r1/signing.mp4",
+      "duration": 6,
+      "seek": 14,
+      "loop": false,
+      "label": "CONTRACT CONTEXT \u2022 NOT THE EVALUATED AI",
+      "overlay": "build/reels/2026-10-07/work/r1-detail-2.png"
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-07/reels/r1/signing-still.png",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "CONTRACT CONTEXT \u2022 NOT THE EVALUATED AI",
+      "overlay": "build/reels/2026-10-07/work/r1-detail-3.png"
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-07/reels/r1/signing.mp4",
+      "duration": 6,
+      "seek": 20,
+      "loop": false,
+      "label": "CONTRACT CONTEXT \u2022 NOT THE EVALUATED AI",
+      "overlay": "build/reels/2026-10-07/work/r1-detail-4.png"
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-07/reels/r1/agreement-still.png",
+      "duration": 6,
+      "seek": 0,
+      "loop": false,
+      "label": "CONTRACT CONTEXT \u2022 NOT THE EVALUATED AI",
+      "overlay": "build/reels/2026-10-07/work/r1-detail-5.png"
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-07/reels/r1/signing.mp4",
+      "duration": 9,
+      "seek": 26,
+      "loop": false,
+      "label": "CONTRACT CONTEXT \u2022 NOT THE EVALUATED AI",
+      "overlay": "build/reels/2026-10-07/work/r1-detail-6.png"
+    }
+  ],
+  "hashes": {
+    "assets/motion/2026-10-07/reels/r1/agreement-still.png": "9d4c7688f1886de176549a7b65ec7db6ba78ec0947d4a9720e92e932b1979d68",
+    "assets/motion/2026-10-07/reels/r1/agreement.mp4": "df6397a0802e06f0660f7397cbe45f618f0333feb4b6ec7732b5d09415ce9eb9",
+    "assets/motion/2026-10-07/reels/r1/signing-late-still.png": "f1c0e6824d5f314209b625f8778d7ed305bc0179a5d81cf2fb48c0a3c2a98613",
+    "assets/motion/2026-10-07/reels/r1/signing-still.png": "45b66ade3e504c00b04329fb12d73fda2040581c950995b6199f33e319dd7814",
+    "assets/motion/2026-10-07/reels/r1/signing.mp4": "6481170a08e7a72049d65d615b01d317637cf54a0cf4ad69cdffb634b7a8a2e6"
+  }
+}
