@@ -1,0 +1,82 @@
+{
+  "cycle": "2026-10-11",
+  "status": "prepared-for-review",
+  "output": "build/reels/2026-10-11/02-fish-hidden-stress.mp4",
+  "audio": "build/video/2026-10-11/audio/r2.mp3",
+  "overlay": "build/reels/2026-10-11/work/r2-title.png",
+  "titleDisplaySeconds": 5.5,
+  "ctaOverlay": "build/reels/2026-10-11/work/r2-cta.png",
+  "ctaWindow": [
+    42,
+    45
+  ],
+  "leadingSilence": 0.6,
+  "duration": 45,
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "counts": {
+    "stills": 5,
+    "motion": 2
+  },
+  "scenes": [
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-11/reels/r2-adults.jpg",
+      "duration": 6,
+      "seek": 0,
+      "loop": false
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-11/reels/r2-coast.png",
+      "duration": 6,
+      "seek": 0,
+      "loop": false
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-11/reels/r2-sunabe.jpg",
+      "duration": 6,
+      "seek": 0,
+      "loop": false
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-11/reels/r2-35480156.mp4",
+      "duration": 7,
+      "seek": 0,
+      "loop": false
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-11/reels/r2-nago.jpg",
+      "duration": 7,
+      "seek": 0,
+      "loop": false
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-11/reels/r2-35480232.mp4",
+      "duration": 6,
+      "seek": 0,
+      "loop": false
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-11/reels/r2-juveniles.jpg",
+      "duration": 7,
+      "seek": 0,
+      "loop": false
+    }
+  ],
+  "hashes": {
+    "assets/motion/2026-10-11/reels/r2-35480156.mp4": "d7a93d5bba91876590a4dde35b54e039a89560f9d2415f786c47238452b56104",
+    "assets/motion/2026-10-11/reels/r2-35480232.mp4": "5b1d39e0622637141fe4b1b1ab196c9c9b9ab4a5c9421c5f14f68fdc215ad50a",
+    "assets/motion/2026-10-11/reels/r2-adults.jpg": "a5b55bbf52bdce2fa3dae343522abab76f422ff1eab6192186fe0f440b94e2bd",
+    "assets/motion/2026-10-11/reels/r2-coast.png": "a62916fbe864eed97ba0c080abb63733f7639b789b28f6aff329a7a7dbec963b",
+    "assets/motion/2026-10-11/reels/r2-juveniles.jpg": "078562ada293143224da353ae13c699d4d96a3d2bbe0b7eea496b623b67ea325",
+    "assets/motion/2026-10-11/reels/r2-nago.jpg": "e248a609144b659e421376a9de1df7b444f4275d0f1686fb888a1af018f2fa60",
+    "assets/motion/2026-10-11/reels/r2-sunabe.jpg": "24166b24e5aa417212da90f566fecaa42414c7c00d21eee5aa11ee80fae9c829"
+  }
+}

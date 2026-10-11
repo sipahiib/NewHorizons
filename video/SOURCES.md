@@ -1,8 +1,8 @@
 # NewHorizons — Active Source Index
 
-Active cycle: **2026-10-07**
+Active cycle: **2026-10-11**
 
-- [Research, sources, dates, limitations, hooks and visuals](cycles/2026-10-07/RESEARCH_PACKET.md).
-- [User decisions](cycles/2026-10-07/APPROVAL.md) — approved; Webb first, SANDO second, unchanged hooks.
+- [Research packet](cycles/2026-10-11/RESEARCH_PACKET.md) — research complete; selected package approved.
+- [User decisions](cycles/2026-10-11/APPROVAL.md) — selected hooks and editorial approval recorded.
 
-Earlier records remain in `cycles/`; update this pointer when a new cycle opens.
+Earlier records remain in `cycles/`; they are not current approvals.

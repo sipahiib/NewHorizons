@@ -1,0 +1,82 @@
+{
+  "cycle": "2026-10-11",
+  "status": "prepared-for-review",
+  "output": "build/reels/2026-10-11/01-ai-hardware-pause.mp4",
+  "audio": "build/video/2026-10-11/audio/r1.mp3",
+  "overlay": "build/reels/2026-10-11/work/r1-title.png",
+  "titleDisplaySeconds": 5.5,
+  "ctaOverlay": "build/reels/2026-10-11/work/r1-cta.png",
+  "ctaWindow": [
+    42,
+    45
+  ],
+  "leadingSilence": 0.8,
+  "duration": 45,
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "counts": {
+    "stills": 0,
+    "motion": 7
+  },
+  "scenes": [
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-11/reels/r1-6754818.mp4",
+      "duration": 6,
+      "seek": 1,
+      "loop": false
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-11/reels/r1-6754824.mp4",
+      "duration": 6,
+      "seek": 1,
+      "loop": false
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-11/reels/r1-6754830.mp4",
+      "duration": 6,
+      "seek": 1,
+      "loop": false
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-11/reels/r1-5736195.mp4",
+      "duration": 6,
+      "seek": 1,
+      "loop": false
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-11/reels/r1-3866849.mp4",
+      "duration": 7,
+      "seek": 1,
+      "loop": false
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-11/reels/r1-6754834.mp4",
+      "duration": 7,
+      "seek": 1,
+      "loop": false
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-11/reels/r1-6208729.mp4",
+      "duration": 7,
+      "seek": 1,
+      "loop": false
+    }
+  ],
+  "hashes": {
+    "assets/motion/2026-10-11/reels/r1-3866849.mp4": "3b23e758ebf8066578db44cbc0fe88b012f2fd9ab4e0a51df38a3574664e7e68",
+    "assets/motion/2026-10-11/reels/r1-5736195.mp4": "fa500f3d8ba34cc58a2aafec6cfe0225e26294338c0d2ec13a2ff98e2f8ddda2",
+    "assets/motion/2026-10-11/reels/r1-6208729.mp4": "55fd9de52791aa9df6801251c5a36d12a7ab699c192f2734bc7544e27001dc1c",
+    "assets/motion/2026-10-11/reels/r1-6754818.mp4": "447d8753383adbcd302d963def9e1ba31b24975cf2c372ef6e4bc07eae940bbd",
+    "assets/motion/2026-10-11/reels/r1-6754824.mp4": "3e2031710c7c2ccf5f24d5f659dc28c6381696157c2258000a9a4c8dd763f44a",
+    "assets/motion/2026-10-11/reels/r1-6754830.mp4": "c6e5aae65e7419550aab1ba3ccc62baf3201fa8181108aaa213de01bdbdd6673",
+    "assets/motion/2026-10-11/reels/r1-6754834.mp4": "3098346afdaf5f5661d95fafc496753149e62f6593b24b8432e7cb0569e7d3c4"
+  }
+}

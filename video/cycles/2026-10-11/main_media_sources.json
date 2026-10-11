@@ -1,0 +1,428 @@
+[
+  {
+    "id": "capsule",
+    "file": "assets/motion/2026-10-11/main/capsule.jpg",
+    "url": "https://www.nasa.gov/wp-content/uploads/2026/10/iss075e0185943.jpg",
+    "source": "https://www.nasa.gov/centers-and-facilities/ames/nasa-demonstrates-next-generation-heat-shield-technologies/",
+    "credit": "NASA",
+    "status": "direct KREPE-3 hardware; photographed 7 October 2026",
+    "rights": "NASA media guidelines; NASA credit",
+    "sha256": "3af4a17f2ccef6619a1933cb5d4894c13d99ef970613a37902df731c60abd76c",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 8256,
+          "height": 5504,
+          "avg_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "0.040000"
+      }
+    }
+  },
+  {
+    "id": "shield",
+    "file": "assets/motion/2026-10-11/main/shield.jpg",
+    "url": "https://www.nasa.gov/wp-content/uploads/2026/10/acd25-0136-020.jpg",
+    "source": "https://www.nasa.gov/centers-and-facilities/ames/nasa-demonstrates-next-generation-heat-shield-technologies/",
+    "credit": "NASA/Brandon Torres-Navarrete",
+    "status": "direct KREPE thermal protection hardware",
+    "rights": "NASA media guidelines; photographer credit",
+    "sha256": "dfa9fac67718482914a4cc4fd457bac81fc6434be43ca99c16834706202a17f8",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 8256,
+          "height": 5504,
+          "avg_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "0.040000"
+      }
+    }
+  },
+  {
+    "id": "watch",
+    "file": "assets/motion/2026-10-11/main/watch.png",
+    "url": "https://www.tus.ac.jp/en/mediarelations/20261009_9677_01.png",
+    "source": "https://www.tus.ac.jp/en/mediarelations/archive/20261009_9677.html",
+    "credit": "Isao Shitanda / Tokyo University of Science",
+    "status": "direct study device/design figure",
+    "rights": "Institution image specifies original content; credit creator",
+    "sha256": "45480e6933e0a16b0fb098ab884c011d1373176f8b5fc0dc09f3adfd892de117",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 960,
+          "height": 640,
+          "avg_frame_rate": "25/1"
+        }
+      ],
+      "format": {}
+    }
+  },
+  {
+    "id": "arcjet",
+    "file": "assets/motion/2026-10-11/main/arcjet-hd.mp4",
+    "url": "https://nasaplus.akamaized.net/output/8895-7.m3u8",
+    "source": "https://plus.nasa.gov/video/nasa-arc-jet-facility-history/",
+    "credit": "NASA Johnson Space Center",
+    "status": "archive ground-test laboratory; released 28 August 2023; not KREPE-3",
+    "rights": "NASA media guidelines; only real B-roll selected; source sound removed",
+    "sha256": "966664a5fa61b66ca09bc5cd596f98c4f4f295d625a9b47b38897a0ef51bbda7",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "avg_frame_rate": "13091875/442442"
+        }
+      ],
+      "format": {
+        "duration": "707.907200"
+      }
+    }
+  },
+  {
+    "id": "arcjet-opening-repaired",
+    "file": "assets/motion/2026-10-11/main/arcjet-opening-repaired.mp4",
+    "url": "https://nasaplus.akamaized.net/output/8895-7.m3u8",
+    "source": "https://plus.nasa.gov/video/nasa-arc-jet-facility-history/",
+    "credit": "NASA Johnson Space Center",
+    "status": "archive ground-test laboratory; clean first50seconds re-fetched from same official source",
+    "rights": "NASA media guidelines; real B-roll; source sound removed",
+    "sha256": "451f2aae4f13bd459c8cd264cc8ef4ff3d3ea850a3d804fbc5543cd9bd9b5427",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "avg_frame_rate": "30000/1001"
+        }
+      ],
+      "format": {
+        "duration": "50.016633"
+      }
+    }
+  },
+  {
+    "id": "departure",
+    "file": "assets/motion/2026-10-11/main/departure.mp4",
+    "url": "https://youtube.com/live/IoL51xLkMSY",
+    "source": "https://plus.nasa.gov/scheduled-video/nasas-northrop-grumman-commercial-resupply-services-24-departure/",
+    "credit": "NASA",
+    "status": "actual Cygnus XL departure coverage; 9 October 2026",
+    "rights": "NASA media guidelines; footage from official NASA recording; no simulation shots",
+    "sha256": "817b55d7837303da4befbfd3965a6e61b45eaeae5f4718afd98336c323a48c47",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "avg_frame_rate": "30000/1001"
+        }
+      ],
+      "format": {
+        "duration": "2526.657467"
+      }
+    }
+  },
+  {
+    "id": "smartwatch",
+    "file": "assets/motion/2026-10-11/main/smartwatch.mp4",
+    "url": "https://www.pexels.com/download/video/17770565/",
+    "source": "https://www.pexels.com/video/a-person-wearing-a-watch-on-their-wrist-17770565/",
+    "credit": "Ali Alc\u00e1ntara / Pexels",
+    "status": "ordinary smartwatch context; not research prototype or sweat sensor",
+    "rights": "Pexels License https://www.pexels.com/license/",
+    "sha256": "fc0bf666d58daaca188394f1653d17cea42ed5cc714071f928f0058ed3903ac5",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 2560,
+          "height": 1440,
+          "avg_frame_rate": "24/1"
+        }
+      ],
+      "format": {
+        "duration": "5.708333"
+      }
+    }
+  },
+  {
+    "id": "smartwatch-detail",
+    "file": "assets/motion/2026-10-11/main/smartwatch-detail.mp4",
+    "url": "https://www.pexels.com/download/video/4211107/",
+    "source": "https://www.pexels.com/video/close-up-shot-of-a-person-s-smart-watch-4211107/",
+    "credit": "Kaboompics / Pexels",
+    "status": "ordinary smartwatch context; not research prototype or sweat sensor; native720p",
+    "rights": "Pexels License https://www.pexels.com/license/",
+    "sha256": "d655b58dbdf20405b440ddfb69d01de34a1dbde56a50a9679eb146e8192a1f61",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1280,
+          "height": 720,
+          "avg_frame_rate": "30000/1001"
+        }
+      ],
+      "format": {
+        "duration": "13.546867"
+      }
+    }
+  },
+  {
+    "id": "lab",
+    "file": "assets/motion/2026-10-11/main/lab.mp4",
+    "url": "https://videos.pexels.com/video-files/8533377/8533377-uhd_2160_3840_30fps.mp4",
+    "source": "https://www.pexels.com/video/scientists-working-at-a-laboratory-8533377/",
+    "credit": "Artem Podrez / Pexels",
+    "status": "laboratory context; not TUS experiment",
+    "rights": "Pexels License https://www.pexels.com/license/",
+    "sha256": "f97594a84f30312c32634164a9a1f02fb4b7cceab0d13bad92461b435cbb2ddf",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 2160,
+          "height": 3840,
+          "avg_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "8.366667"
+      }
+    }
+  },
+  {
+    "id": "chemistry",
+    "file": "assets/motion/2026-10-11/main/chemistry.mp4",
+    "url": "https://www.pexels.com/download/video/8485643/",
+    "source": "https://www.pexels.com/video/a-person-doing-experiment-in-the-laboratory-8485643/",
+    "credit": "Ivan S / Pexels",
+    "status": "liquid handling context; not sweat sensing or TUS experiment",
+    "rights": "Pexels License https://www.pexels.com/license/",
+    "sha256": "319e0f76c765bc5d45230a511a652a7c15ee0a86eca3b102a78aa046e408cb56",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "avg_frame_rate": "25/1"
+        }
+      ],
+      "format": {
+        "duration": "18.320000"
+      }
+    }
+  },
+  {
+    "id": "capsule-detail.png",
+    "file": "assets/motion/2026-10-11/main/capsule-detail.png",
+    "url": "https://www.nasa.gov/wp-content/uploads/2026/10/iss075e0185943.jpg",
+    "source": "https://www.nasa.gov/centers-and-facilities/ames/nasa-demonstrates-next-generation-heat-shield-technologies/",
+    "credit": "NASA",
+    "status": "direct KREPE-3 hardware; photographed 7 October 2026",
+    "rights": "NASA media guidelines; NASA credit",
+    "sha256": "eda2c7bfb923307545dfb42c433e09ed55839b88f0f9e49302b33a374c547874",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 4800,
+          "height": 3600,
+          "avg_frame_rate": "25/1"
+        }
+      ],
+      "format": {}
+    },
+    "derivation": {
+      "sourceFile": "assets/motion/2026-10-11/main/capsule.jpg",
+      "operation": "fixed static hardware detail crop",
+      "cropPixels": [
+        1700,
+        700,
+        6500,
+        4300
+      ],
+      "seekSeconds": null
+    }
+  },
+  {
+    "id": "shield-detail.png",
+    "file": "assets/motion/2026-10-11/main/shield-detail.png",
+    "url": "https://www.nasa.gov/wp-content/uploads/2026/10/acd25-0136-020.jpg",
+    "source": "https://www.nasa.gov/centers-and-facilities/ames/nasa-demonstrates-next-generation-heat-shield-technologies/",
+    "credit": "NASA/Brandon Torres-Navarrete",
+    "status": "direct KREPE thermal protection hardware",
+    "rights": "NASA media guidelines; photographer credit",
+    "sha256": "d2f09b0605db4a34dcd4368ee8a65d466b17c870fb96c1c0f14c2721d132f9fd",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 5100,
+          "height": 4000,
+          "avg_frame_rate": "25/1"
+        }
+      ],
+      "format": {}
+    },
+    "derivation": {
+      "sourceFile": "assets/motion/2026-10-11/main/shield.jpg",
+      "operation": "fixed static hardware detail crop",
+      "cropPixels": [
+        1400,
+        700,
+        6500,
+        4700
+      ],
+      "seekSeconds": null
+    }
+  },
+  {
+    "id": "device-photo.png",
+    "file": "assets/motion/2026-10-11/main/device-photo.png",
+    "url": "https://www.tus.ac.jp/en/mediarelations/20261009_9677_01.png",
+    "source": "https://www.tus.ac.jp/en/mediarelations/archive/20261009_9677.html",
+    "credit": "Isao Shitanda / Tokyo University of Science",
+    "status": "direct study device/design figure",
+    "rights": "Institution image specifies original content; credit creator",
+    "sha256": "9251d584238c58654de0c6997f1858849010c530c97ee71b9884e4c439811b72",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 112,
+          "height": 222,
+          "avg_frame_rate": "25/1"
+        }
+      ],
+      "format": {}
+    },
+    "derivation": {
+      "sourceFile": "assets/motion/2026-10-11/main/watch.png",
+      "operation": "fixed crop of actual assembled device photograph",
+      "cropPixels": [
+        713,
+        208,
+        825,
+        430
+      ],
+      "seekSeconds": null
+    }
+  },
+  {
+    "id": "electrode-photo.png",
+    "file": "assets/motion/2026-10-11/main/electrode-photo.png",
+    "url": "https://www.tus.ac.jp/en/mediarelations/20261009_9677_01.png",
+    "source": "https://www.tus.ac.jp/en/mediarelations/archive/20261009_9677.html",
+    "credit": "Isao Shitanda / Tokyo University of Science",
+    "status": "direct study device/design figure",
+    "rights": "Institution image specifies original content; credit creator",
+    "sha256": "163a20b882ac7544ee75a060edd9c673cd8082dc4a9144970d2081dd332ca2f8",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 74,
+          "height": 257,
+          "avg_frame_rate": "25/1"
+        }
+      ],
+      "format": {}
+    },
+    "derivation": {
+      "sourceFile": "assets/motion/2026-10-11/main/watch.png",
+      "operation": "fixed crop of actual electrode photograph",
+      "cropPixels": [
+        418,
+        202,
+        492,
+        459
+      ],
+      "seekSeconds": null
+    }
+  },
+  {
+    "id": "chemistry-still.png",
+    "file": "assets/motion/2026-10-11/main/chemistry-still.png",
+    "url": "https://www.pexels.com/download/video/8485643/",
+    "source": "https://www.pexels.com/video/a-person-doing-experiment-in-the-laboratory-8485643/",
+    "credit": "Ivan S / Pexels",
+    "status": "liquid handling context; not sweat sensing or TUS experiment",
+    "rights": "Pexels License https://www.pexels.com/license/",
+    "derivation": {
+      "sourceFile": "assets/motion/2026-10-11/main/chemistry.mp4",
+      "operation": "unanimated frame extraction",
+      "cropPixels": null,
+      "seekSeconds": 12
+    },
+    "sha256": "4a86d544a397775d930339c69ea17dd629c1fa89a37a5e596f9117f47dbff40f",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080,
+          "avg_frame_rate": "25/1"
+        }
+      ],
+      "format": {}
+    }
+  },
+  {
+    "id": "smartwatch-still.png",
+    "file": "assets/motion/2026-10-11/main/smartwatch-still.png",
+    "url": "https://www.pexels.com/download/video/17770565/",
+    "source": "https://www.pexels.com/video/a-person-wearing-a-watch-on-their-wrist-17770565/",
+    "credit": "Ali Alc\u00e1ntara / Pexels",
+    "status": "ordinary smartwatch context; not research prototype or sweat sensor",
+    "rights": "Pexels License https://www.pexels.com/license/",
+    "derivation": {
+      "sourceFile": "assets/motion/2026-10-11/main/smartwatch.mp4",
+      "operation": "unanimated frame extraction",
+      "cropPixels": null,
+      "seekSeconds": 2
+    },
+    "sha256": "c718f0e5b18eb5bc2387b66f6a18a2ec00efbea2da25a9220af17b65843802f8",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 2560,
+          "height": 1440,
+          "avg_frame_rate": "25/1"
+        }
+      ],
+      "format": {}
+    }
+  }
+]

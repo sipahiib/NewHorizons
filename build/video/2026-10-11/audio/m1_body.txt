@@ -1,0 +1,15 @@
+The laboratory scenes here are archive footage, not this mission. Coming home from orbit is a materials problem as well as a navigation problem. A spacecraft must shed enormous speed. The air in front of it is compressed and heated, and its outer surface must keep that energy away from sensitive equipment.
+
+A heat shield buys time. Some protective materials gradually wear away, carrying energy with them. Others are designed around different shapes and structures. The challenge is finding out how those choices behave during a real flight.
+
+That is where this cargo mission offers an opportunity. Cygnus left the International Space Station on October ninth. Its destructive return is planned for October twelfth. Twelve small experimental capsules are travelling with it, turning an ordinary disposal journey into a chance to gather engineering measurements.
+
+NASA calls the experiment KREPE-three. The capsules carry different thermal protection designs, including printed materials, a carbon and phenolic material, and a deployable umbrella-like approach. They are research articles, not passenger capsules. Their instruments are intended to record conditions such as temperature, pressure and motion, with information transmitted by satellite.
+
+Think of the difference between testing a raincoat under a tap and wearing it through a storm. A controlled test lets engineers isolate individual variables. Flight combines changing airflow, heat, movement and timing. Both kinds of evidence matter, because one successful laboratory measurement cannot answer every question about an actual return.
+
+The capsule photographs show the hardware before that planned event.
+
+There is an important limit to this story. As of October eleventh, the re-entry test is still ahead. There are no flight results here proving that a new shield has passed, and no claim that these designs are ready to protect a crew.
+
+The useful idea is the experiment itself: attach carefully instrumented samples to a journey already scheduled to end in the atmosphere, and learn which designs deserve the next round of testing. The measurements will matter more than how dramatic the return looks. Even a disappointing measurement could help engineers decide what to change before another flight.

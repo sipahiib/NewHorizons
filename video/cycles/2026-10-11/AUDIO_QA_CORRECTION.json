@@ -1,0 +1,18 @@
+[
+  {
+    "output": "r1",
+    "beforeSha256": "51f7643143fda79c9f4be44a68be8f522aeaea86232d8971313b389d3faa1c8a",
+    "afterSha256": "1a1c1c197a9bc020087b3c9a75b383ab5c012c4c63e5765840a2fe84251ccce1",
+    "leadingSilence": 0.8,
+    "videoOperation": "stream copy; scene composition unchanged",
+    "audioOperation": "delay only; no stretch"
+  },
+  {
+    "output": "r2",
+    "beforeSha256": "ec991a99c61f757de17e6b034e77a09e7580214c4279a6d1b21249229202b7ae",
+    "afterSha256": "cd2f8cfec759b955df88607404553d1e5420123153d29e02f72173cff6463dea",
+    "leadingSilence": 0.6,
+    "videoOperation": "stream copy; scene composition unchanged",
+    "audioOperation": "delay only; no stretch"
+  }
+]

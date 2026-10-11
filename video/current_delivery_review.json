@@ -1,183 +1,96 @@
 {
-  "cycle": "2026-10-07",
-  "status": "delivered-user-approved",
-  "delivery_allowed": true,
-  "cleanup_allowed": true,
-  "deliveryGate": "PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
+  "cycle": "2026-10-11",
+  "status": "main-approved-and-promoted; reels-full-playback-pending",
+  "delivery_allowed": false,
+  "review_copies_available": true,
+  "cleanup_allowed": false,
+  "publishing_authorised": false,
+  "deliveryGate": "AWAITING_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
   "humanContinuousPlaybackApproval": {
-    "status": "passed",
+    "status": "pending",
     "required_outputs": [
       "main",
       "r1",
       "r2"
     ],
     "evidence": {
-      "source": "user reply to request to watch and listen to all three outputs completely before final approval",
-      "user_message": "onay veriyorum.",
-      "recorded_at_utc": "2026-10-07T09:16:26Z",
-      "scope": [
-        "main",
-        "r1",
-        "r2"
-      ],
-      "tested_hashes": {
-        "main": "87baebb1f90fc1ac354c727f9d354e0cfa7d52eea8321f95c030ae220a664155",
-        "r1": "c777febea60551262aca34735633efe65b23c5d6a145bfd76dc1efb39504ef5c",
-        "r2": "ae2281b28ab6a2997195901bb1ab0041fc5197a28b5a22db17b8704a4a42d97b"
-      },
-      "basis": "User confirmation; automated checks are not perceptual listening."
-    }
+      "type": "user-confirmation",
+      "text": "onayl\u0131yorum",
+      "scope": "revised main video only",
+      "sha256": "f687d97b924257c628b8c8a608ce4f24c753482cbf0f9ad193da549481e3a088",
+      "recorded_at_utc": "2026-10-11T08:52:08.037886+00:00",
+      "basis": "reply to revised-main review copy and pending full viewing/listening acceptance; not automated playback evidence"
+    },
+    "approved_outputs": [
+      "main"
+    ],
+    "pending_outputs": [
+      "r1",
+      "r2"
+    ]
   },
   "humanAuralApproval": {
-    "status": "passed",
+    "status": "pending",
     "required_outputs": [
       "main",
       "r1",
       "r2"
     ],
     "evidence": {
-      "source": "user reply to request to watch and listen to all three outputs completely before final approval",
-      "user_message": "onay veriyorum.",
-      "recorded_at_utc": "2026-10-07T09:16:26Z",
-      "scope": [
-        "main",
-        "r1",
-        "r2"
-      ],
-      "tested_hashes": {
-        "main": "87baebb1f90fc1ac354c727f9d354e0cfa7d52eea8321f95c030ae220a664155",
-        "r1": "c777febea60551262aca34735633efe65b23c5d6a145bfd76dc1efb39504ef5c",
-        "r2": "ae2281b28ab6a2997195901bb1ab0041fc5197a28b5a22db17b8704a4a42d97b"
-      },
-      "basis": "User confirmation; automated checks are not perceptual listening."
-    }
+      "type": "user-confirmation",
+      "text": "onayl\u0131yorum",
+      "scope": "revised main video only",
+      "sha256": "f687d97b924257c628b8c8a608ce4f24c753482cbf0f9ad193da549481e3a088",
+      "recorded_at_utc": "2026-10-11T08:52:08.037886+00:00",
+      "basis": "reply to revised-main review copy and pending full viewing/listening acceptance; not automated playback evidence"
+    },
+    "approved_outputs": [
+      "main"
+    ],
+    "pending_outputs": [
+      "r1",
+      "r2"
+    ]
   },
-  "qa_document": "video/cycles/2026-10-07/QA.md",
+  "qa_document": "video/cycles/2026-10-11/QA.md",
   "outputs": [
     {
       "id": "main",
-      "path": "build/video/2026-10-07/newhorizons.mp4",
-      "sha256": "87baebb1f90fc1ac354c727f9d354e0cfa7d52eea8321f95c030ae220a664155",
+      "path": "build/video/2026-10-11/newhorizons.mp4",
+      "sha256": "f687d97b924257c628b8c8a608ce4f24c753482cbf0f9ad193da549481e3a088",
       "technical_status": "passed",
+      "full_continuous_playback": "passed-user-confirmation",
+      "complete_narration_listening": "passed-user-confirmation",
       "sampled_visual_status": "passed",
-      "full_file_decode": "passed",
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "resolution": [
-        1920,
-        1080
-      ],
-      "fps": "60/1",
-      "video_frames": 18600,
-      "duration_seconds": 310.0,
-      "integrated_loudness_lufs": -16.2,
-      "true_peak_dbfs": -1.4,
-      "full_scale_pcm_samples": 0,
-      "final_speech_gap_seconds": 2.27,
-      "sampled_frames": 91,
-      "evidence_folder": "build/video/2026-10-07/verification/qa-main",
-      "independent_probe_decode_hash": "build/video/2026-10-07/verification/qa-main/independent-check.json",
-      "full_continuous_playback": "passed-user-confirmed",
-      "complete_narration_listening": "passed-user-confirmed",
-      "delivered_path": "build/video/newhorizons.mp4"
+      "human_approval_evidence": {
+        "type": "user-confirmation",
+        "text": "onayl\u0131yorum",
+        "scope": "revised main video only",
+        "sha256": "f687d97b924257c628b8c8a608ce4f24c753482cbf0f9ad193da549481e3a088",
+        "recorded_at_utc": "2026-10-11T08:52:08.037886+00:00",
+        "basis": "reply to revised-main review copy and pending full viewing/listening acceptance; not automated playback evidence"
+      },
+      "final_path": "build/video/newhorizons.mp4",
+      "delivery_allowed": true
     },
     {
       "id": "r1",
-      "path": "build/reels/2026-10-07/01-ai-business-rules.mp4",
-      "sha256": "c777febea60551262aca34735633efe65b23c5d6a145bfd76dc1efb39504ef5c",
+      "path": "build/reels/2026-10-11/01-ai-hardware-pause.mp4",
+      "sha256": "1a1c1c197a9bc020087b3c9a75b383ab5c012c4c63e5765840a2fe84251ccce1",
       "technical_status": "passed",
-      "sampled_visual_status": "passed",
-      "full_file_decode": "passed",
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "resolution": [
-        1080,
-        1920
-      ],
-      "fps": "60/1",
-      "video_frames": 2700,
-      "duration_seconds": 45.0,
-      "integrated_loudness_lufs": -16.3,
-      "true_peak_dbfs": -1.5,
-      "full_scale_pcm_samples": 0,
-      "final_speech_gap_seconds": 1.46,
-      "sampled_frames": 26,
-      "evidence_folder": "build/reels/2026-10-07/verification/qa-r1",
-      "independent_probe_decode_hash": "build/reels/2026-10-07/verification/qa-r1/independent-check.json",
-      "full_continuous_playback": "passed-user-confirmed",
-      "complete_narration_listening": "passed-user-confirmed",
-      "delivered_path": "build/reels/2026-10-07/01-ai-business-rules.mp4"
+      "full_continuous_playback": "pending",
+      "complete_narration_listening": "pending"
     },
     {
       "id": "r2",
-      "path": "build/reels/2026-10-07/02-ocean-heat.mp4",
-      "sha256": "ae2281b28ab6a2997195901bb1ab0041fc5197a28b5a22db17b8704a4a42d97b",
+      "path": "build/reels/2026-10-11/02-fish-hidden-stress.mp4",
+      "sha256": "cd2f8cfec759b955df88607404553d1e5420123153d29e02f72173cff6463dea",
       "technical_status": "passed",
-      "sampled_visual_status": "passed",
-      "full_file_decode": "passed",
-      "video_codec": "h264",
-      "audio_codec": "aac",
-      "resolution": [
-        1080,
-        1920
-      ],
-      "fps": "60/1",
-      "video_frames": 2700,
-      "duration_seconds": 45.0,
-      "integrated_loudness_lufs": -16.2,
-      "true_peak_dbfs": -1.5,
-      "full_scale_pcm_samples": 0,
-      "final_speech_gap_seconds": 3.9,
-      "sampled_frames": 26,
-      "evidence_folder": "build/reels/2026-10-07/verification/qa-r2",
-      "independent_probe_decode_hash": "build/reels/2026-10-07/verification/qa-r2/independent-check.json",
-      "full_continuous_playback": "passed-user-confirmed",
-      "complete_narration_listening": "passed-user-confirmed",
-      "delivered_path": "build/reels/2026-10-07/02-ocean-heat.mp4"
+      "full_continuous_playback": "pending",
+      "complete_narration_listening": "pending"
     }
   ],
-  "remaining_gate": null,
-  "publishing_authorised": false,
-  "technicalGate": "PASS",
-  "sampledVisualGate": "PASS",
-  "qa_independent_of_preparation_and_render": true,
-  "technical_tests": [
-    "Independent SHA-256, probe/frame count and complete video/audio decode for each final candidate.",
-    "Reviewed measured loudness, true peaks, zero full-scale samples, silence and threshold-based final gaps.",
-    "Audio envelope correspondence with approved references; main checked at 0 / 160 / 300 seconds."
-  ],
-  "sampled_visual_tests": [
-    "Every scene start/middle/end plus opening/story/closing/CTA boundaries inspected.",
-    "Both Reels: seven segments, accurate context labels, complete landscape frame against selected source, blurred dark background, platform calls at 42–45 seconds.",
-    "Readable actual-output titles/disclosures/CTAs; 360-pixel mobile Reel reductions and 640-pixel main display inspected.",
-    "Corrected agreement scenes, final drone performance excerpt and composited main closing panel inspected."
-  ],
-  "limitations": [
-    "The QA agent performed technical and sampled visual checks; full perceptual acceptance is the user confirmation recorded separately.",
-    "Waveform correspondence and contact sheets alone do not establish perceptual completion."
-  ],
-  "human_acceptance_evidence": {
-    "source": "user reply to request to watch and listen to all three outputs completely before final approval",
-    "user_message": "onay veriyorum.",
-    "recorded_at_utc": "2026-10-07T09:16:26Z",
-    "scope": [
-      "main",
-      "r1",
-      "r2"
-    ],
-    "tested_hashes": {
-      "main": "87baebb1f90fc1ac354c727f9d354e0cfa7d52eea8321f95c030ae220a664155",
-      "r1": "c777febea60551262aca34735633efe65b23c5d6a145bfd76dc1efb39504ef5c",
-      "r2": "ae2281b28ab6a2997195901bb1ab0041fc5197a28b5a22db17b8704a4a42d97b"
-    },
-    "basis": "User confirmation; automated checks are not perceptual listening."
-  },
-  "cleanup_scope": "Only disposable intermediates listed in video/cycles/2026-10-07/CLEANUP_INVENTORY.json; approved sources, composition inputs, narration, final outputs and QA evidence preserved.",
-  "cleanup": {
-    "status": "completed",
-    "inventory": "video/cycles/2026-10-07/CLEANUP_INVENTORY.json",
-    "deleted_files": 342,
-    "deleted_bytes": 4621197390,
-    "executed_at_utc": "2026-10-07T09:38:49.061879+00:00"
-  }
+  "remaining_gate": "R1 and R2 complete audiovisual viewing/listening acceptance",
+  "metadata": "video/cycles/2026-10-11/DELIVERY_METADATA.md",
+  "updated_at_utc": "2026-10-11T08:52:08.037886+00:00"
 }

@@ -1,14 +1,12 @@
 # NewHorizons — Active Workflow Pointer
 
-Active cycle: **2026-10-07**
+Active cycle: **2026-10-11**
 
-Current state: local delivery completed. Pre-render review and independent technical/sample QA passed; user confirmed final audiovisual acceptance. The approved main is at `build/video/newhorizons.mp4`; approved Reels remain in the dated directory. Publication is not authorised.
+Current state: editorial package approved with hooks M1-3, M2-2, R1-1 and R2-3; rendering and independent output QA in progress. Publication is not authorised.
 
-- [Brief](cycles/2026-10-07/BRIEF.md)
-- [Research](cycles/2026-10-07/RESEARCH_PACKET.md)
-- [Approval](cycles/2026-10-07/APPROVAL.md)
-- [Credits](cycles/2026-10-07/CREDITS.md)
-- [Output QA](cycles/2026-10-07/QA.md)
-- [Titles, descriptions, hashtags and YouTube Tags](cycles/2026-10-07/DELIVERY_METADATA.md)
+- [Brief](cycles/2026-10-11/BRIEF.md)
+- [Research](cycles/2026-10-11/RESEARCH_PACKET.md)
+- [Approval](cycles/2026-10-11/APPROVAL.md)
+- [Credits](cycles/2026-10-11/CREDITS.md)
 
-Production rules: [PRODUCTION_SPEC.md](PRODUCTION_SPEC.md). Verification: [QA_CHECKLIST.md](QA_CHECKLIST.md). Prior cycles retain their own status and evidence; they are not active instructions.
+Production rules: [PRODUCTION_SPEC.md](PRODUCTION_SPEC.md). Verification: [QA_CHECKLIST.md](QA_CHECKLIST.md). Prior cycles retain their own records and outputs.

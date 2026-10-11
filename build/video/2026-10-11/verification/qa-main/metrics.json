@@ -1,0 +1,1004 @@
+{
+  "output": "build/video/2026-10-11/newhorizons.mp4",
+  "sha256": "f687d97b924257c628b8c8a608ce4f24c753482cbf0f9ad193da549481e3a088",
+  "streams": [
+    {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "mime_codec_string": "avc1.64002a",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1088,
+      "has_b_frames": 2,
+      "sample_aspect_ratio": "1:1",
+      "display_aspect_ratio": "16:9",
+      "pix_fmt": "yuv420p",
+      "level": 42,
+      "color_range": "tv",
+      "color_space": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 4,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "60/1",
+      "avg_frame_rate": "60/1",
+      "time_base": "1/15360",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 4761600,
+      "duration": "310.000000",
+      "bit_rate": "2301478",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "18600",
+      "nb_read_frames": "18600",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "encoder": "Lavc63.1.101 libx264"
+      },
+      "side_data_list": [
+        {
+          "side_data_type": "ICC Profile"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "codec_name": "aac",
+      "codec_long_name": "AAC (Advanced Audio Coding)",
+      "profile": "LC",
+      "codec_type": "audio",
+      "codec_tag_string": "mp4a",
+      "codec_tag": "0x6134706d",
+      "mime_codec_string": "mp4a.40.2",
+      "sample_fmt": "fltp",
+      "sample_rate": "48000",
+      "channels": 1,
+      "channel_layout": "mono",
+      "bits_per_sample": 0,
+      "initial_padding": 1024,
+      "id": "0x2",
+      "r_frame_rate": "0/0",
+      "avg_frame_rate": "0/0",
+      "time_base": "1/48000",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 14880000,
+      "duration": "310.000000",
+      "bit_rate": "153916",
+      "nb_frames": "14533",
+      "nb_read_frames": "14532",
+      "extradata_size": 5,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "SoundHandler"
+      }
+    }
+  ],
+  "format": {
+    "filename": "/Users/is9565/Downloads/NewHorizons/build/video/2026-10-11/newhorizons.mp4",
+    "nb_streams": 2,
+    "nb_programs": 0,
+    "nb_stream_groups": 0,
+    "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+    "format_long_name": "QuickTime / MOV",
+    "start_time": "0.000000",
+    "duration": "310.000000",
+    "size": "95646257",
+    "bit_rate": "2468290",
+    "probe_score": 100,
+    "tags": {
+      "major_brand": "isom",
+      "minor_version": "512",
+      "compatible_brands": "isomiso2avc1mp41",
+      "encoder": "Lavf63.1.101"
+    }
+  },
+  "full_file_decode": "passed",
+  "loudness_summary": "Summary:\n\n  Integrated loudness:\n    I:         -16.3 LUFS\n    Threshold: -26.6 LUFS\n\n  Loudness range:\n    LRA:         3.1 LU\n    Threshold: -37.2 LUFS\n    LRA low:   -18.7 LUFS\n    LRA high:  -15.6 LUFS\n\n  True peak:\n    Peak:       -1.4 dBFS\n[Parsed_silencedetect_1 @ 0x7ac8c14cc0] silence_end: 310 | silence_duration: 3.122292\n[out#0/null @ 0x7ac8c143c0] video:0KiB audio:29062KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nsize=N/A time=00:05:10.00 bitrate=N/A speed= 473x elapsed=0:00:00.65    \n",
+  "silences_below_minus40dB_minimum_0_4s": [
+    {
+      "start": 3.831667,
+      "end": 5.240104,
+      "duration": 1.408438
+    },
+    {
+      "start": 10.246479,
+      "end": 12.214875,
+      "duration": 1.968396
+    },
+    {
+      "start": 14.926542,
+      "end": 16.234604,
+      "duration": 1.308062
+    },
+    {
+      "start": 19.532042,
+      "end": 20.541812,
+      "duration": 1.009771
+    },
+    {
+      "start": 24.480146,
+      "end": 25.516958,
+      "duration": 1.036812
+    },
+    {
+      "start": 27.712833,
+      "end": 28.729417,
+      "duration": 1.016583
+    },
+    {
+      "start": 34.646313,
+      "end": 35.667167,
+      "duration": 1.020854
+    },
+    {
+      "start": 37.046479,
+      "end": 38.061333,
+      "duration": 1.014854
+    },
+    {
+      "start": 42.029187,
+      "end": 43.065062,
+      "duration": 1.035875
+    },
+    {
+      "start": 45.804667,
+      "end": 46.82075,
+      "duration": 1.016083
+    },
+    {
+      "start": 50.522375,
+      "end": 51.519729,
+      "duration": 0.997354
+    },
+    {
+      "start": 54.034437,
+      "end": 54.990687,
+      "duration": 0.95625
+    },
+    {
+      "start": 58.247146,
+      "end": 59.239125,
+      "duration": 0.991979
+    },
+    {
+      "start": 61.997167,
+      "end": 62.998958,
+      "duration": 1.001792
+    },
+    {
+      "start": 70.386167,
+      "end": 71.379854,
+      "duration": 0.993687
+    },
+    {
+      "start": 73.479021,
+      "end": 74.487958,
+      "duration": 1.008938
+    },
+    {
+      "start": 83.583417,
+      "end": 84.582833,
+      "duration": 0.999417
+    },
+    {
+      "start": 87.761687,
+      "end": 88.756187,
+      "duration": 0.9945
+    },
+    {
+      "start": 95.674167,
+      "end": 96.687083,
+      "duration": 1.012917
+    },
+    {
+      "start": 100.802854,
+      "end": 101.806583,
+      "duration": 1.003729
+    },
+    {
+      "start": 105.354083,
+      "end": 106.364187,
+      "duration": 1.010104
+    },
+    {
+      "start": 110.265958,
+      "end": 111.281979,
+      "duration": 1.016021
+    },
+    {
+      "start": 117.7805,
+      "end": 118.790979,
+      "duration": 1.010479
+    },
+    {
+      "start": 122.058896,
+      "end": 123.07275,
+      "duration": 1.013854
+    },
+    {
+      "start": 124.952229,
+      "end": 125.883083,
+      "duration": 0.930854
+    },
+    {
+      "start": 128.974417,
+      "end": 129.976917,
+      "duration": 1.0025
+    },
+    {
+      "start": 136.679771,
+      "end": 137.664417,
+      "duration": 0.984646
+    },
+    {
+      "start": 147.922625,
+      "end": 148.944333,
+      "duration": 1.021708
+    },
+    {
+      "start": 151.824833,
+      "end": 152.833792,
+      "duration": 1.008958
+    },
+    {
+      "start": 157.467938,
+      "end": 160.221146,
+      "duration": 2.753208
+    },
+    {
+      "start": 162.355833,
+      "end": 163.367792,
+      "duration": 1.011958
+    },
+    {
+      "start": 168.274187,
+      "end": 169.273958,
+      "duration": 0.999771
+    },
+    {
+      "start": 174.922271,
+      "end": 175.945771,
+      "duration": 1.0235
+    },
+    {
+      "start": 181.749792,
+      "end": 182.7495,
+      "duration": 0.999708
+    },
+    {
+      "start": 185.852062,
+      "end": 186.859833,
+      "duration": 1.007771
+    },
+    {
+      "start": 191.242292,
+      "end": 192.245792,
+      "duration": 1.0035
+    },
+    {
+      "start": 197.758687,
+      "end": 198.765042,
+      "duration": 1.006354
+    },
+    {
+      "start": 202.904625,
+      "end": 203.937687,
+      "duration": 1.033062
+    },
+    {
+      "start": 206.599187,
+      "end": 207.634437,
+      "duration": 1.03525
+    },
+    {
+      "start": 212.056667,
+      "end": 213.089292,
+      "duration": 1.032625
+    },
+    {
+      "start": 219.26125,
+      "end": 220.281646,
+      "duration": 1.020396
+    },
+    {
+      "start": 227.177479,
+      "end": 228.185312,
+      "duration": 1.007833
+    },
+    {
+      "start": 232.846292,
+      "end": 233.846937,
+      "duration": 1.000646
+    },
+    {
+      "start": 237.239208,
+      "end": 238.265312,
+      "duration": 1.026104
+    },
+    {
+      "start": 240.478187,
+      "end": 241.532333,
+      "duration": 1.054146
+    },
+    {
+      "start": 242.976458,
+      "end": 243.951396,
+      "duration": 0.974938
+    },
+    {
+      "start": 247.786187,
+      "end": 248.785917,
+      "duration": 0.999729
+    },
+    {
+      "start": 257.604625,
+      "end": 258.60575,
+      "duration": 1.001125
+    },
+    {
+      "start": 261.305708,
+      "end": 262.331312,
+      "duration": 1.025604
+    },
+    {
+      "start": 266.823333,
+      "end": 267.825896,
+      "duration": 1.002563
+    },
+    {
+      "start": 269.911313,
+      "end": 270.907792,
+      "duration": 0.996479
+    },
+    {
+      "start": 276.564479,
+      "end": 277.512646,
+      "duration": 0.948167
+    },
+    {
+      "start": 279.214792,
+      "end": 280.201646,
+      "duration": 0.986854
+    },
+    {
+      "start": 283.219875,
+      "end": 284.138042,
+      "duration": 0.918167
+    },
+    {
+      "start": 288.849312,
+      "end": 289.836229,
+      "duration": 0.986917
+    },
+    {
+      "start": 297.346833,
+      "end": 302.159875,
+      "duration": 4.813042
+    },
+    {
+      "start": 303.649687,
+      "end": 304.654375,
+      "duration": 1.004687
+    },
+    {
+      "start": 306.877708,
+      "end": 310.0,
+      "duration": 3.122292
+    }
+  ],
+  "pcm_metrics": {
+    "mono_sample_rate": 16000,
+    "samples": 4960000,
+    "peak_dbfs": -1.3311638161699635,
+    "full_scale_samples": 0,
+    "last_above_minus40dB_rms_window_end": 306.83,
+    "final_below_threshold_gap": 3.170000000000016
+  },
+  "approved_audio_envelope_correlation": {
+    "offset_seconds": 302,
+    "reference": "build/video/2026-10-11/audio/closing.mp3",
+    "correlation_at_scheduled_start": 0.99841892599066,
+    "limitation": "Waveform identity/alignment evidence, not narration comprehension or listening."
+  },
+  "frame_samples": [
+    {
+      "time": 0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-00-start-0.000.jpg",
+      "scene": 0
+    },
+    {
+      "time": 2.75,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-00-middle-2.750.jpg",
+      "scene": 0
+    },
+    {
+      "time": 5.483333333333333,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-00-end-5.483.jpg",
+      "scene": 0
+    },
+    {
+      "time": 5.5,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-01-start-5.500.jpg",
+      "scene": 1
+    },
+    {
+      "time": 8.75,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-01-middle-8.750.jpg",
+      "scene": 1
+    },
+    {
+      "time": 11.983333333333333,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-01-end-11.983.jpg",
+      "scene": 1
+    },
+    {
+      "time": 12.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-02-start-12.000.jpg",
+      "scene": 2
+    },
+    {
+      "time": 14.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-02-middle-14.000.jpg",
+      "scene": 2
+    },
+    {
+      "time": 15.983333333333333,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-02-end-15.983.jpg",
+      "scene": 2
+    },
+    {
+      "time": 16.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-03-start-16.000.jpg",
+      "scene": 3
+    },
+    {
+      "time": 22.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-03-middle-22.000.jpg",
+      "scene": 3
+    },
+    {
+      "time": 27.983333333333334,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-03-end-27.983.jpg",
+      "scene": 3
+    },
+    {
+      "time": 28.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-04-start-28.000.jpg",
+      "scene": 4
+    },
+    {
+      "time": 35.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-04-middle-35.000.jpg",
+      "scene": 4
+    },
+    {
+      "time": 41.983333333333334,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-04-end-41.983.jpg",
+      "scene": 4
+    },
+    {
+      "time": 42.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-05-start-42.000.jpg",
+      "scene": 5
+    },
+    {
+      "time": 48.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-05-middle-48.000.jpg",
+      "scene": 5
+    },
+    {
+      "time": 53.983333333333334,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-05-end-53.983.jpg",
+      "scene": 5
+    },
+    {
+      "time": 54.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-06-start-54.000.jpg",
+      "scene": 6
+    },
+    {
+      "time": 61.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-06-middle-61.000.jpg",
+      "scene": 6
+    },
+    {
+      "time": 67.98333333333333,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-06-end-67.983.jpg",
+      "scene": 6
+    },
+    {
+      "time": 68.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-07-start-68.000.jpg",
+      "scene": 7
+    },
+    {
+      "time": 74.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-07-middle-74.000.jpg",
+      "scene": 7
+    },
+    {
+      "time": 79.98333333333333,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-07-end-79.983.jpg",
+      "scene": 7
+    },
+    {
+      "time": 80.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-08-start-80.000.jpg",
+      "scene": 8
+    },
+    {
+      "time": 87.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-08-middle-87.000.jpg",
+      "scene": 8
+    },
+    {
+      "time": 93.98333333333333,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-08-end-93.983.jpg",
+      "scene": 8
+    },
+    {
+      "time": 94.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-09-start-94.000.jpg",
+      "scene": 9
+    },
+    {
+      "time": 101.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-09-middle-101.000.jpg",
+      "scene": 9
+    },
+    {
+      "time": 107.98333333333333,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-09-end-107.983.jpg",
+      "scene": 9
+    },
+    {
+      "time": 108.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-10-start-108.000.jpg",
+      "scene": 10
+    },
+    {
+      "time": 113.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-10-middle-113.000.jpg",
+      "scene": 10
+    },
+    {
+      "time": 117.98333333333333,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-10-end-117.983.jpg",
+      "scene": 10
+    },
+    {
+      "time": 118.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-11-start-118.000.jpg",
+      "scene": 11
+    },
+    {
+      "time": 124.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-11-middle-124.000.jpg",
+      "scene": 11
+    },
+    {
+      "time": 129.98333333333332,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-11-end-129.983.jpg",
+      "scene": 11
+    },
+    {
+      "time": 130.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-12-start-130.000.jpg",
+      "scene": 12
+    },
+    {
+      "time": 137.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-12-middle-137.000.jpg",
+      "scene": 12
+    },
+    {
+      "time": 143.98333333333332,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-12-end-143.983.jpg",
+      "scene": 12
+    },
+    {
+      "time": 144.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-13-start-144.000.jpg",
+      "scene": 13
+    },
+    {
+      "time": 152.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-13-middle-152.000.jpg",
+      "scene": 13
+    },
+    {
+      "time": 159.98333333333332,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-13-end-159.983.jpg",
+      "scene": 13
+    },
+    {
+      "time": 160.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-14-start-160.000.jpg",
+      "scene": 14
+    },
+    {
+      "time": 164.5,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-14-middle-164.500.jpg",
+      "scene": 14
+    },
+    {
+      "time": 168.98333333333332,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-14-end-168.983.jpg",
+      "scene": 14
+    },
+    {
+      "time": 169.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-15-start-169.000.jpg",
+      "scene": 15
+    },
+    {
+      "time": 175.5,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-15-middle-175.500.jpg",
+      "scene": 15
+    },
+    {
+      "time": 181.98333333333332,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-15-end-181.983.jpg",
+      "scene": 15
+    },
+    {
+      "time": 182.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-16-start-182.000.jpg",
+      "scene": 16
+    },
+    {
+      "time": 186.5,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-16-middle-186.500.jpg",
+      "scene": 16
+    },
+    {
+      "time": 190.98333333333332,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-16-end-190.983.jpg",
+      "scene": 16
+    },
+    {
+      "time": 191.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-17-start-191.000.jpg",
+      "scene": 17
+    },
+    {
+      "time": 199.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-17-middle-199.000.jpg",
+      "scene": 17
+    },
+    {
+      "time": 206.98333333333332,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-17-end-206.983.jpg",
+      "scene": 17
+    },
+    {
+      "time": 207.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-18-start-207.000.jpg",
+      "scene": 18
+    },
+    {
+      "time": 213.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-18-middle-213.000.jpg",
+      "scene": 18
+    },
+    {
+      "time": 218.98333333333332,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-18-end-218.983.jpg",
+      "scene": 18
+    },
+    {
+      "time": 219.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-19-start-219.000.jpg",
+      "scene": 19
+    },
+    {
+      "time": 222.5,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-19-middle-222.500.jpg",
+      "scene": 19
+    },
+    {
+      "time": 225.98333333333332,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-19-end-225.983.jpg",
+      "scene": 19
+    },
+    {
+      "time": 226.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-20-start-226.000.jpg",
+      "scene": 20
+    },
+    {
+      "time": 228.75,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-20-middle-228.750.jpg",
+      "scene": 20
+    },
+    {
+      "time": 231.48333333333332,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-20-end-231.483.jpg",
+      "scene": 20
+    },
+    {
+      "time": 231.5,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-21-start-231.500.jpg",
+      "scene": 21
+    },
+    {
+      "time": 237.5,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-21-middle-237.500.jpg",
+      "scene": 21
+    },
+    {
+      "time": 243.48333333333332,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-21-end-243.483.jpg",
+      "scene": 21
+    },
+    {
+      "time": 243.5,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-22-start-243.500.jpg",
+      "scene": 22
+    },
+    {
+      "time": 248.5,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-22-middle-248.500.jpg",
+      "scene": 22
+    },
+    {
+      "time": 253.48333333333332,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-22-end-253.483.jpg",
+      "scene": 22
+    },
+    {
+      "time": 253.5,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-23-start-253.500.jpg",
+      "scene": 23
+    },
+    {
+      "time": 261.5,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-23-middle-261.500.jpg",
+      "scene": 23
+    },
+    {
+      "time": 269.48333333333335,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-23-end-269.483.jpg",
+      "scene": 23
+    },
+    {
+      "time": 269.5,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-24-start-269.500.jpg",
+      "scene": 24
+    },
+    {
+      "time": 273.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-24-middle-273.000.jpg",
+      "scene": 24
+    },
+    {
+      "time": 276.48333333333335,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-24-end-276.483.jpg",
+      "scene": 24
+    },
+    {
+      "time": 276.5,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-25-start-276.500.jpg",
+      "scene": 25
+    },
+    {
+      "time": 283.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-25-middle-283.000.jpg",
+      "scene": 25
+    },
+    {
+      "time": 289.48333333333335,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-25-end-289.483.jpg",
+      "scene": 25
+    },
+    {
+      "time": 289.5,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-26-start-289.500.jpg",
+      "scene": 26
+    },
+    {
+      "time": 294.75,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-26-middle-294.750.jpg",
+      "scene": 26
+    },
+    {
+      "time": 299.98333333333335,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-26-end-299.983.jpg",
+      "scene": 26
+    },
+    {
+      "time": 300.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-27-start-300.000.jpg",
+      "scene": 27
+    },
+    {
+      "time": 305.0,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-27-middle-305.000.jpg",
+      "scene": 27
+    },
+    {
+      "time": 309.98333333333335,
+      "file": "build/video/2026-10-11/verification/qa-main/scene-27-end-309.983.jpg",
+      "scene": 27
+    },
+    {
+      "time": 0,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-00-0.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 4.983333,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-01-4.983.jpg",
+      "scene": null
+    },
+    {
+      "time": 5,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-02-5.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 5.483333,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-03-5.483.jpg",
+      "scene": null
+    },
+    {
+      "time": 5.5,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-04-5.500.jpg",
+      "scene": null
+    },
+    {
+      "time": 11.983333,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-05-11.983.jpg",
+      "scene": null
+    },
+    {
+      "time": 12,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-06-12.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 15.983333,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-07-15.983.jpg",
+      "scene": null
+    },
+    {
+      "time": 16,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-08-16.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 29.983333,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-09-29.983.jpg",
+      "scene": null
+    },
+    {
+      "time": 30,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-10-30.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 32,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-11-32.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 35.483333,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-12-35.483.jpg",
+      "scene": null
+    },
+    {
+      "time": 35.5,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-13-35.500.jpg",
+      "scene": null
+    },
+    {
+      "time": 159.983333,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-14-159.983.jpg",
+      "scene": null
+    },
+    {
+      "time": 160,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-15-160.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 165.483333,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-16-165.483.jpg",
+      "scene": null
+    },
+    {
+      "time": 165.5,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-17-165.500.jpg",
+      "scene": null
+    },
+    {
+      "time": 299.983333,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-18-299.983.jpg",
+      "scene": null
+    },
+    {
+      "time": 300,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-19-300.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 300.5,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-20-300.500.jpg",
+      "scene": null
+    },
+    {
+      "time": 302,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-21-302.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 305,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-22-305.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 308,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-23-308.000.jpg",
+      "scene": null
+    },
+    {
+      "time": 309.983333,
+      "file": "build/video/2026-10-11/verification/qa-main/boundary-24-309.983.jpg",
+      "scene": null
+    }
+  ],
+  "evidence_folder": "build/video/2026-10-11/verification/qa-main"
+}

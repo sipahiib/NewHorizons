@@ -1,0 +1,74 @@
+[
+  {
+    "id": "m1_hook",
+    "seconds": 4.656,
+    "target": 5,
+    "headroom": 0.344,
+    "voice": "en-GB-RyanNeural",
+    "rate": "-2%",
+    "timeStretch": false
+  },
+  {
+    "id": "m1_footage",
+    "seconds": 6.12,
+    "target": 7,
+    "headroom": 0.88,
+    "voice": "en-GB-RyanNeural",
+    "rate": "-2%",
+    "timeStretch": false
+  },
+  {
+    "id": "m1_teaser",
+    "seconds": 3.816,
+    "target": 4,
+    "headroom": 0.184,
+    "voice": "en-GB-RyanNeural",
+    "rate": "-2%",
+    "timeStretch": false
+  },
+  {
+    "id": "m1_body",
+    "seconds": 142.344,
+    "target": 144,
+    "headroom": 1.656,
+    "voice": "en-GB-RyanNeural",
+    "rate": "-2%",
+    "timeStretch": false
+  },
+  {
+    "id": "m2",
+    "seconds": 138.24,
+    "target": 140,
+    "headroom": 1.76,
+    "voice": "en-GB-RyanNeural",
+    "rate": "-2%",
+    "timeStretch": false
+  },
+  {
+    "id": "closing",
+    "seconds": 5.736,
+    "target": 10,
+    "headroom": 4.264,
+    "voice": "en-GB-RyanNeural",
+    "rate": "-2%",
+    "timeStretch": false
+  },
+  {
+    "id": "r1",
+    "seconds": 41.256,
+    "target": 45,
+    "headroom": 3.744,
+    "voice": "en-GB-RyanNeural",
+    "rate": "-2%",
+    "timeStretch": false
+  },
+  {
+    "id": "r2",
+    "seconds": 41.448,
+    "target": 45,
+    "headroom": 3.552,
+    "voice": "en-GB-RyanNeural",
+    "rate": "-2%",
+    "timeStretch": false
+  }
+]

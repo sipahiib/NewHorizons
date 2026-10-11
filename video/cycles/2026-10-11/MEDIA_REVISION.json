@@ -1,0 +1,26 @@
+{
+  "userRequest": "Remove irrelevant construction footage and replace with subject-relevant M2 visuals",
+  "status": "rendered; independent technical/sample QA passed; full continuous audiovisual acceptance pending",
+  "excludedFromActiveManifest": [
+    "construction.mp4",
+    "construction-still.png"
+  ],
+  "m1Changes": {
+    "02": "ordinary smartwatch teaser",
+    "04": "clean NASA real laboratory source210\u2013224",
+    "08": "clean NASA real laboratory source220\u2013234"
+  },
+  "m2Counts": {
+    "stills": 6,
+    "motion": 7
+  },
+  "duration": 310,
+  "hooksChanged": false,
+  "factsChanged": false,
+  "sourceRegistry": "main_media_sources.json",
+  "narrationSeconds": 138.24,
+  "ttsUserApproved": true,
+  "previousOutputSha256": "2d8ecf6c093c1e9857b9b0b5c97d25c7f66eea77c1705ac9eb1322ac5186a98a",
+  "output": "build/video/2026-10-11/newhorizons.mp4",
+  "outputSha256": "f687d97b924257c628b8c8a608ce4f24c753482cbf0f9ad193da549481e3a088"
+}

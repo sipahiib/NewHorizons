@@ -1,0 +1,242 @@
+{
+  "cycle": "2026-10-11",
+  "status": "prepared-for-review",
+  "candidateOutput": "build/video/2026-10-11/newhorizons.mp4",
+  "finalOutput": "build/video/newhorizons.mp4",
+  "duration": 310,
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "sections": [
+    {
+      "id": "m1",
+      "duration": 160,
+      "audio": "build/video/2026-10-11/audio/m1.wav",
+      "counts": {
+        "stills": 5,
+        "motion": 9
+      },
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-11/main/capsule.jpg",
+          "duration": 5.5
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-11/main/departure.mp4",
+          "duration": 6.5,
+          "seek": 600,
+          "loop": false
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-11/main/smartwatch.mp4",
+          "duration": 4,
+          "seek": 0.5,
+          "loop": false
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-11/main/shield.jpg",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-11/main/arcjet-hd.mp4",
+          "duration": 14,
+          "seek": 210,
+          "loop": false
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-11/main/shield-detail.png",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-11/main/departure.mp4",
+          "duration": 14,
+          "seek": 1100,
+          "loop": false
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-11/main/capsule-detail.png",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-11/main/arcjet-hd.mp4",
+          "duration": 14,
+          "seek": 220,
+          "loop": false
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-11/main/arcjet-hd.mp4",
+          "duration": 14,
+          "seek": 210,
+          "loop": false
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-11/main/shield.jpg",
+          "duration": 10
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-11/main/arcjet-hd.mp4",
+          "duration": 12,
+          "seek": 240,
+          "loop": false
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-11/main/departure.mp4",
+          "duration": 14,
+          "seek": 605,
+          "loop": false
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-11/main/arcjet-hd.mp4",
+          "duration": 16,
+          "seek": 270,
+          "loop": false
+        }
+      ],
+      "title": "build/video/2026-10-11/work/m1-title.png"
+    },
+    {
+      "id": "m2",
+      "duration": 140,
+      "audio": "build/video/2026-10-11/audio/m2.mp3",
+      "counts": {
+        "stills": 6,
+        "motion": 7
+      },
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-11/main/device-photo.png",
+          "duration": 9,
+          "maxWidth": 340,
+          "maxHeight": 640
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-11/main/smartwatch-detail.mp4",
+          "duration": 13,
+          "seek": 0,
+          "loop": false
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-11/main/electrode-photo.png",
+          "duration": 9,
+          "maxWidth": 260,
+          "maxHeight": 640
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-11/main/chemistry.mp4",
+          "duration": 16,
+          "seek": 1,
+          "loop": false
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-11/main/chemistry-still.png",
+          "duration": 12
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-11/main/lab.mp4",
+          "duration": 7,
+          "seek": 0,
+          "loop": false
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-11/main/smartwatch.mp4",
+          "duration": 5.5,
+          "seek": 0,
+          "loop": false
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-11/main/device-photo.png",
+          "duration": 12,
+          "maxWidth": 340,
+          "maxHeight": 640
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-11/main/smartwatch-still.png",
+          "duration": 10
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-11/main/chemistry.mp4",
+          "duration": 16,
+          "seek": 2,
+          "loop": false
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-11/main/lab.mp4",
+          "duration": 7,
+          "seek": 0.5,
+          "loop": false
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-11/main/smartwatch-detail.mp4",
+          "duration": 13,
+          "seek": 0.3,
+          "loop": false
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-11/main/electrode-photo.png",
+          "duration": 10.5,
+          "maxWidth": 260,
+          "maxHeight": 640
+        }
+      ],
+      "title": "build/video/2026-10-11/work/m2-title.png"
+    },
+    {
+      "id": "closing",
+      "duration": 10,
+      "audio": "build/video/2026-10-11/audio/closing.mp3",
+      "closing": true,
+      "leadingSilence": 2
+    }
+  ],
+  "closing": "build/video/2026-10-11/work/closing.png",
+  "closingBell": "build/video/2026-10-11/work/closing-bell.png",
+  "titleDisplaySeconds": 5.5,
+  "subscribeOverlay": "build/video/2026-10-11/work/youtube-30s.png",
+  "subscribeWindow": [
+    30,
+    35.5
+  ],
+  "hashes": {
+    "assets/motion/2026-10-11/main/arcjet-hd.mp4": "966664a5fa61b66ca09bc5cd596f98c4f4f295d625a9b47b38897a0ef51bbda7",
+    "assets/motion/2026-10-11/main/capsule-detail.png": "eda2c7bfb923307545dfb42c433e09ed55839b88f0f9e49302b33a374c547874",
+    "assets/motion/2026-10-11/main/capsule.jpg": "3af4a17f2ccef6619a1933cb5d4894c13d99ef970613a37902df731c60abd76c",
+    "assets/motion/2026-10-11/main/chemistry-still.png": "4a86d544a397775d930339c69ea17dd629c1fa89a37a5e596f9117f47dbff40f",
+    "assets/motion/2026-10-11/main/chemistry.mp4": "319e0f76c765bc5d45230a511a652a7c15ee0a86eca3b102a78aa046e408cb56",
+    "assets/motion/2026-10-11/main/departure.mp4": "817b55d7837303da4befbfd3965a6e61b45eaeae5f4718afd98336c323a48c47",
+    "assets/motion/2026-10-11/main/device-photo.png": "9251d584238c58654de0c6997f1858849010c530c97ee71b9884e4c439811b72",
+    "assets/motion/2026-10-11/main/electrode-photo.png": "163a20b882ac7544ee75a060edd9c673cd8082dc4a9144970d2081dd332ca2f8",
+    "assets/motion/2026-10-11/main/lab.mp4": "f97594a84f30312c32634164a9a1f02fb4b7cceab0d13bad92461b435cbb2ddf",
+    "assets/motion/2026-10-11/main/shield-detail.png": "d2f09b0605db4a34dcd4368ee8a65d466b17c870fb96c1c0f14c2721d132f9fd",
+    "assets/motion/2026-10-11/main/shield.jpg": "dfa9fac67718482914a4cc4fd457bac81fc6434be43ca99c16834706202a17f8",
+    "assets/motion/2026-10-11/main/smartwatch-detail.mp4": "d655b58dbdf20405b440ddfb69d01de34a1dbde56a50a9679eb146e8192a1f61",
+    "assets/motion/2026-10-11/main/smartwatch-still.png": "c718f0e5b18eb5bc2387b66f6a18a2ec00efbea2da25a9220af17b65843802f8",
+    "assets/motion/2026-10-11/main/smartwatch.mp4": "fc0bf666d58daaca188394f1653d17cea42ed5cc714071f928f0058ed3903ac5"
+  }
+}

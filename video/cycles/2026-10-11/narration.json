@@ -1,0 +1,47 @@
+{
+  "cycle": "2026-10-11",
+  "voice": "en-GB-RyanNeural",
+  "rate": "-2%",
+  "sections": [
+    {
+      "id": "m1_hook",
+      "target": 5,
+      "text": "What can twelve small capsules teach us about surviving re-entry?"
+    },
+    {
+      "id": "m1_footage",
+      "target": 7,
+      "text": "NASA is using a departing cargo spacecraft to test the protection future missions could need."
+    },
+    {
+      "id": "m1_teaser",
+      "target": 4,
+      "text": "Then, a wristwatch that tracks the chemistry of sweat."
+    },
+    {
+      "id": "m1_body",
+      "target": 144,
+      "text": "The laboratory scenes here are archive footage, not this mission. Coming home from orbit is a materials problem as well as a navigation problem. A spacecraft must shed enormous speed. The air in front of it is compressed and heated, and its outer surface must keep that energy away from sensitive equipment.\n\nA heat shield buys time. Some protective materials gradually wear away, carrying energy with them. Others are designed around different shapes and structures. The challenge is finding out how those choices behave during a real flight.\n\nThat is where this cargo mission offers an opportunity. Cygnus left the International Space Station on October ninth. Its destructive return is planned for October twelfth. Twelve small experimental capsules are travelling with it, turning an ordinary disposal journey into a chance to gather engineering measurements.\n\nNASA calls the experiment KREPE-three. The capsules carry different thermal protection designs, including printed materials, a carbon and phenolic material, and a deployable umbrella-like approach. They are research articles, not passenger capsules. Their instruments are intended to record conditions such as temperature, pressure and motion, with information transmitted by satellite.\n\nThink of the difference between testing a raincoat under a tap and wearing it through a storm. A controlled test lets engineers isolate individual variables. Flight combines changing airflow, heat, movement and timing. Both kinds of evidence matter, because one successful laboratory measurement cannot answer every question about an actual return.\n\nThe capsule photographs show the hardware before that planned event.\n\nThere is an important limit to this story. As of October eleventh, the re-entry test is still ahead. There are no flight results here proving that a new shield has passed, and no claim that these designs are ready to protect a crew.\n\nThe useful idea is the experiment itself: attach carefully instrumented samples to a journey already scheduled to end in the atmosphere, and learn which designs deserve the next round of testing. The measurements will matter more than how dramatic the return looks. Even a disappointing measurement could help engineers decide what to change before another flight."
+    },
+    {
+      "id": "m2",
+      "target": 140,
+      "text": "Can a wristwatch track the chemistry of sweat? The ordinary smartwatches and laboratory scenes are context, not the research prototype.\n\nResearchers in Japan are exploring a wearable that measures chemical signals while its wearer carries on working. The prototype comes from Tokyo University of Science, and the university described it on October ninth. \n\nFitness watches measure movement or light reflected from skin. Chemical sensing asks a different question: what is arriving in the fluid at the sensor? That requires a way to collect sweat, guide it to the measuring surface and keep an electrical reference stable.\n\nThis design combines printed electrodes with a small sweat-transport system. Some electrodes respond to sodium or potassium. A reference electrode provides the comparison needed to interpret the electrical signal. Fabric and an absorbent material help move sweat through the device, while electronics record and transmit the measurements.\n\nIn one field demonstration, a construction worker wore the prototype during ordinary activity, during work and breaks. The researchers recorded ion-responsive signals over two hours and forty-five minutes. That is evidence that the system can collect signals in a working setting. It does not prove a medical warning system.\n\nWhy does that distinction matter? An electrical response is not automatically a trustworthy diagnosis. A wearable needs to show that a changing reading reflects the thing it claims to measure, rather than collection conditions, sensor behaviour or differences between wearers. Then a health interpretation needs its own evidence.\n\nThe researchers say controlled validation is still needed for quantitative sweat analysis. This demonstration involved one worker. It does not establish that the watch can diagnose dehydration, predict heatstroke or prevent injury. Those would require further testing.\n\nThe device photographs show the actual research hardware.\n\nThis points toward wearables that may eventually add chemistry to movement and heart-rate data. For now, this is a prototype showing how to gather a signal during everyday work, with the harder questions of accuracy and usefulness still open."
+    },
+    {
+      "id": "closing",
+      "target": 10,
+      "text": "That was our latest news. Stay with science, and stay tuned."
+    },
+    {
+      "id": "r1",
+      "target": 45,
+      "text": "Could AI training be paused at the chip level? The hardware shown is ordinary electronics, not a working pause system. A Berkeley-led report proposes an international agreement to stop making training-capable chips, then gradually replace existing stocks with hardware designed to run approved models. Training a new model and running one already built are different jobs. The authors argue that hardware controls could make a frontier-training pause more durable. But this is a conditional proposal, not an implemented off-switch. It depends on cooperation, monitoring and suitable replacement chips. Existing AI risks would remain."
+    },
+    {
+      "id": "r2",
+      "target": 45,
+      "text": "What if fish could report the pollution we cannot see? Study photos show blue damselfish; other reef footage is context. Researchers studied blue damselfish at eighteen coastal sites in Okinawa. Urbanisation was associated with changes in gene activity linked to immune and inflammatory responses. That suggests fish counts alone may miss physiological stress. But the study is observational, covers one species, and does not prove a single pollution cause. These are changes in gene activity, not genetic mutations. The researchers see potential for environmental monitoring, with more validation needed."
+    }
+  ]
+}

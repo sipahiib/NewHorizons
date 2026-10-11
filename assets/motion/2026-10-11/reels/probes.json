@@ -1,0 +1,114 @@
+[
+  {
+    "file": "assets/motion/2026-10-11/reels/r1-6754818.mp4",
+    "sha256": "447d8753383adbcd302d963def9e1ba31b24975cf2c372ef6e4bc07eae940bbd",
+    "native_download_width": 3840,
+    "native_download_height": 2160,
+    "fps": "25/1",
+    "duration_seconds": 28.0
+  },
+  {
+    "file": "assets/motion/2026-10-11/reels/r1-6754824.mp4",
+    "sha256": "3e2031710c7c2ccf5f24d5f659dc28c6381696157c2258000a9a4c8dd763f44a",
+    "native_download_width": 3840,
+    "native_download_height": 2160,
+    "fps": "25/1",
+    "duration_seconds": 19.32
+  },
+  {
+    "file": "assets/motion/2026-10-11/reels/r1-6754830.mp4",
+    "sha256": "c6e5aae65e7419550aab1ba3ccc62baf3201fa8181108aaa213de01bdbdd6673",
+    "native_download_width": 3840,
+    "native_download_height": 2160,
+    "fps": "25/1",
+    "duration_seconds": 16.36
+  },
+  {
+    "file": "assets/motion/2026-10-11/reels/r1-5736195.mp4",
+    "sha256": "fa500f3d8ba34cc58a2aafec6cfe0225e26294338c0d2ec13a2ff98e2f8ddda2",
+    "native_download_width": 1920,
+    "native_download_height": 1080,
+    "fps": "25/1",
+    "duration_seconds": 13.246667
+  },
+  {
+    "file": "assets/motion/2026-10-11/reels/r1-3866849.mp4",
+    "sha256": "3b23e758ebf8066578db44cbc0fe88b012f2fd9ab4e0a51df38a3574664e7e68",
+    "native_download_width": 3840,
+    "native_download_height": 2160,
+    "fps": "25/1",
+    "duration_seconds": 19.84
+  },
+  {
+    "file": "assets/motion/2026-10-11/reels/r1-6754834.mp4",
+    "sha256": "3098346afdaf5f5661d95fafc496753149e62f6593b24b8432e7cb0569e7d3c4",
+    "native_download_width": 3840,
+    "native_download_height": 2160,
+    "fps": "25/1",
+    "duration_seconds": 45.2
+  },
+  {
+    "file": "assets/motion/2026-10-11/reels/r1-6208729.mp4",
+    "sha256": "55fd9de52791aa9df6801251c5a36d12a7ab699c192f2734bc7544e27001dc1c",
+    "native_download_width": 1920,
+    "native_download_height": 1080,
+    "fps": "24/1",
+    "duration_seconds": 13.041667
+  },
+  {
+    "file": "assets/motion/2026-10-11/reels/r2-adults.jpg",
+    "sha256": "a5b55bbf52bdce2fa3dae343522abab76f422ff1eab6192186fe0f440b94e2bd",
+    "native_download_width": 2560,
+    "native_download_height": 1546,
+    "fps": null,
+    "duration_seconds": null
+  },
+  {
+    "file": "assets/motion/2026-10-11/reels/r2-coast.png",
+    "sha256": "a62916fbe864eed97ba0c080abb63733f7639b789b28f6aff329a7a7dbec963b",
+    "native_download_width": 720,
+    "native_download_height": 408,
+    "fps": null,
+    "duration_seconds": null
+  },
+  {
+    "file": "assets/motion/2026-10-11/reels/r2-sunabe.jpg",
+    "sha256": "24166b24e5aa417212da90f566fecaa42414c7c00d21eee5aa11ee80fae9c829",
+    "native_download_width": 2560,
+    "native_download_height": 1920,
+    "fps": null,
+    "duration_seconds": null
+  },
+  {
+    "file": "assets/motion/2026-10-11/reels/r2-nago.jpg",
+    "sha256": "e248a609144b659e421376a9de1df7b444f4275d0f1686fb888a1af018f2fa60",
+    "native_download_width": 2560,
+    "native_download_height": 1920,
+    "fps": null,
+    "duration_seconds": null
+  },
+  {
+    "file": "assets/motion/2026-10-11/reels/r2-juveniles.jpg",
+    "sha256": "078562ada293143224da353ae13c699d4d96a3d2bbe0b7eea496b623b67ea325",
+    "native_download_width": 2560,
+    "native_download_height": 1920,
+    "fps": null,
+    "duration_seconds": null
+  },
+  {
+    "file": "assets/motion/2026-10-11/reels/r2-35480156.mp4",
+    "sha256": "d7a93d5bba91876590a4dde35b54e039a89560f9d2415f786c47238452b56104",
+    "native_download_width": 3840,
+    "native_download_height": 2160,
+    "fps": "2997/50",
+    "duration_seconds": 7.090424
+  },
+  {
+    "file": "assets/motion/2026-10-11/reels/r2-35480232.mp4",
+    "sha256": "5b1d39e0622637141fe4b1b1ab196c9c9b9ab4a5c9421c5f14f68fdc215ad50a",
+    "native_download_width": 3840,
+    "native_download_height": 2160,
+    "fps": "2997/50",
+    "duration_seconds": 6.089423
+  }
+]

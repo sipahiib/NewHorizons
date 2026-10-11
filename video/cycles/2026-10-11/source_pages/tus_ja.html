@@ -1,0 +1,2179 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+  <script src="https://cdn-jp.pagesense.io/js/90002760747/df8bf9dd604f4887913f42ac5b854e9c.js"></script>
+  <meta charset="UTF-8">
+  <title>汗中のイオンに応答する信号をリアルタイムで取得するセンサを開発～長時間の事前調整なし、実際の作業現場で動作することを確認～｜東京理科大学</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" id="viewport">
+<meta name="description" content="    研究の要旨とポイント            長時間の事前調整を要しないスクリーン印刷液絡型参照電極を、ナトリウムイオン選択性電極、カリウムイオン選択性電極、布および高吸水性繊維からなる試料搬送...">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<meta name="google" content="nositelinkssearchbox">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/static/js/lib.min.css">
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="stylesheet" href="/static/css/style_user.css">
+<link rel="stylesheet" href="/static/css/style_custom.css?20241202">
+<link rel="stylesheet" href="/static/css/app.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=Crimson+Text:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.1/dist/css/yakuhanjp.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.1/dist/css/yakuhanmp.min.css">
+<meta property="og:title" content="汗中のイオンに応答する信号をリアルタイムで取得するセンサを開発<br class=d-sp-none>～長時間の事前調整なし、実際の作業現場で動作することを確認～｜東京理科大学">
+<meta property="og:type" content="article">
+<meta property="og:description" content="    研究の要旨とポイント            長時間の事前調整を要しないスクリーン印刷液絡型参照電極を、ナトリウムイオン選択性電極、カリウムイオン選択性電極、布および高吸水性繊維からなる試料搬送...">
+<meta property="og:url" content="https://www.tus.ac.jp/today/archive/20261009_9677.html" />
+<meta property="og:site_name" content="東京理科大学" />
+<meta property="og:image" content="https://www.tus.ac.jp/today/archive/2026/20261009_9677_ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+
+<script src="/static/js/ga.js"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YCP8VRZHW3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  //{literal}
+  function gtag(){dataLayer.push(arguments);}
+  //{/literal}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YCP8VRZHW3');
+</script>
+</head>
+
+<style type="text/css">
+    .ptitle.ptitle_tp1b::before {
+        background: url(https://www.tus.ac.jp/today/img/img-top-today-02.jpg) !important;
+    }
+    
+    @media (min-width: 769px) {
+        .ptitle.ptitle_tp1b .ptitle__title-en {
+            font-size: 3.6rem;
+        }
+    }
+</style>
+<body class="news archive">
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJLHCPP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/"><img src="/static/img-com/logo.png" alt="東京理科大学 TOKYO UNIVERSITY OF SCIENCE"></a>
+    </div>
+    <div class="header__menu">
+
+      <!-- PC Header -->
+<div class="header-pc">
+  <div class="header-top">
+    <ul class="header-submenu">
+      <li class="header-submenu__item"><a href="/admissions/" class="header-submenu__link">受験生・保護者</a></li>
+      <li class="header-submenu__item"><a href="/students/" class="header-submenu__link">在学生・保護者</a></li>
+      <li class="header-submenu__item"><a href="/alumni/" class="header-submenu__link">卒業生</a></li>
+      <li class="header-submenu__item"><a href="/faculty/" class="header-submenu__link">教職員</a></li>
+      <li class="header-submenu__item"><a href="/company_researcher/" class="header-submenu__link">企業・研究者</a></li>
+      <li class="header-submenu__item"><a href="/local/" class="header-submenu__link">地域</a></li>
+      <li class="header-submenu__item"><a href="/media/" class="header-submenu__link">メディア</a></li>
+    </ul>
+    <ul class="header-buttons">
+      <li class="header-buttons__item header-buttons__item--access">
+        <div class="header-buttons__link">
+          <span class="header-buttons__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10.871" height="15.448" viewBox="0 0 10.871 15.448"><g transform="translate(0.6 0.6)"><path d="M28.257,37.28c-.158.2-.3.385-.457.559" transform="translate(-21.604 -25.088)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/><path d="M33.346,28a14.1,14.1,0,0,1-.9,1.494" transform="translate(-24.62 -19.395)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/><path d="M14.836,19.21S10,14.09,10,10.352A5,5,0,0,1,14.836,5.21a5,5,0,0,1,4.836,5.142,7.79,7.79,0,0,1-.881,3.228" transform="translate(-10 -5.21)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/><path d="M21.2,17.39a1.2,1.2,0,1,1,1.2-1.2" transform="translate(-16.359 -11.226)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/></g></svg>
+          </span>
+          <span class="header-buttons__txt">アクセス</span>
+        </div>
+        <div class="header-buttons__mega header-buttons__mega--access">
+          <ul class="header-buttons__mega-list">
+            <li><a href="/access/"><span>交通アクセス</span></a></li>
+            <li><a href="/access/kagurazaka_campus/"><span>神楽坂キャンパス</span></a></li>
+            <li><a href="/access/noda_campus/"><span>野田キャンパス</span></a></li>
+            <li><a href="/access/katsushika_campus/"><span>葛飾キャンパス</span></a></li>
+            <li><a href="/access/oshamambe_campus/"><span>北海道・長万部キャンパス</span></a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="header-buttons__item header-buttons__item--language">
+        <div class="header-buttons__link">
+          <span class="header-buttons__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15.2" height="15.2" viewBox="0 0 15.2 15.2"><g transform="translate(-1.4 -1.4)"><circle cx="7" cy="7" r="7" transform="translate(2 2)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/><line x2="14" transform="translate(2 9)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/><path d="M10.8,2a10.71,10.71,0,0,1,2.8,7,10.71,10.71,0,0,1-2.8,7A10.71,10.71,0,0,1,8,9,10.71,10.71,0,0,1,10.8,2Z" transform="translate(-1.8 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/></g></svg>
+          </span>
+          <span class="header-buttons__txt">Language</span>
+        </div>
+        <div class="header-buttons__mega header-buttons__mega--language">
+          <ul class="header-buttons__mega-list">
+            <li><a href="/"><span>Japanese</span></a></li>
+            <li><a href="/en/"><span>English</span></a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="header-buttons__item header-buttons__item--donation">
+        <a href="/donation/" class="header-buttons__link">
+          <span class="header-buttons__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15.307" height="14.903" viewBox="0 0 15.307 14.903"><g transform="translate(0.25 -1.442)"><path d="M7.374,28.967c-.031,0-.253-.028-.333-.028h-.96a2.444,2.444,0,0,1-.381-.03l-1.019-.417-.01-.007a5.564,5.564,0,0,0-2.949-.77v-.745H0v7.88H1.722v-.738h3.2A10.07,10.07,0,0,0,6.425,34l3.189-.485a1.665,1.665,0,0,0,.339-.039,1.491,1.491,0,0,0,.812-.406l3.729-2.9.006,0a.72.72,0,0,0,.128-.972c-.431-.6-.868-.61-1.963-.034l-2.121,1.3a4.25,4.25,0,0,1-1.586.228.817.817,0,0,0-.149-.822,2.041,2.041,0,0,0-.767-.679M1.23,34.359H.492v-6.9H1.23v6.9ZM14.189,29.78l-3.735,2.909-.019.016a1.029,1.029,0,0,1-.574.287,1.225,1.225,0,0,1-.265.03l-3.244.49a9.543,9.543,0,0,1-1.431.108h-3.2V28.209a5.137,5.137,0,0,1,2.653.67,2.761,2.761,0,0,0,1.143.5l0,0,.047.008h.007c.081.014.162.025.245.032h.008c.084.007.168.011.253.011h.96a1.727,1.727,0,0,1,.4.047l.016,0a1.584,1.584,0,0,1,.942.649c.1.154.144.282.11.343-.066.114-.371.184-.68.2l-.273,0H5.167c-.77,0-1.23.368-1.23.984a.246.246,0,0,0,.492,0c0-.122,0-.492.738-.492H7.552c.056,0,.163.008.3,0l.131,0a6.864,6.864,0,0,0,2.807-.288l2.12-1.3c1.015-.533,1.117-.39,1.32-.106A.227.227,0,0,1,14.189,29.78Z" transform="translate(0 -18.756)" fill="#fff" stroke="#fff" stroke-width="0.5"/><g transform="translate(2.388 2.095)"><path d="M15.411,9.618l2.632-2.556h0l.937-.937A2.384,2.384,0,0,0,15.61,2.754l-.937.935-.937-.935a2.384,2.384,0,0,0-3.371,3.371l4.308,4.308" transform="translate(-9.705 -2.095)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></g></g></svg>
+          </span>
+          <span class="header-buttons__txt">寄付</span>
+        </a>
+      </li>
+      <li class="header-buttons__item header-buttons__item--search">
+        <button class="header-buttons__link" data-toggle-pc-btn="">
+          <span class="header-buttons__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16.052" height="16.052" viewBox="0 0 16.052 16.052"><g transform="translate(0.85 0.85)"><path d="M15.79,20.139a6.292,6.292,0,0,1-1.614.212,6.175,6.175,0,1,1,4.367-1.809" transform="translate(-8.001 -8)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/><line x1="3.339" y1="3.339" transform="translate(10.66 10.661)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/></g></svg>
+          </span>
+          <span class="header-buttons__txt">検索</span>
+        </button>
+        <div class="header-buttons__mega header-buttons__mega--search">
+          <form class="header-buttons__search" method="get" action="/search/">
+            <input type="text" name="q" placeholder="検索">
+            <button>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 11"><line stroke="#c6c6c6" stroke-width="2.2" stroke-linecap="round" stroke-miterlimit="10" x1="7.5" y1="7.5" x2="9.9" y2="9.9"/><circle fill="none" stroke="#c6c6c6" stroke-width="1.7" stroke-miterlimit="10" cx="4.6" cy="4.6" r="3.7"/></svg>
+            </button>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div><!-- /.header-top -->
+
+  <div class="header-main">
+    <ul class="header-main__list">
+      <li class="header-main__item">
+        <a href="/today/" class="header-main__link">
+          <span class="header-main__link-ja">ニュース &amp; イベント</span>
+          <span class="header-main__link-en">NEWS &amp; EVENTS</span>
+        </a>
+        <div class="header-main__mega">
+          <div class="header-main__mega-column">
+            <ul>
+              <li><a href="/today/#tags"><span>ALL</span></a></li>
+              <li><a href="/today/?search_category=研究#tags"><span>研究</span></a></li>
+              <li><a href="/today/?search_category=イベント#tags"><span>イベント</span></a></li>
+              <li><a href="/today/?search_category=受賞#tags"><span>受賞</span></a></li>
+              <li><a href="/today/?search_category=地域連携#tags"><span>地域連携</span></a></li>
+              <li><a href="/today/?search_category=お知らせ#tags"><span>お知らせ</span></a></li>
+            </ul>
+          </div>
+          <div class="header-main__mega-column">
+            <ul>
+              <li><a href="/today/?search_category=教育#tags"><span>教育</span></a></li>
+              <li><a href="/today/?search_category=メディア#tags"><span>メディア</span></a></li>
+              <li><a href="/today/?search_category=プレスリリース#tags"><span>プレスリリース</span></a></li>
+              <li><a href="/today/?search_category=学生の活躍#tags"><span>学生の活躍</span></a></li>
+              <li><a href="/today/?search_category=入試／合格発表#tags"><span>入試／合格発表</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="header-main__item">
+        <a href="/about/" class="header-main__link">
+          <span class="header-main__link-ja">東京理科大学について</span>
+          <span class="header-main__link-en">ABOUT TUS</span>
+        </a>
+        <div class="header-main__mega">
+          <div class="header-main__mega-column">
+            <ul>
+              <li>
+                <a href="#"><span>学校法人東京理科大学</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/about/corporation/chairman_greeting/"><span>理事長挨拶</span></a></li>
+                  <li><a href="/about/corporation/chairman_portrait/"><span>歴代理事長肖像</span></a></li>
+                  <li><a href="/about/corporation/organization_chart/"><span>組織(組織図、役員、評議員)</span></a></li>
+                  <li><a href="/about/corporation/rule/"><span>行動憲章・行動規範</span></a></li>
+                  <li><a href="/donation/"><span>ご支援をお考えの方へ　</span></a></li>
+                  <li><a href="/about/corporation/endowment/"><span>学校法人東京理科大学寄附行為</span></a></li>
+                  <li><a href="/about/university/business/"><span>事業展開</span></a></li>
+                  <li><a href="/about/features/brandstory/"><span>TUS VISION 150 Plus</span></a></li>
+                  <li><a href="/about/features/plan2026/"><span>中期計画2026</span></a></li>
+                  <li><a href="/about/tokyo_academy_of_physics_award/"><span>東京理科大学物理学園賞</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>特色ある取り組み</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/academics/education/data_science/"><span>データサイエンス教育</span></a></li>
+                  <li><a href="/academics/education/sas_academic_specialization/"><span>SAS共同認定資格プログラム</span></a></li>
+                  <li><a href="/academics/education/credit/"><span>履修証明プログラム</span></a></li>
+                  <li><a href="/academics/education/open_badges/"><span>TUSオープンバッジ</span></a></li>
+                  <li><a href="/uc/" target="_blank" rel="noopener noreferrer"><span>宇宙教育プログラム</span></a></li>
+                  <li><a href="/academics/education/cooperation/recurrent/"><span>学び直し(リカレント教育)への取り組み</span></a></li>
+                  <li><a href="https://www.tus.ac.jp/mse/20260520-01/" target="_blank" rel="noopener noreferrer"><span>公開講座「理科大サイエンス講座」</span></a></li>
+                  <li><a href="/madonna/" target="_blank" rel="noopener noreferrer"><span>「科学のマドンナ」プロジェクト</span></a></li>
+                  <li><a href="/tcw/" target="_blank" rel="noopener noreferrer"><span>ダイバーシティ推進会議</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>情報公表・データ</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/about/data/announcement/corporation/"><span>情報公表</span></a></li>
+                  <li><a href="/about/data/number_students/gender_ratio/"><span>学生数・男女比</span></a></li>
+                  <li><a href="/about/data/data/"><span>東京理科大学データ集</span></a></li>
+                  <li><a href="/about/data/guarantee/overview/"><span>内部質保証</span></a></li>
+                  <li><a href="/about/data/project/budget/"><span>予算情報</span></a></li>
+                  <li><a href="/about/data/project/settlement/"><span>決算情報</span></a></li>
+                  <li><a href="/about/data/project/business_plan/"><span>事業計画・事業報告</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>社会活動</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/about/social_activities/whistleblowing/"><span>公益通報</span></a></li>
+                  <li><a href="/about/social_activities/harassment_prevention/"><span>ハラスメント防止のために</span></a></li>
+                  <li><a href="/about/social_activities/customer_harassment_policy/"><span>東京理科大学カスタマー・ハラスメント基本方針</span></a></li>
+                  <li><a href="/about/social_activities/general_business/"><span>一般事業主行動計画</span></a></li>
+                  <li><a href="/research/cooperation/environmental_safety/"><span>サステナビリティ(環境安全センター)</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>キャンパス・付属施設紹介</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/tuslife/campus/kagurazaka/"><span>神楽坂キャンパス</span></a></li>
+                  <li><a href="/tuslife/campus/noda/"><span>野田キャンパス</span></a></li>
+                  <li><a href="/tuslife/campus/katsushika/"><span>葛飾キャンパス</span></a></li>
+                  <li><a href="/tuslife/campus/oshamambe/"><span>北海道・長万部キャンパス</span></a></li>
+                  <li><a href="https://tuslibrary.admin.tus.ac.jp/" target="_blank" rel="noopener noreferrer"><span>図書館</span></a></li>
+                  <li><a href="/tuslife/campuslife/cafeteria/"><span>食堂</span></a></li>
+                  <li><a href="/about/features/modernscience_museum/"><span>近代科学資料館</span></a></li>
+                  <li><a href="/about/features/math_experiencehall/"><span>数学体験館</span></a></li>
+                  <li><a href="/about/features/science_experiencehall/"><span>なるほど科学体験館</span></a></li>
+                  <li><a href="/about/features/science_dojo/"><span>理科大サイエンス道場</span></a></li>
+                  <li><a href="/tuslife/campus/facility/"><span>その他の設備・施設</span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="header-main__mega-column">
+            <ul>
+              <li>
+                <a href="#"><span>東京理科大学</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/about/university/president_greeting/"><span>学長挨拶</span></a></li>
+                  <li><a href="/about/university/president_portrait/"><span>歴代学長肖像</span></a></li>
+                  <li><a href="/about/university/organization_chart/"><span>組織</span></a></li>
+                  <li><a href="/about/university/vision/"><span>東京理科大学の建学の精神に基づく理念・目的・目標・方針</span></a></li>
+                  <li><a href="/about/university/power/"><span>東京理科大学の実力主義</span></a></li>
+                  <li><a href="/about/university/history/"><span>沿革</span></a></li>
+                  <li><a href="/about/awards-and-honors/"><span>受賞・受章等</span></a></li>
+                  <li><a href="/about/digest/"><span>データで見る TUS</span></a></li>
+                  <li><a href="/about/university/symbol/"><span>大学のシンボル</span></a></li>
+                  <li><a href="/about/university/editorial_policy/"><span>東京理科大学の求める教員像及び教員組織の編制方針</span></a></li>
+                  <li><a href="/academics/education_advancement/"><span>教育支援機構</span></a></li>
+                  <li><a href="/research/organization/"><span>研究推進機構</span></a></li>
+                  <li><a href="/research/social_collaboration/"><span>産学連携機構</span></a></li>
+                  <li><a href="/tuslife/campuslife/support_mechanism/"><span>学生支援機構</span></a></li>
+                  <li><a href="/academics/education/international/"><span>国際化推進機構</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>広報資料</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/about/information/publication/magazine/"><span>広報誌・出版物</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>理窓会・こうよう会・維持会</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/about/association/alumni/"><span>理窓会(校友会)</span></a></li>
+                  <li><a href="/about/association/parent/"><span>こうよう会(父母会)</span></a></li>
+                  <li><a href="/about/association/alumni/maintenance/"><span>維持会</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>採用情報</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/recruitment/teacher-list/"><span>教員・研究員公募</span></a></li>
+                  <li><a href="/recruitment/staff-list/"><span>職員採用</span></a></li>
+                  <li><a href="/recruitment/ura/"><span>産学連携機構URA職員採用</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="https://tus-online.com/" target="_blank" rel="noopener noreferrer"><span>東京理科大学公式グッズ販売</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li>
+                    <a href="https://tus-online.com/" target="_blank" rel="noopener noreferrer"><span>公式グッズ販売「TUS ONLINE STORE」</span></a>
+                    <p>売り上げの一部は、東京理科大学の給付型の奨学金の一部になるなど教育・研究環境の充実に役立てられております。</p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="header-main__item header-main__item--academics">
+        <a href="/academics/" class="header-main__link">
+          <span class="header-main__link-ja">教育/学部・⼤学院</span>
+          <span class="header-main__link-en">ACADEMICS</span>
+        </a>
+        <div class="header-main__mega">
+          <div class="header-main__mega-wrap">
+            <div class="header-main__mega-ttl">学部</div>
+            <div class="header-main__mega-row">
+              <div class="header-main__mega-column">
+                <ul>
+                  <li>
+                    <a href="/academics/faculty/sciencedivision1/"><span>理学部第一部</span></a>
+                    <button data-toggle-next></button>
+                    <ul>
+                      <li><a href="/academics/faculty/sciencedivision1/mathmatics/"><span>数学科</span></a></li>
+                      <li><a href="/academics/faculty/sciencedivision1/physics/"><span>物理学科</span></a></li>
+                      <li><a href="/academics/faculty/sciencedivision1/chemistry/"><span>化学科</span></a></li>
+                      <li><a href="/academics/faculty/sciencedivision1/applied_mathmatics/"><span>応用数学科</span></a></li>
+                      <li><a href="/academics/faculty/sciencedivision1/applied_physics/"><span>応用物理学科(改組)</span></a></li>
+                      <li><a href="/academics/faculty/sciencedivision1/applied_chemistry/"><span>応用化学科</span></a></li>
+                      <li><a href="/academics/faculty/sciencedivision1/dsc/"><span>科学コミュニケーション学科</span></a></li>
+                      <li><a href="/academics/liberal/#sec1"><span>一般教養科目</span></a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="/academics/faculty/pharmaceuticalsciences/"><span>薬学部</span></a>
+                    <button data-toggle-next></button>
+                    <ul>
+                      <li><a href="/academics/faculty/pharmaceuticalsciences/pharmacy/"><span>薬学科</span></a></li>
+                      <li><a href="/academics/faculty/pharmaceuticalsciences/medical_lifesciences/"><span>生命創薬科学科</span></a></li>
+                      <li><a href="/academics/liberal/#sec1"><span>一般教養科目</span></a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="/academics/faculty/informationsciencetechnology/"><span>創域情報学部</span></a>
+                    <button data-toggle-next></button>
+                    <ul>
+                      <li><a href="/academics/faculty/informationsciencetechnology/informationsciencetechnology/"><span>情報理工学科</span></a></li>
+                      <li><a href="/academics/liberal/#sec1"><span>一般教養科目</span></a></li>
+                    </ul>                    
+                  </li>                  
+                  <li>
+                    <a href="/academics/faculty/management/"><span>経営学部</span></a>
+                    <button data-toggle-next></button>
+                    <ul>
+                      <li><a href="/academics/faculty/management/management/"><span>経営学科</span></a></li>
+                      <li><a href="/academics/faculty/management/business_economics/"><span>ビジネスエコノミクス学科</span></a></li>
+                      <li><a href="/academics/faculty/management/international_degitalanddesign_management/"><span>国際デザイン経営学科</span></a></li>
+                      <li><a href="/academics/liberal/#sec1"><span>一般教養科目</span></a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="/academics/faculty/math_sen/"><span>理学専攻科</span></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="header-main__mega-column">
+                <ul>
+                  <li>
+                    <a href="/academics/faculty/engineering/"><span>工学部</span></a>
+                    <button data-toggle-next></button>
+                    <ul>
+                      <li><a href="/academics/faculty/engineering/architecture/"><span>建築学科</span></a></li>
+                      <li><a href="/academics/faculty/engineering/industrial_chemistry/"><span>工業化学科</span></a></li>
+                      <li><a href="/academics/faculty/engineering/electrical_engineering/"><span>電気工学科</span></a></li>
+                      <li><a href="/academics/faculty/engineering/information/"><span>情報工学科</span></a></li>
+                      <li><a href="/academics/faculty/engineering/mechanical_enginieering/"><span>機械工学科</span></a></li>
+                      <li><a href="/academics/liberal/#sec1"><span>一般教養科目</span></a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="/academics/faculty/sciencetechnology/"><span>創域理工学部</span></a>
+                    <button data-toggle-next></button>
+                    <ul>
+                      <li><a href="/academics/faculty/sciencetechnology/mathematics/"><span>数理科学科</span></a></li>
+                      <li><a href="/academics/faculty/sciencetechnology/physics/"><span>先端物理学科</span></a></li>
+                      <li><a href="/academics/faculty/sciencetechnology/information_sciences/"><span>情報計算科学科</span></a></li>
+                      <li><a href="/academics/faculty/sciencetechnology/applied_biologicalscience/"><span>生命生物科学科</span></a></li>
+                      <li><a href="/academics/faculty/sciencetechnology/architecture/"><span>建築学科</span></a></li>
+                      <li><a href="/academics/faculty/sciencetechnology/pure_applied_chemistry/"><span>先端化学科</span></a></li>
+                      <li><a href="/academics/faculty/sciencetechnology/electrical_engineering/"><span>電気電子情報工学科</span></a></li>
+                      <li><a href="/academics/faculty/sciencetechnology/industrial_administration/"><span>経営システム工学科</span></a></li>
+                      <li><a href="/academics/faculty/sciencetechnology/mechanical_engineering/"><span>機械航空宇宙工学科</span></a></li>
+                      <li><a href="/academics/faculty/sciencetechnology/civil_engineering/"><span>社会基盤工学科</span></a></li>
+                      <li><a href="/academics/liberal/#sec1"><span>一般教養科目</span></a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="/academics/faculty/industrialscience_technology/"><span>先進工学部</span></a>
+                    <button data-toggle-next></button>
+                    <ul>
+                      <li><a href="/academics/faculty/industrialscience_technology/applied_electronics/"><span>電子システム工学科</span></a></li>
+                      <li><a href="/academics/faculty/industrialscience_technology/materials/"><span>マテリアル創成工学科</span></a></li>
+                      <li><a href="/academics/faculty/industrialscience_technology/biological/"><span>生命システム工学科</span></a></li>
+                      <li><a href="/academics/faculty/industrialscience_technology/applied_physics/"><span>物理工学科</span></a></li>
+                      <li><a href="/academics/faculty/industrialscience_technology/engineering_design/"><span>機能デザイン工学科</span></a></li>
+                      <li><a href="/academics/liberal/#sec1"><span>一般教養科目</span></a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="/academics/faculty/sciencedivision2/"><span>理学部第二部</span></a>
+                    <button data-toggle-next></button>
+                    <ul>
+                      <li><a href="/academics/faculty/sciencedivision2/mathmatics/"><span>数学科</span></a></li>
+                      <li><a href="/academics/faculty/sciencedivision2/physics/"><span>物理学科</span></a></li>
+                      <li><a href="/academics/faculty/sciencedivision2/chemistry/"><span>化学科</span></a></li>
+                      <li><a href="/academics/liberal/#sec1"><span>一般教養科目</span></a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="/academics/liberal/"><span>教養教育研究院</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="header-main__mega-wrap">
+            <div class="header-main__mega-ttl">大学院</div>
+            <div class="header-main__mega-row">
+              <div class="header-main__mega-column">
+                <ul>
+                  <li>
+                    <a href="/academics/graduate_school/science/"><span>理学研究科</span></a>
+                    <button data-toggle-next></button>
+                    <ul>
+                      <li><a href="/academics/graduate_school/science/math/"><span>数学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/science/physics/"><span>物理学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/science/chemistry/"><span>化学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/science/applied_mathmatics/"><span>応用数学専攻</span></a></li>
+                      <!-- <li><a href="/academics/graduate_school/science/applied_physics/"><span>応用物理学専攻(改組)</span></a></li> -->
+                      <li><a href="/academics/graduate_school/science/science_education/"><span>科学教育専攻</span></a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="/academics/graduate_school/pharmaceutical_sciences/"><span>薬学研究科</span></a>
+                    <button data-toggle-next></button>
+                    <ul>
+                      <li><a href="/academics/graduate_school/pharmaceutical_sciences/pharmacoscience/"><span>薬科学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/pharmaceutical_sciences/pharmaceutical_sciences/"><span>薬学専攻</span></a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="/academics/graduate_school/industrialscience_technology/"><span>先進工学研究科</span></a>
+                    <button data-toggle-next></button>
+                    <ul>
+                      <li><a href="/academics/graduate_school/industrialscience_technology/applied_electronics/"><span>電子システム工学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/industrialscience_technology/materialsscience_technology/"><span>マテリアル創成工学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/industrialscience_technology/biologicalscience_technology/"><span>生命システム工学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/industrialscience_technology/applied_physics/"><span>物理工学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/industrialscience_technology/engineering_design/"><span>機能デザイン工学専攻</span></a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="/academics/graduate_school/biologicalsciences/"><span>生命科学研究科</span></a>
+                    <button data-toggle-next></button>
+                    <ul>
+                      <li><a href="/academics/graduate_school/biologicalsciences/biologicalsciences/"><span>生命科学専攻</span></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="header-main__mega-column">
+                <ul>
+                  <li>
+                    <a href="/academics/graduate_school/engineering/"><span>工学研究科</span></a>
+                    <button data-toggle-next></button>
+                    <ul>
+                      <li><a href="/academics/graduate_school/engineering/architecture/"><span>建築学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/engineering/industrial_chemistry/"><span>工業化学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/engineering/electrical_engineering/"><span>電気工学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/engineering/information_computertecnology/"><span>情報工学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/engineering/mechanical_engineering/"><span>機械工学専攻</span></a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="/academics/graduate_school/sciencetechnology/"><span>創域理工学研究科</span></a>
+                    <button data-toggle-next></button>
+                    <ul>
+                      <li><a href="/academics/graduate_school/sciencetechnology/mathematics/"><span>数理科学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/sciencetechnology/physics/"><span>先端物理学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/sciencetechnology/information_sciences/"><span>情報計算科学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/sciencetechnology/applied_biologicalscience/"><span>生命生物科学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/sciencetechnology/architecture/"><span>建築学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/sciencetechnology/pure_applied_chemistry/"><span>先端化学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/sciencetechnology/electrical_engineering/"><span>電気電子情報工学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/sciencetechnology/management_science/"><span>経営システム工学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/sciencetechnology/mechanical_engineering/"><span>機械航空宇宙工学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/sciencetechnology/civil_engineering/"><span>社会基盤工学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/sciencetechnology/global_fire/"><span>国際火災科学専攻</span></a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="/academics/graduate_school/management/"><span>経営学研究科</span></a>
+                    <button data-toggle-next></button>
+                    <ul>
+                      <li><a href="/academics/graduate_school/management/buisiness/"><span>経営学専攻</span></a></li>
+                      <li><a href="/academics/graduate_school/management/management_of_technology/"><span>技術経営専攻(MOT)</span></a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="header-main__item header-main__item--research">
+        <a href="/research/" class="header-main__link toggle-disable">
+          <span class="header-main__link-ja">研究/産学連携/スタートアップ⽀援</span>
+          <span class="header-main__link-en">RESEARCH</span>
+        </a>
+        <div class="header-main__mega">
+          <div class="header-main__mega-column">
+            <ul>
+              <li>
+                <a href="/research/"><span>研究組織</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/research/scitech/"><span>TUS SciTech共創推進本部</span></a></li>
+                  <li><a href="/research/scitech/research_center/"><span>├ TUS SciTech共創研究センター</span></a></li>
+                  <li><a href="/research/scitech/strategy/"><span>├ TUS SciTech共創戦略センター</span></a></li>
+                  <li><a href="/research/organization/"><span>研究推進機構</span></a></li>
+                  <!--<li><a href="/research/organization/research_promotion/"><span>├ 研究推進センター</span></a></li>-->
+                  <li><a href="/research/organization/insitute/"><span>├ 総合研究院</span></a></li>
+                  <li><a href=" /research/organization/biological_sciences/"><span>├ 生命医科学研究所</span></a></li>
+                  <li><a href="/research/organization/equipment_center/"><span>├ 研究機器センター</span></a></li>
+                  <li><a href="/research/social_collaboration/"><span>産学連携機構</span></a></li>
+                  <li><a href="/research/datascience_center/"><span>データサイエンスセンター</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="/today/list-tab-press.html?search_category=%E3%83%97%E3%83%AC%E3%82%B9%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9#tags"><span>プレスリリース</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/today/list-tab-press.html?search_category=%E3%83%97%E3%83%AC%E3%82%B9%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9#tags"><span>プレスリリース</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="https://www.tus.ac.jp/ura/startup/" target="_blank" rel="noopener"><span>スタートアップ支援</span></a>
+              </li>
+              <li>
+                <a href="/ura/activity/#id_1" target="_blank"><span>研究紹介カタログ<br />（Research Catalog）</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="header-main__mega-column">
+            <ul>
+              <li>
+                <a href="#"><span>研究者情報</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/ridai/doc/ji/RIJIA01.php" target="_blank"><span>研究者情報データベース(RIDAI)</span></a></li>
+                  <li><a href="https://tus.elsevierpure.com/ja/" target="_blank"><span>研究者プロファイリングツール<br>(Pure)</span></a></li>
+                  
+                  <li><a href="/ura/activity/" target="_blank"><span>研究活動・研究成果紹介</span></a></li>
+                  
+                  <li><a href="/research/highlights/"><span>TUS Research Highlights</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="/research/cooperation/outreach_liaisons/"><span>社会連携/産学連携</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/research/cooperation/outreach_liaisons/"><span>社会連携/産学連携について</span></a></li>
+                  <li><a href="/research/social_cooperation/"><span>共同研究・受託研究</span></a></li>
+                  <li><a href="/research/cooperation/course/"><span>社会連携講座</span></a></li>
+                  <li><a href="/academics/education/cooperation/recurrent/"><span>学び直し(リカレント教育)への取り組み</span></a></li>
+                  <li><a href="/research/cooperation/course/local/"><span>地域との連携</span></a></li>
+                  <li><a href="/research/cooperation/environmental_safety/"><span>サステナビリティ(環境安全センター)</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>研究活動</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/research/prevent"><span>研究活動に関する不正防止体制</span></a></li>
+                  <li><a href="/research/appropriateness/"><span>研究成果の適正な公表</span></a></li>
+                  <li><a href="/research/data_policy/"><span>研究データポリシー</span></a></li>
+                  <li><a href="/academics/education/international/"><span>国際化の取り組み</span></a></li>
+                  <li><a href="https://www.rs.kagu.tus.ac.jp/env_pres/animal/animal_index.html#acc_sample1-open" target="_blank"><span>動物実験に関する情報</span></a></li>
+                  <li><a href="/research/information_disclosure/"><span>人を対象とする生命科学・医学系研究に関する研究対象者の方へ(情報公開)</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="/research/support/"><span>本学の研究支援</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="header-main__item header-main__item--tuslife">
+        <a href="/tuslife/" class="header-main__link toggle-disable">
+          <span class="header-main__link-ja">学⽣⽣活/就職</span>
+          <span class="header-main__link-en">TUS LIFE</span>
+        </a>
+        <div class="header-main__mega">
+          <div class="header-main__mega-column">
+            <ul>
+              <li>
+                <a href="#"><span>キャンパスライフサポート</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/tuslife/campuslife/event/"><span>年間行事／授業日程</span></a></li>
+                  <li><a href="/tuslife/campuslife/academy/"><span>学園生活ガイド</span></a></li>
+                  <li><a href="https://www.tus-act.tus.ac.jp" target="_blank" rel="noopener noreferrer"><span>クラブ活動</span></a></li>
+                  <li><a href="/tuslife/campuslife/support/"><span>ライフサポート(住まい探し・アルバイト等)</span></a></li>
+                  <li><a href="/tuslife/campuslife/attending_school/"><span>学生生活(自動車・バイク・自転車通学)</span></a></li>
+                  <li><a href="/tuslife/campuslife/learning_support/"><span>学習支援</span></a></li>
+                  <li><a href="/tuslife/campuslife/health_center/"><span>健康管理(保健管理センター)</span></a></li>
+                  <li><a href="/tuslife/campuslife/counseling_room/"><span>学生相談室(よろず相談室)</span></a></li>
+                  <li><a href="/tuslife/campuslife/support_disabilities/"><span>障がいのある学生への支援</span></a></li>
+                  <li><a href="/tuslife/campuslife/support_mechanism/"><span>学生支援機構</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="/tuslife/career/data/"><span>就職・キャリア</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/tuslife/career/data/"><span>就職・キャリア関連データ</span></a></li>
+                  <li><a href="/tuslife/career/support/"><span>進路・就職支援</span></a></li>
+                  <li><a href="/tuslife/career/support/qualification"><span>資格取得</span></a></li>
+                  <li><a href="/tuslife/career/national_examanation/"><span>国家試験サポート(薬剤師、公務員、教員採用試験対策)</span></a></li>
+                  <li><a href="/tuslife/career/teaching_course/"><span>教職課程に関するよくある質問</span></a></li>
+                  <li><a href="/tuslife/career/question/"><span>Q＆A</span></a></li>
+                  <li><a href="/tuslife/career/employment_support/"><span>就職支援(卒後3年以内の方)</span></a></li>
+                  <li><a href="/recruiter/"><span>採用担当者の方へ</span></a></li>
+                  <li><a href="/tuslife/career/internship/"><span>理系大学院生のための研究インターンシップ</span></a></li>
+                  <li><a href="/tuslife/career/survey/"><span>進路先企業に対するアンケート結果</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="/academics/education/open_badges/"><span>TUSオープンバッジ</span></a>
+                <!-- <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/tuslife/career/data/"><span>就職・キャリア関連データ</span></a></li>
+                </ul> -->
+              </li>
+              <li>
+                <a href="#"><span>留学サポート(海外留学支援／外国人留学生向け情報)</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/tuslife/studyabroad/program/"><span>海外留学支援</span></a></li>
+                  <li><a href="/tuslife/studyabroad/program/#studyabroad"><i>├ </i><span>海外留学に関心がある方へ</span></a></li>
+                  <li><a href="/tuslife/studyabroad/guidance/#studyabroad"><i>├ </i><span>留学の手引き</span></a></li>
+                  <li><a href="/tuslife/studyabroad/scholarship/#studyabroad"><i>├ </i><span>留学に関する奨学金</span></a></li>
+                  <li><a href="/tuslife/studyabroad/number/#studyabroad"><i>├ </i><span>留学者数</span></a></li>
+                  <li><a href="/tuslife/foreignstudents/universitylife/"><span>外国人留学生支援</span></a></li>
+                  <li><a href="/tuslife/foreignstudents/universitylife/"><i>├ </i><span>大学生活支援について</span></a></li>
+                  <li><a href="/tuslife/foreignstudents/event/"><i>├ </i><span>各種行事について</span></a></li>
+                  <li><a href="/tuslife/foreignstudents/scholarship/"><i>├ </i><span>奨学金について</span></a></li>
+                  <li><a href="/tuslife/foreignstudents/employment/"><i>├ </i><span>就職支援関連</span></a></li>
+                  <li><a href="/tuslife/foreignstudents/residence_procedure/"><i>├ </i><span>在留手続きについて</span></a></li>
+                  <li><a href="/tuslife/foreignstudents/contact_notification/"><i>├ </i><span>連絡先等に関する届出</span></a></li>
+                  <li><a href="/tuslife/foreignstudents/insurance/"><i>├ </i><span>保険</span></a></li>
+                  <li><a href="/tuslife/foreignstudents/communication_service/"><i>├ </i><span>通信サービス</span></a></li>
+                  <li><a href="/tuslife/foreignstudents/everydaylife/"><i>├ </i><span>日常生活に関する各種情報</span></a></li>
+                  <li><a href="/tuslife/foreignstudents/japaneseclass/"><i>├ </i><span>日本語授業について</span></a></li>
+                  <li><a href="/tuslife/foreignstudents/export_control/"><i>├ </i><span>安全保障輸出管理について</span></a></li>
+                  <li><a href="/tuslife/foreignstudents/international_dormitory/"><i>├ </i><span>国際寮の紹介</span></a></li>
+                  <li><a href="/tuslife/foreignstudents/apartment/"><i>├ </i><span>下宿・アパートを探している方へ</span></a></li>
+                  <li><a href="/tuslife/foreignstudents/tuition/"><i>└ </i><span>学費の納入について</span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="header-main__mega-column">
+            <ul>
+              <li>
+                <a href="#"><span>各種手続／窓口</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/tuslife/campuslife/contact/"><span>窓口案内</span></a></li>
+                  <li><a href="/tuslife/campuslife/contact/certificate/"><span>証明書の申請(在学生)</span></a></li>
+                  <li><a href="/tuslife/campuslife/certificate/"><span>証明書の申請(卒業生)</span></a></li>
+                  <li><a href="/tuslife/campuslife/request/"><span>窓口案内(各種 願・届)</span></a></li>
+                  <li><a href="/tuslife/campuslife/tuition/"><span>学費の納入</span></a></li>
+                  <li><a href="/tuslife/campuslife/direct_debit/"><span>学費の納入（口座振替）</span></a></li>
+                  <li><a href="/tuslife/campuslife/scholarship/"><span>奨学金</span></a></li>
+                  <li><a href="/ks/course/"><span>教職課程</span></a></li>
+                  <li><a href="/tuslife/campuslife/background/"><span>学歴照会・調査会社様へ</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>奨学金</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/tuslife/campuslife/scholarship/"><span>奨学金・教育ローン</span></a></li>
+                  <!--<li><a href="/tuslife/campuslife/scholarship/information_session/"><span>奨学金 募集案内</span></a></li>-->
+                  <li><a href="/tuslife/campuslife/scholarship/links/"><span>関連情報リンク</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>キャンパス紹介</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/tuslife/campus/kagurazaka/"><span>神楽坂キャンパス</span></a></li>
+                  <li><a href="/tuslife/campus/noda/"><span>野田キャンパス</span></a></li>
+                  <li><a href="/tuslife/campus/katsushika/"><span>葛飾キャンパス</span></a></li>
+                  <li><a href="/tuslife/campus/oshamambe/"><span>北海道・長万部キャンパス</span></a></li>
+                  <li><a href="https://tuslibrary.admin.tus.ac.jp/" target="_blank" rel="noopener noreferrer"><span>図書館</span></a></li>
+                  <li><a href="/foodmap/" target="_blank" rel="noopener noreferrer"><span>学内飲食マップ</span></a></li>
+                  <li><a href="/tuslife/campuslife/cafeteria/"><span>食堂</span></a></li>
+                  <li><a href="/tuslife/campuslife/coop/"><span>東京理科大学消費生活協同組合(生協)</span></a></li>
+                  <li><a href="/tuslife/campus/facility/"><span>その他の設備・施設</span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="header-main__item header-main__item--admissions">
+        <a href="/admissions/" class="header-main__link toggle-disable">
+          <span class="header-main__link-ja">⼊試情報/奨学⾦</span>
+          <span class="header-main__link-en">ADMISSIONS &amp; AID</span>
+        </a>
+        <div class="header-main__mega">
+          <div class="header-main__mega-column">
+            <ul>
+              <li>
+                <a href="#"><span>入試制度</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/admissions/university/list/"><span>入試制度一覧</span></a></li>
+                  <li><a href="/admissions/university/list/general/"><span>一般選抜</span></a></li>
+                  <li><a href="/admissions/university/list/general/method_a4a3/"><span>一般選抜 A方式（4教科型／3教科型）入学試験</span></a></li>
+                  <li><a href="/admissions/university/list/general/method_a2/"><span>一般選抜 A方式（2教科+英語資格検定）入学試験</span></a></li>
+                  <li><a href="/admissions/university/list/general/method_a_r2/"><span>一般選抜 A方式（理学部第二部）入学試験</span></a></li>
+                  <li><a href="/admissions/university/list/general/method_b/"><span>一般選抜 B方式入学試験</span></a></li>
+                  <li><a href="/admissions/university/list/general/method_s/"><span>一般選抜 S方式入学試験</span></a></li>
+                  <li><a href="/admissions/university/list/recommendation/"><span>学校推薦型選抜(指定校制)</span></a></li>
+                  <li><a href="/admissions/university/list/comprehensive/en/"><span>総合型選抜（英語資格検定＋特定教科評価）/総合型選抜（理学部第二部）</span></a></li>
+                  <li><a href="/admissions/university/list/comprehensive/"><span>総合型選抜(女子)</span></a></li>
+                  <li><a href="/admissions/university/list/society/"><span>社会人特別選抜(1年次入学)</span></a></li>
+                  <li><a href="/admissions/university/list/returnee/"><span>帰国生入学者選抜</span></a></li>
+                  <li><a href="/admissions/university/list/foreignstudents/"><span>外国人留学生試験</span></a></li>
+                  <li><a href="/admissions/university/list/coe/"><span>在留資格認証明書交付申請について</span></a></li>
+                  <li><a href="/admissions/university/list/international_baccalaureate/"><span>国際バカロレア入学者選抜<br>(1年次入学)</span></a></li>
+                  <li><a href="/about/faculty/policy/#admission"><span>入学者受入れの方針<br>(アドミッション・ポリシー)</span></a></li>
+                  <li><a href="/admissions/university/list/"><span>入試制度説明動画</span></a></li>
+                  <li><a href="/admissions/university/list/" class="plink plink_type_noicon" target="_blank"><span>募集人数</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>入学者募集要項</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/admissions/university/guideline/"><span>入学者募集要項</span></a></li>
+                  <li><a href="/admissions/university/guideline/general/"><span>学部入試</span></a></li>
+                  <li><a href="/admissions/university/guideline/graduateschool/"><span>大学院入試</span></a></li>
+                  <li><a href="/admissions/university/guideline/transfer/"><span>編入学・専攻科入試</span></a></li>
+                  <li><a href="/admissions/university/guideline/recurrent/"><span>学び直し</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>出願案内</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/admissions/university/entry/"><span>出願の流れ</span></a></li>
+                  <li><a href="https://www.ucaro.net/"><span>UCARO</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>進学イベント</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/admissions/university/visittus/"><span>進学イベント一覧</span></a></li>
+                  <li><a href="/admissions/university/visittus/opencampus/"><span>オープンキャンパス</span></a></li>
+                  <li><a href="https://tushpts2.tus.ac.jp/admissions/lp/informationsession/"><span>進学相談会・説明会</span></a></li>
+                  <li><a href="/admissions/university/visittus/tour/"><span>⼤学⾒学</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="/admissions/university/data/"><span>過去の入試データ</span></a>
+              </li>
+              <li>
+                <a href="https://faq.admissions.tus.ac.jp/hc/ja/"><span>よくあるご質問(Q&amp;A)</span></a>
+              </li>
+
+            </ul>
+          </div>
+          <div class="header-main__mega-column">
+            <ul>
+              <li>
+                <a href="#"><span>大学院入試</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/admissions/graduateschool/"><span>大学院入試一覧</span></a></li>
+                  <li><a href="/admissions/graduateschool/list/master/"><span>修士課程 一般入試</span></a></li>
+                  <li><a href="/admissions/graduateschool/list/master/society/"><span>修士課程 推薦入学／社会人特別選抜</span></a></li>
+                  <li><a href="/admissions/graduateschool/list/master/foreignstudents/"><span>修士課程 外国人留学生</span></a></li>
+                  <li><a href="/admissions/graduateschool/list/doctor/"><span>博士課程・博士後期課程 一般選抜</span></a></li>
+                  <li><a href="/admissions/graduateschool/list/doctor/society/"><span>博士課程・博士後期課程 社会人特別選抜</span></a></li>
+                  <li><a href="/admissions/graduateschool/list/doctor/foreignstudents/"><span>博士課程・博士後期課程 外国人留学生</span></a></li>
+                  <li><a href="/admissions/graduateschool/list/profession/"><span>専門職学位課程 一般選抜／社会人特別選抜</span></a></li>
+                  <li><a href="/admissions/graduateschool/list/application/"><span>出願窓口</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>編入学・専攻科入試</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/admissions/graduateschool/transfer/"><span>編入学・専攻科入試一覧</span></a></li>
+                  <li><a href="/admissions/graduateschool/transfer/general/"><span>編入学試験 一般編入学</span></a></li>
+                  <li><a href="/admissions/graduateschool/transfer/recommendation/"><span>編入学試験 学校推薦型選抜 (編入学)</span></a></li>
+                  <li><a href="/admissions/graduateschool/transfer/society/"><span>編入学試験 社会人特別選抜編入学</span></a></li>
+                  <li><a href="/admissions/graduateschool/transfer/society/evening/"><span>編入学試験 社会人特別選抜<br>(夜間主社会人コース)</span></a></li>
+                  <li><a href="/admissions/graduateschool/advancedcourse/"><span>専攻科入試 一般選抜</span></a></li>
+                  <li><a href="/admissions/graduateschool/advancedcourse/society/"><span>専攻科入試 社会人特別選抜</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>学び直し</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/admissions/recurrent/"><span>学び直し一覧</span></a></li>
+                  <li><a href="/admissions/graduateschool/recruitment_students/"><span>科目等履修生</span></a></li>
+                  <li><a href="/admissions/graduateschool/reenrollment/"><span>再入学</span></a></li>
+                  <li><a href="/admissions/graduateschool/research_students/"><span>研究生</span></a></li>
+                  <li><a href="/manabi/" target="_blank"><span>オープンカレッジ</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#"><span>学費・奨学金</span></a>
+                <button data-toggle-next></button>
+                <ul>
+                  <li><a href="/admissions/university/fees/"><span>学費・奨学金一覧</span></a></li>
+                  <li><a href="/admissions/university/guideline/expense/" class="plink plink_type_noicon" target="_blank"><span>初年度納付金(学費)</span></a></li>
+                  <li><a href="/tuslife/campuslife/scholarship/"><span>奨学金・教育ローン</span></a></li>
+                  <li><a href="/tuslife/campuslife/scholarship/links/"><span>関連情報リンク</span></a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="/documentrequest/"><span>資料請求</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="header-main__menu">
+      <div class="header-main__menu-btn">
+        <i></i>
+        <i></i>
+        <i></i>
+        <span>MENU</span>
+      </div>
+      <div class="header-menu-mega">
+        <div class="header-menu-mega__top">
+          <div class="header-menu-mega__search">
+            <form method="get" action="/search/">
+              <input type="text" name="q" placeholder="検索">
+              <button>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 11"><line stroke="#c6c6c6" stroke-width="2.2" stroke-linecap="round" stroke-miterlimit="10" x1="7.5" y1="7.5" x2="9.9" y2="9.9"/><circle fill="none" stroke="#c6c6c6" stroke-width="1.7" stroke-miterlimit="10" cx="4.6" cy="4.6" r="3.7"/></svg>
+              </button>
+            </form>
+          </div>
+          <ul class="header-menu-mega__grid">
+            <li><a href="/admissions/"><span>受験生・保護者</span></a></li>
+            <li><a href="/students/"><span>在学生・保護者</span></a></li>
+            <li><a href="/alumni/"><span>卒業生</span></a></li>
+            <li><a href="/faculty/"><span>教職員</span></a></li>
+            <li><a href="/company_researcher/"><span>企業・研究者</span></a></li>
+            <li><a href="/local/"><span>地域</span></a></li>
+            <li><a href="/media/"><span>メディア</span></a></li>
+          </ul>
+          <ul class="header-menu-mega__list">
+            <li>
+              <a href="/access/kagurazaka_campus/" class="header-menu-mega__access">
+                <i><svg xmlns="http://www.w3.org/2000/svg" width="10.871" height="15.448" viewBox="0 0 10.871 15.448"><g transform="translate(0.6 0.6)"><path d="M28.257,37.28c-.158.2-.3.385-.457.559" transform="translate(-21.604 -25.088)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/><path d="M33.346,28a14.1,14.1,0,0,1-.9,1.494" transform="translate(-24.62 -19.395)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/><path d="M14.836,19.21S10,14.09,10,10.352A5,5,0,0,1,14.836,5.21a5,5,0,0,1,4.836,5.142,7.79,7.79,0,0,1-.881,3.228" transform="translate(-10 -5.21)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/><path d="M21.2,17.39a1.2,1.2,0,1,1,1.2-1.2" transform="translate(-16.359 -11.226)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/></g></svg></i>
+                <span>アクセス</span>
+              </a>
+            </li>
+            <li>
+              <a href="/donation/" class="header-menu-mega__donation">
+                <i><svg xmlns="http://www.w3.org/2000/svg" width="15.307" height="14.903" viewBox="0 0 15.307 14.903"><g transform="translate(0.25 -1.442)"><path d="M7.374,28.967c-.031,0-.253-.028-.333-.028h-.96a2.444,2.444,0,0,1-.381-.03l-1.019-.417-.01-.007a5.564,5.564,0,0,0-2.949-.77v-.745H0v7.88H1.722v-.738h3.2A10.07,10.07,0,0,0,6.425,34l3.189-.485a1.665,1.665,0,0,0,.339-.039,1.491,1.491,0,0,0,.812-.406l3.729-2.9.006,0a.72.72,0,0,0,.128-.972c-.431-.6-.868-.61-1.963-.034l-2.121,1.3a4.25,4.25,0,0,1-1.586.228.817.817,0,0,0-.149-.822,2.041,2.041,0,0,0-.767-.679M1.23,34.359H.492v-6.9H1.23v6.9ZM14.189,29.78l-3.735,2.909-.019.016a1.029,1.029,0,0,1-.574.287,1.225,1.225,0,0,1-.265.03l-3.244.49a9.543,9.543,0,0,1-1.431.108h-3.2V28.209a5.137,5.137,0,0,1,2.653.67,2.761,2.761,0,0,0,1.143.5l0,0,.047.008h.007c.081.014.162.025.245.032h.008c.084.007.168.011.253.011h.96a1.727,1.727,0,0,1,.4.047l.016,0a1.584,1.584,0,0,1,.942.649c.1.154.144.282.11.343-.066.114-.371.184-.68.2l-.273,0H5.167c-.77,0-1.23.368-1.23.984a.246.246,0,0,0,.492,0c0-.122,0-.492.738-.492H7.552c.056,0,.163.008.3,0l.131,0a6.864,6.864,0,0,0,2.807-.288l2.12-1.3c1.015-.533,1.117-.39,1.32-.106A.227.227,0,0,1,14.189,29.78Z" transform="translate(0 -18.756)" fill="#fff" stroke="#fff" stroke-width="0.5"/><g transform="translate(2.388 2.095)"><path d="M15.411,9.618l2.632-2.556h0l.937-.937A2.384,2.384,0,0,0,15.61,2.754l-.937.935-.937-.935a2.384,2.384,0,0,0-3.371,3.371l4.308,4.308" transform="translate(-9.705 -2.095)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></g></g></svg></i>
+                <span>寄付</span>
+              </a>
+            </li>
+            <li>
+              <button class="header-menu-mega__language" data-toggle-next>
+                <i><svg xmlns="http://www.w3.org/2000/svg" width="15.2" height="15.2" viewBox="0 0 15.2 15.2"><g transform="translate(-1.4 -1.4)"><circle cx="7" cy="7" r="7" transform="translate(2 2)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/><line x2="14" transform="translate(2 9)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/><path d="M10.8,2a10.71,10.71,0,0,1,2.8,7,10.71,10.71,0,0,1-2.8,7A10.71,10.71,0,0,1,8,9,10.71,10.71,0,0,1,10.8,2Z" transform="translate(-1.8 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"/></g></svg></i>
+                <span>Language</span>
+              </button>
+              <ul class="header-menu-mega__language-toggle">
+                <li><a href="/"><span>Japanese</span></a></li>
+                <li><a href="/en/"><span>English</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div><!-- /.header-menu-mega -->
+    </div>
+  </div><!-- /.header-main -->
+
+</div><!-- /.header-pc -->
+<!-- // PC Header -->
+      <!-- SP Header -->
+<div class="header-sp">
+
+  <div class="header-search">
+    <button class="header-search__btn" data-toggle-sp-btn>
+      <svg height="16.052" viewBox="0 0 16.052 16.052" width="16.052" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"><path d="m15.79 20.139a6.292 6.292 0 0 1 -1.614.212 6.175 6.175 0 1 1 4.367-1.809" transform="translate(-7.151 -7.15)"/><path d="m14.849 14.85-3.339-3.339"/></g></svg>
+      <span>検索</span>
+    </button>
+    <div class="header-search__mega" data-toggle-sp-mega>
+      <form method="get" action="/search/">
+        <input type="text" name="q" placeholder="検索">
+        <button>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 11"><line stroke="#c6c6c6" stroke-width="2.2" stroke-linecap="round" stroke-miterlimit="10" x1="7.5" y1="7.5" x2="9.9" y2="9.9"/><circle fill="none" stroke="#c6c6c6" stroke-width="1.7" stroke-miterlimit="10" cx="4.6" cy="4.6" r="3.7"/></svg>
+        </button>
+      </form>
+    </div>
+  </div><!-- /.header-search -->
+
+  <div class="header-visitor">
+    <button class="header-visitor__btn" data-toggle-sp-btn>
+      <svg viewBox="0 0 198 198" xmlns="http://www.w3.org/2000/svg"><g fill="#fff"><circle cx="99" cy="54" r="54"/><path d="m0 198c0-49.75 26.28-90 81-90h36c54.72 0 81 40.25 81 90"/></g></svg>
+      <span>訪問者別<strong>MENU</strong><strong>CLOSE</strong></span>
+    </button>
+    <div class="header-visitor__mega" data-toggle-sp-mega>
+      <ul class="header-visitor__list">
+        <li><a href="/admissions/">受験生・保護者</a></li>
+        <li><a href="/students/">在学生・保護者</a></li>
+        <li><a href="/alumni/">卒業生</a></li>
+        <li><a href="/faculty/">教職員</a></li>
+        <li><a href="/company_researcher/">企業・研究者</a></li>
+        <li><a href="/local/">地域</a></li>
+        <li><a href="/media/">メディア</a></li>
+      </ul>
+    </div>
+  </div><!-- /.header-visitor -->
+
+  <div class="header-menu">
+    <button class="header-menu__btn" data-toggle-sp-btn>
+      <i></i>
+      <i></i>
+      <i></i>
+      <span>MENU</span>
+      <span>CLOSE</span>
+    </button>
+    <div class="header-menu__mega" data-toggle-sp-mega>
+      <ul class="header-menu__list">
+        <li>
+          <a href="/today/"><strong>ニュース &amp; イベント</strong><span>NEWS &amp; EVENTS</span></a>
+        </li>
+        <li>
+          <button type="button" data-toggle-next><strong>東京理科大学について</strong><span>ABOUT TUS</span></button>
+          <div class="header-menu__submega">
+            <ul>
+              <li><a href="/about/">東京理科大学について</a></li>
+              <li>
+                <button type="button" data-toggle-next>学校法人東京理科大学</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/about/corporation/chairman_greeting/">理事長挨拶</a></li>
+                    <li><a href="/about/corporation/chairman_portrait/">歴代理事長肖像</a></li>
+                    <li><a href="/about/corporation/organization_chart/">組織(組織図、役員、評議員)</a></li>
+                    <li><a href="/about/corporation/rule/">行動憲章・行動規範</a></li>
+                    <li><a href="/donation/">ご支援をお考えの方へ　</a></li>
+                    <li><a href="/about/corporation/endowment/">学校法人東京理科大学寄附行為</a></li>
+                    <li><a href="/about/university/business/">事業展開</a></li>
+                    <li><a href="/about/features/brandstory/">TUS VISION 150 Plus</a></li>
+                    <li><a href="/about/features/plan2026/">中期計画2026</a></li>
+                    <li><a href="/about/tokyo_academy_of_physics_award/">東京理科大学物理学園賞</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>東京理科大学</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/about/university/president_greeting/">学長挨拶</a></li>
+                    <li><a href="/about/university/president_portrait/">歴代学長肖像</a></li>
+                    <li><a href="/about/university/organization_chart/">組織</a></li>
+                    <li><a href="/about/university/vision/">東京理科大学の建学の精神に基づく理念・目的・目標・方針</a></li>
+                    <li><a href="/about/university/power/">東京理科大学の実力主義</a></li>
+                    <li><a href="/about/university/history/">沿革</a></li>
+                    <li><a href="/about/awards-and-honors/">受賞・受章等</a></li>
+                    <li><a href="/about/digest/">データで見る TUS</a></li>
+                    <li><a href="/about/university/symbol/">大学のシンボル</a></li>
+                    <li><a href="/about/university/editorial_policy/">東京理科大学の求める教員像及び教員組織の編制方針</a></li>
+                    <li><a href="/academics/education_advancement/">教育支援機構</a></li>
+                    <li><a href="/research/organization/">研究推進機構</a></li>
+                    <li><a href="/research/social_collaboration/"><span>産学連携機構</span></a></li>
+                    <li><a href="/tuslife/campuslife/support_mechanism/">学生支援機構</a></li>
+                    <li><a href="/academics/education/international/">国際化推進機構</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>特色ある取り組み</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/education/data_science/">データサイエンス教育</a></li>
+                    <li><a href="/academics/education/sas_academic_specialization/">SAS共同認定資格プログラム</a></li>
+                    <li><a href="/academics/education/credit/">履修証明プログラム</a></li>
+                    <li><a href="/academics/education/open_badges/">TUSオープンバッジ</a></li>
+                    <li><a href="/uc/" target="_blank" rel="noopener noreferrer">宇宙教育プログラム</a></li>
+                    <li><a href="/academics/education/cooperation/recurrent/">学び直し(リカレント教育)への取り組み</a></li>
+                    <li><a href="https://www.tus.ac.jp/mse/20260520-01/" target="_blank" rel="noopener noreferrer">公開講座「理科大サイエンス講座」</a></li>
+                    <li><a href="/madonna/" target="_blank" rel="noopener noreferrer">「科学のマドンナ」プロジェクト</a></li>
+                    <li><a href="/tcw/" target="_blank">ダイバーシティ推進会議</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>広報資料</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/about/information/publication/magazine/">広報誌・出版物</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>情報公表・データ</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/about/data/announcement/corporation/">情報公表</a></li>
+                    <li><a href="/about/data/number_students/gender_ratio/">学生数・男女比</a></li>
+                    <li><a href="/about/data/data/">東京理科大学データ集</a></li>
+                    <li><a href="/about/data/guarantee/overview/">内部質保証</a></li>
+                    <li><a href="/about/data/project/budget/">予算情報</a></li>
+                    <li><a href="/about/data/project/settlement/">決算情報</a></li>
+                    <li><a href="/about/data/project/budget/">収支報告・事業計画</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>理窓会・こうよう会・維持会</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/about/association/alumni/">理窓会(校友会)</a></li>
+                    <li><a href="/about/association/parent/">こうよう会(父母会)　</a></li>
+                    <li><a href="/about/association/alumni/maintenance/">維持会</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>社会活動</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/about/social_activities/whistleblowing/">公益通報</a></li>
+                    <li><a href="/about/social_activities/harassment_prevention/">ハラスメント防止のために</a></li>
+                    <li><a href="/about/social_activities/customer_harassment_policy/">東京理科大学カスタマー・ハラスメント基本方針</a></li>
+                    <li><a href="/about/social_activities/general_business/">一般事業主行動計画</a></li>
+                    <li><a href="/research/cooperation/environmental_safety/">サステナビリティ(環境安全センター)</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>採用情報</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/recruitment/teacher-list/">教員・研究員公募</a></li>
+                    <li><a href="/recruitment/staff-list/">職員採用</a></li>
+                    <li><a href="/recruitment/ura/"><span>産学連携機構URA職員採用</span></a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>キャンパス・付属施設紹介</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/tuslife/campus/kagurazaka/">神楽坂キャンパス</a></li>
+                    <li><a href="/tuslife/campus/noda/">野田キャンパス</a></li>
+                    <li><a href="/tuslife/campus/katsushika/">葛飾キャンパス</a></li>
+                    <li><a href="/tuslife/campus/oshamambe/">北海道・長万部キャンパス</a></li>
+                    <li><a href="https://tuslibrary.admin.tus.ac.jp/" target="_blank" rel="noopener noreferrer">図書館</a></li>
+                    <li><a href="/tuslife/campuslife/cafeteria/">食堂</a></li>
+                    <li><a href="/about/features/modernscience_museum/">近代科学資料館</a></li>
+                    <li><a href="/about/features/math_experiencehall/">数学体験館</a></li>
+                    <li><a href="/about/features/science_experiencehall/">なるほど科学体験館</a></li>
+                    <li><a href="/about/features/science_dojo/">理科大サイエンス道場</a></li>
+                    <li><a href="/tuslife/campus/facility/">その他の設備・施設</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="https://tus-online.com/" target="_blank" rel="noopener noreferrer">東京理科大学公式グッズ販売</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <button type="button" data-toggle-next><strong>教育/学部・⼤学院</strong><span>ACADEMICS</span></button>
+          <div class="header-menu__submega">
+            <ul>
+              <li><a href="/academics/">教育/学部・⼤学院</a></li>
+              <li><a href="/academics/#sec1">学部</a></li>
+              <li>
+                <button type="button" data-toggle-next>├ 理学部第一部</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/faculty/sciencedivision1/">理学部第一部</a></li>
+                    <li><a href="/academics/faculty/sciencedivision1/mathmatics/">数学科</a></li>
+                    <li><a href="/academics/faculty/sciencedivision1/physics/">物理学科</a></li>
+                    <li><a href="/academics/faculty/sciencedivision1/chemistry/">化学科</a></li>
+                    <li><a href="/academics/faculty/sciencedivision1/applied_mathmatics/">応用数学科</a></li>
+                    <li><a href="/academics/faculty/sciencedivision1/applied_physics/">応用物理学科(改組)</a></li>
+                    <li><a href="/academics/faculty/sciencedivision1/applied_chemistry/">応用化学科</a></li>
+                    <li><a href="/academics/faculty/sciencedivision1/dsc/">科学コミュニケーション学科</a></li>
+                    <li><a href="/academics/liberal/#sec1">一般教養科目</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>├ 工学部</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/faculty/engineering/">工学部</a></li>
+                    <li><a href="/academics/faculty/engineering/architecture/">建築学科</a></li>
+                    <li><a href="/academics/faculty/engineering/industrial_chemistry/">工業化学科</a></li>
+                    <li><a href="/academics/faculty/engineering/electrical_engineering/">電気工学科</a></li>
+                    <li><a href="/academics/faculty/engineering/information/">情報工学科</a></li>
+                    <li><a href="/academics/faculty/engineering/mechanical_enginieering/">機械工学科</a></li>
+                    <li><a href="/academics/liberal/#sec1">一般教養科目</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>├ 薬学部</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/faculty/pharmaceuticalsciences/">薬学部</a></li>
+                    <li><a href="/academics/faculty/pharmaceuticalsciences/pharmacy/">薬学科</a></li>
+                    <li><a href="/academics/faculty/pharmaceuticalsciences/medical_lifesciences/">生命創薬科学科</a></li>
+                    <li><a href="/academics/liberal/#sec1">一般教養科目</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>├ 創域理工学部</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/faculty/sciencetechnology/">創域理工学部</a></li>
+                    <li><a href="/academics/faculty/sciencetechnology/mathematics/">数理科学科</a></li>
+                    <li><a href="/academics/faculty/sciencetechnology/physics/">先端物理学科</a></li>
+                    <li><a href="/academics/faculty/sciencetechnology/information_sciences/">情報計算科学科</a></li>
+                    <li><a href="/academics/faculty/sciencetechnology/applied_biologicalscience/">生命生物科学科</a></li>
+                    <li><a href="/academics/faculty/sciencetechnology/architecture/">建築学科</a></li>
+                    <li><a href="/academics/faculty/sciencetechnology/pure_applied_chemistry/">先端化学科</a></li>
+                    <li><a href="/academics/faculty/sciencetechnology/electrical_engineering/">電気電子情報工学科</a></li>
+                    <li><a href="/academics/faculty/sciencetechnology/industrial_administration/">経営システム工学科</a></li>
+                    <li><a href="/academics/faculty/sciencetechnology/mechanical_engineering/">機械航空宇宙工学科</a></li>
+                    <li><a href="/academics/faculty/sciencetechnology/civil_engineering/">社会基盤工学科</a></li>
+                    <li><a href="/academics/liberal/#sec1">一般教養科目</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>├ 創域情報学部</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/faculty/informationsciencetechnology/informationsciencetechnology/">情報理工学科</a></li>
+                    <li><a href="/academics/liberal/#sec1">一般教養科目</a></li>
+                  </ul>                    
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>├ 先進工学部</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/faculty/industrialscience_technology/">先進工学部</a></li>
+                    <li><a href="/academics/faculty/industrialscience_technology/applied_electronics/">電子システム工学科</a></li>
+                    <li><a href="/academics/faculty/industrialscience_technology/materials/">マテリアル創成工学科</a></li>
+                    <li><a href="/academics/faculty/industrialscience_technology/biological/">生命システム工学科</a></li>
+                    <li><a href="/academics/faculty/industrialscience_technology/applied_physics/">物理工学科</a></li>
+                    <li><a href="/academics/faculty/industrialscience_technology/engineering_design/">機能デザイン工学科</a></li>
+                    <li><a href="/academics/liberal/#sec1">一般教養科目</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>├ 経営学部</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/faculty/management/">経営学部</a></li>
+                    <li><a href="/academics/faculty/management/management/">経営学科</a></li>
+                    <li><a href="/academics/faculty/management/business_economics/">ビジネスエコノミクス学科</a></li>
+                    <li><a href="/academics/faculty/management/international_degitalanddesign_management/">国際デザイン経営学科</a></li>
+                    <li><a href="/academics/liberal/#sec1">一般教養科目</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>├ 理学部第二部</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/faculty/sciencedivision2/">理学部第二部</a></li>
+                    <li><a href="/academics/faculty/sciencedivision2/mathmatics/">数学科</a></li>
+                    <li><a href="/academics/faculty/sciencedivision2/physics/">物理学科</a></li>
+                    <li><a href="/academics/faculty/sciencedivision2/chemistry/">化学科</a></li>
+                    <li><a href="/academics/liberal/#sec1">一般教養科目</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>├ 理学専攻科</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/faculty/math_sen/">理学専攻科</a></li>
+                    <li><a href="/academics/liberal/#sec1">一般教養科目</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="/academics/liberal/">教養教育研究院</a></li>
+              <li><a href="/academics/#sec2">大学院</a></li>
+              <li>
+                <button type="button" data-toggle-next>├ 理学研究科</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/graduate_school/science/">理学研究科</a></li>
+                    <li><a href="/academics/graduate_school/science/math/">数学専攻</a></li>
+                    <li><a href="/academics/graduate_school/science/physics/">物理学専攻</a></li>
+                    <li><a href="/academics/graduate_school/science/chemistry/">化学専攻</a></li>
+                    <li><a href="/academics/graduate_school/science/applied_mathmatics/">応用数学専攻</a></li>
+                    <!-- <li><a href="/academics/graduate_school/science/applied_physics/">応用物理学専攻(改組)</a></li> -->
+                    <li><a href="/academics/graduate_school/science/science_education/">科学教育専攻</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>├ 工学研究科</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/graduate_school/engineering/">工学研究科</a></li>
+                    <li><a href="/academics/graduate_school/engineering/architecture/">建築学専攻</a></li>
+                    <li><a href="/academics/graduate_school/engineering/industrial_chemistry/">工業化学専攻</a></li>
+                    <li><a href="/academics/graduate_school/engineering/electrical_engineering/">電気工学専攻</a></li>
+                    <li><a href="/academics/graduate_school/engineering/information_computertecnology/">情報工学専攻</a></li>
+                    <li><a href="/academics/graduate_school/engineering/mechanical_engineering/">機械工学専攻</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>├ 薬学研究科</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/graduate_school/pharmaceutical_sciences/">薬学研究科</a></li>
+                    <li><a href="/academics/graduate_school/pharmaceutical_sciences/pharmacoscience/">薬科学専攻</a></li>
+                    <li><a href="/academics/graduate_school/pharmaceutical_sciences/pharmaceutical_sciences/">薬学専攻</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>├ 創域理工学研究科</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/graduate_school/sciencetechnology/">創域理工学研究科</a></li>
+                    <li><a href="/academics/graduate_school/sciencetechnology/mathematics/">数理科学専攻</a></li>
+                    <li><a href="/academics/graduate_school/sciencetechnology/physics/">先端物理学専攻</a></li>
+                    <li><a href="/academics/graduate_school/sciencetechnology/information_sciences/">情報計算科学専攻</a></li>
+                    <li><a href="/academics/graduate_school/sciencetechnology/applied_biologicalscience/">生命生物科学専攻</a></li>
+                    <li><a href="/academics/graduate_school/sciencetechnology/architecture/">建築学専攻</a></li>
+                    <li><a href="/academics/graduate_school/sciencetechnology/pure_applied_chemistry/">先端化学専攻</a></li>
+                    <li><a href="/academics/graduate_school/sciencetechnology/electrical_engineering/">電気電子情報工学専攻</a></li>
+                    <li><a href="/academics/graduate_school/sciencetechnology/management_science/">経営システム工学専攻</a></li>
+                    <li><a href="/academics/graduate_school/sciencetechnology/mechanical_engineering/">機械航空宇宙工学専攻</a></li>
+                    <li><a href="/academics/graduate_school/sciencetechnology/civil_engineering/">社会基盤工学専攻</a></li>
+                    <li><a href="/academics/graduate_school/sciencetechnology/global_fire/">国際火災科学専攻</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>├ 先進工学研究科</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/graduate_school/industrialscience_technology/">先進工学研究科</a></li>
+                    <li><a href="/academics/graduate_school/industrialscience_technology/applied_electronics/">電子システム工学専攻</a></li>
+                    <li><a href="/academics/graduate_school/industrialscience_technology/materialsscience_technology/">マテリアル創成工学専攻</a></li>
+                    <li><a href="/academics/graduate_school/industrialscience_technology/biologicalscience_technology/">生命システム工学専攻</a></li>
+                    <li><a href="/academics/graduate_school/industrialscience_technology/applied_physics/">物理工学専攻</a></li>
+                    <li><a href="/academics/graduate_school/industrialscience_technology/engineering_design/">機能デザイン工学専攻</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>├ 経営学研究科</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/graduate_school/management/">経営学研究科</a></li>
+                    <li><a href="/academics/graduate_school/management/buisiness/">経営学専攻</a></li>
+                    <li><a href="/academics/graduate_school/management/management_of_technology/">技術経営専攻(MOT)</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>├ 生命科学研究科</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/graduate_school/biologicalsciences/">生命科学研究科</a></li>
+                    <li><a href="/academics/graduate_school/biologicalsciences/biologicalsciences/">生命科学専攻</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>学部・専攻科</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/#sec1">学部・学科一覧</a></li>
+                    <li><a href="/academics/faculty/policy/">学部の3つの方針(入学者受入れ／教育課程編成・実施／卒業認定・学位授与)</a></li>
+                    <li><a href="/academics/faculty/subject_system/">科目系統図(学部)</a></li>
+                    <li><a href="/academics/faculty/course_model/">履修年次に応じた履修モデル(学部)</a></li>
+                    <li><a href="/academics/faculty/numbering/">科目ナンバリング(学部)</a></li>
+                    <li><a href="/academics/faculty/power_pg/">新実力主義教育プログラム</a></li>
+                    <li><a href="/academics/faculty/firstyear_experience/">初年次教育</a></li>
+                    <li><a href="/academics/faculty/transfer/">転学部・転学科</a></li>
+                    <li><a href="/academics/faculty/stop/">募集停止学部・学科</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>研究科・専攻</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/#sec2">研究科・専攻一覧</a></li>
+                    <li><a href="/academics/graduate_school/policy/">大学院の3つの方針(入学者受入れ／教育課程編成・実施／卒業認定・学位授与)</a></li>
+                    <li><a href="/academics/graduate_school/cooperation/">連携大学院方式</a></li>
+                    <li><a href="/academics/graduate_school/subject_system/">科目系統図(大学院)</a></li>
+                    <li><a href="/academics/graduate_school/course_model/">履修年次に応じた履修モデル(大学院)</a></li>
+                    <li><a href="/academics/graduate_school/numbering/">科目ナンバリング(大学院)</a></li>
+                    <li><a href="/academics/graduate_school/research_guidance/">本学大学院における研究指導について</a></li>
+                    <li><a href="/academics/graduate_school/stop/">募集停止研究科・専攻</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>専門職大学院</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/#sec2">研究科・専攻一覧</a></li>
+                    <li><a href="https://most.tus.ac.jp/" target="_blank" rel="noopener noreferrer">技術経営専攻(MOT) [専門職学位課程]</a></li>
+                    <li><a href="/about/professional_graduateschool/policy/">専門職大学院の3つの方針(入学者受入れ／教育課程編成・実施／卒業認定・学位授与)</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>教養教育</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/#sec2">研究科・専攻一覧</a></li>
+                    <li><a href="/academics/liberal/">教養教育研究院</a></li>
+                    <li><a href="/academics/liberal/#sec1">一般教養科目</a></li>
+                    <li><a href="/academics/liberal/#sec2">所属教員一覧</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>学位・シラバス</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/degree/">学位について</a></li>
+                    <li><a href="/academics/degree/data/">学位授与数</a></li>
+                    <li><a href="/academics/degree/list/">学科･専攻ごとの取得可能な学位および専攻名称</a></li>
+                    <li><a href="/academics/degree/syllabus/">シラバス</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>教育支援</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/education_advancement/">教育支援機構</a></li>
+                    <li><a href="/fd/" target="_blank">├ 教育DX推進センター</a></li>
+                    <li><a href="/ks/" target="_blank" rel="noopener noreferrer">├ 教職教育センター</a></li>
+                    <li><a href="/mse/" target="_blank" rel="noopener noreferrer">├ 理数教育研究センター</a></li>
+                    <li><a href="/ks/course/" target="_blank" rel="noopener noreferrer">教職課程</a></li>
+                    <li><a href="https://tushpts2.tus.ac.jp/mse/20250314/" target="_blank" rel="noopener noreferrer">坊っちゃん講座</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>国際化の取り組み</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/education/international/">国際化推進機構</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>特色ある教育</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/education/data_science/">データサイエンス教育</a></li>
+                    <li><a href="/academics/education/sas_academic_specialization/">SAS共同認定資格プログラム<br>-SAS Academic Specialization-</a></li>
+                    <li><a href="/uc/" target="_blank" rel="noopener noreferrer">宇宙教育プログラム</a></li>
+                    <li><a href="/academics/education/cooperation/recurrent/">学び直し(リカレント教育)への取り組み<br>［社会人教育センター］</a></li>
+                    <li><a href="/academics/education/credit/">履修証明プログラム</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>博士人材育成</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/academics/education/fellowship/">マテリアル人材フェローシップ制度</a></li>
+                    <li><a href="/academics/development/innovative/">東京理科大学イノベーティブ博士人材育成のための共創力強化プロジェクト</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <button type="button" data-toggle-next><strong>研究/産学連携/スタートアップ⽀援</strong><span>RESEARCH</span></button>
+          <div class="header-menu__submega">
+            <ul>
+              <li><a href="/research/">研究/産学連携/スタートアップ⽀援</a></li>
+              <li>
+                <button type="button" data-toggle-next>研究組織</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/research/scitech/">TUS SciTech共創推進本部</a></li>
+                    <li><a href="/research/scitech/research_center/">├ TUS SciTech共創研究センター</a></li>
+                    <li><a href="/research/scitech/strategy/">├ TUS SciTech共創戦略センター</a></li>
+                    <li><a href="/research/organization/">研究推進機構</a></li>
+                    <!--<li><a href="/research/organization/research_promotion/">├ 研究推進センター</a></li>-->
+                    <li><a href="/research/organization/insitute/">├ 総合研究院</a></li>
+                    <li><a href="/research/organization/biological_sciences/">├ 生命医科学研究所</a></li>
+                    <li><a href="/research/organization/equipment_center/">├ 研究機器センター</a></li>
+                    <li><a href="/research/social_collaboration/">産学連携機構</a></li>
+                    <li><a href="/research/datascience_center/">データサイエンスセンター</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>研究者情報</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/ridai/doc/ji/RIJIA01.php" target="_blank" rel="noopener noreferrer">研究者情報データベース [RIDAI]</a></li>
+                    <li><a href="https://tus.elsevierpure.com/ja/" target="_blank" rel="noopener noreferrer">研究者プロファイリングツール [Pure]</a></li>
+                      <li><a href="/ura/activity/" target="_blank" rel="noopener noreferrer">研究活動・研究成果紹介</a></li>
+                    <li><a href="/ura/activity/#id_1" target="_blank" rel="noopener noreferrer">研究紹介カタログ</a></li>
+           <li><a href="/research/highlights/">TUS Research Highlights</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>プレスリリース</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/today/list-tab-press.html?search_category=%E3%83%97%E3%83%AC%E3%82%B9%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9#tags">プレスリリース</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>社会連携／産学連携</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/research/cooperation/outreach_liaisons/">社会連携／産学連携について</a></li>
+                    <li><a href="/research/social_cooperation/">共同研究・受託研究</a></li>
+                    <li><a href="/research/cooperation/course/">社会連携講座</a></li>
+                    <li><a href="/academics/education/cooperation/recurrent/">学び直し(リカレント教育)への取り組み</a></li>
+                    <li><a href="/research/cooperation/course/local/">地域との連携</a></li>
+                    <li><a href="/research/cooperation/environmental_safety/">サステナビリティ(環境安全センター)</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>研究活動</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/research/prevent">研究活動に関する不正防止体制</a></li>
+                    <li><a href="/research/appropriateness/">研究成果の適正な公表</a></li>
+                    <li><a href="/research/data_policy/">研究データポリシー</a></li>
+                    <li><a href="/academics/education/international/#pills-t3-tab1-open">国際化の取り組み</a></li>
+                    <li><a href="https://www.rs.kagu.tus.ac.jp/env_pres/animal/animal_index.html#acc_sample1-open" target="_blank" rel="noopener noreferrer">動物実験に関する情報</a></li>
+                    <li><a href="/research/information_disclosure/">人を対象とする生命科学・医学系研究に関する研究対象者の方へ(情報公開)</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="https://www.tus.ac.jp/ura/startup/">スタートアップ支援</a>
+              </li>
+              <li>
+                <a href="/research/support/">本学の研究支援</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <button type="button" data-toggle-next><strong>学⽣⽣活/就職</strong><span>TUS LIFE</span></button>
+          <div class="header-menu__submega">
+            <ul>
+              <li><a href="/tuslife/">学⽣⽣活/就職</a></li>
+              <li>
+                <button type="button" data-toggle-next>キャンパスライフサポート</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/tuslife/campuslife/event/">年間行事／授業日程</a></li>
+                    <li><a href="/tuslife/campuslife/academy/">学園生活ガイド</a></li>
+                    <li><a href="https://www.tus-act.tus.ac.jp" target="_blank" rel="noopener noreferrer">クラブ活動</a></li>
+                    <li><a href="/tuslife/campuslife/support/">ライフサポート(住まい探し・アルバイト等)</a></li>
+                    <li><a href="/tuslife/campuslife/attending_school/">学生生活(自動車・バイク・自転車通学)</a></li>
+                    <li><a href="/tuslife/campuslife/learning_support/">学習支援</a></li>
+                    <li><a href="/tuslife/campuslife/health_center/">健康管理(保健管理センター)</a></li>
+                    <li><a href="/tuslife/campuslife/counseling_room/">学生相談室(よろず相談室)</a></li>
+                    <li><a href="/tuslife/campuslife/support_disabilities/">障がいのある学生への支援</a></li>
+                    <li><a href="/tuslife/campuslife/support_mechanism/">学生支援機構</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>各種手続／窓口</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/tuslife/campuslife/contact/">窓口案内</a></li>
+                    <li><a href="/tuslife/campuslife/contact/certificate/">証明書の申請(在学生)</a></li>
+                    <li><a href="/tuslife/campuslife/certificate/">証明書の申請(卒業生)</a></li>
+                    <li><a href="/tuslife/campuslife/request/">窓口案内(各種 願・届)</a></li>
+                    <li><a href="/tuslife/campuslife/tuition/">学費の納入</a></li>
+                    <li><a href="/tuslife/campuslife/scholarship/">奨学金</a></li>
+                    <li><a href="/tuslife/career/teaching_course/">教職課程</a></li>
+                    <li><a href="/tuslife/campuslife/background/">学歴照会・調査会社様へ</a></li>                    
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>就職・キャリア</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/tuslife/career/data/">就職・キャリア関連データ</a></li>
+                    <li><a href="/tuslife/career/support/">進路・就職支援</a></li>
+                    <li><a href="/tuslife/career/support/qualification">資格取得</a></li>
+                    <li><a href="/tuslife/career/national_examanation/">国家試験サポート(薬剤師、公務員、教員採用試験対策)</a></li>
+                    <li><a href="/tuslife/career/teaching_course/">教職課程に関するよくある質問</a></li>
+                    <li><a href="/tuslife/career/question/">Q＆A</a></li>
+                    <li><a href="/tuslife/career/employment_support/">就職支援(卒後3年以内の方)</a></li>
+                    <li><a href="/recruiter/">採用担当者の方へ</a></li>
+                    <li><a href="/tuslife/career/internship/">理系大学院生のための研究インターンシップ</a></li>
+                    <li><a href="/tuslife/career/survey/">進路先企業に対するアンケート結果</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="/academics/education/open_badges/">TUSオープンバッジ</a></li>
+              <li>
+                <button type="button" data-toggle-next>奨学金</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/tuslife/campuslife/scholarship/">奨学金・教育ローン</a></li>
+                    <!--<li><a href="/tuslife/campuslife/scholarship/information_session/">奨学金 募集案内</a></li>
+                    <li><a href="/tuslife/studyabroad/program/#pills-t3-tab5-open">留学に関する奨学金</a></li>-->
+                    <li><a href="/tuslife/campuslife/scholarship/links/">関連情報リンク</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>留学サポート(海外留学支援／外国人留学生向け情報)</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/tuslife/studyabroad/program/">海外留学支援</a></li>
+                    <li><a href="/tuslife/studyabroad/program/#studyabroad">├ 海外留学に関心がある方へ</a></li>
+                    <li><a href="/tuslife/studyabroad/guidance/#studyabroad">├ 留学の手引き</a></li>
+                    <li><a href="/tuslife/studyabroad/scholarship/#studyabroad">├ 留学に関する奨学金</a></li>
+                    <li><a href="/tuslife/studyabroad/number/#studyabroad">├ 留学者数</a></li>
+                    <li><a href="/tuslife/foreignstudents/universitylife/">外国人留学生支援</a></li>
+                    <li><a href="/tuslife/foreignstudents/universitylife/">├ 大学生活支援について</a></li>
+                  <li><a href="/tuslife/foreignstudents/event/">├ 各種行事について</a></li>
+                  <li><a href="/tuslife/foreignstudents/scholarship/">├ 奨学金について</a></li>
+                  <li><a href="/tuslife/foreignstudents/employment/">├ 就職支援関連</a></li>
+                  <li><a href="/tuslife/foreignstudents/residence_procedure/">├ 在留手続きについて</a></li>
+                  <li><a href="/tuslife/foreignstudents/contact_notification/">├ 連絡先等に関する届出</a></li>
+                  <li><a href="/tuslife/foreignstudents/insurance/">├ 保険</a></li>
+                  <li><a href="/tuslife/foreignstudents/communication_service/">├ 通信サービス</a></li>
+                  <li><a href="/tuslife/foreignstudents/everydaylife/">├ 日常生活に関する各種情報</a></li>
+                  <li><a href="/tuslife/foreignstudents/japaneseclass/">├ 日本語授業について</a></li>
+                  <li><a href="/tuslife/foreignstudents/export_control/">├ 安全保障輸出管理について</a></li>
+                  <li><a href="/tuslife/foreignstudents/international_dormitory/">├ 国際寮の紹介</a></li>
+                  <li><a href="/tuslife/foreignstudents/apartment/">├ 下宿・アパートを探している方へ</a></li>
+                  <li><a href="/tuslife/foreignstudents/tuition/">└ 学費の納入について</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>キャンパス紹介</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/tuslife/campus/kagurazaka/">神楽坂キャンパス</a></li>
+                    <li><a href="/tuslife/campus/noda/">野田キャンパス</a></li>
+                    <li><a href="/tuslife/campus/katsushika/">葛飾キャンパス</a></li>
+                    <li><a href="/tuslife/campus/oshamambe/">北海道・長万部キャンパス</a></li>
+                    <li><a href="https://tuslibrary.admin.tus.ac.jp/" target="_blank" rel="noopener noreferrer">図書館</a></li>
+                    <li><a href="/foodmap/" target="_blank" rel="noopener noreferrer">学内飲食マップ</a></li>
+                    <li><a href="/tuslife/campuslife/cafeteria/">食堂</a></li>
+                    <li><a href="/tuslife/campuslife/coop/">東京理科大学消費生活協同組合(生協)</a></li>
+                    <li><a href="/tuslife/campus/facility/">その他の設備・施設</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <button type="button" data-toggle-next><strong>⼊試情報/奨学⾦</strong><span>ADMISSIONS &amp; AID</span></button>
+          <div class="header-menu__submega">
+            <ul>
+              <li><a href="/admissions/">⼊試情報/奨学⾦</a></li>
+              <li>
+                <button type="button" data-toggle-next>入試制度</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                  <li><a href="/admissions/university/list/">入試制度一覧</a></li>
+                  <li><a href="/admissions/university/list/general/">一般選抜</a></li>
+                  <li><a href="/admissions/university/list/general/method_a4a3/">一般選抜 A方式（4教科型／3教科型）入学試験</a></li>
+                  <li><a href="/admissions/university/list/general/method_a2/">一般選抜 A方式（2教科+英語資格検定）入学試験</a></li>
+                  <li><a href="/admissions/university/list/general/method_a_r2/">一般選抜 A方式（理学部第二部）入学試験</a></li>
+                  <li><a href="/admissions/university/list/general/method_b/">一般選抜 B方式入学試験</a></li>
+                  <li><a href="/admissions/university/list/general/method_s/">一般選抜 S方式入学試験</a></li>
+                  <li><a href="/admissions/university/list/recommendation/">学校推薦型選抜(指定校制)</a></li>
+                  <li><a href="/admissions/university/list/comprehensive/en/">総合型選抜（英語資格検定＋特定教科評価）/総合型選抜（理学部第二部）</a></li>
+                  <li><a href="/admissions/university/list/comprehensive/">総合型選抜(女子)</a></li>
+                  <li><a href="/admissions/university/list/society/">社会人特別選抜(1年次入学)</a></li>
+                  <li><a href="/admissions/university/list/returnee/">帰国生入学者選抜</a></li>
+                  <li><a href="/admissions/university/list/foreignstudents/">外国人留学生試験</a></li>
+                  <li><a href="/admissions/university/list/coe/">在留資格認証明書交付申請についてf</a></li>
+                  <li><a href="/admissions/university/list/international_baccalaureate/">国際バカロレア入学者選抜<br>(1年次入学)</a></li>
+                  <li><a href="/about/faculty/policy/#admission">入学者受入れの方針<br>(アドミッション・ポリシー)</a></li>
+                  <li><a href="/admissions/university/list/">入試制度説明動画</a></li>
+                  <li><a href="/admissions/university/list/" class="plink plink_type_noicon" target="_blank">募集人数</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>入学者募集要項</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/admissions/university/guideline/">入学者募集要項</a></li>
+                    <li><a href="/admissions/university/guideline/general/">学部入試</a></li>
+                    <li><a href="/admissions/university/guideline/graduateschool/">大学院入試</a></li>
+                    <li><a href="/admissions/university/guideline/transfer/">編入学・専攻科入試</a></li>
+                    <li><a href="/admissions/university/guideline/recurrent/">学び直し</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>出願案内</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/admissions/university/entry/">出願の流れ</a></li>
+                    <li><a href="https://www.ucaro.net/">UCARO</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>進学イベント</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/admissions/university/visittus/">進学イベント一覧</a></li>
+                    <li><a href="/admissions/university/visittus/opencampus/">オープンキャンパス</a></li>
+                    <li><a href="https://tushpts2.tus.ac.jp/admissions/lp/informationsession/">進学相談会・説明会</a></li>
+                    <li><a href="/admissions/university/visittus/tour/">⼤学⾒学</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="/admissions/university/data/">過去の入試データ</a></li>
+              <li><a href="https://faq.admissions.tus.ac.jp/hc/ja/">よくあるご質問(Q&amp;A)</a></li>
+              <li>
+                <button type="button" data-toggle-next>大学院入試</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/admissions/graduateschool/">大学院入試一覧</a></li>
+                    <li><a href="/admissions/graduateschool/list/master/">修士課程 一般入試</a></li>
+                    <li><a href="/admissions/graduateschool/list/master/society/">修士課程 推薦入学／社会人特別選抜</a></li>
+                    <li><a href="/admissions/graduateschool/list/master/foreignstudents/">修士課程 外国人留学生</a></li>
+                    <li><a href="/admissions/graduateschool/list/doctor/">博士課程・博士後期課程 一般選抜</a></li>
+                    <li><a href="/admissions/graduateschool/list/doctor/society/">博士課程・博士後期課程 社会人特別選抜</a></li>
+                    <li><a href="/admissions/graduateschool/list/doctor/foreignstudents/">博士課程・博士後期課程 外国人留学生</a></li>
+                    <li><a href="/admissions/graduateschool/list/profession/">専門職学位課程 一般選抜／社会人特別選抜</a></li>
+                    <li><a href="/admissions/graduateschool/list/application/">出願窓口</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>編入学・専攻科入試</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/admissions/graduateschool/transfer/">編入学・専攻科入試一覧</a></li>
+                    <li><a href="/admissions/graduateschool/transfer/general/">編入学試験 一般編入学</a></li>
+                    <li><a href="/admissions/graduateschool/transfer/recommendation/">編入学試験 学校推薦型選抜 (編入学)</a></li>
+                    <li><a href="/admissions/graduateschool/transfer/society/">編入学試験 社会人特別選抜編入学</a></li>
+                    <li><a href="/admissions/graduateschool/transfer/society/evening/">編入学試験 社会人特別選抜<br>(夜間主社会人コース)</a></li>
+                    <li><a href="/admissions/graduateschool/advancedcourse/">専攻科入試 一般選抜</a></li>
+                    <li><a href="/admissions/graduateschool/advancedcourse/society/">専攻科入試 社会人特別選抜</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>学び直し</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/admissions/recurrent/">学び直し一覧</a></li>
+                    <li><a href="/admissions/graduateschool/recruitment_students/">科目等履修生</a></li>
+                    <li><a href="/admissions/graduateschool/reenrollment/">再入学</a></li>
+                    <li><a href="/admissions/graduateschool/research_students/">研究生</a></li>
+                    <li><a href="/manabi/" target="_blank">オープンカレッジ</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button type="button" data-toggle-next>学費・奨学金</button>
+                <div class="header-menu__subsubmega">
+                  <ul>
+                    <li><a href="/admissions/university/fees/">学費・奨学金一覧</a></li>
+                    <li><a href="/admissions/university/guideline/expense/" class="plink plink_type_noicon" target="_blank">初年度納付金(学費)</a></li>
+                    <li><a href="/tuslife/campuslife/scholarship/">奨学金・教育ローン</a></li>
+                    <li><a href="/tuslife/campuslife/scholarship/links/">関連情報リンク</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="/documentrequest/">資料請求</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <ul class="header-menu__subnav">
+        <li><a href="/access/">アクセス</a></li>
+        <li><a href="/donation/">寄付</a></li>
+        <li><a href="/documentrequest/">資料請求</a></li>
+        <li><a href="/access/inquiry/">お問合せ</a></li>
+      </ul>
+      <ul class="header-menu__language">
+        <li><a href="/" class="is-active">JP</a></li>
+        <li><a href="/en/">EN</a></li>
+      </ul>
+    </div>
+  </div><!-- /.header-menu -->
+    
+</div><!-- /.header-sp -->
+<!-- // SP Header -->
+    </div>
+  </div>
+</header><!-- /.header -->
+
+
+<!-- 0 -->
+
+  <main class="contents">
+    
+    <h1 class="ptitle ptitle_tp1b">
+        <span class="ptitle__title-en">ニュース＆イベント</span>
+        <span class="ptitle__title-jp">NEWS &amp; EVENTS</span>
+    </h1>
+
+    <div class="pblock mt-n20">
+      <div class="sys-info">
+        <div class="sys-info__detail">
+          <ul class="ptag ptag_type_box">
+
+            <li class="ptag__item ptag__item_tag3 ptag__item_type_border cat06"><a href="/today/?search_category=プレスリリース#tags">プレスリリース</a></li>
+
+            <li class="ptag__item ptag__item_tag3 ptag__item_type_border cat03"><a href="/today/?search_category=研究#tags">研究</a></li>
+
+          </ul>
+          <div class="sys-info__detail-update">
+            <div class="sys-info__detail-date">2026.10.09 Fri UP</div>
+          </div>
+          <h2 class="ptitle ptitle_t4_ptn1">汗中のイオンに応答する信号をリアルタイムで取得するセンサを開発<br class=d-sp-none>～長時間の事前調整なし、実際の作業現場で動作することを確認～</h2>
+
+
+          <ul class="plink-sdgs">
+
+            <li class="plink-sdgs__item">
+              <a href="/today/?search_category=&search_nendo=&search_sdgs=03#newsEventAwards">
+                <img class="plink-sdgs__img" src="/static/img-com/icon-sdgs-03.png" width="100" height="100" alt="3 すべての人に健康と福祉を">
+              </a>
+            </li>
+
+
+
+            <li class="plink-sdgs__item">
+              <a href="/today/?search_category=&search_nendo=&search_sdgs=08#newsEventAwards">
+                <img class="plink-sdgs__img" src="/static/img-com/icon-sdgs-08.png" width="100" height="100" alt="8 働きがいも経済成長も">
+              </a>
+            </li>
+
+
+
+            <li class="plink-sdgs__item">
+              <a href="/today/?search_category=&search_nendo=&search_sdgs=09#newsEventAwards">
+                <img class="plink-sdgs__img" src="/static/img-com/icon-sdgs-09.png" width="100" height="100" alt="9 産業と技術革新の基盤をつくろう">
+              </a>
+            </li>
+
+          </ul>
+
+
+          
+          <div class="sys-info__detail-cms sys-info__detail-cms_new">
+            <div class="sys-info__detail-line sys-info__detail-line_text">
+<!--<p class="mb-20 text-right">
+    東京理科大学<br>
+</p>-->
+<!-- 研究の要旨とポイント -->
+<div class="pbox pbox_t2 mb-30">
+    <h3 class="pbox__title" id="tus">研究の要旨とポイント</h3>
+    <ul class="plist plist_type_circle mb-0">
+        <li class="plist__item mb-10">長時間の事前調整を要しないスクリーン印刷液絡型参照電極を、ナトリウムイオン選択性電極、カリウムイオン選択性電極、布および高吸水性繊維からなる試料搬送層、腕時計型の無線計測装置と一体化したウェアラブルセンサを開発しました。</li>
+        <li class="plist__item mb-10">実際の建設現場での作業中に、約2時間45分にわたり、ナトリウムイオンとカリウムイオンのそれぞれの応答信号をリアルタイムで取得し、無線送信およびデータ保存ができることを確認しました。</li>
+        <li class="plist__item mb-0">本研究をさらに発展させることで、汗に含まれる成分に関する情報を、作業や運動を継続しながら取得するための基盤となることが期待されます。</li>
+    </ul>
+</div>
+<!-- 研究の要旨とポイント -->
+<!--アンカー-->
+<div class="tus-scroll-link mt-70 mb-50">
+    <ul class="plink-list-inline plink-list-inline_border2 plink-list-inline_center font-weight-bold fz__small">
+        <li class="plink-list-inline__item mb-md-30"><a class="plink plink_type_inline plink_type_inline_arrow_bb scroll" href="#abstract">研究の概要</a></li>
+        <li class="plink-list-inline__item mb-md-30"><a class="plink plink_type_inline plink_type_inline_arrow_bb scroll" href="#bg">研究の背景</a></li>
+        <li class="plink-list-inline__item"><a class="plink plink_type_inline plink_type_inline_arrow_bb scroll" href="#result">研究結果の詳細</a></li>
+        <li class="plink-list-inline__item"><a class="plink plink_type_inline plink_type_inline_arrow_bb scroll" href="#term">用語</a></li>
+        <li class="plink-list-inline__item"><a class="plink plink_type_inline plink_type_inline_arrow_bb scroll" href="#journal">論文情報</a></li>
+        <li class="plink-list-inline__item"><a class="plink plink_type_inline plink_type_inline_arrow_bb scroll" href="#lab">研究室</a></li>
+        <li class="plink-list-inline__item"><a class="plink plink_type_inline plink_type_inline_arrow_bb scroll" href="#about_tus">東京理科大学について</a></li>
+    </ul>
+</div>
+<!--アンカーここまで-->
+<p></p>
+<!-- 研究の概要 -->
+<div class="mb-50">
+    <h3 class="ptitle ptitle_t3" id="abstract">研究の概要</h3>
+    <p class="mb-30">
+       東京理科大学 創域理工学部 先端化学科の四反田 功准教授、同大学大学院 創域理工学研究科 先端化学専攻の藤澤 拓真氏（2026年度 修士課程2年）らの研究グループは、汗に含まれるナトリウムイオンおよびカリウムイオンに応答する信号を連続でモニタリングできるウェアラブルセンサを開発しました。
+    </p>
+    <p class="mb-30">
+       汗に含まれるナトリウムイオンやカリウムイオンを連続的に測定できるウェアラブルセンサは、暑熱環境における健康管理への応用が期待されています。しかし、従来のイオンセンサでは、測定の基準となる参照電極を安定させるために長時間の事前調整を必要とする場合があり、現場利用上の課題となっていました。本研究では、スクリーン印刷（＊1）で作製した液絡型参照電極（＊2）を、ナトリウムイオン選択性電極、カリウムイオン選択性電極、布および高吸水性繊維からなる試料搬送層、独自開発の腕時計型無線計測装置と一体化しました。
+    </p>
+        <p class="mb-30">
+       ナトリウムイオンセンサおよびカリウムイオンセンサの感度は、それぞれ48.3 mV/decade（＊3）、46.4 mV/decadeで、液絡型参照電極の電位変化は、10 mM塩化ナトリウム水溶液中で3000秒間に約6 mVでした。従来型の参照電極で見られた長い初期過渡応答を示さず、長時間の事前調整を行わずに測定できることを確認しました。作製したセンサを実際の建設現場で作業員が装着した結果、約2時間45分にわたり、ナトリウムイオンとカリウムイオンそれぞれに応答する電位信号をリアルタイムで取得し、無線送信とデータ保存ができることが確認されました。本研究成果は、作業や運動を妨げずに生体由来の化学情報を取得するウェアラブル計測技術の実用化に向けた基盤となることが期待されます。
+    </p>
+
+    <p class="mb-30">
+        本研究成果は、2026年9月21日に国際学術誌<a href="https://pubs.acs.org/acsodf/article/doi/10.1021/acsomega.6c04240/5434357/Real-Time-Monitoring-with-a-Wristwatch-Type-Sodium" target="_blank" rel="noopener noreferrer">「ACS Omega」にオンライン掲載</a>されました。
+    </p>
+    <!--画像埋め込み ここから -->
+    <div class="imagearea w-sp-100 d-block mx-auto mb-60">
+        <figure>
+            <img class="d-block mx-auto mb-25" src="/today/archive/2026/20261009_9677.png" alt="図 スクリーン印刷で作製した液絡型参照電極（(a)模式図、(b)写真）および腕時計型無線計測装置（(c)模式図、(d)写真）"/>
+            <figcaption class="fz__small mx-auto">
+           <p class="mb-20 text-center">図 スクリーン印刷で作製した液絡型参照電極（(a)模式図、(b)写真）および腕時計型無線計測装置（(c)模式図、(d)写真）
+           </p>
+            </figcaption>
+        </figure>
+    </div>
+    <!--画像埋め込み ここまで -->   
+</div>
+<!-- 研究の概要ココまで -->
+<p></p>
+
+<!-- 研究の背景 -->
+<div class="mb-50">
+    <h3 class="ptitle ptitle_t3" id="bg">研究の背景</h3>
+    <p class="mb-40">
+       皮膚に直接装着できるウェアラブルセンサは、心拍数や呼吸数といったバイタルサインに加え、体液中の成分（バイオマーカー）も非侵襲的に測定できます。そのため、日常生活を妨げることなく、健康状態を継続的にモニタリングできます。体液の中でも汗は採取が容易で連続測定に適しており、汗に含まれるイオン濃度を測定することで、水分補給の状態の把握や熱中症対策に役立てることができます。
+    </p>
+    <p class="mb-40">
+       電位差測定を原理とするイオンセンサは、得られる電位がセンサの大きさに依存しないため、小型化に適しています。さらに、印刷技術で作製すれば、低コストでの大量生産が可能です。使い捨てにも適しているため、衛生面の課題にも対応しやすくなります。
+    </p>
+    <p class="mb-40">
+       しかし、イオンセンサを使う際には、測定の基準電位を与える安定した参照電極が不可欠です。従来の参照電極は、使い始めてから電位が安定するまでに長い時間がかかるため、事前調整が必要となり、これが実用化の障壁となっていました。
+    </p>
+    <p class="mb-40">
+       そこで本研究グループは、スクリーン印刷型液絡参照電極を、ナトリウムイオン選択性電極、カリウムイオン選択性電極、布および高吸水性繊維からなる試料搬送層、および腕時計型無線計測装置と一体化したウェアラブルセンサを開発しました。
+    </p>
+</div>
+<!-- 研究の背景ココまで -->
+<p></p>
+
+<!-- 研究結果の詳細 -->
+<div class="mb-30">
+    <h3 class="ptitle ptitle_t3" id="result">研究結果の詳細</h3>
+     <p class="mb-40">
+       作製したデバイスについてベンチトップ評価を行ったところ、ナトリウムイオンセンサおよびカリウムイオンセンサの感度は、それぞれ48.3 mV/decade、46.4 mV/decadeでした。スクリーン印刷型参照電極は、長時間の事前調整なしで動作し、3000秒間のドリフトは約6 mVでした。一方、液絡層を設けずに作製した比較用の参照電極は、外部の塩化カリウム溶液濃度への依存性が著しく高く、電位も経時的に変動し続けました。これらの結果は、液絡層が電位の安定に重要な役割を果たしていることを示唆しています。
+    </p>
+    <p class="mb-40">
+       実地試験として、稼働中の建設現場でウェアラブルセンサを動作させ、ナトリウムイオンおよびカリウムイオンそれぞれに応答する電位信号をリアルタイムで取得しました。これらの信号は、標準水溶液を用いて作成した検量線に基づいて、見かけの濃度に変換しました。作業員が通常の作業を続けている間、約2時間45分にわたって測定を行い、無線送信およびデータ保存できることを確認しました。
+    </p>
+    <p class="mb-30">
+       本研究の中心的成果は、新規電極材料の提案ではなく、スクリーン印刷型電極、試料搬送機構、無線計測回路を単一のデバイスに統合した点にあります。加えて、長時間の事前調整なしに動作できること、および実際の作業現場で動作可能であることを示した点も重要です。
+    </p>
+</div>
+<!-- 研究結果の詳細ココまで -->
+<p></p>
+
+<!-- コメントと注釈 -->
+<p class="mb-30">本研究を主導した四反田准教授は、「本技術は、建設現場、製造現場、スポーツ、屋外活動などにおいて、汗に含まれるイオンに関する情報を作業や運動を中断せずに取得するための基盤となります。将来的には、発汗量や水分摂取量などの情報と組み合わせることで、暑熱環境における体調管理や水分補給支援への応用が期待されます」と、コメントしています。
+</p>
+<p class="mb-50 txt__cap_15">※ 本研究は、日本学術振興会（JSPS）の科研費（24K02819）の助成を受けて実施したものです。</p>
+<!-- コメントと注釈 ここまで -->
+<p></p>
+
+<!-- 用語 -->
+<div class="mb-50">
+    <h3 class="ptitle ptitle_t3" id="term">用語</h3>
+    <dl class="term_flex">
+        <div>
+            <dt>&#65290;1</dt>
+            <dd>
+                スクリーン印刷<br>
+                メッシュ状のスクリーン版を通して導電性インクなどを基板上に塗布し、電極パターンを形成する成膜法。大量生産に適し、低コストで再現性の高い平面型電極を作製できる。
+            </dd>
+        </div>
+        <div>
+            <dt>&#65290;2</dt>
+            <dd>
+                液絡型参照電極<br>
+                液絡部（多孔質膜など）を介して内部電解質（塩化カリウム水溶液など）と試料溶液とを電気的に接触させる構造の参照電極。内部の塩化物イオン濃度が一定に保たれるため、電極が試料に直接触れるものに比べて電位が安定する。
+            </dd>
+        </div>
+        <div>
+            <dt>&#65290;3</dt>
+            <dd>
+                mV/decade<br>
+                イオン選択性電極の感度を表す単位で、イオン活量（濃度）が10倍（1桁、1 decade）変化したときの電位の変化量（mV）を示す。
+            </dd>
+        </div>
+    </dl>
+</div>
+<!-- 用語ココまで -->
+<p></p>
+
+<!-- 論文情報 -->
+<div class="mb-50">
+    <h3 class="ptitle ptitle_t3" id="journal">論文情報</h3>
+    <h4 class="ptitle ptitle_t5 mb-5 txt__cap_28">雑誌名</h4>
+    <p class="mb-30">ACS Omega</p>
+    <h4 class="ptitle ptitle_t5 mb-5 txt__cap_28">論文タイトル</h4>
+    <p class="mb-30">Real-Time Monitoring with a Wristwatch-Type Sodium- and Potassium-Ion Sensor Using a Screen-Printed Liquid-Junction Reference Electrode</p>
+    <h4 class="ptitle ptitle_t5 mb-5 txt__cap_28">著者</h4>
+    <p class="mb-30">Isao Shitanda, Takuma Fujisawa, Noya Loew, Ryo Shirai, Yuta Imade, Yuri Okamoto, Shinya Yanagita, Hikari Watanabe, Masayuki Itagaki</p>
+    <h4 class="ptitle ptitle_t5 mb-5 txt__cap_28">DOI</h4>
+    <p class="mb-5"><a href="https://pubs.acs.org/acsodf/article/doi/10.1021/acsomega.6c04240/5434357/Real-Time-Monitoring-with-a-Wristwatch-Type-Sodium" target="_blank" rel="noopener noreferrer">10.1021/acsomega.6c04240<span class="icon--linkBlk"></span></a></p>
+</div>
+<!-- 論文情報ココまで -->
+<p></p>
+
+<!-- 研究室紹介 -->
+<div class="pbox pbox_t2 mb-40">
+    <h3 class="pbox__title" id="lab">板垣・四反田研究室</h3>
+    <p class="pbox__lead">
+        <a href="https://www.islab.ca.noda.tus.ac.jp/" target="_blank" rel="noopener noreferrer">研究室のページ<span class="icon--linkBlk"></span></a><br>
+        <a href="https://www.tus.ac.jp/ridai/doc/ji/RIJIA01Detail.php?act=pos&kin=ken&diu=1f37" target="_blank" rel="noopener noreferrer">板垣教授のページ<span class="icon--linkArr"></span></a><br>
+        <a href="https://www.tus.ac.jp/ridai/doc/ji/RIJIA01Detail.php?act=pos&kin=ken&diu=380c" target="_blank" rel="noopener noreferrer">四反田准教授のページ<span class="icon--linkArr"></span></a>
+    </p>
+</div>
+<!-- 研究室紹介ココまで -->
+<p></p>
+<!-- 東京理科大学についてココから -->
+<div class="pbox pbox_t2 mb-20">
+    <h3 class="pbox__title" id="about_tus">東京理科大学について</h3>
+    <p class="pbox__lead">
+        <a href="https://www.tus.ac.jp/" target="_blank" rel="noopener noreferrer">東京理科大学<span class="icon--linkArr"></span></a><br>
+        <a href="https://www.tus.ac.jp/about/#houjin" target="_blank" rel="noopener noreferrer">詳しくはこちら<span class="icon--linkArr"></span></a>
+    </p>
+</div>
+<!-- 東京理科大学についてココまで -->
+<p></p>
+
+<style type="text/css">
+    .tus-scroll-link .plink-list-inline__item {
+        padding: 0 1.4em!important;
+    }
+    .txt__cap_63 {
+        text-indent: -6.3em;
+        padding-left: 6.3em;
+    }
+    dl.term_flex div,
+    dl.presenter_flex div {
+        display: flex;
+        margin-bottom: 30px;
+    }
+    dl.term_flex div dt,
+    dl.presenter_flex div dt {
+        font-weight: normal;
+    }
+    dl.term_flex div {
+        margin-bottom: 30px;
+    }
+    dl.term_flex div dt {
+        width: 5.5rem;
+    }
+    dl.term_flex div dd {
+        width: calc(100% - 5.5rem);
+    }
+    dl.presenter_flex div dt {
+        width: 25.5rem;
+    }
+    dl.presenter_flex div dd {
+        width: calc(100% - 11.5rem);
+    }
+    @media (max-width: 768.98px) {
+        dl.term_flex div,
+        dl.presenter_flex div {
+            margin-bottom: 20px;
+        }
+        dl.term_flex div dt {
+            width: 5rem;
+        }
+        dl.term_flex div dd {
+            width: calc(100% - 5rem);
+        }
+        dl.presenter_flex div dt {
+            width: 9.5rem;
+        }
+        dl.presenter_flex div dd {
+            width: calc(100% - 9.5rem);
+        }
+    }
+</style>
+            </div>
+          </div>
+          <!--/info__cms-->
+
+          <ul id="page-sns" class="plink-list-inline plink-list-inline_sns plink-list-inline_center">
+            <li class="plink-list-inline__item"><a class="sns sns_type_icon sns_type_facebook" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https://www.tus.ac.jp/today/archive/20261009_9677.html&t=汗中のイオンに応答する信号をリアルタイムで取得するセンサを開発<br class=d-sp-none>～長時間の事前調整なし、実際の作業現場で動作することを確認～">Facebook</a></li>
+            <li class="plink-list-inline__item"><a class="sns sns_type_icon sns_type_twitter" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=汗中のイオンに応答する信号をリアルタイムで取得するセンサを開発<br class=d-sp-none>～長時間の事前調整なし、実際の作業現場で動作することを確認～&url=https://www.tus.ac.jp/today/archive/20261009_9677.html">Twitter</a></li>
+            <li class="plink-list-inline__item"><a class="sns sns_type_icon sns_type_linkedin" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?mini=true&url=https://www.tus.ac.jp/today/archive/20261009_9677.html">Linked in</a></li>
+            <li class="plink-list-inline__item"><a class="sns sns_type_icon sns_type_line" target="_blank" rel="noopener" href="https://social-plugins.line.me/lineit/share?url={https://www.tus.ac.jp/today/archive/20261009_9677.html}">LINE</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <footer class="ft">
+
+<p class="pagetop"><a class="scroll" href="#" rel="#">ページの先頭へ</a></p>
+
+<div class="page-footer__container">
+
+  <div class="page-footer__top">
+    <div class="page-footer-top">
+      <ul class="page-footer-top__list">
+        <li class="page-footer-top__item">
+          <a href="/today/" class="page-footer-top__link">
+            <span class="page-footer-top__ja">ニュース &amp; イベント</span>
+            <span class="page-footer-top__en">NEWS&amp;EVENTS</span>
+          </a>
+        </li>
+        <li class="page-footer-top__item">
+          <a href="/about/" class="page-footer-top__link">
+            <span class="page-footer-top__ja">東京理科⼤学について</span>
+            <span class="page-footer-top__en">ABOUT TUS</span>
+          </a>
+        </li>
+        <li class="page-footer-top__item">
+          <a href="/academics/" class="page-footer-top__link">
+            <span class="page-footer-top__ja">教育/学部・⼤学院</span>
+            <span class="page-footer-top__en">ACADEMICS</span>
+          </a>
+        </li>
+        <li class="page-footer-top__item">
+          <a href="/research/" class="page-footer-top__link">
+            <span class="page-footer-top__ja">研究/産学連携/スタートアップ⽀援</span>
+            <span class="page-footer-top__en">RESEARCH</span>
+          </a>
+        </li>
+        <li class="page-footer-top__item">
+          <a href="/tuslife/" class="page-footer-top__link">
+            <span class="page-footer-top__ja">学⽣⽣活/就職</span>
+            <span class="page-footer-top__en">TUS LIFE</span>
+          </a>
+        </li>
+        <li class="page-footer-top__item">
+          <a href="/admissions/" class="page-footer-top__link">
+            <span class="page-footer-top__ja">⼊試情報/奨学⾦</span>
+            <span class="page-footer-top__en">ADMISSIONS &amp; AID</span>
+          </a>
+        </li>
+      </ul><!-- /.page-footer-top -->
+    </div><!-- /.page-footer-top -->
+  </div>
+  
+  <div class="page-footer__mid">
+    <div class="page-footer-mid">
+      <a href="/" class="page-footer-mid__logo">
+        <img src="/static/img-com/footer_logo.png" alt="東京理科大学 TOKYO UNIVERSITY OF SCIENCE">
+      </a>
+      <div class="page-footer-mid__nav">
+        <ul class="page-footer-mid__list">
+          <li class="page-footer-mid__item"><a href="/documentrequest/" class="page-footer-mid__link">資料請求</a></li>
+          <li class="page-footer-mid__item"><a href="/about/data/announcement/corporation/" class="page-footer-mid__link">情報公表</a></li>
+          <li class="page-footer-mid__item"><a href="/access/inquiry/" class="page-footer-mid__link">お問い合わせ</a></li>
+        </ul>
+        <ul class="page-footer-mid__sublist">
+           <!--<li class="page-footer-mid__subitem"><a class="page-footer-mid__sublink" href="/sitemap/">サイトマップ</a></li>-->
+          <li class="page-footer-mid__subitem"><a class="page-footer-mid__sublink" href="/privacypolicy/">プライバシーポリシー</a></li>
+          <!--<li class="page-footer-mid__subitem"><a class="page-footer-mid__sublink" href="/copyright/">リンク・著作権・免責事項</a></li>-->
+          <li class="page-footer-mid__subitem"><a class="page-footer-mid__sublink" href="/socialmedia_policy/">ソーシャルメディアポリシー</a></li>
+          <li class="page-footer-mid__subitem"><a class="page-footer-mid__sublink" href="/sitepolicy/">サイトポリシー</a></li>
+          <li class="page-footer-mid__subitem"><a class="page-footer-mid__sublink" href="/recruitment/">採用情報</a></li>
+        </ul>
+      </div>
+    </div><!-- /.page-footer-mid -->
+  </div>
+
+  <div class="page-footer__bot">
+    <div class="page-footer-bot">
+      <div class="page-footer-bot__sns">
+        <p class="page-footer-bot__sns-ttl">FOLLOW US !</p>
+        <ul class="page-footer-bot__sns-list">
+          <li class="page-footer-bot__sns-item"><a class="page-footer-bot__sns-youtube" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/ridaiweb">Youtube</a></li>
+          <li class="page-footer-bot__sns-item"><a class="page-footer-bot__sns-facebook" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/TUS.PR/">Facebook</a></li>
+          <li class="page-footer-bot__sns-item"><a class="page-footer-bot__sns-twitter" target="_blank" rel="noopener noreferrer" href="https://twitter.com/TUS_PR">Twitter</a></li>
+          <li class="page-footer-bot__sns-item"><a class="page-footer-bot__sns-instagram" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tokyouniversityofscience/">Instagram</a></li>
+          <li class="page-footer-bot__sns-item"><a class="page-footer-bot__sns-linkedin" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/school/%E6%9D%B1%E4%BA%AC%E7%90%86%E7%A7%91%E5%A4%A7%E5%AD%A6/">LinkedIn</a></li>
+          <li class="page-footer-bot__sns-item"><a class="page-footer-bot__sns-line" target="_blank" rel="noopener noreferrer" href="https://line.me/R/ti/p/%40939bskej">LINE</a></li>
+        </ul>
+      </div>
+      <p class="page-footer-bot__copy">Copyright © Tokyo University of Science All Rights Reserved.</p>
+    </div><!-- /.page-footer-bot -->
+  </div>
+
+</div>
+</footer>
+  <script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+<script src="/static/js/lib.min.js"></script>
+<script src="/static/js/common.js"></script>
+<script src="/static/js/script.js?20250401"></script>
+<script src="/static/js/vendor.js"></script>
+<script src="/static/js/app.js?20241202"></script>
+<script src="/static/js/jquery.cookie.js"></script>
+<script src="/static/js/cc.js"></script>
+<div id="ccframe">
+<div class="cc-window cc-bottom cc-banner" id="cc-window">
+<span class="cc-message">当サイトでは、利用者動向の調査及び運用改善に役立てるためにCookieを使用しています。当ウェブサイト利用者は、Cookieの使用に許可を与えたものとみなします。詳細は、「<a class="cc-link" href="/privacypolicy/">プライバシーポリシー</a>」をご確認ください。</span>
+<div class="cc-compliance"><a class="cc-allow cc-btn" id="cc-allow" aria-label="allow cookies" role="button" tabindex="0">OK</a></div>
+</div>
+</div>
+<script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+<!-- Twitter universal website tag code -->
+<script src="/static/js/twitter-tag.js"></script>
+<!-- End Twitter universal website tag code -->
+<script src="https://smp.tus.ac.jp/ma.js?acid=2669"></script>
+<!-- Global site tag (gtag.js) - Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-616002839"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  //{literal}
+  function gtag(){dataLayer.push(arguments);}
+  //{/literal}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-616002839');
+</script>
+<script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script><script id="zsiqscript" src="https://salesiq.zohopublic.jp/widget?wc=9da7e8b266a841a556c2294a5ef84d670a8b047c1bd5879299d7632132895341" defer></script>
+</body>
+</html>

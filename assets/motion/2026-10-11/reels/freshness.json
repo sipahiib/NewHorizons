@@ -1,0 +1,10 @@
+{
+  "equal_size_files_hashed": 0,
+  "prior_exact_hash_matches": [],
+  "scope": [
+    "assets",
+    "build",
+    "video"
+  ],
+  "excluded": "active reels directory"
+}

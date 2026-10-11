@@ -1,0 +1,114 @@
+[
+  {
+    "scene": 0,
+    "source": "assets/motion/2026-10-11/reels/r1-6754818.mp4",
+    "native_size": [
+      3840,
+      2160
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 3.2061463553762786,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 1,
+    "source": "assets/motion/2026-10-11/reels/r1-6754824.mp4",
+    "native_size": [
+      3840,
+      2160
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 2.5772307786334188,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 2,
+    "source": "assets/motion/2026-10-11/reels/r1-6754830.mp4",
+    "native_size": [
+      3840,
+      2160
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 2.8098256121908487,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 3,
+    "source": "assets/motion/2026-10-11/reels/r1-5736195.mp4",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 5.7490526830460835,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 4,
+    "source": "assets/motion/2026-10-11/reels/r1-3866849.mp4",
+    "native_size": [
+      3840,
+      2160
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 7.141063134091187,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 5,
+    "source": "assets/motion/2026-10-11/reels/r1-6754834.mp4",
+    "native_size": [
+      3840,
+      2160
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 2.658996964511266,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 6,
+    "source": "assets/motion/2026-10-11/reels/r1-6208729.mp4",
+    "native_size": [
+      1920,
+      1080
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 2.831762111396325,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  }
+]

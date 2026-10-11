@@ -1,0 +1,114 @@
+[
+  {
+    "scene": 0,
+    "source": "assets/motion/2026-10-11/reels/r2-adults.jpg",
+    "native_size": [
+      2560,
+      1546
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      654,
+      1080,
+      652
+    ],
+    "mean_absolute_rgb_difference": 3.2389428538968414,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 1,
+    "source": "assets/motion/2026-10-11/reels/r2-coast.png",
+    "native_size": [
+      720,
+      408
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      674,
+      1080,
+      612
+    ],
+    "mean_absolute_rgb_difference": 3.0420741547647867,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 2,
+    "source": "assets/motion/2026-10-11/reels/r2-sunabe.jpg",
+    "native_size": [
+      2560,
+      1920
+    ],
+    "expected_full_frame_rectangle": [
+      34,
+      600,
+      1012,
+      760
+    ],
+    "mean_absolute_rgb_difference": 9.214487986270022,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 3,
+    "source": "assets/motion/2026-10-11/reels/r2-35480156.mp4",
+    "native_size": [
+      3840,
+      2160
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 6.4139219940512575,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 4,
+    "source": "assets/motion/2026-10-11/reels/r2-nago.jpg",
+    "native_size": [
+      2560,
+      1920
+    ],
+    "expected_full_frame_rectangle": [
+      34,
+      600,
+      1012,
+      760
+    ],
+    "mean_absolute_rgb_difference": 5.99614667845503,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 5,
+    "source": "assets/motion/2026-10-11/reels/r2-35480232.mp4",
+    "native_size": [
+      3840,
+      2160
+    ],
+    "expected_full_frame_rectangle": [
+      0,
+      677,
+      1080,
+      606
+    ],
+    "mean_absolute_rgb_difference": 6.7318354520637245,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  },
+  {
+    "scene": 6,
+    "source": "assets/motion/2026-10-11/reels/r2-juveniles.jpg",
+    "native_size": [
+      2560,
+      1920
+    ],
+    "expected_full_frame_rectangle": [
+      34,
+      600,
+      1012,
+      760
+    ],
+    "mean_absolute_rgb_difference": 5.474479491713474,
+    "interpretation": "Complete source including edges fitted into actual center. Compression/resampling differences remain."
+  }
+]

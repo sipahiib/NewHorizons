@@ -1,0 +1,9 @@
+{
+  "reason": "one native HLS fetch had corrupt packet in30\u201344secondexcerpt; clean first50seconds re-fetched withfail-on-error",
+  "sourceFile": "assets/motion/2026-10-11/main/arcjet-opening-repaired.mp4",
+  "sourceSha256": "451f2aae4f13bd459c8cd264cc8ef4ff3d3ea850a3d804fbc5543cd9bd9b5427",
+  "replacedSegment": "build/video/2026-10-11/work/m1-04.mp4",
+  "segmentSha256": "610da012a75ad776559c78756ee2f6ad6f8445f8a84a7b1762a9e917094be77d",
+  "topicOrFramingChange": false,
+  "status": "historical; superseded by MEDIA_REVISION.json; not active scene selection"
+}
