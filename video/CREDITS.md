@@ -1,5 +1,5 @@
 # NewHorizons — Active Credits Pointer
 
-Active cycle: **2026-10-11**. [Cycle credits](cycles/2026-10-11/CREDITS.md) will record selected media, licences and transformations after approval. No media selected yet.
+Active cycle: **2026-10-15**. [Cycle credits](cycles/2026-10-15/CREDITS.md) records selected media, licences and transformations; media audit and independent review govern production.
 
 Earlier credits remain with their cycles or in `archive/`; they are not current credits.

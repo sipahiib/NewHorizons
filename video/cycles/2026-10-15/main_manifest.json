@@ -1,0 +1,231 @@
+{
+  "cycle": "2026-10-15",
+  "status": "prepared-for-review",
+  "candidateOutput": "build/video/2026-10-15/newhorizons.mp4",
+  "finalOutput": "build/video/newhorizons.mp4",
+  "duration": 263.0,
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "openingSeconds": 16,
+  "closingSeconds": 10,
+  "sections": [
+    {
+      "id": "nasa",
+      "proposalId": "M2",
+      "duration": 128.0,
+      "audio": "build/video/2026-10-15/audio/nasa.wav",
+      "counts": {
+        "stills": 5,
+        "motion": 8
+      },
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-15/main/battery.jpg",
+          "duration": 5
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-15/main/chamber.webm",
+          "duration": 7,
+          "seek": 3,
+          "loop": false
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-15/main/rna-video2.mp4",
+          "duration": 4,
+          "seek": 21,
+          "loop": false,
+          "crop": "1280:1120:0:80"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-15/main/removal.jpg",
+          "duration": 11.616666666666667
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-15/main/chamber.webm",
+          "duration": 11.616666666666667,
+          "seek": 48,
+          "loop": false
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-15/main/weighing.jpg",
+          "duration": 10.566666666666666
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-15/main/storie1.webm",
+          "duration": 12.683333333333334,
+          "seek": 170,
+          "loop": false
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-15/main/battery.jpg",
+          "duration": 11.616666666666667
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-15/main/storie2.webm",
+          "duration": 10.566666666666666,
+          "seek": 104,
+          "loop": false
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-15/main/storie1.webm",
+          "duration": 10.566666666666666,
+          "seek": 230,
+          "loop": false
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-15/main/team.jpg",
+          "duration": 11.616666666666667
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-15/main/chamber.webm",
+          "duration": 10.566666666666666,
+          "seek": 75,
+          "loop": false
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-15/main/storie2.webm",
+          "duration": 10.583333333333334,
+          "seek": 220,
+          "loop": false
+        }
+      ],
+      "title": "build/video/2026-10-15/work/nasa-title.png"
+    },
+    {
+      "id": "rna",
+      "proposalId": "M1",
+      "duration": 125.0,
+      "audio": "build/video/2026-10-15/audio/rna.mp3",
+      "counts": {
+        "stills": 4,
+        "motion": 7
+      },
+      "scenes": [
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-15/main/rna-video2.mp4",
+          "duration": 12.3,
+          "seek": 27,
+          "loop": false,
+          "crop": "1280:1120:0:80"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-15/main/rna-control.png",
+          "duration": 9.216666666666667
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-15/main/rna-video1.mp4",
+          "duration": 12.3,
+          "seek": 15,
+          "loop": false,
+          "crop": "1280:1120:0:80"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-15/main/rna-vacuoles.png",
+          "duration": 9.216666666666667
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-15/main/rna-video2.mp4",
+          "duration": 13.316666666666666,
+          "seek": 43,
+          "loop": false,
+          "crop": "1280:1120:0:80"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-15/main/rna-video3.avi",
+          "duration": 12.3,
+          "seek": 0,
+          "loop": false,
+          "crop": "2048:1840:0:100"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-15/main/rna-fusion.png",
+          "duration": 9.216666666666667
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-15/main/rna-video4.avi",
+          "duration": 12.3,
+          "seek": 0,
+          "loop": false,
+          "crop": "2048:1840:0:100"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-15/main/rna-video2.mp4",
+          "duration": 13.316666666666666,
+          "seek": 65,
+          "loop": false,
+          "crop": "1280:1120:0:80"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-15/main/rna-compartments.png",
+          "duration": 9.216666666666667
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-15/main/rna-video1.mp4",
+          "duration": 12.3,
+          "seek": 62,
+          "loop": false,
+          "crop": "1280:1120:0:80"
+        }
+      ],
+      "title": "build/video/2026-10-15/work/rna-title.png"
+    },
+    {
+      "id": "closing",
+      "duration": 10,
+      "audio": "build/video/2026-10-15/audio/closing.mp3",
+      "closing": true,
+      "leadingSilence": 2
+    }
+  ],
+  "closing": "build/video/2026-10-15/work/closing-bg.png",
+  "closingPanel": "build/video/2026-10-15/work/closing-panel.png",
+  "closingBell": "build/video/2026-10-15/work/closing-bell.png",
+  "titleDisplaySeconds": 5.5,
+  "subscribeOverlay": "build/video/2026-10-15/work/youtube-30s.png",
+  "subscribeWindow": [
+    30,
+    35.5
+  ],
+  "hashes": {
+    "assets/motion/2026-10-15/main/battery.jpg": "2f9e188c7141f3c6400c844042793eb0bf8ae7aeaf882be2e257f8597ca54aef",
+    "assets/motion/2026-10-15/main/chamber.webm": "5f04219e9af2af30474564994970a05c22c0764a3cd9433b0b0fd03b13bcce24",
+    "assets/motion/2026-10-15/main/removal.jpg": "b3cc409731bd14cda94d3ad81353f01b2367297054a86662c98f96123ca3e5c8",
+    "assets/motion/2026-10-15/main/rna-compartments.png": "ff188060e963539ce29b94ba4c514a9c243b24ee43bcaf236f216ae2d2299354",
+    "assets/motion/2026-10-15/main/rna-control.png": "15ac041d859c9645269a8475cf02873fa8e9fadc94dd72f2b6479687d3d5e407",
+    "assets/motion/2026-10-15/main/rna-fusion.png": "480634e4fc9ef3ec033a075b4f78654c7a6d634fff0044017f4aa1d530674b18",
+    "assets/motion/2026-10-15/main/rna-vacuoles.png": "ff5721d95e71e2f802be0139d04fbd4fa7e4b0bbaf35fb6cf58dc260cf5f4481",
+    "assets/motion/2026-10-15/main/rna-video1.mp4": "7741a7175dceb3455aa65cf70de3d6f32dfe8ee72be2dea99cc5d89d30d50a17",
+    "assets/motion/2026-10-15/main/rna-video2.mp4": "003060870984db761f631d54bd8c7582ca8edf22cff9faf2943715cfafa956a0",
+    "assets/motion/2026-10-15/main/rna-video3.avi": "317e048fd5799446e0582b52fc7cef7680a56a1236d3b0298fd452b250b1c16f",
+    "assets/motion/2026-10-15/main/rna-video4.avi": "22f9652e158e3aab9d38a0dc6c41baa7059ebc71e6d898db9c24b191e6ccde6b",
+    "assets/motion/2026-10-15/main/storie1.webm": "d982c1f0c04cb8e9d87f0bcad715942d4a52016b0bb070a46452c8f785a6b60d",
+    "assets/motion/2026-10-15/main/storie2.webm": "3d13a9652691a0139a23d9ac6a49e0113b8cb0a0a0843e4529fbd88795f4f528",
+    "assets/motion/2026-10-15/main/team.jpg": "9d677369fc9231288800e198a27c38089931b748f82eb7db43ed91a53a6a8758",
+    "assets/motion/2026-10-15/main/weighing.jpg": "52007e2ab3127bf9376f7994fec048ee9f9e0c4bee0ae2a03bcbec9f7677204e"
+  }
+}

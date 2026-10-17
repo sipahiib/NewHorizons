@@ -1,0 +1,89 @@
+{
+  "cycle": "2026-10-15",
+  "status": "prepared-for-review",
+  "output": "build/reels/2026-10-15/01-ai-storm-simulations.mp4",
+  "audio": "build/video/2026-10-15/audio/r1.mp3",
+  "overlay": "build/reels/2026-10-15/work/r1-title.png",
+  "titleDisplaySeconds": 5.5,
+  "ctaOverlay": "build/reels/2026-10-15/work/r1-cta.png",
+  "ctaWindow": [
+    42,
+    45
+  ],
+  "leadingSilence": 0.5,
+  "duration": 45,
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "counts": {
+    "stills": 7,
+    "motion": 0
+  },
+  "scenes": [
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-15/reels/r1_01_precip.png",
+      "duration": 6,
+      "loop": false,
+      "maxWidth": 900,
+      "maxHeight": 760
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-15/reels/r1_02_wind.png",
+      "duration": 6,
+      "loop": false,
+      "maxWidth": 900,
+      "maxHeight": 760
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-15/reels/r1_03_pressure.png",
+      "duration": 6,
+      "loop": false,
+      "maxWidth": 900,
+      "maxHeight": 760
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-15/reels/r1_04_hurricane_wind.png",
+      "duration": 6,
+      "loop": false,
+      "maxWidth": 900,
+      "maxHeight": 760
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-15/reels/r1_05_hurricane_pressure.png",
+      "duration": 7,
+      "loop": false,
+      "maxWidth": 900,
+      "maxHeight": 760
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-15/reels/r1_06_hurricane_precip.png",
+      "duration": 6,
+      "loop": false,
+      "maxWidth": 900,
+      "maxHeight": 760
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-15/reels/r1_07_bora_wind.png",
+      "duration": 8,
+      "loop": false,
+      "maxWidth": 900,
+      "maxHeight": 760
+    }
+  ],
+  "hashes": {
+    "assets/motion/2026-10-15/reels/r1_01_precip.png": "55a3489ece5524fad257a766d884d07995be7caa687af44508ad722c62ac8d39",
+    "assets/motion/2026-10-15/reels/r1_02_wind.png": "2a24be796e23e39a488591862e5c34cc8c721fe67b04a81d244166541daf2075",
+    "assets/motion/2026-10-15/reels/r1_03_pressure.png": "9bb6c29db9d9ce1be2729d5ab158454e03f050a9cfa5a50ab359430895e19f10",
+    "assets/motion/2026-10-15/reels/r1_04_hurricane_wind.png": "25b45b0a9a2abeb640e889b1423994ac6d4687c324148671757254ebca7c46b7",
+    "assets/motion/2026-10-15/reels/r1_05_hurricane_pressure.png": "619cf220b53e32d890325b445dfc74e817c48dfb957af3583a778269dafa8609",
+    "assets/motion/2026-10-15/reels/r1_06_hurricane_precip.png": "c89961d3a631209c1704952bce2a9fc5b487d1af4965de52ee37bdadd65dbb36",
+    "assets/motion/2026-10-15/reels/r1_07_bora_wind.png": "8b29ebde94ee3323a83daf4e7c7a3f64ea748f5e85200c7c3e19ce646ba014a5"
+  }
+}

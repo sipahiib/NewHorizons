@@ -1,0 +1,50 @@
+[
+  {
+    "id": "opening_hook",
+    "seconds": 4.728,
+    "target": 5,
+    "timeStretch": false
+  },
+  {
+    "id": "opening_support",
+    "seconds": 5.04,
+    "target": 7,
+    "timeStretch": false
+  },
+  {
+    "id": "opening_teaser",
+    "seconds": 3.912,
+    "target": 4,
+    "timeStretch": false
+  },
+  {
+    "id": "nasa_body",
+    "seconds": 111.024,
+    "target": null,
+    "timeStretch": false
+  },
+  {
+    "id": "rna",
+    "seconds": 123.984,
+    "target": null,
+    "timeStretch": false
+  },
+  {
+    "id": "closing",
+    "seconds": 5.736,
+    "target": 10,
+    "timeStretch": false
+  },
+  {
+    "id": "r1",
+    "seconds": 41.52,
+    "target": 45,
+    "timeStretch": false
+  },
+  {
+    "id": "r2",
+    "seconds": 42.264,
+    "target": 45,
+    "timeStretch": false
+  }
+]

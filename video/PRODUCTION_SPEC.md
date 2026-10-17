@@ -4,10 +4,10 @@ This is the single source of truth for production constants.
 
 ## Main programme
 
-- Duration: **5:00–5:30 / 300–330 seconds**. Default planning target: **5:10 / 310 seconds**; fix the exact runtime in the active cycle's approval and narration plan.
-- Lead story at the default target: **0:00–2:40 / 160 seconds**.
-- Second story at the default target: **2:40–5:00 / 140 seconds**.
-- Closing CTA at the default target: **5:00–5:10 / 10 seconds**. Adjust story durations when an approved cycle chooses another total within the range.
+- Duration: **at most 5:10 / 310 seconds**, including the opening and closing. No fixed minimum runtime is required. Record the final measured runtime in the active cycle's narration plan and manifest under this approved ceiling.
+- Lead story: **flexible duration**, including the fixed 16-second opening.
+- Second story: **flexible duration**. Allocate time between stories according to narration, evidence and useful visuals; neither story has a fixed 160- or 140-second allocation.
+- Closing CTA: **exactly 10 seconds**, occupying the final 10 seconds of the chosen runtime. Both stories together, including the opening, must total **at most 300 seconds**.
 - Output: **1920×1080, 60 fps, H.264/AAC** at `build/video/newhorizons.mp4`.
 
 The opening is part of the main story:
@@ -17,15 +17,15 @@ The opening is part of the main story:
 - 0:12–0:16: briefly tease the second story.
 - From 0:16: continue directly into the lead story.
 
-The opening narration and overlays must fit within the first 16 seconds of the lead story.
+The opening lasts exactly **16 seconds** and is included in the lead story's duration. Its narration and overlays must fit within that window. The opening schedule above remains fixed.
 
-Set individual scene durations according to the narration and the amount of useful visual information. At the default target, the lead-story scenes must total 160 seconds and the second-story scenes 140 seconds; their sum plus the closing must match the cycle's approved runtime. Do not force equal scene lengths when a different allocation improves clarity, but avoid unnecessarily long static holds or rapid cuts that make a visual difficult to understand.
+Set individual scene durations according to the narration and the amount of useful visual information. The two story durations are flexible; their sum plus the fixed 10-second closing must match the final runtime and must not exceed 310 seconds. Do not pad the video to reach the ceiling or force a fixed split. Avoid unnecessarily long static holds or rapid cuts that make a visual difficult to understand.
 
 Never add a channel intro or static cover. Keep enough time for both approved stories to explain the evidence, limits and viewer relevance; do not cut either story merely to meet an arbitrary equal split.
 
 ## Visual policy
 
-Use relevant sourced still images and real recorded footage together for both main-programme stories. At the default runtime, use **5 stills and 7 motion clips for the lead story, and 4 stills and 6 motion clips for the second story** as adaptable planning targets, not fixed quotas. Adjust the counts to the approved narration and available relevant media while avoiding long static holds; record the selected counts in the cycle's media manifest. Prefer direct event, product, research or institutional material for both formats, followed by contextual material clearly identified in narration and credits. Stills are an intentional part of the visual mix and are not merely a last resort.
+Use relevant sourced still images and real recorded footage together for both main-programme stories. Use **5 stills and 7 motion clips for the lead story, and 4 stills and 6 motion clips for the second story** as adaptable planning targets, not fixed quotas. Adjust the counts to the approved narration and available relevant media while avoiding long static holds; record the selected counts in the cycle's media manifest. Prefer direct event, product, research or institutional material for both formats, followed by contextual material clearly identified in narration and credits. Stills are an intentional part of the visual mix and are not merely a last resort.
 
 Record provenance, usage conditions, native resolution and whether each visual is actual, contextual or illustrative in the active `MEDIA_AUDIT.md`. Never present stock or context as the reported experiment. Do not use generated, procedural or illustrative animation as main-programme story imagery. Do not use legacy `png/` assets or animate a still with pan/zoom to imply footage.
 

@@ -1,13 +1,14 @@
 {
-  "cycle": "2026-10-11",
-  "status": "main-approved-and-promoted; reels-full-playback-pending",
-  "delivery_allowed": false,
+  "cycle": "2026-10-15",
+  "status": "complete; all three outputs accepted and delivered locally",
+  "delivery_allowed": true,
   "review_copies_available": true,
+  "promotion_allowed": true,
   "cleanup_allowed": false,
   "publishing_authorised": false,
-  "deliveryGate": "AWAITING_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
+  "deliveryGate": "PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
   "humanContinuousPlaybackApproval": {
-    "status": "pending",
+    "status": "passed",
     "required_outputs": [
       "main",
       "r1",
@@ -15,22 +16,19 @@
     ],
     "evidence": {
       "type": "user-confirmation",
-      "text": "onayl\u0131yorum",
-      "scope": "revised main video only",
-      "sha256": "f687d97b924257c628b8c8a608ce4f24c753482cbf0f9ad193da549481e3a088",
-      "recorded_at_utc": "2026-10-11T08:52:08.037886+00:00",
-      "basis": "reply to revised-main review copy and pending full viewing/listening acceptance; not automated playback evidence"
-    },
-    "approved_outputs": [
-      "main"
-    ],
-    "pending_outputs": [
-      "r1",
-      "r2"
-    ]
+      "text": "onay veriyorum",
+      "scope": "all three linked final review copies: main, R1 and R2; full continuous viewing and complete narration listening",
+      "recorded_at_utc": "2026-10-15T08:23:12.229198+00:00",
+      "hashes": {
+        "main": "ed784a8bb64005edbff702233e8c4283685469fec7721aafb949e9a613659d34",
+        "r1": "70f9d192f68fe1db1132b005d1aca0dcc0816435ad052202336942a5bf24f12e",
+        "r2": "52706896344ef16457ffd0aa60deab6b5ddcc9058a796c632c16de8f9296ed52"
+      },
+      "basis": "reply to the three review-copy links and explicit pending full viewing/listening acceptance; human evidence, not automated playback"
+    }
   },
   "humanAuralApproval": {
-    "status": "pending",
+    "status": "passed",
     "required_outputs": [
       "main",
       "r1",
@@ -38,59 +36,87 @@
     ],
     "evidence": {
       "type": "user-confirmation",
-      "text": "onayl\u0131yorum",
-      "scope": "revised main video only",
-      "sha256": "f687d97b924257c628b8c8a608ce4f24c753482cbf0f9ad193da549481e3a088",
-      "recorded_at_utc": "2026-10-11T08:52:08.037886+00:00",
-      "basis": "reply to revised-main review copy and pending full viewing/listening acceptance; not automated playback evidence"
-    },
-    "approved_outputs": [
-      "main"
-    ],
-    "pending_outputs": [
-      "r1",
-      "r2"
-    ]
+      "text": "onay veriyorum",
+      "scope": "all three linked final review copies: main, R1 and R2; full continuous viewing and complete narration listening",
+      "recorded_at_utc": "2026-10-15T08:23:12.229198+00:00",
+      "hashes": {
+        "main": "ed784a8bb64005edbff702233e8c4283685469fec7721aafb949e9a613659d34",
+        "r1": "70f9d192f68fe1db1132b005d1aca0dcc0816435ad052202336942a5bf24f12e",
+        "r2": "52706896344ef16457ffd0aa60deab6b5ddcc9058a796c632c16de8f9296ed52"
+      },
+      "basis": "reply to the three review-copy links and explicit pending full viewing/listening acceptance; human evidence, not automated playback"
+    }
   },
-  "qa_document": "video/cycles/2026-10-11/QA.md",
+  "qa_document": "video/cycles/2026-10-15/QA.md",
   "outputs": [
     {
       "id": "main",
-      "path": "build/video/2026-10-11/newhorizons.mp4",
-      "sha256": "f687d97b924257c628b8c8a608ce4f24c753482cbf0f9ad193da549481e3a088",
+      "path": "build/video/2026-10-15/newhorizons.mp4",
+      "sha256": "ed784a8bb64005edbff702233e8c4283685469fec7721aafb949e9a613659d34",
+      "duration_seconds": 263.0,
       "technical_status": "passed",
+      "sampled_visual_status": "passed",
       "full_continuous_playback": "passed-user-confirmation",
       "complete_narration_listening": "passed-user-confirmation",
-      "sampled_visual_status": "passed",
       "human_approval_evidence": {
         "type": "user-confirmation",
-        "text": "onayl\u0131yorum",
-        "scope": "revised main video only",
-        "sha256": "f687d97b924257c628b8c8a608ce4f24c753482cbf0f9ad193da549481e3a088",
-        "recorded_at_utc": "2026-10-11T08:52:08.037886+00:00",
-        "basis": "reply to revised-main review copy and pending full viewing/listening acceptance; not automated playback evidence"
+        "text": "onay veriyorum",
+        "scope": "all three linked final review copies: main, R1 and R2; full continuous viewing and complete narration listening",
+        "recorded_at_utc": "2026-10-15T08:23:12.229198+00:00",
+        "hashes": {
+          "main": "ed784a8bb64005edbff702233e8c4283685469fec7721aafb949e9a613659d34",
+          "r1": "70f9d192f68fe1db1132b005d1aca0dcc0816435ad052202336942a5bf24f12e",
+          "r2": "52706896344ef16457ffd0aa60deab6b5ddcc9058a796c632c16de8f9296ed52"
+        },
+        "basis": "reply to the three review-copy links and explicit pending full viewing/listening acceptance; human evidence, not automated playback"
       },
-      "final_path": "build/video/newhorizons.mp4",
-      "delivery_allowed": true
+      "delivered_path": "build/video/newhorizons.mp4"
     },
     {
       "id": "r1",
-      "path": "build/reels/2026-10-11/01-ai-hardware-pause.mp4",
-      "sha256": "1a1c1c197a9bc020087b3c9a75b383ab5c012c4c63e5765840a2fe84251ccce1",
+      "path": "build/reels/2026-10-15/01-ai-storm-simulations.mp4",
+      "sha256": "70f9d192f68fe1db1132b005d1aca0dcc0816435ad052202336942a5bf24f12e",
+      "duration_seconds": 45,
       "technical_status": "passed",
-      "full_continuous_playback": "pending",
-      "complete_narration_listening": "pending"
+      "sampled_visual_status": "passed",
+      "full_continuous_playback": "passed-user-confirmation",
+      "complete_narration_listening": "passed-user-confirmation",
+      "human_approval_evidence": {
+        "type": "user-confirmation",
+        "text": "onay veriyorum",
+        "scope": "all three linked final review copies: main, R1 and R2; full continuous viewing and complete narration listening",
+        "recorded_at_utc": "2026-10-15T08:23:12.229198+00:00",
+        "hashes": {
+          "main": "ed784a8bb64005edbff702233e8c4283685469fec7721aafb949e9a613659d34",
+          "r1": "70f9d192f68fe1db1132b005d1aca0dcc0816435ad052202336942a5bf24f12e",
+          "r2": "52706896344ef16457ffd0aa60deab6b5ddcc9058a796c632c16de8f9296ed52"
+        },
+        "basis": "reply to the three review-copy links and explicit pending full viewing/listening acceptance; human evidence, not automated playback"
+      }
     },
     {
       "id": "r2",
-      "path": "build/reels/2026-10-11/02-fish-hidden-stress.mp4",
-      "sha256": "cd2f8cfec759b955df88607404553d1e5420123153d29e02f72173cff6463dea",
+      "path": "build/reels/2026-10-15/02-hurricane-polo-attribution.mp4",
+      "sha256": "52706896344ef16457ffd0aa60deab6b5ddcc9058a796c632c16de8f9296ed52",
+      "duration_seconds": 45,
       "technical_status": "passed",
-      "full_continuous_playback": "pending",
-      "complete_narration_listening": "pending"
+      "sampled_visual_status": "passed",
+      "full_continuous_playback": "passed-user-confirmation",
+      "complete_narration_listening": "passed-user-confirmation",
+      "human_approval_evidence": {
+        "type": "user-confirmation",
+        "text": "onay veriyorum",
+        "scope": "all three linked final review copies: main, R1 and R2; full continuous viewing and complete narration listening",
+        "recorded_at_utc": "2026-10-15T08:23:12.229198+00:00",
+        "hashes": {
+          "main": "ed784a8bb64005edbff702233e8c4283685469fec7721aafb949e9a613659d34",
+          "r1": "70f9d192f68fe1db1132b005d1aca0dcc0816435ad052202336942a5bf24f12e",
+          "r2": "52706896344ef16457ffd0aa60deab6b5ddcc9058a796c632c16de8f9296ed52"
+        },
+        "basis": "reply to the three review-copy links and explicit pending full viewing/listening acceptance; human evidence, not automated playback"
+      }
     }
   ],
-  "remaining_gate": "R1 and R2 complete audiovisual viewing/listening acceptance",
-  "metadata": "video/cycles/2026-10-11/DELIVERY_METADATA.md",
-  "updated_at_utc": "2026-10-11T08:52:08.037886+00:00"
+  "machine_gate": "PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
+  "cleanup_status": "not performed; no disposable inventory executed"
 }

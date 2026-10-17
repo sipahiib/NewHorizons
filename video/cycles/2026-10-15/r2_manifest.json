@@ -1,0 +1,100 @@
+{
+  "cycle": "2026-10-15",
+  "status": "prepared-for-review",
+  "output": "build/reels/2026-10-15/02-hurricane-polo-attribution.mp4",
+  "audio": "build/video/2026-10-15/audio/r2.mp3",
+  "overlay": "build/reels/2026-10-15/work/r2-title.png",
+  "titleDisplaySeconds": 5.5,
+  "ctaOverlay": "build/reels/2026-10-15/work/r2-cta.png",
+  "ctaWindow": [
+    42,
+    45
+  ],
+  "leadingSilence": 0,
+  "duration": 45,
+  "fps": 60,
+  "width": 1080,
+  "height": 1920,
+  "counts": {
+    "stills": 2,
+    "motion": 5
+  },
+  "scenes": [
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-15/reels/r2_modis_sep21.jpg",
+      "duration": 6,
+      "loop": false,
+      "maxWidth": 900,
+      "maxHeight": 760
+    },
+    {
+      "kind": "still",
+      "file": "assets/motion/2026-10-15/reels/r2_eo_sep23.jpg",
+      "duration": 6,
+      "loop": false,
+      "maxWidth": 900,
+      "maxHeight": 760
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-15/reels/r2_svs5681_no_dates.mp4",
+      "duration": 6,
+      "loop": false,
+      "maxWidth": 650,
+      "maxHeight": 650,
+      "seek": 22,
+      "speed": 0.6666666666666666,
+      "crop": "500:500:950:480"
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-15/reels/r2_svs5681_no_dates.mp4",
+      "duration": 6,
+      "loop": false,
+      "maxWidth": 900,
+      "maxHeight": 760,
+      "seek": 26,
+      "speed": 0.6666666666666666,
+      "crop": "800:600:850:480"
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-15/reels/r2_svs5681_no_dates.mp4",
+      "duration": 7,
+      "loop": false,
+      "maxWidth": 900,
+      "maxHeight": 760,
+      "seek": 30,
+      "speed": 0.7142857142857143,
+      "crop": "1100:630:650:450"
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-15/reels/r2_svs5681_no_dates.mp4",
+      "duration": 6,
+      "loop": false,
+      "maxWidth": 900,
+      "maxHeight": 760,
+      "seek": 35,
+      "speed": 0.6666666666666666,
+      "crop": "1200:780:400:300"
+    },
+    {
+      "kind": "motion",
+      "file": "assets/motion/2026-10-15/reels/r2_svs5681_no_dates.mp4",
+      "duration": 8,
+      "loop": false,
+      "maxWidth": 900,
+      "maxHeight": 760,
+      "seek": 40,
+      "speed": 0.75,
+      "crop": "1920:1080:0:0"
+    }
+  ],
+  "hashes": {
+    "assets/motion/2026-10-15/reels/r2_eo_sep23.jpg": "a3c69e5b43b97dfa7587b8cb23b55df89df20e9832792b896e0c08ce2d58626c",
+    "assets/motion/2026-10-15/reels/r2_modis_sep21.jpg": "add5062da5e40c7546b49281de72bf671331874440d3dc246bcf6994ce4d0b68",
+    "assets/motion/2026-10-15/reels/r2_svs5681_no_dates.mp4": "4bc61ec69595ec925ad92c2be62c85848bd624b65403340027c62b21341572c9"
+  }
+}

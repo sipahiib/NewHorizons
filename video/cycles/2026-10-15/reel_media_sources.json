@@ -1,0 +1,630 @@
+{
+  "status": "audited-source-preparation-for-independent-review",
+  "checked_on": "2026-10-15",
+  "approval": "APPROVAL.md authorises production for both R1 and R2; parent approved R2 mix adjustment within satellite/derived visualization route",
+  "assets": [
+    {
+      "output": "R1",
+      "segment": 1,
+      "file": "assets/motion/2026-10-15/reels/r1_01_precip.png",
+      "source_file": "assets/motion/2026-10-15/reels/r1_fig10.png",
+      "source_url": "https://arxiv.org/html/2610.17693v1/figures/hiro_ace_ar2_2023-01-31_precip.png",
+      "listing_page": "https://arxiv.org/html/2610.17693v1",
+      "native_source_dimensions": [
+        1893,
+        634
+      ],
+      "native_crop_dimensions": [
+        555,
+        378
+      ],
+      "crop_xyxy": [
+        145,
+        87,
+        700,
+        465
+      ],
+      "sha256": "55a3489ece5524fad257a766d884d07995be7caa687af44508ad722c62ac8d39",
+      "description": "Figure 10 precipitation",
+      "correspondence": "scientific simulated model output, not recorded weather",
+      "credit": "Anna Kwa et al. (2026), Extreme events and statistics in an AI emulator of a global storm-resolving model, arXiv:2610.17693v1",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_evidence": "Paper HTML displays License: CC BY 4.0; figure captions do not identify third-party exceptions. Saved source_pages/arxiv.html.",
+      "transforms": "Faithful static crop removes titles, tick labels and colourbar; preserves complete plotted map interior, coastlines, grid and scientific vectors. No content reconstructed. Crop disclosed in credits.",
+      "visual_inspection": "Decoded and inspected; clean map crop, no prominent embedded editorial text.",
+      "prior_hash_matches": []
+    },
+    {
+      "output": "R1",
+      "segment": 2,
+      "file": "assets/motion/2026-10-15/reels/r1_02_wind.png",
+      "source_file": "assets/motion/2026-10-15/reels/r1_fig10.png",
+      "source_url": "https://arxiv.org/html/2610.17693v1/figures/hiro_ace_ar2_2023-01-31_precip.png",
+      "listing_page": "https://arxiv.org/html/2610.17693v1",
+      "native_source_dimensions": [
+        1893,
+        634
+      ],
+      "native_crop_dimensions": [
+        557,
+        378
+      ],
+      "crop_xyxy": [
+        733,
+        87,
+        1290,
+        465
+      ],
+      "sha256": "2a24be796e23e39a488591862e5c34cc8c721fe67b04a81d244166541daf2075",
+      "description": "Figure 10 10m wind speed",
+      "correspondence": "scientific simulated model output, not recorded weather",
+      "credit": "Anna Kwa et al. (2026), Extreme events and statistics in an AI emulator of a global storm-resolving model, arXiv:2610.17693v1",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_evidence": "Paper HTML displays License: CC BY 4.0; figure captions do not identify third-party exceptions. Saved source_pages/arxiv.html.",
+      "transforms": "Faithful static crop removes titles, tick labels and colourbar; preserves complete plotted map interior, coastlines, grid and scientific vectors. No content reconstructed. Crop disclosed in credits.",
+      "visual_inspection": "Decoded and inspected; clean map crop, no prominent embedded editorial text.",
+      "prior_hash_matches": []
+    },
+    {
+      "output": "R1",
+      "segment": 3,
+      "file": "assets/motion/2026-10-15/reels/r1_03_pressure.png",
+      "source_file": "assets/motion/2026-10-15/reels/r1_fig10.png",
+      "source_url": "https://arxiv.org/html/2610.17693v1/figures/hiro_ace_ar2_2023-01-31_precip.png",
+      "listing_page": "https://arxiv.org/html/2610.17693v1",
+      "native_source_dimensions": [
+        1893,
+        634
+      ],
+      "native_crop_dimensions": [
+        557,
+        378
+      ],
+      "crop_xyxy": [
+        1323,
+        87,
+        1880,
+        465
+      ],
+      "sha256": "9bb6c29db9d9ce1be2729d5ab158454e03f050a9cfa5a50ab359430895e19f10",
+      "description": "Figure 10 sea-level pressure",
+      "correspondence": "scientific simulated model output, not recorded weather",
+      "credit": "Anna Kwa et al. (2026), Extreme events and statistics in an AI emulator of a global storm-resolving model, arXiv:2610.17693v1",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_evidence": "Paper HTML displays License: CC BY 4.0; figure captions do not identify third-party exceptions. Saved source_pages/arxiv.html.",
+      "transforms": "Faithful static crop removes titles, tick labels and colourbar; preserves complete plotted map interior, coastlines, grid and scientific vectors. No content reconstructed. Crop disclosed in credits.",
+      "visual_inspection": "Decoded and inspected; clean map crop, no prominent embedded editorial text.",
+      "prior_hash_matches": []
+    },
+    {
+      "output": "R1",
+      "segment": 4,
+      "file": "assets/motion/2026-10-15/reels/r1_04_hurricane_wind.png",
+      "source_file": "assets/motion/2026-10-15/reels/r1_fig11.png",
+      "source_url": "https://arxiv.org/html/2610.17693v1/figures/HiRO-ACE-hurricane-example.png",
+      "listing_page": "https://arxiv.org/html/2610.17693v1",
+      "native_source_dimensions": [
+        5217,
+        1545
+      ],
+      "native_crop_dimensions": [
+        1136,
+        1130
+      ],
+      "crop_xyxy": [
+        221,
+        278,
+        1357,
+        1408
+      ],
+      "sha256": "25b45b0a9a2abeb640e889b1423994ac6d4687c324148671757254ebca7c46b7",
+      "description": "Figure 11 hurricane wind",
+      "correspondence": "scientific simulated model output, not recorded weather",
+      "credit": "Anna Kwa et al. (2026), Extreme events and statistics in an AI emulator of a global storm-resolving model, arXiv:2610.17693v1",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_evidence": "Paper HTML displays License: CC BY 4.0; figure captions do not identify third-party exceptions. Saved source_pages/arxiv.html.",
+      "transforms": "Faithful static crop removes titles, tick labels and colourbar; preserves complete plotted map interior, coastlines, grid and scientific vectors. No content reconstructed. Crop disclosed in credits.",
+      "visual_inspection": "Decoded and inspected; clean map crop, no prominent embedded editorial text.",
+      "prior_hash_matches": []
+    },
+    {
+      "output": "R1",
+      "segment": 5,
+      "file": "assets/motion/2026-10-15/reels/r1_05_hurricane_pressure.png",
+      "source_file": "assets/motion/2026-10-15/reels/r1_fig11.png",
+      "source_url": "https://arxiv.org/html/2610.17693v1/figures/HiRO-ACE-hurricane-example.png",
+      "listing_page": "https://arxiv.org/html/2610.17693v1",
+      "native_source_dimensions": [
+        5217,
+        1545
+      ],
+      "native_crop_dimensions": [
+        1135,
+        1130
+      ],
+      "crop_xyxy": [
+        1928,
+        278,
+        3063,
+        1408
+      ],
+      "sha256": "619cf220b53e32d890325b445dfc74e817c48dfb957af3583a778269dafa8609",
+      "description": "Figure 11 hurricane pressure",
+      "correspondence": "scientific simulated model output, not recorded weather",
+      "credit": "Anna Kwa et al. (2026), Extreme events and statistics in an AI emulator of a global storm-resolving model, arXiv:2610.17693v1",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_evidence": "Paper HTML displays License: CC BY 4.0; figure captions do not identify third-party exceptions. Saved source_pages/arxiv.html.",
+      "transforms": "Faithful static crop removes titles, tick labels and colourbar; preserves complete plotted map interior, coastlines, grid and scientific vectors. No content reconstructed. Crop disclosed in credits.",
+      "visual_inspection": "Decoded and inspected; clean map crop, no prominent embedded editorial text.",
+      "prior_hash_matches": []
+    },
+    {
+      "output": "R1",
+      "segment": 6,
+      "file": "assets/motion/2026-10-15/reels/r1_06_hurricane_precip.png",
+      "source_file": "assets/motion/2026-10-15/reels/r1_fig11.png",
+      "source_url": "https://arxiv.org/html/2610.17693v1/figures/HiRO-ACE-hurricane-example.png",
+      "listing_page": "https://arxiv.org/html/2610.17693v1",
+      "native_source_dimensions": [
+        5217,
+        1545
+      ],
+      "native_crop_dimensions": [
+        1135,
+        1130
+      ],
+      "crop_xyxy": [
+        3635,
+        278,
+        4770,
+        1408
+      ],
+      "sha256": "c89961d3a631209c1704952bce2a9fc5b487d1af4965de52ee37bdadd65dbb36",
+      "description": "Figure 11 hurricane precipitation",
+      "correspondence": "scientific simulated model output, not recorded weather",
+      "credit": "Anna Kwa et al. (2026), Extreme events and statistics in an AI emulator of a global storm-resolving model, arXiv:2610.17693v1",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_evidence": "Paper HTML displays License: CC BY 4.0; figure captions do not identify third-party exceptions. Saved source_pages/arxiv.html.",
+      "transforms": "Faithful static crop removes titles, tick labels and colourbar; preserves complete plotted map interior, coastlines, grid and scientific vectors. No content reconstructed. Crop disclosed in credits.",
+      "visual_inspection": "Decoded and inspected; clean map crop, no prominent embedded editorial text.",
+      "prior_hash_matches": []
+    },
+    {
+      "output": "R1",
+      "segment": 7,
+      "file": "assets/motion/2026-10-15/reels/r1_07_bora_wind.png",
+      "source_file": "assets/motion/2026-10-15/reels/r1_fig5.png",
+      "source_url": "https://arxiv.org/html/2610.17693v1/figures/wind_event_bora.png",
+      "listing_page": "https://arxiv.org/html/2610.17693v1",
+      "native_source_dimensions": [
+        4271,
+        2061
+      ],
+      "native_crop_dimensions": [
+        1023,
+        678
+      ],
+      "crop_xyxy": [
+        2728,
+        242,
+        3751,
+        920
+      ],
+      "sha256": "8b29ebde94ee3323a83daf4e7c7a3f64ea748f5e85200c7c3e19ce646ba014a5",
+      "description": "Figure 5c generated HiROv2 Prediction 0 Bora wind",
+      "correspondence": "scientific simulated model output, not recorded weather",
+      "credit": "Anna Kwa et al. (2026), Extreme events and statistics in an AI emulator of a global storm-resolving model, arXiv:2610.17693v1",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_evidence": "Paper HTML displays License: CC BY 4.0; figure captions do not identify third-party exceptions. Saved source_pages/arxiv.html.",
+      "transforms": "Faithful static crop removes titles, tick labels and colourbar; preserves complete plotted map interior, coastlines, grid and scientific vectors. No content reconstructed. Crop disclosed in credits.",
+      "visual_inspection": "Decoded and inspected; clean map crop, no prominent embedded editorial text.",
+      "prior_hash_matches": []
+    },
+    {
+      "output": "R2",
+      "segment": 1,
+      "file": "assets/motion/2026-10-15/reels/r2_modis_sep21.jpg",
+      "source_url": "https://modis.gsfc.nasa.gov/gallery/images/image09232026_250m.jpg",
+      "listing_page": "https://modis.gsfc.nasa.gov/gallery/individual.php?db_date=2026-09-23",
+      "native_dimensions": [
+        5960,
+        4555
+      ],
+      "crop_xyxy": null,
+      "sha256": "add5062da5e40c7546b49281de72bf671331874440d3dc246bcf6994ce4d0b68",
+      "credit": "MODIS Land Rapid Response Team, NASA GSFC",
+      "acquired": "2026-09-21",
+      "license": "NASA educational/informational media-use conditions; no third-party restriction identified on asset page",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "correspondence": "Actual Aqua MODIS satellite natural-colour image of Polo",
+      "visual_inspection": "Clean complete image; no prominent labels; source acquisition date differs from page publication date.",
+      "transforms": "Preserve whole landscape source image over blurred duplicate background; no pan/zoom."
+    },
+    {
+      "output": "R2",
+      "segment": 2,
+      "file": "assets/motion/2026-10-15/reels/r2_eo_sep23.jpg",
+      "source_url": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/iotd/2026/explosive-intensification-for-hurricane-polo/hurricanepolo_amo_20260923_lrg.jpg",
+      "listing_page": "https://science.nasa.gov/earth/earth-observatory/explosive-intensification-for-hurricane-polo/",
+      "native_dimensions": [
+        2160,
+        1740
+      ],
+      "crop_xyxy": null,
+      "sha256": "a3c69e5b43b97dfa7587b8cb23b55df89df20e9832792b896e0c08ce2d58626c",
+      "credit": "NASA Earth Observatory/Michala Garrison, MODIS data from NASA EOSDIS LANCE and GIBS/Worldview",
+      "acquired": "2026-09-23",
+      "license": "NASA educational/informational media-use conditions; no third-party restriction identified on asset page",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "correspondence": "Actual Aqua MODIS satellite natural-colour image of Polo",
+      "visual_inspection": "Clean complete image; no prominent labels; source acquisition date differs from page publication date.",
+      "transforms": "Preserve whole landscape source image over blurred duplicate background; no pan/zoom."
+    },
+    {
+      "output": "R2",
+      "segment": 3,
+      "file": "assets/motion/2026-10-15/reels/r2_svs5681_no_dates.mp4",
+      "source_url": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005681/Polo_v07_stutter.mp4",
+      "listing_page": "https://svs.gsfc.nasa.gov/5681/",
+      "native_dimensions": [
+        1920,
+        1080
+      ],
+      "native_fps": 30,
+      "crop_xyxy": [
+        950,
+        480,
+        1450,
+        980
+      ],
+      "native_crop_dimensions": [
+        500,
+        500
+      ],
+      "suggested_in_seconds": 22,
+      "suggested_out_seconds": 26,
+      "suggested_playback_rate": 0.8,
+      "suggested_scene_duration_seconds": 5.0,
+      "sha256": "4bc61ec69595ec925ad92c2be62c85848bd624b65403340027c62b21341572c9",
+      "credit": "NASA's Scientific Visualization Studio. Data provided by the joint NASA/JAXA GPM mission.",
+      "license": "NASA/SVS informational use conditions; no asset-specific third-party restriction found",
+      "license_url": "https://svs.gsfc.nasa.gov/help/",
+      "rights_evidence": "SVS page explicitly provides date-free version and requested NASA/JAXA credit. NASA media guidelines permit informational use; retain credit, no endorsement.",
+      "correspondence": "Satellite-derived cloud/rainfall visualization of Polo; final clip introduces GPM 3D structure, not raw camera footage or quantified climate rainfall attribution",
+      "visual_inspection": "Start/mid/end crop images inspected in svs_selected_inspection.jpg. Crop removes country labels; final source interval is full frame before prominent rulers.",
+      "transforms": "Static crop only, no tracking or synthesized data. Suggested 0.8x playback is optional and must be disclosed in credits/descriptions. Preserve complete prepared frame in foreground.",
+      "limitation": "First crop is 500x500 native and requires restrained scaling; inspect final mobile clarity."
+    },
+    {
+      "output": "R2",
+      "segment": 4,
+      "file": "assets/motion/2026-10-15/reels/r2_svs5681_no_dates.mp4",
+      "source_url": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005681/Polo_v07_stutter.mp4",
+      "listing_page": "https://svs.gsfc.nasa.gov/5681/",
+      "native_dimensions": [
+        1920,
+        1080
+      ],
+      "native_fps": 30,
+      "crop_xyxy": [
+        850,
+        480,
+        1650,
+        1080
+      ],
+      "native_crop_dimensions": [
+        800,
+        600
+      ],
+      "suggested_in_seconds": 26,
+      "suggested_out_seconds": 30,
+      "suggested_playback_rate": 0.8,
+      "suggested_scene_duration_seconds": 5.0,
+      "sha256": "4bc61ec69595ec925ad92c2be62c85848bd624b65403340027c62b21341572c9",
+      "credit": "NASA's Scientific Visualization Studio. Data provided by the joint NASA/JAXA GPM mission.",
+      "license": "NASA/SVS informational use conditions; no asset-specific third-party restriction found",
+      "license_url": "https://svs.gsfc.nasa.gov/help/",
+      "rights_evidence": "SVS page explicitly provides date-free version and requested NASA/JAXA credit. NASA media guidelines permit informational use; retain credit, no endorsement.",
+      "correspondence": "Satellite-derived cloud/rainfall visualization of Polo; final clip introduces GPM 3D structure, not raw camera footage or quantified climate rainfall attribution",
+      "visual_inspection": "Start/mid/end crop images inspected in svs_selected_inspection.jpg. Crop removes country labels; final source interval is full frame before prominent rulers.",
+      "transforms": "Static crop only, no tracking or synthesized data. Suggested 0.8x playback is optional and must be disclosed in credits/descriptions. Preserve complete prepared frame in foreground.",
+      "limitation": null
+    },
+    {
+      "output": "R2",
+      "segment": 5,
+      "file": "assets/motion/2026-10-15/reels/r2_svs5681_no_dates.mp4",
+      "source_url": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005681/Polo_v07_stutter.mp4",
+      "listing_page": "https://svs.gsfc.nasa.gov/5681/",
+      "native_dimensions": [
+        1920,
+        1080
+      ],
+      "native_fps": 30,
+      "crop_xyxy": [
+        650,
+        450,
+        1750,
+        1080
+      ],
+      "native_crop_dimensions": [
+        1100,
+        630
+      ],
+      "suggested_in_seconds": 30,
+      "suggested_out_seconds": 35,
+      "suggested_playback_rate": 0.8,
+      "suggested_scene_duration_seconds": 6.25,
+      "sha256": "4bc61ec69595ec925ad92c2be62c85848bd624b65403340027c62b21341572c9",
+      "credit": "NASA's Scientific Visualization Studio. Data provided by the joint NASA/JAXA GPM mission.",
+      "license": "NASA/SVS informational use conditions; no asset-specific third-party restriction found",
+      "license_url": "https://svs.gsfc.nasa.gov/help/",
+      "rights_evidence": "SVS page explicitly provides date-free version and requested NASA/JAXA credit. NASA media guidelines permit informational use; retain credit, no endorsement.",
+      "correspondence": "Satellite-derived cloud/rainfall visualization of Polo; final clip introduces GPM 3D structure, not raw camera footage or quantified climate rainfall attribution",
+      "visual_inspection": "Start/mid/end crop images inspected in svs_selected_inspection.jpg. Crop removes country labels; final source interval is full frame before prominent rulers.",
+      "transforms": "Static crop only, no tracking or synthesized data. Suggested 0.8x playback is optional and must be disclosed in credits/descriptions. Preserve complete prepared frame in foreground.",
+      "limitation": null
+    },
+    {
+      "output": "R2",
+      "segment": 6,
+      "file": "assets/motion/2026-10-15/reels/r2_svs5681_no_dates.mp4",
+      "source_url": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005681/Polo_v07_stutter.mp4",
+      "listing_page": "https://svs.gsfc.nasa.gov/5681/",
+      "native_dimensions": [
+        1920,
+        1080
+      ],
+      "native_fps": 30,
+      "crop_xyxy": [
+        400,
+        300,
+        1600,
+        1080
+      ],
+      "native_crop_dimensions": [
+        1200,
+        780
+      ],
+      "suggested_in_seconds": 35,
+      "suggested_out_seconds": 39,
+      "suggested_playback_rate": 0.8,
+      "suggested_scene_duration_seconds": 5.0,
+      "sha256": "4bc61ec69595ec925ad92c2be62c85848bd624b65403340027c62b21341572c9",
+      "credit": "NASA's Scientific Visualization Studio. Data provided by the joint NASA/JAXA GPM mission.",
+      "license": "NASA/SVS informational use conditions; no asset-specific third-party restriction found",
+      "license_url": "https://svs.gsfc.nasa.gov/help/",
+      "rights_evidence": "SVS page explicitly provides date-free version and requested NASA/JAXA credit. NASA media guidelines permit informational use; retain credit, no endorsement.",
+      "correspondence": "Satellite-derived cloud/rainfall visualization of Polo; final clip introduces GPM 3D structure, not raw camera footage or quantified climate rainfall attribution",
+      "visual_inspection": "Start/mid/end crop images inspected in svs_selected_inspection.jpg. Crop removes country labels; final source interval is full frame before prominent rulers.",
+      "transforms": "Static crop only, no tracking or synthesized data. Suggested 0.8x playback is optional and must be disclosed in credits/descriptions. Preserve complete prepared frame in foreground.",
+      "limitation": null
+    },
+    {
+      "output": "R2",
+      "segment": 7,
+      "file": "assets/motion/2026-10-15/reels/r2_svs5681_no_dates.mp4",
+      "source_url": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005681/Polo_v07_stutter.mp4",
+      "listing_page": "https://svs.gsfc.nasa.gov/5681/",
+      "native_dimensions": [
+        1920,
+        1080
+      ],
+      "native_fps": 30,
+      "crop_xyxy": [
+        0,
+        0,
+        1920,
+        1080
+      ],
+      "native_crop_dimensions": [
+        1920,
+        1080
+      ],
+      "suggested_in_seconds": 40,
+      "suggested_out_seconds": 46,
+      "suggested_playback_rate": 0.8,
+      "suggested_scene_duration_seconds": 7.5,
+      "sha256": "4bc61ec69595ec925ad92c2be62c85848bd624b65403340027c62b21341572c9",
+      "credit": "NASA's Scientific Visualization Studio. Data provided by the joint NASA/JAXA GPM mission.",
+      "license": "NASA/SVS informational use conditions; no asset-specific third-party restriction found",
+      "license_url": "https://svs.gsfc.nasa.gov/help/",
+      "rights_evidence": "SVS page explicitly provides date-free version and requested NASA/JAXA credit. NASA media guidelines permit informational use; retain credit, no endorsement.",
+      "correspondence": "Satellite-derived cloud/rainfall visualization of Polo; final clip introduces GPM 3D structure, not raw camera footage or quantified climate rainfall attribution",
+      "visual_inspection": "Start/mid/end crop images inspected in svs_selected_inspection.jpg. Crop removes country labels; final source interval is full frame before prominent rulers.",
+      "transforms": "Static crop only, no tracking or synthesized data. Suggested 0.8x playback is optional and must be disclosed in credits/descriptions. Preserve complete prepared frame in foreground.",
+      "limitation": null
+    }
+  ],
+  "sources": [
+    {
+      "file": "assets/motion/2026-10-15/reels/r1_fig10.png",
+      "download_url": "https://arxiv.org/html/2610.17693v1/figures/hiro_ace_ar2_2023-01-31_precip.png",
+      "sha256": "0198c8fcfdd8c0d9776f911650c9b7a23a06e1fe55e3a695e95f35825ebac566",
+      "bytes": 941474,
+      "fresh_download": true,
+      "prior_hash_matches": [],
+      "prior_url_matches": [],
+      "selected": true,
+      "native_dimensions": [
+        1893,
+        634
+      ]
+    },
+    {
+      "file": "assets/motion/2026-10-15/reels/r1_fig11.png",
+      "download_url": "https://arxiv.org/html/2610.17693v1/figures/HiRO-ACE-hurricane-example.png",
+      "sha256": "6f57a12c07cdfec2d806858f9a80aecaa8a57c1893fa2d21ee9d8055172f7ee4",
+      "bytes": 439144,
+      "fresh_download": true,
+      "prior_hash_matches": [],
+      "prior_url_matches": [],
+      "selected": true,
+      "native_dimensions": [
+        5217,
+        1545
+      ]
+    },
+    {
+      "file": "assets/motion/2026-10-15/reels/r1_fig5.png",
+      "download_url": "https://arxiv.org/html/2610.17693v1/figures/wind_event_bora.png",
+      "sha256": "aaeeac7d1c4f8485434f3a7503ffad90696384265a36fedc2f57cb583dc8b85a",
+      "bytes": 1742252,
+      "fresh_download": true,
+      "prior_hash_matches": [],
+      "prior_url_matches": [],
+      "selected": true,
+      "native_dimensions": [
+        4271,
+        2061
+      ]
+    },
+    {
+      "file": "assets/motion/2026-10-15/reels/r2_modis_sep21.jpg",
+      "download_url": "https://modis.gsfc.nasa.gov/gallery/images/image09232026_250m.jpg",
+      "sha256": "add5062da5e40c7546b49281de72bf671331874440d3dc246bcf6994ce4d0b68",
+      "bytes": 3010951,
+      "fresh_download": true,
+      "prior_hash_matches": [],
+      "prior_url_matches": [],
+      "selected": true,
+      "native_dimensions": [
+        5960,
+        4555
+      ]
+    },
+    {
+      "file": "assets/motion/2026-10-15/reels/r2_eo_sep23.jpg",
+      "download_url": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/iotd/2026/explosive-intensification-for-hurricane-polo/hurricanepolo_amo_20260923_lrg.jpg",
+      "sha256": "a3c69e5b43b97dfa7587b8cb23b55df89df20e9832792b896e0c08ce2d58626c",
+      "bytes": 2670132,
+      "fresh_download": true,
+      "prior_hash_matches": [],
+      "prior_url_matches": [],
+      "selected": true,
+      "native_dimensions": [
+        2160,
+        1740
+      ]
+    },
+    {
+      "file": "assets/motion/2026-10-15/reels/r2_eo_sst.jpg",
+      "download_url": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/iotd/2026/explosive-intensification-for-hurricane-polo/hurricanepolo_mur_20260923_lrg.jpg",
+      "sha256": "d0cd3b446280ef864b5588947cc55258da31ce4e47d6f4aad0626e5aa11eb56d",
+      "bytes": 1255814,
+      "fresh_download": true,
+      "prior_hash_matches": [],
+      "prior_url_matches": [],
+      "selected": false,
+      "native_dimensions": [
+        2160,
+        1935
+      ]
+    },
+    {
+      "file": "assets/motion/2026-10-15/reels/r2_svs5681_no_dates.mp4",
+      "download_url": "https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005681/Polo_v07_stutter.mp4",
+      "sha256": "4bc61ec69595ec925ad92c2be62c85848bd624b65403340027c62b21341572c9",
+      "bytes": 77302020,
+      "fresh_download": true,
+      "prior_hash_matches": [],
+      "prior_url_matches": [],
+      "selected": true,
+      "native_dimensions": [
+        1920,
+        1080
+      ],
+      "native_fps": 30,
+      "duration_seconds": 103.366667,
+      "source_audio": false
+    }
+  ],
+  "segment_mix": {
+    "R1": "7 scientific still map crops",
+    "R2": "2 distinct natural-colour satellite stills + 5 non-overlapping satellite-derived visualization excerpts"
+  },
+  "rights_evidence_directory": "assets/motion/2026-10-15/reels/source_pages",
+  "freshness_check": {
+    "prior_json_files_checked": 60,
+    "prior_distinct_recorded_sha256": 535,
+    "prior_manifest_paths": [
+      "video/cycles/2026-09-23/delivery_review.json",
+      "video/cycles/2026-10-11/main_media_sources.json",
+      "video/cycles/2026-10-11/SOURCE_QA_CORRECTION.json",
+      "video/cycles/2026-10-11/audio_measurements.json",
+      "video/cycles/2026-10-11/main_manifest.json",
+      "video/cycles/2026-10-11/AUDIO_QA_CORRECTION.json",
+      "video/cycles/2026-10-11/r1_manifest.json",
+      "video/cycles/2026-10-11/delivery_review.json",
+      "video/cycles/2026-10-11/reel_media_sources.json",
+      "video/cycles/2026-10-11/MEDIA_REVISION.json",
+      "video/cycles/2026-10-11/r2_manifest.json",
+      "video/cycles/2026-10-11/narration.json",
+      "video/cycles/2026-10-04/audio_measurements.json",
+      "video/cycles/2026-10-04/main_manifest.json",
+      "video/cycles/2026-10-04/native_source_probes.json",
+      "video/cycles/2026-10-04/prior_reuse_audit.json",
+      "video/cycles/2026-10-04/r1_manifest.json",
+      "video/cycles/2026-10-04/delivery_review.json",
+      "video/cycles/2026-10-04/media_sources.json",
+      "video/cycles/2026-10-04/r2_manifest.json",
+      "video/cycles/2026-10-04/esa_native_probe.json",
+      "video/cycles/2026-10-04/narration.json",
+      "video/cycles/2026-09-30/stock_downloads.json",
+      "video/cycles/2026-09-30/audio_measurements.json",
+      "video/cycles/2026-09-30/main_manifest.json",
+      "video/cycles/2026-09-30/reel_prior_hash_check.json",
+      "video/cycles/2026-09-30/esa_stills.json",
+      "video/cycles/2026-09-30/stock_stills.json",
+      "video/cycles/2026-09-30/stock_candidates.json",
+      "video/cycles/2026-09-30/r1_manifest.json",
+      "video/cycles/2026-09-30/delivery_review.json",
+      "video/cycles/2026-09-30/editorial_cards.json",
+      "video/cycles/2026-09-30/commons_stills.json",
+      "video/cycles/2026-09-30/r2_manifest.json",
+      "video/cycles/2026-09-30/pexels_photos.json",
+      "video/cycles/2026-09-30/narration.json",
+      "video/cycles/2026-09-30/audio_revision_manifest.json",
+      "video/cycles/2026-09-26/audio_measurements.json",
+      "video/cycles/2026-09-26/main_manifest.json",
+      "video/cycles/2026-09-26/bedretto-commons-api.json",
+      "video/cycles/2026-09-26/smartglasses-imageinfo.json",
+      "video/cycles/2026-09-26/r2_prior_hash_check.json",
+      "video/cycles/2026-09-26/r1_manifest.json",
+      "video/cycles/2026-09-26/bedretto-imageinfo.json",
+      "video/cycles/2026-09-26/r2_manifest.json",
+      "video/cycles/2026-09-26/r1_prior_hash_check.json",
+      "video/cycles/2026-09-26/narration.json",
+      "video/cycles/2026-09-26/smartglasses-derivatives.json",
+      "video/cycles/2026-10-07/audio_measurements.json",
+      "video/cycles/2026-10-07/main_manifest.json",
+      "video/cycles/2026-10-07/DELIVERY_RECEIPT.json",
+      "video/cycles/2026-10-07/native_source_probes.json",
+      "video/cycles/2026-10-07/context_sources.json",
+      "video/cycles/2026-10-07/prior_reuse_audit.json",
+      "video/cycles/2026-10-07/r1_manifest.json",
+      "video/cycles/2026-10-07/delivery_review.json",
+      "video/cycles/2026-10-07/media_sources.json",
+      "video/cycles/2026-10-07/r2_manifest.json",
+      "video/cycles/2026-10-07/narration.json",
+      "video/cycles/2026-10-07/CLEANUP_INVENTORY.json"
+    ],
+    "result": "No selected source or crop hash matches prior-cycle JSON manifests; no source download URL matches. All source bytes freshly downloaded; no old asset copied.",
+    "limit": "Hash comparison cannot detect transformed visual duplicates in undocumented historical inputs; subject-specific source URLs also checked."
+  },
+  "unused_source": "r2_eo_sst.jpg fetched for inspection only; excluded labelled SST map; never select for render.",
+  "editorial_requirements": [
+    "Narration identifies R1 simulation outputs; Figure5c is a HiROv2 generated sample conditioned on coarse X-SHiELD, not free-running event observation.",
+    "Narration identifies R2 imagery versus satellite-derived rainfall visualization; no quantified rainfall attribution.",
+    "Titles only initial 5\u20136 seconds, final calls only, no source labels or colourbars added.",
+    "R1 Figure10 map crops are about 555x378 native; retain sharp pixel meaning without AI upscaling.",
+    "Independent reviewer must assess crop meaning and native clarity; output QA must inspect actual render."
+  ]
+}

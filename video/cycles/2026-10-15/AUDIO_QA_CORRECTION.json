@@ -1,0 +1,14 @@
+{
+  "output": "r1",
+  "reason": "actual final speech gap4.319seconds exceeds4-second limit",
+  "leadingSilenceSeconds": 0.5,
+  "timeStretch": false,
+  "textChanged": false,
+  "duration": 45,
+  "preservedOriginal": "build/reels/2026-10-15/01-ai-storm-simulations-pre-audio-correction.mp4",
+  "oldSha256": "e9f0a518c141e2bf3eecf95861d05a72cf22536b6d146d13ffdd3a969d519e8a",
+  "newSha256": "70f9d192f68fe1db1132b005d1aca0dcc0816435ad052202336942a5bf24f12e",
+  "sar": "1:1",
+  "independentRecheck": "passed",
+  "actualFinalSpeechGapSeconds": 3.762
+}

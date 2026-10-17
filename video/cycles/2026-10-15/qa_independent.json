@@ -1,0 +1,235 @@
+{
+  "cycle": "2026-10-15",
+  "qa_independence": "QA agent did not prepare or render production outputs",
+  "machine_gate": "PASS_TECHNICAL_AND_SAMPLED_VISUAL_QA_PENDING_FULL_PLAYBACK",
+  "delivery_gate": "BLOCKED_PENDING_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
+  "promotion_gate": "BLOCKED_PENDING_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
+  "cleanup_gate": "BLOCKED_PENDING_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
+  "human_approval": {
+    "status": "pending"
+  },
+  "complete_audio_listening": false,
+  "continuous_full_video_viewing": false,
+  "audio_input_limitation": "Tool does not support audio input; no pronunciation, missing/clipped word, pacing or complete narration listening acceptance is claimed.",
+  "main_timing": {
+    "opening": [
+      0,
+      16
+    ],
+    "opening_parts": [
+      [
+        0,
+        5
+      ],
+      [
+        5,
+        12
+      ],
+      [
+        12,
+        16
+      ]
+    ],
+    "nasa": [
+      0,
+      128
+    ],
+    "rna": [
+      128,
+      253
+    ],
+    "closing": [
+      253,
+      263
+    ],
+    "closing_narration_offset": 255,
+    "ceiling_seconds": 310
+  },
+  "overlay_checks": {
+    "title_seconds": 5.5,
+    "main_subscription": [
+      30,
+      35.5
+    ],
+    "reel_cta": [
+      42,
+      45
+    ],
+    "main_closing_tagline_removed": true,
+    "prominent_embedded_source_labels_found": false,
+    "cover_found": false,
+    "reel_complete_foreground_over_blurred_background": true
+  },
+  "correction_rounds": 1,
+  "resolved_findings": [
+    "R1 excessive final silence corrected by 0.5-second audio delay; current gap3.762seconds.",
+    "All output SAR corrected to1:1.",
+    "Controller closing tagline correction verified in final encoded output."
+  ],
+  "technical_blockers": [],
+  "remaining_blockers": [
+    "Independent full human audiovisual playback and complete narration listening required by QA_CHECKLIST.md."
+  ],
+  "source_hash_evidence": "build/video/2026-10-15/qa-independent/source-hashes.json",
+  "outputs": {
+    "main": {
+      "file": "build/video/2026-10-15/newhorizons.mp4",
+      "sha256": "ed784a8bb64005edbff702233e8c4283685469fec7721aafb949e9a613659d34",
+      "duration_seconds": 263.0,
+      "frame_count": 15780,
+      "fps": "60/1",
+      "width": 1920,
+      "height": 1080,
+      "sample_aspect_ratio": "1:1",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "full_decode_exit": 0,
+      "full_decode_errors": "",
+      "audio_levels_db": {
+        "mean_volume": -16.7,
+        "max_volume": -1.4
+      },
+      "final_silence_seconds_at_minus40dB": 3.122271,
+      "source_audio_waveform_correspondence": [
+        {
+          "section": "nasa",
+          "source_audio": "build/video/2026-10-15/audio/nasa.wav",
+          "output_offset_seconds": 0,
+          "normalized_pcm_correlation": 0.997138478568638,
+          "meaning": "encoded waveform correspondence, not spoken-word listening"
+        },
+        {
+          "section": "rna",
+          "source_audio": "build/video/2026-10-15/audio/rna.mp3",
+          "output_offset_seconds": 128.0,
+          "normalized_pcm_correlation": 0.9980017731948942,
+          "meaning": "encoded waveform correspondence, not spoken-word listening"
+        },
+        {
+          "section": "closing",
+          "source_audio": "build/video/2026-10-15/audio/closing.mp3",
+          "output_offset_seconds": 255.0,
+          "normalized_pcm_correlation": 0.9990002404272861,
+          "meaning": "encoded waveform correspondence, not spoken-word listening"
+        }
+      ],
+      "scene_count": 25,
+      "scene_start_mid_end_frames_inspected": 75,
+      "boundary_samples": [
+        0,
+        4.983333,
+        5,
+        5.483333,
+        5.5,
+        11.983333,
+        12,
+        15.983333,
+        16,
+        29.983333,
+        30,
+        35.483333,
+        35.5,
+        127.983333,
+        128,
+        133.483333,
+        133.5,
+        252.983333,
+        253,
+        255,
+        262.983333
+      ],
+      "technical_gate": "PASS",
+      "sampled_visual_gate": "PASS",
+      "complete_audio_listening": "NOT_PERFORMED_UNSUPPORTED_AUDIO_INPUT",
+      "full_audiovisual_playback": "PENDING_HUMAN",
+      "evidence_directory": "build/video/2026-10-15/qa-independent/main"
+    },
+    "r1": {
+      "file": "build/reels/2026-10-15/01-ai-storm-simulations.mp4",
+      "sha256": "70f9d192f68fe1db1132b005d1aca0dcc0816435ad052202336942a5bf24f12e",
+      "duration_seconds": 45.0,
+      "frame_count": 2700,
+      "fps": "60/1",
+      "width": 1080,
+      "height": 1920,
+      "sample_aspect_ratio": "1:1",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "full_decode_exit": 0,
+      "full_decode_errors": "",
+      "audio_levels_db": {
+        "mean_volume": -16.8,
+        "max_volume": -1.4
+      },
+      "final_silence_seconds_at_minus40dB": 3.762021,
+      "source_audio_waveform_correspondence": [
+        {
+          "section": "r1",
+          "source_audio": "build/video/2026-10-15/audio/r1.mp3",
+          "output_offset_seconds": 0.5,
+          "normalized_pcm_correlation": 0.998714563406886,
+          "meaning": "encoded waveform correspondence, not spoken-word listening"
+        }
+      ],
+      "scene_count": 7,
+      "scene_start_mid_end_frames_inspected": 21,
+      "boundary_samples": [
+        0,
+        5.483333,
+        5.5,
+        41.983333,
+        42,
+        44.983333
+      ],
+      "technical_gate": "PASS",
+      "sampled_visual_gate": "PASS",
+      "complete_audio_listening": "NOT_PERFORMED_UNSUPPORTED_AUDIO_INPUT",
+      "full_audiovisual_playback": "PENDING_HUMAN",
+      "evidence_directory": "build/video/2026-10-15/qa-independent/r1"
+    },
+    "r2": {
+      "file": "build/reels/2026-10-15/02-hurricane-polo-attribution.mp4",
+      "sha256": "52706896344ef16457ffd0aa60deab6b5ddcc9058a796c632c16de8f9296ed52",
+      "duration_seconds": 45.0,
+      "frame_count": 2700,
+      "fps": "60/1",
+      "width": 1080,
+      "height": 1920,
+      "sample_aspect_ratio": "1:1",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "full_decode_exit": 0,
+      "full_decode_errors": "",
+      "audio_levels_db": {
+        "mean_volume": -16.9,
+        "max_volume": -1.4
+      },
+      "final_silence_seconds_at_minus40dB": 3.614417,
+      "source_audio_waveform_correspondence": [
+        {
+          "section": "r2",
+          "source_audio": "build/video/2026-10-15/audio/r2.mp3",
+          "output_offset_seconds": 0,
+          "normalized_pcm_correlation": 0.9977839022235475,
+          "meaning": "encoded waveform correspondence, not spoken-word listening"
+        }
+      ],
+      "scene_count": 7,
+      "scene_start_mid_end_frames_inspected": 21,
+      "boundary_samples": [
+        0,
+        5.483333,
+        5.5,
+        41.983333,
+        42,
+        44.983333
+      ],
+      "technical_gate": "PASS",
+      "sampled_visual_gate": "PASS",
+      "complete_audio_listening": "NOT_PERFORMED_UNSUPPORTED_AUDIO_INPUT",
+      "full_audiovisual_playback": "PENDING_HUMAN",
+      "evidence_directory": "build/video/2026-10-15/qa-independent/r2"
+    }
+  },
+  "method": "ffprobe counted all decoded frames; ffmpeg decoded full video/audio; volume and silence detected on actual encoded audio; all-scene start/mid/end and exact overlay/boundary sheets inspected; normalized source/output PCM correlation establishes waveform correspondence, not semantic listening."
+}

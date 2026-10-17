@@ -1,0 +1,14 @@
+[
+  {
+    "output": "main",
+    "operation": "H264 VUI and container SAR set1:1; video/audio packets copied",
+    "preservedOriginal": "build/video/2026-10-15/newhorizons-pre-sar-correction.mp4",
+    "sha256": "d8434b3ca1eef2404f99dc8a1c67b5d525ef8f8d99eddfd40f9b9c67fa3649d2"
+  },
+  {
+    "output": "r2",
+    "operation": "H264 VUI and container SAR set1:1; video/audio packets copied",
+    "preservedOriginal": "build/reels/2026-10-15/02-hurricane-polo-attribution-pre-sar-correction.mp4",
+    "sha256": "52706896344ef16457ffd0aa60deab6b5ddcc9058a796c632c16de8f9296ed52"
+  }
+]

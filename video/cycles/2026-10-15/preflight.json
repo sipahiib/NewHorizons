@@ -1,0 +1,20 @@
+[
+  {
+    "output": "main",
+    "sourceBoundsAndCrops": true,
+    "sceneSums": true,
+    "sceneCount": 24
+  },
+  {
+    "output": "r1",
+    "sourceBoundsAndCrops": true,
+    "sceneSums": true,
+    "sceneCount": 7
+  },
+  {
+    "output": "r2",
+    "sourceBoundsAndCrops": true,
+    "sceneSums": true,
+    "sceneCount": 7
+  }
+]

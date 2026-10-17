@@ -22,7 +22,7 @@ Confirm and record in the active `QA.md`:
 
 - full-file decode succeeds;
 - codecs, resolution, frame rate, frame count and actual duration are correct;
-- opening, story boundaries and closing match the production specification;
+- main runtime is at most 310 seconds, opening is exactly 16 seconds within the lead story, closing is exactly the final 10 seconds, and flexible story boundaries match the current narration plan and manifest;
 - actual footage is relevant and disclosures are readable;
 - complete narration has been listened to for pronunciation, missing/clipped words and pacing;
 - sound level, silence and final speech-to-end gap are acceptable;
