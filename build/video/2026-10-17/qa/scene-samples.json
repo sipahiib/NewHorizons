@@ -1,0 +1,218 @@
+[
+  {
+    "index": 1,
+    "start": 0,
+    "end": 5,
+    "sample": 2.5,
+    "source": "assets/motion/2026-10-17/main/31767906.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/00.jpg"
+  },
+  {
+    "index": 2,
+    "start": 5,
+    "end": 12,
+    "sample": 8.5,
+    "source": "assets/motion/2026-10-17/main/11218535.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/01.jpg"
+  },
+  {
+    "index": 3,
+    "start": 12,
+    "end": 16,
+    "sample": 14.0,
+    "source": "assets/motion/2026-10-17/main/31767903.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/02.jpg"
+  },
+  {
+    "index": 4,
+    "start": 16,
+    "end": 25,
+    "sample": 20.5,
+    "source": "assets/motion/2026-10-17/main/31767903.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/03.jpg"
+  },
+  {
+    "index": 5,
+    "start": 25,
+    "end": 32.1,
+    "sample": 28.55,
+    "source": "assets/motion/2026-10-17/main/plate.png",
+    "image": "build/video/2026-10-17/qa/scenes/04.jpg"
+  },
+  {
+    "index": 6,
+    "start": 32.1,
+    "end": 41.1,
+    "sample": 36.6,
+    "source": "assets/motion/2026-10-17/main/8381319.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/05.jpg"
+  },
+  {
+    "index": 7,
+    "start": 41.1,
+    "end": 52.1,
+    "sample": 46.6,
+    "source": "assets/motion/2026-10-17/main/8381455.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/06.jpg"
+  },
+  {
+    "index": 8,
+    "start": 52.1,
+    "end": 59.2,
+    "sample": 55.65,
+    "source": "assets/motion/2026-10-17/main/pipette.png",
+    "image": "build/video/2026-10-17/qa/scenes/07.jpg"
+  },
+  {
+    "index": 9,
+    "start": 59.2,
+    "end": 67.2,
+    "sample": 63.2,
+    "source": "assets/motion/2026-10-17/main/8381446.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/08.jpg"
+  },
+  {
+    "index": 10,
+    "start": 67.2,
+    "end": 77.2,
+    "sample": 72.2,
+    "source": "assets/motion/2026-10-17/main/11218535.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/09.jpg"
+  },
+  {
+    "index": 11,
+    "start": 77.2,
+    "end": 84.3,
+    "sample": 80.75,
+    "source": "assets/motion/2026-10-17/main/samples.png",
+    "image": "build/video/2026-10-17/qa/scenes/10.jpg"
+  },
+  {
+    "index": 12,
+    "start": 84.3,
+    "end": 94.3,
+    "sample": 89.3,
+    "source": "assets/motion/2026-10-17/main/31767906.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/11.jpg"
+  },
+  {
+    "index": 13,
+    "start": 94.3,
+    "end": 104.3,
+    "sample": 99.3,
+    "source": "assets/motion/2026-10-17/main/31767903.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/12.jpg"
+  },
+  {
+    "index": 14,
+    "start": 104.3,
+    "end": 113.3,
+    "sample": 108.8,
+    "source": "assets/motion/2026-10-17/main/8540609.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/13.jpg"
+  },
+  {
+    "index": 15,
+    "start": 113.3,
+    "end": 120.39999999999999,
+    "sample": 116.85,
+    "source": "assets/motion/2026-10-17/main/liquid.png",
+    "image": "build/video/2026-10-17/qa/scenes/14.jpg"
+  },
+  {
+    "index": 16,
+    "start": 120.39999999999999,
+    "end": 128.39999999999998,
+    "sample": 124.39999999999999,
+    "source": "assets/motion/2026-10-17/main/8381255.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/15.jpg"
+  },
+  {
+    "index": 17,
+    "start": 128.39999999999998,
+    "end": 139.39999999999998,
+    "sample": 133.89999999999998,
+    "source": "assets/motion/2026-10-17/main/11218535.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/16.jpg"
+  },
+  {
+    "index": 18,
+    "start": 139.39999999999998,
+    "end": 149.39999999999998,
+    "sample": 144.39999999999998,
+    "source": "assets/motion/2026-10-17/main/31767898.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/17.jpg"
+  },
+  {
+    "index": 19,
+    "start": 149.39999999999998,
+    "end": 156.39999999999998,
+    "sample": 152.89999999999998,
+    "source": "assets/motion/2026-10-17/main/8863365.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/18.jpg"
+  },
+  {
+    "index": 20,
+    "start": 156.39999999999998,
+    "end": 166.39999999999998,
+    "sample": 161.39999999999998,
+    "source": "assets/motion/2026-10-17/main/31767905.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/19.jpg"
+  },
+  {
+    "index": 21,
+    "start": 166.39999999999998,
+    "end": 173.49999999999997,
+    "sample": 169.95,
+    "source": "assets/motion/2026-10-17/main/research.png",
+    "image": "build/video/2026-10-17/qa/scenes/20.jpg"
+  },
+  {
+    "index": 22,
+    "start": 173.49999999999997,
+    "end": 183.49999999999997,
+    "sample": 178.49999999999997,
+    "source": "assets/motion/2026-10-17/main/31767905.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/21.jpg"
+  },
+  {
+    "index": 23,
+    "start": 183.49999999999997,
+    "end": 191.49999999999997,
+    "sample": 187.49999999999997,
+    "source": "assets/motion/2026-10-17/main/8381455.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/22.jpg"
+  },
+  {
+    "index": 24,
+    "start": 191.49999999999997,
+    "end": 201.49999999999997,
+    "sample": 196.49999999999997,
+    "source": "assets/motion/2026-10-17/main/31767906.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/23.jpg"
+  },
+  {
+    "index": 25,
+    "start": 201.49999999999997,
+    "end": 210.49999999999997,
+    "sample": 205.99999999999997,
+    "source": "assets/motion/2026-10-17/main/31767905.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/24.jpg"
+  },
+  {
+    "index": 26,
+    "start": 210.49999999999997,
+    "end": 218.49999999999997,
+    "sample": 214.49999999999997,
+    "source": "assets/motion/2026-10-17/main/8381319.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/25.jpg"
+  },
+  {
+    "index": 27,
+    "start": 218.49999999999997,
+    "end": 223.49999999999997,
+    "sample": 220.99999999999997,
+    "source": "assets/motion/2026-10-17/main/31767903.mp4",
+    "image": "build/video/2026-10-17/qa/scenes/26.jpg"
+  }
+]

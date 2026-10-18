@@ -1,0 +1,67 @@
+{
+  "cycle": "2026-10-17",
+  "status": "complete; main accepted and delivered locally",
+  "delivery_allowed": true,
+  "review_copies_available": true,
+  "promotion_allowed": true,
+  "cleanup_allowed": false,
+  "publishing_authorised": false,
+  "deliveryGate": "PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
+  "machine_gate": "PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
+  "humanContinuousPlaybackApproval": {
+    "status": "passed",
+    "required_outputs": [
+      "main"
+    ],
+    "evidence": {
+      "type": "user-confirmation",
+      "text": "onayladım.",
+      "scope": "the linked 233.5-second main video; complete continuous viewing and complete narration listening",
+      "recorded_at_utc": "2026-10-18T10:21:20.581834+00:00",
+      "hashes": {
+        "main": "91b1ed683bc0d0f4cc57503fa43c5a2c154f82a9418fffa4692b611a18d544b4"
+      },
+      "basis": "Direct reply to the review-copy link and explicit pending full viewing/listening acceptance; human confirmation, not automated listening."
+    }
+  },
+  "humanAuralApproval": {
+    "status": "passed",
+    "required_outputs": [
+      "main"
+    ],
+    "evidence": {
+      "type": "user-confirmation",
+      "text": "onayladım.",
+      "scope": "the linked 233.5-second main video; complete continuous viewing and complete narration listening",
+      "recorded_at_utc": "2026-10-18T10:21:20.581834+00:00",
+      "hashes": {
+        "main": "91b1ed683bc0d0f4cc57503fa43c5a2c154f82a9418fffa4692b611a18d544b4"
+      },
+      "basis": "Direct reply to the review-copy link and explicit pending full viewing/listening acceptance; human confirmation, not automated listening."
+    }
+  },
+  "qa_document": "video/cycles/2026-10-17/QA.md",
+  "outputs": [
+    {
+      "id": "main",
+      "path": "build/video/2026-10-17/newhorizons.mp4",
+      "duration_seconds": 233.5,
+      "technical_status": "passed",
+      "full_continuous_playback": "passed-user-confirmation",
+      "complete_narration_listening": "passed-user-confirmation",
+      "sha256": "91b1ed683bc0d0f4cc57503fa43c5a2c154f82a9418fffa4692b611a18d544b4",
+      "sampled_visual_status": "passed",
+      "human_approval_evidence": {
+        "type": "user-confirmation",
+        "text": "onayladım.",
+        "scope": "the linked 233.5-second main video; complete continuous viewing and complete narration listening",
+        "recorded_at_utc": "2026-10-18T10:21:20.581834+00:00",
+        "hashes": {
+          "main": "91b1ed683bc0d0f4cc57503fa43c5a2c154f82a9418fffa4692b611a18d544b4"
+        },
+        "basis": "Direct reply to the review-copy link and explicit pending full viewing/listening acceptance; human confirmation, not automated listening."
+      },
+      "delivered_path": "build/video/newhorizons.mp4"
+    }
+  ]
+}

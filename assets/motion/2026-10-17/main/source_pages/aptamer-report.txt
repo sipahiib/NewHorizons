@@ -1,0 +1,2485 @@
+# Aptamers as a sandbox for lab-in-the-loop agentic molecular discovery
+
+Zachary Cutts1, John Coller1, Rachel Chen1, Hua Tang2,‡, Mathias Bellaiche1, Ryder Easterlin1, Dina
+Zverinski3, Petar Sirkovic4, Avinatan Hassidim1, Yossi Matias1, Pooja Rao1,† and Annalisa Pawlosky1,†
+
+1Google Research, 2Department of Genetics, Stanford University, Stanford, CA, USA, 3Google Cloud, 4Google DeepMind, †Equal
+leadership (co-senior authors), ‡Work performed while H.T. was a Visiting Faculty Researcher at Google Research
+
+**Despite recent breakthroughs in AI-driven molecular generation, existing discovery pipelines operate**
+**largely _in silico,_ with wet-lab feedback reserved for final validation rather than iterative improvement.** **Whether large language model (LLM)-based reasoning agents can meaningfully accelerate _de novo_ discov**
+**ery by iterating with real-world lab data remains unproven.**
+
+**Here we use protein-binding aptamer design as a high-throughput sandbox (1–2 week validation cycles,**
+**$1–$3 per candidate) to demonstrate the potential of a wet lab in a closed loop with AI systems. We tasked**
+**agentic pipelines with developing aptamer binders against the protein targets** 𝛼- **thrombin and myoglobin**
+**across three design–test–improve cycles with a budget of ∼1,000 candidates per round (∼4,400 total**
+**sequenced constructs). Statistically significant, bead-corrected on-target hit rates among newly designed**
+**candidates rose across rounds from 0.0% in Round 1 to 26.0% in Round 2 and 42.1% in Round 3 on** 𝛼-
+**thrombin (37.1% excluding literature motif descendants), and from 10.2% in Round 1 to 3.7% in Round 2**
+**and 33.5% in Round 3 on myoglobin. Orthogonal single-clone bead-binding titrations of eight full-length** 𝛼
+- **thrombin candidates confirmed quantitative concordance with pooled sequencing enrichment (Pearson**
+𝑟 = 0.90). **In these assays, literature-derived motifs engineered by the agents to reduce off-target reactivity**
+**in the pooled screen reached preliminary apparent affinities of** 𝐾𝐷 = 24.6–133 nM, **whereas strictly _de_**
+**_novo_ scaffolds showed low-micromolar binding** (𝐾𝐷 \> 1 **μM).**
+
+$$
+K\_{D}=24.6-133\ nm
+$$
+
+$$
+(K\_{D}>1\\mu M)
+$$
+
+**We also report how our pipelines used binding data on myoglobin to initially exploit the high-affinity** **G-quadruplex binder space, then diagnose cross-reactivity as on-target specificity dropped from 75.0%**
+**to 19.1%, and subsequently recover by developing new strategies that restored myoglobin specificity to** **72.4%. We demonstrate that empirical lab data is much more valuable than existing computational proxies,**
+**showing how iterative experimental feedback enables AI agents to diagnose assay artifacts and refine**
+**molecular designs across rounds.**
+
+## Introduction
+
+Multi-agent systems for scientific discovery, often termed “AI co-scientists,” have begun to accelerate bio
+logical research by generating testable hypotheses, mining sequence databases, and designing candidate
+molecules \[1, 2, 3, 4\]. Although active learning is well established in high-throughput screening \[5, 6\],
+initial studies with large language model (LLM)-based reasoning agents have validated their designs in
+only a single experimental pass at the end of the workflow \[1, 2, 3, 4\]. Extending these systems into multiround experimental loops, where agents formulate hypotheses, diagnose failures from empirical data, and
+revise their strategy across successive wet-lab cycles, therefore represents a natural next frontier.
+
+AI agents operate within software harnesses that interleave reasoning with tool execution, code gener
+ation, literature retrieval, and persistent memory, allowing them to update their decisions as new data
+arrive \[7, 8, 9\]. As both general-purpose and biology-specific agent harnesses rapidly proliferate \[1, 2, 8,\
+9\], physical wet-lab validation has become the primary bottleneck in biological discovery. In chemistry
+and materials science, robotic laboratory automation has helped overcome this bottleneck, giving rise to
+
+_Corresponding author(s): [pjro@google.com](mailto:pjro@google.com), [apawlosky@google.com](mailto:apawlosky@google.com)_
+©︎ 2026 Google. All rights reserved
+
+* * *
+
+“self-driving laboratories” where AI systems plan, physically execute, and analyze iterative experiments
+with minimal human intervention \[10, 11\]. In biomolecular design, closing the loop is far harder because
+synthesis, expression, and functional validation remain slow and expensive \[12\].
+
+In domains such as games, mathematics, and software engineering, self-play and iterative agentic search
+succeed because verification is purely computational: rulesets, compilers, and formal proof assistants
+return ground-truth feedback in seconds \[8, 13, 14\]. In biomedicine, systems such as AI co-scientist \[1\] and
+Virtual Lab \[2\] have shown that _in silico_ debate, tournament ranking, and tool execution can effectively
+surface high-value hypotheses and candidate designs from literature priors and computational models.
+In molecular modalities where computational predictors are still maturing, however, pairing this _in silico_
+reasoning with rapid physical measurement offers a way to ground agentic search directly in empirical
+data. Computational predictors sit on a spectrum of reliability dictated by their training data and cannot
+replace wet-lab validation for any modality \[17, 29\]: even in protein engineering, where structure-based
+design succeeds on canonical rigid interfaces \[15, 16, 17\], predictors struggle on flexible antibody loops and
+out-of-distribution targets \[29, 30\], and models for nucleic acids and aptamers remain poorly calibrated for
+affinity and specificity due to sparse structural data \[18, 34\]. Demonstrating closed-loop learning requires
+a design space where computational predictions alone fall short, paired with an experimental assay that is
+fast enough for multi-round iteration and returns quantitative, multiplexed readouts across both binders
+and non-binders.
+
+Here we establish a closed-loop framework for agentic biomolecular discovery using single-stranded DNA
+aptamers. While earlier aptamer studies trained supervised or generative models on large SELEX datasets
+or coupled microarray screening with genetic algorithms and Bayesian optimization \[31, 32, 33, 36, 37\],
+we ask whether LLM-based reasoning agents can design _de novo_ binders without prior target-specific
+training data, learn iteratively from pooled measurements, and compress the time and resources required
+by conventional selection \[19, 20\]. Across three closed-loop design–test–refine rounds against 𝛼-thrombin
+and myoglobin (∼1,000 candidates per round), agentic pipelines improved statistically significant, beadcorrected on-target hit rates among newly designed candidates from 0.0% (0/167) to 26.0% (54/208) to
+42.1% (131/311) on 𝛼-thrombin (37.1% \[106/286\] across strictly _de novo_ candidates free of known literature
+motifs) and from 10.2% (20/196) to 3.7% (9/244) to 33.5% (184/549) on myoglobin. Rather than screening
+1013–1015 random molecules by blind selection as in classical SELEX, this approach tests targeted pools
+of ∼1,000 designed sequences per round to return quantitative positive and negative feedback on every
+hypothesis. Orthogonal single-clone bead-based fluorescence titrations confirmed that pooled sequencing
+enrichment scales with physical binding (𝑟 = 0.90), yielding preliminary nanomolar affinities (apparent
+𝐾𝐷 = 24.6–133 nM) for agent-stabilized literature motifs and micromolar binding onset (𝐾𝐷 > 1 μM)
+for strictly _de novo_ scaffolds. When multi-target counter-screening exposed a collapse in specificity driven
+by promiscuous binding motifs, the agents diagnosed the failure mode from raw sequencing data and
+pivoted to alternative structural families to restore target selectivity. These results establish the feasibility
+of closed-loop, agent-guided biomolecular discovery across multi-round experimental campaigns.
+
+$$
+10^{13}-10^{15}
+$$
+
+$$
+K\_{D}=24.6-133\ nm
+$$
+
+$$
+(K\_{D}>1\ \\mu M)
+$$
+
+## Results
+
+### R.1 Aptamers are the ideal sandbox for lab-in-the-loop molecular design
+
+To test whether AI agents can learn iteratively from wet-lab data, we built a closed-loop pipeline around
+single-stranded DNA (ssDNA) aptamers ( **Fig.** 1). In each cycle, an agentic design system equipped with
+literature search, target-structure lookup, biophysical folding tools, and a Python environment for writing
+code and running scientific libraries analyzes sequencing data from prior rounds and proposes a pool
+of ∼1,000 candidate sequences ( **Fig. 1B).** Those candidates are synthesized as oligonucleotide pools,
+screened against immobilized target proteins by magnetic-bead pulldown, and read out by next-generation
+sequencing (NGS), returning quantitative enrichment profiles to the agents for the next round of design
+( **Fig. 1B,** C).
+
+* * *
+
+Conventional SELEX one round
+Random Library Synthesis
+Counter-selection
+Target Binding
+PCR Amplification
+$\\lambda$-Exo ssDNA Regeneration
+ssDNA Purification
+x8-15 rounds
+Sequencing Readout
+
+This Work
+Pooled DNA Synthesis
+Multiplexed Bead Pulldown
+Sequencing Readout
+
+Proteins & Antibodies
+DNA Gene Synthesis
+Plasmid Cloning
+Cell Transform.
+Cell Culture & Expression
+Cell Lysis & Harvest
+Column Purification
+Binding Assay & Readout
+
+Agentic AI Pipeline
+Analyze
+Generate
+Design
+Rank
+
+DNA pool synthesis
+Multiplexed bead pulldown
+Sequencing readout
+
+FASTQ & read counts
+Replicate correlation
+Target LFC
+Bead LFC
+Target vs. bead LFC
+Candidate & control LFC
+
+**Figure 1** \| **Aptamers as a fast, high-throughput sandbox for closed-loop agentic molecular discovery. (A)** Wet-lab steps
+per round from candidate to binding readout across modalities. Candidates designed by AI agents proceed directly from pooled
+DNA array synthesis to a multiplexed magnetic-bead pulldown and sequencing readout in 3 bench steps (∼10 days per round),
+as an aptamer’s nucleotide sequence is itself the functional molecule. This direct readout bypasses the 6-step per-round selection,
+amplification, and 𝜆-exonuclease ssDNA regeneration cycle of conventional SELEX (repeated over 8–15 rounds before sequencing
+readout) and the 7-step cloning, expression, purification, and binding-assay cascade of protein/antibody pipelines. **(B)** Closed-loop
+agentic discovery pipeline (× 𝑁 rounds). In each cycle, the agentic AI pipeline ( _Analyze, Generate, Design, Rank,_ transitioning from
+AI Co-Scientist zero-shot ideation in Round 1 to a domain-specialized tool-equipped agent harness in Rounds 2–3) designs ∼1,000
+aptamer candidates for pooled oligo synthesis, which are assayed via multiplexed bead pulldown and next-generation sequencing
+(NGS) to return quantitative feedback for the next design round. **(C)** Schematic of the representative data and diagnostic package
+after each round, comprising demultiplexed FASTQ sequences, per-sequence read count matrices, and sample metadata returned
+from the wet-lab screen alongside the analyst agent’s independently derived DESeq2 differential enrichment profiles, replicate/crosstarget correlation matrices, and target-versus-bead log2 fold-change (LFC) regression diagnostics used to refine subsequent designs.
+
+Aptamers are well suited for closed-loop molecular design because the nucleotide sequence _is_ the
+functional molecule ( **Fig. 1A).** In protein and antibody campaigns, moving from a candidate sequence
+to a binding readout requires gene synthesis, cloning, transformation, cell culture and expression, cell
+lysis, column purification, and the binding assay itself. This seven-step cascade takes 3–6 weeks per
+round and introduces dropouts across expression, folding, solubility, and purification between what the
+model designs and what gets tested ( **Fig. 1A).** Conventional SELEX, the traditional method for aptamer
+discovery, avoids cloning but relies on blind physical enrichment from random libraries (1013–1015
+molecules) across 8–15 six-step selection rounds of binding, PCR amplification, and 𝜆-exonuclease singlestrand regeneration before sequencing readout \[19, 20\], yielding minimal information on why individual
+sequences succeed or fail ( **Fig. 1A).** By contrast, an agentic pipeline can evaluate a wide range of structural
+ideas and sequence variants _in silico_ before committing to a focused synthesis pool of ∼1,000 candidates.
+
+$$
+10^{13}-10^{15}
+$$
+
+* * *
+
+Our workflow pairs pooled oligo synthesis with deep sequencing of both the pre-selection input library
+and triplicate target and bare-bead pulldowns, compressing each wet-lab cycle from candidate to readout
+to three bench steps completed in ∼10 days (including oligo pool synthesis and delivery) at a cost of ∼$3 per
+candidate (pooled oligo synthesis and reagent cost), decoupling synthesis bias from binding and returning
+quantitative positive and negative labels for every designed sequence in the pool ( **Fig. 1A,** C).
+
+The aptamer sandbox turns molecular discovery into an iterative reasoning problem well suited to modern
+AI agent harnesses, returning clean positive and negative labels for ∼1,000 designs every ∼10 days within
+a fixed experimental budget. We asked whether agents could operate in a closed loop with the bench to
+discover binders _de novo_ and systematically improve their designs across rounds.
+
+**R.2 Hit rate improves from 0 to 42% with the lab in the loop, outperforming zero-shot predictors**
+We evaluated the closed-loop pipeline across three design–test–refine rounds on two proteins of contrast
+ing difficulty: human myoglobin, a compact eight-helix bundle lacking a natural nucleic-acid binding cleft
+( _de novo_ target), and human 𝛼-thrombin, a serine protease with two electropositive grooves that naturally
+bind nucleic acids (positive-control benchmark; **Fig. 2A; Methods; Supplementary Table S3).**
+
+Across rounds, statistically significant, bead-corrected binder hit rates among newly designed candidates
+rose sharply on both targets ( **Fig. 2B).** On myoglobin, agents discovered _de novo_ binders in Round 1 at a
+10.2% hit rate (20/196), dipped to 3.7% (9/244) in Round 2 as non-specific G-quadruplex matrix binders were
+subtracted by counter-screening (Section R.3), and surged 9.1-fold in Round 3 to 33.5% (184/549, 𝑝 = 9.6 ×
+10−24; 100% strictly de novo; Fig. 2B). On 𝛼-thrombin, where uninsulated Round 1 designs failed due to
+primer–core hybridization (0.0%, 0/167), hit rates climbed to 26.0% in Round 2 (54/208) and 42.1% in Round
+3 (131/311; 37.1% \[106/286\] across strictly _de novo_ candidates free of known thrombin motifs; **Fig. 2B;** **Supplementary Table S3).** All random-sequence negative controls remained at 0.0% across every round.
+Directly beneath the hit-rate curves, raw target-versus-input enrichment distributions shifted toward
+stronger binding with each cycle ( **Fig. 2C).** Prior to bare-bead subtraction, the fraction of each pool
+enriched at least twofold (log2 FC ≥ 1) rose monotonically in every round—climbing from 6.5% to 12.4%
+to 29.9% on myoglobin and from 0.3% to 53.1% to 80.7% on 𝛼-thrombin **(Fig. 2C)**—confirming that the
+Round 2 dip in myoglobin hit rate **(Fig. 2B)** reflected stringency filtering of sticky sequences rather than
+a loss of library enrichment.
+
+$$
+10^{-24}
+$$
+
+$$
+(\\log\_{2}\\mathrm{FC}\\geq\\tilde{1})
+$$
+
+To test whether computational predictors could have replaced these wet-lab cycles, we benchmarked 12
+open-license predictor metrics (spanning 9 tools) zero-shot across the Round 3 myoglobin library (𝑁 =
+1,441; **Fig. 2D).** Target-conditioned 3D co-folding (Boltz-2 iPTM and Δ iPTM: ROC-AUC = 0.499
+and 0.391), 3D inverse-folding and structure models (ESMFold2-NA, RhoDesign, RiboDiffusion: 0.496–0.510),
+nucleic-acid foundation models (DNABERT-2, HyenaDNA, RNA-FM: 0.364–0.523), and G-quadruplex scorers
+(G4Hunter 0.366, ViennaRNA ΔΔ𝐺G4 0.476) all performed near or below random chance (0.50). Only targetagnostic 2D DNA thermodynamic stability (−Δ𝐺MFE, ROC-AUC = 0.729) and folding purity (−ED,
+0.763) from ViennaRNA \[22\] showed meaningful signal ( **Fig. 2D):** ViennaRNA filters out unstructured coils
+and primer-invaded misfolds, but has no knowledge of the protein target and therefore cannot substitute
+for empirical wet-lab selection.
+
+$$
+\\Delta
+$$
+
+$$
+\\Delta\\Delta G\_{G4}0.476)
+$$
+
+$$
+(-\\Delta G\_{\\mathrm{MFE}}
+$$
+
+### R.3 Agents diagnose G-quadruplex cross-reactivity and recover specificity via structural motif reallocation
+
+Multiplexed counter-screening explained the divergent Round 2 trajectories of the two targets ( **Fig. 3A).**
+On 𝛼-thrombin, whose electropositive Exosites I and II naturally recognize G-quadruplexes, clamping
+Round 1′s weak folds lifted newly designed on-target hit rate from 0.0% to 26.0% and on-target specificity to
+76.7% in Round 2 (26.5% on-target vs. 2.2% off-target cross-reactivity in the counter-screened benchmark;
+**Fig. 3A,** right). On groove-less myoglobin, by contrast, expanding G-quadruplexes in Round 2 triggered a
+severe specificity collapse: 80.9% (72/89) of binders in the counter-screened benchmark were cross-reactive
+(13.9% off-target vs. 9.3% on-target), crashing on-target specificity by 56 percentage points from 75.0%
+
+* * *
+
+**B Binder hit rate (R1 → R3)**
+
+| Category | α-Thrombin (Confirmed binder hit rate, %) | Myoglobin (Confirmed binder hit rate, %) | Negative controls (0.0%) (Confirmed binder hit rate, %) |
+| --- | --- | --- | --- |
+| Round 1 | 0.0 | 10.2 | 0 |
+| Round 2 | 26.0 | 3.7 | 0 |
+| Round 3 | 42.1 | 33.5 | 0 |
+| **C Population enrichment shift (R1 → R3)** |  |  |  |
+
+| Category | Myoglobin (LFC ≥ 1, %) | α-Thrombin (LFC ≥ 1, %) |
+| --- | --- | --- |
+| R1 | 6.5 | 0.3 |
+
+| Category | On-target log2 FC | LFC ≥ 1 (%) |
+| --- | --- | --- |
+| R1 | 0 | 6.5 |
+| R2 | 0 | 12.4 |
+| R3 | 0 | 29.9 |
+
+| Category | On-target log2 FC | LFC ≥ 1 (%) |
+| --- | --- | --- |
+| R1 | -0.3 | 0.3 |
+| R2 | 0 | 53.1 |
+| R3 | 1.5 | 80.7 |
+
+| Category | 2D DNA thermodynamics (Zero-shot ROC-AUC) | 3D folding & design (Zero-shot ROC-AUC) | NA foundation models (Zero-shot ROC-AUC) | G4 / quadruplex tools (Zero-shot ROC-AUC) |
+| --- | --- | --- | --- | --- |
+| RNA-FM (100M) Similarity |  |  | 0.364 |  |
+| G4Hunter Quadruplex |  |  |  | 0.366 |
+| Boltz-2 ΔiPTM (Specificity) |  | 0.391 |  |  |
+| HyenaDNA Log-Likelihood |  |  | 0.418 |  |
+| ViennaRNA ΔΔG\_G4 |  |  |  | 0.476 |
+| RiboDiffusion 3D Score |  | 0.496 |  |  |
+| Boltz-2 iPTM (Co-Folding) |  | 0.499 |  |  |
+| RhoDesign 3D Inverse Fold |  | 0.507 |  |  |
+| ESMFold2-NA iPTM |  | 0.510 |  |  |
+| DNABERT-2 (117M) Score |  |  | 0.523 |  |
+| ViennaRNA −ΔG\_MFE | 0.729 |  |  |  |
+| ViennaRNA −ED (Purity) | 0.763 |  |  |  |
+
+**Figure 2** \| **Closed-loop progression of binder hit rate, population enrichment, and zero-shot predictor benchmark across**
+**three rounds (R1 → R3). (A)** Surface structures and architecture of the benchmark targets: human myoglobin (left; PDB 3RGK,
+_de novo_ globular target) and human 𝛼-thrombin (right; PDB 1PPB, positive-control benchmark with electropositive Exosites I and
+II). **(B)** Statistically significant, bead-corrected on-target binder hit rates across Rounds 1–3 for newly designed candidates on
+𝛼-thrombin (0.0% → 26.0% → 42.1%) and myoglobin (10.2% → 3.7% → 33.5%), alongside random-sequence negative controls
+(0.0%, dashed line; full cohort and strictly _de novo_ breakdowns in **Supplementary Table S3). (C)** Kernel density distributions of
+raw target enrichment (log2 FC over input prior to bare-bead regression) across Rounds 1–3 for myoglobin (left) and 𝛼-thrombin
+(right), stacked directly below **B.** Vertical dashed lines mark log2 FC = 1.0, dotted lines mark population medians, and dark-shaded
+tails denote the fraction with log2 FC ≥ 1.0. **(D)** Zero-shot receiver operating characteristic area under the curve (ROC-AUC ±
+95% CI) across 12 open-license computational predictor metrics (spanning 9 tools) evaluated on the Round 3 myoglobin library
+(𝑁 = 1,441; 292 hits \[20.3%\]). The vertical dashed line marks random chance (ROC-AUC = 0.50).
+
+$$
+(0.0%\\xrightarrow{}26.0%\\xrightarrow{}42.1%)
+$$
+
+$$
+(10.2%\\rightarrow3.7%\\rightarrow33.5%)
+$$
+
+$$
+(\\log\_{2}FC
+$$
+
+$$
+\\log\_{2}FC=1.0
+$$
+
+$$
+\\log\_{2}\\mathrm{FC}\\geq1.0
+$$
+
+in Round 1 to 19.1% in Round 2 alongside the drop in _de novo_ hit rate from 10.2% to 3.7% ( **Fig. 3A,** left;
+**Supplementary Table S3).**
+
+From the Round 2 sequencing counts, the analyst agent diagnosed this failure mode without human input,
+finding that 97% of cross-reactive binders were G-quadruplexes acting as non-specific polyanionic stickers
+( **Table 1,** Row 2; **Supplementary Figs. S1 and S2).** In Round 3, the agents therefore enforced barebead residual subtraction and reallocated both libraries across six structural motif families ( **Fig. 3B).** On
+myoglobin, after keeping the library G4-heavy in Rounds 1–2 (58.2%–60.7% G4s), the agents cut unclamped
+G4s from 20.4% to 1.3% and pivoted 72.3% of the Round 3 pool into non-G4 scaffolds ( **Fig. 3B,** left). Whereas
+retained myoglobin G4s failed (0.0%–2.4% hit rate), non-G4 families drove the recovery—reaching an 80.4%
+
+* * *
+
+**A Target-specific failure modes & autonomous specificity recovery (R1 → R3)**
+
+| Category | Myoglobin On-target specificity (%) | Myoglobin De novo hit rate (%, rhs) | α-Thrombin On-target specificity (%) | α-Thrombin De novo hit rate (%, rhs) |
+| --- | --- | --- | --- | --- |
+| Round 1 (Single-target) | 75.0 | 10.2 |  |  |
+| Round 2 (G4-heavy) | 19.1 | 3.7 |  |  |
+| Round 3 (Non-G4 pivot) | 72.4 | 33.5 |  |  |
+| Round 1 (48% weak folds) |  |  | 0.0 | 0.0 |
+| Round 2 (Clamped G4s) |  |  | 76.7 | 26.0 |
+| Round 3 (Diversified) |  |  | 98.5 | 42.1 |
+
+| Category | Myoglobin On-target specificity (%) | Myoglobin De novo hit rate (%, rhs) | α-Thrombin On-target specificity (%) | α-Thrombin De novo hit rate (%, rhs) |
+| --- | --- | --- | --- | --- |
+| Round 1 (Single-target) | 75.0 | 10.2 |  |  |
+| Round 2 (G4-heavy) | 19.1 | 3.7 |  |  |
+| Round 3 (Non-G4 pivot) | 72.4 | 33.5 |  |  |
+| Round 1 (48% weak folds) |  |  | 0.0 | 0 |
+| Round 2 (Clamped G4s) |  |  | 76.7 | 26.0 |
+| Round 3 (Diversified) |  |  | 98.5 | 42.1 |
+
+**Myoglobin Motif Trajectory (R1 → R3)**
+
+| Category | H-Type Pseudoknot (Pool share, %) | Bulge / Pocket Hairpin (Pool share, %) | Clamped (Pool share, %) | Multi-Stem / 3-Way Junction (Pool share, %) | Extended Palindromic Hairpin (Pool share, %) | Clamped (Pool share, %) |
+| --- | --- | --- | --- | --- | --- | --- |
+| R1 | 0 | 5 | 18 | 17 | 18 | 39 |
+| R2 | 0 | 15 | 0 | 10 | 15 | 40 |
+| R3 | 8 | 22 | 3 | 25 | 10 | 22 |
+
+**R3 Hit Rate**
+
+| Category | R3 Hit Rate (%) |
+| --- | --- |
+| unlabelled 1 | 80.4 |
+| unlabelled 2 | 61.8 |
+| unlabelled 3 | 45.9 |
+| unlabelled 4 | 2.4 |
+
+**α-Thrombin Motif Trajectory (R1 → R3)**
+
+| Category | Clamped 2-Tetrad G4 (TBA-Stem) (Pool share, %) | Unclamped G-Quadruplex (Naked) (Pool share, %) | Clamped 3-Tetrad G4 Chimera (Pool share, %) | Weak / Short Fold (≤7 bp) (Pool share, %) | Series 1 (unlabelled) (Pool share, %) | Series 2 (unlabelled) (Pool share, %) | Series 3 (unlabelled) (Pool share, %) | Series 4 (unlabelled) (Pool share, %) | Series 5 (unlabelled) (Pool share, %) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| R1 | 17 | 10 | 7 | 49 | 0 | 0 | 0 | 0 | 17 |
+| R2 | 25 | 16 | 25 | 10 | 0 | 0 | 0 | 0 | 9 |
+| R3 | 2 | 1 | 29 | 0 | 0 | 0 | 0 | 20 | 8 |
+
+| Category | R3 Hit Rate (%) |
+| --- | --- |
+| unlabelled 1 | 100 |
+| unlabelled 2 | 57.5 |
+| unlabelled 3 | 50.9 |
+| unlabelled 4 | 37.1 |
+
+**Figure 3** \| **Autonomous diagnosis and recovery from G-quadruplex specificity collapse via target-matched structural**
+**motif reallocation (R1 → R3). (A)** Target-specific failure modes and autonomous specificity recovery across Rounds 1–3, showing
+on-target specificity (%; coral curves, left axis; percentage of statistically significant binders in the counter-screened benchmark that
+bind exclusively to the intended target without off-target cross-reactivity) alongside newly designed on-target binder hit rate (%;
+teal curves, right axis) for myoglobin (left; specificity 75.0% → 19.1% → 72.4%, _de novo_ hit rate 10.2% → 3.7% → 33.5%) and
+𝛼-thrombin (right; specificity 0.0% → 76.7% → 98.5%, newly designed hit rate 0.0% → 26.0% → 42.1%; full denominators in
+**Supplementary Table S3). (B)** Alluvial flow diagrams showing the reallocation of candidate structural motif families from Round
+1 to Round 3 for myoglobin (left) and 𝛼-thrombin (right), aligned column-for-column with **A** and paired with horizontal bar charts
+of Round 3 on-target hit rates (𝑛/𝑁) and predicted secondary-structure schematics for the top-performing families.
+
+$$
+75.0%\\rightarrow19.1%\\rightarrow72.4%
+$$
+
+$$
+10.2%\\rightarrow3.7%\\rightarrow33.5%
+$$
+
+$$
+0.0%\\xrightarrow{}76.7%\\xrightarrow{}98.5%
+$$
+
+$$
+0.0%\\rightarrow26.0%\\rightarrow42.1%;
+$$
+
+$$
+(n/N)
+$$
+
+hit rate in H-type pseudoknots (37/46), 61.8% in extended palindromic hairpins (47/76), and 45.9% in bulge
+hairpins (67/146)—and accounted for 97.8% (180/184) of Round 3 myoglobin hits with 0% off-target crossreactivity, restoring on-target specificity to 72.4% and lifting _de novo_ hit rate 9.1-fold to 33.5% ( **Fig. 3A, B,**
+left). On 𝛼-thrombin, after fixing Round 1 primer–core hybridization via 5′–3′ duplex clamping in Round 2
+(74.5% G4s), the agents diversified Round 3 into 69.1% non-G4 scaffolds and 30.9% clamped G4s—achieving
+a 100.0% hit rate in canonical TBA-stem G4 clamps (7/7), 57.5% in extended palindromic hairpins (42/73),
+and 50.9% in three-way junctions (29/57)—lifting on-target hit rate to 42.1% and specificity to 98.5% (140 ×
+selectivity over 0.3% off-target cross-reactivity; **Fig. 3A, B,** right; **Supplementary Table S1).** All-by-all
+profiling in the Round 2–3 counter-screens, which also included human HER2 ectodomain as an off-target
+reference, surfaced a Round 2 myoglobin non-binder that enriched selectively on HER2. Carrying this
+seed into Round 3 alongside Watson–Crick-clamped chimeras yielded selective HER2 binders with no
+significant off-target enrichment on myoglobin or 𝛼-thrombin ( **Supplementary Fig. S3, Supplementary**
+**Note 1, Supplementary Table S2).**
+
+$$
+5^{\\prime}-3^{\\prime}
+$$
+
+* * *
+
+### R.4 Agentic pipelines combine structural hypotheses with synthesis, assay, and statistical rea soning
+
+Beyond improving aggregate hit rates, inspecting the design rationales and campaign analyses across
+Rounds 1–3 reveals that the agents reasoned across the entire experimental stack ( **Table** 1). Rather than
+acting as black-box sequence generators, the pipelines: (1) explored atypical _de novo_ structural topologies
+tailored to target surface geometry; (2) developed statistical counter-selection filters to separate specific
+binding from matrix noise and evaluated which computational scoring tools to trust; (3) proposed practical
+tweaks to wet-lab assay protocols, including liquid-handling automation and buffer optimization (logged
+as autonomous experimental recommendations while wet-lab buffer conditions were held constant across
+Rounds 1–3); and (4) connected _in silico_ sequence design to physical bottlenecks across solid-phase DNA
+synthesis, full-construct primer folding, and PCR amplification/sequencing recovery. The excerpts in
+**Table 1** illustrate reasoning traces and intermediate hypotheses generated by individual pipeline stages,
+documenting the prospective decision chain from Round 2 failure diagnosis to Round 3 library synthesis
+and validation. These are distinct from our post-hoc analyses **(Methods)** presented in **Figs. 2 and 3,** and
+were often refined or superseded in later steps. Progress likely came not from any single design rationale,
+but from iteratively pairing broad structural exploration with biophysical filtering and wet-lab feedback.
+
+**Table 1** \| **Examples of agentic scientific reasoning and documented decision chains across the closed-loop aptamer**
+**campaign.**
+
+| Reasoning Category & Summary | Representative Agent Quotes & Documented Decision Chain |
+| --- | --- |
+| 1\. Explored atypical structural hypotheses Conducted de novo explorations outside traditional single-loop hairpins and canonical motifs—reasoning directly about 3D scaffold geometry, inter-arm angles, directional bulges, and bipartite pockets to match target surface topology. | “Wide-hinge 44-nt three-way junction scaffold featuring dual 2-nt flexible single-stranded junction spacers. The flexible hinge geometry allows an expanded inter-arm angle (85–110°) to wrap around the globular curvature of myoglobin without steric clash.” |
+| 1\. Explored atypical structural hypotheses Conducted de novo explorations outside traditional single-loop hairpins and canonical motifs—reasoning directly about 3D scaffold geometry, inter-arm angles, directional bulges, and bipartite pockets to match target surface topology. | “Dual-asymmetric internal loop (1-nt 5′ vs. 4-nt 3′ bulge) with an 8-bp GC basal clamp, creating an acute directional bend that positions the CAA apical loop and bulge into the myoglobin heme cleft.” |
+| 1\. Explored atypical structural hypotheses Conducted de novo explorations outside traditional single-loop hairpins and canonical motifs—reasoning directly about 3D scaffold geometry, inter-arm angles, directional bulges, and bipartite pockets to match target surface topology. | “13-bp duplex... project\[s\] the unstacked purine core (TGAAAT, positions 14–19) into solvent. The exocyclic faces of A16 and A17 are positioned to establish CH- π and edge-to-face π-π contacts against the exposed aromatic ring of Phe43... while the phosphodiester backbone at the T13:A20 neck forms electrostatic salt bridges with wild-type Lys45 (Arg45 in PDB 3RGK).” |
+| 1\. Explored atypical structural hypotheses Conducted de novo explorations outside traditional single-loop hairpins and canonical motifs—reasoning directly about 3D scaffold geometry, inter-arm angles, directional bulges, and bipartite pockets to match target surface topology. | “Two interleaved stem-loops (H-type pseudoknot) creating a rigid, compact 3D scaffold with defined bipartite helical binding cavities.” |
+| 2\. Leveraged statistical analysis and physics tools to guide design (Documented Round 2 → Round 3 Decision Chain) Built statistical counter-selection filters from raw counts to separate target-specific binding from magnetic-bead matrix noise, diagnosed G-quadruplex promiscuity and 3D co-folding failure, and shifted the synthesis portfolio toward non-G4 scaffolds prior to Round 3 screening. | Observed Failure \[Round 2 Screen\] → Autonomous Diagnosis \[Between-Round Analysis\] In Round 2, myoglobin bead-corrected on-target hit rate dropped from 10.2% (20/196) in Round 1 to 3.7% (9/244) among newly designed myoglobin candidates (9.3% \[17/183\] in the counter-screened benchmark including 8/16 carried-over R1 positive spikes; 9.0% \[88/977\] non-spike across the full pool; 80.9% \[72/89\] of binders cross-reactive, with 13.9% \[72/517\] off-target binding across all non-myoglobin designs). From raw count matrices, the analyst agent found that “The R2 of 0.635 means 63.5% of total enrichment variance is explained by non-specific bead affinity... Bead regression removes 85% of false positives” (in its initial QC-filtered analysis) and diagnosed that “thrombin-designed G-quads bind myoglobin at 18.7% yield — double the 9.3% yield of myoglobin-designed sequences... NONE of the top-10 iPTM sequences overlap with actual binders... Using Boltz2 iptm as a design filter is actively harmful — it selects for non-specificity.” |
+| 2\. Leveraged statistical analysis and physics tools to guide design (Documented Round 2 → Round 3 Decision Chain) Built statistical counter-selection filters from raw counts to separate target-specific binding from magnetic-bead matrix noise, diagnosed G-quadruplex promiscuity and 3D co-folding failure, and shifted the synthesis portfolio toward non-G4 scaffolds prior to Round 3 screening. | Catching when linear regression breaks down \[Between-Round Analysis\] “Bead-binding regression is NOT appropriate for this \[Thrombin\] experiment — not merely because R2 is low (0.198), but because the regression slope is negative (−0.263), which causes regression to inflate false positives rather than remove them... Flag a binder if LFC\_beads / LFC\_thrombin > 0.5.” |
+| 2\. Leveraged statistical analysis and physics tools to guide design (Documented Round 2 → Round 3 Decision Chain) Built statistical counter-selection filters from raw counts to separate target-specific binding from magnetic-bead matrix noise, diagnosed G-quadruplex promiscuity and 3D co-folding failure, and shifted the synthesis portfolio toward non-G4 scaffolds prior to Round 3 screening. | Proposed Change \[Round 3 Strategy\] → Implemented in Synthesis Order \[Round 3 Pool\] Capped pure/unclamped G-quadruplexes at ≤15% of the myoglobin design allocation (reducing unclamped naked G4s to 1.3% \[7/549\]), shifted 72.3% of the portfolio into non-G4 hairpins, pseudoknots, and three-way junctions (plus 26.4% clamped stem-G4 chimeras), calibrated ViennaRNA 2D folding (“Replace \[3D co-folding\] with ViennaRNA local folding in buffer conditions... actual binders are less stable \[median MFE −5.1 vs −9.3 kcal/mol, p = 0.0007\]”), and embedded prospective Boltz2 calibration bands (Tiers A-D) while humans held the wet-lab buffer constant. |
+| 2\. Leveraged statistical analysis and physics tools to guide design (Documented Round 2 → Round 3 Decision Chain) Built statistical counter-selection filters from raw counts to separate target-specific binding from magnetic-bead matrix noise, diagnosed G-quadruplex promiscuity and 3D co-folding failure, and shifted the synthesis portfolio toward non-G4 scaffolds prior to Round 3 screening. | Subsequent Result \[Round 3 Screen\] Myoglobin on-target hit rate among newly designed candidates surged 9.1 × from 3.7% (9/244) to 33.5% (184/549 3.6 × vs. the 9.3% \[17/183\] R2 benchmark and 3.3 × vs. R1 \[10.2%, 20/196\], reaching 45.9%–80.4% across non-G4 hairpins and pseudoknots vs. 2.4% \[3/124\] for clamped 3-tetrad G4 chimeras and 0.0% \[0/7\] for unclamped G4s), specificity recovered from 19.1% to 72.4%, and prospective Tier A (Boltz2-2 iPTM > 0.7) yielded 0/25 (0.0%) statistically significant hits. |
+| 3\. Suggested tweaks to wet-lab protocolsProposed concrete adjustments to liquid-handling automation, buffer ions, wash stringency, refolding, and control pooling (logged as autonomous protocol recommendations; wet-lab buffer held constant across Rounds 1-3). | “Implement automated magnetic bead washing protocols on robotic liquid handlers (e.g., Hamilton Star / Opentrons OT-2)... Standardize wash volume, agitation cycles, and temperature using automated liquid handlers. Automated wash execution directly prevents outlier replicates.” |
+| 3\. Suggested tweaks to wet-lab protocolsProposed concrete adjustments to liquid-handling automation, buffer ions, wash stringency, refolding, and control pooling (logged as autonomous protocol recommendations; wet-lab buffer held constant across Rounds 1-3). | “Our buffer is 1 × PBS (4.5 mM K+); Thrombin TBA was selected in 25-100 mM KCl (our K+ is 5-20 × too low)... Supplement binding buffer with 20 mM KCl.” |
+| 3\. Suggested tweaks to wet-lab protocolsProposed concrete adjustments to liquid-handling automation, buffer ions, wash stringency, refolding, and control pooling (logged as autonomous protocol recommendations; wet-lab buffer held constant across Rounds 1-3). | “Swap standard K+ and Na+ cations for Li+ during positive selection rounds to actively destabilize G-quadruplex folding, forcing enrichment of Watson-Crick-stabilized specific binders.” |
+| 3\. Suggested tweaks to wet-lab protocolsProposed concrete adjustments to liquid-handling automation, buffer ions, wash stringency, refolding, and control pooling (logged as autonomous protocol recommendations; wet-lab buffer held constant across Rounds 1-3). | “Increase stringency in magnetic bead washing (salt concentration, surfactant, and wash cycle count) and add 0.1 mg/mL salmon sperm DNA.” |
+| 3\. Suggested tweaks to wet-lab protocolsProposed concrete adjustments to liquid-handling automation, buffer ions, wash stringency, refolding, and control pooling (logged as autonomous protocol recommendations; wet-lab buffer held constant across Rounds 1-3). | “Switch aptamer refolding from bench snap-cool to slow ramp-down on a PCR cycler and increase binding incubation from 2 min on ice to 30 min at room temperature.” |
+| 3\. Suggested tweaks to wet-lab protocolsProposed concrete adjustments to liquid-handling automation, buffer ions, wash stringency, refolding, and control pooling (logged as autonomous protocol recommendations; wet-lab buffer held constant across Rounds 1-3). | “Evaluate positive controls strictly in isolated single-oligo lanes or spike at ~1/100 so the candidate library remains measurable.” |
+| 4\. Reasoned across design, synthesis, and experimental readoutConnected in silico sequence generation to physical constraints across solid-phase DNA synthesis, full-construct primer folding, and PCR amplification to prevent library dropouts and misfolding. | Eliminating extreme palindromes to prevent library dropout“Of the wells that got zero reads, 96% are self-complementary (Δ G of -35 to -47 kcal/mol, Fisher odds ratio ≈ 77, p = 5 × 10-165). During base-by-base phosphoramidite chemistry at IDT, a strand that folds back on itself blocks the coupling step. In the regenerated R2 pool, high self-complementarity = 0 \[dropout fell from 18.8% to 1.8%\]. |
+| 4\. Reasoned across design, synthesis, and experimental readoutConnected in silico sequence generation to physical constraints across solid-phase DNA synthesis, full-construct primer folding, and PCR amplification to prevent library dropouts and misfolding. | 85-nt full-construct primer invasion“Aptamer binding depends on the full oligo fold (85 nt), not just the 40-nt variable region. Fixed primer handles form competitive secondary structures (Δ G ≈ -6 to -12 kcal/mol) that destroy the aptamer’s binding fold.” |
+| 4\. Reasoned across design, synthesis, and experimental readoutConnected in silico sequence generation to physical constraints across solid-phase DNA synthesis, full-construct primer folding, and PCR amplification to prevent library dropouts and misfolding. | Spacer length & palindromic penalty“Adding 7-nt TTCGCG/ CGCGTTT insulation spacers reduced sequencing read counts 2.7 × to 5.9 × by extending total oligo length and introducing palindromic CGCG motifs.” |
+| 4\. Reasoned across design, synthesis, and experimental readoutConnected in silico sequence generation to physical constraints across solid-phase DNA synthesis, full-construct primer folding, and PCR amplification to prevent library dropouts and misfolding. | PCR stalling vs. synthesis dropout“Only 1.1% of G4 sequences had zero input reads (synthesis failure); the remaining 74.0% were present at low abundance due to PCR amplification bias. Without the valley QC filter, these sequences are no longer discarded – DESeq2’s negative binomial model accounts for them statistically.” |
+| 5\. Evolved individual candidates and scaffolds across roundsTraced promising candidate lineages across selection rounds— diagnosing structural vulnerabilities in early seeds and re-engineering their flanking stems and recognition loops to improve affinity and specificity. | Round 1 → Round 2 (Diagnosing primer invasion & recovering active cores)Uninsulated R1 α-thrombin cores failed (0.0% hits) because fixed PCR primers hybridized with the binding motif; modeling full 85-nt constructs in R2 recovered the canonical 15-mer TBA core ((\\log\_{2} FC = +4.84)) and identified top G-quadruplex–hairpin hybrid seed 095e2a34c9a4 (embedding the 25-nt core of canonical Nω172 log2 FC = +12.33). |
+| 5\. Evolved individual candidates and scaffolds across roundsTraced promising candidate lineages across selection rounds— diagnosing structural vulnerabilities in early seeds and re-engineering their flanking stems and recognition loops to improve affinity and specificity. | Round 2 → Round 3 (Locking canonical TBA cores into Watson-Crick stem-clamps)Engineered 8-12 bp flanking duplex clamps around the R2 TBA core (tba\_hairpin\_scaffold) to prevent primer invasion and reduce bare-bead stickiness; in the subsequent Round 3 screen, all 22/22 (100%) sequenced tba\_hairpin\_scaffold constructs were statistically significant, bead-corrected hits ((\\log\_{2} FC = +8.68) to +13.11, comprising 5/5 short-stem TBA-Stem and 17/17 long-stem Extended Palindromic Hairpin constructs; 25/25 \[100%\] across all R3 TBA/Nω172-core designs), with representative 8-bp and 11-bp stem-clamped and loop-edited leads (Tω2-Tω4) validating in single-clone titrations at preliminary apparent KD = 47.4-133 nM (Fig. 4). |
+| 5\. Evolved individual candidates and scaffolds across roundsTraced promising candidate lineages across selection rounds— diagnosing structural vulnerabilities in early seeds and re-engineering their flanking stems and recognition loops to improve affinity and specificity. | Round 2 → Round 3 (Prospective mutational maturation of top hybrid seed)Generated systematic mutational variants (R3\_095\_var1-var10) around Round 2 champion 095e2a34c9a4 (log2 FC = +12.33), introducing a 9-bp GC-rich terminal stem (5'-TAACCAGCG. . . CGCTGGTTA-3') and a c10-A strain-relieving bulge transition (R3\_095\_var3). In the subsequent Round 3 screen, R3\_095\_var3 (Tω1) became the #1 clone in the library (44.55% of thrombin reads, (\\log\_{2}) FC = +16.27, 25.2 × specificity over bare beads) and validated in single-clone equilibrium titrations at a preliminary apparent KD = 24.6 ± 8.2 nM (7.2 × fluorescence over background; Fig. 4). |
+
+$$
+(K^{+});
+$$
+
+$$
+\\mathrm{K^{+}}
+$$
+
+$$
+\\mathrm{Na^{+}}
+$$
+
+$$
+\\mathrm{K}^{+}
+$$
+
+$$
+77,p=5\\times10^{-165}
+$$
+
+$$
+\\mathrm{FC}=\\bar{+}12.\\bar{33}
+$$
+
+$$
+\\log\_{2}FC=
+K\_{D}=47.4-133
+$$
+
+$$
+\\left(\\log\_{2}FC=+12.33\\right)
+$$
+
+$$
+\\log\_{2}FC=+16.27
+$$
+
+$$
+K\_{D}=24.6\\pm8.2\\mathrm{nM}
+$$
+
+### R.5 Single-clone titrations confirm nanomolar thrombin binding
+
+We next tested whether enriched candidates bind their target independently of the pooled format, as
+pooled pulldown and sequencing readouts can be influenced by PCR amplification bias or competition
+effects. We individually synthesized eight 5′-fluorescein (5′-FAM)-labeled, full-length 𝛼-thrombin candi
+dates (T01–T08, 75–85 nt including their 45-nt constant primer flanks; **Supplementary Table S4**) spanning
+top-enriched, agent-engineered NU172 and TBA architectures (T01–T04, log2 FC = +9.81 to + 16.27) and
+moderately enriched strictly _de novo_ scaffolds (T05–T08, log2 FC = +2.41 to + 6.70), and performed 5-
+point equilibrium titrations (0–1,000 nM) against bead-immobilized human 𝛼-thrombin ( **Fig.** 4). Six of the
+eight constructs (75%) exhibited concentration-dependent binding above blank, and endpoint fluorescence
+at 1 μM scaled quantitatively with Round 3 pooled enrichment across nearly four orders of magnitude
+(Pearson 𝑟 = 0.90, 𝑝 = 0.0021; Spearman 𝜌 = 0.88, 𝑝 = 0.0038; **Fig. 4B,** C), confirming that pooled
+log2 FC reflects genuine equilibrium binding rather than amplification artifacts. All four highly enriched
+
+$$
+5'.
+$$
+
+$$
+(5'-FAM)
+$$
+
+$$
+1 \\mu \\mathrm {M}
+$$
+
+* * *
+
+**A Normalized saturation isotherms (T01-T04)**
+
+| Aptamer concentration (nM) | T01 (K\_D = 24.6 nM) | T02 (K\_D = 47.4 nM) | T03 (K\_D = 133 nM) | T04 (K\_D = 133 nM) |
+| --- | --- | --- | --- | --- |
+| 1 | 0.04 | 0.02 | 0.20 | 0.12 |
+| 10 | 0.30 | 0.11 | 0.07 | 0.02 |
+| 100 | 0.80 | 0.72 | 0.37 | 0.45 |
+| 1000 | 1.00 | 0.94 | 0.88 | 0.87 |
+
+**B Single-clone binding summary (T01-T08)**
+
+| Category | Specific fluorescence at 1 µM, ΔRFU |
+| --- | --- |
+| T01 | 1825 |
+| T02 | 536 |
+| T03 | 209 |
+| T04 | 141 |
+| T05 | 118 |
+| T06 | 58 |
+| T07 | 36 |
+| T08 | 7 |
+
+| Category | Round 3 pooled SELEX enrichment (log2 FC) | Single-clone signal at 1 µM, ΔRFU (log) |
+| --- | --- | --- |
+| T01 | 16.3 | 1600 |
+| T02 | 12.0 | 550 |
+| T03 | 12.5 | 220 |
+| T04 | 9.9 | 140 |
+| T05 | 2.9 | 120 |
+| T06 | 6.6 | 60 |
+| T07 | 2.5 | 38 |
+| T08 | 3.0 | 7.0 |
+
+**Figure 4** \| **Orthogonal single-clone bead-binding validation of 𝛼-thrombin aptamer candidates (T01–T08). (A)** Normalized
+equilibrium binding curves ((RFU − 𝑦0)/Δ𝐵max) for the four nanomolar 𝛼-thrombin binders (T01–T04) titrated across 1, 10, 100, and
+1,000 nM 5′-FAM-labeled full-length aptamer against biotinylated human 𝛼-thrombin immobilized on streptavidin magnetic beads
+(1:50 bead dilution). Curves show non-linear least-squares 1:1 hyperbolic Langmuir fits (RFU(𝐶) = 𝑦0 \+ Δ𝐵max ⋅ 𝐶/(𝐾𝐷 \+ 𝐶));
+T04 (preliminary 𝐾𝐷 = 132.5 nM, dashed purple) is dashed to distinguish its curve from T03 (preliminary 𝐾𝐷 = 132.7 nM, solid
+orange). The horizontal dashed line indicates 50% of fitted Δ𝐵max (apparent 𝐾𝐷), and the shaded vertical band spans the prelim
+inary nanomolar 𝐾𝐷 range (24.6–133 nM; treated as preliminary estimates as fluorescence did not reach an upper plateau within
+1,000 nM). **(B)** Blank-subtracted endpoint fluorescence at 1 μM (Δ RFU = RFU1000 nM− RFU0 nM) across all eight individually
+synthesized full-length candidates (T01–T08, 75–85 nt), color-coded by binding regime: nanomolar binders (T01–T04, teal), micromolaronset _de novo_ binders (T05–T06, gold), and candidates below the 1 μM titration ceiling (T07–T08, grey). **(C)** Quantitative concordance
+between Round 3 pooled sequencing enrichment (log2 FC) and orthogonal single-clone fluorescence at 1 μM (Δ RFU, log10 scale)
+across T01–T08 (Pearson 𝑟 = 0.90, 𝑝 = 0.0021). The vertical dashed line marks the enrichment threshold (log2 FC > 9) separating
+candidates with preliminary nanomolar 𝐾𝐷 (T01–T04) from moderate-enrichment candidates in the micromolar regime (T05–T08).
+Full sequence details, raw RFU titrations, and curve-fitting parameters under both fixed-blank and free-baseline models are provided
+in **Supplementary Table S4.**
+
+$$
+((\\mathrm{RFU}-y\_{0})/\\Delta B\_{\\mathrm{max}})
+$$
+
+$$
+\\mathrm{RFU}(C)=y\_{0}+\\Delta B\_{\\max}\\cdot C/(K\_{D}+C)
+$$
+
+$$
+K\_{D}=132.5
+$$
+
+$$
+K\_{D}=132.
+$$
+
+$$
+\\Delta B\_{max}
+$$
+
+$$
+K\_{D})
+$$
+
+$$
+K\_{D}
+$$
+
+$$
+\\mathrm{RFU}=\\mathrm{RFU} _{1000\\mathrm{nM}}-\\mathrm{RFU}_{0\\mathrm{nM}}
+$$
+
+$$
+\\left(\\log\_{2}FC\\right)
+$$
+
+$$
+\\log\_{10}
+$$
+
+$$
+r=0.90
+$$
+
+$$
+p=0.0021
+$$
+
+$$
+(\\log\_{2}\\mathrm{FC}>9)
+$$
+
+$$
+K\_{D}
+$$
+
+candidates (T01–T04) yielded nanomolar binding curves (preliminary apparent 𝐾𝐷 = 24.6–133 nM; **Fig.** **4A),** whereas the moderately enriched strictly _de novo_ candidates (T05–T08) mapped to the micromolar
+regime expected for unoptimized, full-length _de novo_ hits prior to primer truncation ( **Fig. 4B,** C). These
+fitted 𝐾𝐷 values should be considered preliminary estimates, as fluorescence signals did not reach a full
+saturation plateau (𝐵max) within the 1 μM concentration range tested.
+
+$$
+K\_{D}=24.6-133\ nm;
+$$
+
+$$
+K\_{D}
+$$
+
+$$
+(B\_{max})
+$$
+
+$$
+1 \\mu \\mathrm {M}
+$$
+
+Comparing clones across lineages directly validated the agents’ structural engineering hypotheses ( **Fig.** **4A; Table 1, Row 5; Supplementary Tables S1 and S4).** The tightest binder, T01 (R3\_095\_var3 log2 FC =
++16.27, 44.55% of Round 3 thrombin reads), is an NU172-derived G4–duplex chimera with an agentengineered C10A bulge transition and 9-bp GC-rich stem clamp that bound with a preliminary apparent
+
+* * *
+
+𝐾𝐷 = 24.6 ± 8.2 nM (Δ RFU = +1,825, 7.2 × over blank). Among the TBA-derived G4 constructs (T02–
+T04), extending the coaxial Watson–Crick stem clamp from 8 bp in T03 (Δ𝐺 = −8.2 kcal/mol) to 11 bp
+in T02 (Δ𝐺 = −12.0 kcal/mol) around the identical 15-nt core increased 1 μM endpoint signal 2.6-fold
+(Δ RFU = +536 vs. +209; preliminary 𝐾𝐷 = 47.4 ± 14.6 nM vs. 132.7 nM), while the central-loop
+variant T04 (G8A, TGT → TAT), designed to reduce off-target enrichment in the pooled counter-screen, retained
+nanomolar binding to 𝛼-thrombin (preliminary 𝐾𝐷 = 132.5 ± 52.8 nM). Within the strictly _de novo_ tier,
+both G4 scaffolds (T05 and T06) showed reproducible binding onset at 1 μM (Δ RFU = +118 and +58;
+𝐾𝐷 \> 1 μM), whereas the two lower-enrichment non-G4 designs (T07 and T08, log2 FC = +2.41 and +
+3.29) remained near baseline (Δ RFU = +36 and +7), consistent with the log-linear enrichment–affinity
+relationship ( **Fig. 4C).**
+
+$$
+K\_{D}=24.6\\pm8.2\ nM\\left(\\Delta\ RFU=+1,825,7.2\\times\\right.
+\\left(\\Delta G=-8.2\ kcal/mol\\right)
+$$
+
+$$
+\\left(\\Delta G=-12.0\\right.
+\\Delta\\mathrm{RFU}=+536\\mathrm{vs}.+209;
+$$
+
+$$
+K\_{D}=47.4\\pm14.6\ nM\ vs.\ 132.7\ nM)
+$$
+
+$$
+K\_{D}=132.5\\pm52.8nm
+$$
+
+$$
+K\_{D}>1\\mu M)
+$$
+
+$$
+\\log\_{2}FC=+2.41
+$$
+
+$$
+\\Delta\\mathrm{RFU}=+36\\mathrm{and}+7
+$$
+
+## Discussion
+
+Our results demonstrate the feasibility of executing multi-round biomolecular discovery in a closed loop
+between AI agents and wet-lab assays, showing how iterative experimental feedback enables recovery
+from initial design failures. Across all biomolecular modalities, computational structure and binding
+predictors vary widely in accuracy depending on their training data, and none can replace experimental
+validation in the lab \[17, 29\]. While structure-based models perform well on rigid, well-represented protein
+interfaces \[15, 16, 17\], their accuracy drops on out-of-distribution targets, flexible loops such as antibody
+CDRs \[29, 30\], and nucleic-acid aptamers where solved complex structures and negative binding data are
+scarce \[18, 24, 34\]. Most agentic studies to date have been limited to a single experimental pass because
+protein and antibody campaigns require multi-week cloning, expression, and purification cascades \[1, 2,\
+3, 4, 12\]. Single-stranded DNA aptamers, chemically synthesized affinity reagents used in diagnostics,
+biosensors, and analytical assays \[19, 20, 24\], are well suited as a model modality to establish and stresstest the lab-in-the-loop paradigm. Within three experimental cycles and ∼1,000 candidates per round, our
+pipelines lifted statistically significant, bead-corrected on-target hit rates among newly designed candi
+dates from 0.0% (0/167) to 26.0% (54/208) in Round 2 and 42.1% (131/311) in Round 3 on 𝛼-thrombin (37.1%
+across strictly _de novo_ candidates free of published thrombin cores) and from 10.2% (20/196) in Round 1 to
+3.7% (9/244) in Round 2 and 33.5% (184/549) in Round 3 on myoglobin, reaching 80%–100% hit rates within
+top-performing structural families and up to a 140 × ratio of on-target to off-target hit rates. Rather than
+relying on blind selection over 1013–1015 random molecules as in classical SELEX \[19, 20\], testing targeted
+pools of ∼1,000 designed sequences per round returned a complete, counter-screened sequence–activity
+dataset of both positives and negatives across all ∼4,400 tested candidates ( **Supplementary Table S3).**
+
+$$
+10^{13}-10^{15}
+$$
+
+Whereas earlier computational aptamer methods trained supervised or generative models on large SELEX
+datasets or mutated sequences under a fixed evolutionary or Bayesian objective \[31, 32, 33, 36, 37\], the
+agents’ search space within our loop extended to both the analytical workflow and atypical structural
+topologies that human designers rarely prioritize (Section R.4). Acting like bench experimentalists, the
+agents derived a two-stage statistical filter (differential enrichment gated by linear bead-background
+regression) that removed 36–55% of apparent volcano pre-hits across full pools (and up to 71–85% of
+raw enriched G-quadruplexes; **Table 1; Supplementary Figs. S1 and S2; Supplementary Table S3),**
+modeled full primer-flanked constructs \[22\] to diagnose primer–core hybridization, built pass/fail qualitycontrol gates to separate assay failure from design failure, and revised their own hypotheses after a
+single round of contradicting wet-lab data. When early selection rounds rewarded G-quadruplexes, which
+dominate published aptamer databases, multiplexed counter-screening exposed that 97% of cross-reactive
+sequences were G-quadruplexes acting as promiscuous polyanionic surface stickers \[24, 26\]. This finding
+prompted the agents to pivot toward designs predicted to form three-way junctions and H-type pseudo
+knots (80.4% hit rate on myoglobin; **Fig. 3B).** This ability to dial between literature-guided exploitation
+on tractable targets (𝛼-thrombin) and atypical structural exploration on recalcitrant targets (myoglobin)
+gives human scientists high-level directional control over the discovery campaign.
+
+* * *
+
+These dynamics explain why computational models cannot yet substitute for physical measurement in
+nucleic-acid discovery, and they highlight the hazard of active learning on confounded data. Threedimensional co-folding and structure-based models (Boltz-2 \[21\], ESMFold2-NA, RhoDesign, RiboDiffusion) and
+nucleic-acid foundation models performed near random chance (ROC-AUC = 0.36–0.52; **Fig. 2D),** con
+sistent with known limitations caused by scarce aptamer crystal structures and lab-to-lab irreproducibility
+in public training corpora \[18, 24, 25, 26, 34\]. In fact, raw Boltz-2 interface confidence scores anticorrelated
+with specific binding because the model rewarded compact G-quadruplex folds that adhered non-specif
+ically to solid supports ( **Fig. 2D).** While 2D thermodynamic folding (ViennaRNA \[22\]) showed moderate
+enrichment discrimination (ROC-AUC = 0.73–0.76; **Fig. 2D),** it is a purely sequence-intrinsic, targetagnostic stability calculator: it verifies that a DNA sequence folds into a clean secondary structure rather
+than a random coil, but has no knowledge of the protein target and therefore cannot predict target affinity
+or specificity. When a supervised classifier was trained on early selection rounds prior to bead-background
+subtraction, it learned G-tract frequency as a positive feature and inverted its accuracy on subsequent
+pools. Active learning built on un-decoupled assay data will therefore converge on experimental artifacts
+rather than genuine affinity. Chemically synthesized DNA pools partially mitigate this risk once paired
+with counter-selection: unlike protein screens where 60–80% of designs fail to express or fold in cells \[15,\
+23\], sequencing the input library alongside triplicate pulldowns verifies that every synthesized candidate
+that fails to enrich genuinely failed to bind, providing clean negative and positive labels for downstream
+model training.
+
+The specificity recovery in Round 3 resolved indiscriminate cross-binding to streptavidin beads and
+unrelated proteins, restoring myoglobin on-target specificity from 19.1% to 72.4% while lifting 𝛼-thrombin
+specificity from 76.7% to 98.5% ( **Fig. 3A).** More broadly, this progression illustrates a key advantage of
+iterative closed-loop discovery over one-shot screening: rather than forcing agents or assays to satisfy
+all design constraints simultaneously, each cycle can layer on a new selective pressure. The loop can
+optimize first for target affinity, then for counter-screened specificity, and in subsequent rounds for
+activity in complex biological matrices such as serum, cell lysate, or cellular uptake. Catching and
+correcting assay-level matrix artifacts is an essential first gate, although fine discrimination against close
+structural homologues (such as myoglobin versus hemoglobin, or 𝛼-thrombin versus prothrombin) was
+not tested here and remains a next step for counter-selection campaigns. Similarly, after an initial screen
+across a broader protein panel spanning clinical relevance and surface charge, the three proteins profiled
+in our rounds spanned a clear biophysical difficulty spectrum for nucleic-acid recognition: 𝛼-thrombin
+\[27\], which presents two strongly electropositive polyanion-binding grooves (pI ≈ 7.0–7.6) and four
+active literature controls; myoglobin, a compact neutral-to-weakly-basic 8-helix bundle (17 kDa, pI ≈
+7.2) lacking a natural nucleic-acid cleft where zero of four published controls bound; and the human
+HER2 ectodomain introduced in Round 2 counter-screening, a large (70 kDa), heavily glycosylated, netelectronegative receptor (pI ≈ 5.6) that electrostatically repels the polyanionic DNA backbone and where
+all 24 published or literature-seeded controls failed ( **Supplementary Fig. S3, Supplementary Note** 1).
+Final Round 3 hit rates and peak enrichments scaled monotonically across this gradient—from 𝛼-thrombin
+(42.1% on-target hit rate \[37.1% strictly _de novo\],_ peak log2 FC = +16.27) to myoglobin (33.5% hit rate,
++3.61 log2 FC) to strictly selective HER2 binders (5.1% hit rate, +4.59 log2 FC, 3.8-fold gain over Round 2)
+—while matching the distinct agentic strategies required at each tier: construct insulation on 𝛼-thrombin,
+a topology pivot to non-G4 pseudoknots and hairpins on myoglobin, and cross-target seed repurposing
+with Watson–Crick clamping on HER2. The agents themselves diagnosed why the published myoglobin
+controls were inactive in our standardized pulldown assay \[24, 25, 26\], tracing the discrepancy to primerflank hybridization, physiological Na+/K+ buffer balance, and bead immobilization versus solution-phase
+selection ( **Table 1,** Rows 3 and 4). They then recommended adding exogenous heme cofactor, substituting
+K+, or adjusting wash stringency (Section R.4). We held physiological buffer conditions constant across
+all rounds to evaluate sequence-level learning on a fixed benchmark, though future loops should allow
+agents to co-optimize sequences and assay protocols.
+
+$$
+\\mathrm{(pI\\approx7.0--7.6)}
+$$
+
+$$
+\\left(pI\\approx5.6\\right)
+$$
+
+$$
+\\log\_{2}FC=+16.27)
+$$
+
+$$
++3.61\\log\_{2}FC)
+$$
+
+$$
+\\mathrm{Na^{+}/K^{+}}
+$$
+
+$$
+\\mathrm{K}^{+}
+$$
+
+* * *
+
+On targets with prior literature such as 𝛼-thrombin, the agents leveraged literature search and model priors
+to retrieve known TBA and NU172 cores and re-engineer their flanking stems to survive full-construct folding,
+lifting their hit rate from 0.0% in Round 1 to 100% in Round 3 (25/25; **Table 1,** Row 5; **Supplementary**
+**Table S3).** Separating these literature-guided designs from strictly _de novo_ candidates confirmed that _de_
+_novo_ discovery also succeeded independently: strictly _de novo_ 𝛼-thrombin designs reached a 37.1% hit
+rate (106/286), and myoglobin—where no published controls bound—yielded a 33.6% hit rate (184/547),
+with all hits strictly _de novo._ Orthogonal single-clone bead-fluorescence titrations on 𝛼-thrombin (T01–T08)
+further verified that Round 3 pooled sequencing enrichment translates quantitatively into single-clone
+equilibrium binding (𝑟 = 0.90, 𝑝 = 0.0021; **Fig. 4; Supplementary Table S4),** calibrating the pooled
+sequencing assay against physical binding: 6 of 8 individually synthesized full-length constructs showed
+concentration-dependent binding, with agent-engineered stem clamps and loop edits of known motifs
+yielding preliminary nanomolar apparent affinities (𝐾𝐷 = 24.6–133 nM, T01–T04), moderately enriched
+_de novo_ G4 scaffolds (T05–T06) exhibiting clear binding onset at the 1 μM assay ceiling (𝐾𝐷 > 1 μM) even
+prior to constant-primer truncation, and lower-enrichment non-G4 _de novo_ designs (T07–T08, log2 FC =
++2.41–3.29) remaining below the 1 μM detection threshold. Whereas prior supervised and generative
+machine learning methods yielded single-digit nanomolar binders (𝐾𝐷 = 1.5 nM) by training deep
+neural networks on nearly a million physical screening measurements \[36, 37\], our closed-loop agents
+operated without any prior target-specific training data. In this zero-library context, achieving micromolar
+binding onset (𝐾𝐷 > 1 μM) for strictly _de novo_ G4 scaffolds (T05–T06) within only three rounds (∼3,000
+focal candidates) represents an efficient initial discovery seed, contrasting with the nanomolar apparent
+affinities (𝐾𝐷 = 24.6–133 nM) achieved when the agents were provided a known starting motif (TBA/
+NU172) for targeted local optimization. As practical study caveats, commercial licensing constraints
+restricted our computational evaluations to open-license tools (Boltz-2, ESMFold2-NA, ViennaRNA, and
+open foundation models), and our single-clone titrations were performed exclusively on 𝛼-thrombin and
+capped at 1 μM on full-length (75–85 nt) bead-immobilized constructs without reaching an empirical
+saturation plateau (𝐵max), rendering the fitted 𝐾𝐷 values preliminary. Extending single-clone validation to
+truncated minimal cores, additional closed-loop affinity-maturation rounds, and higher-concentration or
+label-free kinetic assays—specifically bio-layer interferometry (BLI) and surface plasmon resonance (SPR)
+(𝑘on, 𝑘off, 𝐾𝐷) across myoglobin, 𝛼-thrombin, and HER2—will be essential to biophysically confirm strictly
+_de novo_ leads, enabling physical affinity to be fed directly back into the closed loop alongside pooled NGS
+enrichment and counter-target specificity.
+
+$$
+r=0.90,p=0.0021
+$$
+
+$$
+K\_{D}=24.6-133;nM,;T01-T04
+$$
+
+$$
+(K\_{D}>1\ \\mu M)
+$$
+
+$$
+\\left(\\mathrm{T07}-\\mathrm{T08},\\log\_{2}\\mathrm{FC}\\right)
+$$
+
+$$
+1 \\mu \\mathrm {M}
+$$
+
+$$
+K\_{D}=1.5\ \\mathrm{nM}
+$$
+
+$$
+(K\_{D}>1\\mu\\mathrm{M})
+$$
+
+$$
+K\_{D}=24.6-133\ nm
+$$
+
+$$
+1 \\mu \\mathrm {M}
+$$
+
+$$
+K\_{D}
+$$
+
+$$
+(B\_{max})
+$$
+
+$$
+(k\_{on},k\_{off},K\_D)
+$$
+
+Our findings establish that coupling general-purpose and domain-specialized reasoning agents \[1, 7, 8,\
+9\] with fast, counter-screened physical feedback enables autonomous scientific problem-solving across
+the full design–test–analyze loop. Across the multi-round campaign, we paired Google’s AI co-scientist
+\[1\] for initial zero-shot ideation in Round 1 with a tool-equipped aptamer harness for data-driven
+iteration in Rounds 2–3 rather than running a controlled comparison between agent architectures. While
+our campaign establishes closed-loop feasibility, prospective trials with matched-budget no-feedback and
+non-reasoning control arms will be needed to isolate the specific contribution of agentic reasoning, and
+head-to-head benchmarking against evolutionary, Bayesian, and supervised machine learning baselines
+\[31, 32, 33, 36, 37\] is an important direction for future work. As reasoning models and agent harnesses
+continue to advance rapidly, the decisive determinant of discovery success is the speed and fidelity of
+the empirical feedback loop. Our three-step wet-lab workflow can be mapped end-to-end onto robotic
+liquid handlers coupled directly to sequencing because DNA pools and selection buffers are stable at room
+temperature \[10, 11, 12, 38\], allowing agents to co-optimize sequences, buffers, cofactors, and stringency
+in a self-driving loop. Beyond aptamers, the closed-loop principles demonstrated in this aptamer sandbox
+are modality-agnostic, setting the stage for extending multi-round agentic discovery to more complex and
+resource-intensive assays such as protein–protein binder design \[12, 15, 16\].
+
+* * *
+
+## Methods
+
+### Closed-loop pipeline overview
+
+Aptamer discovery was performed using a closed-loop pipeline in which AI agents designed candidate
+sequences, candidates were synthesized and experimentally screened, and sequencing read count matrices
+and sample metadata were returned to the agents to inform the next round of design. The pipeline
+comprised five stages executed in series: (i) agentic candidate design, (ii) pooled oligonucleotide array
+synthesis, (iii) multiplexed bead-based affinity pulldown, (iv) next-generation sequencing, and (v) return
+of count matrices and sample metadata to the agentic pipeline for iterative analysis and redesign.
+
+Three complete design-test-improve cycles were performed, each completing in approximately 10 days
+of bench turnaround ( **Supplementary Table S3).** Agents were tasked with generating approximately
+640–1,450 candidate aptamer constructs per synthesized pool: 642 in Round 1, 981 in Round 2, and 1,450
+ordered constructs in Round 3 yielding 1,441 sequenced library entries (1,405 after deduplicating secondary
+controls, comprising 1,208 newly designed constructs—549 primary myoglobin candidates, 311 primary 𝛼thrombin candidates, 200 exploratory HER2 candidates, 88 mutational seed variants, and 60 calibration tier
+constructs—plus 197 longitudinal positive, literature, and negative controls; 2,937 unique sequences across
+the three focal pools). Including the supplementary single-target myoglobin expansion pool synthesized
+between Rounds 1 and 2 (Round 1b, 1,353 ordered / 1,341 sequenced constructs), the campaign totaled 4,405
+sequenced library constructs (4,425 ordered; 4,279 unique variable-region sequences after deduplicating
+cross-pool controls; **Supplementary Table S3).** Between rounds, human researchers executed the wetlab pulldown, PCR amplification, and sequencing workflow, mapped sequencing reads to the designed
+reference library, and returned the resulting per-sequence read count matrices and sample metadata to
+the agent pipeline. Within the data-driven cycles (Rounds 2–3), differential enrichment analysis, crosstarget and bare-bead background regression, structural classification, failure-mode diagnosis, constraint
+derivation, and candidate scoring were executed independently by the agent pipeline from the raw count
+data without receiving human-derived enrichment tables or analytical hypotheses, while wet-lab assay
+conditions were held constant across Rounds 1–3 by the human operators.
+
+### Agentic design platforms
+
+Two agentic platforms contributed sequentially across the three design rounds, with experimental
+sequencing counts and top-performing seeds shared across rounds so that each stage built directly on
+prior wet-lab outcomes.
+
+**AI Co-Scientist.** Google’s AI co-scientist \[1\], a general-purpose multi-agent system designed for scientific
+ideation, multi-agent debate, and literature-grounded hypothesis generation, generated the initial Round
+1 candidate library (𝑁 = 642) from target protein sequence and structural context, establishing _de novo_
+binder discovery from zero prior experimental data. Top-performing Round 1 binders were carried forward
+into subsequent rounds as exploitation seeds and longitudinal controls.
+
+**Custom aptamer pipeline.** For Rounds 2–3, where iterative improvement required ingesting prior-round
+sequencing count matrices, running independent statistical enrichment analysis in Python, performing
+structural classification and full-construct thermodynamic folding, and generating candidates subject to
+programmatic design constraints, we deployed a domain-specialized four-stage pipeline implemented on a
+modular Python agent orchestration framework with direct access to the computational toolbox described
+below. The pipeline employed a four-stage sequential architecture: (1) an _analyst_ agent that received
+raw per-sequence read count matrices and sample metadata and independently performed differential
+enrichment analysis (PyDESeq2), bare-bead background regression, ratio gating, cross-target profiling,
+and dropout/failure-mode diagnostics without receiving human-derived analytical results or structural
+hypotheses; (2) a _strategist_ agent that translated the analyst’s report into target-specific design strategies
+with explicit explore-versus-exploit allocation; (3) _parallel designer_ agents, each assigned a specific strat
+egy, that iteratively generated, folded, and filtered candidate sequences using the computational tools; and
+(4) a _scoring_ stage, executed outside the agent loop on cloud GPUs, that applied computationally intensive
+
+* * *
+
+3D structure-prediction models against target and decoy proteins to annotate candidates and construct
+prospective calibration tiers (Tiers A–D).
+
+**Language models.** The large language models used in the agentic pipelines were Google Gemini Pro and
+Flash models \[28\], accessed via the Google Gemini API.
+
+### Computational tools available to agents
+
+Agents in the custom aptamer pipeline were provided access exclusively to computational tools
+carrying verified commercially permissive licenses (MIT, Apache-2.0, BSD-3-Clause, or the ViennaRNA
+commercial-permissive license); tools carrying non-commercial, copyleft, or unspecified licenses (such
+as RoseTTAFoldNA, HADDOCK, HDOCK, Nucleotide Transformer \[CC-BY-NC-SA-4.0\], AptaSuite
+\[GPL-3.0\], AptaTrans, and GRAPE-LM) were excluded. The toolbox comprised 9 computational modeling
+tools (yielding the 12 predictor metrics benchmarked in **Fig. 2D**) plus a structured protein-lookup utility,
+spanning four categories:
+
+**2D DNA thermodynamics and structural topology classification.** ViennaRNA v2.6.4 (ViennaRNA
+Package License; explicit permission granted for research, educational, and commercial use \[22\]) was used
+to compute minimum free energy (MFE) secondary structures and partition-function ensemble defect (ED)
+using the Mathews 2004 DNA nearest-neighbor thermodynamic parameter set (dna\_mathews2004.par) with
+G-quadruplex folding enabled (note that ViennaRNA’s built-in quadruplex energy term is parameterized
+from RNA quadruplex data, and inverse-folding outputs were converted from RNA to DNA via uracil-tothymine substitution). The six structural families in **Fig. 3B** were assigned by post-processing the predicted
+MFE dot-bracket structure and primary sequence, as standard dynamic-programming secondary-structure
+prediction folds only nested base pairs: predicted G-quadruplexes were classified as clamped (≥ 8 paired
+Watson–Crick stem bases) or unclamped (< 8 paired bases); H-type pseudoknots were identified by scan
+ning unpaired hairpin loops (≥ 4 nt) for ≥ 5-nt Watson–Crick reverse-complementarity to an unpaired
+5′ or 3′ single-stranded tail (≥ 6 nt); and non-G4 duplexes were classified by stem and bulge topology
+into three-way junctions (≥ 3 stem segments or ≥ 2 hairpins), bulge/pocket hairpins (containing internal
+bulge loops), or extended palindromic hairpins.
+
+$$
+(\\geq8
+$$
+
+$$
+(\\geq4nt)
+$$
+
+$$
+\\geq5-nt
+$$
+
+$$
+5'
+$$
+
+$$
+3'
+$$
+
+$$
+(\\geq6nt)
+$$
+
+$$
+(\\geq3
+$$
+
+**3D structure prediction and inverse design.** Boltz-2 (v0.4, checkpoint boltz2\_conf.ckpt MIT License
+\[21\]) was used for protein–aptamer co-folding, providing interface predicted template modeling score
+(iPTM), predicted local distance difference test (pLDDT), predicted template modeling score (pTM), targetversus-decoy specificity contrast (Δ iPTM), and a composite confidence score. ESMFold2-NA (Hugging
+Face checkpoint biohub/ESMFold2-hf MIT License) provided nucleic-acid complex structure predictions.
+Candidate ssDNA variable regions were converted via thymine-to-uracil (T → U) substitution prior to
+evaluation with RhoDesign (GitHub release ml4bio/RhoDesign, pretrained weights rhodesign\_pretrained.pt
+MIT License) and RiboDiffusion (GitHub release ml4bio/RiboDiffusion, checkpoint ribodiffusion\_sde.pth
+MIT License), which are parameterized on 3D RNA structures: RhoDesign computed 3D inverse-folding
+sequence log-likelihoods conditioned on a 44-nt pseudoknot backbone template (PDB 1A60), and
+RiboDiffusion scored 3-mer generative log-likelihoods derived from backbone-conditioned inverse-folding
+profiles converted back to DNA (U → T).
+
+**Nucleic acid foundation models.** DNABERT-2 (117M parameters, HuggingFace checkpoint zhihan1996/
+DNABERT-2-117M / MAGICS-LAB/DNABERT\_2 Apache-2.0 License) provided DNA embedding norms and seed
+cosine similarity scores, HyenaDNA (HuggingFace checkpoint LongSafari/hyenadna-medium-160k-seqlen-hf,
+HazyResearch/hyena-dna Apache-2.0 License) contributed zero-shot causal autoregressive token log-likeli
+hoods, and RNA-FM (100M parameters, ml4bio/RNA-FM checkpoint RNA-FM\_pretrained.pth MIT License)
+evaluated T → U converted candidate sequences to compute layer-12 embedding cosine similarity against
+the literature seed.
+
+**G-quadruplex and protein information.** G4Hunter scored G-quadruplex propensity from primary
+sequence using a direct Python implementation of the published 25-nt sliding-window equation (Bedrat et
+al., _Nucleic Acids Res.44,_ 1746–1759, 2016; CC-BY 4.0). A protein lookup tool returned structured knowl edge for each target from open Protein Data Bank entries, including molecular weight, fold classification,
+surface electrostatic maps, binding-site residue coordinates, and published aptamer sequences.
+
+Computationally intensive structure-prediction tools (Boltz-2, ESMFold2-NA) were executed on NVIDIA
+A100 SXM4 (40 GB) GPUs hosted on Google Cloud, whereas CPU-only tools (ViennaRNA, G4Hunter, sequence
+analysis utilities) ran within the agent’s local Python environment.
+
+### Target proteins
+
+Three target proteins spanning a gradient of surface electrostatics, glycosylation, and nucleic-acid recog
+nition tractability were profiled across the campaign. Human alpha-thrombin (36.7 kDa, pI ≈ 7.0–7.6;
+PDB 1PPB) is a serine protease presenting two strongly electropositive anion-binding exosites (Exosite I
+and Exosite II) that constitute natural grooves for nucleic acid recognition, including well-characterized Gquadruplex aptamers. Thrombin served as a positive-control benchmark with known aptamer solutions.
+Human myoglobin (17.2 kDa, pI ≈ 7.2; structural modeling reference PDB 3RGK, an engineered K45R/
+C110A crystallization variant sharing > 98% sequence identity and an identical eight-𝛼-helix holomyoglobin fold with wild-type human myoglobin assayed in the wet lab) is a compact globular protein
+coordinating a heme prosthetic group. Its surface presents only localized cationic patches and lacks any
+natural nucleic acid binding groove, making it a substantially more challenging target for _de novo_ aptamer
+discovery. Human HER2 (ErbB2) extracellular domain (ECD; subdomains I–IV, 630 aa, ∼70 kDa, pI ≈ 5.6;
+PDB 1N8Z), introduced in Round 2 as a multiplexed counter-screen and continued in Round 3, is a large,
+heavily glycosylated receptor tyrosine kinase ectodomain whose net-electronegative surface at physiolog
+ical pH electrostatically repels the polyanionic DNA backbone and lacks a canonical nucleic-acid binding
+cleft, serving both as an off-target specificity control and as a high-difficulty test case ( **Supplementary**
+**Fig. S3, Supplementary Note** 1).
+
+$$
+\\mathrm{pI}\\approx7.0--7.6;
+$$
+
+$$
+\\mathrm{pI}\\approx7.2;
+$$
+
+Biotinylated human alpha-thrombin was obtained from Assay Pro (catalog no. PT62011BIO), biotinylated
+human myoglobin was obtained from Molecular Depot (catalog no. P2010022B), and biotinylated human
+HER2 extracellular domain was obtained from Sino Biological (catalog no. 10004-HCCH-B-100).
+
+### Aptamer library design and synthesis
+
+Each round of the pipeline produced a pool of candidate aptamer sequences with variable regions
+of 30–50 nucleotides (target length ∼40 nt), flanked by a fixed 23-nt 5′ forward constant region (5'-
+TTGACTAGTACATGACCACTTGA-3') and a fixed 22-nt 3′ constant region (5'-TTCTGTCGTCCAGTCTGATGTG-3', written
+5′ → 3′ on the synthesized sense ssDNA strand) required for PCR amplification and sequencing library
+preparation, yielding full constructs of approximately 75–95 nucleotides (∼85 nt). Variable region lengths
+were selected by the designing agents based on the structural architectures they chose to explore.
+
+$$
+5^{\\prime}
+$$
+
+$$
+5'\\rightarrow3'
+$$
+
+Candidate pools were synthesized as oligonucleotide arrays by Integrated DNA Technologies (IDT oPools).
+Synthesis orders were placed as received from the agentic pipeline without manual curation of individual
+sequences.
+
+### Multiplexed bead pulldown assay
+
+Binding selection was performed across parallel reaction wells as previously described \[35\] with minor
+modifications. Dynabeads M-280 Streptavidin (Thermo Fisher Scientific, catalog no. 11206D) were washed
+and prepared following the manufacturer’s instructions using 50 pmol of biotinylated target protein
+conjugated to the beads. Across all selection rounds, for each reaction, 5 pmol of refolded ssDNA was
+combined with the protein-conjugated (or bare control) beads. Following incubation, unbound aptamers
+were washed away, and bound aptamers were immediately amplified directly off the beads. PCR products
+were purified using Mag-Bind TotalPure NGS beads (Omega Bio-tek, catalog no. M1378) as previously
+described \[35\] and quantified by Qubit fluorometry and Agilent TapeStation. Samples were then indexed
+using custom NGS primers, purified and pooled as previously described \[35\], and sequenced on an Illumina
+MiSeq instrument (1 × 52 bp single-end reads).
+
+Each pool was assayed simultaneously in parallel reactions against three core bead conditions: (i) alphathrombin-coated beads, (ii) myoglobin-coated beads, and (iii) bare streptavidin beads carrying no target protein (matrix background control), with each target-coated bead condition also serving as the off-target
+protein counter-screen for candidates designed against the other target. In Rounds 2 and 3, human HER2
+extracellular domain (ECD; subdomains I–IV, ∼70 kDa, PDB 1N8Z) was also included in the multiplexed
+panel as an additional off-target protein reference ( **Supplementary Fig. S3, Supplementary Note** 1).
+The technical replicate structure per sequencing run was: Round 1, 𝑛 = 3 target / 𝑛 = 3 bead / 𝑛 = 3
+input replicates per protein; Round 1b, 𝑛 = 2 target / 𝑛 = 2 bead / 𝑛 = 3 input; Round 2, 𝑛 = 3 target
+and 𝑛 = 3 bead for 𝛼-thrombin and HER2, 𝑛 = 4 target and 𝑛 = 4 bead for myoglobin, and 𝑛 = 3 input
+across all assays; Round 3, 𝑛 = 3 target / 𝑛 = 3 bead / 𝑛 = 3 input per protein. This multiplexed design
+enabled discrimination between specific target binding, non-specific matrix adhesion, and cross-reactive
+promiscuity.
+
+### Controls and reproducibility
+
+**Literature aptamer controls.** Eight published aptamers with reported binding activity against the study
+targets (four targeting alpha-thrombin and four targeting myoglobin) were synthesized alongside the AIdesigned candidates and tested in the identical assay format. Of these, thrombin-binding aptamers TBA
+(log2 fold-change \[LFC\] +8.22 in Round 3), HD22 (+3.03), RE31 (+3.87), and NU172 (+4.15) showed
+strong enrichment on thrombin beads, verifying assay validity for that target. Zero of four myoglobin
+literature aptamers showed measurable enrichment on myoglobin beads.
+
+$$
+(\\log\_{2}
+$$
+
+**Random sequence controls.** Fifty-three random-sequence oligonucleotides of matched length and
+primer composition were included as negative controls. None (0/53) exceeded the enrichment threshold.
+
+**Biological replicates.** To assess inter-operator reproducibility, the Round 3 candidate pool (𝑁 = 1,441
+sequenced constructs; 1,405 unique sequences) was independently screened by two operators in separate
+pulldown and sequencing runs. Continuous target-versus-input log2 FC enrichment scores correlated
+across operators (𝑟 = 0.84–0.85 across the full pool \[𝑟 = 0.840 for myoglobin, 𝑟 = 0.835 for 𝛼-thrombin,\
+and 𝑟 = 0.849 for HER2\]; 𝑟 = 0.920 and 𝑟 = 0.964 within the newly designed myoglobin \[𝑛 = 549\]
+and 𝛼-thrombin \[𝑛 = 311\] candidate cohorts; and 𝑟 = 0.74–0.76 on bare streptavidin beads and highabundance subsets). Binary DESeq2 enrichment pre-hit calls (log2 FC ≥ 1.0, FDR < 0.05) agreed between
+operators on 90.4% of library constructs for myoglobin (Cohen’s 𝜅 = 0.740; 345 vs. 357 pre-hits), 88.1% for
+HER2 (𝜅 = 0.700; 393 vs. 390 pre-hits), and 77.4% for 𝛼-thrombin (292 vs. 301 pre-hits; 84.9% agreement
+\[𝜅 = 0.439\] after bare-bead regression, with 𝑟 = 0.868 between bead-subtracted residuals).
+
+$$
+\\log\_{2}FC
+$$
+
+$$
+\\left(\\log\_{2}\\mathrm{FC}\\geq1.0,\\mathrm{FDR}<0.05\\right)
+$$
+
+### Next-generation sequencing, data return to agents, and uniform manuscript statistical evalu ation
+
+Following bead pulldown and direct on-bead PCR amplification, indexed libraries across Rounds 1–3 were
+sequenced on an Illumina MiSeq platform (1 × 52 bp single-end reads). Sequencing reads were mapped to
+the designed reference library using a two-pass bioinformatics pipeline: Pass 1 assigned all exact (𝑑 = 0)
+variable-region matches (~85–90% of mapped reads), and Pass 2 applied 𝑘-mer-indexed Levenshtein fuzzy
+matching (edit distance 1 ≤ 𝑑 ≤ 3 nucleotides) exclusively to reads without an exact match, assigning
+each read to its unique minimum-distance reference construct and discarding reads tied at the minimum
+edit distance between two reference sequences. In Rounds 1 and 2, only 8.2% (55/669) and 4.4% (43/981) of
+unique variable regions had any library neighbor within edit distance ≤ 3; in Round 3 (𝑁 = 1,405), where
+single- and double-mutant maturation series (𝑛 = 88) were intentionally included, 28.2% (396/1,405) had a
+neighbor within 𝑑 ≤ 3, and exact-first priority matching with tie discarding prevented read bleed between
+point-mutant siblings.
+
+$$
+1\\leq d\\leq3
+$$
+
+$$
+\\leq3;
+$$
+
+$$
+d\\leq3,
+$$
+
+The resulting raw per-sequence read count matrices and sample metadata were provided to the agentic
+pipeline as structured input for the subsequent design round. Within the closed loop between rounds,
+the agents wrote and executed their own analysis scripts (PyDESeq2 differential enrichment, bare-bead
+regression, and ratio gating, as quoted in **Table** 1). **Separately from the agents’ internal betweenround scripts, all hit rates, specificity trajectories, volcano plots, and predictor benchmarks**
+**reported in this manuscript (Figures 2–3, Supplementary Table S3, and Supplementary Figures**
+
+* * *
+
+### S1–S3) were computed by the authors using a standardized two-stage statistical pipeline applied across all rounds:
+
+1. **Stage 1 (DESeq2 differential enrichment over input):** For each sequencing run and target condi
+   tion 𝑡, raw replicate read counts for constructs passing the minimum detection filter (≥ 10 total
+   reads across input and pulldown replicates) were normalized using PyDESeq2 median-of-ratios size
+   factors, modeled under Cox–Reid negative binomial dispersion estimation, and tested via Wald
+   statistics with Benjamini–Hochberg false discovery rate (FDR) adjustment to obtain target-versusinput enrichment 𝑦𝑖,𝑡 = log2 FC𝑖,target vs. input (padj𝑖,𝑡) and bare-bead-versus-input enrichment 𝑥𝑖 =
+   log2 FC𝑖,beads vs. input (padj𝑖,beads).
+
+$$
+(\\geq10
+$$
+
+$$
+y\_{i,t}=\\log\_2FC\_i
+$$
+
+$$
+(\\mathrm{padj}\_{i,t})
+$$
+
+$$
+x\_{i}=
+\\log\_{2}FC\_{i,beads;vs}
+$$
+
+$$
+(\\mathrm{padj}\_{i,\\mathrm{beads}})
+$$
+
+2. Stage 2 (Ordinary least-squares bare-bead background regression): The empirical slope 𝛽1,𝑡
+   relating 𝑦𝑖,𝑡 to 𝑥𝑖 is systematically sub-unity (𝛽1,𝑡 = 0.40–0.73 across Rounds 2 and 3) because targetprotein immobilization partially passivates exposed streptavidin matrix sites. We therefore fit an
+   ordinary least-squares (OLS) linear model 𝑦̂𝑖,𝑡 = 𝛽0,𝑡 \+ 𝛽1,𝑡𝑥𝑖 (calibrated in Round 3 on the 𝑛 = 102
+   embedded negative, random, scrambled, and structural baseline controls: 𝑦̂𝑖,myo = −0.454 + 0.430𝑥𝑖,
+   𝑦̂𝑖,thr = −0.960 − 0.067𝑥𝑖, and 𝑦̂𝑖,her2 = +0.130 + 0.681𝑥𝑖) and computed each construct’s bead-cor
+   rected residual 𝑟𝑖,𝑡 = 𝑦𝑖,𝑡 − 𝑦̂𝑖,𝑡. A construct was called a statistically significant, bead-corrected ontarget hit (is\_binder, Supplementary Table S3) if it satisfied padj𝑖,𝑡 < 0.05, positive target enrichment
+   over input (log2 FC ≥ 1.0 for volcano pre-hits), and a bead-corrected OLS residual 𝑟𝑖,𝑡 \> 1.00 across all
+   rounds (corresponding to ≥ 2-fold enrichment above expected bare-bead background). For 𝛼-thrombin,
+   to prevent negative control intercepts or slopes from calling sequences that enriched on bare beads,
+   Round 2 required bare-bead enrichment 𝑥𝑖 < 0.5 (yielding an empirical minimum observed residual
+   among called hits of 𝑟𝑖,thr = +1.15), and Round 3 required any construct that was also a significant
+   bare-bead pre-hit (padj𝑖,beads< 0.05, 𝑥𝑖 \> 1.0) to exceed bare-bead enrichment by at least twofold
+   directly (𝑦𝑖,thr − 𝑥𝑖 \> 1.0; combined with the negative control intercept 𝛽0,thr = −0.960 and 𝑦𝑖,thr ≥
+   1.0, this yielded an empirical minimum observed residual among called Round 3 𝛼-thrombin hits of
+   𝑟𝑖,thr = +1.94, as plotted in Supplementary Fig. S1B, C and noted in Supplementary Table S3).
+   Comparing this two-stage OLS residual gate against a direct target-versus-bare-bead contrast (padj𝑖,𝑡 <
+   0.05, 𝑦𝑖,𝑡 \> 1.0, and direct fold-change difference Δ log2 FC𝑡− beads= 𝑦𝑖,𝑡 − 𝑥𝑖 \> 1.0, which fixes
+   𝛽1,𝑡 = 1) yielded 98.5% binary hit-call agreement in Round 2 𝛼-thrombin (Jaccard = 0.907), 94.4% in
+   Round 2 myoglobin, 98.0% in Round 3 𝛼-thrombin (Jaccard = 0.903), and 97.0% in Round 3 HER2
+   (Jaccard = 0.806), while avoiding over-subtraction on myoglobin where bare-bead slope is 𝛽1,myo =
+   0.430. Sensitivity analyses across relaxed (FDR < 0.05, log2 FC > 0.5, 𝑟𝑖,𝑡 \> 0.5: Round 2 → Round
+   3 myoglobin 6.6%\[16/244\] → 38.4%\[211/549\] among new designs, 17.2% → 38.4% across full/new
+   benchmarks) and stringent (FDR < 0.01, log2 FC ≥ 1.5, 𝑟𝑖,𝑡 \> 1.5: Round 2 → Round 3 myoglobin
+   2.5%\[6/244\] → 15.5%\[85/549\] among new designs) thresholds confirmed that cross-round hit-rate
+   gains are invariant to threshold choice. On-target specificity (%) was defined as the percentage of
+   all statistically significant binders in the counter-screened benchmark that bound exclusively to the
+   intended target without significant off-target cross-binding.
+
+$$
+\\beta\_{1,t}
+$$
+
+$$
+y\_{i,t}
+$$
+
+$$
+\\beta\_{1,t}=0.40--0.73
+$$
+
+$$
+x\_{i}
+$$
+
+$$
+\\hat{y} _{i,t}=\\beta_{0,t}+\\beta\_{1,t}x\_{i}
+$$
+
+$$
+n=102
+$$
+
+$$
+\\hat{y} _{i,\\mathrm{thr}}=-0.960-0.067x_{i}
+$$
+
+$$
+\\hat{y} _{i,\\mathrm{my}0}=-0.454+0.430x_{i},
+$$
+
+$$
+\\hat{y} _{i,\\mathrm{her2}}=+0.130+0.681x_{i}
+$$
+
+$$
+r\_{i,t}=y\_{i,t}-\\hat{y}\_{i,t}.
+$$
+
+$$
+\\mathrm{padj}\_{i,t}<0.05
+$$
+
+$$
+(\\log\_{2}FC\\geq1.0
+$$
+
+$$
+r\_{i,t}>1.00
+$$
+
+$$
+0\\geq2-\\mathrm{f}\\mathrm{o}\\mathrm{l}\\mathrm{d}
+$$
+
+$$
+x\_{i}<0.5
+$$
+
+$$
+r\_{i,\\mathrm{thr}}=+1.15)
+$$
+
+$$
+\\mathrm{j}\_{i,\\mathrm{beads}}<0.05,\ x\_{i}>1.0)
+$$
+
+$$
+(y\_{i,\\mathrm{thr}}-x\_i>1.0
+$$
+
+$$
+\\beta\_{0,\\mathrm{thr}}=-0.960
+$$
+
+$$
+y\_{i,\\mathrm{thr}}\\geq
+$$
+
+$$
+r\_{i,\\mathrm{thr}}=+1.94
+$$
+
+$$
+(\\mathrm{padj}\_{i,t}<
+$$
+
+$$
+0.05,;y\_{i,t}>1.0
+$$
+
+$$
+\\Delta\\log\_{2}\\mathrm{FC} _{t-\\mathrm{\\tiny~b e a d s}}=y_{i,t}-x\_{i}>1.0,
+$$
+
+$$
+\\beta\_{1,t}=1)
+$$
+
+$$
+\\beta\_{1,my0}=
+\\mathrm{(FDR<0.05,\\log\_2FC>0.5,r\_{i.t}>0.5}
+$$
+
+$$
+6.6%\[16/244\]\\rightarrow38.4%\[211/549\]
+$$
+
+$$
+17.2\\dot{%}\\rightarrow38.4%
+$$
+
+$$
+\\left(\\mathrm{FDR}<0.01,\\log\_2\\mathrm{FC}\\geq1.5,r\_{i,t}>1.5\\right)
+$$
+
+$$
+2.5%\[6/244\]\\rightarrow15.5%\[85/549\]
+$$
+
+### Single-clone fluorescence magnetic bead-binding assay and preliminary 𝐾𝐷 estimation
+
+$$
+K\_{D}
+$$
+
+To validate target binding, 𝛼-thrombin aptamer candidates were tested as previously described with minor
+modifications \[35\]. Briefly, 𝛼-thrombin was immobilized on Dynabeads M-280 Streptavidin and refolded
+5′-6-carboxyfluorescein (FAM) aptamers were incubated against the thrombin-coated beads across a
+logarithmic concentration series (0, 1, 10, 100, and 1,000 nM) for 1 h at room temperature with gentle
+agitation. Unbound oligonucleotides were removed by magnetic separation and single endpoint fluores
+cence was carried out using a plate reader. Preliminary apparent equilibrium dissociation constants (𝐾𝐷)
+and fitted amplitude spans (Δ𝐵max) were estimated computationally as previously described \[35\]. Fitted
+𝐾𝐷 values should be considered preliminary estimates, as fluorescence signals did not reach an empirical
+saturation plateau (𝐵max) within the 0–1,000 nM concentration range tested.
+
+$$
+(\\Delta B\_{max})
+$$
+
+$$
+(K\_D)
+$$
+
+$$
+K\_{D}
+$$
+
+$$
+(B\_{max})
+$$
+
+* * *
+
+## Data and code availability
+
+**Data availability.** Summary enrichment statistics, benchmark metrics, representative aptamer sequences,
+single-clone titration measurements, and curated agent reasoning traces supporting the findings of
+this study are provided within the manuscript, figures, **Table 1,** and **Supplementary Tables S1–S4;**
+complete de-identified sequence–activity and differential enrichment tables will be made available upon
+peer-reviewed publication. Atomic coordinates for the target proteins used in structural modeling are
+publicly available from the Protein Data Bank under accessions 1PPB (human 𝛼-thrombin), 3RGK (human
+myoglobin), and 1N8Z (human HER2 extracellular domain).
+
+**Code availability.** The closed-loop workflows described in this study are built on standard large
+language model APIs and multi-agent orchestration patterns rather than specialized proprietary algo
+rithms; the four-stage architecture (analyst, strategist, parallel designers, and scoring), statistical filtering
+equations (DESeq2 differential enrichment and ordinary least-squares bare-bead residual regression), and
+design constraints are detailed in the Methods and **Table 1** to allow independent reproduction on
+any tool-equipped agent platform. The AI Co-Scientist platform is described in detail in ref. \[1\].
+All computational folding, docking, and statistical tools invoked by the agents are publicly available
+open-source packages carrying commercially permissive licenses, including ViennaRNA v2.6 (https://
+github.com/ViennaRNA/ViennaRNA, ViennaRNA Commercial-Permissive License), PyDESeq2 ( [https://github](https://github/).
+com/owkin/PyDESeq2, MIT License), Boltz-2 ( [https://github.com/jwohlwend/boltz](https://github.com/jwohlwend/boltz), MIT License), ESMFold2-NA
+( [https://huggingface.co/biohub/ESMFold2-hf](https://huggingface.co/biohub/ESMFold2-hf), MIT License), RhoDesign ( [https://github.com/ml4bio/RhoDesign](https://github.com/ml4bio/RhoDesign),
+MIT License), RiboDiffusion ( [https://github.com/ml4bio/RiboDiffusion](https://github.com/ml4bio/RiboDiffusion), MIT License), DNABERT-2 (https://
+github.com/MAGICS-LAB/DNABERT\_2, Apache-2.0 License), HyenaDNA ( [https://github.com/HazyResearch/hyenadna](https://github.com/HazyResearch/hyenadna), Apache-2.0 License), and RNA-FM ( [https://github.com/ml4bio/RNA-FM](https://github.com/ml4bio/RNA-FM), MIT License); G4Hunter scores were
+computed directly in Python from the published sliding-window equation (Bedrat et al., _Nucleic Acids Res._ **44,** 1746–1759, 2016; CC-BY 4.0).
+
+## Biological safety and AI usage disclosure
+
+**Biological safety and biosecurity.** All target proteins screened in this study (human 𝛼-thrombin, human
+myoglobin, and human HER2 ectodomain) are non-infectious, non-toxic human proteins studied under
+standard Biosafety Level 1 (BSL-1) laboratory conditions. All oligonucleotide pools (75–95 nt singlestranded DNA) were synthesized commercially by Integrated DNA Technologies (IDT) and underwent
+mandatory automated customer and sequence biosecurity screening in accordance with the International
+Gene Synthesis Consortium (IGSC) harmonized screening protocol and the U.S. Department of Health
+and Human Services (HHS) Framework for Nucleic Acid Synthesis Screening. No human subjects, clinical
+samples, or animal models were used in this study.
+
+**Disclosure of generative AI usage.** In addition to serving as the core experimental subject of this
+study (closed-loop aptamer sequence generation, statistical enrichment analysis, failure diagnosis, and tool
+execution across Rounds 1–3, as detailed in Results and Methods), large language models (Google Gemini
+\[28\]) were used by the authors to assist in manuscript editing, literature formatting, and figure layout
+generation. All experimental protocols, wet-lab assays, statistical definitions, and scientific conclusions
+were verified by the human authors, who take full responsibility and accountability for the integrity and
+content of this work.
+
+## Acknowledgements
+
+We thank Reuven Sayag, Matthias Heiler, Ronit Levavi Morad, and James Manyika for leadership and
+guidance; Dan Popovici, Philip Nelson, Michael Brenner, and John Platt for manuscript reviews and
+insightful feedback; Amanie Brik for overall contributions to the effort; and Artiom Myaskovsky and
+Alexander Daryin for additional technical contributions.
+
+* * *
+
+## Author contributions
+
+Z.C., J.C., R.C., H.T., M.B., R.E., D.Z., P.S., A.H., Y.M., P.R., and A.P. conceived and supported the study. R.E.,
+D.Z., P.S., P.R., and A.P. developed the custom agentic aptamer pipelines, computational tool integrations,
+and AI Co-Scientist workflows. Z.C., J.C., R.C., H.T., and M.B. designed and executed the multiplexed
+bead-based pulldown assays, next-generation sequencing library preparation, and bead-based fluorescence
+binding validation experiments. H.T., R.E., P.R., and A.P. performed the cross-round bioinformatics,
+statistical benchmarking, and agent log audits. A.H. and Y.M. provided research leadership and strategic
+guidance. P.R. and A.P. co-led the work. All authors contributed to writing, reviewing, and editing the
+manuscript.
+
+## Competing interests
+
+Z.C., J.C., R.C., H.T., M.B., R.E., D.Z., P.S., A.H., Y.M., P.R., and A.P. are employees or visiting faculty
+members of Google LLC, and some of these authors may own Alphabet Inc. stock as part of their standard
+compensation package. H.T. performed this work as a Visiting Faculty Researcher at Google Research. The
+authors declare no other competing interests.
+
+## References
+
+**1.** Gottweis, J., Weng, W.-H., Daryin, A., Tu, T. et al. Accelerating scientific discovery with Co-Scientist. _Nature_ **655,** 487–496 (2026).
+
+**2.** Swanson, K., Wu, W., Bulaong, N. L., Pak, J. E. & Zou, J. The Virtual Lab of AI agents designs new SARS-CoV-2 nanobodies. _Nature_ **646,** 716–723 (2025).
+
+**3.** Ghareeb, A. E. et al. A multi-agent system for automating scientific discovery. _Nature_ **655,** 497–505 (2026).
+
+**4.** Yoon, P. H. et al. Autonomous AI agents discover reverse transcriptases with tandem repeat arrays. _bioRxiv_ (2026).
+
+**5.** Funk, L. et al. The phenotypic landscape of essential human genes. _Cell_ **185,** 4634–4653 (2022).
+
+**6.** Shanehsazzadeh, A. et al. Unlocking de novo antibody design with generative artificial intelligence. _bioRxiv_ (2023).
+
+**7.** Yao, S. et al. ReAct: Synergizing reasoning and acting in language models. _ICLR_ (2023).
+
+**8.** Yang, J. et al. SWE-agent: Agent-computer interfaces enable automated software engineering. _NeurIPS_ **37,** 50528–50652 (2024).
+
+**9.** Huang, K. et al. Autonomous biomedical research with an artificial intelligence agent (Biomni). _Science_ **393,** eadz4351 (2026).
+
+**10.** Boiko, D. A., MacKnight, R., Kline, B. & Gomes, G. Autonomous chemical research with large language models. _Nature_ **624,** 570–
+578 (2023).
+
+**11.** Tom, G. et al. Self-driving laboratories for chemistry and materials science. _Chem. Rev.124,_ 9633–9732 (2024).
+
+**12.** Rapp, J. T., Bremer, B. J. & Romero, P. A. Self-driving laboratories to autonomously navigate the protein fitness landscape. _Nat._ _Chem. Eng.1,_ 97–107 (2024).
+
+**13.** Silver, D. et al. A general reinforcement learning algorithm that masters chess, shogi, and Go through self-play (AlphaZero).
+_Science_ **362,** 1140–1144 (2018).
+
+**14.** Romera-Paredes, B. et al. Mathematical discoveries from program search with large language models (FunSearch). _Nature_ **625,**
+468–475 (2024).
+
+**15.** Watson, J. L. et al. De novo design of protein structure and function with RFdiffusion. _Nature_ **620,** 1089–1100 (2023).
+
+**16.** Pacesa, M. et al. One-shot design of functional protein binders with BindCraft. _Nature_ **646,** 483–492 (2025).
+
+**17.** Jumper, J. et al. Highly accurate protein structure prediction with AlphaFold. _Nature_ **596,** 583–589 (2021).
+
+**18.** Zhang, J. et al. Single-round evolution of RNA aptamers with GRAPE-LM. _Nat. Biotechnol._ (2026).
+
+**19.** Tuerk, C. & Gold, L. Systematic evolution of ligands by exponential enrichment: RNA ligands to bacteriophage T4 DNA
+polymerase. _Science_ **249,** 505–510 (1990).
+
+**20.** Ellington, A. D. & Szostak, J. W. In vitro selection of RNA molecules that bind specific ligands. _Nature_ **346,** 818–822 (1990).
+
+**21.** Passaro, S. et al. Boltz-2: Towards accurate and efficient binding affinity prediction. _bioRxiv_ (2025).
+
+**22.** Lorenz, R. et al. ViennaRNA Package 2.0. _Algorithms Mol. Biol.6,_ 26 (2011).
+
+**23.** Cao, L. et al. Design of protein-binding proteins from the target structure alone. _Nature_ **605,** 551–560 (2022).
+
+**24.** Dunn, M. R., Jimenez, R. M. & Chaput, J. C. Analysis of aptamer discovery and technology. _Nat. Rev. Chem.1,_ 0076 (2017).
+
+**25.** Bottari, F. et al. Do aptamers always bind? The need for a multifaceted analytical approach when demonstrating binding affinity
+between aptamer and low molecular weight compounds. _J. Am. Chem. Soc.142,_ 19622–19630 (2020).
+
+**26.** Kelly, L., Maier, K. E., Yan, A. & Levy, M. A comparative analysis of cell surface targeting aptamers. _Nat. Commun.12,_ 6275 (2021).
+
+**27.** Bock, L. C., Griffin, L. C., Latham, J. A., Vermaas, E. H. & Toole, J. J. Selection of single-stranded DNA molecules that bind and
+inhibit human thrombin. _Nature_ **355,** 564–566 (1992).
+
+**28.** Gemini Team, Google. Gemini: A family of highly capable multimodal models. _arXiv preprint arXiv:2312.11805_ (2023) & Gemini
+Model Cards.
+
+**29.** Terwilliger, T. C. et al. AlphaFold predictions are valuable hypotheses and accelerate but do not replace experimental structure
+determination. _Nat. Methods_ **21,** 110–116 (2024).
+
+**30.** Bennett, N. R. et al. Atomically accurate de novo design of antibodies with RFdiffusion. _Nature_ **649,** 183–193 (2026).
+
+**31.** Knight, C. G. et al. Array-based evolution of DNA aptamers allows modelling of an explicit sequence–fitness landscape. _Nucleic_
+_Acids Res.37,_ e6 (2009).
+
+* * *
+
+**32.** Platt, M. et al. Aptamer evolution for array-based diagnostics. _Anal. Biochem.390,_ 203–205 (2009).
+
+**33.** Wang, Z. et al. AptaDiff: de novo design and optimization of aptamers based on diffusion models. _Brief. Bioinform.25,_ bbae517
+(2024).
+
+**34.** Zhao, J., Tram, K., Yan, H. & Li, Y. Comprehensive evaluation of artificial intelligence-empowered approaches for protein–aptamer
+complex prediction. _Brief. Bioinform.27,_ bbag206 (2026).
+
+**35.** Cutts, Z. W., Hong, J. M., Shao, S., Tran, A., Dimon, M., Berndl, M., Wu, D. & Pawlosky, A. Target-switch SELEX: Screening with
+alternating targets to generate aptamers to conserved terminal dipeptides. _STAR Protocols_ **3,** 101724 (2022).
+
+**36.** Bashir, A. et al. Machine learning guided aptamer refinement and discovery. _Nat. Commun.12,_ 2366 (2021).
+
+**37.** Iwano, N., Adachi, T., Aoki, K., Nakamura, Y. & Hamada, M. Generative aptamer discovery using RaptGen. _Nat. Comput. Sci.2,_
+378–386 (2022).
+
+**38.** Wochner, A., Cech, B., Menger, M., Erdmann, V. A. & Glökler, J. Semi-automated selection of DNA aptamers using magnetic
+particle handling. _BioTechniques_ **43,** 344–353 (2007).
+
+* * *
+
+## Supplementary Figures and Tables
+
+**A. Round 1 • Initial Screen**
+
+| Bead enrichment log2FC (Beads vs. Input) | Target enrichment log2FC (Target vs. Input) |
+| --- | --- |
+| -1.5 | -2.0 |
+| -1.3 | -1.2 |
+| -1.2 | -1.1 |
+| -0.8 | -0.2 |
+| -0.7 | -0.1 |
+| -0.6 | -0.3 |
+| -0.5 | -0.1 |
+| -0.4 | -0.2 |
+| -0.3 | -0.1 |
+| -0.2 | -0.2 |
+| -0.1 | -0.1 |
+| 0.0 | -0.8 |
+
+**B. Round 2 • Multi-Target Counter-Screen**
+
+| Category | Target enrichment log₂FC (Target vs. Input) |
+| --- | --- |
+| thrombin\_2 (Lit, +1.07) | 1.0 |
+| thrombin\_3 (Lit Pos Ctrl) log₂FC = +4.81, res = +4.86 | 4.8 |
+
+**E. Round 2 • Multi-Target Counter-Screen**
+
+| Category | Target enrichment log₂FC (Target vs. Input) |
+| --- | --- |
+| Pos Spike Controls (8/16 hit) top: +2.72 (res = +1.66) | 2.7 |
+
+**C. Round 3 • G4-Capped + 2D Screen**
+
+| Category | Target enrichment log2FC (Target vs. Input) |
+| --- | --- |
+| Prior-Round Pos Spike | 9.59 |
+| thrombin 3 (Lit RCT) | 8.22 |
+| Canonical TBA | 2.30 |
+
+**F. Round 3 • G4-Capped + 2D Screen**
+
+| Category | Target enrichment log2FC (Target vs. Input) |
+| --- | --- |
+| R1 0568 | 4.57 |
+| seq 536 | 3.77 |
+| unlabelled 1 | 1.0 |
+
+| Bead enrichment log2FC (Beads vs. Input) | R1\_0552 (+3.27) (R2/R3 Pos Spike) | R1\_0565 (+2.51) |
+| --- | --- | --- |
+| 1.4 | 4.2 | 3.2 |
+
+| Category | Bead enrichment log2FC (Beads vs. Input) | Target enrichment log2FC (Target vs. Input) |
+| --- | --- | --- |
+| Pos Spike Controls (8/16 hit) | 1.9 | 2.72 |
+| Pos Spike Controls (8/16 hit) | 2.4 | 2.6 |
+| Pos Spike Controls (8/16 hit) | 2.6 | 2.6 |
+| Sticky Ctrl Rejected | 3.6 | 0.94 |
+
+| Bead enrichment log2(FC (Beads vs. Input)) | Target enrichment log2(FC (Target vs. Input)) |
+| --- | --- |
+| 4.5 | 4.6 |
+| 1.3 | 1.5 |
+| 0.8 | 1.4 |
+| 0.5 | 1.3 |
+| 0.3 | 1.2 |
+| 0.1 | 1.1 |
+| -0.1 | 1.0 |
+| -0.3 | 0.9 |
+| -0.5 | 0.8 |
+| -0.7 | 0.7 |
+| -0.9 | 0.6 |
+| -1.1 | 0.5 |
+| -1.3 | 0.4 |
+| -1.5 | 0.3 |
+| -1.7 | 0.2 |
+| 6.7 | 1.0 |
+
+**Supplementary Figure S1** \| **Target-versus-streptavidin-bead enrichment regression and two-stage hit calling across**
+**design rounds (R1 → R3).** Target enrichment (log2 FCtarget vs. input, 𝑦-axis) plotted against bare streptavidin-bead enrichment
+(log2 FCbeads vs. input, 𝑥-axis) for 𝛼-thrombin **(A–C)** and myoglobin **(D–F)** across Round 1 (𝑁 = 642; **A:** 0/167 \[0.0%\] new 𝛼thrombin designs; **D:** 20/196 \[10.2%\] new myoglobin designs \[37/642 = 5.8% full pool\]), Round 2 (𝑁 = 981; **B:** 54/208 \[26.0%\]
+new 𝛼-thrombin designs \[73/981 total hits\]; **E:** 9/244 \[3.7%\] new myoglobin designs \[96/977 total hits including 8/16 carried-over\
+positive spikes\]), and Round 3 (𝑁 = 1,405 deduplicated constructs \[1,441 total library entries\]; **C:** 131/311 \[42.1%\] new 𝛼-thrombin
+designs \[162/1,405 full pool\]; **F:** 184/549 \[33.5%\] new myoglobin designs \[273/1,405 full pool\]; complete cohort breakdowns in
+**Supplementary Table S3).** Dashed lines indicate the ordinary least-squares bare-bead background trend (slope 𝛽1); solid boundaries
+mark the specific binder zone requiring both log2 FCtarget≥ 1.0 (FDR < 0.05) and positive residual enrichment 𝑟𝑖,𝑡 \> 1.00 above the
+bare-bead regression line (plus 𝑥𝑖 < 0.5 in B and 𝑦𝑖,thr − 𝑥𝑖 \> 1.0 for bare-bead pre-hits in C). Points denote statistically significant
+𝛼-thrombin binders (blue circles), myoglobin binders (teal circles), rejected bead-stickers (coral circles, including 217 G4 designs
+in **E** with 𝛽1 = 0.60), non-binders (grey dots), negative/scrambled/random controls (open triangles, △), published and prior-round
+positive spike-in controls (gold stars, ★), and rejected non-specific sticky controls (red diamonds, ◊ in **E**–F).
+
+$$
+\\mathrm{(log\_{2}FC\_{target vs.input}}
+$$
+
+$$
+\\mathrm{(log\_{2}FC\_{beads vs.input},}
+$$
+
+$$
+\[37/642=5.8%\
+$$\
+\
+$$\
+\\beta\_{1})\
+$$\
+\
+$$\
+r\_{i,t}>1.00\
+$$\
+\
+$$\
+\\mathrm{FC\_{target}}\\geq1.0(\\mathrm{FDR}<0.05)\
+$$\
+\
+$$\
+x\_{i}<0.5\
+$$\
+\
+$$\
+y\_{i,\\mathrm{thr}}-x\_{i}>1.0\
+$$\
+\
+$$\
+\\beta\_{1}=0.60\\rangle\
+$$\
+\
+$$\
+\\triangle)\
+$$\
+\
+* * *\
+\
+**A. Round 1 • Initial Screen**\
+\
+| Target enrichment log2(FC) | c-Thrombin (Significance −log10(FDR)) |\
+| --- | --- |\
+| -2.0 | 0 |\
+| -1.8 | 0 |\
+| -1.6 | 0 |\
+| -1.4 | 0 |\
+| -1.2 | 0 |\
+| -1.0 | 0 |\
+| -0.8 | 0 |\
+| -0.6 | 0 |\
+| -0.4 | 0 |\
+| -0.2 | 0 |\
+| 0.0 | 0 |\
+| 0.2 | 0 |\
+| 0.4 | 0 |\
+| 0.6 | 0 |\
+| 0.8 | 0 |\
+| 1.0 | 0 |\
+| 1.2 | 0 |\
+| 1.4 | 0 |\
+| 1.6 | 0 |\
+| 1.8 | 0 |\
+| 2.0 | 0 |\
+| 2.2 | 0 |\
+| 2.4 | 0 |\
+| 2.6 | 0 |\
+| 2.8 | 0 |\
+| 3.0 | 0 |\
+| 3.2 | 0 |\
+| 3.4 | 0 |\
+| 3.6 | 0 |\
+| 3.8 | 0 |\
+\
+**D. Round 1 • Initial Screen**\
+\
+| Target enrichment log2(FC) | Myoglobin (Significance −log10(FDR)) |\
+| --- | --- |\
+| 2.3 | 6.8 |\
+| 2.4 | 7.0 |\
+| 2.5 | 6.7 |\
+| 2.6 | 7.2 |\
+| 2.8 | 6.2 |\
+| 3.2 | 3.8 |\
+| 3.6 | 6.1 |\
+| 3.8 | 9.6 |\
+\
+**B. Round 2 • Multi-Target Counter-Screen**\
+\
+| Category | thrombin\_3 (Lit Pos Ctrl) logFC | thrombin\_3 (Lit Pos Ctrl) FDR | thrombin\_2 (1.07, p = 6e-20) logFC | thrombin\_2 (1.07, p = 6e-20) FDR |\
+| --- | --- | --- | --- | --- |\
+| unlabelled 1 | 4.81 | 0.0000000000000001 | 1.07 | 0.00000000000000006 |\
+\
+**E. Round 2 • Multi-Target Counter-Screen**\
+\
+| Category | Pos Spike Controls (8/16) top: +2.72 (p = 5e-28) logFC | Pos Spike Controls (8/16) top: +2.72 (p = 5e-28) FDR | 217 G4 pre-hits (coral) rejected by bead gate logFC | 217 G4 pre-hits (coral) rejected by bead gate FDR |\
+| --- | --- | --- | --- | --- |\
+| unlabelled 1 | 2.72 | 0.00000000000000005 |  |  |\
+\
+**C. Round 3 • G4-Capped + 2D Screen**\
+\
+| Target enrichment log2-FC | thrombin 3 (Lit Ctrl) log2-FC = 8.22, p = 7e-4 | Prior-Round Pos Spike (+9.59) |\
+| --- | --- | --- |\
+| 8.22 | 3.1 |  |\
+| 9.59 |  | 3.5 |\
+\
+**F. Round 3 • G4-Capped + 2D Screen**\
+\
+| Category | seq\_258 (+3.52) | R1\_0568 (+4.57) |\
+| --- | --- | --- |\
+| 3.52 | 2.9 |  |\
+| 4.57 |  | 2.9 |\
+\
+| Target enrichment log2FC | Myoglobin (Significance −log10(FDR)) |\
+| --- | --- |\
+| -2.0 | 2.7 |\
+| -1.9 | 1.9 |\
+| -1.7 | 1.5 |\
+| -1.5 | 1.6 |\
+| -1.3 | 1.5 |\
+| -1.2 | 1.6 |\
+| -1.1 | 1.8 |\
+| -1.0 | 1.2 |\
+| -0.9 | 1.5 |\
+| -0.8 | 1.1 |\
+| -0.7 | 1.4 |\
+| -0.6 | 1.0 |\
+| -0.5 | 1.3 |\
+| -0.4 | 0.8 |\
+| -0.3 | 0.6 |\
+| -0.2 | 0.4 |\
+| -0.1 | 0.3 |\
+| 0.0 | 0.2 |\
+| 0.1 | 0.3 |\
+| 0.2 | 0.5 |\
+| 0.3 | 0.8 |\
+| 0.4 | 1.2 |\
+| 0.5 | 1.8 |\
+| 0.6 | 2.6 |\
+| 0.7 | 2.2 |\
+| 0.8 | 1.0 |\
+| 0.9 | 0.7 |\
+| 1.0 | 3.8 |\
+| 1.1 | 1.6 |\
+| 1.2 | 1.8 |\
+| 1.3 | 6.8 |\
+| 1.4 | 3.1 |\
+| 1.5 | 7.2 |\
+| 1.6 | 6.7 |\
+| 1.8 | 6.2 |\
+| 2.1 | 1.8 |\
+| 2.2 | 1.9 |\
+| 2.3 | 1.6 |\
+| 2.4 | 1.8 |\
+| 2.5 | 1.5 |\
+| 2.7 | 1.5 |\
+| 3.1 | 1.5 |\
+| 3.4 | 2.8 |\
+| 3.5 | 6.2 |\
+| 3.6 | 2.2 |\
+| 3.8 | 9.6 |\
+\
+| Target enrichment log2(FC) | Pos Spike Controls (8/16) top: +2.72 (p = 5e-28) | 217 G4 pre-hits (coral) rejected by bead gate |\
+| --- | --- | --- |\
+| 2.0 | 15.5 | 32.5 |\
+| 2.7 | 21.5 | 36.5 |\
+| 2.8 | 27.5 |  |\
+| 3.9 |  | 37.0 |\
+\
+| Target enrichment log2(FC) | Significance –log10(FDR) |\
+| --- | --- |\
+| 1.3 | 1.7 |\
+| 1.4 | 2.0 |\
+| 1.5 | 2.0 |\
+| 1.6 | 1.8 |\
+| 1.7 | 1.9 |\
+| 2.3 | 2.5 |\
+| 2.5 | 2.3 |\
+| 3.3 | 2.9 |\
+| 3.8 | 1.3 |\
+| 4.6 | 1.5 |\
+\
+**Supplementary Figure S2** \| **DESeq2 differential enrichment volcano plots and control validation across design rounds (R1**\
+**→ R3).** Statistical significance (− log10 FDR, 𝑦-axis) versus target enrichment (log2 FCtarget vs. input, 𝑥-axis) for 𝛼-thrombin **(A–C)**\
+and myoglobin **(D–F)** across Rounds 1–3, with dashed lines marking the pre-hit cutoffs (log2 FC = 1.0 and FDR = 0.05; upper-right\
+quadrant). Apparent volcano pre-hits are decomposed into statistically significant on-target binders versus rejected bead-stickers\
+eliminated by the bare-bead regression gate in **Supplementary Figure S1.** Stars (★) mark published positive controls (uninsulated\
+TBA stem in **A;** insulated thrombin controls TBA/thrombin\_3 and thrombin\_2 in **B–C**) and internal prior-round positive spike-in\
+controls discovered in Round 1 (D) and carried forward into Rounds 2–3 ( **E**–F). Open triangles (△) mark random and scrambled\
+negative controls (0% false positives across all rounds). Dotted horizontal lines in **B** and **C** denote the display cap (− log10 FDR ≥ 45).\
+\
+$$\
+\\left(-\\log\_{10}FDR,y-axis\\right)\
+$$\
+\
+$$\
+\\mathrm{(log\_{2}FC\_{target vs.input},}\
+$$\
+\
+$$\
+\\mathrm{(\\log\_{2}FC\\stackrel{\\circ}{=}1.0}\
+$$\
+\
+$$\
+\\mathrm{FDR}=0.05;\
+$$\
+\
+$$\
+(-\\log\_{10}FDR\\geq45)\
+$$\
+\
+* * *\
+\
+Human HER2 ECD\
+\
+630 aa · ~70 kDa ectodomain\
+\
+Subdomains I-IV surface\
+\
+(Specificity counter-screen)\
+\
+**B. HER2-selective binder rate (R1 → R3)**\
+\
+| Category | HER2-selective binder rate (%) | Negative controls (%) |\
+| --- | --- | --- |\
+| Round 1 (Single-target) | 0 | 0 |\
+| Round 2 (HER2 added) | 1.3 | 0 |\
+| Round 3 (HER2 continued) | 5.1 | 0 |\
+\
+| Category | Human HER2 ECD (Bead-Corrected Enrichment) |\
+| --- | --- |\
+| R1 | Not screened (Myoglobin & α-Thrombin only) |\
+| R2 | 1.3% selective (max +1.9) |\
+| R3 | 5.1% selective (up to +4.6) |\
+\
+**D Round 3 HER2 enrichment volcano plot (N = 1,405)**\
+\
+| Bead-corrected HER2 enrichment log2FC | HER2-selective binder (n = 71) (Significance – log10(FDR)) | R2 → R3 carried-over binder (Significance – log10(FDR)) | Negative / random control (Significance – log10(FDR)) |\
+| --- | --- | --- | --- |\
+| -2.1 |  |  | 1.75 |\
+| -2.0 |  |  | 1.45 |\
+| -1.9 |  |  | 0.8 |\
+| -1.8 |  |  | 0.9 |\
+| -1.7 |  |  | 1.95 |\
+| -1.6 |  |  | 1.35 |\
+| -1.5 |  |  | 1.45 |\
+| -1.4 |  |  | 1.65 |\
+| -1.3 |  |  | 1.35 |\
+| -1.2 |  |  | 1.5 |\
+| -1.1 |  |  | 1.7 |\
+| -1.0 |  |  | 1.35 |\
+| -0.9 |  |  | 1.45 |\
+| -0.8 |  |  | 1.6 |\
+| -0.7 |  |  | 1.75 |\
+| -0.6 |  |  | 1.45 |\
+| -0.5 |  |  | 1.55 |\
+| -0.4 |  |  | 1.65 |\
+| -0.3 |  |  | 1.45 |\
+| -0.2 |  |  | 1.55 |\
+| -0.1 |  |  | 1.65 |\
+| 0.0 |  |  | 1.35 |\
+| 0.1 |  |  | 1.45 |\
+| 0.2 |  |  | 1.35 |\
+| 0.3 |  |  | 1.45 |\
+| 0.4 |  |  | 1.35 |\
+| 0.5 |  |  | 1.45 |\
+| 0.6 |  |  | 1.35 |\
+| 0.7 |  |  | 1.45 |\
+| 0.8 |  |  | 1.35 |\
+| 0.9 |  |  | 1.45 |\
+| 1.0 |  |  | 1.35 |\
+| 1.1 |  |  | 1.45 |\
+| 1.2 |  |  | 1.35 |\
+| 1.3 |  |  | 1.45 |\
+| 1.4 |  |  | 1.35 |\
+| 1.5 |  |  | 1.45 |\
+| 1.6 |  |  | 1.35 |\
+| 1.7 |  |  | 1.45 |\
+| 1.8 |  |  | 1.35 |\
+| 1.9 |  |  | 1.45 |\
+| 2.0 |  |  | 1.35 |\
+| 2.1 |  |  | 1.45 |\
+| 2.2 |  |  | 1.35 |\
+| 2.3 |  |  | 1.45 |\
+| 2.4 |  |  | 1.35 |\
+| 2.5 |  |  | 1.45 |\
+| 2.6 |  |  | 1.35 |\
+| 2.7 |  |  | 1.45 |\
+| 2.8 |  |  | 1.35 |\
+| 2.9 |  |  | 1.45 |\
+| 3.0 |  |  | 1.35 |\
+| 3.1 |  |  | 1.45 |\
+| 3.2 |  |  | 1.35 |\
+| 3.3 |  |  | 1.45 |\
+| 3.4 |  |  | 1.35 |\
+| 3.5 |  |  | 1.45 |\
+| 3.6 |  |  | 1.35 |\
+| 3.7 |  |  | 1.45 |\
+| 3.8 |  |  | 1.35 |\
+| 3.9 |  |  | 1.45 |\
+| 4.0 |  |  | 1.35 |\
+| 4.1 |  |  | 1.45 |\
+| 4.2 |  |  | 1.35 |\
+| 4.3 |  |  | 1.45 |\
+| 4.4 |  |  | 1.35 |\
+| 4.5 |  |  | 1.45 |\
+| 4.6 |  |  | 1.35 |\
+| 4.7 |  |  | 1.45 |\
+| 4.8 |  |  | 1.35 |\
+| 4.9 |  |  | 1.45 |\
+| 5.0 |  |  | 1.35 |\
+| 5.1 |  |  | 1.45 |\
+| 5.2 |  |  | 1.35 |\
+| 5.3 |  |  | 1.45 |\
+| 5.4 |  |  | 1.35 |\
+| 5.5 |  |  | 1.45 |\
+| 5.6 |  |  | 1.35 |\
+| 5.7 |  |  | 1.45 |\
+| 5.8 |  |  | 1.35 |\
+| 5.9 |  |  | 1.45 |\
+| 6.0 |  |  | 1.35 |\
+| 6.1 |  |  | 1.45 |\
+| 6.2 |  |  | 1.35 |\
+| 6.3 |  |  | 1.45 |\
+| 6.4 |  |  | 1.35 |\
+| 6.5 |  |  | 1.45 |\
+| 6.6 |  |  | 1.35 |\
+| 6.7 |  |  | 1.45 |\
+| 6.8 |  |  | 1.35 |\
+| 6.9 |  |  | 1.45 |\
+| 7.0 |  |  | 1.35 |\
+| 7.1 |  |  | 1.45 |\
+| 7.2 |  |  | 1.35 |\
+| 7.3 |  |  | 1.45 |\
+| 7.4 |  |  | 1.35 |\
+| 7.5 |  |  | 1.45 |\
+| 7.6 |  |  | 1.35 |\
+| 7.7 |  |  | 1.45 |\
+| 7.8 |  |  | 1.35 |\
+| 7.9 |  |  | 1.45 |\
+| 8.0 |  |  | 1.35 |\
+| 8.1 |  |  | 1.45 |\
+| 8.2 |  |  | 1.35 |\
+| 8.3 |  |  | 1.45 |\
+| 8.4 |  |  | 1.35 |\
+| 8.5 |  |  | 1.45 |\
+| 8.6 |  |  | 1.35 |\
+| 8.7 |  |  | 1.45 |\
+| 8.8 |  |  | 1.35 |\
+| 8.9 |  |  | 1.45 |\
+| 9.0 |  |  | 1.35 |\
+| 9.1 |  |  | 1.45 |\
+| 9.2 |  |  | 1.35 |\
+| 9.3 |  |  | 1.45 |\
+| 9.4 |  |  | 1.35 |\
+| 9.5 |  |  | 1.45 |\
+| 9.6 |  |  | 1.35 |\
+| 9.7 |  |  | 1.45 |\
+| 9.8 |  |  | 1.35 |\
+| 9.9 |  |  | 1.45 |\
+| 10.0 |  |  | 1.35 |\
+| 10.1 |  |  | 1.45 |\
+| 10.2 |  |  | 1.35 |\
+| 10.3 |  |  | 1.45 |\
+| 10.4 |  |  | 1.35 |\
+| 10.5 |  |  | 1.45 |\
+| 10.6 |  |  | 1.35 |\
+| 10.7 |  |  | 1.45 |\
+| 10.8 |  |  | 1.35 |\
+| 10.9 |  |  | 1.45 |\
+| 11.0 |  |  | 1.35 |\
+| 11.1 |  |  | 1.45 |\
+| 11.2 |  |  | 1.35 |\
+| 11.3 |  |  | 1.45 |\
+| 11.4 |  |  | 1.35 |\
+| 11.5 |  |  | 1.45 |\
+| 11.6 |  |  | 1.35 |\
+| 11.7 |  |  | 1.45 |\
+| 11.8 |  |  | 1.35 |\
+| 11.9 |  |  | 1.45 |\
+| 12.0 |  |  | 1.35 |\
+| 12.1 |  |  | 1.45 |\
+| 12.2 |  |  | 1.35 |\
+| 12.3 |  |  | 1.45 |\
+| 12.4 |  |  | 1.35 |\
+| 12.5 |  |  | 1.45 |\
+| 12.6 |  |  | 1.35 |\
+| 12.7 |  |  | 1.45 |\
+| 12.8 |  |  | 1.35 |\
+| 12.9 |  |  | 1.45 |\
+| 13.0 |  |  | 1.35 |\
+| 13.1 |  |  | 1.45 |\
+| 13.2 |  |  | 1.35 |\
+| 13.3 |  |  | 1.45 |\
+| 13.4 |  |  | 1.35 |\
+| 13.5 |  |  | 1.45 |\
+| 13.6 |  |  | 1.35 |\
+| 13.7 |  |  | 1.45 |\
+| 13.8 |  |  | 1.35 |\
+| 13.9 |  |  | 1.45 |\
+| 14.0 |  |  | 1.35 |\
+| 14.1 |  |  | 1.45 |\
+| 14.2 |  |  | 1.35 |\
+| 14.3 |  |  | 1.45 |\
+| 14.4 |  |  | 1.35 |\
+| 14.5 |  |  | 1.45 |\
+| 14.6 |  |  | 1.35 |\
+| 14.7 |  |  | 1.45 |\
+| 14.8 |  |  | 1.35 |\
+| 14.9 |  |  | 1.45 |\
+| 15.0 |  |  | 1.35 |\
+| 15.1 |  |  | 1.45 |\
+| 15.2 |  |  | 1.35 |\
+| 15.3 |  |  | 1.45 |\
+| 15.4 |  |  | 1.35 |\
+| 15.5 |  |  | 1.45 |\
+| 15.6 |  |  | 1.35 |\
+| 15.7 |  |  | 1.45 |\
+| 15.8 |  |  | 1.35 |\
+| 15.9 |  |  | 1.45 |\
+| 16.0 |  |  | 1.35 |\
+| 16.1 |  |  | 1.45 |\
+| 16.2 |  |  | 1.35 |\
+| 16.3 |  |  | 1.45 |\
+| 16.4 |  |  | 1.35 |\
+| 16.5 |  |  | 1.45 |\
+| 16.6 |  |  | 1.35 |\
+| 16.7 |  |  | 1.45 |\
+| 16.8 |  |  | 1.35 |\
+| 16.9 |  |  | 1.45 |\
+| 17.0 |  |  | 1.35 |\
+| 17.1 |  |  | 1.45 |\
+| 17.2 |  |  | 1.35 |\
+| 17.3 |  |  | 1.45 |\
+| 17.4 |  |  | 1.35 |\
+| 17.5 |  |  | 1.45 |\
+| 17.6 |  |  | 1.35 |\
+| 17.7 |  |  | 1.45 |\
+| 17.8 |  |  | 1.35 |\
+| 17.9 |  |  | 1.45 |\
+| 18.0 |  |  | 1.35 |\
+| 18.1 |  |  | 1.45 |\
+| 18.2 |  |  | 1.35 |\
+| 18.3 |  |  | 1.45 |\
+| 18.4 |  |  | 1.35 |\
+| 18.5 |  |  | 1.45 |\
+| 18.6 |  |  | 1.35 |\
+| 18.7 |  |  | 1.45 |\
+| 18.8 |  |  | 1.35 |\
+| 18.9 |  |  | 1.45 |\
+| 19.0 |  |  | 1.35 |\
+| 19.1 |  |  | 1.45 |\
+| 19.2 |  |  | 1.35 |\
+| 19.3 |  |  | 1.45 |\
+| 19.4 |  |  | 1.35 |\
+| 19.5 |  |  | 1.45 |\
+| 19.6 |  |  | 1.35 |\
+| 19.7 |  |  | 1.45 |\
+| 19.8 |  |  | 1.35 |\
+| 19.9 |  |  | 1.45 |\
+| 20.0 |  |  | 1.35 |\
+| 20.1 |  |  | 1.45 |\
+| 20.2 |  |  | 1.35 |\
+| 20.3 |  |  | 1.45 |\
+| 20.4 |  |  | 1.35 |\
+| 20.5 |  |  | 1.45 |\
+| 20.6 |  |  | 1.35 |\
+| 20.7 |  |  | 1.45 |\
+| 20.8 |  |  | 1.35 |\
+| 20.9 |  |  | 1.45 |\
+| 21.0 |  |  | 1.35 |\
+| 21.1 |  |  | 1.45 |\
+| 21.2 |  |  | 1.35 |\
+| 21.3 |  |  | 1.45 |\
+| 21.4 |  |  | 1.35 |\
+| 21.5 |  |  | 1.45 |\
+| 21.6 |  |  | 1.35 |\
+| 21.7 |  |  | 1.45 |\
+| 21.8 |  |  | 1.35 |\
+| 21.9 |  |  | 1.45 |\
+| 22.0 |  |  | 1.35 |\
+| 22.1 |  |  | 1.45 |\
+| 22.2 |  |  | 1.35 |\
+| 22.3 |  |  | 1.45 |\
+| 22.4 |  |  | 1.35 |\
+| 22.5 |  |  | 1.45 |\
+| 22.6 |  |  | 1.35 |\
+| 22.7 |  |  | 1.45 |\
+| 22.8 |  |  | 1.35 |\
+| 22.9 |  |  | 1.45 |\
+| 23.0 |  |  | 1.35 |\
+| 23.1 |  |  | 1.45 |\
+| 23.2 |  |  | 1.35 |\
+| 23.3 |  |  | 1.45 |\
+| 23.4 |  |  | 1.35 |\
+| 23.5 |  |  | 1.45 |\
+\
+**Supplementary Figure S3** \| **Counter-screen discovery and continuation of HER2-selective binders across Rounds 1–3. (A)**\
+Structure of the human HER2 extracellular domain (ECD; subdomains I–IV, 630 aa, ∼ 70 kDa, PDB 1N8Z), introduced in Round 2 as\
+a specificity counter-screen and continued in the Round 3 multiplexed panel alongside myoglobin, 𝛼-thrombin, and bare streptavidin\
+beads. **(B)** Statistically significant HER2-selective binder rate across Round 1 (screened on myoglobin, 𝛼-thrombin, and bare strep\
+tavidin beads; HER2 not yet screened), Round 2 (𝑁 = 968), and Round 3 (𝑁 = 1,405). Strictly HER2-selective binders (log2 FC ≥\
+1.0, bead-corrected enrichment ≥ 1.0, FDR < 0.05, with no significant enrichment on myoglobin or 𝛼-thrombin) increased 3.8-\
+fold from 1.3% (13 hits) in Round 2 to 5.1% (71 hits) in Round 3, while negative controls remained at 0.0% across all rounds (dashed\
+line). **(C)** Kernel density distributions of bead-corrected HER2 enrichment (log2 FC) across Rounds 1–3. The vertical dashed line\
+marks the log2 FC = 1.0 threshold; dark-shaded tails denote statistically significant selective binders (≥ 1.0 log2 FC), expanding\
+from 1.3% (max +1.9 log2 FC) in Round 2 to 5.1% (reaching +4.6 log2 FC) in Round 3. Individual dots in the Round 3 right tail mark\
+top selective binders (≥ 3.5 log2 FC), including the carried-over Round 2 → Round 3 binder (★). **(D)** Round 3 volcano plot of beadcorrected HER2 enrichment (log2 FC) versus statistical significance (− log10 FDR) across all 𝑁 = 1,405 candidates, highlighting\
+the 71 HER2-selective binders (solid circles, up to +4.59 log2 FC or 24 × over bare beads), the carried-over Round 2 → Round 3\
+binder (gold star ★, +4.28 log2 FC, FDR = 0.031), and negative/random controls (open triangles, 0/24 false positives).\
+\
+$$\
+2;(N=968)\
+$$\
+\
+$$\
+(\\log\_{2}FC\\geq\
+$$\
+\
+$$\
+3;(N=1,405)\
+$$\
+\
+$$\
+\\geq1.0,\\mathrm{FDR}<0.05\
+$$\
+\
+$$\
+\\left(\\log\_{2}FC\\right)\
+$$\
+\
+$$\
+\\log\_{2}FC=1.0\
+$$\
+\
+$$\
+(\\geq1.0\\log\_{2}FC)\
+$$\
+\
+$$\
++4.6\\log\_{2}FC)\
+$$\
+\
+$$\
+(\\geq3.5\\log\_2FC)\
+$$\
+\
+$$\
+\\left(\\log\_{2}FC\\right)\
+$$\
+\
+$$\
+\\left(-\\log\_{10}FDR\\right)\
+$$\
+\
+$$\
++4.59\\log\_{2}FC\
+$$\
+\
+$$\
+N=1{,}405\
+$$\
+\
+$$\
+\\star,+4.28\\log\_{2}FC,FDR=0.031\
+$$\
+\
+### Supplementary Note 1 \| Counter-screen discovery and continuation of HER2-selective binders across Rounds 2–3\
+\
+To evaluate target specificity and cross-reactivity across an expanded protein panel, human HER2 extracellular domain (ECD;\
+subdomains I–IV, ∼ 70 kDa) was introduced as an off-target reference in the Round 2 multiplexed counter-screen (𝑁 = 968) and\
+continued in Round 3 (𝑁 = 1,405) alongside 𝛼-thrombin, myoglobin, and bare streptavidin beads ( **Supplementary Fig. S3A).**\
+While most G-quadruplexes in Round 2 behaved as non-specific matrix or polyanionic cross-binders, all-by-all profiling surfaced 13\
+strictly HER2-selective candidates (1.3% of the pool; **Supplementary Fig. S3B),** including a failed myoglobin candidate (bef5bce6520a,\
+★) carrying a 6-bp antiparallel Watson–Crick stem (5'-GAGCGG-3' paired with 5'-CCGCTC-3') clamping a compact G-quadruplex core\
+(5'-AA-GAGCGG-GGTGGGTTTTCTTTGGGTTGGG-CCGCTC-AAAA-3') that showed no enrichment on myoglobin or bare beads (≤ −0.46 log2 FC) but\
+\
+$$\
+\\mathrm{I}-\\mathrm{IV},\\sim\\bar{\\mathrm{7}}\\mathrm{0~kDa}\
+$$\
+\
+$$\
+(N=968)\
+$$\
+\
+$$\
+3\\left(N=1{,}405\\right)\
+$$\
+\
+$$\
+\\leq-0.46\\log\_{2}FC\
+$$ enriched selectively on HER2 (+1.66 log2 FC raw, +1.19 log2 FC bead-corrected, FDR = 6.7 × 10−5; Supplementary Fig. S3C).\
+Carrying this seed into Round 3 alongside 6–8 bp Watson–Crick-clamped G-quadruplex chimeras shifted the population enrichment\
+tail rightward **(Supplementary Fig. S3C)** and expanded HER2-selective binders 3.8-fold to 5.1% (71/1,405; **Supplementary Fig.** **S3B,** D). The carried-over Round 2 seed (★) enriched again in Round 3 at +4.28 log2 FC (19 × over bare beads, FDR = 0.031), and\
+newly designed 6–8 bp stem-clamped G-quadruplex chimeras reached +3.22 to + 4.59 log2 FC (9 × to 24 × over bare beads) with\
+no significant enrichment detected on myoglobin or 𝛼-thrombin ( **Supplementary Table S2),** while all negative controls remained\
+at 0.0% (0/24 false positives).\
+\
+$$\
+\\mathrm{FDR}=6.7\\times10^{-5}\
+$$\
+\
+$$\
++1.19\\log\_{2}FC\
+$$\
+\
+$$\
++4.28\\log\_{2}FC(19)\
+$$\
+\
+$$\
++3.22\\mathrm{~t}0+4.59\\log\_{2}\\mathrm{FC}(9\\times\\mathrm{t}024\
+$$\
+\
+$$\
+\\mathrm{FDR}=0.031\\dot{)}\
+$$\
+\
+**Supplementary Table S1** \| **Representative aptamer motifs, sequence lineages, and structural hypotheses across Rounds**\
+**1–3**\
+\
+| Target | Round & Lineage | Structural Family | Variable Region / Conserved Motif (5' → 3') | Folding & Enrichment Metrics | Structure-Activity Hypothesis |\
+| --- | --- | --- | --- | --- | --- |\
+| α-Thrombin | Round 1 → Round 2 Primer-Insulation Fix (T02-T04) | Uninsulated vs. stem-clamped 2-tetrad G4 (TBA core) | Core: GGTTGGTGTGGTTG (flanked by fixed primers in R1 vs. 6-11 bp duplex clamps in R2-R3) | R1 full-construct primer-core pairing Δ G = -7.8 kcal/mol (0.0% hits) → R3 clamped stem 100% hit rate (7/7 canonical 6-10 bp TBA clamps; 100% \[25/25\] across all R3 clamped TBA/NU172-core constructs); preliminary single-clone KD = 47.4 ± 14.6 nM (T02, 11-bp stem) vs. 132.7 nM (T03, 8-bp stem) and 132.5 ± 52.8 nM (T04, 68A loop edit; Fig. 4) | Folding the full 85-nt primer-flanked construct in ViemnarIA indicated that fixed primers could hybridize with uninsulated cores; adding protective Watson-Crick stems restored predicted folding and nanomolar physical binding. |\
+| α-Thrombin | Round 2 G4-Hairpin Hybrid Seed (NU172 core) | G-quadruplex-hairpin hybrid motif | Conserved 25-nt motif: GCCTAGGTTGGTTAGGGTGGTGGCG (25-nt core of canonical 26-nt NU172) | Shared across 17 of top 18 R2 binders ((\\log\_2 FC > 11)) | Embeds the 25-nt G-quadruplex/duplex core of NU172 within a flanking Watson-Crick stem clamp that insulates the motif from primer interference. |\
+| α-Thrombin | Round 3 Top Enriched Binder (R3\_095\_var3 / T01) | Extended palindromic hairpin / clamped G4 hybrid | TAACCAGCGACTAGGTTGGTTAGGGTGGTGGCGCTGGTTA | (\\log\_2 FC = +16.27) (strongest binder of campaign, 44.55% of R3 pool); preliminary single-clone KD = 24.6 ± 8.2 nM (Δ RFU = +1,825,7.2 × over blank; Fig. 4); family hit rate 57.5% (42/73) | Extending the Round 2 25-nt hybrid seed (095e2a34c9a4) with a 9-bp terminal stem (TAACCAGCG...CGCTGGTTA) and a C10+A strain-relieving bulge maximized predicted folding purity, pooled enrichment, and single-clone nanomolar affinity. |\
+| Myoglobin | Round 2 Basal-Stem vs. Loop Contrast | Stem-loop hairpin scaffold | Shared 14-bp basal stem: GTCGAAGAGTTCAC (paired with GTGAACTCTTCGAC) | 72/74 stem-matched designs failed; 2/74 enriched strongly ((\\log\_2 FC = +2.49, +2.39; Δ G\_{MFE} < -10) kcal/mol) | Comparing 74 sequences with identical basal stems indicated that stem stability alone is insufficient for binding and that enrichment depends on the 10-13 nt apical/internal loop sequence. |\
+| Myoglobin | Round 3 Top Pseudoknot Lineage | H-type pseudoknot (-GCG- tertiary lock) | GTCGAAGAGTTCACACGCGATGTGAACTCTTCGACATCGT | Δ GMFE = -24.9 kcal/mol; (\\log\_2 FC = +3.61); family hit rate 80.4% (37/46) | Evolving the Round 2 stem-loop winner via constrained inverse folding into a predicted -CGG- H-type pseudoknot stabilized loop presentation while eliminating G4 cross-reactivity. |\
+| Myoglobin | Round 3 Non-G4 Hairpin Families | Extended palindromic & bulge/pocket hairpins | Variable 8-12 bp stems interrupted by asymmetric internal bulges | Extended palindromic hit rate 61.8% (47/76); bulge/pocket hairpin hit rate 45.9% (67/146) | Replacing polyanionic G-quadruplexes (clamped 3-tetrad G4 chimeras: 2.4% hit rate, 3/124; unclamped G4s: 0.0% hit rate, 0/7) with non-G4 hairpins and 3WJs restored on-target specificity from 19.1% to 72.4%. |\
+\
+$$\
+\\Delta G=-7.8\\mathrm{kcal/mol}\
+$$\
+\
+$$\
+K\_{D}=47.4\\pm\
+$$\
+\
+$$\
+132.5\\pm52.8\\mathrm{nM}(\\mathrm{T04}\
+$$\
+\
+$$\
+\\overset{\\frown}{(\\log\_{2}FC>11)}\
+$$\
+\
+$$\
+\\log\_{2}FC=+16.27\
+$$\
+\
+$$\
+K\_{D}=\
+24.6\\pm8.2\ nm\
+$$\
+\
+$$\
+\\Delta\\mathrm{RFU}=+1,825,\
+$$\
+\
+$$\
+\\log\_{2}FC=\
++\\widetilde{2.49},+2.39;\
+$$\
+\
+$$\
+\\Delta G\_{\\mathrm{MFE}}<\
+$$\
+\
+$$\
+-10\\stackrel{\\mathrm{m\_{L}}}{\\mathrm{kcal}}\\stackrel{\\mathrm{L}}{\\mathrm{kcal}}\\stackrel{\\mathrm{L}}{\\mathrm{/mol}}\\stackrel{\\mathrm{L}}{\\mathrm{)}}\
+$$\
+\
+$$\
+\\Delta G\_{\\mathrm{MFE}}=\
+\\overset{\\circ}{\\underset{\\cdot\\cdot\\cdot}{24.9}}\\overset{\\underset{\\cdot\\cdot\\cdot}{MFE}}{\\underset{\\cdot\\cdot\\cdot\\cdot}{kcal/mol/mol}};\
+$$\
+\
+$$\
+\\log\_{2}FC=+3.61;\
+$$\
+\
+* * *\
+\
+**Supplementary Table S2** \| **Top statistically significant HER2-selective binders in Round 3**\
+\
+| Candidate ID | Round Origin & Architecture | Variable Region Sequence (5' → 3', 40-42 nt) | Mean Read Counts (Input / Beads / HER2 / Myo / Thr) | R3 HER2 Raw log2 FC | R3 Bead-Corrected log2 FC | R3 HER2 FDR | Myoglobin & α-Thrombin Off-Target Enrichment |\
+| --- | --- | --- | --- | --- | --- | --- | --- |\
+| hybrid\_chimera\_008 | Round 3 (8-bp stem + G4 chimera) | GACGCCAATGGGTGGGGTTGTTTAGG GAGGGATTGGCGTC | 233 / 294 / 7,214 / 223 / 804 | +4.95 | +4.59 | 0.031 | No significant enrichment (Myo +0.25, Thr +0.34) |\
+| constrained\_gquad\_005 | Round 3 (8-bp stem + G4 chimera) | CGCCACCATTAGGGTGGGAATAGGGA GGGAATTGGTGGCG | 242 / 177 / 4,773 / 207 / 157 | +4.30 | +4.47 | 0.034 | No significant enrichment (Myo +0.43, Thr -0.18) |\
+| bef5bce6520a (★) | Round 2 → Round 3 carryover (6-bp stem + G4) | AAGAGCGGGGTGGGTTTTCTTTGGGT TGGGCCGCTCAAAA | 258 / 504 / 8,657 / 285 / 311 | +5.06 | +4.28 | 0.031 | No significant enrichment (Myo +0.18, Thr -0.69) |\
+| R1\_0130 | Round 1 → Round 3 carryover (G4-hairpin hybrid) | GGTGGTGGGTTGTGGGTGGTTGATTT TTCTAATGGTCATGAG | 343 / 314 / 4,747 / 208 / 560 | +3.79 | +3.74 | 0.037 | No significant enrichment (Myo -0.21, Thr +0.69) |\
+| constrained\_gquad\_009 | Round 3 (8-bp GC stem + G4 chimera) | GCTCGCGCGGGTAAGGGTTTTTTGGG TAAGGGGCGCGAGC | 160 / 273 / 2,645 / 187 / 244 | +4.04 | +3.39 | 0.034 | No significant enrichment (Myo +0.35, Thr -0.16) |\
+| constrained\_gquad\_002\_v3 | Round 3 (8-bp stem + G4 chimera) | GACGACGAGGTAAGGGTTTTTTGGG TAAGGTCGTCGTC | 219 / 196 / 2,075 / 183 / 186 | +3.24 | +3.22 | 0.043 | No significant enrichment (Myo +0.27, Thr -0.07) |\
+\
+**Supplementary Table S3** \| **Authoritative summary of library cohorts, counter-screens, statistical hit criteria, motif**\
+**ancestry, and statistically significant on-target hit rates across Rounds 1–3**\
+\
+| Round | Target Protein | Counter-Targets & Matrix Controls Screened | Full Sequenced Pool (Npool) | Cohort Breakdown (New Target Designs / Off-Target Sub-Pools / Variants & Tiers / Controls & Spikes) | Statistical Hit Inclusion Rule | Raw Enriched ((\\log\_2 FC ≥ 1.0)) | Volcano Pre-Hits ((\\log\_2 FC ≥ 1.0), FDR < 0.05) | Statistically Significant On-Target Hits: New Target-Designed Candidates (n/N, %) | On-Target Hits: Strictly De Novo Subset (n/N, %) | On-Target Hits: Full Sequenced Pool (n/N, %) | Negative/ Scrambled Controls (n/N, %) |\
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\
+| Round 1 | α-Thrombin | Myoglobin, insulin, bare streptavidin beads | 642 | 167 Thr new / 475 off-target (196 Myo, 279 Ins) / 0 var / 0 ext ctrl | DESeq2 (\\log\_2 FC ≥ 1.0), FDR < 0.05 vs. input + beads | 1 / 642 (0.2%) | 0 / 642 (0.0%) | 0 / 167 (0.0%) | 0 / 57 (0.0%) (0 / 110 lit) | 0 / 642 (0.0%) | 0 / 279 Ins decoy (0.0%) |\
+| Round 1 | Myoglobin | α-Thrombin, insulin, bare streptavidin beads | 642 | 196 Myo new / 446 off-target (167 Thr, 279 Ins) / 0 var / 0 ext ctrl | DESeq2 (\\log\_2 FC ≥ 1.0), FDR < 0.05 vs. input + beads (37 at FDR < 0.05; 24 also ≥ 1.0 (\\log\_2 FC)) | 42 / 642 (6.5%) | 37 / 642 (5.8%) (24 at ≥ 1.0) | 20 / 196 (10.2%) (18 at ≥ 1.0) | 19 / 171 (11.1%) (1 / 25 lit; 34 / 499 \[6.8%\] full pool) | 37 / 642 (5.8%) (24 / 642 \[3.7%\] at ≥ 1.0) | 0 / 53 random (0.0%) |\
+| Round 1b\* | Myoglobin (Single-target expansion) | Bare streptavidin beads | 1,341 | 1,288 Myo new / 0 off-target / 0 var / 53 scrambled neg | (\\log\_2 FC ≥ 1.0), FDR +1.00 | 166 / 1,341 (12.4%) | 148 / 1,341 (11.0%) | 86 / 1,288 (6.7%) | 86 / 1,288 (6.7%) | 86 / 1,341 (6.4%) | 0 / 53 (0.0%) |\
+| Round 2 | α-Thrombin | Myoglobin, HER2, TNF-α, bare streptavidin beads | 981 | 208 Thr new / 683 off-target (243 Myo, 229 HER2, 211 TNF) / 0 var / 90 ctrl (14 lit, 16 R1 spikes, 60 scrambles) | (\\log\_2 FC ≥ 1.0), FDR +1.00, x1 < 0.5 (min hit res +1.15) | 212 / 981 (21.6%) (112 / 211 \[53.1%\] vs. beads) | 161 / 981 (16.4%) (125 / 211 \[59.2%\] Thr cohort) | 54 / 208 (26.0%) (56 / 211 \[26.5%\] w/ 2 lit ctrls) | 10 / 76 (13.2%) (44 / 132 \[33.3%\] lit) | 73 / 981 (7.4%) (71 / 891 \[8.0%\] non-ctrl) | 0 / 60 (0.0%) |\
+| Round 2 | Myoglobin | α-Thrombin, HER2, TNF-α, bare streptavidin beads | 977 | 244 Myo new / 643 off-target (208 Thr, 224 HER2, 211 TNF) / 0 var / 90 ctrl (14 lit, 16 R1 spikes, 60 scrambles) | (\\log\_2 FC ≥ 1.0), FDR +1.00 | 177 / 977 (18.1%) (12.4% in R2 sub-analysis) | 150 / 977 (15.4%) (28 / 273 \[10.3%\] Myo cohort) | 9 / 244 (3.7%) (new Myo designs; 17 / 270 \[6.3%\] incl. 8 / 16 R1 pos spikes; 17 / 183 \[9.3%\] in N = 700 benchmark) | 9 / 238 (3.8%) (0 / 6 lit) | 96 / 977 (9.8%) (88 / 977 \[9.0%\] excl. 8 R1 pos spikes; 86 / 887 \[9.7%\] non-ctrl) | 1 / 60 (1.7%) (0 / 53 primary random) |\
+| Round 2 | HER2 ECD (Counter-screen) | α-Thrombin, myoglobin, TNF-α, bare streptavidin beads | 968 | 229 HER2 new / 675 off-target / 0 var / 64 ctrls | (\\log\_2 FC ≥ 1.0), FDR +1.00, non-binding on Myo & Thr | 51 / 968 (5.3%) | 46 / 968 (4.8%) | 59 / 968 (6.1%) (all-pool bead-gated) | 13 / 968 (1.3%) (strictly HER2-selective) | 13 / 968 (1.3%) (strictly selective) | 0 / 53 (0.0%) |\
+\
+* * *\
+\
+| Round | Target Protein | Counter-Targets & Matrix Controls Screened | Full Sequenced Pool (Npool) | Cohort Breakdown (New Target Designs / Off-Target Sub-Pools / Variants & Tiers / Controls & Spikes) | Statistical Hit Inclusion Rule | Raw Enriched ((\\log\_2 FC ≥ 1.0)) | Volcano Pre-Hits ((\\log\_2 FC ≥ 1.0), FDR < 0.05) | Statistically Significant On-Target Hits: New Target-Designed Candidates (n/N, %) | On-Target Hits: Strictly De Novo Subset (n/N, %) | On-Target Hits: Full Sequenced Pool (n/N, %) | Negative/ Scrambled Controls (n/N, %) |\
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\
+| Round 3 | α-Thrombin | Myoglobin, HER2, bare streptavidin beads | 1,441 (1,405 dedup) | 311 Thr new / 749 off-target (549 Myo, 200 HER2) / 148 var & tiers (88 mut, 60 tiers) / 197 ctrls (84 pos spikes, 11 lit, 4 struct, 98 neg/rand) | (\\log\_2 FC ≥ 1.0), FDR +1.00 (+ yi,thr - xi > 1.0 if bead pre-hit; min hit res +1.94) | 394 / 1,441 (27.3%) (251 / 311 \[80.7%\] Thr new) | 301 / 1,441 (20.9%) (162 / 311 \[52.1%\] Thr new) | 131 / 311 (42.1%) | 106 / 286 (37.1%) (25 / 25 \[100%\] lit) | 162 / 1,405 (11.5%) (218 / 1,441 \[15.1%\] sequenced) | 0 / 20 scrambled/neg (0.0%) |\
+| Round 3 | Myoglobin | α-Thrombin, HER2, bare streptavidin beads | 1,441 (1,405 dedup) | 549 Myo new / 511 off-target (311 Thr, 200 HER2) / 148 var & tiers (88 mut, 60 tiers) / 197 ctrls (84 pos spikes, 11 lit, 4 struct, 98 neg/rand) | (\\log\_2 FC ≥ 1.0), FDR +1.00 | 369 / 1,441 (25.6%) (164 / 549 \[29.9%\] Myo new) | 357 / 1,441 (24.8%) (242 / 1,405 \[17.2%\] dedup) | 184 / 549 (33.5%) | 184 / 547 (33.6%) (0 / 2 \[0.0%\] lit) | 273 / 1,405 (19.4%) (292 / 1,441 \[20.3%\] across replicates in Fig. 2D) | 0 / 78 random/scrambled (0.0%) |\
+| Round 3 | HER2 ECD | α-Thrombin, myoglobin, bare streptavidin beads | 1,441 (1,405 dedup) | 200 HER2 new / 860 off-target (549 Myo, 311 Thr) / 148 var & tiers / 197 ctrls | (\\log\_2 FC ≥ 1.0), FDR +1.00, non-binding on Myo & Thr | 396 / 1,441 (27.5%) | 390 / 1,441 (27.1%) | 8 / 200 (4.0%) (all-HER2 bead-gated) | 8 / 200 (4.0%) | 71 / 1,405 (5.1%) (strictly HER2-selective; 117 / 1,405 \[8.3%\] before cross-target filter) | 0 / 24 (0.0%) |\
+\
+\*Footnote: _Summing the three focal closed-loop pools plotted in_ **_Figures 2–3_** _(Round 1_ \[𝑁 = 642\], _Round 2_ \[𝑁 = 981\], _and Round 3_ \[𝑁 = 1,441\]) _yields_ **_3,064_**\
+**_sequenced library entries_** _(2,937 unique sequences after deduplicating carried-over controls). Including the supplementary single-target myoglobin expansion_\
+_screen (Round 1b,_ 𝑁 = 1,341 _sequenced /_ 1,342 _ordered) brings the campaign total across all four synthesized pools to_ **_4,405 sequenced constructs_** _(4,425_\
+_ordered constructs;_ **_4,279 unique sequences_** _after cross-pool control deduplication, referred to in the text as_ ∼ 4,400). _“Literature Motif Descendants” (lit)_\
+_denotes candidate sequences containing canonical_ 𝛼- _thrombin aptamer cores (TBA 15-nt GGTTGGTGTGGTTGG or GGTTGGN{2,4}GGTTGG, HD22 core GGTAGGGCAGGTTGGGGT,_\
+_NU172 25-nt GCCTAGGTTGGGTAGGGTGGTGGCG or 15-nt core GGTTGGGTAGGGTGG, or RE31 core); “Strictly_ De Novo _Subset” excludes all such sequences._\
+\
+**Supplementary Table S4** \| **Single-clone magnetic-bead fluorescence titration data and preliminary 1:1 Langmuir**\
+**binding fits for full-length 𝛼-thrombin candidates (T01–T08)**\
+\
+| Candidate ID | Synthesis Well & Tube Ref (Mfg #, Plate Row) | Architectural Family & Motif Origin | Core Variable Sequence (5' → 3', flanked by constant primers in full-length 75-85 nt construct) | Full Construct Len (nt) | R3 Pooled SELEX (log2 FC) | Raw RFU (0, 1, 10, 100, 1000 nM) | Specific Signal at 1 µM (Δ RFU, Fold / Blank) | Preliminary Apparent KD, Fixed-Blank Fit (R2) | Preliminary Apparent KD, Free-Baseline Fit (R2) | Binding Classification |\
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\
+| T01 (R3\_095\_var3) | #579, Row A (Tube T07) | NU172-derived bimodal G4-duplex (C10A bulge edit + 9-bp terminal stem) | TAACCAGCGACTAGGTTG GGTAGGGTGGTGGCGCTG GTTA | 85 | +16.27 | 296, 478, 888, 1586, 2121 | +1,825 (7.2 ×) | 24.6 ± 8.2 nM (0.980) | 32.0 ± 13.8 nM (0.986) | Strong nanomolar binder |\
+| T02 | #325, Row H (Tube T02) | TBA-derived coaxial G4 (15-nt canonical TBA loop GGTTGGTGGTGG + 11-bp stem, Δ G = -12.0 kcal/mol) | AACACGCCTATAGGTTGG TGTGGTTGATAGGCGTGTT | 83 | +11.88 | 276, 278, 331, 702, 812 | +536 (2.9 ×) | 47.4 ± 14.6 nM (0.986) | 43.4 ± 16.4 nM (0.989) | Strong nanomolar binder |\
+| T03 | #342, Row B (Tube T01) | TBA-derived coaxial G4 (15-nt canonical TBA loop GGTTGGTGGTGG + 8-bp stem, Δ G = -8.2 kcal/mol) | AGCTGACAGGTTGGTGTG GTTGGTGTCAGCT | 76 | +11.89 | 218, 306, 312, 337, 427 | +209 (2.0 ×) | - | 132.7 nM (0.783\*) | Moderate nanomolar binder |\
+| T04 | #328, Row F (Tube T05) | TBA-derived loop-edited G4 (11-bp stem + central TBA loop G8A TGT → TAT specificity edit) | AAACACCGATAGGTTGGT ATGGTTGGTATCGGTGTT | 82 | +9.81 | 264, 283, 266, 335, 405 | +141 (1.5 ×) | 132.5 ± 52.8 nM (0.974) | 146.0 ± 77.6 nM (0.975) | Moderate nanomolar binder (reduced off-target enrichment in pooled screen) |\
+| T05 | #581, Row C (Tube T08) | Strictly de novo hybrid G4-stem (non-canonical G4 core + 10-bp GC clamp) | CGGTGCTGCATGGGTGGG TAGGGTGGGACTTCCAGC ACCG | 85 | +3.00 | 278, 269, 280, 262, 396 | +118 (1.4 ×) | \> 1,000 nM | \> 1,000 nM | Micromolar onset (at 1 µM) |\
+| T06 | #912, Row G (Tube T06) | Strictly de novo 3-tetrad G4 (3-plane G4 core + 6-bp stem, Δ G = -6.9 kcal/mol) | GCGCATGGGTTGGGATGG GTTGGGATGCGC | 75 | +6.70 | 291, 260, 268, 284, 349 | +58 (1.2 ×) | \> 1,000 nM | \> 1,000 nM | Trace micromolar onset (at 1 µM) |\
+| T07 | #329, Row D (Tube T09) | Strictly de novo 3-way junction (non-G4 branched duplex) | CCGGCAGCTTGGTTGTGC GCCGGAAAAATTCCGTG CCGG | 85 | +2.41 | 269, 261, 258, 277, 305 | +36 (1.1 ×) | \> 1,000 nM (N.D.) | \> 1,000 nM (N.D.) | Below 1 µM detection ceiling |\
+\
+* * *\
+\
+𝐾𝐷, Fixed- 𝐾𝐷, Free-\
+\
+| Candidate ID | Synthesis Well & Tube Ref (Mfg #, Plate Row) | Architectural Family & Motif Origin | Core Variable Sequence (5' → 3', flanked by constant primers in full-length 75-85 nt construct) | Full Construct Len (nt) | R3 Pooled SELEX (log2 FC) | Raw RFU (0, 1, 10, 100, 1000 nM) | Specific Signal at 1 μM (Δ RFU, Fold / Blank) | Preliminary Apparent KD, Fixed-Blank Fit (R2) | Preliminary Apparent KD, Free-Baseline Fit (R2) | Binding Classification |\
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\
+| T08 | #333, Row E (Tube T10) | Strictly de novo C-rich hairpin (non-G4 stem-loop) | CCTACCCTTCCTAACCCCT AAGGTTCGGCACTGGCG A | 81 | +3.29 | 280, 247, 280, 276, 287 | +7 (1.0 ×) | \> 1,000 nM (N.D.) | \> 1,000 nM (N.D.) | Below 1 μM detection ceiling |\
+\
+\* _Footnote on T03 and_ 𝐾𝐷 _fits: Candidates are indexed T01–T08 in order of single-clone binding affinity, with synthesis manufacturing IDs (Mfg #), 96-well plate_ _rows (A–H), and original synthesis tube labels (Tube T01–T10 tubes T03 and T04 were not assayed on this plate) listed in Column 2 for cross-reference with raw_\
+plate-reader records. All fitted 𝐾𝐷 values should be considered preliminary estimates, as fluorescence signals did not reach a full saturation plateau (𝐵max)\
+_within the_ 0–1,000 nM _titration range. Anchoring_ 𝑦0 = 218 RFU _distorts the low-concentration baseline for T03 because its single_ 0 nM _blank well (Row B)_\
+_dipped to 218 RFU (compared to the plate-wide blank mean of_ 271.5 ± 23.9 RFU _across rows A–H); the 3-parameter free-baseline hyperbolic fit_ (RFU(𝐶) =\
+𝑦0 \+ Δ𝐵max ⋅ 𝐶/(𝐾𝐷 \+ 𝐶)) recovers a baseline of 𝑦0 = 271.7 RFU matching the plate blank and a preliminary apparent midpoint of 𝐾𝐷 = 132.7 nM\
+(±227.5 nM _standard error from 3-parameter covariance across 5 titration points;_ 𝑅2 = 0.783) _across the_ 0–1,000 nM _range._\
+\
+$$\
+K\_{D}\
+$$\
+\
+$$\
+K\_{D}\
+$$\
+\
+$$\
+(B\_{\\max})\
+$$\
+\
+$$\
+\\mathrm{\[RFU(C)\]}\
+$$\
+\
+$$\
+y\_{0}+\\Delta B\_{max}\\cdot C/(K\_{D}+C)\
+$$\
+\
+$$\
+y\_{0}=2\\dot{7}1.7\
+$$\
+\
+$$\
+K\_{D}=132.7\
+$$

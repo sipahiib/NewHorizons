@@ -1,0 +1,94 @@
+{
+  "output": "build/video/2026-10-17/newhorizons.mp4",
+  "sha256": "91b1ed683bc0d0f4cc57503fa43c5a2c154f82a9418fffa4692b611a18d544b4",
+  "duration": 233.5,
+  "frames": 14010,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": "60/1",
+  "codecs": [
+    "h264",
+    "aac"
+  ],
+  "sampleAspectRatio": "1:1",
+  "fullDecode": "passed",
+  "technicalProfile": "passed",
+  "completeListening": "passed-user-confirmation",
+  "completeViewing": "passed-user-confirmation",
+  "evidence": "build/video/2026-10-17/qa",
+  "qaDate": "2026-10-18",
+  "independentOfRender": true,
+  "technicalSampleGate": "PASS_TECHNICAL_AND_SAMPLED_VISUALS",
+  "deliveryGate": "PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
+  "blockingTechnicalFindings": [],
+  "displayAspectRatio": "16:9",
+  "visualInspection": {
+    "mode": "sampled actual output frames; not continuous playback",
+    "sceneMidpointSamples": 27,
+    "additionalBoundaryAndClosingSamples": 22,
+    "sceneEvidence": "build/video/2026-10-17/qa/scene-samples.json",
+    "contactSheets": [
+      "build/video/2026-10-17/qa/contact.jpg",
+      "build/video/2026-10-17/qa/scenes.jpg"
+    ],
+    "findings": "Relevant contextual laboratory footage and five static scenes; readable title/subscription/closing; no prominent additional editorial text in inspected frames. Corrected source8863365 scene is visible, not black.",
+    "overlayWindowsSeconds": {
+      "title": [
+        0,
+        5.5
+      ],
+      "subscription": [
+        30,
+        35.5
+      ],
+      "closing": [
+        223.5,
+        233.5
+      ]
+    },
+    "timingVerification": "Boundary samples confirm title present5.4/absent5.6; subscription absent29.9/present30.1 and35.4/absent35.6; closing sampled223.7 onward. Exact windows accepted from resolved review, not frame-exhaustive overlay detection."
+  },
+  "blackDetection": {
+    "minimumDurationSeconds": 0.1,
+    "pixelThreshold": 0.02,
+    "intervals": []
+  },
+  "audio": {
+    "analysisOnly": true,
+    "integratedLUFS": -16.33,
+    "truePeakDBTP": -1.41,
+    "loudnessRangeLU": 3.3,
+    "clippingIndicated": false,
+    "silenceThresholdDB": -45,
+    "silenceMinimumDurationSeconds": 0.35,
+    "openingPausesSeconds": [
+      3.290604,
+      3.031354,
+      2.769458
+    ],
+    "transitionSilence": {
+      "start": 221.551937,
+      "end": 225.659875,
+      "duration": 4.107938
+    },
+    "finalDetectedSpeechEndSeconds": 230.390708,
+    "finalSpeechToEndGapSeconds": 3.109292,
+    "pacingAcceptance": "Pending complete listening; planned intentional opening and closing pauses are documented. Actual trailing silence exceeds container-based estimate2.264s; no fixed main-programme end-gap ceiling."
+  },
+  "finalSentenceAudibleCompleteness": "pending complete listening",
+  "cleanupAllowed": false,
+  "humanApprovalEvidence": {
+    "type": "user-confirmation",
+    "text": "onayladım.",
+    "scope": "the linked 233.5-second main video; complete continuous viewing and complete narration listening",
+    "recorded_at_utc": "2026-10-18T10:21:20.581834+00:00",
+    "hashes": {
+      "main": "91b1ed683bc0d0f4cc57503fa43c5a2c154f82a9418fffa4692b611a18d544b4"
+    },
+    "basis": "Direct reply to the review-copy link and explicit pending full viewing/listening acceptance; human confirmation, not automated listening."
+  },
+  "deliveredPath": "build/video/newhorizons.mp4",
+  "deliveredHash": "91b1ed683bc0d0f4cc57503fa43c5a2c154f82a9418fffa4692b611a18d544b4"
+}

@@ -1,0 +1,7 @@
+# Accepted research verification — 18 October 2026
+
+The three reports linked in RESEARCH_PACKET.md were retrieved and relevant abstracts, results and limitations checked. Extracted source texts are preserved in assets/motion/2026-10-17/main/source_pages/{verid,aptamer,binder}-report.txt. No journal acceptance or independent replication is established; narration calls these team-reported research projects. Announcement date remains 16 October; exact experiment dates are not asserted.
+
+VERID abstract and results describe dye/water case studies, pre-execution checks, measurement-device failure recovery and physical artifacts. Scope is foundational automation, not a completed biological discovery system. Aptamer abstract/results describe three rounds on two principal targets, nonspecific binding, subsequent design changes and improved selectivity. Methods/figure 1 also show a changed agent harness between rounds: narration explicitly says this is not a controlled test of feedback alone. Binder abstract/results support early protein-binding results against FAP; no clinical benefit established.
+
+Accepted narration avoids numerical performance, cost and affinity comparisons. Human supervision and incomplete integration come from the announcement. The proposed contextual-only visual selection preserves approved factual framing and the expressly approved licensed laboratory-context route. No Google demo footage is selected: unresolved reuse terms and prominent embedded text. All research claim limitations remain spoken, not overlaid.

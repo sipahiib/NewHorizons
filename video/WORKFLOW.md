@@ -1,14 +1,13 @@
 # NewHorizons — Active Workflow Pointer
 
-Active cycle: **2026-10-15**
+Active cycle: **2026-10-17**
 
-Current state: complete local delivery: main 4:23 and two 0:45 Reels; independent technical/sample QA and user-confirmed full viewing/listening acceptance passed. Main order NASA → RNA; hooks M2-1, M1-1, R1-1, R2-1. Opening 16 seconds; closing 10 seconds. Main promoted and hash-verified; previous main preserved. No cleanup performed. Publication is not authorised.
+Current state: **complete local delivery**, 18 October 2026. Single AI story, 233.5 seconds / 3:53.5, no Reels. Independent review and technical/sample QA passed; user confirmed complete viewing/listening with “onayladım.” Accepted main promoted and hash-verified; previous main preserved. No cleanup or publication.
 
-- [Brief and accepted outputs](cycles/2026-10-15/BRIEF.md)
-- [Research](cycles/2026-10-15/RESEARCH_PACKET.md)
-- [Approval](cycles/2026-10-15/APPROVAL.md)
-- [Credits](cycles/2026-10-15/CREDITS.md)
-- [Output QA](cycles/2026-10-15/QA.md)
-- [Delivery metadata](cycles/2026-10-15/DELIVERY_METADATA.md)
+- [Brief and accepted video](cycles/2026-10-17/BRIEF.md)
+- [Research](cycles/2026-10-17/RESEARCH_PACKET.md), [approval](cycles/2026-10-17/APPROVAL.md)
+- [Review](cycles/2026-10-17/REVIEW.md), [output QA](cycles/2026-10-17/QA.md)
+- [Credits](cycles/2026-10-17/CREDITS.md), [upload metadata](cycles/2026-10-17/DELIVERY_METADATA.md)
+- [Delivery and preservation receipt](cycles/2026-10-17/DELIVERY_RECEIPT.json)
 
-Production rules: [PRODUCTION_SPEC.md](PRODUCTION_SPEC.md). Verification: [QA_CHECKLIST.md](QA_CHECKLIST.md). Prior cycles retain their own records and outputs.
+Prior cycles retain their records and outputs. Publication remains unauthorised.

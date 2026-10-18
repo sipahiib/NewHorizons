@@ -1,0 +1,2099 @@
+# Semantic Representation for Agentic Self-Play in Automated Laboratories
+
+Yves Delley1,†, John Coller1, Zachary Cutts1, Alexander Daryin2, Mathias Bellaiche1, Jun W Kim1, Oscar Donosa1,
+**Srinidhi B Seshadri2, Tanner Clary2, Sandy Klemm1, Avinatan Hassidim1, Yossi Matias1, Pooja Rao1, Petar**
+Sirkovic3,†,‡ and Annalisa Pawlosky1,†,‡
+
+## Sirkovic 3,†,‡ and Annalisa Pawlosky 1,†,‡
+
+1Google Research, 2Google Cloud, 3Google DeepMind, †Corresponding author, ‡Equal leadership (co-senior authors)
+
+**The complexity and dimensionality of biological search spaces represent a fundamental barrier**
+**to discovery. Many complex biological research questions require intelligent search strategies that**
+**examine numerous potential breakthrough hypotheses beyond known local minima in a scalable**
+**way. A direct approach designs combinatorial experiments across many hypotheses, and disentangles**
+**subtle biological signals from the noise. Biological experimentation in the areas of the unknown**
+**demands a scalable physical and computational intelligence to explore in tandem beyond local optima**
+**through iterative self-play across ideation, experimentation, and automation. The system would design**
+**iterative, data-driven experiments, and disentangle critical biological signals from multiple layers of**
+**noise across diverse experimental contexts. Translating experimental designs into reliable physical**
+**execution remains bottlenecked by static laboratory automation and unmodeled physical variability. To**
+**address this, we introduce VERified Infrastructure for Discovery Laboratories, or VERID, a foundational**
+**infrastructure designed to bridge the gap between the high-level reasoning of artificial intelligence**
+**(AI) agents and complex, error-prone physical realities of wet labs. VERID is a persistent, high-fidelity**
+**semantic digital twin of the laboratory workcell that provides four core services: queryable introspec**
+**tion for agentic reasoning, time-compressed simulation for protocol validation, comprehensive trace**
+**persistence for a complete scientific record, and a framework for safe execution.**
+
+**We present three case studies using aqueous dye and deionized water mixtures to validate the optical**
+**and fluidic foundations of VERID. Together, these studies demonstrate how VERID provides the neces**
+**sary interface to the wet lab hardware for robust agentic operation, enabling pre-emptive detection of**
+**critical errors in experimental protocols, stateful mid-run error recovery and post-hoc identification**
+**of subtle physical failures. The simulation functions as a discrete accounting engine, allowing agents**
+**to safely and inexpensively explore experimental designs _in silico_ and refine experimental strategies**
+**through iterative self-play. By managing the complexity of wet lab experimentation setup and execution,** **VERID allows for robust structured multimodal experimental data collection, which is suitable for**
+**downstream analysis, knowledge mining and agent training. We argue that this semantic layer is an**
+**essential prerequisite for deploying autonomous agents in the biochemical and biomedical sciences,**
+**ensuring data integrity, operational safety, and paving the way for tackling previously intractable grand**
+**challenges in biology.**
+
+## 1\. Introduction
+
+The process of scientific discovery from thera
+peutic drugs to novel materials and biological
+forms, has long been defined by high costs, long
+timelines, and immense complexity. The search
+requires solving two distinct, but intertwined
+problems: 1. navigating an immense, rugged
+search space and 2. physically executing labora
+tory experiments with high fidelity, adaptability
+and reproducibility. Progress in autonomous sci
+ence has been limited so far because the two
+problems have largely been tackled indepen
+dently, and pioneering closed-loop protein engi
+
+neering platforms that couple them still rely on
+fixed, pre-programmed experimental workflows
+rather than adaptable agentic protocols \[1\].
+
+The first challenge is the scale and structure of
+the biological search space. The number of pos
+sible drug-like small molecules is estimated to be
+as high as 1060 \[2\], \[3\], while a protein of just
+100 amino acids has 20100 possible sequences,
+before even the consideration of post-transla
+tional modifications or non-natural amino acids
+\[4\], \[5\]. These spaces are too large to explore
+with linearly scaling methods or screening ran
+dom libraries of 1014 molecules, such as phage,
+
+$$
+10^{60}
+$$
+
+$$
+20^{100}
+$$
+
+$$
+10^{14}
+$$
+
+_Corresponding author(s): [delley@google.com](mailto:delley@google.com), [psir@google.com](mailto:psir@google.com), [apawlosky@google.com](mailto:apawlosky@google.com)_
+©︎ 2026 Google. All rights reserved yeast or mRNA display \[5\], \[6\]. Additionally,
+starting positions from random libraries limit
+the exploration strategies early only, often re
+sulting in local hill climbing results, rather than
+global explorations \[5\], \[7\]. The combinator
+ial explosion of possibilities renders traditional,
+human-led experimental methods statistically
+incapable of navigating these rugged, high-di
+mensional landscapes.
+
+Recent advances in _in silico_ modeling and LLMdriven agentic ideation offer a way to propose
+more informed starting points and hypotheses
+across these spaces \[8\]. In protein science,
+agents can prioritize candidate sequences by
+combining literature search with structural pre
+diction and generative protein design tools, such
+as AlphaFold 3 \[9\], RFdiffusion \[10\], AlphaPro
+teo \[11\], and BindCraft \[12\]. However, purely
+_in silico_ exploration faces limits. Large language
+models remain prone to hallucination, and pre
+dictive models are not yet accurate enough,
+partly because they are trained predominantly
+on positive published outcomes, lacking access
+to negative data from failed experiments \[13\].
+In-silico predictions also often fail to transfer di
+rectly to experimental reality. For example, even
+in state-of-the-art _de novo_ protein binder cam
+paigns strictly filtered by AlphaFold 2 \[14\] or
+AlphaFold 3 \[9\] metrics, 60% to > 80% of com
+putationally top-ranked designs typically drop
+off when tested experimentally via yeast surface
+display or downstream soluble biophysical char
+acterization (e.g., failing to express, misfolding,
+or showing avidity-driven false positives that
+fail in biolayer interferometry) \[10\], \[11\], \[12\],
+\[15\], \[16\]. Without tight grounding in physical
+experimental feedback, purely computational
+ideation incurs significant resource loss.
+
+The second challenge lies in how physical wetlab experiments are run. Current laboratory
+practice is split between two paradigms: manual
+protocols and static automation. At the bench,
+researchers can customize manual protocols,
+but throughput is low, the work is labor-inten
+sive, and prone to operator-to-operator variabil
+ity \[17\]. Conventional laboratory automation
+achieves high throughput on static, pre-vali
+dated workflows. Translating a bench protocol
+onto a liquid-handling workcell requires special
+ized programming in proprietary, vendor-locked
+
+software, calibration of deck geometry and lab
+ware definitions, and empirical tuning of liquidhandling classes \[18\]. Thus, the breadth of
+protocols and experiments that can be scaled to
+robotic throughput and reproducibility is limited
+by the available time of domain experts, and
+stays limited to rigid protocols that do not adapt
+to new knowledge.
+
+Recent work has sought to connect LLM-based
+reasoning agents directly to laboratory hard
+ware to automate the design-build-test-learn
+loop in self-driving laboratories \[19\], \[20\], \[21\],
+\[22\]. For example, systems such as CLAIRify
+\[23\] and ORGANA \[24\] use LLMs with compiler
+feedback or task-and-motion planning to trans
+late goals into robotic chemistry workflows, yet
+operate without a persistent volumetric digital
+twin for pre-dispatch mass-balance simulation,
+stateful mid-run recovery, and synchronized
+trace dossiers. Similarly, while open-source,
+hardware-agnostic interfaces such as PyLabRo
+bot \[25\] have lowered the barrier to generating
+robotic commands programmatically, a critical
+semantic gap remains between an agent’s ab
+stract digital reasoning and the physical state of
+a laboratory workcell. LLMs are non-determin
+istic and lack a persistent, grounded representa
+tion of the physical laboratory state; they suffer
+from a syntax-to-safety gap. An agent can gen
+erate syntactically valid code that is physically
+impossible (e.g. lowering an 8-channel manifold
+into a narrow trough), logistically invalid (e.g.
+aspirating from a depleted well or transferring
+into a lidded plate), or scientifically compro
+mised by unmodeled fluidic effects. Whether a
+command is safe and effective cannot be deter
+mined from the code alone, but depends on the
+live physical context of the workcell, such as
+current meniscus heights or prior failure states.
+An intermediary layer that tracks and validates
+physical state is critical so that autonomous
+agents do not operate on flawed assumptions,
+produce confounded data, or physically crash in
+struments. Furthermore, accurate state tracking
+is essential for self-improvement, auditing and
+scientific reproducibility.
+
+To bridge computational ideation and reliable
+physical execution across this three-layer hier
+archy, we introduce VERified Infrastructure for
+Discovery Laboratories, or **VERID,** a semantic digital twin architecture designed to ground
+high-level reasoning agents in the physical lab
+oratory. Unlike a static simulator which only
+predicts what could happen in a proposed pro
+tocol, a digital twin maintains rich context via
+a persistent, bidirectional link to the physical
+system it represents, tracking what has hap
+pened across experimental runs and using it
+to improve future predictions \[26\]. Here, we
+describe the architecture and four core services
+of VERID: (a) queryable introspection, (b) timecompressed simulation, (c) multimodal trace
+persistence, and (d) safe execution, and demon
+strate through foundational fluidic and optical
+physics benchmarking wet-lab case studies how
+this semantic layer enables pre-execution error
+prevention, stateful error recovery, and causal
+debugging of subtle physical artifacts. The case
+studies we present were carefully designed to
+cover the most fundamental laboratory opera
+tions ubiquitous in biological bench research
+including aqueous reagent tracking, transfer via
+pipette, mixing and incubating. These bench
+marks allow high-efficiency development of
+agentic wet lab capabilities by avoiding expen
+sive biochemical reagents and instead leveraging
+low-cost experiments using dyes \[27\] to enable
+fast quantitative system characterisation, before
+composing lab operations into more sophisti
+cated experiments and deploying on open bio
+logical problems.
+
+## 2\. Results: The Semantic Agentic Lab Twin (VERID)
+
+VERID acts as the foundational interface be
+tween high-level reasoning agents executing the
+experiments and the physical robotic workcell.
+It abstracts low-level hardware communication
+while exposing a queryable, controllable model
+of the wet lab. By design, VERID separately
+abstracts the concepts of physical lab equipment
+and experimental protocols, while always per
+sisting general state and collating multimodal
+data feeds, enabling automation to scale eas
+ily across different labs, robotic hardware and
+consumables unlike automations written on pro
+prietary platforms. The core of VERID is its
+persistent digital twin of the workcell built
+upon the hardware-agnostic geometric and op
+erational primitives of PyLabRobot (PLR) \[25\].
+
+This digital twin maintains a live, stateful entity
+tree capturing the spatial coordinates, container
+geometry, operational status, and semantic con
+tents (e.g. reagent identity, volume, and liquid
+height) of every item on the deck, from robotic
+arms and plate readers to individual wells and
+pipette tips. Using this ontological hierarchy,
+which formally defines containment and spatial
+relationships, such as a well belonging to a plate
+or a lid obstructing well access, VERID manages
+the execution of command blocks — modular
+programs representing discrete stages of an ex
+perimental protocol. A command block can be
+a shorter protocol such as a dilution series, or
+subsections of longer protocols. Every command
+block must pass a simulation gate before physi
+cal dispatch, allowing agents to verify feasibility
+and analyze in-depth different protocol designs
+_in silico_ before committing physical resources,
+allowing for deeper customization and explo
+ration while simultaneously saving resources.
+
+### 2.1. Adaptation for Agentic Reasoning
+
+VERID exposes the digital twin through a struc
+tured, queryable API that allows an agent to
+inspect the live workcell state. For example,
+VERID can ask questions such as _“What is the_
+_current volume and liquid height in well C3?”_
+or _“Which pipette tips and reagent troughs have_
+_sufficient capacity?”._ This inspection provides the
+situational awareness needed for an agent to
+generate context-aware instructions grounded
+in physical constraints, rather than attempting
+to infer deck state from unstructured text logs or
+raw camera pixels.
+
+### 2.2. Efficient Simulation for Exploration
+
+Leveraging the semantic digital twin, VERID
+provides a time-compressed, _in silico_ simulation
+engine that functions as a deterministic discretestate accounting system. Before any physical
+action is deployed, the controller clones the
+current state of the digital twin and executes
+the agent’s proposed command block against
+the virtual replica in a mandatory virtual run.
+The simulator tracks mass balance, tip state,
+deck geometry, and elapsed time, fast-forward
+ing through incubations and waiting periods.
+This lightweight representation catches a wide
+spectrum of failure modes prior to execution,
+such as logistical errors (e.g. pipetting into a lid
+
+* * *
+
+DRY LAB (IN SILICO)
+
+Scientific Discovery & Optimization System (Upper Level)
+Pareto-Frontier & Black-Box Optimization • Hypothesis Ideation • Key Metric Selection
+In Silico Priors & Automated Biosecurity Gate
+
+Assay Objectives & Candidate Designs
+
+AI Reasoning & Planning Agent (VERID Agent — Lower Level)
+Protocol Design • Lab Action-Space Planning • Diagnostic Experiment Design
+Executes assays, isolates physical confounders & extracts calibrated signals for the upper level
+
+State Queries
+Dry-Run Replan
+Command Block
+Direct Trace Dossier (In-Run Diagnostics)
+
+VERID \| SEMANTIC LAB DIGITAL TWIN
+Bridges the Syntax-to-Safety Gap
+
+Persistent Semantic Digital Twin (Live Workcell State)
+3D Geometry & Clearances • Volume Curves h(V) • Reagent Lineage • Tip Inventory
+
+1 Introspection
+Queryable API for live deck awareness
+
+2 Simulation Gate
+Time-compressed in-silico dry run
+
+3 Safe Execution
+Validate-them-execute & safety boundaries
+
+4 Trace Dossier
+Synchronized state, logs & video record
+
+Validated Commands
+
+Video, Telemetry & Assays
+
+Physical Robotic Workcell (Wet Lab)
+Liquid Handler • Plate Reader & Assays • Gantry & Side Cameras
+Supports Stateful Error Recovery & Factorial Bias Diagnostics
+
+Wet2Dry Loop
+Two-Tier Dossier-Driven Refinement
+
+UPPER-LEVEL SCIENTIFIC PATH
+
+Improve Experiment
+Use dossier to design the next most informative experiment and/or refine the scientific hypothesis.
+
+LOWER-LEVEL EXECUTION PATH
+
+Improve Protocol
+Use dossier to find and fix issues with experiment mechanics.
+
+Full Dossiers
+Dossier Feed
+
+PERSISTENT ARCHIVE
+
+Trace Dossier Storage
+• Synchronized twin state snapshots
+• Gantry & side-view pipetting video
+• Command-to-action logs & assay reads
+• Human-in-the-Loop (HITL) annotations
+
+Complete, auditable multimodal record
+
+Figure 1 \| Architecture of VERID and closed-loop integration between computational ideation (Dry Lab) and physical
+execution (Wet Lab). Within the dry lab, an upper-level Scientific Discovery & Optimization System proposes hypotheses
+and candidate designs, which a lower-level AI Reasoning & Planning Agent translates into modular experimental protocols.
+VERID bridges the syntax-to-safety gap via a persistent semantic digital twin of the live workcell and four core services:
+(1) Introspection, a queryable API for live deck awareness; (2) Simulation Gate, time-compressed _in silico_ dry runs; (3)
+Safe Execution, validate-then-execute hardware dispatch; and (4) Trace Dossier, synchronized state snapshots, execution
+logs, and multi-view video. Full trace dossiers are archived into the Wet2Dry Loop, which uses the stored dossier along
+two feedback paths: an upper-level path to improve the experiment (designing the next most informative experiment
+and/or refining the scientific hypothesis) and a lower-level path to improve the protocol (finding and fixing issues with
+experiment mechanics across runs).
+
+ded plate), resource exhaustion (e.g. depleting
+pipette tips or reagent stocks), geometric colli
+sions (e.g. channel pitch exceeding container
+bounds), and invalid volumetric parameters
+(e.g. aspirating air from an empty well or over
+flowing a destination well). Agents can therefore
+use the simulator as a high speed testing sand
+box and refine candidate protocols without con
+suming reagents.
+
+### 2.3. Trace Persistence for a Complete Scien tific Record
+
+Across every protocol run, VERID compiles a
+comprehensive research dossier by synchroniz
+ing three multimodal data streams against a
+common reference clock. First, it captures full
+digital twin state snapshots before, during, and
+after every command block, preserving modeled
+
+well volumes, tip inventories, and labware posi
+tions across runs. Second, it records time-tagged
+top-down gantry imagery, side-view pipetting
+video, and instrument telemetry aligned to the
+execution timeline. Third, it maintains a lineby-line execution log linking high-level protocol
+code directly to low-level hardware commands,
+state transitions, and video frames, providing a
+complete, auditable record for downstream de
+bugging, reproducibility, and agent learning.
+
+### 2.4. Safe Execution
+
+While simulating a command block, VERID
+evaluates mechanical trajectories, volumetric
+bounds, and chemical compatibility rules
+against the current digital twin state prior to
+dispatch, and filters out unsafe or destructive
+actions before they reach the physical hardware, directly addressing the syntax-to-safety gap.
+This simulation is continuously re-synced as in
+formation flows from the physical hardware to
+the digital twin, and re-gated in a verify-thenexecute safety framework.
+
+## 3\. Results: Case Studies
+
+In order to test the VERID intelligence har
+ness, we conceived of three case studies that
+illustrate proof-of-principle automated protocol
+debugging, multi-step fault recovery, and closedloop experimental self-play – all prerequisite
+capabilities for robust agentic operation. To
+avoid biological complexity and focus on tool
+performance, all case studies utilise dye and
+deionized water mixtures \[27\] – allowing for
+fast experiment cycles, low reagent costs, and
+clear performance metrics, while demonstrating
+experimental conditions comparable to many
+essential steps in wet-lab liquid handling. The
+case studies present different contexts in which
+an agent interacts with VERID as follows:
+
+1. **Human in the Loop protocol refinement:**
+
+The agent was tasked with a characterisa
+tion task via an interactive agentic interface.
+When the agent detected a discrepancy be
+tween expectation and reality, it reported its
+findings together with a hypothesis. The hu
+man operator then identified the root cause,
+enabling the protocol to be fixed.
+
+2. **Supervised multi-step diagnosis:** An agent
+   was tasked to develop a repeatable wet-lab
+   protocol. The agent autonomously identified
+   several traps and issues in a naive protocol
+   implementation. The human operator only
+   guided which limitations to accept and which
+   ones to attempt to overcome. For the latter,
+   the agent autonomously performed rootcause analysis.
+
+3. **Unsupervised self-learning via challenge**
+   **solving:** The agent was asked to solve a
+   specific task using fixed, limited resources,
+   and to allocate these resources wisely. It
+   also asked to write a record of transferrable
+   learnings obtained during the execution.
+   The experiment was repeated with varying
+   boundary conditions, such as having access to
+   previous learnings or not, or being allowed to
+   look at intermediate results before dispatch
+   ing further lab tasks.
+
+
+### 3.1. Case Study 1: Human-in-the-Loop (HITL) Refinement of Serial Dilution Flu idics and Stateful Error Recovery
+
+To illustrate how VERID supports iterative pro
+tocol debugging, we look at a case where an
+agent was tasked with characterizing the ab
+sorbance linearity of four dyes (red, yellow, blue,
+and green, each aspirated in duplicate from a
+reagent trough and a Falcon tube) across an 11-
+step, 2-fold serial dilution in a 96-well plate. In
+the initial execution, the agent relied on default
+well-bottom pipetting coordinates (𝑧 = 0 mm)
+and five in-place 100 µL mixing cycles at a fixed
+height. After reviewing the absorbance measure
+ment data obtained from the plate reader, the
+agent had observed both severe systemic underdilution and large inter-replicate spread: instead
+of the target 2.00× concentration reduction per
+column (log2 slope = −1.00), the measured step
+dilution factor was only ~1.4×–1.5× for red,
+green and yellow, and 1.6×–1.8× for blue. The
+agent had hypothesized insufficient mixing to be
+the cause. The operator then reviewed synchro
+nized video showing the side of the transparent
+wells of the assay plate, cross-referencing the
+execution trace and physical well geometry,
+which exposed two compounding physical fail
+ure modes at 𝑧 = 0 mm:
+
+1. dispensing, mixing, and re-aspirating at the
+   well floor left dense dye stratified at the bot
+   tom so that ~68–70% of the dye was carried
+   forward at each transfer step instead of 50%
+
+2. minor channel-to-channel height tolerances
+   caused individual tips to press flush against
+   the flat well floor and partially occlude the tip
+   orifice during dispensing and mixing, driving
+   the large discrepancy between replicates –
+   visible to the human eye as a complete lack of
+   dye being introduced until the tip was lifted
+   off from the well bottom again.
+
+
+In response, the agent refined the protocol to
+enforce a 1.5 mm bottom clearance on all liquid
+transfers and perform vertical convective mixing
+across the filling range (aspirating 100 µL near
+the bottom at 𝑧 = 1.5 mm and dispensing near
+the top surface at 𝑧 = 4.8 mm over four cycles
+per column). When this refined run encoun
+tered an unexpected instrument-state error after
+completing all liquid-handling steps, VERID’s
+persistent digital twin state allowed the agent
+
+* * *
+
+**a Serial Dilution Linearity Across Dyes**
+
+| Nominal Dilution Relative to Reference (2^-Δk) | Ideal 2-fold dilution (2.00 × /step) (Normalized Absorbance, OD/OD\_ref) | Initial protocol (mean 1.45×/step) (Normalized Absorbance, OD/OD\_ref) | Refined protocol (mean 1.97×/step) (Normalized Absorbance, OD/OD\_ref) |
+| --- | --- | --- | --- |
+| 1 | 1 | 1 | 1 |
+| 2^-1 | 0.00025 | 0.00030 | 0.00027 |
+| 2^-2 | 0.000005 | 0.000006 | 0.000005 |
+| 2^-3 | 0.0000001 | 0.0000001 | 0.0000001 |
+| 2^-4 | 0.000000002 | 0.000000002 | 0.000000002 |
+| 2^-5 | 0.00000000005 | 0.00000000005 | 0.00000000005 |
+| 2^-6 | 0.000000000001 | 0.000000000001 | 0.000000000001 |
+
+**b Step Dilution Factor by Dye**
+
+| Category | Initial (○ tube, ◇ trough; ±SEM) (Measured Step Dilution Factor, C\_k/C\_{k+1}) | Refined (● tube, ◆ trough; ±SEM) (Measured Step Dilution Factor, C\_k/C\_{k+1}) |
+| --- | --- | --- |
+| Red dye, measured @ 492 nm | 1.46 | 1.99 |
+| Yellow dye, measured @ 450 nm | 1.55 | 1.97 |
+| Blue dye, measured @ 620 nm | 1.62 | 1.97 |
+| Green dye, measured @ 405 nm | 1.43 | 1.95 |
+
+Figure 2 \| Panel **a** overlays the mean normalized unsaturated dilution trajectories (legend) over all 8 dye–source series
+(dotted: initial protocol, thin lines colored by dye: refined protocol), and Panel **b** shows the per-dye, per-source step
+𝐶𝑘
+dilution factor (𝐶𝑘+1, target 2.00×).
+
+$$
+\\left(\\frac{C\_{k}^{\\mathbf{1}}}{C\_{k+1}}\\right)
+$$
+
+to resume in a follow-up cycle without re-pipet
+ting: the agent moved the prepared plate out
+of the reader, executed an empty-chamber cal
+ibration, and completed the multi-wavelength
+readout.
+
+Across the unsaturated linear regime, the re
+fined protocol eliminated the inter-replicate
+spread (≤ 0.02 × difference between tube and
+trough across all four dyes) and restored nearideal 2-fold dilution, achieving average step
+dilution factors between 1.92×–1.99× (see
+Figure  2). This case study demonstrates how
+VERID’s persistent digital twin and multimodal
+trace persistence provide the granular opera
+tional data necessary for operators to identify
+and isolate subtle mechanical sources of system
+atic experimental error.
+
+$$
+\\leq0.02\\times
+$$
+
+### 3.2. Case Study 2: Simulation-Gated Protocol Planning and Multi-Step Diagnosis
+
+In our second case study, the agent was tasked
+with standardizing four concentrated dye stocks
+in a 12-column reagent trough each to a specific
+(per-dye) target optical density at their respec
+tive strongest absorbance wavelength as visible
+to our plate reader. Whereas Case Study 1
+examined single-operation calibration, this sec
+ond case illustrates how the persistent semantic
+model (combining container geometry, volumeto-height curves ℎ(𝑉), tracked inventories, and
+pre-execution simulation), guides multi-step
+
+planning, mid-run recovery, and root-cause di
+agnosis (Figure 3).
+
+Before execution, the model correctly identified
+that the trough capacities (15.7 mL) combined
+with the target reagent volumes (12 mL) would
+make in-place dilution impossible without deter
+mining stock concentration separately before
+mixing, given an uncertainty spread of stock dye
+exceeding the headroom ratio. Because accurate
+concentration measurement is comparatively in
+volved (the agent selected a three-level dilution
+series), the agent instead approached standard
+isation with a plan of topup, measure, remove,
+dilute. The controller system also caught an un
+physical proposed operation – when the agent
+attempted to lower all channels of the Span-8
+into a trough simultaneously, the simulator re
+jected the move as 8 tips span at least 72.0 mm,
+exceeding the 71.2 mm trough length (Panel a).
+Within the same turn, the agent adjusted its plan
+to mix the trough using 7 channels (Channels 1–
+7, 63.0 mm span) and sample in two sequential
+4-channel passes (Channels 1–4, then 5–8).
+
+During execution of the serial dilution, a midrun communication failure interrupted the pro
+tocol on the fourth dye (Panel b). The ability
+of the digital twin to persist state allowed the
+system to continue the run from the fault point
+instead of re-running all dyes anew, as it had
+preserved the virtual state corresponding to the completed wash, blank read, and serial dilution
+of the first three dyes.
+
+Post-run evaluation, however, revealed a 15–
+20% concentration discrepancy between adja
+cent dilution levels of the serial dilution and a
+28–47% absorbance drop on Channel 8 across
+all dyes. To diagnose this experimental failure,
+the agent halted the protocol and autonomously
+designed an 8-column factorial diagnostic split
+across two runs, filling and blanking all 12
+columns in Run 1 so Run 2 resumed directly
+on persisted Columns 5–8 without setup over
+head. This diagnostic (Panel c) showed flat
+delivery across all 8 channels when using dry
+tips (1.58 OD, CV = 1.4%), ruling out geomet
+ric or meniscus-tracking errors. Replaying the
+7-channel trough mix (Channels 1–7 mixed at
+250 µL, Channel 8 dry) reproduced the apparent
+−27.7% drop on Channel 8 (1.63 OD), which
+matched the true dry-tip baseline. Crucially, it
+also ran a reverse 7-channel mixing assignment
+to Channels 2–8 (leaving Channel 1 dry), which
+restored Channel 8 (2.20 OD) and shifted the
+−28.6% deficit completely to Channel 1 (1.58
+OD). Rather than Channel 8 under-aspirating,
+the 250 µL trough mix coated the inner wall
+of the 7 mixing tips with concentrated dye
+that washed down during the 150 µL well mix,
+adding +4.9 µL (+40.6%) of carryover, which
+also quantitatively explained the 14.5% offset
+between the 24 µL and 12 µL dilution levels.
+
+$$
+250\\mu L,
+$$
+
+The digital twin capabilities enabled the agent
+to discover the root cause of experimental error
+systematically and in the same way a human
+laboratory scientist would approach the issue
+– namely by observing the key measurable
+quantities, hypothesizing about the root cause
+(scientific or ‘hardware’-based), and iteratively
+adjusting the experiment, until a clean measure
+ment is reached.
+
+### 3.3. Case Study 3: End-to-End Physical Self- Play in Automated Laboratories
+
+In the third case study, we evaluated whether
+an autonomous agent can characterize an un
+familiar physical assay, diagnose unmodeled
+instrument artifacts, and improve its experimen
+tal accuracy across within-run feedback cycles
+and multi-generation runs using only its own
+physical observations (Figure 4). In each chal
+lenge (Figure  4 a), an automated Challenger
+prepares four blinded binary dye mixtures at
+unknown concentrations alongside four pure
+reference stocks (Red, Green, Blue, and Yellow).
+Operating under a fixed physical budget (one
+96-well plate, a capped pipette-tip allowance,
+and overhead RGB camera imaging only), a
+blind Solver agent designs and executes closedloop experimental cycles – serial dilutions, syn
+thetic reference mixtures, or standard-addition
+spikes – to infer each mixture’s composition.
+After the run, an independent four-wavelength
+plate reader (Byonoy Absorbance 96; Oracle)
+
+a Trough Geometry
+
+8-Ch Attempt 1 2 3 4 5 6 7 8
+
+7-Ch Trough Mix 1 2 3 4 5 6 7 8
+
+2×4-Ch Split 1 2 3 4 5 6 7 8
+
+b Simulation-Gated Planning Pipeline
+
+1. Pre-Execution Simulation
+   Rejects 8-Ch trough entry & in-place dilution
+
+2. Stateful Failure Recovery
+   Resumes from digital twin after comms drop
+
+3. Post-Run QC & Diagnostic Plan
+   Flags Ch 8 drop → 2-run factorial design
+
+4. Zero-Overhead Continuation
+   Reuses pre-blanked wells → isolates carryover
+
+
+c Carryover Inversion Across Channels (405 nm)
+
+Net Absorbance at 405 nm (OD)
+
+7-Ch Mix (Ch 1-7 wet, Ch 8 dry)
+Inverted Mix (Ch 2-8 wet, Ch 1 dry)
+All 8 Dry (baseline)
+
++41% tip carryover (+4.9 µL)
+
+Ch 1 dry (-29%)
+
+Ch 8 dry (-28%)
+
+Ch 1 Ch 2 Ch 3 Ch 4 Ch 5 Ch 6 Ch 7 Ch 8
+
+Pipetting Channel (Plate Rows A-H)
+
+Figure 3 \| (a) Trough geometry constraint: simultaneous 8-channel entry collides with the reagent trough walls, prompting
+the agent to mix with 7 channels (leaving Channel 8 outside and dry) and sample in two sequential 4-channel passes
+(Channels 1–4, then 5–8). (b) Four-stage planning and execution pipeline across pre-execution simulation, stateful recov
+ery after a mid-run communication failure, post-run QC and factorial diagnostic design, and zero-overhead continuation
+on pre-blanked wells persisted in the digital twin. (c) Net absorbance at 405 nm (12 µL Green dye) across Channels 1–8.
+Dry-tip baseline is flat (1.58 OD, CV=1.4%). Inverting the 7-channel trough mix from Channels 1–7 (orange ▲, Ch 8 dry)
+to Channels 2–8 (red ▼, Ch 1 dry) shifts the −28.6% deficit from Channel 8 to Channel 1, isolating the +41% (+4.9 µL)
+wall-film carryover added during well mixing.
+
+* * *
+
+measures sealed reference aliquots to measure
+the target composition and the exact source
+dye concentrations exactly, and then scores the
+Solver’s probabilistic predictions against the true
+mixture via a tempered KL-divergence expressed
+in millinats (mnats; lower is better, zero is exact
+recovery). The reference measurement allows to
+separate small variations in the target mixture
+preparation from errors the agent made in deter
+mining the composition. We compared Single-
+Cycle (SC) and Multi-Cycle (MC) solvers across
+three paired challenges: Challenge 1, Challenge
+2A, and Challenge 2B (Figure 4 b). Solvers never
+access ground-truth identities or Oracle scores;
+between Challenge 2A and Challenge 2B, only
+a sample-blind summary of general physical and
+procedural learnings is passed to the next gener
+ation.
+
+Depending on the pair of dyes selected for
+a particular target mixture, the difficulty of
+identification varies significantly. Beer–Lambert
+absorbance of monochromatic light is linear in
+the concentration. With only three channels
+available on the camera (RGB Bayer filters),
+uniquely inferring four concentrations in the
+linear regime is not possible. For the dyes used
+in these experiments, the apparent RGB absorp
+tion coefficient vectors of blue, green and yellow
+dyes approximately fall within a two-dimen
+sional subspace, whereas the RGB absorption
+coefficient vector of the red dye is orthogonal
+to the rest. The challenge is well-posed because
+the Bayer filters are broad-band, and thus mul
+tiple wavelengths contribute. The exponential
+connection between absorption coefficient and
+transmitted light-intensity provides the neces
+sary nonlinearity to enable separation in princi
+ple, but with stark variations in difficulty. A suc
+cessful experiment design must exploit this non
+linearity by affecting the effective absorbance of
+different dyes non-uniformly, by “spiking” the
+unknown mixture with targeted additions, while
+navigating the many metrological challenges
+around signal saturation, noise floor, automatic
+white-balance, viewing-angle dependent reflec
+tion and refraction, as-well as the experimental
+challenges of accurately transporting small vol
+umes of liquids, dye segregation, evaporation,
+surface effects or non-Beer–Lambert sources of
+
+brightness changes such as backscattering or
+fluorescence.
+
+We therefore expect that an agent will need to
+identify patterns of these effects that may only
+develop over many experiment cycles, as well
+as carefully adapting its limited resources to the
+specific target mixtures it is facing. We posit that
+these challenges are representative of at least
+some of the challenges encountered in biochem
+ical assays.
+
+Following the multi-cycle lineage from MC-2A
+to MC-2B (Figure  4 c) shows how cross-run
+learnings convert early experimental errors into
+effective multi-cycle exploration. Starting cold
+on Challenge 2A, MC-2A attempted to resolve
+ambiguous mixtures in later cycles by spiking
+unknown wells with small volumes of concen
+trated pure stocks. These spikes saturated the
+camera’s red channel and introduced small-vol
+ume pipetting variance, degrading overall loss
+from 247 to 307 mnats across four cycles even as
+its orthogonal Red+Blue prediction improved.
+Without access to true mixture identities, MC-2A
+diagnosed both the camera saturation ceiling
+and small-volume pipetting jitter from its own
+curve-fit residuals and recorded strict operating
+bounds in its learnings. Inheriting those bounds
+on Challenge 2B, MC-2B redesigned its twocycle strategy: a sparse initial dilution survey
+with pre- and post-dispense blank imaging in
+Cycle 1 (137 mnats), followed in Cycle 2 by fourpoint serial dilutions of its top candidate pairs
+at matched concentrations. Comparing full dilu
+tion trajectories rather than single spiked wells
+corrected a Cycle-1 miscall on Red+Green, re
+fined Yellow+Green, and calibrated uncertainty
+across the Yellow+Blue twin pair, reaching 58
+mnats mean loss, a more than five-fold improve
+ment over MC-2A. By contrast, without prior
+learnings (Challenge 1), MC-1 (85 mnats) out
+performed SC-1 (205 mnats) through withinrun feedback alone, whereas the single-cycle
+lineage SC-2A→SC-2B, 142→162 mnats stalled
+because committing the entire experiment in
+one blind shot left SC-2B with single-concentra
+tion validation wells that remained degenerate
+between twin pairs.
+
+Across Challenge 2A and Challenge 2B, agents
+progressed from correcting basic geometric and fluidic artifacts to modeling optical physics
+purely from internal consistency residuals (Fig
+ure  4 d). First, agents detected that oblique
+camera viewing angles caused lit well walls
+to bleed into outer-row measurements, and
+used the 3D camera calibration to project well
+rims and floors separately, restricting measure
+ments to parallax-free floor disks while fitting
+a smooth 2D illumination surface across the
+plate. Second, from jumps in replicate residuals,
+agents identified that aspirating nearly empty
+source wells introduced air bubbles, small stock
+transfers suffered high volume variance, and
+concentrated mixtures clipped the camera’s 8-
+bit channels, prompting minimum transfer and
+residual-volume bounds alongside wet blank
+ing. Third, agents replaced channel-by-channel
+Beer–Lambert fits with a linear-light model
+incorporating cross-channel camera coupling,
+
+optical flare, and the negative apparent redchannel absorbance of Red dye. Finally, in Chal
+lenge 2B, agents detected vertical concentration
+gradients in unmixed deep-well source plates
+and derived the linear-light twin degeneracy
+among Yellow, Blue, and Green, motivating the
+multi-point dilution trajectories and calibrated
+probability hedging used to resolve degenerate
+pairs.
+
+## 4\. Discussion
+
+The use cases we described here serve as empir
+ical validation of the core services of VERID,
+and showcase how our approach connects highlevel scientific reasoning with automated wetlab execution by establishing robust physical
+and informational infrastructure. Crucially, this
+architecture addresses the two primary barriers
+to efficiently navigating rugged biological search
+
+Cruss-run handover: generalizable lab priors only (no sample identities or scores)
+
+Challenger
+Automated Sample Prep
+
+A B C D
+4 random 2-dye mixtures
+
+- 4 pure dye stocks
+  (R, G, H, I)
+
+Blinded samples
+
+Blind Solver Agent (Cycles 1 ... K)
+Budget: 1 Plate • s4 Tips • Overhead RGB Camera Only
+
+Design & Pipette
+Dissolve, mixtures, spikes
+
+RGB Image & Fit
+3-channel camera DD
+= Posterior p(A,B,C)
+Commits cycle estimate
+
+Cycle estimates
+
+Ground-Truth Oracle
+4-Wavelength Plate Reader
+405 450 492 620
+(nm) (orthogonal spectra)
+
+• Measures actual pipetted ground-truth fractions
+• Stores 16 loss (millions)
+
+Next-cycle experimental design (active disambiguation)
+
+Reference aliquots → 4-λ reader (measures actual stock drift; sealed from Solver)
+
+b Experimental Lineages, Paired Challenges & Per-Target Oracle Loss
+
+Challenge 1
+SC-1
+294.8
+
+Single-Cycle
+1 cycle
+
+Challenge 2A
+SC-2A
+141.4
+learnings
+
+Challenge 2B
+SC-2B
+141.4
+
+Multi-Cycle
+2-4 cycles
+MC-1
+75.4
+84.8
+
+MC-2A
+learnings
+
+MC-2B
+137.2
+57.6
+
+Oracle loss (mms)
+
+C1
+C2
+C3
+C4
+C5
+C6
+C7
+C8
+C9
+C10
+C11
+C12
+C13
+C14
+C15
+C16
+C17
+C18
+C19
+C20
+C21
+C22
+C23
+C24
+C25
+C26
+C27
+C28
+C29
+C30
+C31
+C32
+C33
+C34
+C35
+C36
+C37
+C38
+C39
+C40
+C41
+C42
+C43
+C44
+C45
+C46
+C47
+C48
+C49
+C50
+C51
+C52
+C53
+C54
+C55
+C56
+C57
+C58
+C59
+C60
+C61
+C62
+C63
+C64
+C65
+C66
+C67
+C68
+C69
+C70
+C71
+C72
+C73
+C74
+C75
+C76
+C77
+C78
+C79
+C80
+C81
+C82
+C83
+C84
+C85
+C86
+C87
+C88
+C89
+C90
+C91
+C92
+C93
+C94
+C95
+C96
+C97
+C98
+C99
+C100
+C101
+C102
+C103
+C104
+C105
+C106
+C107
+C108
+C109
+C110
+C111
+C112
+C113
+C114
+C115
+C116
+C117
+C118
+C119
+C120
+C121
+C122
+C123
+C124
+C125
+C126
+C127
+C128
+C129
+C130
+C131
+C132
+C133
+C134
+C135
+C136
+C137
+C138
+C139
+C140
+C141
+C142
+C143
+C144
+C145
+C146
+C147
+C148
+C149
+C150
+C151
+C152
+C153
+C154
+C155
+C156
+C157
+C158
+C159
+C160
+C161
+C162
+C163
+C164
+C165
+C166
+C167
+C168
+C169
+C170
+C171
+C172
+C173
+C174
+C175
+C176
+C177
+C178
+C179
+C180
+C181
+C182
+C183
+C184
+C185
+C186
+C187
+C188
+C189
+C190
+C191
+C192
+C193
+C194
+C195
+C196
+C197
+C198
+C199
+C200
+C201
+C202
+C203
+C204
+C205
+C206
+C207
+C208
+C209
+C210
+C211
+C212
+C213
+C214
+C215
+C216
+C217
+C218
+C219
+C220
+C221
+C222
+C223
+C224
+C225
+C226
+C227
+C228
+C229
+C230
+C231
+C232
+C233
+C234
+C235
+C236
+C237
+C238
+C239
+C240
+C241
+C242
+C243
+C244
+C245
+C246
+C247
+C248
+C249
+C250
+C251
+C252
+C253
+C254
+C255
+C256
+C257
+C258
+C259
+C260
+C261
+C262
+C263
+C264
+C265
+C266
+C267
+C268
+C269
+C270
+C271
+C272
+C273
+C274
+C275
+C276
+C277
+C278
+C279
+C280
+C281
+C282
+C283
+C284
+C285
+C286
+C287
+C288
+C289
+C290
+C291
+C292
+C293
+C294
+C295
+C296
+C297
+C298
+C299
+C300
+C301
+C302
+C30
+
+**c Multi-Cycle Lineage 2 (Trajectory: MC-2A (Cycles 1–4) → MC-2B (Cycles 1–2))**
+
+| Category | Y+B (colinear series) (Oracle Loss, milliliters, log (cals)) | Y+B (reg R, residuals) (Oracle Loss, milliliters, log (cals)) | Y+G (colinear base) (Oracle Loss, milliliters, log (cals)) | R+B (orthogonal) (Oracle Loss, milliliters, log (cals)) | Mean Loss (5 targets) (Oracle Loss, milliliters, log (cals)) |
+| --- | --- | --- | --- | --- | --- |
+| C1 Explore (14h) | 400 | 400 | 1000 | 80 | 247.1 |
+| C2 Realign (14h) | 330 | 330 | 1000 | 80 | 247.1 |
+| C3 Spike (40h) | 500 | 500 | 800 | 7.7 | 305.5 |
+| C4 Match (51h) | 700 | 700 | 800 | 14.5 | 305.5 |
+
+**MC-2B (Challenge 2B, +Learnings)**
+
+| Category | MC-2B Final: 57.6 months (5.3× < MC-2A, 2.8× < SC-2B) (Oracle Loss, milliliters, log (cals)) | SC-2B baseline (161.9) (Oracle Loss, milliliters, log (cals)) | C3 4-fold candidate series R+G: 289 × 68.4 (4×) Y+G: 64.5 × 12.9 (5.1×) (Oracle Loss, milliliters, log (cals)) | C1 Survey (12h) (Oracle Loss, milliliters, log (cals)) |
+| --- | --- | --- | --- | --- |
+| unlabelled 1 | 137.2 | 161.9 | 137.2 | 0.3 |
+| unlabelled 2 | 64.5 | 161.9 | 137.2 | 0.3 |
+
+SC-2A: 3D Well Rim (red, z=11.3 mm) & Floor (green, z=0.5 mm) Projection
+
+1. Twin-Pair Theorem & Trajectory Disambiguation (SC-2B, MC-2B)
+   • Proved Green = 0.075 Blue + 0.44 Yellow in 3-channel camera space.
+   • 1 well validation mixtures have χ² = 0 across twin pairs (SC-2B).
+   • requires 4-point dilution trajectories + twin hedging (MC-2B: 57.6 mmats).
+
+2. Cross-Channel Colour Matrix, Flare & Red Fluorescence (2A → 2B)
+   • Released impulse spines with pixel 9.3 colour matrix ht = 1% Flat (p = 0.01 on linear transmittance (MC-2B: 28 cells, max \[ΔD\]O = 0.036).
+   • Caught Red dye R-channel fluorescence (t\_R = 1.96 at 1/32, slope k\_R = -6).
+
+3. Safe Pipetting Bounds, Wet Blanking & DWP Stratification (2A → 2B)
+   • Enforced V\_rem ≥ 90 µL (0% bubbles), ≥ 40 µL transfers, & linear OD ∈ \[0.08, 1.4\].
+   • Prepost 16-view wet blanking hits ≤0.01 OD repeatability (MC-2B).
+   • Caught 1.×1.8k vertical stratification in unmixed deep-well stocks (SC-2B).
+
+4. 3D Parallax Ray-Tilt Filtering & Darker-Half Disk ROI (2A → 2B)
+   • Projected 3D well rim (z=11.3 mm) & floor (z=0.5 mm) via camera transform.
+   • Filtered views to ray tilt <15° on darker-half pixel disk (r=1.4 mm),
+   • rejecting meniscus glare & wall reflection bleed.
+
+
+Rows A-D: parallax-free floor (<114 ps)
+Rows E-H: oblique wall bleed → ray tilt filter (<151\*)
+
+Figure 4 \| End-to-end physical self-play in automated laboratories. (a) Physical self-play setup: an automated Challenger
+prepares four blinded binary dye mixtures alongside four pure reference stocks (Red, Green, Blue, and Yellow). Under a
+fixed physical budget (one 96-well plate, capped tip allowance, and overhead RGB camera imaging only), a blind Solver
+designs and executes closed-loop experimental cycles to infer each mixture’s composition, while an independent fourwavelength plate reader (Oracle) scores probabilistic predictions on sealed reference aliquots in millinats (mnats). (b)
+Experimental lineages across Challenge 1, Challenge 2A, and Challenge 2B comparing Single-Cycle (SC) and Multi-Cycle
+(MC) solvers, with per-target Oracle loss across spectrally orthogonal (Red+Blue, Yellow+Red) and spectrally degenerate
+or crosstalk dye pairs. (c) Multi-cycle lineage trajectory from MC-2A (Cycles 1–4, cold start) to MC-2B (Cycles 1–2, with
+inherited sample-blind learnings), showing how operating bounds diagnosed from internal residuals in MC-2A (307 mnats
+final loss) enable a two-cycle dilution survey and trajectory comparison in MC-2B (58 mnats mean loss). (d) Autonomous
+physical and optical discoveries derived from internal consistency residuals across Challenges 2A and 2B, including 3D
+parallax-free well-floor projection, safe pipetting and dynamic-range bounds, cross-channel coupling with Red-channel
+brightening, and three-dye linear-light twin degeneracy.
+
+* * *
+
+spaces: isolating and eliminating systematic ex
+perimental bias during physical assay execution,
+and closing the computational-experimental
+loop via structured trajectories and autonomous
+learning.
+
+### 4.1. Isolating Systematic Experimental Bias in High-Throughput Assays
+
+In experimental biology, it is important to
+distinguish between unbiased stochastic noise,
+systematic experimental bias and true biological
+signal. Unbiased random error can be simply
+mitigated through statistical replication, while
+systematic bias is more pervasive in highthroughput discovery and confounded by instru
+ment tolerances, labware geometry, fluid prop
+erties, and subtle, untracked variations in proto
+col execution \[13\], \[17\]. Large-scale combina
+torial platforms, such as DNA-encoded libraries
+(DELs), yeast surface display, or massively par
+allel reporter assays (MPRAs), generate highdimensional readouts where physical execution
+artifacts easily masquerade as biological signal
+or assay system preference, leading models
+astray when trained on uncalibrated outputs.
+
+An agent operating through a semantic digital
+twin is uniquely positioned to detect, diagnose,
+and suppress these systematic confounders by
+explicit tracking of execution covariates and
+closed-loop factorial diagnosis. Conventional
+automation logs only whether a script com
+pleted, discarding the physical details of how
+each well was handled. By recording the full
+execution trace (including such varied measure
+ments as channel assignments, tip reuse history,
+aspiration heights 𝑧(𝑡), meniscus clearances,
+dwell times, and synchronized video), VERID
+turns hidden execution mechanics into explicit,
+queryable covariates. When an assay exhibits
+spatial gradients or batch discrepancies, the
+agent can correlate anomalies directly against
+physical execution parameters rather than treat
+ing the variation as unexplained biological noise.
+When a systematic discrepancy is detected, the
+persistent digital twin allows the agent to pause
+a campaign and execute targeted factorial con
+trols on the exact same deck state to isolate
+the physical root cause. Case Studies 1 and 2
+illustrate this capability directly: in neither case
+could simple replication have fixed the error.
+
+In Case Study 1, replicate transfers from 𝑧 =
+0 mm consistently under-diluted due to density
+stratification and tip-floor occlusion; in Case
+Study 2, repeating the 7-channel trough mix
+reproducibly biased Channels 1–7 by +40.6%
+via inner-wall film carryover while making
+Channel 8 appear defective. By inspecting the
+trace and inverting channel assignments in a
+controlled diagnostic run, the agent isolated
+the fluidic mechanism and corrected the proto
+col before downstream experimental campaigns
+were compromised.
+
+### 4.2. Data Synchronisation and Persistence for Knowledge Extraction
+
+Once physical execution is calibrated and au
+ditable, the multimodal datasets captured by
+the Trace Persistence service provide the foun
+dation for closing the loop between physical ex
+perimentation and _in silico_ exploration. VERID
+synchronizes all heterogeneous data streams,
+digital twin state snapshots, command execu
+tion traces, video feeds, hardware telemetry, and
+endpoint assay readouts onto a unified timeline
+and outputs it as a single trace dossier. This
+harmonised experiment-specific data layer can
+then be reasoned over agentically to enable
+iterative discovery science via e.g. improved
+design of experiments, refinement of originally
+generated hypotheses or even reinforcement
+learning of the underlying AI model. Automating
+large-scale indexing and knowledge extraction
+across archived trace dossiers—and systemati
+cally benchmarking its impact on downstream
+campaigns—remains future work.
+
+### 4.3. Closing the Loop for Self-Play Agentic Learning
+
+Case Study 3 demonstrates how agents can
+autonomously explore the physics of wet-lab
+robotics and accumulate transferable expertise:
+an agent identifies gaps in its assumptions
+and patterns of unexpected physical behavior,
+distilling key operational rules and observation
+models to initialize subsequent iterations. This
+extraction can be performed inline by the exper
+iment-driving agent (as in Case Study 3) or
+asynchronously by a dedicated analysis agent
+auditing historical trace dossiers. Crucially, this
+learning loop does not require a task-specific
+extrinsic reward function. Instead, the learning signal is the self-supervised prediction error—
+the mismatch between expected and observed
+physical outcomes—which can be compared to
+the world-model concept extensively discussed
+in other domains of robotics and reinforcement
+learning \[28\], \[29\], \[30\], \[31\].
+
+However, whereas conventional robotic world
+models typically train deep neural networks to
+predict high-dimensional future sensor readings
+(such as raw video pixels) directly from past
+frames and actions \[28\], \[29\], an agent coupled
+to VERID operates at a semantic and symbolic
+level \[30\], \[32\], \[33\]. Because the digital twin
+already enforces known volumetric conservation
+laws and geometric constraints, the agent only
+needs to learn the unmodeled physical resid
+uals—such as tip-wall film carryover, density
+stratification, or optical cross-coupling. In our
+current implementation, these discoveries are
+persisted as structured natural-language operat
+ing bounds and analytical models in an experi
+ential knowledge base \[34\].
+
+Grounding autonomous agents in an explicit,
+refinable world model enables more principled
+trade-offs between exploration and exploita
+tion than black-box trial-and-error optimization.
+Rather than deploying unguided parameter
+sweeps, an agent can inspect which physical as
+sumptions its candidate protocol relies upon, ex
+ploit verified operating regimes directly, and ex
+ecute targeted factorial diagnostics (as demon
+strated in Case Study 2) to resolve contested
+parameters in-line.
+
+### 4.4. Closing the Loop for Biological Hill- Climbing
+
+Enabling agents to autonomously perform wetlab quantification in a repeatable and accurate
+manner provides a direct way to hill-climb on
+biological problems—such as transitioning from
+singleton screens to synergistic combinations
+in drug repurposing, dosing intrinsically disor
+dered proteins (IDPs) with small-molecule pools
+to induce structure, or guiding cellular perturba
+tions through live-cell microscopy—by feeding
+the measured biological objective back into a
+domain-adapted or general black-box optimiza
+tion procedure. However, with the full trace
+dossier available, a suitably sophisticated opti
+mization algorithm can also leverage details of
+
+the experimental execution when selecting the
+next step to try. This can include intermediate
+optical or imaging readouts that correlate with
+the terminal objective or flag upstream samplepreparation issues (such as early compound
+precipitation/turbidity or transient sub-cellular
+morphological changes), as well as tracked pro
+cedural covariates that correlate with systematic
+bias and measurement uncertainty (such as in
+cubation dwell times, unsealed evaporation ex
+posure, labware-surface contact history driving
+non-specific adsorption, or spatial plate and
+channel assignments).
+
+### 4.5. Safety and Responsible Innovation
+
+Deploying autonomous agents in a physical lab
+oratory requires a multi-layered safety architec
+ture encompassing operational hardware safety,
+human oversight, and biosecurity.
+
+#### 4.5.1. Operational Safety
+
+To close the syntax-to-safety gap, VERID’s
+execution layer draws on formal safety frame
+works for self-driving laboratories, such as Safe-
+SDL \[35\]. Verified Operating Design Domains
+(ODDs) are high-level operational boundaries,
+such as container volume capacities, geomet
+ric clearances, maximum agitation speeds, and
+chemical compatibility matrices, are encoded
+as machine-checkable invariants within the dig
+ital twin and enforced at the pre-execution
+simulation gate \[35\], \[36\]. Mechanical models
+prevent gantry trajectories that risk hardware
+collisions or cross-contamination, while chemi
+cal constraints reject reagent combinations that
+could produce hazardous reactions.
+
+#### 4.5.2. Human-in-the-Loop (HITL) Review
+
+Human judgment remains essential for inter
+preting ambiguous experimental phenomena
+and overseeing high-level scientific direction.
+The synchronized trace dossiers enable human
+review by leveraging the digital twin to render
+synchronized, human-readable reconstructions
+of every run, aligning line-by-line code execution
+with gantry video and well-level state histories.
+Scientists can inspect anomalous steps, diagnose
+physical artifacts, and record structured annota
+tions. These expert corrections feed directly back
+into the training archive, systematically captur
+ing tacit laboratory know-how in machine-read
+able form.
+
+* * *
+
+#### 4.5.3. Automated Biosecurity
+
+When agentic workflows involve _de novo_ nu
+cleic acid or protein synthesis, special regard
+needs to be taken to prevent accidental or
+deliberate generation of known or novel haz
+ardous biochemicals and pathogens. Extending
+the mandatory verification gate with composi
+tional lineage tracking and physical-chemistry
+propagation rules will further enable automated
+detection of _de novo_ DNA and RNA synthe
+sis protocols. An auto-reviewer can then flag
+these protocols for screening via an automated
+biosecurity gateway, integrating function-based
+sequence screening tools such as SecureDNA
+\[37\]. Because generative models can design
+functional sequences with low sequence identity
+to known pathogens, potentially evading tradi
+tional homology-based screens, cryptographic
+and function-aware screening provides an essen
+tial safeguard.
+
+## 5\. Conclusion
+
+Overcoming grand challenges in biology, from
+engineering bespoke enzymes and high-affinity
+therapeutics to mapping complex regulatory
+networks in cellular systems, requires both intel
+ligent navigation of vast combinatorial spaces
+and rigorous, reproducible physical execution.
+Neither computational ideation nor traditional
+laboratory automation is sufficient on its own.
+_In silico_ predictions can suffer from high experi
+mental drop-off without physical grounding.
+
+VERID mends the divide by placing a persis
+tent, queryable semantic digital twin between
+the reasoning agent and the physical workcell.
+As our experimental case studies indicate, this
+semantic layer enables agents to catch geomet
+ric and volumetric errors in simulation prior to
+execution, recover statefully from mid-run hard
+ware interruptions without wasting reagents,
+and autonomously design factorial diagnostics
+to isolate subtle physical biases such as fluid
+stratification and tip-wall carryover. By trans
+forming wet-lab operations into auditable exe
+cution trajectories and structured trace dossiers,
+VERID can demonstrably separate strong sys
+tematic noise from small biological signals,
+which is the main physical prerequisite for
+autonomous agents to design, execute, debug,
+and learn from experiments at scale. The next
+
+step is demonstrating that these gains lead to
+significant biological breakthroughs on grand
+challenge research questions.
+
+## 6\. Methods
+
+### 6.1. Robotic Workcell and Reagents
+
+All experimental case studies were performed
+on an automated laboratory workcell centered
+on a Hamilton Microlab STAR liquid handler
+equipped with a 96-channel pipetting head
+and an 8-channel independent pipetting head
+(Span-8). Optical absorbance measurements
+were acquired on a Byonoy Absorbance 96 fourwavelength plate reader, with plate transport
+between the liquid handler and plate reader
+performed by a UFACTORY Lite 6 six-degree-offreedom (6-DOF) robotic arm. Visual telemetry
+and overhead plate imaging were captured using
+consumer-grade RGB video cameras, including
+an OBSBOT Tiny 2 camera mounted on the liq
+uid-handler gantry. All experiments used deion
+ized water and aqueous solutions of retail food
+colorants (red, yellow, blue, and green) as model
+reagents.
+
+### 6.2. Software Architecture and Agent Inter face
+
+VERID controls workcell hardware through
+Python device drivers built on the open-source
+PyLabRobot framework \[25\] and custom instru
+ment interfaces. Autonomous agents interact
+with VERID remotely over a client–server archi
+tecture using a set of structured tool calls. To
+inspect the workcell, agents call workcell inspec
+tion/description tool, which returns a structured
+summary of the current semantic digital twin
+state, including labware positions, well volumes,
+and tip inventories. To test candidate protocols
+_in silico,_ agents call a command verification
+tool, which executes a proposed command block
+against a forked virtual replica of the current
+digital twin state. Validated protocols are de
+ployed to the physical hardware via command
+dispatch tool, which re-verifies the command
+block against the live digital twin state before
+initiating physical execution and returning a run
+identifier. Agents monitor execution and syn
+chronize workflows using tools to poll for status
+and completion; upon run completion, synchro
+nized trace dossier artifacts (state snapshots, execution logs, video feeds, and assay readouts)
+are written directly to the agent’s workspace.
+
+Agents are also provided with standard work
+space file and code execution tools including
+search, analysis and mutation, along with a
+sandboxed shell execution tool restricted to the
+local workspace, tool outputs, and the persistent
+knowledge base. VERID is model-agnostic and
+decouples the workcell controller from the un
+derlying reasoning model. Across all case stud
+ies, agents operated within a harness preloaded
+with structured instructions for protocol design
+and experiment iteration, a sandboxed Python
+environment with standard scientific computing
+libraries and static code analysis, and an oper
+ator approval gate locked to the verified script
+in supervised runs. Case Studies 1–3 were exe
+cuted using an internal preview checkpoint of
+Gemini 4 Argon.
+
+### 6.3. Scoring Rules for Case Study 3
+
+Agents were scored on the composition value
+they output for each target mixture by scor
+ing total dye concentration separately from
+relative dye concentration. For each target
+well, let the true and estimated (scored)
+constituent fractions in full-strength stock
+equivalents be the four dye fractions 𝑓 =
+(𝑓red, 𝑓green, 𝑓blue, 𝑓yellow)≥0 and the water frac
+tion 𝑤 = 𝑓water=1−∑4 𝑓𝑖, with tempering
+𝑖=1
+exponent 𝛽 = 0.5, smoothing constant 𝜀 = 0.03,
+water-fraction clip 𝑤clip = 10−4, and total-con
+𝛽2
+centration weight 𝜆total= = 0.03125.
+8
+
+$$
+f=
+\\left(f\_{\\mathrm{red}},f\_{\\mathrm{green}},f\_{\\mathrm{blue}},f\_{\\mathrm{yellow}}\\right)\\geqq0
+$$
+
+$$
+w=f\_{water}=1-\\sum\_{i=1}^{4}f\_{i}
+$$
+
+$$
+\\beta=0.5,
+$$
+
+$$
+\\varepsilon=0.03
+$$
+
+$$
+w\_{clip}=\\underset{c2}{10^{-4}}
+$$
+
+$$
+\\lambda\_{total}=\\frac{\\beta^2}{8}=0.03125
+$$
+
+1. Relative Dye Shares (𝑠𝑖): With total dye
+   fraction 𝐹 = ∑4 𝑓𝑖, the relative share of each
+   𝑖=1
+   dye is
+
+$$
+(s\_{i})
+$$
+
+$$
+s\_{i}=\\begin{cases}\\frac{f\_{i}}{F}\ if\ F>0\ ,\\\frac{1}{4}\ if\ F=0\ .\\end{cases}
+$$
+
+$$
+F=\\sum\_{i=1}^{4}f\_{i},
+$$
+
+(1)
+
+2. Tempered Dye Distribution (𝜏𝑖): To assign
+   sublinear weight to minor dyes and bound the
+   penalty for omitting a present dye, relative
+   shares are tempered with exponent 𝛽 and addi
+   tive smoothing 𝜀 before normalization:
+
+3. Tempered Dye Distribution (𝜏 ): To assign
+
+
+$$
+(\\tau\_{i})
+$$
+
+$$
+\\beta
+$$
+
+(2)
+
+$$
+\\tau\_{i}(f)=\\frac{\\left(s\_{i}+\\varepsilon\\right)^{\\beta}}{\\sum\_{j=1}^{4}\\left(s\_{j}+\\varepsilon\\right)^{\\beta}}.
+$$
+
+3. Composition Loss (𝐿comp): The relative
+   composition error is the Kullback–Leibler diver
+
+4. Composition Loss (𝐿 ): The relative comp
+
+
+$$
+\\left(L\_{comp}\\right)
+$$
+
+gence from the true tempered distribution 𝜏true
+to the scored distribution 𝜏 scored:
+
+$$
+\\tau^{true}
+$$
+
+$$
+\\tau^{\\mathrm{scored}}
+$$
+
+$$
+\\begin{aligned}L\_{comp}&=D\_{KL}\\big(\\tau^{true}\\parallel\\tau^{score}\\big)\\&=\\sum\_{i=1}^{4}\\tau\_{i}^{true}\\ln\\left(\\frac{\\tau\_{i}^{true}}{\\tau\_{i}^{score}}\\right).\\end{aligned}
+$$
+
+(3)
+
+**4\. Total Concentration Loss (𝐿** total **):** The
+overall concentration error is the weighted
+squared logit error on the clipped water fraction
+𝑤̃ = clip(𝑤, 𝑤clip, 1 − 𝑤clip), where logit(𝑤̃) =
+𝑤̃
+ln():
+1−𝑤̃
+
+$$
+(L\_{total})
+$$
+
+$$
+\\mathrm{logit}(\\tilde{w})=
+\\tilde{w}=\\mathrm{clip}(w,w\_{\\mathrm{clip}},1-w\_{\\mathrm{clip}})
+$$
+
+$$
+\\ln\\left(\\frac{\\tilde{w}}{1-\\tilde{w}}\\right)
+$$
+
+$$
+L\_{\\mathrm{total}}=\\lambda\_{\\mathrm{total}}\\left(\\log\\mathrm{it}\\tilde{w} _{\\mathrm{scored}}-\\log\\mathrm{it}\\tilde{w}_{\\mathrm{true}}\\right)^{2}.
+$$
+
+. (4)
+
+**5\. Target and Run Score:** Each target well’s loss
+(in nats) is the sum of its composition and total
+concentration losses, and the overall run score is
+the mean across all four target wells (reported
+in millinats, 1 mnat = 10−3 nats):
+
+$$
+=10^{-3}
+$$
+
+$$
+\\begin{aligned}Score\_{target}&=L\_{comp}+L\_{total}\\quad\[nats\],\ Score\_{run}&=\\frac{1}{4}\\sum\_{k=1}^{4}Score\_{target,k}.\\end{aligned}
+$$
+
+(5)
+
+## Acknowledgements
+
+We thank all the members of Team Morphogen
+esis for their help and support throughout this
+study. We wish to thank Ronit Levavi Morad,
+Matthias Heiler and James Manyika for leader
+ship support. We thank Anthony Phalen for assis
+tance on partnerships, Anna Sard for assistance
+on finance, Reya Shawky for building support
+and Aminie Brik for assistance on all the things
+to make a lab run fast.
+
+## Author contributions
+
+Y.D., P.S. and A.P. conceived and supported the
+study. Y.D. developed the lab controller, with
+J.C., Z.C., A.D., P.S., P.R. and A.P. providing
+critical support. M.B. and A.D. provided infra
+structure support and feedback. J.W.K., O.D.,
+J.C., and Z.C. provided user feedback, designed
+and executed assays for validation experiments.
+S.B.S. developed and integrated hardware dri
+vers. T.C. and J.C. built a custom feedback sys
+tem. S.K. provided critical feedback on the con
+ceptual framing and reviewed the manuscript.
+A.H. and Y.M. provided research leadership and
+strategic guidance. P.S. and A.P. co-led the work.
+
+* * *
+
+All authors contributed to writing, reviewing,
+and editing the manuscript.
+
+## Competing interests
+
+All authors performed this work while affiliated
+with Google LLC and were compensated for it
+by Google, and some of the authors may own
+Alphabet Inc. stock as part of their compensation
+package. The authors declare no other compet
+ing interests.
+
+## References
+
+\[1\] J. T. Rapp, B. J. Bremer, and P. A.
+Romero, “Self-driving laboratories to au
+tonomously navigate the protein fitness
+landscape,” _Nature Chemical Engineering,_
+vol. 1, no. 1, pp. 97–107, 2024, doi:
+10.1038/s44286-023-00002-4.
+
+\[2\] R. S. Bohacek, C. McMartin, and
+W. C. Guida, “The art and prac
+tice of structure-based drug design: a
+molecular modeling perspective,” _Med_
+_icinal Research Reviews,_ vol. 16, no.
+1, pp. 3–50, 1996, doi: 10.1002/
+(SICI)1098-1128(199601)16:1<3::AID-
+MED1>3.0.CO;2-6.
+
+\[3\] J.-L. Reymond, “The chemical space pro
+ject,” _Accounts of Chemical Research,_ vol.
+48, no. 3, pp. 722–730, 2015, doi:
+10.1021/ar500432k.
+
+\[4\] J. Maynard Smith, “Natural selection and
+the concept of a protein space,” _Nature,_
+vol. 225, no. 5232, pp. 563–564, 1970,
+doi: 10.1038/225563a0.
+
+\[5\] P. A. Romero and F. H. Arnold, “Explor
+ing protein fitness landscapes by directed
+evolution,” _Nature Reviews Molecular Cell_
+_Biology,_ vol. 10, no. 12, pp. 866–876,
+2009, doi: 10.1038/nrm2805.
+
+\[6\] E. T. Boder and K. D. Wittrup, “Yeast sur
+face display for screening combinatorial
+polypeptide libraries,” _Nature Biotechnol_
+_ogy,_ vol. 15, no. 6, pp. 553–557, 1997, doi:
+10.1038/nbt0697-553.
+
+\[7\] B. J. Wittmann, Y. Yue, and F. H.
+Arnold, “Informed training set design en
+ables efficient machine learning-assisted
+directed protein evolution,” _Cell Systems,_
+
+vol. 12, no. 11, pp. 1026–1045, 2021, doi:
+10.1016/j.cels.2021.07.008.
+
+\[8\]
+
+J. Gottweis _et al.,_ “Towards an AI co-sci
+entist,” _arXiv preprint arXiv:2502.18864,_
+2025, doi: 10.48550/arXiv.2502.18864.
+
+\[9\]
+
+J. Abramson _et al.,_ “Accurate structure
+prediction of biomolecular interactions
+with AlphaFold 3,” _Nature,_ vol. 630, no.
+8016, pp. 493–500, 2024, doi: 10.1038/
+s41586-024-07487-w.
+
+\[10\]
+
+J. L. Watson _et al.,_ “De novo design
+of protein structure and function with
+RFdiffusion,” _Nature,_ vol. 620, no. 7976,
+pp. 1089–1100, 2023, doi: 10.1038/
+s41586-023-06415-8.
+
+\[11\]
+
+V. Zambaldi _et al.,_ “De novo design of highaffinity protein binders with AlphaPro
+teo,” _arXiv preprint arXiv:2409.08022,_
+2024, doi: 10.48550/arXiv.2409.08022.
+
+\[12\]
+
+M. Pacesa _et al.,_ “One-shot design of func
+tional protein binders with BindCraft,”
+_Nature,_ vol. 646, no. 8084, pp. 483–492,
+2025, doi: 10.1038/s41586-025-09429-6.
+
+\[13\]
+
+F. Strieth-Kalthoff, F. Sandfort, M. Kühne
+mund, F. R. Schäfer, H. Kuchen, and F.
+Glorius, “Machine learning for chemical
+reactivity: the importance of failed exper
+iments,” _Angewandte Chemie International_
+_Edition,_ vol. 61, no. 29, p. e202204647,
+2022, doi: 10.1002/anie.202204647.
+
+\[14\]
+
+J. Jumper _et al.,_ “Highly accurate protein
+structure prediction with AlphaFold,” _Na_
+_ture,_ vol. 596, no. 7873, pp. 583–589,
+2021, doi: 10.1038/s41586-021-03819-2.
+
+\[15\]
+
+L. Cao _et al.,_ “Design of protein-binding
+proteins from the target structure alone,”
+_Nature,_ vol. 605, no. 7910, pp. 551–560,
+2022, doi: 10.1038/s41586-022-04654-9.
+
+\[16\]
+
+N. R. Bennett _et al.,_ “Improving de novo
+protein binder design with deep learn
+ing,” _Nature Communications,_ vol. 14,
+no. 1, p. 2625, 2023, doi: 10.1038/
+s41467-023-38328-5.
+
+\[17\]
+
+M. Baker, “1,500 scientists lift the lid
+on reproducibility,” _Nature,_ vol. 533,
+no. 7604, pp. 452–454, 2016, doi:
+10.1038/533452a.
+
+* * *
+
+\[18\] I. Holland and J. A. Davies, “Automation in
+the life science research laboratory,” _Fron_
+_tiers in Bioengineering and Biotechnology,_
+vol. 8, p. 571777, 2020, doi: 10.3389/
+fbioe.2020.571777.
+
+\[19\] D. A. Boiko, R. MacKnight, B. Kline, and G.
+Gomes, “Autonomous chemical research
+with large language models,” _Nature,_ vol.
+624, no. 7992, pp. 570–578, 2023, doi:
+10.1038/s41586-023-06792-0.
+
+\[20\] A. M. Bran, S. Cox, O. Schilter, C. Bal
+dassari, A. D. White, and P. Schwaller,
+“Augmenting large language models with
+chemistry tools,” _Nature Machine Intelli_
+_gence,_ vol. 6, no. 5, pp. 525–535, 2024,
+doi: 10.1038/s42256-024-00832-8.
+
+\[21\] M. Abolhasani and E. Kumacheva, “The
+rise of self-driving labs in chemical
+and materials sciences,” _Nature Synthesis,_
+vol. 2, no. 6, pp. 483–492, 2023, doi:
+10.1038/s44160-022-00231-0.
+
+\[22\] G. Tom _et al.,_ “Self-driving laboratories
+for chemistry and materials science,”
+_Chemical Reviews,_ vol. 124, no. 16,
+pp. 9633–9732, 2024, doi: 10.1021/
+acs.chemrev.4c00055.
+
+\[23\] N. Yoshikawa _et al.,_ “Large language mod
+els for chemistry robotics,” _Autonomous_
+_Robots,_ vol. 47, no. 8, pp. 1057–1086,
+2023, doi: 10.1007/s10514-023-10136-2.
+
+\[24\] K. Darvish _et al.,_ “ORGANA: A robotic
+assistant for automated chemistry experi
+mentation and characterization,” _Matter,_
+vol. 8, no. 2, p. 101897, 2025, doi:
+10.1016/j.matt.2024.10.015.
+
+\[25\] R. P. Wierenga, S. M. Golas, W. Ho,
+C. W. Coley, and K. M. Esvelt, “Py
+LabRobot: An open-source, hardware-ag
+nostic interface for liquid-handling ro
+bots and accessories,” _Device,_ vol. 1,
+no. 4, p. 100111, 2023, doi: 10.1016/
+j.device.2023.100111.
+
+\[26\] M. Grieves and J. Vickers, “Digital
+twin: Mitigating unpredictable, undesir
+able emergent behavior in complex sys
+tems,” in _Transdisciplinary Perspectives on_
+_Complex Systems,_ Springer, 2017, pp. 85–
+113\. doi: 10.1007/978-3-319-38756-7\_4.
+
+\[27\]
+
+S. G. Baird and T. D. Sparks, “What is
+a minimal working example for a selfdriving laboratory?,” _Matter,_ vol. 5, no.
+12, pp. 4170–4178, 2022, doi: 10.1016/
+j.matt.2022.11.007.
+
+\[28\]
+
+D. Ha and J. Schmidhuber, “Recurrent
+world models facilitate policy evolution,”
+in _Advances in Neural Information Process_
+_ing Systems (NeurIPS),_ 2018, pp. 2451–
+2463\. doi: 10.5281/zenodo.1207631.
+
+\[29\]
+
+D. Hafner, J. Pasukonis, J. Ba, and
+T. Lillicrap, “Mastering diverse control
+tasks through world models,” _Nature,_ vol.
+640, no. 8059, pp. 647–653, 2025, doi:
+10.1038/s41586-025-08744-2.
+
+\[30\]
+
+Y. LeCun, “A path towards au
+tonomous machine intelligence,” _Open_
+_Review preprint,_ 2022, \[Online\]. Avail
+able: [https://openreview.net/forum?id=](https://openreview.net/forum?id=)
+BZ5a1r-kVsf
+
+\[31\]
+
+D. Pathak, P. Agrawal, A. A. Efros, and T.
+Darrell, “Curiosity-driven exploration by
+self-supervised prediction,” in _Proceedings_
+_of the 34th International Conference on Ma_
+_chine Learning (ICML),_ 2017, pp. 2778–
+2787\. doi: 10.48550/arXiv.1705.05363.
+
+\[32\]
+
+H. Tang, D. Key, and K. Ellis, “World
+Coder, a model-based LLM agent: Building
+world models by writing code and inter
+acting with the environment,” in _Advances_
+_in Neural Information Processing Systems_
+_(NeurIPS),_ 2024, pp. 70148–70212. doi:
+10.48550/arXiv.2402.12275.
+
+\[33\]
+
+P. A. Tsividis _et al.,_ “Human-level learn
+ing of complex novel tasks as theorybased modelling, exploration and plan
+ning,” _Philosophical Transactions of the_
+_Royal Society A: Mathematical, Physical_
+_and Engineering Sciences,_ vol. 384, no.
+2320, p. 20240529, 2026, doi: 10.1098/
+rsta.2024.0529.
+
+\[34\]
+
+A. Zhao, D. Huang, Q. Xu, M. Lin, Y.-J. Liu,
+and G. Huang, “ExpeL: LLM agents are
+experiential learners,” in _Proceedings of the_
+_AAAI Conference on Artificial Intelligence,_
+
+2024, pp. 19632–19642. doi: 10.1609/
+aaai.v38i17.29936.
+
+* * *
+
+\[35\] Z. Zhang, H. Que, J. Chang, X. Zhang,
+H. Wei, and T. Zhu, “Safe-SDL: Establish
+ing safety boundaries and control mech
+anisms for AI-driven self-driving labora
+tories,” _arXiv preprint arXiv:2602.15061,_
+2026, doi: 10.48550/arXiv.2602.15061.
+
+\[36\] A. D. Ames, S. Coogan, M. Egerstedt, G.
+Notomista, K. Sreenath, and P. Tabuada,
+“Control barrier functions: Theory and ap
+plications,” in _2019 18th European Control_
+_Conference (ECC),_ 2019, pp. 3420–3431.
+doi: 10.23919/ECC.2019.8796030.
+
+\[37\] C. Baum _et al.,_ “A system capable of
+verifiably and privately screening global
+DNA synthesis,” _National Science Review,_
+vol. 13, no. 14, p. nwag103, 2026, doi:
+10.1093/nsr/nwag103.

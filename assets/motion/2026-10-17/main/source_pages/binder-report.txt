@@ -1,0 +1,1729 @@
+# Agent-guided epitope excision enables economical _de novo_ binder design
+
+## economical de novo binder design
+
+Jun W. Kim1,†, Artiom Myaskovsky2, Oscar Donosa1, Lawrence Chan3, Jamie Rogers3, Avinatan Hassidim1,
+Yossi Matias1 and Annalisa Pawlosky1,†
+
+## Yossi Matias1 and Annalisa Pawlosky 1,†
+
+1Google Research, 2Google DeepMind, 3Google Cloud, †Corresponding author
+
+**_De novo_ protein design campaigns remain bottlenecked by the inference compute time required to**
+**generate and rank candidates, limiting wider functional exploration. Here, we introduce and evaluate an**
+**epitope excision approach that truncates targets to local interface windows to accelerate both backbone**
+**diffusion and structure prediction. Across 15 targets and 3,666 designs, excised windows closely repro**
+**duced full-target binding interfaces (median** C𝛼 **RMSD of** 0.37 **Å) and made it practical to design binders**
+**against the 719-residue extracellular domain of fibroblast activation protein alpha (FAP) by cutting** **GPU hours by 88%. Pairing this workflow with an agentic optimization loop allowed the system to**
+**autonomously identify catalytic-site targeting strategies. Under a fixed compute budget, a human-in-theloop (HITL) workflow raised the computational hit rate from 5.06% to 9.33% while further cutting GPU**
+**hours by 42%. We also found that omitting target multiple sequence alignments during refolding roughly**
+**doubled the apparent yield. Wet-lab validation with yeast display identified nanomolar binders from the**
+**generated designs. Together, target excision and agent-guided search offer a practical way to scale _de novo_**
+**binder design to large, therapeutically relevant proteins.**
+
+## Introduction
+
+Structure-based _de novo_ binder design routinely generates thousands of candidate backbones and
+sequences per target, combining backbone generators such as RFdiffusion \[1\] with sequence design tools
+like ProteinMPNN \[2\] in end-to-end pipelines such as BindCraft \[3\]. Because only a small fraction of
+generated candidates actually bind _in vitro,_ campaigns depend on an _in silico_ filtering step in which each
+candidate is refolded with its target (for example with AlphaFold3 \[4\], building on AlphaFold2 \[5\]) and
+ranked by an interface-confidence metric. One such metric, ipSAE \[6\], is derived from AlphaFold predicted
+aligned error and has been shown to outperform earlier scores including pDockQ \[7\] and pDockQ2 \[8\].
+How well this computational screen separates true binders from non-binders largely determines the hit
+rate of downstream wet-lab testing.
+
+This refolding step is also the primary compute bottleneck. AlphaFold3 has been demonstrated to be a
+reliable refolding method, and its runtime is governed by discrete token buckets, with complex lengths
+rounded up to the next multiple of 256 tokens. Many biologically important targets, including cell-surface
+receptors, multi-domain ectodomains, viral glycoproteins, and enzymes are much larger than the designed
+binder and the local patch it contacts. Consequently, most of the tokens processed during refolding belong
+to target regions far from the binding site. For a 719-residue enzyme ectodomain of a disease target,
+fibroblast activation protein 𝛼 (FAP), full-structure diffusion is nearly intractable and repeated full-complex
+refolding is prohibitively slow, even though the targetable epitope is a relatively small rim around the
+catalytic opening \[9\].
+
+To get around the compute bottleneck, previous studies have targeted structurally independent folding
+units. However, many drug targets containing functional pockets are not confined to a single, small
+domain. Recent work has demonstrated that the global fold of a target is not strictly necessary for
+generative design, as discontinuous structural fragments can successfully guide backbone generation \[10\].
+However, treating target truncation as a penalty-free heuristic without rigorously auditing its downstream
+
+_Corresponding author(s): [junki@google.com](mailto:junki@google.com), [apawlosky@google.com](mailto:apawlosky@google.com)_
+©︎ 2026 Google. All rights reserved consequences leaves a critical gap in the pipeline. It remains unknown how aggressive cropping impacts
+the precise interface geometry and the ranking signal required to separate true binders from non-binders
+during _in silico_ triage. Furthermore, discontinuous 3D patches do not map cleanly to the discrete tokenbucket economics of modern predictive triages like AlphaFold3, nor do they readily support the multiple
+sequence alignments (MSAs) often required for reliable refolding. This asymmetry motivates epitope
+excision: cropping the target down to the residues immediately surrounding the designed interface (the
+contact shell plus a tunable surrounding halo) and folding this local pocket in place of the intact protein.
+For excision to be useful in practice, it must preserve the local geometry of the designed interface, maintain
+the relative ranking of true binders against non-binders, and cross a token-bucket boundary to deliver
+actual wall-clock speedups. Instead of treating aggressive cropping as a free speedup, the first half of this
+study tests all three requirements systematically across a 15-target benchmark.
+
+Beyond reducing fold times, excision turns otherwise intractable targets into manageable sub-problems.
+Running a productive campaign still requires iterative choices about where to target, how much of the
+surrounding structure to retain, and how to allocate compute across candidate backbones and sequences.
+Large language model (LLM) agents are well suited to this type of iterative, data-driven optimization.
+Equipped with external tools, state memory, and quantitative feedback, modern LLMs can plan multistep workflows, launch jobs, inspect intermediate results, and adjust their search policy from round to
+round, closely mirroring how a researcher runs a design campaign. Similar multi-agent frameworks built
+on Gemini, such as Google’s AI co-scientist, have recently been used to generate, critique, and refine
+experimentally validated biomedical hypotheses \[11\]. _De novo_ binder design provides a clean testbed for
+evaluating how much autonomy to give such an agent, because campaign performance can be measured
+directly as the computational hit rate under a fixed structural threshold and a fixed GPU budget.
+
+In the second half of this work, we hold the excision pipeline, scoring criteria, and total GPU budget
+constant, and vary the level of agent autonomy on FAP across three regimes: a human investigator working
+alone, a human–agent hybrid (Human-in-the-Loop, HITL), and a fully autonomous agent (Human-out-ofthe-Loop, HOOTL). The two parts of the study address complementary questions: the 15-target benchmark
+defines the physical and statistical operating limits of epitope excision, and the FAP campaign tests how
+best to direct that pipeline in practice. We find that the human–agent hybrid produces the most highconfidence designs per GPU-hour. Along the way, we also observe that omitting target multiple sequence
+alignments (MSAs) substantially shifts AF3 interface-confidence scores on several targets, indicating that
+single-sequence refolding can be an effective option depending on alignment depth. Finally, we test these
+computational predictions experimentally through yeast display and identified nanomolar binders from
+the generated designs.
+
+## Results
+
+The output of a _de novo_ binder campaign depends heavily on computational triage. Because true binders
+are rare among generated candidates, every design must be refolded with its target and ranked by an
+interface-confidence metric before selecting sequences for synthesis. A natural way to try to improve
+this ranking is to spend more compute per candidate by folding each complex with multiple independent
+structure predictors and combining their scores. To test the upper bound of this approach, we built
+a multi-engine consensus model and evaluated it using leave-one-target-out cross-validation across the
+15-target benchmark used throughout this study (3,760 designs total). In this setup, three distinct structureprediction models (AlphaFold3, Boltz-2, and ESMFold2) supply interface-confidence metrics alongside
+biophysical features (PRODIGY interface Δ𝐺, FreeSASA buried surface area, and EvoEF2 energy terms)
+to a stacked ensemble of linear, multilayer perceptron (MLP), and gradient-boosted models ( **Supporting**
+**Figure 1a, Supporting Table** 1). The resulting gain in discrimination is modest: median average precision
+(AP) increases from 0.54 using raw AF3 ipSAE alone to 0.60 for the full three-engine ensemble, and the
+two steps that require running additional folding models (Boltz-2 and ESMFold2) together contribute only
+
+* * *
+
++0.02 AP while roughly doubling GPU time per design ( **Supporting Figure 1b).** Adding more folding
+engines per candidate quickly hits diminishing returns.
+
+If prediction accuracy per fold is difficult to improve by brute force, the more practical way to increase
+success rate is to increase screening throughput to enhance selection by reducing the cost of each fold
+without degrading binder ranking. Epitope excision **(Figure 1)** approaches this by folding each candidate
+binder against a local crop of the target around the intended interface rather than the entire target protein.
+In the sections below, we test whether cropped targets preserve interface geometry and binder ranking
+across the 15-target benchmark \[13\], define the minimum crop size needed for reliable folding, and then
+apply the resulting pipeline to FAP.
+
+In a standard binder campaign, the bulk of the compute budget goes to refolding. For instance, after
+generating backbones with RFdiffusion and assigning sequences with ProteinMPNN, a large number of
+candidates must be refolded with the target and evaluated by metrics, such as pLDDT, ipSAE, and interface
+
+a Conventional de novo binder generation workflow Noise (t=T) Backbone generation Sequence design Repeat Complex (t=0) Re-folding Noise (t=T)
+
+b N (12) C (492) Binder Hotspot Halo Excised crop Removed
+
+| Target sequence length (residues) | RFdiffusion generation (Compute time per design, s) | AF3 underlying scaling (Compute time per design, s) | AF3 token-bucketed (Compute time per design, s) |
+| --- | --- | --- | --- |
+| 100 | 2.5 | 2.5 | 7 |
+| 200 | 6 | 5.5 | 17.5 |
+| 300 | 11 | 10 | 17.5 |
+| 400 | 17 | 16 | 17.5 |
+| 500 | 25 | 23 | 35 |
+| 600 | 35 | 31 | 35 |
+| 700 | 47 | 41 | 35 |
+
+| Crop radius = 5Å contact + halo | IL10Ra (Batch AF3 fold-time saved, %) | IL7Ra (Batch AF3 fold-time saved, %) | SARS\_CoV2\_RBD (Batch AF3 fold-time saved, %) | sntx (Batch AF3 fold-time saved, %) | EGFR (Batch AF3 fold-time saved, %) | pMHC\_NY1 (Batch AF3 fold-time saved, %) | pMHC\_SILSY1 (Batch AF3 fold-time saved, %) | LTK (Batch AF3 fold-time saved, %) | Pooled (Batch AF3 fold-time saved, %) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 5 (h0) | 60 | 42.5 | 42.5 | 40.5 | 31 | 31 | 9.5 | 1.5 | 16 |
+| 8 (h3) | 60 | 37.5 | 42 | 10 | 28 | 20.5 | 5.5 | 0.5 | 13 |
+| 11 (h6) | 60 | 33.5 | 41.5 | 5 | 25.5 | 5 | 1 | 0 | 12 |
+| 14 (h9) | 60 | 31 | 41.5 | 3.5 | 22.5 | 3.5 | 0.5 | 0 | 11 |
+| 16 (h11) | 60 | 28.5 | 41.5 | 1 | 19.5 | 1.5 | 0 | 0 | 10 |
+
+| Full-complex token count (binder + full target) | OLS fit (R = 0.92) (Fold-time saved / crossing design, s) |
+| --- | --- |
+| 0 | 4.5 |
+| 200 | 10.5 |
+| 400 | 16.5 |
+| 600 | 22.5 |
+| 800 | 28.5 |
+| 1000 | 34.5 |
+
+**Figure 1** \| **Epitope excision and its compute economics. (a)** Conventional _de novo_ binder design: backbone generation (RFdif
+fusion), sequence design (ProteinMPNN), refolding of the binder against the _full_ target (AlphaFold3), evaluation and ranking (pLDDT,
+ipSAE, RMSD), iterated. **(b)** Epitope excision illustrated on an EGFR ectodomain complex (481-residue multi-domain target; binder in
+blue). The binder contacts a localized surface patch mapping to a contiguous sequence window around hotspot ARG353 (red); excision
+retains that window plus surrounding halo residues (orange and light orange, ∼ 168 residues total, with shading indicating optional
+halo width) and removes the remainder of the protein (grey) to leave a compact crop. **(c)** Compute time per design vs target length.
+Generation and folding scale quadratically (∝ 𝐿2); RFdiffusion is a continuous quadratic (blue), whereas measured AF3 refolding
+(orange) pays in discrete token buckets (rounded up to the next multiple of 256; 6.9/17.5/35.0/59.3 s for 256/512/768/1024 tokens),
+a step around its quadratic envelope (dashed). Excision shortens the target, dropping a design into a cheaper bucket. **(d)** Batch AF3
+fold-time saved (%) vs crop radius (5 Å contact + halo; halos 0/3/6/9/11 Å), one curve per saving target plus the pooled all-15 line
+(dashed). The bare pocket (halo 0) saves most; savings shrink as halo grows, and 7 of 15 targets are already in the smallest 256-token
+bucket. **(e)** For designs whose excised pocket crosses an AF3 bucket boundary at halo 11 (𝑛 = 253, 5 targets), fold-time saved per
+design vs full-complex token count (Pearson 𝑟 = +0.96). Savings fall on discrete bands set by the boundary cleared (512 → 256,
+768 → 512, 1024 → 768, and a ∼ 28 s two-bucket band for the largest EGFR complexes). Savings from bucket-crossing scale with
+complex size.
+
+$$
+0/3/6/9/11 Å )
+$$
+
+* * *
+
+RMSD ( **Figure 1a).** Refolding cost scales steeply with target length, especially for large multi-domain
+antigens, even though the binder only contacts a small surface patch. Epitope excision removes the noncontacting regions by retaining only the contiguous sequence window spanning the binder’s contact
+residues plus a surrounding radial halo, and refolding the binder against this smaller crop ( **Figure 1b** shows
+a representative EGFR ectodomain complex, where a 481-residue multi-domain target is reduced to a ∼
+168-residue crop around hotspot Arg353). Because AF3 pads inputs to discrete token buckets (multiples
+of 256), trimming the target can drop a complex into a smaller bucket and substantially reduce wall-clock
+runtime ( **Figure 1c).**
+
+Whether cropping actually reduces runtime depends on the initial size of the target and the radius of the
+retained halo ( **Figure 1d,e).** Across the 15-target benchmark, pooled batch fold-time savings are highest
+for minimal pockets (halo 0) and decrease as the halo widens, while 7 of the 15 targets show no speedup
+because their full-length complexes already fit within the smallest 256-token bucket ( **Figure 1d).** Among
+the designs that do drop into a smaller bucket (𝑛 = 253 across 5 targets), per-design time savings correlate
+strongly with full-complex token count (Pearson 𝑟 = +0.96), grouping into discrete bands determined
+by which bucket boundary is crossed ( **Figure 1e).** The fraction of designs that cross a bucket boundary
+decreases monotonically with crop radius ( **Supporting Figure 2a),** and the wall-clock time saved per
+crossing is largest for big antigens like EGFR ( **Supporting Figure 2b).**
+
+| Full target interface Cα RMSD (Å), log₂ | Excised h11 + MSA (p=0.90) | Excised h11 (p=0.83) |
+| --- | --- | --- |
+| 0.125 | 0.12 | 0.12 |
+| 0.25 | 0.24 | 0.24 |
+| 0.5 | 0.48 | 0.48 |
+| 1 | 0.96 | 0.96 |
+| 2 | 1.92 | 1.92 |
+
+| Category | Full + MSA (median interface Ca RMSD, Å) | Excised h11 + MSA (median interface Ca RMSD, Å) | Excised h11 (median interface Ca RMSD, Å) |
+| --- | --- | --- | --- |
+| EGFR | 0.85 | 0.45 | 0.37 |
+| FGFR2 | 0.35 | 0.34 | 0.33 |
+| IL10R3 | 0.48 | 0.72 | 1.07 |
+| IL2R3 | 0.28 | 0.28 | 0.15 |
+| LITRA | 0.28 | 0.24 | 0.16 |
+| InsulinR | 0.24 | 0.23 | 0.19 |
+| LTK | 0.50 | 0.50 | 0.40 |
+| Mdm2 | 0.18 | 0.18 | 0.14 |
+| Pdl1 | 0.24 | 0.22 | 0.16 |
+| RBD | 0.62 | 0.46 | 0.36 |
+| TKA | 0.17 | 0.17 | 0.15 |
+| V1PR3 | 0.20 | 0.20 | 0.14 |
+| PMHC N 1 | 0.24 | 0.24 | 0.15 |
+| PMHC SILS Y1 | 0.29 | 0.32 | 0.19 |
+| snx | 0.10 | 0.10 | 0.10 |
+
+| Interface CαRMSD (Å) | Full + MSA (cumulative fraction of binders) | Excised h11 + MSA (cumulative fraction of binders) | Excised h11 (cumulative fraction of binders) |
+| --- | --- | --- | --- |
+| 0 | 0 | 0 | 0 |
+| 1 | 0.93 | 0.95 | 0.96 |
+| 2 | 0.96 | 0.98 | 1.0 |
+| 3 | 0.97 | 0.99 | 1.0 |
+| 4 | 0.98 | 1.0 | 1.0 |
+
+| Category | Bootstrap median (Average Precision) | Full + MSA (mean) (Average Precision) | Excised h11 + MSA (mean) (Average Precision) | Excised h11 (mean) (Average Precision) |
+| --- | --- | --- | --- | --- |
+| snRx | 0.78 | 0.77 | 0.68 | 0.80 |
+| IL2Ra | 0.70 | 0.70 | 0.99 | 0.97 |
+| SARS CoV2 RBD | 0.65 | 0.65 | 0.52 | 0.87 |
+| Mdm2 | 0.62 | 0.62 | 0.23 | 0.62 |
+| Pdl1 | 0.50 | 0.50 | 0.28 | 0.57 |
+| IL7Ra | 0.48 | 0.48 | 0.40 | 0.44 |
+| InsulinR | 0.45 | 0.45 | 0.40 | 0.51 |
+| FGFR2 | 0.36 | 0.36 | 0.36 | 0.40 |
+| EGFR | 0.26 | 0.26 | 0.15 | 0.22 |
+| TrkA | 0.22 | 0.22 | 0.15 | 0.16 |
+| VifB8 | 0.20 | 0.20 | 0.08 | 0.17 |
+
+| Category | Bootstrap median (ROC-AUC) | Full + MSA (mean) (ROC-AUC) | Excised h11 + MSA (mean) (ROC-AUC) | Excised h11 (mean) (ROC-AUC) |
+| --- | --- | --- | --- | --- |
+| snx | 0.97 | 0.96 | 0.95 | 0.94 |
+| IL2Ra | 1.0 | 1.0 | 1.0 | 1.0 |
+| SARS CoV2 RBD | 0.87 | 0.86 | 0.80 | 0.58 |
+| Mdm2 | 0.52 | 0.52 | 0.52 | 0.50 |
+| Pdl1 | 0.88 | 0.86 | 0.75 | 0.74 |
+| IL7Ra | 0.80 | 0.79 | 0.64 | 0.63 |
+| InsulinR | 0.78 | 0.77 | 0.76 | 0.75 |
+| FGFR2 | 0.78 | 0.77 | 0.76 | 0.75 |
+| EGFR | 0.80 | 0.79 | 0.78 | 0.77 |
+| TrkA | 0.74 | 0.73 | 0.55 | 0.74 |
+| VifB8 | 0.52 | 0.52 | 0.46 | 0.67 |
+
+**Figure 2** \| **Excision preserves designed interface geometry and ranking across 15 targets. (a)** Excised-pocket versus full-target
+interface-core C𝛼 RMSD across experimentally confirmed binders for both excised conditions (halo-11 +MSA in orange; singlesequence no-MSA in green triangles). The diagonal indicates exact agreement with the intact target, and solid lines show ordinary
+least-squares fits within the valid < 3 Å regime. Agreement with full-target folds: +MSA Spearman 𝜌 = 0.91, 𝑅2(< 3 Å) = 0.74; no-
+MSA 𝜌 = 0.83, 𝑅2 = 0.54. **(b)** Per-target median interface RMSD comparing full-target, excised+MSA, and excised no-MSA folds.
+**(c)** Empirical cumulative distribution function (ECDF) of interface RMSD across all three conditions. **(d)** Per-target average precision
+(AP) and (e) ROC-AUC of ipSAEmax comparing full-target+MSA (blue), excised halo-11+MSA (orange), and excised no-MSA (green)
+across all designs on the informative target subset (error bars show 95% design-resampling bootstrap intervals). The full-target bar
+for VirB8 (asterisk) shows our reproduced AF3 refold of all 99 designs (AP 0.18, AUC 0.54 across seeds).
+
+$$
+<3 Å
+$$
+
+$$
+\\rho=0.83,R^{2}=0.54
+$$
+
+$$
+\\rho=0.91,R^2(<3\\mathring{A})=0.74;\\mathrm{n}\\mathrm{c}
+$$
+
+$$
+\\mathrm{ipSAE\_{max}}
+$$
+
+* * *
+
+For these compute savings to be useful, the cropped target must fold into the same binding interface as
+the full-length protein. We evaluated geometric fidelity by measuring the target interface-core C𝛼 RMSD
+between the refolded complex and the original design model, using a 3 Å threshold as a validity gate.
+Across the full excised benchmark (11 Å halo, 15 targets, 3,666 designs), the pooled median interface RMSD
+is 0.37 Å (mean 0.53 Å), with 88.2% of designs falling below 1 Å and 93.7% below 2 Å; per-target medians
+range from 0.20 Å (Mdm2 and LTK) to 0.71 Å (EGFR), well below the 3 Å threshold. Because the source
+benchmark cached only scalar interface scores for full-target folds rather than full atomic coordinates,
+running a direct design-by-design RMSD comparison **(Fig. 2a–c)** required refolding the 394 experimentally
+confirmed binders against their intact targets (393 had a measurable interface core). On proven binders,
+excised crops match the intact targets closely: median interface RMSD is 0.29 Å for excised targets versus
+0.29 Å for full targets, with 98.5% and 97.2% of binders passing the 3 Å gate, respectively. Refolding the
+same excised pockets in single-sequence mode (no MSA) yields nearly identical geometry, with a median
+RMSD of 0.23 Å, 99.5% of binders under 3 Å, Spearman 𝜌 = 0.83 against full-target RMSD, and only 4
+of 393 gate calls differing from the +MSA excised condition ( **Fig. 2a**–c). Per-binder RMSD agreement
+between excised (+MSA) and full-target folds is high (Spearman 𝜌 = 0.91, 𝑛 = 393; within the valid <
+3 Å subset, 𝑛 = 381, Pearson 𝑅2 = 0.74), with 98.2% agreement on the 3 Å gate ( **Fig. 2a).** The few high-
+RMSD outliers, mostly on EGFR, fail in both full-target and excised refolds.
+
+$$
+\\rho=0.83
+$$
+
+$$
+R^{2}=0.74)
+$$
+
+We next tested whether target excision affects the ability of ipSAEmax to rank true binders above nonbinders, treating each target as the unit of replication across all designs (𝑛pos ≥ 5, giving 11 informative
+targets). Comparing full-target+MSA folds against excised halo-11+MSA folds, mean AP goes from 0.466
+(full) to 0.401 (excised), for a mean ΔAP of −0.065 (paired-bootstrap 95% CI \[−0.130, +0.019\]), while
+mean ROC-AUC goes from 0.777 to 0.729, for a mean ΔROC-AUC of −0.048 (95% CI \[−0.083, −0.017\]).
+This drop is not uniform across the benchmark; it is driven primarily by a few targets with shallow MSAs or
+sensitive local geometry, specifically pMHC\_NY1 (AP 0.50 to 0.02), Pdl1 (0.48 to 0.25), and IL7Ra (0.48 to
+0.30), whereas most other targets remain within their bootstrap confidence intervals and IL2Ra improves
+slightly ( **Fig. 2d,e).**
+
+$$
+\\mathrm{ipSAE\_{max}}
+$$
+
+$$
+(n\_{\\mathrm{pos}}\\geq5)
+$$
+
+$$
+\\left\[-0.130,+0.019\\right\])
+$$
+
+Refolding the same excised pockets in single-sequence mode (no MSA) indicates that ranking drop on
+cropped targets can be influenced by the MSA. Removing the target MSA raises mean excised AP from
+0.401 to 0.454, bringing it back within 0.012 of the full-target+MSA baseline (mean Δ(no-MSA −
+excised+MSA) = +0.053 AP, paired-bootstrap 95% CI \[−0.026, +0.126\]; +0.036 ROC-AUC; **Fig. 2d,e,**
+green). This recovery may depend on alignment depth: dropping the MSA improves ranking on targets
+with deep alignments (Pdl1 rises from 0.25 to 0.54, IL7Ra from 0.30 to 0.43, sntx from 0.60 to 0.76, and
+InsulinR from 0.39 to 0.50), likely because a deep target MSA can inflate baseline interface confidence
+for decoys when the pocket fold is simple. Conversely, removing the MSA cuts ranking performance in
+half on SARS\_CoV2\_RBD (0.49 to 0.24), a shallow-MSA target that relies on coevolutionary constraints
+to fold its interface properly. Whether to include a target MSA during excised refolding should therefore
+be chosen on a per-target basis. (Because ranking metrics require both positive and negative examples,
+**Fig. 2d,e** includes all designs rather than only confirmed binders.) These trends hold when complexes
+are scored using ipSAEmin, the more conservative chain-pair direction used in the source benchmark:
+absolute AP values are slightly higher across all three conditions (mean AP 0.510 full, 0.451 excised+MSA,
+and 0.497 no-MSA), while the relative differences remain nearly unchanged (Δ(excised+MSA − full) =
+−0.058 AP and −0.047 ROC-AUC; Δ(no-MSA − excised+MSA) = +0.045 AP and +0.039 ROC-AUC;
+**Supporting Fig.** 3).
+
+$$
+\\mathrm{ipSAE\_{min}}
+$$
+
+Because minimal halo crops save the most compute but risk destabilizing the target pocket, we swept
+halo thickness across all designs to find the smallest radius that reliably preserves interface geometry.
+Across all targets, interface RMSD improves as the halo widens ( **Fig. 3a** shows per-target mean ± 1 SD
+on confirmed binders). VirB8 shows the sharpest sensitivity to halo radius: because its MSA is shallow, its
+median interface RMSD remains above the 3 Å threshold until the halo reaches ∼ 9 Å, dropping from 5.73
+to 4.38, 3.90, 0.29, and 0.24 Å across halos of 0, 3, 6, 9, and 11 Å (with a valid-fold fraction of 0.44 at halo
+
+* * *
+
+**a**
+
+| Halo (Å) | EGFR (Mean interface Cα RMSD, Å) | IL7Ra (Mean interface Cα RMSD, Å) | InsulinR (Mean interface Cα RMSD, Å) | TrKA (Mean interface Cα RMSD, Å) | IL2Ra (Mean interface Cα RMSD, Å) | VirB8 (Mean interface Cα RMSD, Å) | SARS CoV2 RBD (Mean interface Cα RMSD, Å) | Pdl1 (Mean interface Cα RMSD, Å) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | 2.8 | 1.6 | 0.5 | 0.5 | 2.1 | 8.9 | 1.5 | 0.8 |
+| 3 | 1.7 | 0.5 | 0.4 | 0.4 | 0.5 | 6.8 | 1.5 | 0.5 |
+| 6 | 1.9 | 0.4 | 0.4 | 0.4 | 0.4 | 5.8 | 0.6 | 0.4 |
+| 9 | 1.8 | 0.3 | 0.3 | 0.3 | 0.3 | 0.3 | 0.3 | 0.3 |
+| 11 | 2.0 | 0.3 | 0.3 | 0.3 | 0.3 | 0.3 | 0.3 | 0.3 |
+
+**b**
+
+| Halo (Å) | Excised + MSA (Mean precision) | Excised (Mean precision) | Full + MSA (Mean precision) |
+| --- | --- | --- | --- |
+| 0 | 0.32 | 0.37 | 0.50 |
+| 3 | 0.35 | 0.48 | 0.50 |
+| 6 | 0.37 | 0.44 | 0.50 |
+| 9 | 0.37 | 0.46 | 0.50 |
+| 11 | 0.40 | 0.46 | 0.50 |
+
+**c**
+
+| Halo (Å) | Excised + MSA (ROC-AUC) | Excised (ROC-AUC) | Full + MSA (ROC-AUC) |
+| --- | --- | --- | --- |
+| 0 | 0.67 | 0.71 | 0.80 |
+| 3 | 0.72 | 0.80 | 0.80 |
+| 6 | 0.74 | 0.78 | 0.80 |
+| 9 | 0.73 | 0.77 | 0.80 |
+| 11 | 0.72 | 0.78 | 0.80 |
+
+**d**
+
+| Category | EGFR (Cα RMSD, Å) | IL7Ra (Cα RMSD, Å) | InsulinR (Cα RMSD, Å) | TrKA (Cα RMSD, Å) | IL2Ra (Cα RMSD, Å) | VirB8 (Cα RMSD, Å) | SARS CoV2 RBD (Cα RMSD, Å) | IL10Ra (Cα RMSD, Å) | Pdl1 (Cα RMSD, Å) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| unlabelled 1 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 |
+| unlabelled 2 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 |
+
+**e**
+
+| Category | Excised + MSA (rate, <3Å) | Excised (rate, <3Å) |
+| --- | --- | --- |
+| unlabelled 1 |  | 0.88 |
+| unlabelled 2 |  | 0.95 |
+| unlabelled 3 | 0.96 | 0.97 |
+| unlabelled 4 | 1.00 | 0.97 |
+| unlabelled 5 | 0.98 | 1.00 |
+
+**f**
+
+| Category | VirB8 + MSA (rate, <3Å) | TrKA + MSA (rate, <3Å) | IL10Ra + MSA (rate, <3Å) | Pdl1 + MSA (rate, <3Å) | VirB8 (rate, <3Å) | TrKA (rate, <3Å) | IL10Ra (rate, <3Å) | Pdl1 (rate, <3Å) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| unlabelled 1 |  |  |  |  |  | 0.65 |  |  |
+| unlabelled 2 |  | 0.83 |  |  |  |  |  |  |
+| unlabelled 3 |  | 1.00 |  | 1.00 |  |  |  |  |
+| unlabelled 4 | 0.93 |  |  | 1.00 |  |  |  |  |
+| unlabelled 5 | 0.59 |  |  |  |  |  |  |  |
+
+| Crop residues | EGFR (Mean interface Co RMSD, Å) | IL2Rα (Mean interface Co RMSD, Å) | IL7Rα (Mean interface Co RMSD, Å) | VirB8 (Mean interface Co RMSD, Å) | InsulinR (Mean interface Co RMSD, Å) | SARS CoV2 RBD (Mean interface Co RMSD, Å) | TrkA (Mean interface Co RMSD, Å) | IL10Rα (Mean interface Co RMSD, Å) | Pdl1 (Mean interface Co RMSD, Å) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 100 | 3 | 1.5 | 2 | 0.3 | 0.5 | 0.2 | 0.15 | 0.8 | 0.2 |
+| 200 | 1.5 | 1.2 | 1.5 | 0.3 | 0.5 | 0.2 | 0.15 | 0.8 | 0.2 |
+| 300 | 10 | 1.2 | 1.5 | 0.3 | 0.5 | 0.2 | 0.15 | 0.8 | 0.2 |
+| 400 | 10 | 1.2 | 1.5 | 0.3 | 0.5 | 0.2 | 0.15 | 0.8 | 0.2 |
+| 500 | 10 | 1.2 | 1.5 | 0.3 | 0.5 | 0.2 | 0.15 | 0.8 | 0.2 |
+
+| Crop residues | Excised + MSA (Pass-rate, <3Å) | Excised (Pass-rate, <3Å) |
+| --- | --- | --- |
+| 50 | 0.17 | 0.13 |
+| 70 | 0.88 | 0.88 |
+| 90 | 0.95 | 0.94 |
+| 110 | 0.96 | 0.97 |
+| 130 | 0.90 | 0.97 |
+| 150 | 1.00 | 0.96 |
+| 170 | 0.97 | 0.99 |
+
+| Crop residues | VirB8 + MSA (Pass-rate, <3Å) | IL10Ra + MSA (Pass-rate, <3Å) | TrkA + MSA (Pass-rate, <3Å) | Pdl1 + MSA (Pass-rate, <3Å) |
+| --- | --- | --- | --- | --- |
+| 10 | 0.0 |  |  |  |
+| 50 |  |  | 0.65 |  |
+| 55 |  |  | 0.83 |  |
+| 70 | 0.25 |  | 0.95 | 1.0 |
+| 85 | 0.75 |  |  | 1.0 |
+| 90 | 1.0 |  |  | 1.0 |
+| 110 | 0.92 |  |  | 1.0 |
+| 130 | 0.59 |  |  |  |
+
+**Figure 3** \| **Interface fidelity, ranking, and the crop-size floor define a safe operating window for excision. (a)** Interface
+C𝛼 RMSD across halo radii (0, 3, 6, 9, and 11 Å) for experimentally confirmed binders, plotted per target (mean ± 1 SD; dotted
+line indicates the 3 Å validity gate). **(b,c)** Ranking accuracy across crop radii (halos of 0, 3, 6, 9, and 11 Å, corresponding to total
+radii of 5, 8, 11, 14, and 16 Å) scored on ipSAEmax and matched design-for-design across the 11 well-powered targets (number of
+binders ≥ 5; shaded bands show ±1 SE across targets): mean AP **(b)** and ROC-AUC **(c)** for excised+MSA (orange) versus excised
+no-MSA (green), compared against the full-target+MSA baseline (dashed; AP 0.49, ROC-AUC 0.80). **(d–f)** Absolute crop-size floor
+for confirmed binders as a function of retained target residue count (dashed red line marks the 85-residue threshold). **(d)** Per-fold
+interface C𝛼 RMSD (log scale) versus retained residue count (+MSA), colored by target; crops shorter than 85 residues fall into the >
+3 Å failure zone (shaded red, primarily VirB8), while larger crops fold reliably. **(e)** Confirmed-binder pass rate (< 3 Å) across cropsize bins for excised+MSA (orange) and no-MSA (green), both rising sharply between 60 and 85 residues to plateau near 1.0. **(f)**
+Within-target pass rates across the 85-residue threshold for the four targets that straddle the boundary (VirB8, TrkA, IL10Ra, and
+Pdl1) under +MSA (solid) and no-MSA (dashed): VirB8 jumps from 0% below 85 residues to 100% above in both arms, whereas TrkA,
+Pdl1, and IL10Ra already fold accurately at smaller crop sizes.
+
+$$
+\\pm1SD;
+$$
+
+$$
+\\mathrm{ipSAE\_{max}}
+$$
+
+$$
+\\geq5;
+$$
+
+$$
+(<3 Å )
+$$
+
+6). IL2Ra fails only at the bare pocket (6.54 Å at halo 0 versus 0.27 Å at halo 3). For IL10Ra, coevolutionary
+information in the MSA stabilizes the bare pocket (median 1.45 Å with MSA versus 7.03 Å singlesequence). Most other targets plateau below ∼ 0.6 Å RMSD by halo 6. In practice, a ∼ 6 Å halo provides
+sufficient structural context for most targets, while shallow-MSA targets benefit from a wider ∼ 9 Å shell.
+Refolding the full halo sweep in single-sequence mode (no MSA) on ipSAEmin across all five radii shows
+a similar trend in structural and ranking prediction: across the 11 well-powered targets, interface RMSD
+improves as the halo widens **(Supporting Fig. 4a)** and mean ranking rises from the bare pocket and levels
+off by an ∼ 8 Å crop radius, with no-MSA matching or exceeding excised+MSA at every radius (mean AP
+of 0.37, 0.47, 0.48, 0.51, and 0.50 at radii of 5, 8, 11, 14, and 16 Å, compared with 0.34, 0.43, 0.42, 0.42,
+and 0.45 with MSA) and reaching ∼ 95% of the full-target+MSA baseline (AP 0.51 and ROC-AUC 0.79
+at 14 Å versus 0.54 and 0.81; **Fig. 3b,c, Supporting Fig. 4b,c).** As before, the shallow-MSA target SARS-
+CoV-2 RBD is the lone exception that performs worse without its MSA.
+
+$$
+\\sim9 Å
+$$
+
+$$
+\\mathrm{ipSAE\_{min}}
+$$
+
+$$
+\\sim8 Å
+$$
+
+A fixed radial halo captures different numbers of residues depending on local target topology. For example,
+EGFR already sits at 374 residues at the smallest halo, 4 to 9 times larger than the other targets. When
+plotting the halo sweep against the absolute number of retained target residues for confirmed binders
+
+* * *
+
+(pooled across the nine sweep targets), crops shorter than ∼ 85 residues pass the 3 Å gate 32% of the time
+(𝑛 = 41), compared with 97% for crops of 85–200 residues (𝑛 = 553) ( **Fig. 3d,e, Supporting Fig. 4d).**
+Much of this pooled drop comes from VirB8, where 0% of the 24 sub-85-residue folds pass (compared with
+76% of the 17 sub-85-residue folds across other targets, and 86% for VirB8 above 85 residues); by contrast,
+confirmed binders for Pdl1 and TrkA refold accurately even on small crops (100% below 85 residues for
+Pdl1, 𝑛 = 6; 88% for TrkA, 𝑛 = 8; **Fig. 3e,f).** A safe crop window is therefore roughly 60–85 residues, which
+generally corresponds to a ∼ 6 Å halo. Overall, overly tight crops degrade structural accuracy before they
+degrade relative ranking, while keeping crop lengths moderate helps complexes stay within lower AF3
+token buckets.
+
+Before applying epitope excision to a new target, we froze the end-to-end design pipeline and evaluated
+whether designs generated on cropped targets behave consistently when evaluated on full domains. In
+the fixed pipeline ( **Fig. 4a),** target preparation selects an epitope and excises a contiguous 85–130-residue
+window. Candidate hotspot clusters are then screened in small batches, followed by RFdiffusion three-
+
+Step 1: target epitope screen
+
+HER2 extracellular domain
+
+• Domain II hotspots
+• Domain IV hotspots
+• Domain II excision
+• Domain IV excision
+
+Step 2: backbone screen
+
+Three helix backbones
+
+Step 3: Sequence selection
+
+ipSAEmax = 0.799 ipSAEmax = 0.796
+
+ipSAEmax = 0.792 ipSAEmax = 0.774
+
+| Interface-core Ca RMSD vs reference (Å) | Full target (Density of binder designs) | Excision (Density of binder designs) | 3 A gate (Density of binder designs) |
+| --- | --- | --- | --- |
+| 0.0 |  | 0.51 |  |
+| 0.1 |  | 1.37 |  |
+| 0.2 |  | 0.74 |  |
+| 0.3 |  | 0.65 |  |
+| 0.4 |  | 0.96 |  |
+| 0.5 |  | 0.65 |  |
+| 0.6 |  | 0.61 |  |
+| 0.7 |  | 0.40 |  |
+| 0.8 |  | 0.27 |  |
+| 0.9 | 1.45 |  |  |
+| 1.0 | 1.42 |  |  |
+| 1.1 | 0.98 |  |  |
+| 1.2 | 0.55 |  |  |
+| 1.3 | 0.38 |  |  |
+| 1.4 | 0.31 |  |  |
+| 1.5 | 0.31 |  |  |
+| 1.6 | 0.29 |  |  |
+| 1.7 | 0.28 |  |  |
+| 1.8 | 0.26 |  |  |
+| 1.9 | 0.25 |  |  |
+| 2.0 | 0.24 |  |  |
+| 2.1 | 0.23 |  |  |
+| 2.2 | 0.22 |  |  |
+| 2.3 | 0.21 |  |  |
+| 2.4 | 0.20 |  |  |
+| 2.5 | 0.19 |  |  |
+| 2.6 | 0.18 |  |  |
+| 2.7 | 0.17 |  |  |
+| 2.8 | 0.16 |  |  |
+| 2.9 | 0.15 |  |  |
+| 3.0 | 0.14 |  |  |
+| 3.1 | 0.13 |  |  |
+| 3.2 | 0.12 |  |  |
+| 3.3 | 0.11 |  |  |
+| 3.4 | 0.10 |  |  |
+| 3.5 | 0.09 |  |  |
+| 3.6 | 0.08 |  |  |
+| 3.7 | 0.07 |  |  |
+| 3.8 | 0.06 |  |  |
+| 3.9 | 0.05 |  |  |
+| 4.0 | 0.04 |  |  |
+
+| ipSAE threshold | ipSAE\_max (Spearman ρ, excision vs full) | ipSAE\_min (Spearman ρ, excision vs full) |
+| --- | --- | --- |
+| >0.4 | 0.29 | 0.305 |
+| >0.5 | 0.31 | 0.32 |
+| >0.6 | 0.43 | 0.575 |
+
+| Target-contact Jaccard | Full-born ρ = 0.64 (Cross context ipSAE\_min) | Excision-born ρ = 0.63 (Cross context ipSAE\_min) |
+| --- | --- | --- |
+| 0.0 | 0.02 | 0.01 |
+| 0.2 | 0.22 | 0.14 |
+| 0.4 | 0.43 | 0.28 |
+| 0.6 | 0.64 | 0.42 |
+| 0.8 | 0.85 | 0.56 |
+| 1.0 | 0.97 | 0.69 |
+
+| Target-contact Jaccard | Full-born ρ = 0.64 | Excision-born ρ = 0.62 |
+| --- | --- | --- |
+| 0.0 | 0.0 | 0.0 |
+| 0.2 | 0.13 | 0.1 |
+| 0.4 | 0.26 | 0.2 |
+| 0.6 | 0.39 | 0.3 |
+| 0.8 | 0.52 | 0.4 |
+| 1.0 | 0.65 | 0.5 |
+
+**Figure 4** \| **The fixed epitope-excision pipeline and its cross-context fidelity (HER2). (a)** Schematic of the fixed end-to-end
+excision pipeline: target preparation (select a target epitope, excise a contiguous 85–130-residue window around it, and construct
+a crop MSA and inline self-template), cluster screening (enumerate candidate hotspot clusters per domain, run a mini-screen of ∼
+30 backbones per cluster, rank by hit rate, and advance the top clusters to production), backbone generation (generate RFdiffusion
+three-helix-bundle “HHH” scaffolds targeted to the chosen hotspots with steric-clash filtering), sequence design and folding (design
+sequences with ProteinMPNN including a top-off pass on productive backbones, then co-fold binder and crop in AF3 using the
+self-template), and gating and ranking on the fixed hit criteria (ipSAEmax \> 0.45 and interface-core C𝛼 RMSD < 3.0 Å). (b)
+Interface-core C𝛼 RMSD between AF3 refolds and design references across the HER2 production campaigns for full-domain (blue)
+versus excised-crop (orange) designs; both arms recover the designed interfaces accurately, with the excised arm showing a slightly
+tighter distribution (median 0.64 Å versus 1.02 Å; 96% and 91% of designs under the 3 Å threshold, respectively). **(c)** Filtering excised
+designs by higher native-context ipSAEmax and ipSAEmin increases the rank correlation between excised and full-domain scores
+(Spearman 𝜌 rising from ∼ 0.3 across all designs to 0.43 and 0.58 at threshold > 0.6). **(d,e)** Per-binder epitope conservation across
+contexts, measured as the Jaccard overlap of target-contact residues between the full domain and the crop, correlates with crosscontext ipSAEmax (d) and ipSAEmin (e) (Spearman 𝜌 = +0.64 for full-domain designs and +0.63/ + 0.62 for excised-crop designs),
+indicating that binders preserve their confidence scores when they maintain their intended contact network.
+
+$$
+\\mathrm{(ipSAE\_{max}>0.45}
+$$
+
+$$
+\\mathrm{RMSD}<3.0 Å
+$$
+
+$$
+\\mathrm{ipSAE\_{max}}
+$$
+
+$$
+\\mathrm{ipSAE\_{min}}
+$$
+
+$$
+\\mathrm{ipSAE\_{max}}
+$$
+
+$$
+\\mathrm{ipSAE\_{min}}
+$$
+
+$$
++0.63/+0.62
+$$ helix-bundle (“HHH”) backbone generation, ProteinMPNN sequence design, and AF3 refolding, with hits
+defined by a fixed threshold (ipSAEmax and interface-core C𝛼 RMSD < 3.0 Å). We tested this setup on
+HER2, comparing campaigns run against full target domains versus excised domain crops. Across the
+HER2 production runs, the excised campaign recovered designed interfaces at least as accurately as fulldomain folding (median interface-core C𝛼 RMSD of 0.64 Å versus 1.02 Å, with > 90% of designs under
+the 3 Å gate in both cases; **Fig. 4b).** Interface confidence scores also tracked across contexts: filtering for
+higher native-context ipSAEmax and ipSAEmin strengthened the correlation between excised and fulldomain (Spearman 𝜌 increasing from ∼ 0.3 across all designs to 0.46 and 0.59 for designs with ipSAEmax,
+ipSAEmin \> 0.6; Fig. 4c). Furthermore, the Jaccard overlap of target-contact residues between the crop
+and the full domain predicted cross-context ipSAEmax (Spearman 𝜌 = +0.64, +0.63 for full-domain and
+excised designs; Fig. 4d) and ipSAEmin (Spearman 𝜌 = +0.64, +0.62 for full-domain and excised designs;
+**Fig. 4e),** confirming that candidates retain their interface confidence when their designed contact network
+is preserved.
+
+$$
+\\mathrm{(ipSAE\_{max}}
+$$
+
+$$
+\\mathrm{RMSD}<3.0 Å
+$$
+
+$$
+3\\text{Å }
+$$
+
+$$
+\\mathrm{ipSAE\_{max}}
+$$
+
+$$
+\\mathrm{ipSAE\_{min}}
+$$
+
+$$
+AE\_{max},
+$$
+
+$$
+\\sim0.3
+$$
+
+$$
+\\mathrm{ipSAE\_{min}}>0.6
+$$
+
+$$
+\\mathrm{ipSAE\_{max}}
+$$
+
+$$
+\\rho=+0.64,+0.63
+$$
+
+$$
+\\mathrm{ipSAE\_{min}}
+$$
+
+$$
+\\rho=+0.64,+0.62
+$$
+
+With the excision pipeline validated on HER2, we turned to the extracellular domain of fibroblast activation
+protein 𝛼 (FAP ECD; PDB 1Z68, chain B, residues 39–757; 719 residues), a serine protease whose catalytic
+triad (Ser624/Asp702/His734) sits at the base of a recessed substrate channel ( **Fig. 5a).** Because the intact
+719-residue ectodomain is too large for routine full-structure diffusion and costly to refold at scale, we
+used excision to isolate contiguous 85–130-residue crops around candidate epitopes and ran the same
+RFdiffusion (“HHH” scaffolds), ProteinMPNN, and AF3 pipeline ( **Fig. 5b).** (We note that capping crops
+at ≤ 130 residues is slightly more conservative than our benchmark minimum, where 130–200-residue
+crops achieved a 98.8% geometry pass rate; relaxing this cap would trade a modest increase in compute
+for additional structural context on difficult epitopes.)
+
+$$
+(\`\`\\mathrm{HH}''
+$$
+
+$$
+at\\leq130
+$$
+
+Using FAP as a test case, we examined varying degrees of decision-making autonomy by an LLM
+agent when steering the excision pipeline (Figure 5c,d). We kept the hit definition (ipSAEmax \> 0.45,
+interface-RMSD < 3.0 Å) and the total compute budget (capped at the 132.87 GPU-hours spent by the
+human baseline from Arm A) identical across runs, varying only how campaign decisions were made
+across three primary conditions: Arm A (fixed excision pipeline as in **Figure 4a;** scientist alone), Arm
+B (a human–agent hybrid; Human-in-the-Loop, HITL, in which an LLM agent, Gemini 3.1 Pro, uses the
+excision pipeline in **Figure 5c** but chooses the specific epitope sets, crop sizes, ProteinMPNN parameters,
+compute allocation, and iteration decisions), and Arm C (a fully autonomous agent that selects its own
+targeting strategy and surface patches from scratch without human pre-filtering; Human-out-of-the-Loop,
+HOOTL). At each round in Arms B and C, Gemini 3.1 Pro receives a structured summary of per-cluster hit
+counts, remaining GPU budget, and current generation settings and selects a single typed action (propose
+new epitope or hotspot clusters, iteration/backtrack, epitope/backbone/sequence expansion). We also ran
+a fourth condition, the B-variant, which uses the same hybrid autonomy setup as Arm B but modifies two
+scoring settings (turning the target MSA off and ranking on ipSAEmin) to separate the effect of the scoring
+setup from the effect of agent autonomy.
+
+$$
+5\\mathbf{c},\\mathbf{d})
+$$
+
+$$
+(ipSAE\_{max}>0.45
+$$
+
+$$
+-RMSD<3.0 Å
+$$
+
+$$
+\\mathrm{ipSAE\_{min}}
+$$
+
+When evaluated under the shared scoring criteria, both HITL (Arm B) and HOOTL (Arm C) outperformed
+the human baseline ( **Table 1; Fig. 5e),** with Arm B generating the highest hit rate (9.33%, +84% over the
+5.06% human baseline in Arm A) while using ∼ 58% of the GPU budget ( **Fig. 5f),** corresponding to 23.2
+versus 12.6 hits per GPU-hour. Thus, having the human investigator define the biological target region
+while delegating tactical parameter tuning and resource allocation to the agent worked better than either
+manual execution or unconstrained agent search. In both agent-driven arms, cumulative hit rates climbed
+over successive rounds as the controller shifted compute toward productive hotspot clusters through
+“expand” and “deepen” actions (in Arm B, 1 initial screen, 3 expansions, and 10 deep-dives across 14
+iterations). Increasing agent autonomy also widened the number of distinct hit-producing epitopes from
+4 (Arm A) to 7 (Arm B) and 13 (Arm C), whereas sequence diversity among hits remained high across
+all conditions ( **Fig. 5e,g, Table** 1). Without a human prior to narrow the initial search space, the fully
+autonomous agent spread its GPU budget across more surface patches, yielding broader epitope coverage
+but a lower overall hit rate than the hybrid arm. Finally, the B-variant illustrates how sensitive raw hit
+
+* * *
+
+Human FAP extracellular domain (719 aa)
+
+α/β-hydrolase domain
+
+β-propeller domain
+
+Catalytic triad Ser624 - Asp702 - His734
+
+Catalytic-mouth rim
+
+AlphaFold3 wall time per fold (s)
+
+FAP ECD + binder
+
+1024-token bucket
+
+-88% per fold
+
+Excised + binder
+
+256-token bucket
+
+Complex size (tokens = residues: target + binder)
+
+Step 1: Target Epitope
+Fold a set of candidate clusters, score each
+Select winning cluster(s), rank by hit yield
+
+winning clusters
+
+Step 2: Backbone
+Fold a set of varied HHH backbones
+Select winning backbone(s), rank by hit yield
+
+winning backbones
+
+Step 3: Sequence
+Generate more MPNN seqs on the winneer backbones
+Select winning sequence(s), rank by ipSAE
+
+Arm A scientist alone
+Scientist
+Scientist
+Scientist
+
+Arm B HITL
+Agent
+Agent
+Agent
+
+Arm C HOOTL
+Agent
+
+| Agentic iteration | Arm A (Cumulative hit rate, %) | Arm B (Cumulative hit rate, %) | Arm C (Cumulative hit rate, %) | Arm B, MSA off (Cumulative hit rate, %) | Arm B, MSA off, IpSAE\_min (Cumulative hit rate, %) |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 5 | 2 | 1 | 7 | 1 |
+| 1 | 5 | 3 | 2 | 15 | 3 |
+| 2 | 5 | 3 | 2 | 24 | 4 |
+| 3 | 5 | 3 | 3 | 22 | 4 |
+| 4 | 5 | 4 | 3 | 22 | 5 |
+| 5 | 5 | 5 | 4 | 34 | 6 |
+| 6 | 5 | 6 | 4 | 33 | 5 |
+| 7 | 5 | 5 | 4 | 35 | 21 |
+| 8 | 5 | 6 | 4 | 32 | 19 |
+| 9 | 5 | 6 | 4 |  |  |
+| 10 | 5 | 7 | 4 |  |  |
+| 11 | 5 | 9 | 5 |  |  |
+| 12 | 5 | 9 | 5 |  |  |
+| 13 | 5 | 8 | 5 |  |  |
+| 14 | 5 | 9 | 6 |  |  |
+| 15 | 5 |  | 6 |  |  |
+| 16 | 5 |  | 6 |  |  |
+| 17 | 5 |  | 6 |  |  |
+| 18 | 5 |  | 6 |  |  |
+| 19 | 5 |  | 6 |  |  |
+| 20 | 5 |  | 6 |  |  |
+| 21 | 5 |  | 6 |  |  |
+| 22 | 5 |  | 6 |  |  |
+| 23 | 5 |  | 6 |  |  |
+
+| Category | Distinct hit-producing epitopes | Sequence diversity index (Mean pairwise 3-norm distance, rhs) |
+| --- | --- | --- |
+| unlabelled 1 | 4.5 | 0.96 |
+| unlabelled 2 | 7.2 | 0.96 |
+| unlabelled 3 | 12.0 | 0.96 |
+| unlabelled 4 | 13.2 | 0.93 |
+
+| Category | Compute consumed (GPU-hours) |
+| --- | --- |
+| Arm A scientist alone | 130 |
+| Arm B HiTL | 75 |
+| Arm B HiTL MSA off | 88 |
+| Arm C HOOTL | 123 |
+
+| Category | Distinct hit-producing plasmids |
+| --- | --- |
+| Arm A scientist alone | 4.4 |
+| Arm B HITL | 7.2 |
+| Arm B HITL MSA off | 12.1 |
+| Arm C HOOTL | 13.0 |
+
+| Category | Mean pairwise 3-mer distance (rhs) |
+| --- | --- |
+| Arm A scientist alone | 0.97 |
+| Arm B HITL | 0.97 |
+| Arm B HITL MSA off | 0.97 |
+| Arm C HOOTL | 0.92 |
+
+**Figure 5** \| **The FAP autonomy experiment: target, compute economy, and autonomy ladder. (a)** Structure of the human FAP
+extracellular domain (PDB 1Z68, chain B, 719 residues), comprising an 𝛼/𝛽-hydrolase domain and a 𝛽-propeller domain (left) whose
+catalytic triad (Ser624, Asp702, His734; red) sits inside a recessed substrate-channel opening (right; the targeted mouth-rim epitope is
+highlighted in orange around the central recessed triad). **(b)** Expected AF3 compute reduction under the token-bucket model ( **Fig.** 1): the
+intact FAP ECD plus binder (∼ 779 tokens) falls into the 1024-token bucket (59.3 s per fold), whereas an 85–130-residue crop plus binder
+fits into the 256-token bucket (6.9 s per fold), giving an ∼ 88% per-fold reduction in runtime. **(c)** Schematic of the excision pipeline with
+decision points indicated with purple arrows. **(d)** Autonomy conditions: Arm A (human investigator alone), Arm B (human–agent hybrid,
+where the investigator specifies the catalytic-rim strategy and the agent controls tactical execution), and Arm C (fully autonomous agent
+selecting strategy, target surface, and hotspot sets) use the exact same hit definition (ipSAEmax \> 0.45 and interface-RMSD < 3.0 Å) and
+GPU-hour budget cap. The B-variant uses the same hybrid autonomy setup as Arm B but modifies two scoring settings (disabling the target
+MSA and scoring on ipSAEmin). (e) Cumulative hit rate across agentic iterations for Arms B and C against the Arm A baseline (dotted
+line), with marker shapes denoting controller actions; the B-variant is plotted on both ipSAEmax (solid) and ipSAEmin (dashed). (f) Total
+GPU-hours consumed per condition (dotted line marks the budget cap). **(g)** Design diversity across arms: bars show the number of distinct
+epitopes yielding ≥ 1 hit (rising from 4 in Arm A to 7 in Arm B, 12 in the B-variant, and 13 in Arm C), while diamonds show mean pairwise
+3-mer sequence diversity (∼ 0.94–0.97).
+
+$$
+\\alpha/\\beta
+$$
+
+$$
+(ipSAE\_{max}>0.45
+$$
+
+$$
+\\mathrm{ipSAE\_{min}}
+$$
+
+$$
+\\mathrm{ipSAE\_{max}}
+$$
+
+$$
+\\mathrm{SAE}\_{\\min}
+$$
+
+rates are to refolding settings: evaluated on the standard ipSAEmax threshold, it appears to reach a 32.62%
+hit rate (and 19.31% on the ipSAEmin metric).
+
+$$
+\\mathrm{ipSAE\_{max}}
+$$
+
+$$
+\\mathrm{ipSAE\_{min}}
+$$
+
+Inspecting the logs from the fully autonomous run (Arm C) shows that the agent arrived at a sensible
+targeting strategy on its own. Provided only with a strategy-neutral list of whole-target surface residues,
+the Arm C agent opened by proposing a mouth-occlusion strategy aimed at well-ordered, solvent-exposed
+residues along the rim of the catalytic channel within 15 Å of the catalytic triad (𝑑cat < 15 Å), closely
+matching the steric-blockade rationale designed by the human investigator. The agent then filtered candi
+date hotspots by solvent-accessible surface area (SASA > 60), crystallographic order (B-factor ratio <
+
+$$
+(d\_{cat}<15 Å )
+$$
+
+* * *
+
+**Table 1** \| **Autonomy-ladder outcomes at equal compute.**
+
+| Arm | Decision-maker | Hits / designs | Hit rate | GPU-hours | Efficiency (hits/GPU-h) | Hit-producing epitopes | Seq. diversity |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| A (PI alone) | human | 1,672 / 33,024 | 5.06% | 132.87 | 12.6 | 4 | 0.964 |
+| B (hybrid) | human + agent | 1,790 / 19,184 | 9.33% | 77.18 | 23.2 | 7 | 0.965 |
+| C (agent alone)\* | agent | 1,803 / 29,176 | 6.18%\* | 124.43 (~ 94%) | 14.5 | 13 | 0.939 |
+| B-variant† (apparatus ablated) | human + agent | 7,106 / 21,784 | 32.62%† | 90.94 | 78.1† | 12 | 0.966 |
+
+- Arm C ran to completion: the agent terminated the campaign on its own decision at 124.43 of the 132.87 GPU-h cap (∼ 94%), leaving the
+  residual budget unspent, so its values are final. Arm A’s rate is on the frozen side-chain RMSD metric (rescored from its original backbone-only
+  scoring, which reported 9.92%); Arms B/C were scored natively on the frozen metric.
+
+† The B-variant sits at the same autonomy level as Arm B; it is a control that ablates two otherwise-frozen apparatus elements (target-MSA off;
+native ruler = ipSAEmin). Its headline rate (32.62%, efficiency 78.1) is on the frozen ipSAEmax ruler for comparability; on its native ipSAEmin
+ruler the same 21,784 designs give 4,206 hits = 19.31% (efficiency 46.3). The B-variant is therefore excluded from the autonomy comparison and
+reported only to separate apparatus effects from autonomy effects.
+
+$$
+\\mathrm{=ipSAE\_{min})}
+$$
+
+$$
+AE\_{max}
+$$
+
+$$
+\\mathrm{ipSAE\_{min}}
+$$
+
+1.0), and triad distance, effectively piecing together the same buildability criteria used by human designers
+without being prompted with those rules. Because the agent’s default structural priors already align with
+human target selection, constraining its search space in the hybrid arm (Arm B) lets it spend its entire
+compute budget on productive local optimization rather than initial surface exploration.
+
+To validate these computational predictions experimentally, top-ranked designs across conditions were
+evaluated using yeast-surface display against the FAP ectodomain ( **Figure 6a).** Candidates were expressed
+on _S. cerevisiae_ via an Aga2p–Aga1p anchor. We constructed a 5,000-member oligonucleotide library
+containing 1,250 designs per campaign arm (Arms A, B, C, and B-variant; **Figure 6b),** augmented with
+random mutagenesis (2–3 nucleotide substitutions per sequence) to explore local sequence space. The
+library was screened with fluorophore-conjugated target protein across three sequential rounds of fluo
+rescence-activated cell sorting (FACS) at decreasing target concentrations (300 nM, 150 nM, and 75 nM).
+Deep sequencing via MinION identified 571 enriched unique sequences, including 60 exact matches to
+computationally generated designs ( **Figure 6c).** The enriched exact designs comprised 13% from Arm
+A (𝑛 = 8), 10% from Arm B (𝑛 = 6), 40% from Arm C (𝑛 = 24), and 37% from Arm B-variant (𝑛 = 22;
+**Figure 6d).** Within each arm, the fraction of initial library sequences recovered after sorting was 0.38
+(Arm A), 0.83 (Arm B), 0.50 (Arm C), and 0.77 (Arm B-variant; **Figure 6e).** Clonal binding assays on four
+representative enriched leads demonstrated nanomolar binding affinities ranging from 3.0 nM to 9.1 nM
+𝐾𝐷 ( **Figure 6f).**
+
+$$
+K\_{D}
+$$
+
+## Discussion
+
+This study examines two practical ways to improve the efficiency of _de novo_ binder campaigns against
+large protein targets. First, cropping targets to local epitope windows substantially reduces AlphaFold3
+refolding costs while preserving both interface geometry (median RMSD of 0.37 Å) and binder ranking
+(mean ΔROC-AUC = −0.048). Where ranking accuracy does dip (1 out of 15 targets in our benchmark
+dataset), the loss is likely to be concentrated in a small subset of targets with shallow MSAs or fragile
+local pocket geometry rather than affecting all targets equally \[10\]. Because AF3 runtime scales in discrete
+token buckets of 256, the compute savings from excision depend on target size: small proteins that
+already fit in the 256-token bucket see no speedup, whereas large multi-domain targets drop into much
+cheaper buckets. The efficiency gains during refolding should apply similar scaling advantages to upstream
+backbone generation steps, such as RFdiffusion, that scale quadratically with sequence length. Our halosweep experiments show that the contextual information about the binding interface does affect structural
+and ranking accuracy while preserving a structural floor of 60–85 retained target residues, making it a
+
+$$
+\\Delta ROC-AUC=-0.048
+$$ a
+Florophore
+S. cerevisiae
+FAP ECD
+Aga2p-Aga1p surface anchor
+
+| Category | Constructs | Share (%) |
+| --- | --- | --- |
+| Arm A (investigator alone) | 1250 | 25 |
+| Arm B (HITL) | 1250 | 25 |
+| Arm C (HOOTL) | 1250 | 25 |
+| Arm B MSA off (HITL) | 1250 | 25 |
+
+| Category | Constructs | Share (%) |
+| --- | --- | --- |
+| Arm A (investigator alone) | 8 | 13 |
+| Arm B (HITL) | 6 |  |
+
+| Category | Number of enriched unique seq. |
+| --- | --- |
+| Total | 565 |
+| Exact designs | 50 |
+
+| Category | Fraction of total count |
+| --- | --- |
+| unlabelled 1 | 0.36 |
+| unlabelled 2 | 0.82 |
+| unlabelled 3 | 0.47 |
+
+**d. Enriched exact design composition**
+
+| Category | Constructs | Share (%) |
+| --- | --- | --- |
+| Arm A (investigator alone) | 8 | 13 |
+| Arm B (HITL) | 22 | 37 |
+| Arm C (HOOTL) | 24 | 40 |
+| Arm B MSA off (HITL) | 6 | 10 |
+
+| Category | Fraction of total count |
+| --- | --- |
+| Arm A | 0.36 |
+| Arm B | 0.82 |
+| Arm C | 0.48 |
+| Arm B MSA off | 0.76 |
+
+| Concentration (nM) | Clone 1 (K\_D = 3.0 nM) | Clone 2 (K\_D = 7.0 nM) | Clone 3 (K\_D = 9.1 nM) | Clone 4 (K\_D = 7.2 nM) |
+| --- | --- | --- | --- | --- |
+| 0 | 0.0 | 0.0 | 0.0 | 0.0 |
+| 1 | 0.27 | 0.17 | 0.13 | 0.12 |
+| 3 | 0.55 | 0.32 | 0.28 | 0.30 |
+| 10 | 0.87 | 0.50 | 0.50 | 0.57 |
+| 30 | 1.00 | 0.72 | 0.70 | 0.82 |
+| 100 | 1.04 | 0.90 | 0.92 | 0.99 |
+| 300 | 1.06 | 0.98 | 1.00 | 1.01 |
+
+**Figure 6** \| **Wet-lab validation of _de novo_ FAP binders by yeast-surface display. (a)** Yeast-display screening format: _de novo_
+HHH mini-binders are expressed on the _S. cerevisiae_ surface as Aga2p–Aga1p fusion proteins and interrogated with soluble, biotinconjugated FAP ectodomain. Cells displaying functional binders bind target protein and are isolated by fluorescence-activated cell
+sorting (FACS). **(b)** Composition of the 5,000-member yeast-display oligonucleotide synthesis library, containing 1,250 designs per
+campaign arm (Arm A, Arm B, Arm C, and Arm B-variant). **(c)** Total enriched unique binder sequences and exact computational
+design matches recovered after deep sequencing (MinION). **(d)** Distribution of enriched exact computational designs across campaign
+arms following rounds 1–3 of FACS selection. **(e)** Enrichment yield per arm, calculated as the fraction of initial library designs
+recovered after FACS selection. **(f)** Equilibrium binding titrations for four representative enriched clones, displaying single-digit
+nanomolar apparent equilibrium dissociation constants (𝐾𝐷 = 3.0–9.1 nM).
+
+$$
+K\_{D}=3.0-9.1\\mathrm{nM}
+$$
+
+promising way to tackle large receptors, viral glycoproteins, and enzymes that are otherwise too expensive
+to fold repeatedly at full length.
+
+Second, pairing an excision-based pipeline with an LLM agent improves computational yield under a
+fixed GPU budget. Across our controlled comparison on targeting FAP, the human–agent hybrid (Arm B)
+achieved the highest hit rate at the lowest compute cost. This result points to a practical division of labor:
+having a human researcher specify the general framework for the campaign strategy, such as ranking
+metrics and structural properties or biological target regions, while letting the LLM agent handle iterative
+parameter selection, crop sizing, and budget allocation across different stages improves throughput over
+manual management. Notably, when left to choose its own strategy from a whole-target residue map, the
+fully autonomous agent (Arm C) independently converged on the same catalytic-mouth occlusion strategy
+and surface-filtering criteria used by the human investigator. Even so, under a capped compute budget,
+giving the agent a human strategic prior proved more efficient than having it spend GPU hours discovering
+where to bind, whereas full autonomy was useful for spreading designs across a wider set of 13 distinct
+epitopes.
+
+* * *
+
+To evaluate these computational predictions at scale, wet-lab validation of the _de novo_ FAP binders was
+conducted using yeast-surface display. Among the enriched exact sequences, the 3- to 4-fold higher
+representation of Arm C relative to Arms A and B suggests that the _in silico_ prediction metrics used by
+autonomous agents effectively accounted for expression, whereas relying solely on ipSAE values may
+have resulted in reduced expressibility. The improved representation in the Arm B-variant indicates that
+enhanced ipSAE in this arm may rescue expression. Furthermore, higher expression and enrichment in the
+Arm B-variant demonstrate that excluding the target MSA does not impair binder prediction, consistent
+with our _in silico_ hit rates observed in another recent study \[12\]. Finally, the top four clones isolated after
+three rounds of sorting exhibited single-digit nanomolar apparent 𝐾𝐷 values, indicating physiologically
+relevant and specific interactions with the disease target FAP. Future work will include the binding
+characterization of solubly expressed binders, evaluation of FAP domain specificity, and inhibition assays
+of FAP catalytic activity.
+
+$$
+K\_{D}
+$$
+
+Several caveats apply to these findings. Refolding excised crops without a target MSA recovers ranking
+accuracy on targets with deep alignments but hurts performance on a shallow-MSA target SARS-CoV-2
+RBD, suggesting that single-sequence refolding may not apply to all targets. Second, in the FAP autonomy
+experiment, the fully autonomous agent in Arm C chose to stop at ∼ 94% of the shared compute budget;
+while its final numbers reflect the agent’s own stopping decision, a policy tuned to exhaust the remaining
+6% of the budget might have yielded additional hits. Finally, our autonomy comparison focused on a single
+large enzyme target (FAP) and a single backbone class (three-helix bundles) driven by one LLM controller;
+testing how these autonomy trade-offs generalize to beta-sheet scaffolds and other target classes remains
+future work.
+
+Overall, our results outline a straightforward workflow for large macromolecular targets: crop the target to
+a local 85–130-residue window (or ∼ 6 Å halo), score candidates with a fixed interface-confidence metric,
+and use an LLM agent to manage the iterative design loop within a human-selected target region. Applying
+this combination turned the 719-residue FAP ectodomain into a routine computational design campaign
+while substantially lowering GPU usage.
+
+## Methods
+
+### Target excision
+
+For each design, target residues with any atom within the contact radius of the binder were retained
+together with all target residues within an additional halo shell (keep-radius = 5 Å contact + halo; halos
+0/3/6/9/11 = radii 5/8/11/14/16 Å); the pocket was folded in place of the intact target. The crop is
+the pure contiguous span of the primary interface chain (no growing or capping in the benchmark
+reconstruction). Halo 11 Å is the shipped operating point; halo ≈ 6 Å is the safe floor identified here (≈
+9 Å for shallow-MSA targets).
+
+$$
+0/3/6/9/11=\\mathrm{radii}5/8/11/14/16\\mathring{\\mathrm{A}})
+$$
+
+$$
+\\approx6 Å
+$$
+
+### Folding, scoring, and metrics
+
+Complexes were folded with AlphaFold3 (on-demand memory, --norun\_data\_pipeline, default token
+buckets). Ranking used ipSAEmax. Full-target references used a deep MSA and full-target template;
+all excised folds in this reconstruction used a per-excision MSA sliced offline from the cached fulltarget a3m. Interface geometry = target interface-core C𝛼 RMSD between re-fold and design reference
+(validity gate 3 Å); for geometry-vs-halo curves the median is taken over all designs so failed
+folds remain visible, with validity fractions reported separately. Ranking accuracy = AP and ROC-
+AUC of ipSAEmax, with per-target values as the replication unit (𝑛pos ≥ 5 for informative targets);
+ranking error bars use 2,000-resample design bootstraps, and full-vs-excised deltas use a per-target
+paired bootstrap. AF3 runtime was modeled as bucket = ⌈tokens/256⌉ × 256 (minimum 256), with
+per-fold times 6.9/17.5/35.0/59.3 s for the 256/512/768/1024 buckets; batch saving per target =
+(∑ full-target time − ∑ excised time)/ ∑ full-target time.
+
+$$
+\\mathrm{ipSAE\_{max}}
+$$
+
+$$
+\\mathrm{C}\\alpha
+$$
+
+$$
+\\mathrm{ipSAE\_{max}},
+$$
+
+$$
+(n\_{\\mathrm{pos}}\\geq5
+$$
+
+$$
+-\\sum
+$$
+
+* * *
+
+### FAP target and excision
+
+The target is the FAP extracellular domain (PDB 1Z68, chain B, residues 39–757; ∼ 719 residues), catalytic
+triad Ser624/Asp702/His734 lining a near-buried substrate-channel mouth. The pipeline excises a compact
+continuous crop of 85–130 residues around the chosen epitope; excision is frozen as a mechanism across
+all arms, with crop size the only tunable knob (a direct compute lever).
+
+$$
+39-757;\\sim719
+$$
+
+### Design toolchain
+
+Each candidate epitope is turned into binders by a fixed pipeline: RFdiffusion (three-helix-bundle “HHH”
+scaffold family only), ProteinMPNN sequence design, AlphaFold3 refolding, followed by refold-based
+interface evaluation. Binder length is a free knob hard-capped at ≤ 71 residues. Default generation policy:
+ProteinMPNN temperatures {0.1, 0.3} × 4 batches, target MSA on, binder MSA off; the agentic arms may
+adjust these.
+
+$$
+\\leq71
+$$
+
+### Frozen hit metric and budget
+
+A design is a hit iff ipSAEmax \> 0.45 AND target-interface RMSD < 3.0 Å (interface RMSD on a sidechain-bearing refold of the interface core). No arm may redefine a hit; robustness/𝑛core and functionalocclusion diagnostics are computed _post hoc_ and never enter any decision or hit count. All arms share one
+currency, measured GPU-hours, capped at the PI campaign’s total (132.87 GPU-h); the controller brackets
+each GPU subprocess with a wall-clock timer and refuses any action whose estimated cost would exceed
+the remaining budget. Design _count_ is not comparable across arms (per-design cost varies with crop and
+binder length) and is reported for reference only.
+
+$$
+\\mathrm{ipSAE\_{max}}>0.45\ \\mathrm{AND}
+$$
+
+$$
+\\mathrm{RMSD}<3.0 Å
+$$
+
+$$
+/n\_{core}
+$$
+
+### Agentic controller (Arms B and C)
+
+A closed-loop controller wraps the frozen pipeline. Each iteration it builds a structured observation (percluster hit counts, budget remaining, current generation policy, never 𝑛core, robustness, or buildability
+marks) and an LLM agent (Gemini 3.1 Pro) returns one typed action: propose\_strategy (required first move),
+propose\_clusters, configure (GPU-free), screen / expand / deepen / adjust\_crop / backtrack / stop. In Arm B
+the PI fixes the strategy and the agent registers only consistent epitope tactics; in Arm C the agent reads a
+strategy-neutral whole-target surface map, declares its own strategy, and registers hotspot sets of any arity
+anywhere with no buildability pre-filter (every screened set costs GPU-hours whether or not buildable).
+The controller is hardened against transient API failures (exponential-backoff retries, bounded timeouts).
+
+$$
+n\_{core},
+$$
+
+### Diversity metrics
+
+Epitope breadth = number of distinct hit-producing epitopes (unique hotspot-set clusters with ≥ 1 hit).
+Sequence diversity = mean pairwise 3-mer Jaccard distance over hit binder sequences (1.0 = maximally
+diverse), on a capped random sample per arm. Backbone breadth = distinct (epitope, backbone) pairs
+producing hits.
+
+$$
+\\geq1
+$$
+
+### Yeast display
+
+Yeast surface display screening was performed as described previously by Boder and Wittrup \[14\]. Briefly,
+designed protein sequences were codon-optimized for recombinant expression in microbial hosts. For
+display on the _S. cerevisiae_ cell surface as Aga2p–Aga1p fusion proteins, coding sequences were extended
+with flanking regions homologous to the display vector to facilitate homologous recombination in _S._
+_cerevisiae._ Following confirmation of expression, yeast libraries displaying the constructs were enriched
+for binding to biotinylated FAP through three sequential rounds of fluorescence-activated cell sorting
+(FACS). To prevent non-specific enrichment against secondary detection reagents, the first sorting round
+utilized fluorophore-labeled NeutrAvidin, whereas fluorophore-labeled streptavidin was used in subse
+quent rounds. For apparent 𝐾𝐷 determination, individual yeast clones isolated from the third round of
+screening were incubated with varying concentrations of biotinylated FAP prior to quantification of the
+cell-surface binding signal.
+
+$$
+K\_{D}
+$$
+
+* * *
+
+## Acknowledgements
+
+We thank all the members of Team Morphogenesis for their help and support throughout this study. We
+wish to thank Ronit Levavi Morad, Bill Jia, and James Manyika for leadership support. We thank Pooja
+Rao and Andrew Carroll for reviews and feedback, Anthony Phalen for assistance on partnerships, Anna
+Sard for assistance on finance, and Aminie Brik for assistance on all the things to make a lab run fast.
+
+## Competing interests
+
+A.M., L.C., J.R., A.H., Y.M., and A.P. are employees of Google LLC and may own Alphabet Inc. stock as part
+of the standard compensation package. The authors declare no other competing interests.
+
+## Author contributions
+
+J.W.K., L.C., and A.P. conceived the study. J.W.K., L.C., and A.P. designed the research and developed the
+epitope excision framework and agentic binder design workflows. J.W.K. and A.M. executed the computa
+tional benchmarking and data analysis. J.W.K. and O.D. coordinated and conducted wet-lab experiments.
+J.R., A.H. and Y.M. provided research leadership and strategic guidance. J.W.K. and A.P. wrote the manu
+script, with input from all authors. J.W.K. and A.P. co-led the work.
+
+## References
+
+01. Watson JL, Juergens D, Bennett NR, et al. De novo design of protein structure and function with RFdiffusion. _Nature_ **620,**
+    1089–1100 (2023). doi:10.1038/s41586-023-06415-8
+
+02. Dauparas J, Anishchenko I, Bennett N, et al. Robust deep learning–based protein sequence design using ProteinMPNN.
+    _Science_ **378,** 49–56 (2022). doi:10.1126/science.add2187
+
+03. Pacesa M, Nickel L, Schellhaas C, et al. BindCraft: one-shot design of functional protein binders. _bioRxiv_ 2024.09.30.615802
+    (2024). doi:10.1101/2024.09.30.615802
+
+04. Abramson J, Adler J, Dunger J, et al. Accurate structure prediction of biomolecular interactions with AlphaFold3. _Nature_ **630,** 493–500 (2024). doi:10.1038/s41586-024-07487-w
+
+05. Jumper J, Evans R, Pritzel A, et al. Highly accurate protein structure prediction with AlphaFold. _Nature_ **596,** 583–589 (2021).
+    doi:10.1038/s41586-021-03819-2
+
+06. Dunbrack RL. ipSAE: a scoring function for interprotein interactions in AlphaFold2 and AlphaFold3. _bioRxiv_
+    2025.02.10.637595 (2025). doi:10.1101/2025.02.10.637595
+
+07. Bryant P, Pozzati G, Elofsson A. Improved prediction of protein–protein interactions using AlphaFold2. _Nature Commu_
+    _nications_ **13,** 1265 (2022). doi:10.1038/s41467-022-28865-w
+
+08. Zhu W, Shenoy A, Kundrotas P, Elofsson A. Evaluation of AlphaFold-Multimer prediction on multi-chain protein
+    complexes. _Bioinformatics_ 39(7), btad424 (2023). doi:10.1093/bioinformatics/btad424
+
+09. Lee SY, et al. Fibroblast activation protein alpha as a therapeutic target. _Front. Oncol._ **11,** 648187 (2021). doi:10.3389/
+    fonc.2021.648187
+
+10. Deng B, et al. Discontinuous structural fragments for protein binder design. _arXiv preprint_ arXiv:2509.25479 (2025).
+    doi:10.48550/arXiv.2509.25479
+
+11. Gottweis J, Weng W-H, Daryin A, et al. Towards an AI co-scientist. _Nature_ (2026). doi:10.1038/s41586-026-10644-y
+
+12. Feldman J, Skolnick J. A Shortcut to Structure in AlphaFold 3. _arXiv preprint_ arXiv:2610.08937 (2026). doi:10.48550/
+    arXiv.2610.08937
+
+13. Overath MD, et al. Predicting Experimental Success in De Novo Binder Design: A Meta-Analysis of 3,766 Experimentally
+    Characterised Binders. _bioRxiv_ (2025). doi:10.1101/2025.08.14.670059
+
+14. Boder ET, Wittrup KD. Yeast surface display for screening combinatorial polypeptide libraries. _Nat. Biotechnol.15(6),_ 553–
+    557 (1997). doi:10.1038/nbt0697-553
+
+
+* * *
+
+## Supporting Information
+
+Inputs Feature vector Base learners Ensemble Output AlphaFold3 x in R^9 af3\_ipSAE\_min boltz\_ipSAE\_min esmfold2\_ipSAE\_min esmfold2\_iptm PRODIGY\_dG FreeSASA\_BSA EvoEF2\_terms engineered ipSAE x dG af3\_ipSAE x boltz\_ipSAE Linear (L1) w = 0.75 MLP (8 hidden) w = 0.15 XGBoost w = 0.10 S rank-average score y\_hat ESMFold2
+
+| Category | Mean AP (15 targets) (Screening precision, median AP) | Median AP (15 LOGO targets) (Screening precision, median AP) | Relative GPU usage (rhs) |
+| --- | --- | --- | --- |
+| ipSAE | 0.525 | 0.54 | 1 |
+| +physics | 0.52 | 0.565 | 1 |
+| +synergy | 0.53 | 0.58 | 1 |
+| +Boltz-2 | 0.54 | 0.595 | 1.8 |
+| +ESMFold2 | 0.55 | 0.60 | 2 |
+
+**Supporting Figure 1 (related to Figure 1)** \| **Computational screening reaches an accuracy ceiling at rapidly rising compute.** **(a)** Architecture of the multi-engine consensus screening model. Three structure-prediction models (AlphaFold3, Boltz-2, and ESMFold2)
+independently fold each binder–target complex; biophysical terms (PRODIGY interface Δ𝐺, FreeSASA buried surface area, and EvoEF2
+energy terms) and interface-confidence scores are combined into a nine-element feature vector along with two interaction features
+(ipSAE × Δ𝐺 and the AF3 × Boltz consensus product). Features are evaluated by an L1-regularized linear model, an 8-node MLP,
+and gradient-boosted trees, whose rank-percentiles are combined in a fixed 0.75/0.15/0.10 blend. Relative to AlphaFold3 (1.0), Boltz-2
+requires ∼ 0.8 × GPU compute per fold and single-sequence ESMFold2 requires ∼ 0.2 ×. CPU biophysical calculations and ensemble
+inference are negligible. **(b)** Screening precision (median AP across the 15 leave-one-target-out folds; mean AP in grey) across successively
+more complex model architectures. Adding biophysical features and the interaction blend (which require no extra folding) yields the
+largest improvements (+0.022 and +0.018 AP), whereas adding Boltz-2 and ESMFold2 folds (grey bars, right axis showing relative GPU
+usage) adds only +0.012 and +0.010 AP while roughly doubling total GPU cost.
+
+$$
+(ipSAE\\times\\Delta G
+$$
+
+**Supporting Table 1 (related to Figure 1)** \| **Screening precision versus compute across an architecture progression, on the 15-**
+**target Overath/Cao benchmark under leave-one-group-out cross-validation (3,760 designs).**
+
+| Configuration | Added component | Fold engines (relative GPU usage) | Median AP | Mean AP ± SD | Δ median AP |
+| --- | --- | --- | --- | --- | --- |
+| AF3 ipSAEmin alone | raw AF3 interface score (no learning) | AF3 (1 ×) | 0.5399 | 0.5251 ± 0.256 | — |
+| Arch 1 | \+ physics (PRODIGY, FreeSASA, EvoEF2), L1-linear | AF3 (1 ×) | 0.5624 | 0.5188 ± 0.231 | +0.0225 |
+| Arch 3A | \+ synergy term (ipSAE × Δ G), tri-blend 75/15/10 | AF3 (1 ×) | 0.5802 | 0.5310 ± 0.239 | +0.0178 |
+| Arch 4B | \+ Boltz-2 consensus (AF3 × Boltz) | AF3 + Boltz-2 (~ 1.8 ×) | 0.5921 | 0.5401 ± 0.241 | +0.0119 |
+| Arch 5 | \+ ESMFold2 metrics | AF3 + Boltz-2 + ESMFold2 (~ 2 ×) | 0.6023 | 0.5498 ± 0.240 | +0.0102 |
+
+$$
+\\mathrm{ipSAE\_{min}}
+$$
+
+* * *
+
+**a**
+
+| Crop radius = 5Å contact + halo | EGFR (Bucket-crossing designs, %) | IL7Ra (Bucket-crossing designs, %) | SARS CoV2 RBD (Bucket-crossing designs, %) | pMHC NY1 (Bucket-crossing designs, %) | sintx (Bucket-crossing designs, %) | IL10Ra (Bucket-crossing designs, %) | pMHC ILSY1 (Bucket-crossing designs, %) | LTK (Bucket-crossing designs, %) | Pooled (Bucket-crossing designs, %) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 5 (h0) | 45 | 54 | 48 | 48 | 49 | 101 | 9 | 0 | 9 |
+| 8 (h3) | 41 | 48 | 48 | 29 | 10 | 101 | 4 | -1 | 7 |
+| 11 (h6) | 37 | 43 | 47 | 4 | 4 | 101 | -1 | -1 | 5 |
+| 14 (h9) | 32 | 40 | 47 | 2 | 2 | 101 | -1 | -1 | 4 |
+| 16 (h11) | 27 | 36 | 47 | 0 | 0 | 101 | -1 | -1 | 3 |
+
+**b**
+
+| Crop radius = 5Å contact + halo | EGFR (Absolute fold-time saved, min) | IL7Ra (Absolute fold-time saved, min) | SARS CoV2 RBD (Absolute fold-time saved, min) | pMHC NY1 (Absolute fold-time saved, min) | sintx (Absolute fold-time saved, min) | IL10Ra (Absolute fold-time saved, min) | pMHC ILSY1 (Absolute fold-time saved, min) | LTK (Absolute fold-time saved, min) | Pooled (Absolute fold-time saved, min) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 5 (h0) | 68 | 16 | 8 | 5 | 5 | 3 | 2 | 0 | 107 |
+| 8 (h3) | 62 | 14 | 8 | 4 | 4 | 3 | 1 | 0 | 94 |
+| 11 (h6) | 56 | 13 | 8 | 3 | 3 | 3 | 1 | 0 | 83 |
+| 14 (h9) | 50 | 12 | 8 | 3 | 3 | 3 | 1 | 0 | 75 |
+| 16 (h11) | 43 | 11 | 8 | 3 | 3 | 3 | 1 | 0 | 67 |
+
+**Supporting Figure 2 (related to Figure 1)** \| **Per-target compute economics across the crop-radius sweep. (a)** Percentage of
+each target’s designs whose excised crop crosses an AF3 token-bucket boundary (bucket-crossing rate) as a function of crop radius
+(5 Å contact shell + halo, for halos 0, 3, 6, 9, and 11 Å), showing individual curves for saving targets and the pooled 15-target average
+(dashed). **(b)** Total batch AF3 fold-time saved (in minutes) versus crop radius per target. EGFR accounts for the largest wall-clock savings
+because its intact complex starts in a high token bucket, recovering more seconds each time a design crosses a boundary (see **Figure 1e).**
+Together, panels **(a)** and **(b)** separate the batch savings in **Figure 1d–e** into bucket-crossing frequency and wall-clock time recovered
+per crossing.
+
+| Category | Bootstrap median (Average Precision) | Full + MSA (mean) (Average Precision) | Excised h11 + MSA (mean) (Average Precision) | Excised h11 (mean) (Average Precision) |
+| --- | --- | --- | --- | --- |
+| snix | 0.88 | 0.87 | 0.73 | 0.99 |
+| IL2Ra | 0.81 | 0.79 | 0.99 | 0.96 |
+| RBD | 0.71 | 0.71 | 0.57 | 0.27 |
+| Mdm2 | 0.67 | 0.67 | 0.66 | 0.69 |
+| Pdl1 | 0.59 | 0.59 | 0.28 | 0.65 |
+| IL7Ra | 0.55 | 0.44 | 0.33 | 0.42 |
+| InsulinR | 0.44 | 0.44 | 0.39 | 0.46 |
+| FGFR2 | 0.38 | 0.38 | 0.33 | 0.41 |
+| EGFR | 0.31 | 0.31 | 0.28 | 0.35 |
+| TrkA | 0.27 | 0.27 | 0.22 | 0.28 |
+| VlrB8 | 0.22 | 0.22 | 0.11 | 0.18 |
+
+| Category | Bootstrap median (ROC-AUC) | Full + MSA (mean) (ROC-AUC) | Excised h11 + MSA (mean) (ROC-AUC) | Excised h11 (mean) (ROC-AUC) |
+| --- | --- | --- | --- | --- |
+| sntx | 0.97 | 0.95 | 0.98 | 0.99 |
+| IL2Ra | 0.97 | 0.95 | 0.98 | 0.99 |
+| SARS CoV2 RBD | 0.84 | 0.64 | 0.76 | 0.60 |
+| Mdm2 | 0.58 | 0.58 | 0.58 | 0.58 |
+| Pd1 | 0.87 | 0.86 | 0.72 | 0.71 |
+| IL7Ra | 0.79 | 0.78 | 0.62 | 0.74 |
+| InsulinR | 0.74 | 0.73 | 0.63 | 0.72 |
+| FGFR2 | 0.74 | 0.74 | 0.73 | 0.78 |
+| EGFR | 0.74 | 0.73 | 0.60 | 0.79 |
+| TrkA | 0.78 | 0.77 | 0.68 | 0.77 |
+| VitrB8 | 0.57 | 0.57 | 0.50 | 0.66 |
+
+Supporting Figure 3 (related to Figure 2) \| ipSAEmin variant of Figure 2d,e. (a) Per-target average precision (AP) and (b)
+ROC-AUC scored using ipSAEmin (the conservative minimum across the two asymmetric chain-pair directions, as used in the source
+benchmark) on the informative target subset (number of binders ≥ 5). All three arms (full-target+MSA, excised halo-11+MSA, and
+excised single-sequence no-MSA) show the same relative behavior as on ipSAEmax, confirming that the benchmark conclusions do not
+depend on chain-pair aggregation direction. (As in **Figure 2,** VirB8′s full-target bar \[asterisk\] shows the reproduced full-target refold.)
+
+$$
+\\mathrm{ipSAE\_{min}}
+$$
+
+$$
+\\mathrm{ipSAE\_{min}}
+$$
+
+$$
+\\mathrm{ipSAE\_{max}},
+$$
+
+* * *
+
+| Halo (Å) | EGFR (Mean interface Cα RMSD, Å) | IL7Ra (Mean interface Cα RMSD, Å) | InsulinR (Mean interface Cα RMSD, Å) | TrkA (Mean interface Cα RMSD, Å) | Pdl1 (Mean interface Cα RMSD, Å) | IL2Ra (Mean interface Cα RMSD, Å) | VirB8 (Mean interface Cα RMSD, Å) | SARS CoV2 RBD (Mean interface Cα RMSD, Å) | 3Å gate (Mean interface Cα RMSD, Å) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | 1.6 | 2.0 | 0.5 | 2.5 | 0.6 | 0.4 | 8.0 | 3.0 | 3.1 |
+| 3 | 1.3 | 1.4 | 0.4 | 0.4 | 0.4 | 0.4 | 5.0 | 2.1 | 3.1 |
+| 6 | 1.1 | 0.8 | 0.3 | 0.5 | 0.3 | 0.3 | 3.6 | 0.6 | 3.1 |
+| 9 | 0.9 | 0.6 | 0.3 | 0.4 | 0.3 | 0.3 | 0.4 | 0.4 | 3.1 |
+| 11 | 0.8 | 0.5 | 0.3 | 0.3 | 0.3 | 0.3 | 0.3 | 0.3 | 3.1 |
+
+| Halo (Å) | Excised + MSA (Mean precision) | Excised (Mean precision) | Full + MSA (Mean precision) |
+| --- | --- | --- | --- |
+| 0 | 0.337 | 0.371 | 0.542 |
+| 3 | 0.424 | 0.473 | 0.542 |
+| 6 | 0.421 | 0.480 | 0.542 |
+| 9 | 0.420 | 0.513 | 0.542 |
+| 11 | 0.447 | 0.497 | 0.542 |
+
+| Category | Series 1 (unlabelled) | Full + MSA (Mean precision) |
+| --- | --- | --- |
+| unlabelled 1 | 0.778 | 0.782 |
+| unlabelled 2 | 0.780 | 0.782 |
+| unlabelled 3 | 0.776 | 0.782 |
+| unlabelled 4 | 0.776 | 0.782 |
+
+| Category | RMSD (Å) |
+| --- | --- |
+| unlabelled 1 | 5.5 |
+| unlabelled 2 | 6.5 |
+| unlabelled 3 | 7.5 |
+| unlabelled 4 | 8.5 |
+| unlabelled 5 | 9.5 |
+| unlabelled 6 | 10.5 |
+| unlabelled 7 | 11.5 |
+| unlabelled 8 | 12.5 |
+| unlabelled 9 | 13.5 |
+| unlabelled 10 | 14.5 |
+| unlabelled 11 | 15.5 |
+| unlabelled 12 | 16.5 |
+| unlabelled 13 | 17.5 |
+| unlabelled 14 | 18.5 |
+| unlabelled 15 | 19.5 |
+| unlabelled 16 | 20.5 |
+| unlabelled 17 | 21.5 |
+| unlabelled 18 | 22.5 |
+| unlabelled 19 | 23.5 |
+| unlabelled 20 | 24.5 |
+| unlabelled 21 | 25.5 |
+| unlabelled 22 | 26.5 |
+| unlabelled 23 | 27.5 |
+| unlabelled 24 | 28.5 |
+| unlabelled 25 | 29.5 |
+| unlabelled 26 | 30.5 |
+| unlabelled 27 | 31.5 |
+| unlabelled 28 | 32.5 |
+| unlabelled 29 | 33.5 |
+| unlabelled 30 | 34.5 |
+| unlabelled 31 | 35.5 |
+| unlabelled 32 | 36.5 |
+| unlabelled 33 | 37.5 |
+| unlabelled 34 | 38.5 |
+| unlabelled 35 | 39.5 |
+| unlabelled 36 | 40.5 |
+| unlabelled 37 | 41.5 |
+| unlabelled 38 | 42.5 |
+| unlabelled 39 | 43.5 |
+| unlabelled 40 | 44.5 |
+| unlabelled 41 | 45.5 |
+| unlabelled 42 | 46.5 |
+| unlabelled 43 | 47.5 |
+| unlabelled 44 | 48.5 |
+| unlabelled 45 | 49.5 |
+| unlabelled 46 | 50.5 |
+| unlabelled 47 | 51.5 |
+| unlabelled 48 | 52.5 |
+| unlabelled 49 | 53.5 |
+| unlabelled 50 | 54.5 |
+| unlabelled 51 | 55.5 |
+| unlabelled 52 | 56.5 |
+| unlabelled 53 | 57.5 |
+| unlabelled 54 | 58.5 |
+| unlabelled 55 | 59.5 |
+| unlabelled 56 | 60.5 |
+| unlabelled 57 | 61.5 |
+| unlabelled 58 | 62.5 |
+| unlabelled 59 | 63.5 |
+| unlabelled 60 | 64.5 |
+| unlabelled 61 | 65.5 |
+| unlabelled 62 | 66.5 |
+| unlabelled 63 | 67.5 |
+| unlabelled 64 | 68.5 |
+| unlabelled 65 | 69.5 |
+| unlabelled 66 | 70.5 |
+| unlabelled 67 | 71.5 |
+| unlabelled 68 | 72.5 |
+| unlabelled 69 | 73.5 |
+| unlabelled 70 | 74.5 |
+| unlabelled 71 | 75.5 |
+| unlabelled 72 | 76.5 |
+| unlabelled 73 | 77.5 |
+| unlabelled 74 | 78.5 |
+| unlabelled 75 | 79.5 |
+| unlabelled 76 | 80.5 |
+| unlabelled 77 | 81.5 |
+| unlabelled 78 | 82.5 |
+| unlabelled 79 | 83.5 |
+| unlabelled 80 | 84.5 |
+| unlabelled 81 | 85.5 |
+| unlabelled 82 | 86.5 |
+| unlabelled 83 | 87.5 |
+| unlabelled 84 | 88.5 |
+| unlabelled 85 | 89.5 |
+| unlabelled 86 | 90.5 |
+| unlabelled 87 | 91.5 |
+| unlabelled 88 | 92.5 |
+| unlabelled 89 | 93.5 |
+| unlabelled 90 | 94.5 |
+| unlabelled 91 | 95.5 |
+| unlabelled 92 | 96.5 |
+| unlabelled 93 | 97.5 |
+| unlabelled 94 | 98.5 |
+| unlabelled 95 | 99.5 |
+| unlabelled 96 | 100.5 |
+| unlabelled 97 | 101.5 |
+| unlabelled 98 | 102.5 |
+| unlabelled 99 | 103.5 |
+| unlabelled 100 | 104.5 |
+| unlabelled 101 | 105.5 |
+| unlabelled 102 | 106.5 |
+| unlabelled 103 | 107.5 |
+| unlabelled 104 | 108.5 |
+| unlabelled 105 | 109.5 |
+| unlabelled 106 | 110.5 |
+| unlabelled 107 | 111.5 |
+| unlabelled 108 | 112.5 |
+| unlabelled 109 | 113.5 |
+| unlabelled 110 | 114.5 |
+| unlabelled 111 | 115.5 |
+| unlabelled 112 | 116.5 |
+| unlabelled 113 | 117.5 |
+| unlabelled 114 | 118.5 |
+| unlabelled 115 | 119.5 |
+| unlabelled 116 | 120.5 |
+| unlabelled 117 | 121.5 |
+| unlabelled 118 | 122.5 |
+| unlabelled 119 | 123.5 |
+| unlabelled 120 | 124.5 |
+| unlabelled 121 | 125.5 |
+| unlabelled 122 | 126.5 |
+| unlabelled 123 | 127.5 |
+| unlabelled 124 | 128.5 |
+| unlabelled 125 | 129.5 |
+| unlabelled 126 | 130.5 |
+| unlabelled 127 | 131.5 |
+| unlabelled 128 | 132.5 |
+| unlabelled 129 | 133.5 |
+| unlabelled 130 | 134.5 |
+| unlabelled 131 | 135.5 |
+| unlabelled 132 | 136.5 |
+| unlabelled 133 | 137.5 |
+| unlabelled 134 | 138.5 |
+| unlabelled 135 | 139.5 |
+| unlabelled 136 | 140.5 |
+| unlabelled 137 | 141.5 |
+| unlabelled 138 | 142.5 |
+| unlabelled 139 | 143.5 |
+| unlabelled 140 | 144.5 |
+| unlabelled 141 | 145.5 |
+| unlabelled 142 | 146.5 |
+| unlabelled 143 | 147.5 |
+| unlabelled 144 | 148.5 |
+| unlabelled 145 | 149.5 |
+| unlabelled 146 | 150.5 |
+| unlabelled 147 | 151.5 |
+| unlabelled 148 | 152.5 |
+| unlabelled 149 | 153.5 |
+| unlabelled 150 | 154.5 |
+| unlabelled 151 | 155.5 |
+| unlabelled 152 | 156.5 |
+| unlabelled 153 | 157.5 |
+| unlabelled 154 | 158.5 |
+| unlabelled 155 | 159.5 |
+| unlabelled 156 | 160.5 |
+| unlabelled 157 | 161.5 |
+| unlabelled 158 | 162.5 |
+| unlabelled 159 | 163.5 |
+| unlabelled 160 | 164.5 |
+| unlabelled 161 | 165.5 |
+| unlabelled 162 | 166.5 |
+| unlabelled 163 | 167.5 |
+| unlabelled 164 | 168.5 |
+| unlabelled 165 | 169.5 |
+| unlabelled 166 | 170.5 |
+| unlabelled 167 | 171.5 |
+| unlabelled 168 | 172.5 |
+| unlabelled 169 | 173.5 |
+| unlabelled 170 | 174.5 |
+| unlabelled 171 | 175.5 |
+| unlabelled 172 | 176.5 |
+| unlabelled 173 | 177.5 |
+| unlabelled 174 | 178.5 |
+| unlabelled 175 | 179.5 |
+| unlabelled 176 | 180.5 |
+| unlabelled 177 | 181.5 |
+| unlabelled 178 | 182.5 |
+| unlabelled 179 | 183.5 |
+| unlabelled 180 | 184.5 |
+| unlabelled 181 | 185.5 |
+| unlabelled 182 | 186.5 |
+| unlabelled 183 | 187.5 |
+| unlabelled 184 | 188.5 |
+| unlabelled 185 | 189.5 |
+| unlabelled 186 | 190.5 |
+| unlabelled 187 | 191.5 |
+| unlabelled 188 | 192.5 |
+| unlabelled 189 | 193.5 |
+| unlabelled 190 | 194.5 |
+| unlabelled 191 | 195.5 |
+| unlabelled 192 | 196.5 |
+| unlabelled 193 | 197.5 |
+| unlabelled 194 | 198.5 |
+| unlabelled 195 | 199.5 |
+| unlabelled 196 | 200.5 |
+| unlabelled 197 | 201.5 |
+| unlabelled 198 | 202.5 |
+| unlabelled 199 | 203.5 |
+| unlabelled 200 | 204.5 |
+| unlabelled 201 | 205.5 |
+| unlabelled 202 | 206.5 |
+| unlabelled 203 | 207.5 |
+| unlabelled 204 | 208.5 |
+| unlabelled 205 | 209.5 |
+| unlabelled 206 | 210.5 |
+| unlabelled 207 | 211.5 |
+| unlabelled 208 | 212.5 |
+| unlabelled 209 | 213.5 |
+| unlabelled 210 | 214.5 |
+
+| Halo (Å) | Excised + MSA (Mean precision) | Excised (Mean precision) | Full + MSA (Mean precision) |
+| --- | --- | --- | --- |
+| 0 | 0.665 | 0.718 | 0.782 |
+| 3 | 0.740 | 0.786 | 0.782 |
+| 6 | 0.758 | 0.776 | 0.782 |
+| 9 | 0.746 | 0.778 | 0.782 |
+| 11 | 0.737 | 0.776 | 0.782 |
+
+| Crop residues | EGFR (Mean interface GcRMSD, Å) | IL7Ra (Mean interface GcRMSD, Å) | InsulinR (Mean interface GcRMSD, Å) | TrkA (Mean interface GcRMSD, Å) | Pdl1 (Mean interface GcRMSD, Å) | IL2Ra (Mean interface GcRMSD, Å) | VirB8 (Mean interface GcRMSD, Å) | SARS CoV2 RBD (Mean interface GcRMSD, Å) | IL10Ra (Mean interface GcRMSD, Å) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 100 | 3.5 | 0.7 | 0.3 | 0.15 | 0.2 | 6 | 0.1 | 0.1 | 0.1 |
+| 200 |  |  |  |  |  |  |  |  |  |
+| 300 |  |  |  |  |  |  |  |  |  |
+| 400 |  |  |  |  |  |  |  |  |  |
+| 500 |  |  |  |  |  |  |  |  |  |
+
+Supporting Figure 4 (related to Figure 3) \| Single-sequence (no-MSA) halo sweep and ipSAEmin ranking across crop radii. (a)
+Interface C𝛼 RMSD versus halo radius for confirmed binders refolded in single-sequence mode (no MSA), showing per-target mean ±
+1 SD (dotted line marks the 3 Å gate). Omitting the MSA yields the same halo-dependent improvement seen in the +MSA condition
+(Fig. 3), with VirB8 again requiring the widest halo to stabilize. (b,c) Ranking accuracy versus crop radius scored on ipSAEmin across
+the same three arms and design-for-design matching as **Fig. 3b,c:** mean AP **(b)** and ROC-AUC **(c)** against the full-target+MSA baseline
+(AP 0.54, ROC-AUC 0.81). As with ipSAEmax, the no-MSA arm matches or exceeds excised+MSA and saturates by an ∼ 8 Å radius. (d)
+Single-sequence counterpart to **Fig. 3d,** plotting per-fold interface C𝛼 RMSD (log scale) against retained residue count for confirmed
+binders refolded without an MSA (red band marks the > 3 Å failure zone; dashed red line marks 85 residues), showing the same ∼ 85
+-residue structural floor.
+
+$$
+\\mathbf{S}\\mathbf{A}\\mathbf{E}\_{\\min}
+$$
+
+$$
+(b,c)
+$$
+
+$$
+\\mathrm{ipSAE\_{min}}
+$$
+
+$$
+\\underset{\\cdot}{AE\_{max}}
+$$

@@ -1,122 +1,67 @@
 {
-  "cycle": "2026-10-15",
-  "status": "complete; all three outputs accepted and delivered locally",
+  "cycle": "2026-10-17",
+  "status": "complete; main accepted and delivered locally",
   "delivery_allowed": true,
   "review_copies_available": true,
   "promotion_allowed": true,
   "cleanup_allowed": false,
   "publishing_authorised": false,
   "deliveryGate": "PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
+  "machine_gate": "PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
   "humanContinuousPlaybackApproval": {
     "status": "passed",
     "required_outputs": [
-      "main",
-      "r1",
-      "r2"
+      "main"
     ],
     "evidence": {
       "type": "user-confirmation",
-      "text": "onay veriyorum",
-      "scope": "all three linked final review copies: main, R1 and R2; full continuous viewing and complete narration listening",
-      "recorded_at_utc": "2026-10-15T08:23:12.229198+00:00",
+      "text": "onayladım.",
+      "scope": "the linked 233.5-second main video; complete continuous viewing and complete narration listening",
+      "recorded_at_utc": "2026-10-18T10:21:20.581834+00:00",
       "hashes": {
-        "main": "ed784a8bb64005edbff702233e8c4283685469fec7721aafb949e9a613659d34",
-        "r1": "70f9d192f68fe1db1132b005d1aca0dcc0816435ad052202336942a5bf24f12e",
-        "r2": "52706896344ef16457ffd0aa60deab6b5ddcc9058a796c632c16de8f9296ed52"
+        "main": "91b1ed683bc0d0f4cc57503fa43c5a2c154f82a9418fffa4692b611a18d544b4"
       },
-      "basis": "reply to the three review-copy links and explicit pending full viewing/listening acceptance; human evidence, not automated playback"
+      "basis": "Direct reply to the review-copy link and explicit pending full viewing/listening acceptance; human confirmation, not automated listening."
     }
   },
   "humanAuralApproval": {
     "status": "passed",
     "required_outputs": [
-      "main",
-      "r1",
-      "r2"
+      "main"
     ],
     "evidence": {
       "type": "user-confirmation",
-      "text": "onay veriyorum",
-      "scope": "all three linked final review copies: main, R1 and R2; full continuous viewing and complete narration listening",
-      "recorded_at_utc": "2026-10-15T08:23:12.229198+00:00",
+      "text": "onayladım.",
+      "scope": "the linked 233.5-second main video; complete continuous viewing and complete narration listening",
+      "recorded_at_utc": "2026-10-18T10:21:20.581834+00:00",
       "hashes": {
-        "main": "ed784a8bb64005edbff702233e8c4283685469fec7721aafb949e9a613659d34",
-        "r1": "70f9d192f68fe1db1132b005d1aca0dcc0816435ad052202336942a5bf24f12e",
-        "r2": "52706896344ef16457ffd0aa60deab6b5ddcc9058a796c632c16de8f9296ed52"
+        "main": "91b1ed683bc0d0f4cc57503fa43c5a2c154f82a9418fffa4692b611a18d544b4"
       },
-      "basis": "reply to the three review-copy links and explicit pending full viewing/listening acceptance; human evidence, not automated playback"
+      "basis": "Direct reply to the review-copy link and explicit pending full viewing/listening acceptance; human confirmation, not automated listening."
     }
   },
-  "qa_document": "video/cycles/2026-10-15/QA.md",
+  "qa_document": "video/cycles/2026-10-17/QA.md",
   "outputs": [
     {
       "id": "main",
-      "path": "build/video/2026-10-15/newhorizons.mp4",
-      "sha256": "ed784a8bb64005edbff702233e8c4283685469fec7721aafb949e9a613659d34",
-      "duration_seconds": 263.0,
+      "path": "build/video/2026-10-17/newhorizons.mp4",
+      "duration_seconds": 233.5,
       "technical_status": "passed",
-      "sampled_visual_status": "passed",
       "full_continuous_playback": "passed-user-confirmation",
       "complete_narration_listening": "passed-user-confirmation",
+      "sha256": "91b1ed683bc0d0f4cc57503fa43c5a2c154f82a9418fffa4692b611a18d544b4",
+      "sampled_visual_status": "passed",
       "human_approval_evidence": {
         "type": "user-confirmation",
-        "text": "onay veriyorum",
-        "scope": "all three linked final review copies: main, R1 and R2; full continuous viewing and complete narration listening",
-        "recorded_at_utc": "2026-10-15T08:23:12.229198+00:00",
+        "text": "onayladım.",
+        "scope": "the linked 233.5-second main video; complete continuous viewing and complete narration listening",
+        "recorded_at_utc": "2026-10-18T10:21:20.581834+00:00",
         "hashes": {
-          "main": "ed784a8bb64005edbff702233e8c4283685469fec7721aafb949e9a613659d34",
-          "r1": "70f9d192f68fe1db1132b005d1aca0dcc0816435ad052202336942a5bf24f12e",
-          "r2": "52706896344ef16457ffd0aa60deab6b5ddcc9058a796c632c16de8f9296ed52"
+          "main": "91b1ed683bc0d0f4cc57503fa43c5a2c154f82a9418fffa4692b611a18d544b4"
         },
-        "basis": "reply to the three review-copy links and explicit pending full viewing/listening acceptance; human evidence, not automated playback"
+        "basis": "Direct reply to the review-copy link and explicit pending full viewing/listening acceptance; human confirmation, not automated listening."
       },
       "delivered_path": "build/video/newhorizons.mp4"
-    },
-    {
-      "id": "r1",
-      "path": "build/reels/2026-10-15/01-ai-storm-simulations.mp4",
-      "sha256": "70f9d192f68fe1db1132b005d1aca0dcc0816435ad052202336942a5bf24f12e",
-      "duration_seconds": 45,
-      "technical_status": "passed",
-      "sampled_visual_status": "passed",
-      "full_continuous_playback": "passed-user-confirmation",
-      "complete_narration_listening": "passed-user-confirmation",
-      "human_approval_evidence": {
-        "type": "user-confirmation",
-        "text": "onay veriyorum",
-        "scope": "all three linked final review copies: main, R1 and R2; full continuous viewing and complete narration listening",
-        "recorded_at_utc": "2026-10-15T08:23:12.229198+00:00",
-        "hashes": {
-          "main": "ed784a8bb64005edbff702233e8c4283685469fec7721aafb949e9a613659d34",
-          "r1": "70f9d192f68fe1db1132b005d1aca0dcc0816435ad052202336942a5bf24f12e",
-          "r2": "52706896344ef16457ffd0aa60deab6b5ddcc9058a796c632c16de8f9296ed52"
-        },
-        "basis": "reply to the three review-copy links and explicit pending full viewing/listening acceptance; human evidence, not automated playback"
-      }
-    },
-    {
-      "id": "r2",
-      "path": "build/reels/2026-10-15/02-hurricane-polo-attribution.mp4",
-      "sha256": "52706896344ef16457ffd0aa60deab6b5ddcc9058a796c632c16de8f9296ed52",
-      "duration_seconds": 45,
-      "technical_status": "passed",
-      "sampled_visual_status": "passed",
-      "full_continuous_playback": "passed-user-confirmation",
-      "complete_narration_listening": "passed-user-confirmation",
-      "human_approval_evidence": {
-        "type": "user-confirmation",
-        "text": "onay veriyorum",
-        "scope": "all three linked final review copies: main, R1 and R2; full continuous viewing and complete narration listening",
-        "recorded_at_utc": "2026-10-15T08:23:12.229198+00:00",
-        "hashes": {
-          "main": "ed784a8bb64005edbff702233e8c4283685469fec7721aafb949e9a613659d34",
-          "r1": "70f9d192f68fe1db1132b005d1aca0dcc0816435ad052202336942a5bf24f12e",
-          "r2": "52706896344ef16457ffd0aa60deab6b5ddcc9058a796c632c16de8f9296ed52"
-        },
-        "basis": "reply to the three review-copy links and explicit pending full viewing/listening acceptance; human evidence, not automated playback"
-      }
     }
-  ],
-  "machine_gate": "PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
-  "cleanup_status": "not performed; no disposable inventory executed"
+  ]
 }

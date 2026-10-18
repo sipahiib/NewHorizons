@@ -1,0 +1,10 @@
+{
+  "opening": 16,
+  "body": 207.5,
+  "closing": 10,
+  "total": 233.5,
+  "counts": {
+    "stills": 5,
+    "motion": 22
+  }
+}
