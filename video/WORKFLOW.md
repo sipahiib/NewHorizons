@@ -1,13 +1,12 @@
 # NewHorizons — Active Workflow Pointer
 
-Active cycle: **2026-10-17**
+Active cycle: **2026-10-25**
 
-Current state: **complete local delivery**, 18 October 2026. Single AI story, 233.5 seconds / 3:53.5, no Reels. Independent review and technical/sample QA passed; user confirmed complete viewing/listening with “onayladım.” Accepted main promoted and hash-verified; previous main preserved. No cleanup or publication.
+State: **complete local delivery; independent technical/sample QA and user-confirmed full viewing/listening passed**. One Sakana Aquarium AI story, 199.5 seconds; no Shorts/Reels. Topic/hook/contextual visuals approved. Instagram and YouTube descriptions/hashtags and separate Tags prepared.
 
-- [Brief and accepted video](cycles/2026-10-17/BRIEF.md)
-- [Research](cycles/2026-10-17/RESEARCH_PACKET.md), [approval](cycles/2026-10-17/APPROVAL.md)
-- [Review](cycles/2026-10-17/REVIEW.md), [output QA](cycles/2026-10-17/QA.md)
-- [Credits](cycles/2026-10-17/CREDITS.md), [upload metadata](cycles/2026-10-17/DELIVERY_METADATA.md)
-- [Delivery and preservation receipt](cycles/2026-10-17/DELIVERY_RECEIPT.json)
+- [Brief and accepted video](cycles/2026-10-25/BRIEF.md)
+- [User decisions](cycles/2026-10-25/APPROVAL.md)
+- [Review](cycles/2026-10-25/REVIEW.md), [QA](cycles/2026-10-25/QA.md)
+- [Metadata](cycles/2026-10-25/DELIVERY_METADATA.md), [credits](cycles/2026-10-25/CREDITS.md)
 
-Prior cycles retain their records and outputs. Publication remains unauthorised.
+Accepted main promoted and hash-verified; previous main and earlier cycles preserved. No cleanup performed. Publication remains unauthorised. [Previous complete cycle](cycles/2026-10-17/BRIEF.md).

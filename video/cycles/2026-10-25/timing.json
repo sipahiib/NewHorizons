@@ -1,0 +1,11 @@
+{
+  "opening": 16,
+  "body": 173.5,
+  "closing": 10,
+  "total": 199.5,
+  "counts": {
+    "stills": 5,
+    "motion": 17,
+    "uniqueMotionSources": 8
+  }
+}

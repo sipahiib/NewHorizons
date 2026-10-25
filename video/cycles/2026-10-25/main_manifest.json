@@ -1,0 +1,231 @@
+{
+  "cycle": "2026-10-25",
+  "status": "prepared-for-review",
+  "candidateOutput": "build/video/2026-10-25/newhorizons.mp4",
+  "finalOutput": "build/video/newhorizons.mp4",
+  "duration": 199.5,
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "openingSeconds": 16,
+  "closingSeconds": 10,
+  "sections": [
+    {
+      "id": "ai",
+      "duration": 189.5,
+      "audio": "build/video/2026-10-25/audio/ai.wav",
+      "counts": {
+        "stills": 5,
+        "motion": 17,
+        "uniqueMotionSources": 8
+      },
+      "scenes": [
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/3044764.mp4",
+          "duration": 5,
+          "seek": 0,
+          "loop": false,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/3202049.mp4",
+          "duration": 7,
+          "seek": 0,
+          "loop": false,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/4450059.mp4",
+          "duration": 4,
+          "seek": 0,
+          "loop": false,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/3044764.mp4",
+          "duration": 9,
+          "seek": 6,
+          "loop": false,
+          "classification": "contextual"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-25/main/office.png",
+          "duration": 9.9,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/7552423.mp4",
+          "duration": 10,
+          "seek": 0,
+          "loop": false,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/8865871.mp4",
+          "duration": 8,
+          "seek": 0,
+          "loop": false,
+          "classification": "contextual"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-25/main/review.png",
+          "duration": 9.9,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/4450059.mp4",
+          "duration": 10,
+          "seek": 7,
+          "loop": false,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/8869927.mp4",
+          "duration": 10,
+          "seek": 0,
+          "loop": false,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/8426042.mp4",
+          "duration": 10,
+          "seek": 0,
+          "loop": false,
+          "classification": "contextual"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-25/main/meeting.png",
+          "duration": 9.9,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/8869927.mp4",
+          "duration": 10,
+          "seek": 19,
+          "loop": false,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/3202049.mp4",
+          "duration": 10,
+          "seek": 10,
+          "loop": false,
+          "classification": "contextual"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-25/main/work.png",
+          "duration": 9.9,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/4450059.mp4",
+          "duration": 8,
+          "seek": 18,
+          "loop": false,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/3044764.mp4",
+          "duration": 8,
+          "seek": 0.2,
+          "loop": false,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/7552423.mp4",
+          "duration": 10,
+          "seek": 12,
+          "loop": false,
+          "classification": "contextual"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-10-25/main/approval.png",
+          "duration": 9.9,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/8426042.mp4",
+          "duration": 7,
+          "seek": 10,
+          "loop": false,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/5977275.mp4",
+          "duration": 5,
+          "seek": 1,
+          "loop": false,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-10-25/main/8869927.mp4",
+          "duration": 9,
+          "seek": 10,
+          "loop": false,
+          "classification": "contextual"
+        }
+      ],
+      "title": "build/video/2026-10-25/work/ai-title.png"
+    },
+    {
+      "id": "closing",
+      "duration": 10,
+      "audio": "build/video/2026-10-25/audio/closing.mp3",
+      "closing": true,
+      "leadingSilence": 2
+    }
+  ],
+  "closing": "build/video/2026-10-25/work/closing-bg.png",
+  "closingPanel": "build/video/2026-10-25/work/closing-panel.png",
+  "closingBell": "build/video/2026-10-25/work/closing-bell.png",
+  "titleDisplaySeconds": 5.5,
+  "subscribeOverlay": "build/video/2026-10-25/work/youtube-30s.png",
+  "subscribeWindow": [
+    30,
+    35.5
+  ],
+  "hashes": {
+    "assets/motion/2026-10-25/main/3044764.mp4": "0dc75422b49b7acc2bef6fe9e7ba2a7671058731fa4d2d86c75512e2631535f6",
+    "assets/motion/2026-10-25/main/3202049.mp4": "6486836211798a8ae8d175d734ff27cab40e492d70866880081cb20b156f3640",
+    "assets/motion/2026-10-25/main/4450059.mp4": "b9131d8aa65929ef52d2263f52172735cc25bedc897b75ec9fe0c2225590bcdf",
+    "assets/motion/2026-10-25/main/5977275.mp4": "a1383d5cc89129764fc19d46b7c04a7835ca85b3f0c6f61a5d0e93e8c3a73744",
+    "assets/motion/2026-10-25/main/7552423.mp4": "cca6eb6764c0a0ca92efae4a57a11a0bf46ce15610f6a946f453519ed423ac68",
+    "assets/motion/2026-10-25/main/8426042.mp4": "f1fd62319f761d473d8e36e6343d53f5a3c7b230cd2a7b6daf7a8a2cf8045b24",
+    "assets/motion/2026-10-25/main/8865871.mp4": "96588b3b4b9f865118624899ac6d4bc6ca7dceb480019b599e927bf3962c4a9f",
+    "assets/motion/2026-10-25/main/8869927.mp4": "ce855a1a843c33f8bd06f9cf96fab545f394aa613bea802e312827739bf9ac6d",
+    "assets/motion/2026-10-25/main/approval.png": "a01701c72e965e03aaebc167270b1f96e00cc1791fa1126045d9e964a2503b1c",
+    "assets/motion/2026-10-25/main/meeting.png": "dac5559a33ff2eed49deb3ab392bbb5bd2ad80398ae3f6df1296cf6dfdbc16bc",
+    "assets/motion/2026-10-25/main/office.png": "0f0fc387a3fc5f58ef7a12e943ec6f4c7a2f9543e24cba3d672b03cd114474ab",
+    "assets/motion/2026-10-25/main/review.png": "4fb9a9cbd47a8b9d16ae9a04c2ea483c4cae062aac9da7affb964c44ac0a8b4c",
+    "assets/motion/2026-10-25/main/work.png": "1a1f3a0d600fd12b7ab67a96aaf13cfefb03467486326d11063f20c715ed8659",
+    "build/video/2026-10-25/audio/ai.wav": "5e5ec79e3983d145ff21ae65e038bc9b3f44df8eb6ed4f2e3fd5e72df81993a8",
+    "build/video/2026-10-25/audio/closing.mp3": "5b4e1ef41802ee43951ea0a2107c21a6b91d77a965290fef4a0c1372e1bd5873",
+    "build/video/2026-10-25/work/ai-title.png": "fb6cd7dc76d9ecd261e4088414fd7b21bad1287f0478a0f0151fe50d09293317",
+    "build/video/2026-10-25/work/closing-bell.png": "a00cd154de1cd53ce25aec866d4b60724ad5ef2a6ce4d8d03b4d16fb45f7b3b8",
+    "build/video/2026-10-25/work/closing-bg.png": "bf7d48fe06fe270871b5ac799122789fa5b56168ef67025c1791d5fde484c298",
+    "build/video/2026-10-25/work/closing-panel.png": "0ac72bca3d9b3f2430a799322ff634120cbd703dc7d77f4ad94c5ebc2803e5a9",
+    "build/video/2026-10-25/work/youtube-30s.png": "b8f3f2284fafb8038211025edb7bdb67dee48d19abb65edc15abccab65e83771"
+  }
+}

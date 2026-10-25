@@ -1,0 +1,15 @@
+An AI agent can suggest the next step. Who gives it permission to take it?
+
+Sakana AI’s new Aquarium platform aims to connect company data, business rules and AI workflows, with access controls, human approval and a record of decisions and actions.
+
+Announced in Japan on 23 October 2026, it raises a practical question: what should an agent be allowed to do on its own?
+
+These are the company’s stated capabilities; independent performance results have not been established in the announcement.
+
+Which workplace action would you always want a human to approve? Share your thoughts and follow @newhorizons_21 for more science and technology news.
+
+Source: Sakana AI, “Sakana Aquarium,” 23 October 2026.
+
+Visuals: contextual office footage, not an Aquarium demonstration. Pexels contributors: fauxels, Jack Sparrow, cottonbro studio, Ufuk Avcuoğlu, Vlada Karpovich, Yan Krukau, MART PRODUCTION, Kampus Production.
+
+#SakanaAI #AIAgents #EnterpriseAI #AIGovernance #ArtificialIntelligence

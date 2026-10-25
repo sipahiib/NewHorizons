@@ -1,0 +1,28 @@
+What happens when an AI agent has to follow your company’s rules?
+
+Japan’s Sakana AI announced Sakana Aquarium on 23 October 2026: a platform designed to connect organizational data, business rules and AI-agent workflows. Its proposed approach combines shared definitions of company information, access controls, human approvals and records of agent decisions and actions.
+
+We look at the difference between an AI that answers a question and an agent authorized to act—and why knowing who can approve the next step matters.
+
+These are capabilities described by Sakana AI. The announcement does not establish independent performance results or guarantee error-free operation.
+
+Which workplace decision would you always keep under human approval? Tell us in the comments, and subscribe for more science and technology news.
+
+Sources:
+Sakana AI announcement, 23 October 2026:
+https://sakana.ai/aquarium-release/
+Sakana Aquarium product overview:
+https://sakana.ai/aquarium/index.html
+
+Visuals: licensed contextual office footage, not an Aquarium demonstration or recordings of Sakana staff.
+fauxels / Pexels: https://www.pexels.com/video/a-woman-working-on-the-computer-in-an-office-3044764/
+Jack Sparrow / Pexels: https://www.pexels.com/video/a-man-and-a-woman-working-on-their-computer-in-the-office-5977275/
+cottonbro studio / Pexels: https://www.pexels.com/video/people-in-a-business-meeting-passing-a-piece-of-document-3202049/
+Ufuk Avcuoğlu / Pexels: https://www.pexels.com/video/close-up-shot-of-a-person-typing-on-the-computer-keyboard-4450059/
+Vlada Karpovich / Pexels: https://www.pexels.com/video/businesspeople-doing-paperwork-7552423/
+Yan Krukau / Pexels: https://www.pexels.com/video/employees-typing-on-a-keyboard-of-a-computer-8865871/
+MART PRODUCTION / Pexels: https://www.pexels.com/video/men-in-a-business-meeting-8869927/
+Kampus Production / Pexels: https://www.pexels.com/video/businessmen-in-a-meeting-8426042/
+License: https://www.pexels.com/license/
+
+#SakanaAI #AIAgents #AIGovernance

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "opening_hook",
+    "seconds": 4.44,
+    "target": 5,
+    "timeStretch": false
+  },
+  {
+    "id": "opening_support",
+    "seconds": 6.456,
+    "target": 7,
+    "timeStretch": false
+  },
+  {
+    "id": "opening_question",
+    "seconds": 2.976,
+    "target": 4,
+    "timeStretch": false
+  },
+  {
+    "id": "body",
+    "seconds": 172.68,
+    "target": null,
+    "timeStretch": false
+  },
+  {
+    "id": "closing",
+    "seconds": 5.736,
+    "target": 10,
+    "timeStretch": false
+  }
+]

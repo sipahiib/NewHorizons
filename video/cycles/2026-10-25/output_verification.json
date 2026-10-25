@@ -1,0 +1,39 @@
+{
+  "output": "build/video/2026-10-25/newhorizons.mp4",
+  "sha256": "394e114c49caf94efee7028c3f7b4a1c9110dda304cd4b70c6ae280c6e64d1dd",
+  "duration": 199.5,
+  "frames": 11970,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": "60/1",
+  "codecs": [
+    "h264",
+    "aac"
+  ],
+  "sampleAspectRatio": "1:1",
+  "fullDecode": "passed",
+  "technicalProfile": "passed",
+  "completeListening": "pending independent full playback",
+  "completeViewing": "pending independent full playback",
+  "evidence": "build/video/2026-10-25/qa",
+  "inputHashes": {
+    "count": 20,
+    "matched": true
+  },
+  "audioMeasurements": {
+    "integratedLUFS": -16.35,
+    "truePeakDBTP": -1.42,
+    "loudnessRangeLU": 2.9,
+    "lastDetectedSpeechEndSeconds": 196.390708,
+    "finalDetectedSilenceSeconds": 3.109292,
+    "threshold": "-45 dB / 0.35 seconds"
+  },
+  "blackIntervals": [],
+  "sampledFrames": 22,
+  "sampledVisualQA": "passed",
+  "fullAudiovisualGate": "PENDING_HUMAN_COMPLETE_PLAYBACK",
+  "promotion": "blocked",
+  "cleanup": "blocked"
+}

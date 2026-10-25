@@ -1,0 +1,132 @@
+1
+00:00:00,100 --> 00:00:03,913
+The office scenes in this report are contextual footage.
+
+2
+00:00:03,863 --> 00:00:07,345
+They are not demonstrations of Sakana Aquarium.
+
+3
+00:00:07,345 --> 00:00:15,407
+On October twenty-third, Japan’s Sakana AI announced Aquarium, a platform for building and operating workplace agents.
+
+4
+00:00:15,407 --> 00:00:25,662
+The company describes three connected parts: a shared map of organizational information, controls over what agents can do, and a system for running their workflows.
+
+5
+00:00:25,662 --> 00:00:28,544
+That shared map is called an ontology.
+
+6
+00:00:28,544 --> 00:00:34,386
+In plain English, it defines what information means and how different things relate to one another.
+
+7
+00:00:34,386 --> 00:00:40,292
+The platform is intended to connect existing information without moving it all into a new store.
+
+8
+00:00:40,292 --> 00:00:42,243
+Why does that matter?
+
+9
+00:00:42,243 --> 00:00:45,700
+Consider a hypothetical purchasing request.
+
+10
+00:00:45,700 --> 00:00:50,075
+This is an example, not a reported Aquarium demonstration.
+
+11
+00:00:50,075 --> 00:00:54,118
+An assistant could read a request and suggest buying a laptop.
+
+12
+00:00:54,118 --> 00:00:57,601
+An agent could take the next step and place the order.
+
+13
+00:00:57,601 --> 00:01:00,738
+Those are very different responsibilities.
+
+14
+00:01:00,738 --> 00:01:09,335
+Before an order goes through, someone needs to know which supplier is allowed, whose budget is being used, and who has authority to approve it.
+
+15
+00:01:09,335 --> 00:01:14,029
+Even an accurate answer about the laptop would not settle those questions.
+
+16
+00:01:14,029 --> 00:01:18,111
+The useful task is to connect information with permission to act.
+
+17
+00:01:18,111 --> 00:01:26,019
+Sakana says Aquarium can combine information lookup, AI judgment, function execution and human approval in a workflow.
+
+18
+00:01:26,019 --> 00:01:35,101
+Its governance layer is designed to set access rights and approvals before execution, then record the information consulted, the decision and the result.
+
+19
+00:01:35,101 --> 00:01:38,583
+Think about the difference between a gate and a record.
+
+20
+00:01:38,583 --> 00:01:43,174
+An approval gate can stop a proposed action until a person reviews it.
+
+21
+00:01:43,174 --> 00:01:46,873
+A record helps someone examine what happened afterwards.
+
+22
+00:01:46,873 --> 00:01:50,241
+A record alone does not reverse a purchase.
+
+23
+00:01:50,241 --> 00:01:56,363
+And an approval button is only useful if the person sees enough information to make a meaningful decision.
+
+24
+00:01:56,363 --> 00:02:00,215
+These distinctions affect the people using AI at work.
+
+25
+00:02:00,215 --> 00:02:08,493
+A helpful system should make it clear when it is offering advice, when it is waiting for permission, and when an action has actually been completed.
+
+26
+00:02:08,493 --> 00:02:13,021
+That is a design principle, not a result measured in this announcement.
+
+27
+00:02:13,021 --> 00:02:15,368
+There are important limits.
+
+28
+00:02:15,368 --> 00:02:19,884
+The public material describes the company’s intended capabilities.
+
+29
+00:02:19,884 --> 00:02:26,210
+It does not establish independent performance results, cost savings, or error-free operation.
+
+30
+00:02:26,210 --> 00:02:32,588
+It also does not show that human approval and logging eliminate hallucinations or every unauthorized action.
+
+31
+00:02:32,588 --> 00:02:42,932
+For now, Aquarium is a concrete example of where workplace AI is heading: beyond a chat window, towards workflows that connect data, decisions and actions.
+
+32
+00:02:42,932 --> 00:02:46,414
+The question for any organization is practical.
+
+33
+00:02:46,414 --> 00:02:52,639
+What may an agent do, what must a person approve, and how can the decision be checked afterwards?
+

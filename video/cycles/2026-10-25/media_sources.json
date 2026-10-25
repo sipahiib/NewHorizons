@@ -1,0 +1,78 @@
+{
+  "cycle": "2026-10-25",
+  "status": "approved-for-download",
+  "assets": [
+    {
+      "id": "3044764",
+      "page": "https://www.pexels.com/video/a-woman-working-on-the-computer-in-an-office-3044764/",
+      "url": "https://videos.pexels.com/video-files/3044764/3044764-hd_1920_1080_24fps.mp4",
+      "file": "assets/motion/2026-10-25/main/3044764.mp4",
+      "classification": "contextual",
+      "rights": "Pexels License",
+      "credit": "fauxels"
+    },
+    {
+      "id": "5977275",
+      "page": "https://www.pexels.com/video/a-man-and-a-woman-working-on-their-computer-in-the-office-5977275/",
+      "url": "https://videos.pexels.com/video-files/5977275/5977275-hd_1920_1080_25fps.mp4",
+      "file": "assets/motion/2026-10-25/main/5977275.mp4",
+      "classification": "contextual",
+      "rights": "Pexels License",
+      "credit": "Jack Sparrow"
+    },
+    {
+      "id": "3202049",
+      "page": "https://www.pexels.com/video/people-in-a-business-meeting-passing-a-piece-of-document-3202049/",
+      "url": "https://videos.pexels.com/video-files/3202049/3202049-hd_1920_1080_25fps.mp4",
+      "file": "assets/motion/2026-10-25/main/3202049.mp4",
+      "classification": "contextual",
+      "rights": "Pexels License",
+      "credit": "cottonbro studio"
+    },
+    {
+      "id": "4450059",
+      "page": "https://www.pexels.com/video/close-up-shot-of-a-person-typing-on-the-computer-keyboard-4450059/",
+      "url": "https://videos.pexels.com/video-files/4450059/4450059-hd_1920_1080_24fps.mp4",
+      "file": "assets/motion/2026-10-25/main/4450059.mp4",
+      "classification": "contextual",
+      "rights": "Pexels License",
+      "credit": "Ufuk Avcuo\u011flu"
+    },
+    {
+      "id": "7552423",
+      "page": "https://www.pexels.com/video/businesspeople-doing-paperwork-7552423/",
+      "url": "https://videos.pexels.com/video-files/7552423/7552423-hd_1920_1080_25fps.mp4",
+      "file": "assets/motion/2026-10-25/main/7552423.mp4",
+      "classification": "contextual",
+      "rights": "Pexels License",
+      "credit": "Vlada Karpovich"
+    },
+    {
+      "id": "8865871",
+      "page": "https://www.pexels.com/video/employees-typing-on-a-keyboard-of-a-computer-8865871/",
+      "url": "https://videos.pexels.com/video-files/8865871/8865871-hd_1920_1080_25fps.mp4",
+      "file": "assets/motion/2026-10-25/main/8865871.mp4",
+      "classification": "contextual",
+      "rights": "Pexels License",
+      "credit": "Yan Krukau"
+    },
+    {
+      "id": "8869927",
+      "page": "https://www.pexels.com/video/men-in-a-business-meeting-8869927/",
+      "url": "https://videos.pexels.com/video-files/8869927/8869927-uhd_4096_2160_25fps.mp4",
+      "file": "assets/motion/2026-10-25/main/8869927.mp4",
+      "classification": "contextual",
+      "rights": "Pexels License",
+      "credit": "MART PRODUCTION"
+    },
+    {
+      "id": "8426042",
+      "page": "https://www.pexels.com/video/businessmen-in-a-meeting-8426042/",
+      "url": "https://videos.pexels.com/video-files/8426042/8426042-hd_1920_1080_25fps.mp4",
+      "file": "assets/motion/2026-10-25/main/8426042.mp4",
+      "classification": "contextual",
+      "rights": "Pexels License",
+      "credit": "Kampus Production"
+    }
+  ]
+}

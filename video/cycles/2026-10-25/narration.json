@@ -1,0 +1,32 @@
+{
+  "cycle": "2026-10-25",
+  "voice": "en-GB-RyanNeural",
+  "rate": "-2%",
+  "sections": [
+    {
+      "id": "opening_hook",
+      "target": 5,
+      "text": "What happens when an AI agent has to follow your company\u2019s rules?"
+    },
+    {
+      "id": "opening_support",
+      "target": 7,
+      "text": "Japan\u2019s Sakana AI has announced a platform connecting data, decisions and human approval."
+    },
+    {
+      "id": "opening_question",
+      "target": 4,
+      "text": "Who authorizes its next move?"
+    },
+    {
+      "id": "body",
+      "target": null,
+      "text": "The office scenes in this report are contextual footage. They are not demonstrations of Sakana Aquarium.\n\nOn October twenty-third, Japan\u2019s Sakana AI announced Aquarium, a platform for building and operating workplace agents. The company describes three connected parts: a shared map of organizational information, controls over what agents can do, and a system for running their workflows.\n\nThat shared map is called an ontology. In plain English, it defines what information means and how different things relate to one another. The platform is intended to connect existing information without moving it all into a new store.\n\nWhy does that matter? Consider a hypothetical purchasing request. This is an example, not a reported Aquarium demonstration. An assistant could read a request and suggest buying a laptop. An agent could take the next step and place the order. Those are very different responsibilities.\n\nBefore an order goes through, someone needs to know which supplier is allowed, whose budget is being used, and who has authority to approve it. Even an accurate answer about the laptop would not settle those questions. The useful task is to connect information with permission to act.\n\nSakana says Aquarium can combine information lookup, AI judgment, function execution and human approval in a workflow. Its governance layer is designed to set access rights and approvals before execution, then record the information consulted, the decision and the result.\n\nThink about the difference between a gate and a record. An approval gate can stop a proposed action until a person reviews it. A record helps someone examine what happened afterwards. A record alone does not reverse a purchase. And an approval button is only useful if the person sees enough information to make a meaningful decision.\n\nThese distinctions affect the people using AI at work. A helpful system should make it clear when it is offering advice, when it is waiting for permission, and when an action has actually been completed. That is a design principle, not a result measured in this announcement.\n\nThere are important limits. The public material describes the company\u2019s intended capabilities. It does not establish independent performance results, cost savings, or error-free operation. It also does not show that human approval and logging eliminate hallucinations or every unauthorized action.\n\nFor now, Aquarium is a concrete example of where workplace AI is heading: beyond a chat window, towards workflows that connect data, decisions and actions. The question for any organization is practical. What may an agent do, what must a person approve, and how can the decision be checked afterwards?"
+    },
+    {
+      "id": "closing",
+      "target": 10,
+      "text": "That was our latest news. Stay with science, and stay tuned."
+    }
+  ]
+}
