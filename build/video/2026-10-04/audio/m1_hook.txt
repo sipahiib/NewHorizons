@@ -1,1 +1,0 @@
-Your map can show a location you never visited.

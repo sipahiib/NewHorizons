@@ -1,8 +1,0 @@
-1
-00:00:00,100 --> 00:00:02,561
-That was our latest news.
-
-2
-00:00:02,511 --> 00:00:05,726
-Stay with science, and stay tuned.
-
