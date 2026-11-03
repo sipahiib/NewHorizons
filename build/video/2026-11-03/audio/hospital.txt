@@ -1,0 +1,11 @@
+Now to a different kind of handover. When someone leaves hospital, a discharge summary helps communicate what happened, which medicines changed, and what follow-up may be needed. Missing information can make that transition harder.
+
+In a university announcement on November second, Stony Brook researchers highlighted a study published in October. They compared AI-generated drafts with human-written summaries for sixty internal-medicine hospital stays lasting seven to twenty-one days.
+
+Hospital doctors and primary-care physicians reviewed paired summaries. The university reports that reviewers preferred the AI version for ninety-five percent of the cases, and scored the drafts more highly for qualities including completeness and readability.
+
+These hospital scenes are contextual; they do not show the research patients or the study itself. The result is promising, but it comes from one hospital and a specific group of longer, complex admissions. It does not prove that patients had better outcomes or that doctors saved time in routine practice.
+
+Both the AI and human summaries contained errors. The researchers found no statistically significant difference in the estimated seriousness or likelihood of harm from those errors. Their conclusion is that a clinician must still check and verify an AI-generated draft before it enters a patient record.
+
+For patients, the practical question is whether future tools can help care teams communicate more clearly while keeping a responsible human in the loop. That still needs real-world testing.

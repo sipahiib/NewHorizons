@@ -1,9 +1,9 @@
 # NewHorizons — Active Source Index
 
-Active cycle: **2026-10-25**
+Active cycle: **2026-11-03**
 
-- [Accepted research handoff](cycles/2026-10-25/RESEARCH_PACKET.md) — Sakana Aquarium, one AI topic for the main video only; no Shorts/Reels.
-- [User decisions](cycles/2026-10-25/APPROVAL.md)
-- [Actual-output QA](cycles/2026-10-25/QA.md) — technical/sample checks passed; full viewing/listening accepted by user.
+- [Research and sources](cycles/2026-11-03/RESEARCH_PACKET.md)
+- [User decisions](cycles/2026-11-03/APPROVAL.md)
+- [Delivery and QA](cycles/2026-11-03/BRIEF.md)
 
-Earlier records remain in cycles/; they are not current approvals. [Previous cycle](cycles/2026-10-17/BRIEF.md).
+Earlier records remain in cycles/. [Previous cycle](cycles/2026-10-25/BRIEF.md).

@@ -1,0 +1,21 @@
+{
+  "output": "build/video/2026-11-03/newhorizons.mp4",
+  "sha256": "97bf234490fbaeeb631fb29d940e7263f0ae50a1d24916d1613d3f9d63cf9c90",
+  "duration": 213.0,
+  "frames": 12780,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": "60/1",
+  "codecs": [
+    "h264",
+    "aac"
+  ],
+  "sampleAspectRatio": "1:1",
+  "fullDecode": "passed",
+  "technicalProfile": "passed",
+  "completeListening": "pending independent full playback",
+  "completeViewing": "pending independent full playback",
+  "evidence": "build/video/2026-11-03/qa"
+}

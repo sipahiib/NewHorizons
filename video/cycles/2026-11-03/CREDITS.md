@@ -1,0 +1,3 @@
+# Proposed credits — 3 November 2026
+
+Visual sources and transformations are detailed in [MEDIA_AUDIT.md](MEDIA_AUDIT.md); selection remains subject to pre-render review. Swift launch: NASA Goddard, [Swift's Decade of Discovery](https://svs.gsfc.nasa.gov/10170/). Swift preparation: NASA, [Swift Boost Media Resources](https://science.nasa.gov/mission/swift/swift-boost-mission/swift-boost-media-resources/). Andromeda: NASA/Swift/Stefan Immler and Erin Grand. LINK integration: NASA/Ron Beard; LINK vibration test: NASA/Scott Wiessinger; Pegasus: NASA/Ron Beard. Roman telescope context: NASA/Sophia Roberts. Contextual hospital clips: Pavel Danilyuk, Ivan S, Los Muertos Crew and Tima Miroshnichenko via Pexels. Video sources are muted; static frames are faithful extracts.

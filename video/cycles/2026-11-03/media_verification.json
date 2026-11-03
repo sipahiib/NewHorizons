@@ -1,0 +1,340 @@
+{
+  "build/video/2026-11-03/audio/closing.mp3": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "5.736000"
+    }
+  },
+  "build/video/2026-11-03/audio/hospital.mp3": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "94.080000"
+    }
+  },
+  "build/video/2026-11-03/audio/swift.wav": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "107.000000"
+    }
+  },
+  "build/video/2026-11-03/media/hospital-still-0.png": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {}
+  },
+  "build/video/2026-11-03/media/hospital-still-1.png": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {}
+  },
+  "build/video/2026-11-03/media/hospital-still-2.png": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {}
+  },
+  "build/video/2026-11-03/media/hospital-still-3.png": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {}
+  },
+  "build/video/2026-11-03/media/nasa-link-excerpt.mp4": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 3840,
+        "height": 2160,
+        "r_frame_rate": "30000/1001"
+      }
+    ],
+    "format": {
+      "duration": "20.106633"
+    }
+  },
+  "build/video/2026-11-03/media/nasa-link-pegasus.jpg": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 810,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {
+      "duration": "0.040000"
+    }
+  },
+  "build/video/2026-11-03/media/nasa-link-test.jpg": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 853,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {
+      "duration": "0.040000"
+    }
+  },
+  "build/video/2026-11-03/media/nasa-roman-context.webm": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 8256,
+        "height": 5504,
+        "r_frame_rate": "30000/1001"
+      }
+    ],
+    "format": {
+      "duration": "31.264000"
+    }
+  },
+  "build/video/2026-11-03/media/nasa-swift-history.webm": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "2997/100"
+      },
+      {
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "327.457000"
+    }
+  },
+  "build/video/2026-11-03/media/pexels-5030431.mp4": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30000/1001"
+      }
+    ],
+    "format": {
+      "duration": "11.177833"
+    }
+  },
+  "build/video/2026-11-03/media/pexels-5453578.mp4": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {
+      "duration": "15.280000"
+    }
+  },
+  "build/video/2026-11-03/media/pexels-6997946.mp4": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {
+      "duration": "18.320000"
+    }
+  },
+  "build/video/2026-11-03/media/pexels-8460080.mp4": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24000/1001"
+      }
+    ],
+    "format": {
+      "duration": "14.305958"
+    }
+  },
+  "build/video/2026-11-03/media/swift-andromeda.jpg": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 562,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {
+      "duration": "0.040000"
+    }
+  },
+  "build/video/2026-11-03/media/swift-assembly.jpg": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1280,
+        "height": 879,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {
+      "duration": "0.040000"
+    }
+  },
+  "build/video/2026-11-03/work/bell.png": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 180,
+        "height": 180,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {}
+  },
+  "build/video/2026-11-03/work/closing-bg.png": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {}
+  },
+  "build/video/2026-11-03/work/closing-panel.png": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {}
+  },
+  "build/video/2026-11-03/work/subscribe.png": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {}
+  },
+  "build/video/2026-11-03/work/title-hospital.png": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {}
+  },
+  "build/video/2026-11-03/work/title-swift.png": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {}
+  }
+}

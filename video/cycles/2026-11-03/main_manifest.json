@@ -1,0 +1,266 @@
+{
+  "cycle": "2026-11-03",
+  "status": "prepared-for-review",
+  "candidateOutput": "build/video/2026-11-03/newhorizons.mp4",
+  "finalOutput": "build/video/newhorizons.mp4",
+  "duration": 213,
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "openingSeconds": 16,
+  "closingSeconds": 10,
+  "sections": [
+    {
+      "id": "swift",
+      "duration": 107,
+      "audio": "build/video/2026-11-03/audio/swift.wav",
+      "scenes": [
+        {
+          "kind": "motion",
+          "file": "build/video/2026-11-03/media/nasa-swift-history.webm",
+          "duration": 5,
+          "seek": 11,
+          "classification": "direct"
+        },
+        {
+          "kind": "motion",
+          "file": "build/video/2026-11-03/media/nasa-swift-history.webm",
+          "duration": 7,
+          "seek": 16,
+          "classification": "direct"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-03/media/swift-assembly.jpg",
+          "duration": 4,
+          "classification": "direct"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-03/media/swift-assembly.jpg",
+          "duration": 6,
+          "classification": "direct"
+        },
+        {
+          "kind": "motion",
+          "file": "build/video/2026-11-03/media/nasa-swift-history.webm",
+          "duration": 7,
+          "seek": 11,
+          "classification": "direct"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-03/media/swift-andromeda.jpg",
+          "duration": 7,
+          "classification": "direct"
+        },
+        {
+          "kind": "motion",
+          "file": "build/video/2026-11-03/media/nasa-roman-context.webm",
+          "duration": 8,
+          "seek": 0,
+          "classification": "contextual",
+          "crop": "iw*0.68:ih:0:0"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-03/media/swift-andromeda.jpg",
+          "duration": 7,
+          "classification": "direct"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-03/media/swift-assembly.jpg",
+          "duration": 6,
+          "classification": "direct"
+        },
+        {
+          "kind": "motion",
+          "file": "build/video/2026-11-03/media/nasa-roman-context.webm",
+          "duration": 8,
+          "seek": 10,
+          "classification": "contextual",
+          "crop": "iw*0.68:ih:0:0"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-03/media/nasa-link-test.jpg",
+          "duration": 7,
+          "classification": "direct"
+        },
+        {
+          "kind": "motion",
+          "file": "build/video/2026-11-03/media/nasa-link-excerpt.mp4",
+          "duration": 9,
+          "seek": 8,
+          "classification": "direct",
+          "crop": "iw*0.56:ih:iw*0.34:0"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-03/media/nasa-link-pegasus.jpg",
+          "duration": 7,
+          "classification": "direct"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-03/media/swift-assembly.jpg",
+          "duration": 6,
+          "classification": "direct"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-03/media/swift-andromeda.jpg",
+          "duration": 7,
+          "classification": "direct"
+        },
+        {
+          "kind": "motion",
+          "file": "build/video/2026-11-03/media/nasa-swift-history.webm",
+          "duration": 6,
+          "seek": 11,
+          "classification": "direct"
+        }
+      ],
+      "title": "build/video/2026-11-03/work/title-swift.png",
+      "counts": {
+        "motion": 7,
+        "stills": 9
+      }
+    },
+    {
+      "id": "hospital",
+      "duration": 96,
+      "audio": "build/video/2026-11-03/audio/hospital.mp3",
+      "scenes": [
+        {
+          "kind": "motion",
+          "file": "build/video/2026-11-03/media/pexels-6997946.mp4",
+          "duration": 8,
+          "seek": 0,
+          "classification": "contextual"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-03/media/hospital-still-0.png",
+          "duration": 10,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "build/video/2026-11-03/media/pexels-5030431.mp4",
+          "duration": 8,
+          "seek": 0,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "build/video/2026-11-03/media/pexels-5453578.mp4",
+          "duration": 9,
+          "seek": 0,
+          "classification": "contextual"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-03/media/hospital-still-3.png",
+          "duration": 6,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "build/video/2026-11-03/media/pexels-8460080.mp4",
+          "duration": 9,
+          "seek": 0,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "build/video/2026-11-03/media/pexels-6997946.mp4",
+          "duration": 9,
+          "seek": 9,
+          "classification": "contextual"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-03/media/hospital-still-1.png",
+          "duration": 6,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "build/video/2026-11-03/media/pexels-5030431.mp4",
+          "duration": 8,
+          "seek": 2,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "build/video/2026-11-03/media/pexels-5453578.mp4",
+          "duration": 9,
+          "seek": 5,
+          "classification": "contextual"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-03/media/hospital-still-2.png",
+          "duration": 6,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "build/video/2026-11-03/media/pexels-8460080.mp4",
+          "duration": 8,
+          "seek": 4,
+          "classification": "contextual"
+        }
+      ],
+      "title": "build/video/2026-11-03/work/title-hospital.png",
+      "counts": {
+        "motion": 8,
+        "stills": 4
+      }
+    },
+    {
+      "id": "closing",
+      "duration": 10,
+      "audio": "build/video/2026-11-03/audio/closing.mp3",
+      "closing": true,
+      "leadingSilence": 2
+    }
+  ],
+  "closing": "build/video/2026-11-03/work/closing-bg.png",
+  "closingPanel": "build/video/2026-11-03/work/closing-panel.png",
+  "closingBell": "build/video/2026-11-03/work/bell.png",
+  "titleDisplaySeconds": 5.5,
+  "subscribeOverlay": "build/video/2026-11-03/work/subscribe.png",
+  "subscribeWindow": [
+    30,
+    35.5
+  ],
+  "hashes": {
+    "build/video/2026-11-03/audio/closing.mp3": "59d8c93840c00c0a78ae60e746daaacea1564e90d943b6c293c764797fc48cc5",
+    "build/video/2026-11-03/audio/hospital.mp3": "feb195d92d272c0fc82130a7bb464cd4b72ba40d1b047cfd8709cd89a031a40e",
+    "build/video/2026-11-03/audio/swift.wav": "17f35ecec83dd3651a943f559da9f2c1edd98913333a923979c1abb7d6319bd0",
+    "build/video/2026-11-03/media/hospital-still-0.png": "290ad765a07df5ef167f1c0a4112c61b76fe103da6fb2bcec7764e0be596bba5",
+    "build/video/2026-11-03/media/hospital-still-1.png": "c1e98a8529ccbacba8e7f01aa97bd09fa41dc25668b4c366c54b95f0d8393200",
+    "build/video/2026-11-03/media/hospital-still-2.png": "02cfb2ed365331d4779cb32f3e1204ca57f3ea6117f1262e77e25628f55e91a1",
+    "build/video/2026-11-03/media/hospital-still-3.png": "46f28958c538132d9053fe9c4d9807939fdb4fedaa04ac84c80b20a758b590c8",
+    "build/video/2026-11-03/media/nasa-link-excerpt.mp4": "d0d2e045b968d33c177ea63329752dbe6f7268ec2b208c1234e51652f5ed7367",
+    "build/video/2026-11-03/media/nasa-link-pegasus.jpg": "89909b9fd18be295314ff672d0338b879268daf1b43a824ed800e941654d6dcc",
+    "build/video/2026-11-03/media/nasa-link-test.jpg": "630875e133dae0ae3c90f7e90ee068388f39be9081375cf24d86ceecd33e96ca",
+    "build/video/2026-11-03/media/nasa-roman-context.webm": "5ff76714ed773c8c033324bb382e9118a04136e43a3bf946a1eacb9e3ec3abb0",
+    "build/video/2026-11-03/media/nasa-swift-history.webm": "1669ad57217df5e312f04ee224a73494761981e0fa63408ad64a0538bee90e9b",
+    "build/video/2026-11-03/media/pexels-5030431.mp4": "aeeb7788036a62765e9d32e43e20e53434b52bf6e4d2ccd89e3684cb515b806f",
+    "build/video/2026-11-03/media/pexels-5453578.mp4": "dc1767772c804aec470f1078a2bc89bb88810270e7eabfd911e6182bd1c69f07",
+    "build/video/2026-11-03/media/pexels-6997946.mp4": "dd91c4eabe0a3d5e5b2a9915ae8068744057b8773d7ccdeacb90c8711666e5e2",
+    "build/video/2026-11-03/media/pexels-8460080.mp4": "971dc4257cc76ab316067d77a6276a657b2d06da1660739979d1fd4015939b3b",
+    "build/video/2026-11-03/media/swift-andromeda.jpg": "45b67f11b1ec3e3bbca58719e7d6e8fcc6dceffe8323bcea60c17947188d73da",
+    "build/video/2026-11-03/media/swift-assembly.jpg": "96e626919ea309a19f7c2d7550ac364f14b635076bb4925b72562ee77fe5e42c",
+    "build/video/2026-11-03/work/bell.png": "a00cd154de1cd53ce25aec866d4b60724ad5ef2a6ce4d8d03b4d16fb45f7b3b8",
+    "build/video/2026-11-03/work/closing-bg.png": "451dc13b0607b783fbf6a27c4d780ff611a05803fc279962b6f4390f00d5bb1e",
+    "build/video/2026-11-03/work/closing-panel.png": "0ac72bca3d9b3f2430a799322ff634120cbd703dc7d77f4ad94c5ebc2803e5a9",
+    "build/video/2026-11-03/work/subscribe.png": "ae411c9e0fdaae0aca28b45987c6754fd67f84901c59a5bec7fddb89530b6ba0",
+    "build/video/2026-11-03/work/title-hospital.png": "7f40780a160952caff97747eb691612a363be6f933b08c0251daacf005fddb17",
+    "build/video/2026-11-03/work/title-swift.png": "e5ade409d5bd3bbbfb885b7d6137d0123ade50adbe164a375cd6ab3f64b6f5f5"
+  }
+}

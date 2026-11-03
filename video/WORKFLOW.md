@@ -1,12 +1,7 @@
 # NewHorizons — Active Workflow Pointer
 
-Active cycle: **2026-10-25**
+Active cycle: **2026-11-03**
 
-State: **complete local delivery; independent technical/sample QA and user-confirmed full viewing/listening passed**. One Sakana Aquarium AI story, 199.5 seconds; no Shorts/Reels. Topic/hook/contextual visuals approved. Instagram and YouTube descriptions/hashtags and separate Tags prepared.
+State: **complete local delivery; independent technical/sample QA and user-confirmed full playback passed; no Reels**. [Brief](cycles/2026-11-03/BRIEF.md), [approval](cycles/2026-11-03/APPROVAL.md), [QA](cycles/2026-11-03/QA.md), [descriptions and hashtags](cycles/2026-11-03/DELIVERY_METADATA.md). Publication remains separately unauthorised.
 
-- [Brief and accepted video](cycles/2026-10-25/BRIEF.md)
-- [User decisions](cycles/2026-10-25/APPROVAL.md)
-- [Review](cycles/2026-10-25/REVIEW.md), [QA](cycles/2026-10-25/QA.md)
-- [Metadata](cycles/2026-10-25/DELIVERY_METADATA.md), [credits](cycles/2026-10-25/CREDITS.md)
-
-Accepted main promoted and hash-verified; previous main and earlier cycles preserved. No cleanup performed. Publication remains unauthorised. [Previous complete cycle](cycles/2026-10-17/BRIEF.md).
+[Previous cycle](cycles/2026-10-25/BRIEF.md) remains in the cycle records.

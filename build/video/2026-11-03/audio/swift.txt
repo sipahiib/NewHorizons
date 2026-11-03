@@ -1,0 +1,11 @@
+Some footage shows other telescopes for context. NASA's Neil Gehrels Swift Observatory launched in November 2004 with a two-year primary mission. It went on to spend more than two decades watching a restless universe.
+
+Swift was designed to catch gamma-ray bursts: brief flashes associated with some of the most energetic events in the cosmos. Because these flashes fade, speed matters. Swift could detect a burst, turn its instruments towards it, and alert other observatories so they could study the afterglow.
+
+Its three telescopes worked across gamma-ray, X-ray, ultraviolet and visible light. That combination helped astronomers connect a fleeting high-energy signal to a longer story about what happened and where.
+
+Swift's mission ended in October, after its orbit fell too low for reliable science. A commercial spacecraft had attempted to reach Swift and raise its orbit, but it did not capture or boost the observatory.
+
+In its November second update, NASA said re-entry was expected on November fourth, with an eleven-hour uncertainty around its estimate. Most of the spacecraft is expected to burn up, though some components could survive. The time and location can change, so check NASA's latest updates rather than treating an early prediction as a precise landing point.
+
+For viewers, Swift's legacy is a reminder that discovery often depends on coordination: one instrument spots an event, and others follow before it fades.
