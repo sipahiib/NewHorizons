@@ -1,7 +1,7 @@
 {
-  "cycle": "2026-11-03",
-  "output": "build/video/2026-11-03/newhorizons.mp4",
-  "sha256": "97bf234490fbaeeb631fb29d940e7263f0ae50a1d24916d1613d3f9d63cf9c90",
+  "cycle": "2026-11-13",
+  "output": "build/video/2026-11-13/newhorizons.mp4",
+  "sha256": "52e91a4b32151d4c280b412f728fde21e9e80142e10310ee1fefd2a95f46867f",
   "technicalAndSampledVisualQA": "passed",
   "human_approval": {
     "complete_viewing": {
@@ -9,10 +9,10 @@
       "evidence": {
         "type": "user-confirmation",
         "text": "onaylıyorum",
-        "date": "2026-11-03",
+        "date": "2026-11-13",
         "timezone": "Europe/Istanbul",
-        "scope": "complete viewing and listening of linked 213-second candidate",
-        "sha256": "97bf234490fbaeeb631fb29d940e7263f0ae50a1d24916d1613d3f9d63cf9c90"
+        "scope": "complete viewing and listening of linked 170-second main candidate",
+        "sha256": "52e91a4b32151d4c280b412f728fde21e9e80142e10310ee1fefd2a95f46867f"
       }
     },
     "complete_listening": {
@@ -20,18 +20,17 @@
       "evidence": {
         "type": "user-confirmation",
         "text": "onaylıyorum",
-        "date": "2026-11-03",
+        "date": "2026-11-13",
         "timezone": "Europe/Istanbul",
-        "scope": "complete viewing and listening of linked 213-second candidate",
-        "sha256": "97bf234490fbaeeb631fb29d940e7263f0ae50a1d24916d1613d3f9d63cf9c90"
+        "scope": "complete viewing and listening of linked 170-second main candidate",
+        "sha256": "52e91a4b32151d4c280b412f728fde21e9e80142e10310ee1fefd2a95f46867f"
       }
     }
   },
   "machine_gate": "PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
   "delivery_allowed": true,
-  "promotion_allowed": true,
   "cleanup_allowed": false,
   "publishing_authorised": false,
-  "delivered_path": "build/video/newhorizons.mp4",
-  "previous_main": "not found at promotion; no file overwritten"
+  "distribution_rights": "Hubble image-specific third-party rights remain unresolved",
+  "previous_main_preserved": "build/video/2026-11-03/newhorizons.mp4"
 }

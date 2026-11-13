@@ -1,0 +1,50 @@
+{
+  "cycle": "2026-11-13",
+  "status": "approved-for-download",
+  "note": "Candidate NASA footage for approved Hubble/Roman story; asset selection and per-file rights review pending. No cross-cycle reuse.",
+  "assets": [
+    {
+      "id": "KSC-20260830-MH-SPX01-0001-Roman_Space_Telescope_Launch_ISO_Drone-4K-M26246",
+      "file": "main/roman-launch.mp4",
+      "kind": "nasa",
+      "download": "https://images-assets.nasa.gov/video/KSC-20260830-MH-SPX01-0001-Roman_Space_Telescope_Launch_ISO_Drone-4K-M26246/KSC-20260830-MH-SPX01-0001-Roman_Space_Telescope_Launch_ISO_Drone-4K-M26246~large.mp4",
+      "source": "https://images.nasa.gov/details/KSC-20260830-MH-SPX01-0001-Roman_Space_Telescope_Launch_ISO_Drone-4K-M26246"
+    },
+    {
+      "id": "KSC-20260621-MH-SNW01-0001-Roman_Space_Telescope_Arrival_GSFC_Broll_Trimmed-M21913",
+      "file": "main/roman-arrival.mp4",
+      "kind": "nasa",
+      "download": "https://images-assets.nasa.gov/video/KSC-20260621-MH-SNW01-0001-Roman_Space_Telescope_Arrival_GSFC_Broll_Trimmed-M21913/KSC-20260621-MH-SNW01-0001-Roman_Space_Telescope_Arrival_GSFC_Broll_Trimmed-M21913~large.mp4",
+      "source": "https://images.nasa.gov/details/KSC-20260621-MH-SNW01-0001-Roman_Space_Telescope_Arrival_GSFC_Broll_Trimmed-M21913"
+    },
+    {
+      "id": "GSFC_20190423_HST_m13176_TTSM1",
+      "file": "main/hubble-servicing.mp4",
+      "kind": "nasa",
+      "download": "https://images-assets.nasa.gov/video/GSFC_20190423_HST_m13176_TTSM1/GSFC_20190423_HST_m13176_TTSM1~large.mp4",
+      "source": "https://images.nasa.gov/details/GSFC_20190423_HST_m13176_TTSM1"
+    },
+    {
+      "id": "pexels-19093263",
+      "file": "main/ocean-19093263.mp4",
+      "kind": "pexels",
+      "download": "https://www.pexels.com/download/video/19093263/",
+      "source": "https://www.pexels.com/video/ocean-waves-19093263/"
+    },
+    {
+      "id": "pexels-29509867",
+      "file": "main/ocean-29509867.mp4",
+      "kind": "pexels",
+      "download": "https://www.pexels.com/download/video/29509867/",
+      "source": "https://www.pexels.com/video/aerial-view-of-ocean-waves-at-sunset-29509867/"
+    },
+    {
+      "id": "KSC-20260830-MH-CSH01-0001-Roman_Space_Telescope_Launch_High_Speed_Footage",
+      "file": "main/roman-launch-nasa.mp4",
+      "kind": "nasa",
+      "download": "https://images-assets.nasa.gov/video/KSC-20260830-MH-CSH01-0001-Roman_Space_Telescope_Launch_High_Speed_Footage/KSC-20260830-MH-CSH01-0001-Roman_Space_Telescope_Launch_High_Speed_Footage~large.mp4",
+      "source": "https://images.nasa.gov/details/KSC-20260830-MH-CSH01-0001-Roman_Space_Telescope_Launch_High_Speed_Footage",
+      "creator": "NASA/Cory S Huston"
+    }
+  ]
+}

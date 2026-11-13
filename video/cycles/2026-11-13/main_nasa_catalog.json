@@ -1,0 +1,119 @@
+[
+  {
+    "center": "KSC",
+    "date_created": "2026-08-30T00:00:00Z",
+    "description": "NASA's coverage of the agency's Nancy Grace Roman Space Telescope leading to launch atop a SpaceX Falcon Heavy rocket from Launch Complex 39A at the agency\u2019s Kennedy Space Center in Florida on Sunday, Aug. 30, 2026. The milestone begins the observatory\u2019s journey to explore the large\u2011scale structure of the universe. Roman will investigate dark energy and dark matter, conduct a statistical census of planetary systems, and enable a broad range of additional astrophysics research.",
+    "keywords": [
+      "Nancy Grace Roman Space Telescope",
+      "Roman",
+      "RST",
+      "Payload Hazardous Servicing Facility",
+      "PHSF",
+      "KSC",
+      "Kennedy Space Center",
+      "LSP",
+      "Launch Services Program",
+      "astrophysics",
+      "science",
+      "launch",
+      "broadcast",
+      "SpaceX",
+      "Falcon Heavy",
+      "Launch Complex 39A",
+      "LC-39A",
+      "rocket"
+    ],
+    "location": "Launch Complex 39A",
+    "media_type": "video",
+    "nasa_id": "KSC-20260830-MH-SPX01-0001-Roman_Space_Telescope_Launch_ISO_Drone-4K-M26246",
+    "photographer": "SpaceX",
+    "title": "NASA's Nancy Grace Roman Space Telescope Launch - Drone",
+    "album": [
+      "SpaceX_Roman_Space_Telescope"
+    ]
+  },
+  {
+    "center": "KSC",
+    "date_created": "2026-06-21T00:00:00Z",
+    "description": "NASA\u2019s Nancy Grace Roman Space Telescope arrives at the Payload Hazardous Servicing Facility at the agency\u2019s Kennedy Space Center in Florida on Sunday, June 21, 2026, to begin prelaunch processing. NASA designed Roman to survey billions of galaxies, assemble the most comprehensive 3D map of the universe to probe dark matter and dark energy, and expand the census of exoplanets using multiple detection techniques. Roman's main instrument is a 300-megapixel infrared camera that will give Roman the same resolution as the Hubble Space Telescope, but with a field of view at least 100 times larger. Roman is named after the agency\u2019s first chief astronomer, Dr. Nancy Grace Roman, who was a driving force behind NASA\u2019s entire Great Observatories program, which included Hubble.",
+    "keywords": [
+      "Nancy Grace Roman Space Telescope",
+      "RST",
+      "Payload Hazardous Servicing Facility",
+      "PHSF",
+      "KSC",
+      "Kennedy Space Center",
+      "LSP",
+      "Launch Services Program",
+      "Goddard Space Flight Center",
+      "preparations",
+      "processing",
+      "GSFC"
+    ],
+    "location": "PHSF",
+    "media_type": "video",
+    "nasa_id": "KSC-20260621-MH-SNW01-0001-Roman_Space_Telescope_Arrival_GSFC_Broll_Trimmed-M21913",
+    "photographer": "NASA/Scott Wiessinger",
+    "title": "Roman Space Telescope Arrival at PHSF",
+    "album": [
+      "SpaceX_Roman_Space_Telescope"
+    ]
+  },
+  {
+    "album": [
+      "HST"
+    ],
+    "center": "GSFC",
+    "date_created": "2019-04-23T00:00:00Z",
+    "description": "Retired NASA astronaut John Grunsfeld hosts this six-part mini-series about the tools used on the Hubble Space Telescope servicing missions. Hubble was uniquely designed to be serviced in space so that components could be repaired and upgraded. Astronauts using custom-designed tools performed challenging spacewalks on five servicing missions from 1993 to 2009 to keep Hubble operating so that it could change our fundamental understanding of the universe.  Join John and EVA manager Russ Werneth in this episode of Hubble Tool Time to learn about the power ratchet tool used on Hubble\u2019s first servicing mission in 1993.  In addition to enabling Hubble's scientific discoveries, the tools developed by teams at NASA's Goddard Space Flight Center and tested in collaboration with the Johnson Space Center furthered NASA's human exploration capabilities. These tools and the knowledge gleaned from the Hubble servicing missions are used today by astronauts on the International Space Station, and will be critical to NASA's future crewed missions to the Moon and Mars.",
+    "description_508": "Retired NASA astronaut John Grunsfeld hosts this six-part mini-series about the tools used on the Hubble Space Telescope servicing missions.",
+    "keywords": [
+      "HST",
+      "Hubble Space Telescope",
+      "Tools",
+      "Astronaut",
+      "Engineers",
+      "Planets and Moons",
+      "Universe",
+      "Engineering"
+    ],
+    "location": "Goddard Space Flight Center",
+    "media_type": "video",
+    "nasa_id": "GSFC_20190423_HST_m13176_TTSM1",
+    "photographer": "John Caldwell, Katrina Jackson",
+    "secondary_creator": "Katrina Jackson, Jessica Koynock, Bailee DesRocher, John Grunsfeld, Paul R. Morris, Russell Werneth",
+    "title": "Hubble Tool Time Episode 2 - Servicing Mission 1"
+  },
+  {
+    "center": "KSC",
+    "date_created": "2026-08-30T00:00:00Z",
+    "description": "NASA\u2019s Nancy Grace Roman Space Telescope rises to space atop a SpaceX Falcon Heavy rocket from Launch Complex 39A at the agency\u2019s Kennedy Space Center in Florida on Sunday, Aug. 30, 2026. The milestone begins the observatory\u2019s journey to explore the large\u2011scale structure of the universe. Roman will investigate dark energy and dark matter, conduct a statistical census of planetary systems, and enable a broad range of additional astrophysics research. Liftoff occurred at 7:26 a.m. EDT, from Kennedy\u2019s Launch Complex 39A.",
+    "keywords": [
+      "Nancy Grace Roman Space Telescope",
+      "Roman",
+      "RST",
+      "Payload Hazardous Servicing Facility",
+      "PHSF",
+      "KSC",
+      "Kennedy Space Center",
+      "LSP",
+      "Launch Services Program",
+      "astrophysics",
+      "science",
+      "launch",
+      "post launch news conference",
+      "SpaceX",
+      "Falcon Heavy",
+      "LC-39A",
+      "rocket"
+    ],
+    "location": "KSC Press Site",
+    "media_type": "video",
+    "nasa_id": "KSC-20260830-MH-CSH01-0001-Roman_Space_Telescope_Launch_High_Speed_Footage",
+    "photographer": "NASA/Cory S Huston",
+    "title": "Nancy Grace Roman Space Telescope High Speed Footage",
+    "album": [
+      "SpaceX_Roman_Space_Telescope"
+    ]
+  }
+]

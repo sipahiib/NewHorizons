@@ -1,0 +1,10 @@
+{
+  "files_scanned": 699,
+  "matches": [],
+  "scope": [
+    "assets",
+    "build"
+  ],
+  "excludes_cycle": "2026-11-13",
+  "limitation": "exact bytes only"
+}

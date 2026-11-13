@@ -1,0 +1,7 @@
+Tidal currents are predictable, but the water flowing through a turbine is rarely steady. Sudden changes in force can repeatedly stress the blades. To manage those loads, large turbines often use mechanisms that adjust blade angle.
+
+Researchers at the University of Edinburgh and their collaborators tested another approach: a rigid supporting section with a flexible rubber trailing edge. As the current increases, the blade changes shape and sheds some of the force acting on it.
+
+The team tested a 1.26-metre model in Edinburgh's FloWave facility. Using the measurements and a simulated tidal cycle, they compared the design with an actively controlled rigid-blade turbine. They report similar energy yield and reductions of up to roughly a third in rapid load fluctuations that can contribute to fatigue.
+
+These are model-scale tests and a simulated comparison, not a long-term trial of a full-sized machine at sea. The researchers suggest that a simpler mechanism could eventually reduce maintenance, but actual savings and durability still need to be demonstrated. If the design scales successfully, it could help make predictable tidal electricity easier to harness.

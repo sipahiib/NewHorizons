@@ -1,0 +1,241 @@
+{
+  "cycle": "2026-11-13",
+  "status": "prepared-for-review",
+  "candidateOutput": "build/video/2026-11-13/newhorizons.mp4",
+  "finalOutput": "build/video/newhorizons.mp4",
+  "duration": 170,
+  "fps": 60,
+  "width": 1920,
+  "height": 1080,
+  "openingSeconds": 16,
+  "closingSeconds": 10,
+  "sections": [
+    {
+      "id": "tidal",
+      "duration": 99,
+      "audio": "build/video/2026-11-13/audio/main-lead-assembled.wav",
+      "title": "build/video/2026-11-13/work/title-tidal.png",
+      "scenes": [
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-13/main/ocean-19093263.mp4",
+          "duration": 5,
+          "seek": 0,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-13/main/sequim-turbine-03.avi",
+          "duration": 7,
+          "seek": 0,
+          "classification": "contextual",
+          "crop": "954:838:160:78"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-13/media/main/hubble-lenses.jpg",
+          "duration": 4,
+          "classification": "direct"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-13/main/sequim-turbine-01.avi",
+          "duration": 5,
+          "seek": 0,
+          "classification": "contextual",
+          "crop": "954:838:160:78"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-13/media/main/flowave-2019.png",
+          "duration": 5,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-13/main/ocean-29509867.mp4",
+          "duration": 5,
+          "seek": 5,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-13/main/ocean-29509867.mp4",
+          "duration": 8,
+          "seek": 12,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-13/main/ocean-19093263.mp4",
+          "duration": 8,
+          "seek": 5,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-13/main/ocean-29509867.mp4",
+          "duration": 7,
+          "seek": 2,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-13/main/ocean-29509867.mp4",
+          "duration": 8,
+          "seek": 22,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-13/main/ocean-29509867.mp4",
+          "duration": 7,
+          "seek": 31,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-13/main/ocean-19093263.mp4",
+          "duration": 8,
+          "seek": 4,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-13/main/ocean-19093263.mp4",
+          "duration": 7,
+          "seek": 6,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-13/main/ocean-29509867.mp4",
+          "duration": 8,
+          "seek": 40,
+          "classification": "contextual"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-13/main/ocean-29509867.mp4",
+          "duration": 7,
+          "seek": 50,
+          "classification": "contextual"
+        }
+      ],
+      "counts": {
+        "motion": 13,
+        "stills": 2
+      }
+    },
+    {
+      "id": "hubble",
+      "duration": 61,
+      "audio": "build/video/2026-11-13/audio/main-second.mp3",
+      "title": "build/video/2026-11-13/work/title-hubble.png",
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-13/media/main/lens-a.png",
+          "duration": 5,
+          "classification": "direct"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-13/media/main/lens-b.png",
+          "duration": 7,
+          "classification": "direct"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-13/main/roman-launch-nasa.mp4",
+          "duration": 8,
+          "seek": 25,
+          "classification": "contextual",
+          "crop": "1920:600:0:0"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-13/media/main/lens-e.png",
+          "duration": 8,
+          "classification": "direct"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-13/main/roman-arrival.mp4",
+          "duration": 8,
+          "seek": 110,
+          "classification": "contextual"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-13/media/main/lens-i.png",
+          "duration": 7,
+          "classification": "direct"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-13/main/hubble-servicing.mp4",
+          "duration": 8,
+          "seek": 165,
+          "classification": "contextual"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-13/media/main/hubble-lenses.jpg",
+          "duration": 5,
+          "classification": "direct"
+        },
+        {
+          "kind": "still",
+          "file": "build/video/2026-11-13/media/main/lens-f.png",
+          "duration": 5,
+          "classification": "direct"
+        }
+      ],
+      "counts": {
+        "motion": 3,
+        "stills": 6
+      }
+    },
+    {
+      "id": "closing",
+      "duration": 10,
+      "audio": "build/video/2026-11-13/audio/main-closing.mp3",
+      "leadingSilence": 2,
+      "closing": true
+    }
+  ],
+  "closing": "build/video/2026-11-13/work/closing-bg.png",
+  "closingPanel": "build/video/2026-11-13/work/closing-panel.png",
+  "closingBell": "build/video/2026-11-13/work/bell.png",
+  "subscribeOverlay": "build/video/2026-11-13/work/subscribe.png",
+  "subscribeWindow": [
+    30,
+    35.5
+  ],
+  "hashes": {
+    "assets/motion/2026-11-13/main/hubble-servicing.mp4": "d9b0d93093bffbebc08a9d808a16c28fe2d46e5370960148bb82cdaab6051803",
+    "assets/motion/2026-11-13/main/ocean-19093263.mp4": "d30de3f0108a75425ccc9e27c925fdafa81f60b3b1cf4dc1e52a5f8cb6c9a7e5",
+    "assets/motion/2026-11-13/main/ocean-29509867.mp4": "d61f19ec2ead392cdad815be378eec7a7edfd8da546f0159ea84108e970e7f9b",
+    "assets/motion/2026-11-13/main/roman-arrival.mp4": "137467b47a60d247b70638ab853615693ccf685adf1303d2d373849922111baf",
+    "assets/motion/2026-11-13/main/roman-launch-nasa.mp4": "b91b4f9c0d9875f1f315fb53d2872030a18b6b8ca48d43e448affc77e82c2ecd",
+    "assets/motion/2026-11-13/main/sequim-turbine-01.avi": "9518894c718fb008ae58796c4f525428d8eb5185de2546a33ace12b0c4a0b453",
+    "assets/motion/2026-11-13/main/sequim-turbine-03.avi": "ab01faa0389c7c49404ce92056909365934238094bdc95666639088c98492437",
+    "build/video/2026-11-13/audio/main-closing.mp3": "719bfedbdea6fb3fec8edd96af461412353df0e35515bcff2d5e27d3ad7e8e53",
+    "build/video/2026-11-13/audio/main-lead-assembled.wav": "617f027e1a03617f26f58d5a9ff73e5e676919c9a94db0d5ba295a145cb58501",
+    "build/video/2026-11-13/audio/main-second.mp3": "9ec3cab58770e850c1b7f1a2c8170fadc1931f9fcd2330a9441b053d9938a9c9",
+    "build/video/2026-11-13/media/main/flowave-2019.png": "827ff3d272c6b855487237e2cf82738cbc698764c65d8b81ae802e2aea9efe4e",
+    "build/video/2026-11-13/media/main/hubble-lenses.jpg": "99e0d1db09dc68b2fcb95d6b05170c22f75518565f9560d7e61851cedb171f50",
+    "build/video/2026-11-13/media/main/lens-a.png": "0d9a0aded01064b205614839be5f6a3806e7800a00c67ca4d3c32f17fbeafd35",
+    "build/video/2026-11-13/media/main/lens-b.png": "bf7b317e5c53f289505dda457fbbc3a8b398a7d8512bd54d81ab06790b398b6b",
+    "build/video/2026-11-13/media/main/lens-e.png": "553abcfb47463942ddf0ff4821d509b121a6360f7a12182473ed1af8cc193b0c",
+    "build/video/2026-11-13/media/main/lens-f.png": "1a95378a0cef4ebce18ca7ba43c24eca0303dc69cbb6a1c0a6dfbb417cca9935",
+    "build/video/2026-11-13/media/main/lens-i.png": "fa3ca19467bb481a1e4725b217bad17e4a8f374d4b80598a3d44989aecdc1190",
+    "build/video/2026-11-13/work/bell.png": "2a9024c881774c36c84602dfef69a02bd6d54783510deeb8fd20f836e527d405",
+    "build/video/2026-11-13/work/closing-bg.png": "d8c5af2a1705cacbdcf8f3773540be5e04b340861b1cc23e994aa7da8eab07f9",
+    "build/video/2026-11-13/work/closing-panel.png": "3821d9590c451603647208e579a1cf253a63927aca9c0605b718e2217153a117",
+    "build/video/2026-11-13/work/subscribe.png": "83595458a54176219be5bf583994ac5e59887965954cd0758fa998c9076958fb",
+    "build/video/2026-11-13/work/title-hubble.png": "101a97015857fbbc267c9b8b7afda74d307d9b21ee800ca4f28bdf341f6c4add",
+    "build/video/2026-11-13/work/title-tidal.png": "3abcc4b8050ca6e147a5ba9b186b6778cbfc64efcca54a81d1ec596422e144b2"
+  }
+}

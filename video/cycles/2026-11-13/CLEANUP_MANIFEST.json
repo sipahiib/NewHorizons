@@ -1,0 +1,183 @@
+{
+  "cycle": "2026-11-13",
+  "status": "removed",
+  "reason": "user requested removal of disposable intermediates after verified delivery",
+  "items": [
+    {
+      "path": "build/reels/2026-11-13/work/concat.txt",
+      "bytes": 588,
+      "sha256": "528b4ade6c7c2b0085d11ce7f6ce02b2f2df2d3b82e3ddba9fd96a6e08aed03e"
+    },
+    {
+      "path": "build/reels/2026-11-13/work/scene-00.mp4",
+      "bytes": 254058,
+      "sha256": "b24e38ec4d0fbcd67f592c8236504ee601e442085c758441c7f89606985d828e"
+    },
+    {
+      "path": "build/reels/2026-11-13/work/scene-01.mp4",
+      "bytes": 315384,
+      "sha256": "d450da75fb8e96e83967c431b2fc3d87d553423ccf49c5e10580f05150f70c1f"
+    },
+    {
+      "path": "build/reels/2026-11-13/work/scene-02.mp4",
+      "bytes": 179199,
+      "sha256": "57e773f6b46eb2c4f10097208e7e7c42597f0d559c60f16a2674c50a9ef8b254"
+    },
+    {
+      "path": "build/reels/2026-11-13/work/scene-03.mp4",
+      "bytes": 245014,
+      "sha256": "243fd709c54050e105a6c1d29a3c0fce59dc5b3e189f25922a66f35c51d04346"
+    },
+    {
+      "path": "build/reels/2026-11-13/work/scene-04.mp4",
+      "bytes": 143787,
+      "sha256": "89e80b00056e495916061a18651689b05f95d37012aed6abf06fe60a03aceae5"
+    },
+    {
+      "path": "build/reels/2026-11-13/work/scene-05.mp4",
+      "bytes": 257253,
+      "sha256": "4d9a48ee3ca53d3e719eb76207313117cece3bae70f3c437d5968fb900f86de6"
+    },
+    {
+      "path": "build/reels/2026-11-13/work/scene-06.mp4",
+      "bytes": 194192,
+      "sha256": "d236e33660d51c79ceed3b7c9c5a12430a5279fc805d0ef78fb4bf84bc1d6a4e"
+    },
+    {
+      "path": "build/video/2026-11-13/work/closing-segment.mp4",
+      "bytes": 141500,
+      "sha256": "3d75bf5f3142008f8b70c84e6c58f080e2e7ce484907fa62f17fc51d115c2824"
+    },
+    {
+      "path": "build/video/2026-11-13/work/hubble-00.mp4",
+      "bytes": 175812,
+      "sha256": "c8ec3245276549c45d0be4b27811cec8600ac116da53635c936cec7e2e40c55b"
+    },
+    {
+      "path": "build/video/2026-11-13/work/hubble-01.mp4",
+      "bytes": 161190,
+      "sha256": "27321e15d48a00eff1b67d06c2816c1a1f37762b9bc0813143d4c3dd5998e344"
+    },
+    {
+      "path": "build/video/2026-11-13/work/hubble-02.mp4",
+      "bytes": 2754995,
+      "sha256": "f7ba4f7a136295f88cbeeaed6eb0cd79b68ced134c596e677d352e1109e6412c"
+    },
+    {
+      "path": "build/video/2026-11-13/work/hubble-03.mp4",
+      "bytes": 158323,
+      "sha256": "312cafb212cdaec7cad895779ad76d3d6f95bf60630f3ea54f4e455e458e34c2"
+    },
+    {
+      "path": "build/video/2026-11-13/work/hubble-04.mp4",
+      "bytes": 1985290,
+      "sha256": "b8b5ba45c85f58813b7fe866c6dbc031a7b9e9c75f7a77696e4b40f991db7713"
+    },
+    {
+      "path": "build/video/2026-11-13/work/hubble-05.mp4",
+      "bytes": 144710,
+      "sha256": "a477688754dcfebbfd21985473084de2021246f5a3e3ddbe516071bff7178c4a"
+    },
+    {
+      "path": "build/video/2026-11-13/work/hubble-06.mp4",
+      "bytes": 8733697,
+      "sha256": "f7a3fd49d5b5b731ae2b0ab85a405710cb3c06613896e1c07fa12d5bc49a1957"
+    },
+    {
+      "path": "build/video/2026-11-13/work/hubble-07.mp4",
+      "bytes": 210567,
+      "sha256": "90bdd004059cc23662da1bdc57ec897a0f5d2f422df100f991d525eec4898af7"
+    },
+    {
+      "path": "build/video/2026-11-13/work/hubble-08.mp4",
+      "bytes": 160448,
+      "sha256": "716fd2480e64513dd23184291e39a7bf454919abc26d2f00429a14e997928751"
+    },
+    {
+      "path": "build/video/2026-11-13/work/main-audio.m4a",
+      "bytes": 3415686,
+      "sha256": "c9a8357117a28d2fd7c07744e056569d5769ce33784caef15d64459e117add42"
+    },
+    {
+      "path": "build/video/2026-11-13/work/main-concat.txt",
+      "bytes": 2116,
+      "sha256": "fe8038906f43e4cf73fa1b01622c13643d61dbc02e8ad4e20dc2dcb0ff77f9e5"
+    },
+    {
+      "path": "build/video/2026-11-13/work/tidal-00.mp4",
+      "bytes": 5941764,
+      "sha256": "c3fee3e71fa3e3252ede24111c2b3820a8e6650441eb23be36b1acb86a47f5e2"
+    },
+    {
+      "path": "build/video/2026-11-13/work/tidal-01.mp4",
+      "bytes": 1930030,
+      "sha256": "a5e2727b7be8511a11a5493e088579fc5823eea1bede8ea85e939ed89f3693f6"
+    },
+    {
+      "path": "build/video/2026-11-13/work/tidal-02.mp4",
+      "bytes": 99423,
+      "sha256": "32c9724980c004b8b09485c8dc639e6bc5d8d739a05defdcf56c1c4778e83b1d"
+    },
+    {
+      "path": "build/video/2026-11-13/work/tidal-03.mp4",
+      "bytes": 1250388,
+      "sha256": "f9c84f4beefa8c0804bea5ef2c03ba7b8acc75a6c78b1002a7b44b9eb0a36689"
+    },
+    {
+      "path": "build/video/2026-11-13/work/tidal-04.mp4",
+      "bytes": 406465,
+      "sha256": "7bb1e5a62439c037662781985d21ecb854475cc40bda05ac1aa06314259a70e3"
+    },
+    {
+      "path": "build/video/2026-11-13/work/tidal-05.mp4",
+      "bytes": 10508462,
+      "sha256": "cbe589e68ac6933f617956fcc6d870306d890aec2050b8842aaeea556cd66e6e"
+    },
+    {
+      "path": "build/video/2026-11-13/work/tidal-06.mp4",
+      "bytes": 18103543,
+      "sha256": "10729ddb064f2cd8c50ad34a46812343ac96673789f06725ee3d15b39b8bce50"
+    },
+    {
+      "path": "build/video/2026-11-13/work/tidal-07.mp4",
+      "bytes": 9409313,
+      "sha256": "fa11c04bea5c0c6da0ac49dd07dffafb435030e5a8f67f4293b469a1dbdec493"
+    },
+    {
+      "path": "build/video/2026-11-13/work/tidal-08.mp4",
+      "bytes": 15052719,
+      "sha256": "94a17797bf750e62d9a3ea55cfc35b12b9ad5154198a7820275f41bbce65e4ba"
+    },
+    {
+      "path": "build/video/2026-11-13/work/tidal-09.mp4",
+      "bytes": 16751467,
+      "sha256": "11b7dbf8ad4063d0ec9fc74a0d74ba7838e80997dd657cc0fd0ad145333c7b07"
+    },
+    {
+      "path": "build/video/2026-11-13/work/tidal-10.mp4",
+      "bytes": 15719929,
+      "sha256": "948d8cdf6023a8b82ef7cc036d9f2356e98ca680966211e36d2be5def663863c"
+    },
+    {
+      "path": "build/video/2026-11-13/work/tidal-11.mp4",
+      "bytes": 9328454,
+      "sha256": "978ca312f5142ee9df4327aea0a53c8b6bca3276793a042cebecc06a8f02c38f"
+    },
+    {
+      "path": "build/video/2026-11-13/work/tidal-12.mp4",
+      "bytes": 8301560,
+      "sha256": "93e9373b397846dba869e452bb0836062a740c8c520277b59bbfa5a2b1a0052c"
+    },
+    {
+      "path": "build/video/2026-11-13/work/tidal-13.mp4",
+      "bytes": 17582545,
+      "sha256": "2847b872e821804c9558ef3f3b0b44c9b5f6f94627815ce263bdbb9c45b9f6ac"
+    },
+    {
+      "path": "build/video/2026-11-13/work/tidal-14.mp4",
+      "bytes": 15926554,
+      "sha256": "a3298064c16a23562b202d8c023d88463c71ad73d93fe830cc5eed3191244b6b"
+    }
+  ],
+  "removed_bytes": 165946425
+}

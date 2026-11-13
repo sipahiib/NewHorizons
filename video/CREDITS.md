@@ -1,5 +1,5 @@
 # NewHorizons — Active Credits Pointer
 
-Active cycle: **2026-11-03**. [Proposed cycle credits](cycles/2026-11-03/CREDITS.md), subject to pre-render review.
+Active cycle: **2026-11-13**. [R2 image credits](cycles/2026-11-13/CREDITS.md); main-video credits remain pending.
 
-Earlier credits remain with their cycles or in archive/. [Previous cycle credits](cycles/2026-10-25/CREDITS.md).
+[Previous cycle credits](cycles/2026-11-03/CREDITS.md) and earlier credits remain with their cycles.

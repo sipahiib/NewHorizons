@@ -1,0 +1,35 @@
+{
+  "cycle": "2026-11-13",
+  "output": "build/reels/2026-11-13/planet-earth-flow-country.mp4",
+  "sha256": "c42f09259224faa163d9f077dc3d4a38e86f20c07b8201405822cf3073975cc6",
+  "technicalAndSampledVisualQA": "passed",
+  "human_approval": {
+    "complete_viewing": {
+      "status": "passed",
+      "evidence": {
+        "type": "user-confirmation",
+        "text": "onaylıyorum",
+        "date": "2026-11-13",
+        "timezone": "Europe/Istanbul",
+        "scope": "complete viewing and listening of linked 46-second R2 candidate",
+        "sha256": "c42f09259224faa163d9f077dc3d4a38e86f20c07b8201405822cf3073975cc6"
+      }
+    },
+    "complete_listening": {
+      "status": "passed",
+      "evidence": {
+        "type": "user-confirmation",
+        "text": "onaylıyorum",
+        "date": "2026-11-13",
+        "timezone": "Europe/Istanbul",
+        "scope": "complete viewing and listening of linked 46-second R2 candidate",
+        "sha256": "c42f09259224faa163d9f077dc3d4a38e86f20c07b8201405822cf3073975cc6"
+      }
+    }
+  },
+  "machine_gate": "PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
+  "delivery_allowed": true,
+  "cleanup_allowed": false,
+  "publishing_authorised": false,
+  "distribution_license_review": "required before external distribution"
+}

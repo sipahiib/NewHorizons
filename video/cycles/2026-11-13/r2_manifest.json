@@ -1,0 +1,67 @@
+{
+  "cycle": "2026-11-13",
+  "status": "prepared-for-review",
+  "output": "build/reels/2026-11-13/planet-earth-flow-country.mp4",
+  "audio": "build/video/2026-11-13/audio/r2-short.mp3",
+  "duration": 46,
+  "width": 1080,
+  "height": 1920,
+  "fps": 60,
+  "title": "SCOTLAND’S FLOW COUNTRY",
+  "title_seconds": 5.5,
+  "cta_seconds": 3,
+  "scenes": [
+    {
+      "file": "build/video/2026-11-13/media/r2/flow-01.jpg",
+      "kind": "still",
+      "duration": 6,
+      "classification": "direct"
+    },
+    {
+      "file": "build/video/2026-11-13/media/r2/nasa-flow.jpg",
+      "kind": "still",
+      "duration": 7,
+      "classification": "direct"
+    },
+    {
+      "file": "build/video/2026-11-13/media/r2/flow-02.jpg",
+      "kind": "still",
+      "duration": 7,
+      "classification": "direct"
+    },
+    {
+      "file": "build/video/2026-11-13/media/r2/verified-03.jpg",
+      "kind": "still",
+      "duration": 6,
+      "classification": "direct"
+    },
+    {
+      "file": "build/video/2026-11-13/media/r2/verified-04.jpg",
+      "kind": "still",
+      "duration": 7,
+      "classification": "direct"
+    },
+    {
+      "file": "build/video/2026-11-13/media/r2/flow-05.jpg",
+      "kind": "still",
+      "duration": 6,
+      "classification": "direct"
+    },
+    {
+      "file": "build/video/2026-11-13/media/r2/flow-06.jpg",
+      "kind": "still",
+      "duration": 7,
+      "classification": "direct"
+    }
+  ],
+  "hashes": {
+    "build/video/2026-11-13/media/r2/flow-01.jpg": "67d6fc796488f6af79672e6e6f5746ecf78356586b38b7f7045b7b116b0fc8dc",
+    "build/video/2026-11-13/media/r2/nasa-flow.jpg": "a52e6ad497066a40e0152d87d26b818ad66c354edfb1b6af2c8ff3d38af753d2",
+    "build/video/2026-11-13/media/r2/flow-02.jpg": "94d5de792757ed3b28924effaf28a15c5b2fb256524f12389af2e52ecfe87b5e",
+    "build/video/2026-11-13/media/r2/verified-03.jpg": "d20c145cc93d683d0b7a77caea44aa036c6eaf01af2389c9b8a72067d85923aa",
+    "build/video/2026-11-13/media/r2/verified-04.jpg": "8fbde596109e43cbe4aa74bffa06b63b8903c992a6aac32d8aeaaa9221e1a9c1",
+    "build/video/2026-11-13/media/r2/flow-05.jpg": "9d6fe305144c97eb20353d770e8a803f796af10cfd0cee25b187122c27662a5c",
+    "build/video/2026-11-13/media/r2/flow-06.jpg": "9d887f8e9da58c394763127e69fff19c1b2e2b121fba0feb9b43682552f2e18c",
+    "build/video/2026-11-13/audio/r2-short.mp3": "a6282043336f26d1b8375c415a41bd1066ad029a1e96839667548b83153a39f7"
+  }
+}

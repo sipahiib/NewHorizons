@@ -1,0 +1,10 @@
+{
+  "candidate": "build/video/2026-11-13/newhorizons.mp4",
+  "delivered": "build/video/newhorizons.mp4",
+  "sha256": "52e91a4b32151d4c280b412f728fde21e9e80142e10310ee1fefd2a95f46867f",
+  "previous_main_preserved": "build/video/2026-11-03/newhorizons.mp4",
+  "previous_sha256": "97bf234490fbaeeb631fb29d940e7263f0ae50a1d24916d1613d3f9d63cf9c90",
+  "publication": "not authorised",
+  "cleanup": "35 inventoried disposable intermediates removed at user request",
+  "cleanup_manifest": "video/cycles/2026-11-13/CLEANUP_MANIFEST.json"
+}

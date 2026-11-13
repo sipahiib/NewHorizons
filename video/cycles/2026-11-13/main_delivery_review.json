@@ -1,0 +1,36 @@
+{
+  "cycle": "2026-11-13",
+  "output": "build/video/2026-11-13/newhorizons.mp4",
+  "sha256": "52e91a4b32151d4c280b412f728fde21e9e80142e10310ee1fefd2a95f46867f",
+  "technicalAndSampledVisualQA": "passed",
+  "human_approval": {
+    "complete_viewing": {
+      "status": "passed",
+      "evidence": {
+        "type": "user-confirmation",
+        "text": "onaylıyorum",
+        "date": "2026-11-13",
+        "timezone": "Europe/Istanbul",
+        "scope": "complete viewing and listening of linked 170-second main candidate",
+        "sha256": "52e91a4b32151d4c280b412f728fde21e9e80142e10310ee1fefd2a95f46867f"
+      }
+    },
+    "complete_listening": {
+      "status": "passed",
+      "evidence": {
+        "type": "user-confirmation",
+        "text": "onaylıyorum",
+        "date": "2026-11-13",
+        "timezone": "Europe/Istanbul",
+        "scope": "complete viewing and listening of linked 170-second main candidate",
+        "sha256": "52e91a4b32151d4c280b412f728fde21e9e80142e10310ee1fefd2a95f46867f"
+      }
+    }
+  },
+  "machine_gate": "PASS_FULL_HUMAN_AUDIOVISUAL_PLAYBACK",
+  "delivery_allowed": true,
+  "cleanup_allowed": false,
+  "publishing_authorised": false,
+  "distribution_rights": "Hubble image-specific third-party rights remain unresolved",
+  "previous_main_preserved": "build/video/2026-11-03/newhorizons.mp4"
+}
