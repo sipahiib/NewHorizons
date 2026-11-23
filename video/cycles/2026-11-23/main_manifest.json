@@ -1,0 +1,265 @@
+{
+  "cycle": "2026-11-23",
+  "width": 1920,
+  "height": 1080,
+  "fps": 60,
+  "duration": 257.0,
+  "openingSeconds": 16,
+  "subscribeWindow": [
+    30.0,
+    35.5
+  ],
+  "subscribeOverlay": "build/video/2026-11-23/overlays/subscribe.png",
+  "closing": "build/video/2026-11-23/overlays/closing-bg.png",
+  "closingPanel": "build/video/2026-11-23/overlays/closing-panel.png",
+  "closingBell": "build/video/2026-11-23/overlays/bell.png",
+  "candidateOutput": "build/video/2026-11-23/newhorizons.mp4",
+  "output": "build/video/newhorizons.mp4",
+  "visualCounts": {
+    "m1": {
+      "motionScenes": 8,
+      "uniqueMotionFiles": 6,
+      "stills": 5
+    },
+    "m2": {
+      "motionScenes": 6,
+      "uniqueMotionFiles": 4,
+      "stills": 4
+    }
+  },
+  "sections": [
+    {
+      "id": "m1",
+      "title": "build/video/2026-11-23/overlays/title-bepicolombo.png",
+      "duration": 135.0,
+      "audio": "build/video/2026-11-23/audio/main-lead-assembled.wav",
+      "leadingSilence": 0.0,
+      "scenes": [
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-23/main/m1-v01-mercury-transit.webm",
+          "seek": 12.0,
+          "duration": 5.0,
+          "role": "contextual",
+          "note": "0:00-0:05 hook: NASA SDO Mercury transit"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-23/main/m1-v02-bepi-flyby6.webm",
+          "seek": 30.0,
+          "duration": 7.0,
+          "role": "direct",
+          "note": "0:05-0:12 support: BepiColombo 6th Mercury flyby"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-23/main/m2-v01-mammography-usda.webm",
+          "seek": 16.0,
+          "duration": 4.0,
+          "role": "contextual",
+          "note": "0:12-0:16 M2 teaser: mammography suite"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-23/main/m1-v03-bepi-flyby4.webm",
+          "seek": 22.0,
+          "duration": 15.0,
+          "role": "direct",
+          "note": "4th flyby approach"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-23/main/m1-v01-mercury-transit.webm",
+          "seek": 52.0,
+          "duration": 14.0,
+          "role": "contextual",
+          "note": "NASA SDO Mercury against Sun"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-11-23/main/m1-s01-bepi-hugs.png",
+          "crop": "8533:7100:0:820",
+          "duration": 10.0,
+          "role": "direct",
+          "note": "M-CAM Mercury close-up (cropped)"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-23/main/m1-v05-bepi-flyby2.webm",
+          "seek": 14.0,
+          "duration": 14.0,
+          "role": "direct",
+          "note": "2nd Mercury flyby"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-11-23/main/m1-s03-bepi-mtm-estec.jpg",
+          "duration": 10.0,
+          "role": "direct",
+          "note": "MTM hardware at ESTEC"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-23/main/m1-v07-bepi-vibtest.webm",
+          "seek": 20.0,
+          "duration": 14.0,
+          "role": "direct",
+          "note": "Cleanroom vibration test of MPO + Mio stack"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-11-23/main/m1-s04-bepi-solarwing.jpg",
+          "duration": 10.0,
+          "role": "direct",
+          "note": "Solar wing deployment test at ESTEC"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-11-23/main/m1-s05-esoc-control.jpg",
+          "duration": 10.0,
+          "role": "contextual",
+          "note": "ESA ESOC Main Control Room archive"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-23/main/m1-v06-bepi-flyby1.webm",
+          "seek": 35.0,
+          "duration": 11.0,
+          "role": "direct",
+          "note": "1st Mercury flyby real M-CAM"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-11-23/main/m1-s02-bepi-goodbye4.jpg",
+          "crop": "8533:7100:0:820",
+          "duration": 11.0,
+          "role": "direct",
+          "note": "4th flyby departure M-CAM (cropped)"
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "title": "build/video/2026-11-23/overlays/title-edith.png",
+      "duration": 112.0,
+      "audio": "build/video/2026-11-23/audio/main-second.mp3",
+      "leadingSilence": 0.4,
+      "scenes": [
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-11-23/main/m2-s05-addenbrookes-pd.jpg",
+          "duration": 10.0,
+          "role": "direct",
+          "note": "Addenbrooke's Hospital campus, Cambridge"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-23/main/m2-v01-mammography-usda.webm",
+          "seek": 2.0,
+          "duration": 12.0,
+          "role": "contextual",
+          "note": "Mammography clinic suite"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-11-23/main/m2-s02-addenbrookes-2.jpg",
+          "duration": 10.0,
+          "role": "direct",
+          "note": "Addenbrooke's Hospital health research bus"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-23/main/m2-v02-chelsea-nhs.webm",
+          "seek": 2.0,
+          "duration": 12.0,
+          "role": "contextual",
+          "note": "UK NHS hospital exterior"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-23/main/m2-v07-pexels-7579841.mp4",
+          "seek": 1.0,
+          "duration": 12.0,
+          "role": "contextual",
+          "note": "Clinician reviewing scan"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-11-23/main/m2-s04-mammogram-mri.jpg",
+          "crop": "1340:940:680:350",
+          "duration": 10.0,
+          "role": "contextual",
+          "note": "Mammogram & MRI scan panels (text cropped out)"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-23/main/m2-v01-mammography-usda.webm",
+          "seek": 26.0,
+          "duration": 12.0,
+          "role": "contextual",
+          "note": "Technician at mammography console"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-23/main/m2-v03-guys-nhs.webm",
+          "seek": 2.0,
+          "duration": 12.0,
+          "role": "contextual",
+          "note": "UK NHS hospital exterior (Guy's)"
+        },
+        {
+          "kind": "still",
+          "file": "assets/motion/2026-11-23/main/m2-s01-addenbrookes-1.jpg",
+          "duration": 10.0,
+          "role": "direct",
+          "note": "Addenbrooke's Hospital building, Cambridge"
+        },
+        {
+          "kind": "motion",
+          "file": "assets/motion/2026-11-23/main/m2-v07-pexels-7579841.mp4",
+          "seek": 14.0,
+          "duration": 12.0,
+          "role": "contextual",
+          "note": "Clinician close-up scan review"
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "closing": true,
+      "duration": 10.0,
+      "audio": "build/video/2026-11-23/audio/main-closing.mp3",
+      "leadingSilence": 1.0
+    }
+  ],
+  "hashes": {
+    "assets/motion/2026-11-23/main/m1-s01-bepi-hugs.png": "36700039b57580bd2b454176317ec8caf6077eaf02eb137fd96d4a7b15b573dc",
+    "assets/motion/2026-11-23/main/m1-s02-bepi-goodbye4.jpg": "fb22a86e72e29a246ad518103f597eef18cdfad93169a004c64848554e70645d",
+    "assets/motion/2026-11-23/main/m1-s03-bepi-mtm-estec.jpg": "a77abfb40d267e3cef27f6d8cdb7421d61267e805bb69e5eabd01ae99ab8c3a3",
+    "assets/motion/2026-11-23/main/m1-s04-bepi-solarwing.jpg": "af31e3eb0020eff3f184fd13b1aa93bc78d70fc7b9b8379e7d02c2e96d944dfb",
+    "assets/motion/2026-11-23/main/m1-s05-esoc-control.jpg": "0bf5e7a0281a273877909e8a191b39d15834401110addb2a7823e5f8d4667d0c",
+    "assets/motion/2026-11-23/main/m1-v01-mercury-transit.webm": "99b7b8c8718afff84c957bcf26e219c7c197d080b31d1a39af76db56565220d2",
+    "assets/motion/2026-11-23/main/m1-v02-bepi-flyby6.webm": "ec58f9a863f9c3e919661bc30e12d337662d1e8477ad4463f3d3e3eb5ce8e6a5",
+    "assets/motion/2026-11-23/main/m1-v03-bepi-flyby4.webm": "78dce0e7a056b9177428e9f8b6523c32a01a4e883b8cb0250d34bb14dd443d51",
+    "assets/motion/2026-11-23/main/m1-v05-bepi-flyby2.webm": "b8026e0e2fe9fb16900dcd8aed249d8ac8aef44d5736210964cd60d04356617a",
+    "assets/motion/2026-11-23/main/m1-v06-bepi-flyby1.webm": "ef054c6bb78402dec4e0a158ff22103dfd7742193a83427c57959fb17809182b",
+    "assets/motion/2026-11-23/main/m1-v07-bepi-vibtest.webm": "80f989d095c66464a98ef83429286359e13724b9d75cfad9ecaa53f72a231539",
+    "assets/motion/2026-11-23/main/m2-s01-addenbrookes-1.jpg": "0ec6f17481cf00bdd9451dc4775cb71188a3af379398b4bc0e6b1fec0d369ba0",
+    "assets/motion/2026-11-23/main/m2-s02-addenbrookes-2.jpg": "e1395657e482cfa099813751bde36bebce286ec64aa4a49a720937f10d2af2a8",
+    "assets/motion/2026-11-23/main/m2-s04-mammogram-mri.jpg": "fc48056953ec9dd907614afc17f0b7ebb5dfb718bfec2036f487f8ec1628e468",
+    "assets/motion/2026-11-23/main/m2-s05-addenbrookes-pd.jpg": "308c65d538b17102449917cfaa17682c6a55c463c6c2afdaaa8659615a927329",
+    "assets/motion/2026-11-23/main/m2-v01-mammography-usda.webm": "30e854bbe7de7c26c97800c56ac5ac2db36de3572f3d6924b788a20558adf475",
+    "assets/motion/2026-11-23/main/m2-v02-chelsea-nhs.webm": "4d27765fed21d7dd7bb435d0439a0b9a42a80275528d982aa35cd9659b537fa5",
+    "assets/motion/2026-11-23/main/m2-v03-guys-nhs.webm": "d02c25b9779819efd494fdf515837257758fcd32e89fcedd78d6d7067abc86d4",
+    "assets/motion/2026-11-23/main/m2-v07-pexels-7579841.mp4": "7ac46a257ea9318c3e3e6d814fdeeac585f3f8875ff99997b611dd804e557df8",
+    "build/video/2026-11-23/audio/main-closing.mp3": "0b330c46adfd357028ef3567cd8b099d318b510b79b1b91647cbe848bdcf018e",
+    "build/video/2026-11-23/audio/main-lead-assembled.wav": "4be71a827f677d124ebe40d7d734d71a5afe435d1867e2ff964071f9a7c7f3a0",
+    "build/video/2026-11-23/audio/main-second.mp3": "99b09cd7014a3e9d395947e9f9f832ef8de0415f6ae0c247a34dda37339d299e",
+    "build/video/2026-11-23/overlays/bell.png": "eabdf3a29c5eca01a22763eff919166bb5416ceb30a13e49857932f161668667",
+    "build/video/2026-11-23/overlays/closing-bg.png": "d8c5af2a1705cacbdcf8f3773540be5e04b340861b1cc23e994aa7da8eab07f9",
+    "build/video/2026-11-23/overlays/closing-panel.png": "3821d9590c451603647208e579a1cf253a63927aca9c0605b718e2217153a117",
+    "build/video/2026-11-23/overlays/subscribe.png": "83595458a54176219be5bf583994ac5e59887965954cd0758fa998c9076958fb",
+    "build/video/2026-11-23/overlays/title-bepicolombo.png": "34610ebaa48966bcd9e6a0e291093df3300203ce76b9933684e361ced31a6704",
+    "build/video/2026-11-23/overlays/title-edith.png": "16459ff6a436d38164602edc0104329be4c0897d300f82033053e474bda46394"
+  }
+}

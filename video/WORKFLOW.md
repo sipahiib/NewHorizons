@@ -1,9 +1,7 @@
 # NewHorizons — Active Workflow Pointer
 
-Active cycle: **2026-11-13**
+Active cycle: **2026-11-23**
 
-State: **local main and R2 delivery complete** after independent technical/sample QA and user-confirmed complete playback. [Brief](cycles/2026-11-13/BRIEF.md), [approval](cycles/2026-11-13/APPROVAL.md), [QA](cycles/2026-11-13/QA.md), [delivery metadata](cycles/2026-11-13/DELIVERY_METADATA.md). Publication and external distribution remain unauthorised; image rights conditions and Instagram guidance require review before publication.
+State: **local main delivery complete** after independent pre-render review, independent output QA, and user audiovisual acceptance (2026-11-23). [Brief](cycles/2026-11-23/BRIEF.md), [approval](cycles/2026-11-23/APPROVAL.md), [review](cycles/2026-11-23/REVIEW.md), [QA](cycles/2026-11-23/QA.md), [delivery metadata](cycles/2026-11-23/DELIVERY_METADATA.md). No Reels approved. Publication, distribution, commits and GitHub pushes remain unauthorised; review CC BY-SA obligations in [credits](cycles/2026-11-23/CREDITS.md) before any eventual publication.
 
-[Previous cycle](cycles/2026-11-03/BRIEF.md) remains in cycle records.
-
-User-requested removal of inventoried disposable render intermediates is recorded in [cleanup manifest](cycles/2026-11-13/CLEANUP_MANIFEST.json).
+[Previous cycle](cycles/2026-11-13/BRIEF.md) (local main and R2 delivery complete) and earlier cycles remain in cycle records.
